@@ -136,6 +136,7 @@ the grammar file.
 ```yaml
 language: es
 name: Spanish
+script: LATIN                             # optional; words in other scripts are marked foreign
 levels: [A1, A2, B1, B2, C1, C2, C2+]     # optional; the CEFR scale is the default
 parser: [spacy:es_core_news_md, stanza:es]
 vocab:
@@ -156,6 +157,7 @@ morph:
   adj_verb_cues: [no, me, te, que, ...]      # stricter list for words the vocab lists as adjectives
   mood_preference: [Ind, Sub, Imp, Cnd]      # tie-break between readings
   initial_subjectless_boost: {mood: Imp, weight: 2}
+  capitalised_midsentence_is_name: true     # capitalised words after the first are never verbs
 cleaning:
   abbreviations: {q: que, xq: porque}
   ignore_patterns: ['\b(?:ja){2,}\b']
@@ -164,6 +166,7 @@ cleaning:
 scoring:
   unranked_counts: true          # unknown words raise the vocab level
   low_coverage_threshold: 0.5
+  coverage_target: 0.98          # used by `leveller profile` (whole-text coverage)
 ```
 
 ## 4. Morphology lexicon

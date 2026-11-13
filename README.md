@@ -27,6 +27,7 @@ python -m spacy download es_core_news_md
 leveller explain --lang languages/es "Si lo hubiera sabido, no habría venido."
 leveller level   --lang languages/es article.html --format jsonl > levels.jsonl
 leveller test-grammar --lang languages/es
+leveller profile --lang languages/es article.md   # whole-text coverage by band
 ```
 
 ```python
@@ -65,6 +66,10 @@ for rec in ll.level_text(open("post.html").read()):
   supported.
 * `match` says how each word was found: `lemma`, `variant`, `morph`, `form`, `clitic`
   (enclitic pronouns stripped) or `folded` (missing accents).
+* `complexity` (reported only, never changes a level): `words`, `clauses` (finite verbs plus
+  subordinate/coordinate clauses), `depth` (deepest chain in the parse tree) and
+  `mean_dep_distance` (average distance from each word to the word it attaches to, a common
+  working-memory measure).
 * `flags`: `low_coverage` (fewer than half the words are known; often a foreign-language
   line), `no_verb`, `short`, `all_caps`, `internet_text`.
 

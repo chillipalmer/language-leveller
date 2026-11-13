@@ -49,21 +49,37 @@ def cmd_level(a):
         for r in recs:
             out.write(json.dumps(r, ensure_ascii=False) + "\n")
     else:  # tsv summary
-        out.write("level\tvocab_level\tgrammar_level\tmax_rank\tcoverage\tfeatures\tflags\ttext\n")
+        out.write("level\tvocab_level\tgrammar_level\tmax_rank\tcoverage\twords\tclauses\tdepth\tmdd\tfeatures\tflags\ttext\n")
         for r in recs:
             feats = ",".join(f"{f['id']}({f['level']})" for f in r["grammar"]["features"])
             out.write("\t".join(str(x) for x in (
                 r["level"], r["vocab"]["level"], r["grammar"]["level"],
                 r["vocab"]["max_rank"] or "", r["vocab"]["coverage"] or "",
+                r["complexity"]["words"], r["complexity"]["clauses"], r["complexity"]["depth"],
+                r["complexity"]["mean_dep_distance"],
                 feats, ",".join(r["flags"]), r["text"])) + "\n")
+
+
+def cmd_profile(a):
+    ll = _build(a)
+    p = ll.profile(ll.level_text(_read(a), fmt=a.input_format))
+    print(f"{p['sentences']} sentences, {p['running_words']} running words")
+    for lv, v in p["coverage_by_band"].items():
+        print(f"  {lv:>4}  {v['tokens']:6d}  cumulative {v['cumulative']:.1%}")
+    tgt = f"{p['coverage_target']:.0%}"
+    print(f"level at {tgt} coverage: {p['level_at_target'] or 'not reached within the list'}")
+    print("most frequent unranked: " + ", ".join(f"{w} ({n})" for w, n in p["top_unranked"][:25]))
 
 
 def cmd_explain(a):
     ll = _build(a)
     for r in ll.level_text(_read(a), fmt=a.input_format):
         print(f"\n{r['text']}")
+        c = r["complexity"]
         print(f"  LEVEL {r['level']}   vocab {r['vocab']['level']}   grammar {r['grammar']['level']}"
               + (f"   flags: {', '.join(r['flags'])}" if r["flags"] else ""))
+        print(f"  complexity: {c['words']} words, {c['clauses']} clauses, depth {c['depth']}, "
+              f"mean dependency distance {c['mean_dep_distance']}")
         for t in r["tokens"]:
             if "excluded" in t:
                 print(f"    {t['text']:<16} —  ({t['excluded']})")
@@ -103,7 +119,7 @@ def cmd_parse(a):
 def main(argv=None):
     p = argparse.ArgumentParser(prog="leveller", description="Language Leveller")
     sub = p.add_subparsers(dest="cmd", required=True)
-    for name, fn in (("level", cmd_level), ("explain", cmd_explain),
+    for name, fn in (("level", cmd_level), ("explain", cmd_explain), ("profile", cmd_profile),
                      ("test-grammar", cmd_test_grammar), ("parse", cmd_parse)):
         sp = sub.add_parser(name)
         sp.add_argument("--lang", required=True, help="language directory (contains config.yaml)")
@@ -122,7 +138,7 @@ def main(argv=None):
             sp.add_argument("--format", default="jsonl", choices=["jsonl", "json", "tsv"])
         sp.set_defaults(fn=fn)
     a = p.parse_args(argv)
-    if a.cmd in ("explain", "parse") and a.input and not a.text:
+    if a.cmd in ("explain", "parse", "profile") and a.input and not a.text:
         import os
         a.text = not os.path.exists(a.input)
     a.fn(a)

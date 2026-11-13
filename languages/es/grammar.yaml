@@ -140,21 +140,32 @@ features:
 
 - id: es.conditional.courtesy
   level: A2
-  label: Courtesy conditional (querría, podría, me gustaría…)
-  match:
-    token: {Mood: Cnd, lemma: [querer, poder, gustar, deber, importar, encantar]}
+  label: Courtesy conditional (me gustaría, querría, ¿podría…?)
+  description: >
+    -ría forms are identical in 1st and 3rd person singular, so person cannot decide.
+    querer/gustar/encantar/importar in the conditional count as courtesy in any person;
+    poder/deber only in questions or 1st person plural. Declarative podría/debería
+    (podría traducirse) is the hypothetical conditional, B1.
+  match_any:
+    - token: {Mood: Cnd, lemma: [querer, gustar, encantar, importar]}
+    - token: {Mood: Cnd, lemma: [poder, deber], Person: "1", Number: Plur}
+    - sequence: [{form: "¿"}, {gap: [0, 3]}, {Mood: Cnd, lemma: [poder]}]
   tests:
-    pos: ["Me gustaría un café.", "¿Podría ayudarme?"]
-    neg: ["Me gusta el café."]
+    pos: ["Me gustaría un café.", "¿Podría ayudarme?", "Querría hablar con usted."]
+    neg: ["Me gusta el café.", "La palabra podría traducirse al español.", "Debería ser definido como evolución."]
 
 # ---------------------------------------------------------------- B1
 - id: es.conditional.simple
   level: B1
   label: Conditional (non-courtesy)
   match:
-    token: {Mood: Cnd, lemma: {not: [querer, poder, gustar, deber, importar, encantar]}}
+    token: {Mood: Cnd}
+  except:                                   # courtesy uses (es.conditional.courtesy)
+    - token: {Mood: Cnd, lemma: [querer, gustar, encantar, importar]}
+    - token: {Mood: Cnd, lemma: [poder, deber], Person: "1", Number: Plur}
+    - sequence: [{form: "¿"}, {gap: [0, 3]}, {Mood: Cnd, lemma: [poder]}]
   tests:
-    pos: ["Yo en tu lugar no lo compraría."]
+    pos: ["Yo en tu lugar no lo compraría.", "La palabra podría traducirse al español.", "El origen debería ser definido como evolución."]
     neg: ["Me gustaría un café.", "No lo compro."]
 
 - id: es.subj.present
@@ -179,7 +190,7 @@ features:
     - sequence: [{form: "no", clause_start: true}, {upos: PRON, optional: true},
                  {upos: PRON, optional: true}, {Mood: Sub, Tense: Pres, Person: "2"}]
   tests:
-    pos: ["No me lo digas.", "No toques eso.", "No firmes el contrato sin leerlo."]
+    pos: ["No me lo digas.", "No toques eso.", "No firmes el contrato sin leerlo.", "Este lugar es sagrado; no lo toques."]
     neg: ["No quiero que lo toques.", "No lo toco."]
 
 - id: es.subj.perfect
@@ -334,7 +345,8 @@ features:
         a: {lemma: aunque, head: v}
   tests:
     pos: ["Aunque llueva, saldremos.", "Iré aunque no me inviten.", "Aunque el camión sea viejo, todavía funciona.",
-          "Aunque llueva, saldremos a dar un paseo por el puerto."]
+          "Aunque llueva, saldremos a dar un paseo por el puerto.", "Aunque no lo valores, su trabajo es importante.",
+          "Aunque parezca racional, no tiene sentido."]
     neg: ["Aunque llueve, salimos."]
 
 - id: es.como_si
@@ -379,8 +391,11 @@ features:
     - sequence: [{lemma: ser, VerbForm: Fin, clause_start: true}, {gap: [1, 5]}, {form: [quien, quienes]}]
     # focus must be adverbial or prepositional (fue entonces cuando, fue en Sevilla donde),
     # which excludes plain relatives (es el lecho donde nací)
-    - sequence: [{lemma: ser, VerbForm: Fin, clause_start: true}, {upos: [ADV, ADP]}, {gap: [0, 5]},
+    - sequence: [{lemma: ser, VerbForm: Fin, clause_start: true}, {upos: ADP}, {gap: [0, 5]},
                  {form: [donde, cuando, como]}]
+    - sequence: [{lemma: ser, VerbForm: Fin, clause_start: true},
+                 {form: [entonces, así, aquí, allí, ahí, allá, ahora, hoy, ayer, luego, después, antes, entonces, siempre, precisamente, justamente, solo, sólo]},
+                 {gap: [0, 3]}, {form: [donde, cuando, como]}]
     - sequence: [{lemma: ser, VerbForm: Fin, clause_start: true}, {form: por}, {form: [eso, esto, ello]}, {form: que}]
     - sequence: [{lemma: ser, VerbForm: Fin, clause_start: true}, {gap: [0, 5]},
                  {upos: {not: ADP}}, {form: [lo, el, la, los, las]}, {form: que}]
@@ -390,7 +405,7 @@ features:
           "Fue el brillo de sus ojos lo que me enamoró.", "Monstruo o no, fue entonces cuando todos empezaron a tenerle miedo."]
     neg: ["Juan lo dijo en Sevilla.", "Es la casa en la que vivo.", "¿Quién es el hombre con quien hablas?",
           "Es difícil tomar una decisión como ésta.", "Era un árbol enorme, como si tuviera mil años.",
-          "Es el lecho donde yo nací."]
+          "Es el lecho donde yo nací.", "Por tanto, es menos útil como elemento estructural."]
 
 - id: es.inf.compound_de
   level: C1
