@@ -327,11 +327,14 @@ features:
     - graph:
         v: {has_child: {Mood: Sub, rel: [cop, aux]}}
         a: {lemma: aunque, head: v}
+    # parser-independent: the subjunctive follows aunque within its clause
+    - sequence: [{form: aunque}, {gap: [0, 3]}, {Mood: Sub}]
     - graph:
         v: {VerbForm: Part, has_child: {lemma: haber, Mood: Sub}}
         a: {lemma: aunque, head: v}
   tests:
-    pos: ["Aunque llueva, saldremos.", "Iré aunque no me inviten.", "Aunque el camión sea viejo, todavía funciona."]
+    pos: ["Aunque llueva, saldremos.", "Iré aunque no me inviten.", "Aunque el camión sea viejo, todavía funciona.",
+          "Aunque llueva, saldremos a dar un paseo por el puerto."]
     neg: ["Aunque llueve, salimos."]
 
 - id: es.como_si
