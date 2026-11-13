@@ -70,6 +70,12 @@ for rec in ll.level_text(open("post.html").read()):
   subordinate/coordinate clauses), `depth` (deepest chain in the parse tree) and
   `mean_dep_distance` (average distance from each word to the word it attaches to, a common
   working-memory measure).
+* `items`: every learnable item in the sentence, deduplicated, for matching against a
+  learner's known set without re-parsing. One `lemma` item per distinct word id + feature
+  bundle (`{"kind": "lemma", "id": "venir_VERB", "form": "venga", "feats": "Mood=Sub|…"}`),
+  then one `grammar` item per matched feature (`{"kind": "grammar", "id": "es.subj.present",
+  "level": "B1"}`). Words outside the vocab list still get an id (lemma + UPOS, e.g.
+  `bateador_NOUN`) and carry `"listed": false`. Names, numbers and punctuation are not items.
 * `flags`: `low_coverage` (fewer than half the words are known; often a foreign-language
   line), `no_verb`, `short`, `all_caps`, `internet_text`.
 
