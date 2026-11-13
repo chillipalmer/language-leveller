@@ -124,7 +124,10 @@ class Leveller:
                     if lk.candidates > 1:
                         rec["ambiguous"] = lk.candidates
                 else:
-                    rec.update(rank=self.vocab.unranked_label,
+                    # not in the loaded list: still gets a stable id (lemma + UPOS) so the
+                    # app can track it as a learning target like any listed word
+                    rec.update(id=f"{norm(t.lemma or t.text)}_{t.upos}",
+                               rank=self.vocab.unranked_label,
                                level=self.vocab.unranked_level, match="none")
                     unranked.append(t.text)
                     if self.unranked_counts:
@@ -163,6 +166,7 @@ class Leveller:
                                      for m in g_matches]},
             "complexity": complexity,
             "tokens": tokens,
+            "items": self._items(tokens, g_matches),
             "flags": flags,
         }
         if seg:
@@ -171,6 +175,32 @@ class Leveller:
                 rec["source"]["ignored"] = [{k: v for k, v in i.items() if k != "pos"}
                                             for i in ignored]
         return rec
+
+    @staticmethod
+    def _items(tokens: list[dict], g_matches) -> list[dict]:
+        """Every learnable item in the sentence, deduplicated, for matching against a
+        learner's known set: one `lemma` item per distinct (id, feature bundle), with
+        `listed: false` for words outside the vocab list, then one `grammar` item per
+        matched feature. Excluded tokens (names, numbers, punctuation) are not items."""
+        items, seen = [], set()
+        for t in tokens:
+            if "id" not in t:
+                continue
+            key = (t["id"], t.get("feats", ""))
+            if key in seen:
+                continue
+            seen.add(key)
+            item = {"kind": "lemma", "id": t["id"], "form": t["text"]}
+            if t.get("feats"):
+                item["feats"] = t["feats"]
+            if t.get("match") == "none":
+                item["listed"] = False
+            items.append(item)
+        for m in g_matches:
+            if m.id not in seen:
+                seen.add(m.id)
+                items.append({"kind": "grammar", "id": m.id, "level": m.level})
+        return items
 
     # clausal dependency relations (UD): each marks a subordinate or coordinate clause
     CLAUSAL = {"advcl", "ccomp", "csubj", "acl", "xcomp", "parataxis"}

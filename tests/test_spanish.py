@@ -82,3 +82,20 @@ def test_complexity_is_reported_and_grows_with_structure(ll):
     assert simple["words"] == 3 and simple["clauses"] == 1
     assert hard["clauses"] >= 4 and hard["depth"] > simple["depth"]
     assert hard["mean_dep_distance"] > simple["mean_dep_distance"]
+
+
+def test_items_list_for_learner_matching(ll):
+    r = ll.level_text("No creo que venga mañana con el bateador.")[0]
+    items = r["items"]
+    lemmas = {i["id"]: i for i in items if i["kind"] == "lemma"}
+    grammar = {i["id"] for i in items if i["kind"] == "grammar"}
+    assert {"no_ADV", "creer_VERB", "venir_VERB", "el_DET"} <= set(lemmas)
+    assert "Mood=Sub" in lemmas["venir_VERB"]["feats"]
+    # unlisted word: stable id, flagged, still an item
+    assert lemmas["bateador_NOUN"]["listed"] is False
+    assert "listed" not in lemmas["venir_VERB"]
+    assert "es.subj.present" in grammar
+    # punctuation is not an item; duplicates collapse
+    assert all(i["id"] != "._PUNCT" for i in items)
+    r2 = ll.level_text("La casa y la casa.")[0]
+    assert sum(1 for i in r2["items"] if i["id"] == "casa_NOUN") == 1
