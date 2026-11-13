@@ -1,0 +1,11 @@
+__pycache__/
+*.egg-info/
+.pytest_cache/
+build/
+dist/
+.venv/
+# Full source lists (with glosses/examples) stay local; commit only stripped lists
+*.full.tsv
+*.full.csv
+*.xlsx
+*.log
