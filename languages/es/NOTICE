@@ -1,0 +1,18 @@
+morph.tsv.gz
+  Derived from UniMorph Spanish (https://github.com/unimorph/spa), itself drawn
+  from English Wiktionary. Licensed CC BY-SA 3.0
+  (https://creativecommons.org/licenses/by-sa/3.0/). This file is distributed
+  under the same licence. Missing verbs were filled in with output from the
+  verbecc conjugator (https://github.com/bretttolbert/verbecc, LGPL-3.0), used
+  as a build-time tool only.
+
+vocab.sample.tsv
+  Hand-made illustrative sample. Ranks are approximate and for testing only.
+
+grammar.yaml
+  Level assignments follow the Instituto Cervantes Plan Curricular as adapted
+  in this project's graded-sentences method.
+
+vocab.tsv
+  Ranks and parts of speech from Mark Davies, A Frequency Dictionary of Spanish
+  (Routledge). Glosses and example sentences are deliberately omitted.

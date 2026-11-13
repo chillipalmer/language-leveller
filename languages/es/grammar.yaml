@@ -1,0 +1,410 @@
+# Spanish grammar profile for Language Leveller.
+# Levels follow the Instituto Cervantes Plan Curricular as adapted in the
+# project's graded-sentences method (v2). Patterns match UD annotations;
+# see docs/FORMATS.md. Run `leveller test-grammar --lang languages/es` after edits.
+
+language: es
+default_level: A1
+
+# Two different C1 structures in one sentence count as C2.
+combinations:
+  - id: es.combo.two_c1
+    level: C1
+    min_distinct: 2
+    result: C2
+    label: Two different C1 structures in one sentence
+
+features:
+
+# ---------------------------------------------------------------- A1
+- id: es.pres.indicative
+  level: A1
+  label: Present indicative
+  match:
+    token: {upos: [VERB, AUX], Mood: Ind, Tense: Pres, VerbForm: Fin}
+  tests:
+    pos: ["Vivo en Madrid."]
+    neg: ["Viví en Madrid."]
+
+- id: es.periphrasis.ir_a
+  level: A1
+  label: ir a + infinitive
+  match:
+    sequence: [{lemma: ir, Tense: Pres}, {form: a}, {VerbForm: Inf}]
+  tests:
+    pos: ["Voy a comer con mi madre."]
+    neg: ["Voy a la playa."]
+
+- id: es.periphrasis.tener_que
+  level: A1
+  label: tener que + infinitive
+  match:
+    sequence: [{lemma: tener}, {form: que}, {VerbForm: Inf}]
+  tests:
+    pos: ["Tengo que trabajar mañana."]
+    neg: ["Tengo dos hermanos."]
+
+# Regional features: `regions` lists ISO 3166 country codes where the feature is
+# standard. LL always detects them; the app decides what they mean for a learner
+# (target vs. recognise-only).
+- id: es.vosotros
+  level: A1
+  label: vosotros verb forms
+  regions: [ES]
+  match:
+    token: {upos: [VERB, AUX], VerbForm: Fin, Person: "2", Number: Plur}
+  tests:
+    pos: ["¿Vosotros sabéis la verdad?", "¿Dónde vivís?"]
+    neg: ["¿Ustedes saben la verdad?"]
+
+- id: es.voseo
+  level: A1
+  label: voseo (vos as subject/object pronoun)
+  regions: [AR, UY, PY, CR, NI, HN, SV, GT]
+  match:
+    token: {form: vos}
+  tests:
+    pos: ["Vos sabés la verdad.", "Esto es para vos."]
+    neg: ["Tú sabes la verdad."]
+
+# ---------------------------------------------------------------- A2
+- id: es.past.preterite
+  level: A2
+  label: Preterite
+  match:
+    token: {upos: [VERB, AUX], Mood: Ind, Tense: Past, VerbForm: Fin}
+  tests:
+    pos: ["Ayer comí paella."]
+    neg: ["Hoy como paella."]
+
+- id: es.past.imperfect
+  level: A2
+  label: Imperfect indicative
+  match:
+    token: {upos: [VERB, AUX], Mood: Ind, Tense: Imp, VerbForm: Fin}
+  tests:
+    pos: ["De niño jugaba en la calle."]
+    neg: ["De niño jugué en la calle."]
+
+- id: es.future.simple
+  level: A2
+  label: Simple future
+  match:
+    token: {upos: [VERB, AUX], Mood: Ind, Tense: Fut, VerbForm: Fin}
+  tests:
+    pos: ["Mañana lloverá en el norte."]
+    neg: ["Mañana va a llover."]
+
+- id: es.gerund
+  level: A2
+  label: Gerund (estar + gerund, etc.)
+  match:
+    token: {VerbForm: Ger}
+  tests:
+    pos: ["Estoy leyendo un libro."]
+    neg: ["Leo un libro."]
+
+- id: es.imperative.affirmative
+  level: A2
+  label: Affirmative imperative
+  match:
+    token: {Mood: Imp, no_child: {Polarity: Neg}}
+  tests:
+    pos: ["Ven aquí ahora.", "Dímelo ya."]
+    neg: ["Abro la ventana."]
+
+- id: es.perfect.present
+  level: A2
+  label: Present perfect
+  match:
+    graph:
+      v: {VerbForm: Part}
+      aux: {lemma: haber, Mood: Ind, Tense: Pres, rel: aux, head: v}
+  tests:
+    pos: ["He visto esa película."]
+    neg: ["Vi esa película.", "Hay mucha gente."]
+
+- id: es.conditional.courtesy
+  level: A2
+  label: Courtesy conditional (querría, podría, me gustaría…)
+  match:
+    token: {Mood: Cnd, lemma: [querer, poder, gustar, deber, importar, encantar]}
+  tests:
+    pos: ["Me gustaría un café.", "¿Podría ayudarme?"]
+    neg: ["Me gusta el café."]
+
+# ---------------------------------------------------------------- B1
+- id: es.conditional.simple
+  level: B1
+  label: Conditional (non-courtesy)
+  match:
+    token: {Mood: Cnd, lemma: {not: [querer, poder, gustar, deber, importar, encantar]}}
+  tests:
+    pos: ["Yo en tu lugar no lo compraría."]
+    neg: ["Me gustaría un café.", "No lo compro."]
+
+- id: es.subj.present
+  level: B1
+  label: Present subjunctive
+  match:
+    token: {Mood: Sub, Tense: Pres}
+  tests:
+    pos: ["Quiero que vengas mañana.", "Espero que estés bien.", "Cuando llegues, llámame."]
+    neg: ["Sé que vienes mañana."]
+
+- id: es.imperative.negative
+  level: B1
+  label: Negative imperative (no + subjunctive)
+  match:
+    graph:
+      v: {Mood: Sub, Tense: Pres, rel: [root, parataxis, conj], no_child: {rel: mark}}
+      neg: {lemma: "no", head: v}
+  tests:
+    pos: ["No me lo digas.", "No toques eso."]
+    neg: ["No quiero que lo toques.", "No lo toco."]
+
+- id: es.perfect.pluperfect
+  level: B1
+  label: Pluperfect indicative
+  match:
+    graph:
+      v: {VerbForm: Part}
+      aux: {lemma: haber, Mood: Ind, Tense: Imp, rel: aux, head: v}
+  tests:
+    pos: ["Cuando llegué, ya se había ido."]
+    neg: ["Cuando llegué, ya se fue.", "Había mucha gente."]
+
+- id: es.passive.ser
+  level: B1
+  label: Passive with ser
+  match:
+    graph:
+      v: {upos: VERB, VerbForm: Part}
+      aux: {lemma: ser, rel: [aux, cop], head: v}
+  tests:
+    pos: ["La casa fue construida en 1990."]
+    neg: ["La casa es grande.", "Construyeron la casa en 1990."]
+
+- id: es.relative.prep_article_que
+  level: B1
+  label: Preposition + article + que/cual (relative)
+  match:
+    sequence: [{upos: ADP}, {form: [el, la, los, las, lo]}, {form: [que, cual, cuales]}]
+  tests:
+    pos: ["Es la ciudad en la que nací.", "El amigo con el que viajo es mexicano."]
+    neg: ["La ciudad que visité es bonita."]
+
+- id: es.periphrasis.continuative
+  level: B1
+  label: llevar / seguir / continuar + gerund
+  match:
+    sequence: [{lemma: [llevar, seguir, continuar]}, {gap: [0, 3]}, {VerbForm: Ger}]
+  tests:
+    pos: ["Sigo trabajando aquí.", "Llevo dos años estudiando español."]
+    neg: ["Sigo aquí.", "Estoy trabajando aquí."]
+
+# ---------------------------------------------------------------- B2
+- id: es.subj.imperfect
+  level: B2
+  label: Imperfect subjunctive
+  match:
+    token: {Mood: Sub, Tense: Imp}
+  tests:
+    pos: ["Me pidió que lo ayudara.", "Si tuviera tiempo, iría."]
+    neg: ["Me pide que lo ayude."]
+
+- id: es.subj.pluperfect
+  level: B2
+  label: Pluperfect subjunctive
+  match:
+    graph:
+      v: {VerbForm: Part}
+      aux: {lemma: haber, Mood: Sub, Tense: Imp, rel: aux, head: v}
+  tests:
+    pos: ["Ojalá hubiera estudiado más."]
+    neg: ["Ojalá estudie más.", "Había estudiado mucho."]
+
+- id: es.conditional.perfect
+  level: B2
+  label: Conditional perfect
+  match:
+    graph:
+      v: {VerbForm: Part}
+      aux: {lemma: haber, Mood: Cnd, rel: aux, head: v}
+  tests:
+    pos: ["Yo no lo habría hecho."]
+    neg: ["Yo no lo haría."]
+
+- id: es.si.counterfactual
+  level: B2
+  label: si + imperfect/pluperfect subjunctive
+  match_any:
+    - graph:
+        v: {Mood: Sub, Tense: Imp}
+        si: {lemma: si, rel: mark, head: v}
+    - graph:
+        v: {VerbForm: Part, has_child: {lemma: haber, Mood: Sub}}
+        si: {lemma: si, rel: mark, head: v}
+  tests:
+    pos: ["Si tuviera dinero, viajaría.", "Si hubiera sabido la verdad, no habría venido."]
+    neg: ["Si tengo dinero, viajo."]
+
+- id: es.aunque.subj
+  level: B2
+  label: aunque + subjunctive
+  match_any:
+    - graph:
+        v: {Mood: Sub}
+        a: {lemma: aunque, head: v}
+    - graph:
+        v: {VerbForm: Part, has_child: {lemma: haber, Mood: Sub}}
+        a: {lemma: aunque, head: v}
+  tests:
+    pos: ["Aunque llueva, saldremos.", "Iré aunque no me inviten."]
+    neg: ["Aunque llueve, salimos."]
+
+- id: es.como_si
+  level: B2
+  label: como si + subjunctive
+  match:
+    sequence: [{form: como}, {form: si}]
+  tests:
+    pos: ["Habla como si fuera el jefe."]
+    neg: ["Habla como el jefe."]
+
+- id: es.conj.conditional_phrases
+  level: B2
+  label: a no ser que / con tal de que / a menos que / siempre y cuando / en caso de que
+  match_any:
+    - sequence: [{form: a}, {form: "no"}, {form: ser}, {form: que}]
+    - sequence: [{form: con}, {form: tal}, {form: de, optional: true}, {form: que}]
+    - sequence: [{form: a}, {form: menos}, {form: que}]
+    - sequence: [{form: siempre}, {form: "y"}, {form: cuando}]
+    - sequence: [{form: en}, {form: caso}, {form: de}, {form: que}]
+  tests:
+    pos: ["Iremos a no ser que llueva.", "Te lo presto con tal de que me lo devuelvas.", "Saldremos a menos que haga frío."]
+    neg: ["No puede ser que llueva."]
+
+- id: es.lo_adj_que
+  level: B2
+  label: lo + adjective/adverb + que (intensive)
+  match:
+    sequence:
+      - {form: lo}
+      - {upos: [ADJ, ADV], form: {not: [mismo, misma, único, única, primero, último, otro, mejor, peor, más, menos]}}
+      - {form: que}
+  tests:
+    pos: ["No sabes lo difícil que es.", "Me sorprendió lo bien que canta."]
+    neg: ["Pienso lo mismo que tú."]
+
+# ---------------------------------------------------------------- C1
+- id: es.cleft
+  level: C1
+  label: Cleft sentence (fue X quien/donde/cuando…)
+  match_any:
+    - sequence: [{lemma: ser, VerbForm: Fin}, {gap: [1, 4]}, {form: [quien, quienes]}]
+    - sequence: [{lemma: ser, VerbForm: Fin, sent_start: true}, {gap: [1, 4]}, {form: [donde, cuando, como]}]
+  tests:
+    pos: ["Fue Juan quien lo dijo.", "Fue en Sevilla donde nos conocimos."]
+    neg: ["Juan lo dijo en Sevilla."]
+
+- id: es.inf.compound_de
+  level: C1
+  label: de + compound infinitive (de haberlo sabido)
+  match:
+    sequence: [{form: de}, {regex: '^haber'}, {VerbForm: Part}]
+  tests:
+    pos: ["De haberlo sabido, habría venido."]
+    neg: ["Antes de saberlo, vine."]
+
+- id: es.de_no_ser_por
+  level: C1
+  label: de no ser por
+  match:
+    sequence: [{form: de}, {form: "no"}, {form: ser}, {form: por}]
+  tests:
+    pos: ["De no ser por ti, me habría perdido."]
+    neg: ["No es por ti."]
+
+- id: es.por_muy_que
+  level: C1
+  label: por muy/mucho/más … que (concessive)
+  match:
+    sequence: [{form: por}, {form: [muy, mucho, mucha, muchos, muchas, más]}, {gap: [0, 3]}, {form: que}]
+  tests:
+    pos: ["Por muy difícil que sea, lo haré.", "Por mucho que insistas, no iré."]
+    neg: ["Gracias por todo lo que haces."]
+
+- id: es.concessive.si_bien_aun_cuando
+  level: C1
+  label: si bien / aun cuando
+  match_any:
+    - sequence: [{form: si}, {form: bien}]
+    - sequence: [{form: [aun, aún]}, {form: cuando}]
+  tests:
+    pos: ["Si bien es cierto, no es toda la verdad.", "Aun cuando llueva, saldremos."]
+    neg: ["Si estás bien, salimos."]
+
+- id: es.no_es_que
+  level: C1
+  label: no es que + subjunctive
+  match:
+    sequence: [{form: "no"}, {lemma: ser}, {form: que}]
+  tests:
+    pos: ["No es que no quiera, es que no puedo."]
+    neg: ["No quiero ir."]
+
+- id: es.subj.reduplicated
+  level: C1
+  label: Reduplicated subjunctive (pase lo que pase)
+  match_any:
+    - sequence: [{Mood: [Sub, Imp], as: V}, {form: lo}, {form: que}, {same_form: V}]
+    - sequence: [{Mood: [Sub, Imp], as: V}, {form: [quien, donde, como, cuando, adonde]}, {same_form: V}]
+  tests:
+    pos: ["Pase lo que pase, te llamo.", "Digan lo que digan, iré.", "Sea como sea, hay que hacerlo."]
+    neg: ["Pasa lo que pasa siempre."]
+
+- id: es.absolute
+  level: C1
+  label: Absolute construction (una vez hecho…, terminada la reunión…)
+  match_any:
+    - sequence: [{form: una}, {form: vez}, {VerbForm: Part}]
+    - sequence: [{VerbForm: Part, sent_start: true}, {upos: DET}, {upos: NOUN}]
+    - sequence: [{form: [dicho, hecho], sent_start: true}, {form: [esto, eso]}]
+  tests:
+    pos: ["Una vez terminado el trabajo, nos fuimos.", "Terminada la reunión, todos salieron.", "Dicho esto, me voy."]
+    neg: ["Terminamos la reunión y salimos."]
+
+# ---------------------------------------------------------------- C2
+- id: es.subj.future
+  level: C2
+  label: Future subjunctive (sea como fuere)
+  match_any:
+    - token: {Mood: Sub, Tense: Fut}
+    - token: {form: [fuere, fueres, fueren, hubiere, hubieres, hubieren, quisiere, pudiere,
+                     tuviere, hiciere, dijere, viniere, estuviere, diere, supiere, hubiéremos]}
+  tests:
+    pos: ["Sea como fuere, lo haremos.", "Adonde fueres, haz lo que vieres."]
+    neg: ["Sea como sea, lo haremos."]
+
+- id: es.preterite_anterior
+  level: C2
+  label: Preterite anterior (apenas hubo terminado…)
+  match:
+    graph:
+      v: {VerbForm: Part}
+      aux: {lemma: haber, Mood: Ind, Tense: Past, rel: aux, head: v}
+  tests:
+    pos: ["Apenas hubo terminado, se marchó."]
+    neg: ["Hubo una fiesta.", "Apenas terminó, se marchó."]
+
+- id: es.conj.literary
+  level: C2
+  label: a poco que / no bien / mal que me pese
+  match_any:
+    - sequence: [{form: a}, {form: poco}, {form: que}]
+    - sequence: [{form: "no", sent_start: true}, {form: bien}]
+    - sequence: [{form: mal}, {form: que}, {form: [me, te, le, nos, os, les]}, {lemma: pesar}]
+  tests:
+    pos: ["A poco que te esfuerces, aprobarás.", "No bien llegó, empezó a llover.", "Mal que me pese, tienes razón."]
+    neg: ["Me pesa un poco que no vengas."]

@@ -1,0 +1,81 @@
+language: es
+name: Spanish
+
+# Parser backends, tried in order. Install with:
+#   pip install spacy && python -m spacy download es_core_news_md
+parser:
+  - spacy:es_core_news_md
+  - stanza:es
+
+vocab:
+  file: vocab.tsv                 # your full list (kept out of git, see .gitignore)
+  fallback_file: vocab.sample.tsv # tiny illustrative list used when vocab.tsv is absent
+  bands:                          # rank -> CEFR band (used when a row has no level column)
+    - {level: A1, max_rank: 1000}
+    - {level: A2, max_rank: 1750}
+    - {level: B1, max_rank: 2500}
+    - {level: B2, max_rank: 3250}
+    - {level: C1, max_rank: 4000}
+    - {level: C2, max_rank: 5000}
+  unranked_level: C2+
+  # POS codes used in the list -> compatible Universal POS tags (for homograph choice)
+  pos_map:
+    v: [VERB, AUX]
+    n: [NOUN, PROPN]
+    adj: [ADJ, VERB]
+    adv: [ADV]
+    prep: [ADP]
+    conj: [CCONJ, SCONJ]
+    art: [DET]
+    det: [DET]
+    pron: [PRON, DET]
+    num: [NUM, DET, PRON]
+    interj: [INTJ]
+  exclude_upos: [PUNCT, SYM, NUM, PROPN, SPACE]
+  # enclitic pronouns: dímelo -> díme -> dí; decírselo -> decírse -> decír (accent folded)
+  clitic_suffixes:
+    - '^(.{2,}?)(nos|os|me|te|se|lo|la|le|los|las|les)$'
+  accent_fold_fallback: true
+
+grammar:
+  file: grammar.yaml
+
+cleaning:
+  abbreviations:          # common Spanish internet spellings -> standard form
+    q: que
+    k: que
+    ke: que
+    xq: porque
+    pq: porque
+    porq: porque
+    tb: también
+    tmb: también
+    tbn: también
+    x: por
+    d: de
+    dnd: dónde
+    xfa: por favor
+    xfavor: por favor
+    finde: fin de semana
+    msj: mensaje
+    salu2: saludos
+    bss: besos
+    bs: besos
+    toy: estoy
+    pa: para
+  ignore_patterns:        # laughter and similar non-lexical interjections
+    - '\b(?:ja|je|ji|jo){2,}j?\b'
+    - '\b(?:ha){2,}h?\b'
+    - '\blo+l\b'
+    - '\bxd+\b'
+    - '\bjsjs\w*\b'
+
+scoring:
+  unranked_counts: true          # words outside the list push the vocab level to C2+
+  low_coverage_threshold: 0.5    # flag sentences where <50% of words are in the list
+
+morph:
+  file: morph.tsv.gz              # built by tools/build_morph.py (UniMorph + verbecc)
+  verb_cues: [no, me, te, se, lo, la, le, nos, os, los, las, les, que, aunque, cuando, si, ojalá]
+  mood_preference: [Ind, Sub, Imp, Cnd]
+  initial_subjectless_boost: {mood: Imp, weight: 2}   # "Ven aquí" = come (not "they see")
