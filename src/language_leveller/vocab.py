@@ -229,6 +229,8 @@ class Vocab:
             return "non-word"
         if any(p.search(tok.text) for p in self.exclude_patterns):
             return "excluded-pattern"
+        if tok.feats.get("Foreign") == "Yes":
+            return "foreign-script"
         if tok.upos in self.exclude_upos:
             # sentence-initial capitalised common words are often mis-tagged PROPN
             if tok.upos == "PROPN" and tok.i == 0 and self._direct(tok.text, None, "X")[0]:

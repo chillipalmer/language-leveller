@@ -73,3 +73,12 @@ def test_unranked_words_and_names(ll):
 
 def test_foreign_line_is_flagged(ll):
     assert "low_coverage" in ll.level_text("Check this out.")[0]["flags"]
+
+
+def test_complexity_is_reported_and_grows_with_structure(ll):
+    simple = ll.level_text("Vivo en Madrid.")[0]["complexity"]
+    hard = ll.level_text("Si hubiera sabido que ibas a venir cuando terminaras el trabajo, "
+                         "te habría preparado la paella que tanto te gusta.")[0]["complexity"]
+    assert simple["words"] == 3 and simple["clauses"] == 1
+    assert hard["clauses"] >= 4 and hard["depth"] > simple["depth"]
+    assert hard["mean_dep_distance"] > simple["mean_dep_distance"]

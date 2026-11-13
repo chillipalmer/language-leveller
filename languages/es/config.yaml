@@ -1,5 +1,6 @@
 language: es
 name: Spanish
+script: LATIN        # words in other scripts are marked foreign and excluded
 
 # Parser backends, tried in order. Install with:
 #   pip install spacy && python -m spacy download es_core_news_md
@@ -36,6 +37,7 @@ vocab:
   exclude_upos: [PUNCT, SYM, PROPN, SPACE]   # digits are skipped as non-words; number words are ranked
   exclude_patterns:                          # regexes on the surface form (case-sensitive)
     - '^[IVXLCDM]+$'                         # Roman numerals (siglo XIX)
+    - '^(mm|cm|dm|m|km|mg|g|kg|ml|cl|dl|l|h|min|s)$'   # unit symbols (6,6 cm)
   # enclitic pronouns: dímelo -> díme -> dí; decírselo -> decírse -> decír (accent folded)
   clitic_suffixes:
     - '^(.{2,}?)(nos|os|me|te|se|lo|la|le|los|las|les)$'
@@ -77,6 +79,7 @@ cleaning:
 scoring:
   unranked_counts: true          # words outside the list push the vocab level to C2+
   low_coverage_threshold: 0.5    # flag sentences where <50% of words are in the list
+  coverage_target: 0.98          # vocab.coverage_level: band at which 98% of words are known
 
 morph:
   file: morph.tsv.gz              # built by tools/build_morph.py (UniMorph + verbecc)
@@ -84,3 +87,4 @@ morph:
   adj_verb_cues: [no, me, te, se, nos, os, que, aunque, cuando, si, ojalá]   # no lo/la/los: articles too
   mood_preference: [Ind, Sub, Imp, Cnd]
   initial_subjectless_boost: {mood: Imp, weight: 2}   # "Ven aquí" = come (not "they see")
+  capitalised_midsentence_is_name: true   # Spanish capitalises only names mid-sentence

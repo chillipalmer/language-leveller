@@ -6,6 +6,7 @@
 
 from __future__ import annotations
 
+import unicodedata
 from pathlib import Path
 
 from . import yamlio
@@ -34,6 +35,10 @@ class Leveller:
         scoring = config.get("scoring") or {}
         self.unranked_counts = scoring.get("unranked_counts", True)
         self.low_coverage = scoring.get("low_coverage_threshold", 0.5)
+        # lexical coverage target for vocab.coverage_level (98% ≈ unassisted reading)
+        self.coverage_target = scoring.get("coverage_target", 0.98)
+        # Unicode script name of the language's writing system ("LATIN", "CYRILLIC", "CJK"…)
+        self.script = (config.get("script") or "").upper() or None
         self.cleaner = Cleaner(config.get("cleaning") or {},
                                known_form=lambda w: norm(w) in vocab.by_form or bool(
                                    vocab.morph and vocab.morph.get(w)))
@@ -133,6 +138,8 @@ class Leveller:
         # catches foreign-language lines whose words all get tagged as names
         alpha = sum(1 for t in sent.tokens if any(ch.isalpha() for ch in t.text))
 
+        complexity = self._complexity(sent)
+
         flags = list(seg.flags) if seg else []
         ignored = ignored if ignored is not None else (seg.ignored if seg else [])
         if self.cleaner.internet_text(ignored):
@@ -154,6 +161,7 @@ class Leveller:
                                            "tokens": m.tokens},
                                           **({"regions": m.regions} if m.regions else {}))
                                      for m in g_matches]},
+            "complexity": complexity,
             "tokens": tokens,
             "flags": flags,
         }
@@ -164,11 +172,67 @@ class Leveller:
                                             for i in ignored]
         return rec
 
+    # clausal dependency relations (UD): each marks a subordinate or coordinate clause
+    CLAUSAL = {"advcl", "ccomp", "csubj", "acl", "xcomp", "parataxis"}
+
+    def _complexity(self, sent: Sentence) -> dict:
+        """Structural measures, reported only; they never change a level.
+        words: tokens that are words (punctuation excluded)
+        clauses: finite verbs plus clausal dependents (advcl, ccomp, acl…), min 1
+        depth: deepest chain of heads from the root (1 = root only)
+        mean_dep_distance: average distance between each word and its head, a
+            standard working-memory measure (longer = harder)"""
+        words = [t for t in sent.tokens if t.upos != "PUNCT"]
+        if not words:
+            return {"words": 0, "clauses": 0, "depth": 0, "mean_dep_distance": 0.0}
+        finite = {t.i for t in words if t.feats.get("VerbForm") == "Fin"}
+        clausal = {t.i for t in words if t.rel.split(":")[0] in self.CLAUSAL}
+        clauses = max(1, len(finite | clausal))
+
+        def depth(t, seen=()):
+            if t.head == t.i or t.i in seen or t.head >= len(sent.tokens):
+                return 1
+            return 1 + depth(sent.tokens[t.head], seen + (t.i,))
+        max_depth = max(depth(t) for t in words)
+        dists = [abs(t.i - t.head) for t in words if t.head != t.i]
+        mdd = round(sum(dists) / len(dists), 2) if dists else 0.0
+        return {"words": len(words), "clauses": clauses, "depth": max_depth,
+                "mean_dep_distance": mdd}
+
+    def profile(self, records: list[dict]) -> dict:
+        """Whole-text vocabulary profile from level_text() records: running-word coverage
+        by band, and the lowest band reaching the coverage target (98% by default, the
+        usual threshold for reading without help). Coverage is only meaningful over a
+        text: for a single 20-word sentence 98% means every word."""
+        toks = [t for r in records for t in r["tokens"] if "level" in t]
+        total = len(toks)
+        by_band, cum, level_at_target = {}, 0, None
+        for lv in self.scale.levels:
+            n = sum(1 for t in toks if t["level"] == lv)
+            cum += n
+            by_band[lv] = {"tokens": n, "cumulative": round(cum / total, 4) if total else None}
+            if level_at_target is None and total and cum / total >= self.coverage_target:
+                level_at_target = lv
+        unranked = {}
+        for t in toks:
+            if t.get("match") == "none":
+                unranked[t["text"].lower()] = unranked.get(t["text"].lower(), 0) + 1
+        return {"sentences": len(records), "running_words": total, "coverage_by_band": by_band,
+                "coverage_target": self.coverage_target, "level_at_target": level_at_target,
+                "top_unranked": sorted(unranked.items(), key=lambda x: -x[1])[:50]}
+
     def _annotate(self, sent: Sentence) -> dict[int, str]:
         """Pre-grammar annotation: morphology correction, then vocabulary-derived
         features grammar patterns can use. `Lexicalised=Yes` marks a participle the
         vocab lists as an adjective (cansado, abierto), i.e. learnt as a word rather
         than formed productively (tomado, firmado)."""
+        # words in another script (Chinese characters in Spanish text) are foreign:
+        # no POS, no features, so no grammar pattern can match them
+        if self.script:
+            for t in sent.tokens:
+                if any(ch.isalpha() for ch in t.text) and not any(
+                        self.script in unicodedata.name(ch, "") for ch in t.text if ch.isalpha()):
+                    t.upos, t.feats = "X", {"Foreign": "Yes"}
         fixes = self.corrector.correct(sent) if self.corrector else {}
         for t in sent.tokens:
             if t.feats.get("VerbForm") == "Part" and self.vocab.known_as(t.text, t.lemma, "ADJ"):
