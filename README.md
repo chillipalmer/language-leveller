@@ -89,8 +89,8 @@ parsing, LL checks each verb against the lexicon and fixes its lemma and feature
 lemmas that appear in your frequency list. Every change is reported in the token's
 `morph_fix` field.
 
-On the Spanish grammar test suite, this lifts spaCy `es_core_news_md` from 97/102 to
-103/103, and `es_core_news_lg` from 94/102 to 101/103.
+On the original Spanish grammar test suite, this lifted spaCy `es_core_news_md` from 97/102
+to 103/103, and `es_core_news_lg` from 94/102 to 101/103.
 
 Build the lexicon with `tools/build_morph.py`, which reads UniMorph data and/or the verbecc
 conjugator. See [docs/ADDING_A_LANGUAGE.md](docs/ADDING_A_LANGUAGE.md).
@@ -129,12 +129,29 @@ any UD parser, e.g. UDPipe). The config lists backends in order of preference, a
 development. Stanza usually tags morphology more accurately than spaCy, so it is worth
 benchmarking with `leveller test-grammar --parser stanza:es`.
 
+## Benchmark
+
+LL was run over the project's 5,000 graded Spanish sentences, which were levelled earlier by
+a separate rule-based checker. The grammar levels agree on **98.7%** of sentences (4,934 of
+5,000).
+
+Most of the 66 disagreements are structures the old checker missed and LL finds correctly:
+imperatives, present perfects, clefts with *lo que*, and *a los que* relatives. The rest are
+genuine ambiguities, such as *-amos* forms, which can be present or preterite.
+
+Participle policy: participles that the vocab lists as adjectives (*cansado*, *abierto*) are
+vocabulary. Productive participles (*una decisión mal tomada*) are A2 grammar.
+
+Only 6 sentences contain a word that isn't in the 5,000-word list.
+
 ## Known limits
 
 - Grammar detection is pattern-based over a statistical parse. Rare structures can be missed,
   and parser errors can still cause false positives.
 - Some forms are genuinely ambiguous without context (*abre* = "opens" or "open!"). LL trusts
   the parser in these cases.
+- *ser*/*ir* in the preterite (*fue*, *fueron*) gets whichever lemma the parser picks, so
+  *fueron al mar* ("went") can be credited to *ser*.
 - Each sentence's `ignored` list covers the whole source line it came from.
 
 ## Licences

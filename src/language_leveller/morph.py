@@ -61,15 +61,21 @@ class MorphLexicon:
 class MorphCorrector:
     def __init__(self, lex: MorphLexicon, cfg: dict, rank_of: Callable[[str], int | None],
                  clitic_patterns: list[re.Pattern] | None = None,
-                 fold: Callable[[str], str] | None = None):
+                 fold: Callable[[str], str] | None = None,
+                 known_as: Callable[[str, str, str], bool] | None = None):
         self.lex = lex
         self.rank_of = rank_of
         self.cues = {c.lower() for c in cfg.get("verb_cues", [])}
+        # cues for retagging a listed adjective; narrower, since some cue words are also
+        # articles before adjectives (Spanish neuter "lo": lo firme que…)
+        self.adj_cues = {c.lower() for c in cfg.get("adj_verb_cues", cfg.get("verb_cues", []))}
         self.pref = cfg.get("mood_preference", ["Ind", "Sub", "Imp", "Cnd"])
         # e.g. {mood: Imp, weight: 2}: a subjectless clause-initial verb leans imperative
         self.initial = cfg.get("initial_subjectless_boost")
         self.clitics = clitic_patterns or []
         self.fold = fold or (lambda s: s)
+        # known_as(form, lemma, upos): is this word listed with this POS in the vocab?
+        self.known_as = known_as or (lambda f, l, u: False)
 
     def _analyses(self, form: str):
         an = self.lex.get(form)
@@ -140,6 +146,30 @@ class MorphCorrector:
             change = None
             if t.upos in ("VERB", "AUX"):
                 change = self._apply(t, best, t.upos)
+            elif t.upos == "ADJ" and t.feats.get("VerbForm") == "Part" and not any(
+                    a[2].get("VerbForm") == "Part" for a in an):
+                # the parser claims a participle the lexicon has never seen (olvido)
+                t.feats.pop("VerbForm")
+                change = "VerbForm Part→_ (not a participle)"
+            elif t.upos == "ADJ":
+                # adjectival participles stay ADJ but gain VerbForm=Part for grammar
+                # patterns; other verb readings (encierres, controlándolo) are retagged
+                # under the same rules as nouns
+                nominal = [a for a in an if a[1] != "VERB"]
+                if best[2].get("VerbForm") == "Part":
+                    if t.feats.get("VerbForm") != "Part":
+                        t.feats["VerbForm"] = "Part"
+                        change = "VerbForm _→Part"
+                else:
+                    # a listed adjective (grave, libre, firme) is retagged only after a
+                    # verb cue ("No firmes el contrato"); unlisted ones also when the
+                    # lexicon knows no nominal reading (encierres, controlándolo)
+                    prev = next((x for x in reversed(s.tokens[:t.i]) if x.upos != "PUNCT"), None)
+                    cues = self.adj_cues if self.known_as(t.text, t.lemma, "ADJ") else self.cues
+                    cue = prev is not None and (prev.text.lower() in cues or prev.lemma.lower() in cues)
+                    listed = self.known_as(t.text, t.lemma, "ADJ")
+                    if cue or (not listed and not nominal):
+                        change = self._apply(t, best, "VERB")
             elif t.upos in RETAGGABLE:
                 nominal = [a for a in an if a[1] != "VERB"]
                 prev = next((x for x in reversed(s.tokens[:t.i]) if x.upos != "PUNCT"), None)

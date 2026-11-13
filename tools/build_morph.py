@@ -162,6 +162,11 @@ def main():
     a = ap.parse_args()
 
     rows: set[tuple[str, str, str, str]] = set()
+    vocab_words: set[str] = set()
+    if a.vocab:
+        dialect = "excel-tab" if a.vocab.endswith((".tsv", ".txt")) else "excel"
+        with open(a.vocab, encoding="utf-8-sig") as fh:
+            vocab_words = {(r.get("word") or "").strip() for r in csv.DictReader(fh, dialect=dialect)}
     if a.unimorph:
         rows.update(read_unimorph(a.unimorph))
         print(f"unimorph: {len(rows)} rows", file=sys.stderr)
@@ -180,8 +185,12 @@ def main():
         print(f"verbecc: {len(verbs)} verbs, +{len(rows) - n0} rows", file=sys.stderr)
 
     if not a.keep_all:
+        # keep: verb rows; non-verb rows whose form is also a verb form (ambiguity);
+        # non-verb rows whose lemma is in the vocab list (lemma lookup for inflected
+        # nouns/adjectives the parser fails to lemmatise)
         verb_forms = {r[0].lower() for r in rows if r[2] == "VERB"}
-        rows = {r for r in rows if r[2] == "VERB" or r[0].lower() in verb_forms}
+        rows = {r for r in rows if r[2] == "VERB" or r[0].lower() in verb_forms
+                or r[1] in vocab_words}
     op = gzip.open if a.out.endswith(".gz") else open
     with op(a.out, "wt", encoding="utf-8", newline="") as fh:
         fh.write("form\tlemma\tupos\tfeats\n")

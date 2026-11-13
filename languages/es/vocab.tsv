@@ -1,0 +1,5001 @@
+id	rank	word	pos	feats	variants
+el_DET	1	el	DET	PronType=Art	la|los|las
+de_ADP	2	de	ADP		del
+que_SCONJ	3	que	SCONJ		
+y_CCONJ	4	y	CCONJ		e
+a_ADP	5	a	ADP		al
+en_ADP	6	en	ADP		
+un_DET	7	un	DET	PronType=Art	una|unos|unas
+ser_VERB	8	ser	VERB		
+se_PRON	9	se	PRON		
+no_ADV	10	no	ADV		
+haber_VERB	11	haber	VERB		
+por_ADP	12	por	ADP		
+con_ADP	13	con	ADP		
+su_DET	14	su	DET		sus
+para_ADP	15	para	ADP		
+como_SCONJ	16	como	SCONJ		
+estar_VERB	17	estar	VERB		
+tener_VERB	18	tener	VERB		
+le_PRON	19	le	PRON		les
+lo_DET	20	lo	DET	PronType=Art	
+lo_PRON	21	lo	PRON		los
+todo_DET	22	todo	DET		
+pero_CCONJ	23	pero	CCONJ		
+más_ADJ	24	más	ADJ		
+hacer_VERB	25	hacer	VERB		
+o_CCONJ	26	o	CCONJ		u
+poder_VERB	27	poder	VERB		
+decir_VERB	28	decir	VERB		
+este_DET	29	este	DET		esta|estos|estas
+ir_VERB	30	ir	VERB		
+otro_DET	31	otro	DET		
+ese_DET	32	ese	DET		esa|esos|esas
+la_PRON	33	la	PRON		las
+si_SCONJ	34	si	SCONJ		
+me_PRON	35	me	PRON		
+ya_ADV	36	ya	ADV		
+ver_VERB	37	ver	VERB		
+porque_SCONJ	38	porque	SCONJ		
+dar_VERB	39	dar	VERB		
+cuando_SCONJ	40	cuando	SCONJ		
+él_PRON	41	él	PRON		ellos
+muy_ADV	42	muy	ADV		
+sin_ADP	43	sin	ADP		
+vez_NOUN	44	vez	NOUN	Gender=Fem	
+mucho_DET	45	mucho	DET		
+saber_VERB	46	saber	VERB		
+qué_PRON	47	qué	PRON		
+sobre_ADP	48	sobre	ADP		
+mi_DET	49	mi	DET		mis
+alguno_DET	50	alguno	DET		algún|alguna|algunos|algunas
+mismo_DET	51	mismo	DET		
+yo_PRON	52	yo	PRON		
+también_ADV	53	también	ADV		
+hasta_ADP	54	hasta	ADP		
+año_NOUN	55	año	NOUN	Gender=Masc	
+dos_NUM	56	dos	NUM		
+querer_VERB	57	querer	VERB		
+entre_ADP	58	entre	ADP		
+así_ADV	59	así	ADV		
+primero_ADJ	60	primero	ADJ		primer
+desde_ADP	61	desde	ADP		
+grande_ADJ	62	grande	ADJ		gran
+eso_PRON	63	eso	PRON		
+ni_CCONJ	64	ni	CCONJ		
+nos_PRON	65	nos	PRON		
+llegar_VERB	66	llegar	VERB		
+pasar_VERB	67	pasar	VERB		
+tiempo_NOUN	68	tiempo	NOUN	Gender=Masc	
+ella_PRON	69	ella	PRON		ellas
+sí_ADV	70	sí	ADV		
+día_NOUN	71	día	NOUN	Gender=Masc	
+uno_NUM	72	uno	NUM		una|un
+bien_ADV	73	bien	ADV		
+poco_DET	74	poco	DET		
+deber_VERB	75	deber	VERB		
+entonces_ADV	76	entonces	ADV		
+poner_VERB	77	poner	VERB		
+cosa_NOUN	78	cosa	NOUN	Gender=Fem	
+tanto_DET	79	tanto	DET		
+hombre_NOUN	80	hombre	NOUN	Gender=Masc	
+parecer_VERB	81	parecer	VERB		
+nuestro_DET	82	nuestro	DET		
+tan_ADV	83	tan	ADV		
+donde_SCONJ	84	donde	SCONJ		
+ahora_ADV	85	ahora	ADV		
+parte_NOUN	86	parte	NOUN	Gender=Fem	
+después_ADV	87	después	ADV		
+vida_NOUN	88	vida	NOUN	Gender=Fem	
+quedar_VERB	89	quedar	VERB		
+siempre_ADV	90	siempre	ADV		
+creer_VERB	91	creer	VERB		
+hablar_VERB	92	hablar	VERB		
+llevar_VERB	93	llevar	VERB		
+dejar_VERB	94	dejar	VERB		
+nada_PRON	95	nada	PRON		
+cada_DET	96	cada	DET		
+seguir_VERB	97	seguir	VERB		
+menos_ADJ	98	menos	ADJ		
+nuevo_ADJ	99	nuevo	ADJ		
+encontrar_VERB	100	encontrar	VERB		
+algo_PRON	101	algo	PRON		
+sólo_ADV	102	sólo	ADV		
+pues_SCONJ	103	pues	SCONJ		
+llamar_VERB	104	llamar	VERB		
+venir_VERB	105	venir	VERB		
+pensar_VERB	106	pensar	VERB		
+aquel_DET	107	aquel	DET		aquella|aquellos|aquellas
+momento_NOUN	108	momento	NOUN	Gender=Masc	
+sino_CCONJ	109	sino	CCONJ		
+esto_PRON	110	esto	PRON		
+salir_VERB	111	salir	VERB		
+volver_VERB	112	volver	VERB		
+forma_NOUN	113	forma	NOUN	Gender=Fem	
+antes_ADV	114	antes	ADV		
+bueno_ADJ	115	bueno	ADJ		buen
+casa_NOUN	116	casa	NOUN	Gender=Fem	
+aunque_SCONJ	117	aunque	SCONJ		
+mundo_NOUN	118	mundo	NOUN	Gender=Masc	
+tres_NUM	119	tres	NUM		
+tal_DET	120	tal	DET		
+mejor_ADJ	121	mejor	ADJ		
+tomar_VERB	122	tomar	VERB		
+cierto_DET	123	cierto	DET		
+conocer_VERB	124	conocer	VERB		
+hacia_ADP	125	hacia	ADP		
+cómo_ADV	126	cómo	ADV		
+mujer_NOUN	127	mujer	NOUN	Gender=Fem	
+vivir_VERB	128	vivir	VERB		
+aquí_ADV	129	aquí	ADV		
+caso_NOUN	130	caso	NOUN	Gender=Masc	
+sentir_VERB	131	sentir	VERB		
+luego_ADV	132	luego	ADV		
+país_NOUN	133	país	NOUN	Gender=Masc	
+tratar_VERB	134	tratar	VERB		
+lugar_NOUN	135	lugar	NOUN	Gender=Masc	
+te_PRON	136	te	PRON		
+persona_NOUN	137	persona	NOUN	Gender=Fem	
+mayor_ADJ	138	mayor	ADJ		
+último_ADJ	139	último	ADJ		
+propio_ADJ	140	propio	ADJ		
+quien_PRON	141	quien	PRON		quienes
+mirar_VERB	142	mirar	VERB		
+hora_NOUN	143	hora	NOUN	Gender=Fem	
+ninguno_DET	144	ninguno	DET		ningún|ninguna|ningunos|ningunas
+trabajo_NOUN	145	trabajo	NOUN	Gender=Masc	
+casi_ADV	146	casi	ADV		
+punto_NOUN	147	punto	NOUN	Gender=Masc	
+durante_ADV	148	durante	ADV		
+cualquier_DET	149	cualquier	DET		cualquiera|cualesquiera
+mano_NOUN	150	mano	NOUN	Gender=Fem	
+nunca_ADV	151	nunca	ADV		
+manera_NOUN	152	manera	NOUN	Gender=Fem	
+cual_PRON	153	cual	PRON		cuales
+mientras_SCONJ	154	mientras	SCONJ		
+contar_VERB	155	contar	VERB		
+fin_NOUN	156	fin	NOUN	Gender=Masc	
+tipo_NOUN	157	tipo	NOUN	Gender=Masc	
+gente_NOUN	158	gente	NOUN	Gender=Fem	
+además_ADV	159	además	ADV		
+solo_ADJ	160	solo	ADJ		
+empezar_VERB	161	empezar	VERB		
+ejemplo_NOUN	162	ejemplo	NOUN	Gender=Masc	
+esperar_VERB	163	esperar	VERB		
+hoy_ADV	164	hoy	ADV		
+lado_NOUN	165	lado	NOUN	Gender=Masc	
+hijo_NOUN	166	hijo	NOUN	Gender=Masc	
+allí_ADV	167	allí	ADV		
+éste_PRON	168	éste	PRON		ésta|éstos|éstas
+problema_NOUN	169	problema	NOUN	Gender=Masc	
+cuenta_NOUN	170	cuenta	NOUN	Gender=Fem	
+medio_NOUN	171	medio	NOUN	Gender=Masc	
+contra_ADP	172	contra	ADP		
+buscar_VERB	173	buscar	VERB		
+dentro_ADV	174	dentro	ADV		
+largo_ADJ	175	largo	ADJ		
+palabra_NOUN	176	palabra	NOUN	Gender=Fem	
+existir_VERB	177	existir	VERB		
+niño_NOUN	178	niño	NOUN	Gender=Masc	
+entrar_VERB	179	entrar	VERB		
+embargo_NOUN	180	embargo	NOUN	Gender=Masc	
+único_ADJ	181	único	ADJ		
+padre_NOUN	182	padre	NOUN	Gender=Masc	
+trabajar_VERB	183	trabajar	VERB		
+pequeño_ADJ	184	pequeño	ADJ		
+alto_ADJ	185	alto	ADJ		
+cambio_NOUN	186	cambio	NOUN	Gender=Masc	
+escribir_VERB	187	escribir	VERB		
+cuatro_NUM	188	cuatro	NUM		
+ahí_ADV	189	ahí	ADV		
+perder_VERB	190	perder	VERB		
+nosotros_PRON	191	nosotros	PRON		nosotras
+historia_NOUN	192	historia	NOUN	Gender=Fem	
+idea_NOUN	193	idea	NOUN	Gender=Fem	
+agua_NOUN	194	agua	NOUN	Gender=Fem	
+producir_VERB	195	producir	VERB		
+noche_NOUN	196	noche	NOUN	Gender=Fem	
+ciudad_NOUN	197	ciudad	NOUN	Gender=Fem	
+modo_NOUN	198	modo	NOUN	Gender=Masc	
+nombre_NOUN	199	nombre	NOUN	Gender=Masc	
+ocurrir_VERB	200	ocurrir	VERB		
+familia_NOUN	201	familia	NOUN	Gender=Fem	
+realidad_NOUN	202	realidad	NOUN	Gender=Fem	
+entender_VERB	203	entender	VERB		
+pedir_VERB	204	pedir	VERB		
+recibir_VERB	205	recibir	VERB		
+obra_NOUN	206	obra	NOUN	Gender=Fem	
+importante_ADJ	207	importante	ADJ		
+medio_ADJ	208	medio	ADJ		
+verdad_NOUN	209	verdad	NOUN	Gender=Fem	
+mes_NOUN	210	mes	NOUN	Gender=Masc	
+todavía_ADV	211	todavía	ADV		
+razón_NOUN	212	razón	NOUN	Gender=Fem	
+cuanto_DET	213	cuanto	DET		
+bajo_ADP	214	bajo	ADP		
+recordar_VERB	215	recordar	VERB		
+grupo_NOUN	216	grupo	NOUN	Gender=Masc	
+mil_NUM	217	mil	NUM		
+humano_ADJ	218	humano	ADJ		
+terminar_VERB	219	terminar	VERB		
+permitir_VERB	220	permitir	VERB		
+aparecer_VERB	221	aparecer	VERB		
+conseguir_VERB	222	conseguir	VERB		
+comenzar_VERB	223	comenzar	VERB		
+varios_DET	224	varios	DET		
+posible_ADJ	225	posible	ADJ		
+servir_VERB	226	servir	VERB		
+general_ADJ	227	general	ADJ		
+sacar_VERB	228	sacar	VERB		
+necesitar_VERB	229	necesitar	VERB		
+relación_NOUN	230	relación	NOUN	Gender=Fem	
+cinco_NUM	231	cinco	NUM		
+cuerpo_NOUN	232	cuerpo	NOUN	Gender=Masc	
+nadie_PRON	233	nadie	PRON		
+mantener_VERB	234	mantener	VERB		
+hecho_NOUN	235	hecho	NOUN	Gender=Masc	
+ante_ADP	236	ante	ADP		
+principio_NOUN	237	principio	NOUN	Gender=Masc	
+resultar_VERB	238	resultar	VERB		
+igual_ADJ	239	igual	ADJ		
+señor_NOUN	240	señor	NOUN	Gender=Masc	
+pueblo_NOUN	241	pueblo	NOUN	Gender=Masc	
+tarde_NOUN	242	tarde	NOUN	Gender=Fem	
+segundo_ADJ	243	segundo	ADJ		
+leer_VERB	244	leer	VERB		
+caer_VERB	245	caer	VERB		
+cambiar_VERB	246	cambiar	VERB		
+ojo_NOUN	247	ojo	NOUN	Gender=Masc	
+calle_NOUN	248	calle	NOUN	Gender=Fem	
+presentar_VERB	249	presentar	VERB		
+blanco_ADJ	250	blanco	ADJ		
+crear_VERB	251	crear	VERB		
+abrir_VERB	252	abrir	VERB		
+libro_NOUN	253	libro	NOUN	Gender=Masc	
+distinto_ADJ	254	distinto	ADJ		
+fuerza_NOUN	255	fuerza	NOUN	Gender=Fem	
+luz_NOUN	256	luz	NOUN	Gender=Fem	
+según_ADP	257	según	ADP		
+santo_NOUN	258	santo	NOUN	Gender=Masc	
+claro_ADJ	259	claro	ADJ		
+frente_NOUN	260	frente	NOUN	Gender=Masc,Fem	
+considerar_VERB	261	considerar	VERB		
+amigo_NOUN	262	amigo	NOUN	Gender=Masc	
+oír_VERB	263	oír	VERB		
+cuyo_ADJ	264	cuyo	ADJ		
+sentido_NOUN	265	sentido	NOUN	Gender=Masc	
+acabar_VERB	266	acabar	VERB		
+paso_NOUN	267	paso	NOUN	Gender=Masc	
+situación_NOUN	268	situación	NOUN	Gender=Fem	
+usted_PRON	269	usted	PRON		
+bastante_DET	270	bastante	DET		
+convertir_VERB	271	convertir	VERB		
+gracia_NOUN	272	gracia	NOUN	Gender=Fem	
+siglo_NOUN	273	siglo	NOUN	Gender=Masc	
+dios_NOUN	274	dios	NOUN	Gender=Masc	
+malo_ADJ	275	malo	ADJ		mal
+tierra_NOUN	276	tierra	NOUN	Gender=Fem	
+papel_NOUN	277	papel	NOUN	Gender=Masc	
+madre_NOUN	278	madre	NOUN	Gender=Fem	
+tampoco_ADV	279	tampoco	ADV		
+social_ADJ	280	social	ADJ		
+viejo_ADJ	281	viejo	ADJ		
+aún_ADV	282	aún	ADV		
+tema_NOUN	283	tema	NOUN	Gender=Masc	
+político_ADJ	284	político	ADJ		
+español_ADJ	285	español	ADJ		
+ganar_VERB	286	ganar	VERB		
+formar_VERB	287	formar	VERB		
+clase_NOUN	288	clase	NOUN	Gender=Fem	
+traer_VERB	289	traer	VERB		
+partir_VERB	290	partir	VERB		
+dinero_NOUN	291	dinero	NOUN	Gender=Masc	
+quién_PRON	292	quién	PRON		quiénes
+morir_VERB	293	morir	VERB		
+incluso_ADV	294	incluso	ADV		
+campo_NOUN	295	campo	NOUN	Gender=Masc	
+aceptar_VERB	296	aceptar	VERB		
+quizás_ADV	297	quizás	ADV		quizá
+cabeza_NOUN	298	cabeza	NOUN	Gender=Fem	
+realizar_VERB	299	realizar	VERB		
+ciento_NUM	300	ciento	NUM		cien
+mal_ADV	301	mal	ADV		
+orden_NOUN	302	orden	NOUN	Gender=Masc,Fem	
+don_NOUN	303	don	NOUN	Gender=Masc	
+semana_NOUN	304	semana	NOUN	Gender=Fem	
+suponer_VERB	305	suponer	VERB		
+comprender_VERB	306	comprender	VERB		
+final_NOUN	307	final	NOUN	Gender=Masc,Fem	
+interés_NOUN	308	interés	NOUN	Gender=Masc	
+siguiente_ADJ	309	siguiente	ADJ		
+vista_NOUN	310	vista	NOUN	Gender=Fem	
+lograr_VERB	311	lograr	VERB		
+demás_ADJ	312	demás	ADJ		
+acuerdo_NOUN	313	acuerdo	NOUN	Gender=Masc	
+difícil_ADJ	314	difícil	ADJ		
+número_NOUN	315	número	NOUN	Gender=Masc	
+explicar_VERB	316	explicar	VERB		
+negro_ADJ	317	negro	ADJ		
+fondo_NOUN	318	fondo	NOUN	Gender=Masc	
+camino_NOUN	319	camino	NOUN	Gender=Masc	
+voz_NOUN	320	voz	NOUN	Gender=Fem	
+estudio_NOUN	321	estudio	NOUN	Gender=Masc	
+necesario_ADJ	322	necesario	ADJ		
+preguntar_VERB	323	preguntar	VERB		
+allá_ADV	324	allá	ADV		
+tocar_VERB	325	tocar	VERB		
+valor_NOUN	326	valor	NOUN	Gender=Masc	
+reconocer_VERB	327	reconocer	VERB		
+estudiar_VERB	328	estudiar	VERB		
+alcanzar_VERB	329	alcanzar	VERB		
+nacer_VERB	330	nacer	VERB		
+dirigir_VERB	331	dirigir	VERB		
+correr_VERB	332	correr	VERB		
+medida_NOUN	333	medida	NOUN	Gender=Fem	
+menor_ADJ	334	menor	ADJ		
+demasiado_DET	335	demasiado	DET		
+solamente_ADV	336	solamente	ADV		
+bueno_ADV	337	bueno	ADV		
+utilizar_VERB	338	utilizar	VERB		
+centro_NOUN	339	centro	NOUN	Gender=Masc	
+necesidad_NOUN	340	necesidad	NOUN	Gender=Fem	
+condición_NOUN	341	condición	NOUN	Gender=Fem	
+pagar_VERB	342	pagar	VERB		
+ello_PRON	343	ello	PRON		
+falta_NOUN	344	falta	NOUN	Gender=Fem	
+ayudar_VERB	345	ayudar	VERB		
+diez_NUM	346	diez	NUM		
+través_ADV	347	través	ADV		
+antiguo_ADJ	348	antiguo	ADJ		
+tu_DET	349	tu	DET		tus
+edad_NOUN	350	edad	NOUN	Gender=Fem	
+estado_NOUN	351	estado	NOUN	Gender=Masc	
+ser_NOUN	352	ser	NOUN	Gender=Masc	
+gustar_VERB	353	gustar	VERB		
+puerta_NOUN	354	puerta	NOUN	Gender=Fem	
+jugar_VERB	355	jugar	VERB		
+cara_NOUN	356	cara	NOUN	Gender=Fem	
+mí_PRON	357	mí	PRON		
+época_NOUN	358	época	NOUN	Gender=Fem	
+color_NOUN	359	color	NOUN	Gender=Masc	
+escuchar_VERB	360	escuchar	VERB		
+experiencia_NOUN	361	experiencia	NOUN	Gender=Fem	
+movimiento_NOUN	362	movimiento	NOUN	Gender=Masc	
+cumplir_VERB	363	cumplir	VERB		
+especial_ADJ	364	especial	ADJ		
+diferente_ADJ	365	diferente	ADJ		
+pesar_NOUN	366	pesar	NOUN	Gender=Masc	
+posibilidad_NOUN	367	posibilidad	NOUN	Gender=Fem	
+ofrecer_VERB	368	ofrecer	VERB		
+descubrir_VERB	369	descubrir	VERB		
+anterior_ADJ	370	anterior	ADJ		
+juego_NOUN	371	juego	NOUN	Gender=Masc	
+levantar_VERB	372	levantar	VERB		
+pobre_ADJ	373	pobre	ADJ		
+aire_NOUN	374	aire	NOUN	Gender=Masc	
+seis_NUM	375	seis	NUM		
+intentar_VERB	376	intentar	VERB		
+guerra_NOUN	377	guerra	NOUN	Gender=Fem	
+junto_ADV	378	junto	ADV		
+resultado_NOUN	379	resultado	NOUN	Gender=Masc	
+usar_VERB	380	usar	VERB		
+decidir_VERB	381	decidir	VERB		
+repetir_VERB	382	repetir	VERB		
+olvidar_VERB	383	olvidar	VERB		
+ley_NOUN	384	ley	NOUN	Gender=Fem	
+aspecto_NOUN	385	aspecto	NOUN	Gender=Masc	
+pie_NOUN	386	pie	NOUN	Gender=Masc	
+valer_VERB	387	valer	VERB		
+especie_NOUN	388	especie	NOUN	Gender=Fem	
+comer_VERB	389	comer	VERB		
+servicio_NOUN	390	servicio	NOUN	Gender=Masc	
+cerca_ADV	391	cerca	ADV		
+mostrar_VERB	392	mostrar	VERB		
+actividad_NOUN	393	actividad	NOUN	Gender=Fem	
+tercero_ADJ	394	tercero	ADJ		tercer
+cuál_PRON	395	cuál	PRON		cuáles
+pronto_ADV	396	pronto	ADV		
+ocupar_VERB	397	ocupar	VERB		
+cuestión_NOUN	398	cuestión	NOUN	Gender=Fem	
+duda_NOUN	399	duda	NOUN	Gender=Fem	
+diferencia_NOUN	400	diferencia	NOUN	Gender=Fem	
+mañana_NOUN	401	mañana	NOUN	Gender=Fem	
+mover_VERB	402	mover	VERB		
+continuar_VERB	403	continuar	VERB		
+cantidad_NOUN	404	cantidad	NOUN	Gender=Fem	
+acción_NOUN	405	acción	NOUN	Gender=Fem	
+suceder_VERB	406	suceder	VERB		
+fijar_VERB	407	fijar	VERB		
+sociedad_NOUN	408	sociedad	NOUN	Gender=Fem	
+referir_VERB	409	referir	VERB		
+acercar_VERB	410	acercar	VERB		
+capaz_ADJ	411	capaz	ADJ		
+bajo_ADJ	412	bajo	ADJ		
+libre_ADJ	413	libre	ADJ		
+natural_ADJ	414	natural	ADJ		
+dedicar_VERB	415	dedicar	VERB		
+realmente_ADV	416	realmente	ADV		
+peso_NOUN	417	peso	NOUN	Gender=Masc	
+efecto_NOUN	418	efecto	NOUN	Gender=Masc	
+objeto_NOUN	419	objeto	NOUN	Gender=Masc	
+verdadero_ADJ	420	verdadero	ADJ		
+dónde_ADV	421	dónde	ADV		
+aprender_VERB	422	aprender	VERB		
+amor_NOUN	423	amor	NOUN	Gender=Masc	
+muerte_NOUN	424	muerte	NOUN	Gender=Fem	
+partido_NOUN	425	partido	NOUN	Gender=Masc	
+económico_ADJ	426	económico	ADJ		
+derecho_NOUN	427	derecho	NOUN	Gender=Masc	
+poder_NOUN	428	poder	NOUN	Gender=Masc	
+importancia_NOUN	429	importancia	NOUN	Gender=Fem	
+sistema_NOUN	430	sistema	NOUN	Gender=Masc	
+viaje_NOUN	431	viaje	NOUN	Gender=Masc	
+suelo_NOUN	432	suelo	NOUN	Gender=Masc	
+respecto_NOUN	433	respecto	NOUN	Gender=Masc	
+conocimiento_NOUN	434	conocimiento	NOUN	Gender=Masc	
+libertad_NOUN	435	libertad	NOUN	Gender=Fem	
+encima_ADV	436	encima	ADV		
+comprar_VERB	437	comprar	VERB		
+común_ADJ	438	común	ADJ		
+abierto_ADJ	439	abierto	ADJ		
+próximo_ADJ	440	próximo	ADJ		
+atención_NOUN	441	atención	NOUN	Gender=Fem	
+joven_ADJ	442	joven	ADJ		
+subir_VERB	443	subir	VERB		
+esfuerzo_NOUN	444	esfuerzo	NOUN	Gender=Masc	
+pasado_ADJ	445	pasado	ADJ		
+evitar_VERB	446	evitar	VERB		
+resto_NOUN	447	resto	NOUN	Gender=Masc	
+interesar_VERB	448	interesar	VERB		
+zona_NOUN	449	zona	NOUN	Gender=Fem	
+miedo_NOUN	450	miedo	NOUN	Gender=Masc	
+fuera_ADV	451	fuera	ADV		
+proceso_NOUN	452	proceso	NOUN	Gender=Masc	
+vivo_ADJ	453	vivo	ADJ		
+cerrar_VERB	454	cerrar	VERB		
+echar_VERB	455	echar	VERB		
+responder_VERB	456	responder	VERB		
+sufrir_VERB	457	sufrir	VERB		
+completo_ADJ	458	completo	ADJ		
+minuto_NOUN	459	minuto	NOUN	Gender=Masc	
+contrario_ADJ	460	contrario	ADJ		
+mesa_NOUN	461	mesa	NOUN	Gender=Fem	
+real_ADJ	462	real	ADJ		
+ocasión_NOUN	463	ocasión	NOUN	Gender=Fem	
+importar_VERB	464	importar	VERB		
+público_ADJ	465	público	ADJ		
+obtener_VERB	466	obtener	VERB		
+programa_NOUN	467	programa	NOUN	Gender=Masc	
+favor_NOUN	468	favor	NOUN	Gender=Masc	
+lejos_ADV	469	lejos	ADV		
+siete_NUM	470	siete	NUM		
+enorme_ADJ	471	enorme	ADJ		
+respuesta_NOUN	472	respuesta	NOUN	Gender=Fem	
+línea_NOUN	473	línea	NOUN	Gender=Fem	
+espacio_NOUN	474	espacio	NOUN	Gender=Masc	
+nivel_NOUN	475	nivel	NOUN	Gender=Masc	
+gobierno_NOUN	476	gobierno	NOUN	Gender=Masc	
+cabo_NOUN	477	cabo	NOUN	Gender=Masc	
+observar_VERB	478	observar	VERB		
+indicar_VERB	479	indicar	VERB		
+alguien_PRON	480	alguien	PRON		
+pregunta_NOUN	481	pregunta	NOUN	Gender=Fem	
+claro_ADV	482	claro	ADV		
+atrás_ADV	483	atrás	ADV		
+imagen_NOUN	484	imagen	NOUN	Gender=Fem	
+carrera_NOUN	485	carrera	NOUN	Gender=Fem	
+imaginar_VERB	486	imaginar	VERB		
+soler_VERB	487	soler	VERB		
+ambos_DET	488	ambos	DET		
+profundo_ADJ	489	profundo	ADJ		
+detener_VERB	490	detener	VERB		
+desarrollar_VERB	491	desarrollar	VERB		
+ocho_NUM	492	ocho	NUM		
+señalar_VERB	493	señalar	VERB		
+elegir_VERB	494	elegir	VERB		
+figura_NOUN	495	figura	NOUN	Gender=Fem	
+principal_ADJ	496	principal	ADJ		
+animal_NOUN	497	animal	NOUN	Gender=Masc	
+base_NOUN	498	base	NOUN	Gender=Fem	
+preparar_VERB	499	preparar	VERB		
+proponer_VERB	500	proponer	VERB		
+demostrar_VERB	501	demostrar	VERB		
+significar_VERB	502	significar	VERB		
+posición_NOUN	503	posición	NOUN	Gender=Fem	
+motivo_NOUN	504	motivo	NOUN	Gender=Masc	
+prueba_NOUN	505	prueba	NOUN	Gender=Fem	
+política_NOUN	506	política	NOUN	Gender=Fem	
+nacional_ADJ	507	nacional	ADJ		
+lleno_ADJ	508	lleno	ADJ		
+reunir_VERB	509	reunir	VERB		
+faltar_VERB	510	faltar	VERB		
+supuesto_ADJ	511	supuesto	ADJ		
+acompañar_VERB	512	acompañar	VERB		
+dato_NOUN	513	dato	NOUN	Gender=Masc	
+fácil_ADJ	514	fácil	ADJ		
+desear_VERB	515	desear	VERB		
+adelante_ADV	516	adelante	ADV		
+empresa_NOUN	517	empresa	NOUN	Gender=Fem	
+asunto_NOUN	518	asunto	NOUN	Gender=Masc	
+presencia_NOUN	519	presencia	NOUN	Gender=Fem	
+suyo_PRON	520	suyo	PRON		
+cultura_NOUN	521	cultura	NOUN	Gender=Fem	
+serie_NOUN	522	serie	NOUN	Gender=Fem	
+millón_NUM	523	millón	NUM		
+enseñar_VERB	524	enseñar	VERB		
+construir_VERB	525	construir	VERB		
+vender_VERB	526	vender	VERB		
+representar_VERB	527	representar	VERB		
+desaparecer_VERB	528	desaparecer	VERB		
+mandar_VERB	529	mandar	VERB		
+carácter_NOUN	530	carácter	NOUN	Gender=Masc	
+mayoría_NOUN	531	mayoría	NOUN	Gender=Fem	
+escuela_NOUN	532	escuela	NOUN	Gender=Fem	
+rojo_ADJ	533	rojo	ADJ		
+tras_ADP	534	tras	ADP		
+superior_ADJ	535	superior	ADJ		
+andar_VERB	536	andar	VERB		
+corto_ADJ	537	corto	ADJ		
+autor_NOUN	538	autor	NOUN	Gender=Masc,Fem	autora
+hermano_NOUN	539	hermano	NOUN	Gender=Masc	
+conocido_ADJ	540	conocido	ADJ		
+preferir_VERB	541	preferir	VERB		
+asegurar_VERB	542	asegurar	VERB		
+función_NOUN	543	función	NOUN	Gender=Fem	
+arriba_ADV	544	arriba	ADV		
+serio_ADJ	545	serio	ADJ		
+causa_NOUN	546	causa	NOUN	Gender=Fem	
+suficiente_ADJ	547	suficiente	ADJ		
+grave_ADJ	548	grave	ADJ		
+decisión_NOUN	549	decisión	NOUN	Gender=Fem	
+música_NOUN	550	música	NOUN	Gender=Fem	
+extraño_ADJ	551	extraño	ADJ		
+crecer_VERB	552	crecer	VERB		
+surgir_VERB	553	surgir	VERB		
+tú_PRON	554	tú	PRON		
+expresión_NOUN	555	expresión	NOUN	Gender=Fem	
+alrededor_ADV	556	alrededor	ADV		
+matar_VERB	557	matar	VERB		
+entregar_VERB	558	entregar	VERB		
+río_NOUN	559	río	NOUN	Gender=Masc	
+seguridad_NOUN	560	seguridad	NOUN	Gender=Fem	
+término_NOUN	561	término	NOUN	Gender=Masc	
+colocar_VERB	562	colocar	VERB		
+metro_NOUN	563	metro	NOUN	Gender=Masc	
+médico_NOUN	564	médico	NOUN	Gender=Masc,Fem	médica
+establecer_VERB	565	establecer	VERB		
+guardar_VERB	566	guardar	VERB		
+arte_NOUN	567	arte	NOUN	Gender=Masc	
+iniciar_VERB	568	iniciar	VERB		
+bajar_VERB	569	bajar	VERB		
+consecuencia_NOUN	570	consecuencia	NOUN	Gender=Fem	
+notar_VERB	571	notar	VERB		
+acto_NOUN	572	acto	NOUN	Gender=Masc	
+meter_VERB	573	meter	VERB		
+absoluto_ADJ	574	absoluto	ADJ		
+pena_NOUN	575	pena	NOUN	Gender=Fem	
+actuar_VERB	576	actuar	VERB		
+segundo_NOUN	577	segundo	NOUN	Gender=Masc	
+altura_NOUN	578	altura	NOUN	Gender=Fem	
+deseo_NOUN	579	deseo	NOUN	Gender=Masc	
+precisamente_ADV	580	precisamente	ADV		
+joven_NOUN	581	joven	NOUN	Gender=Com	
+veinte_NUM	582	veinte	NUM		
+sueño_NOUN	583	sueño	NOUN	Gender=Masc	
+pretender_VERB	584	pretender	VERB		
+tarea_NOUN	585	tarea	NOUN	Gender=Fem	
+carta_NOUN	586	carta	NOUN	Gender=Fem	
+apenas_ADV	587	apenas	ADV		
+propiedad_NOUN	588	propiedad	NOUN	Gender=Fem	
+producto_NOUN	589	producto	NOUN	Gender=Masc	
+personal_ADJ	590	personal	ADJ		
+simplemente_ADV	591	simplemente	ADV		
+imposible_ADJ	592	imposible	ADJ		
+gusto_NOUN	593	gusto	NOUN	Gender=Masc	
+ayuda_NOUN	594	ayuda	NOUN	Gender=Fem	
+acordar_VERB	595	acordar	VERB		
+lengua_NOUN	596	lengua	NOUN	Gender=Fem	
+cortar_VERB	597	cortar	VERB		
+plan_NOUN	598	plan	NOUN	Gender=Masc	
+corresponder_VERB	599	corresponder	VERB		
+vuelta_NOUN	600	vuelta	NOUN	Gender=Fem	
+romper_VERB	601	romper	VERB		
+siquiera_ADV	602	siquiera	ADV		
+adquirir_VERB	603	adquirir	VERB		
+proyecto_NOUN	604	proyecto	NOUN	Gender=Masc	
+memoria_NOUN	605	memoria	NOUN	Gender=Fem	
+origen_NOUN	606	origen	NOUN	Gender=Masc	
+elemento_NOUN	607	elemento	NOUN	Gender=Masc	
+inglés_ADJ	608	inglés	ADJ		
+mercado_NOUN	609	mercado	NOUN	Gender=Masc	
+curso_NOUN	610	curso	NOUN	Gender=Masc	
+lanzar_VERB	611	lanzar	VERB		
+aprovechar_VERB	612	aprovechar	VERB		
+sangre_NOUN	613	sangre	NOUN	Gender=Fem	
+interior_NOUN	614	interior	NOUN	Gender=Masc	
+duro_ADJ	615	duro	ADJ		
+apoyar_VERB	616	apoyar	VERB		
+negar_VERB	617	negar	VERB		
+avanzar_VERB	618	avanzar	VERB		
+uso_NOUN	619	uso	NOUN	Gender=Masc	
+brazo_NOUN	620	brazo	NOUN	Gender=Masc	
+profesor_NOUN	621	profesor	NOUN	Gender=Masc,Fem	profesora
+resolver_VERB	622	resolver	VERB		
+futuro_NOUN	623	futuro	NOUN	Gender=Masc	
+oportunidad_NOUN	624	oportunidad	NOUN	Gender=Fem	
+mitad_NOUN	625	mitad	NOUN	Gender=Fem	
+costar_VERB	626	costar	VERB		
+rico_ADJ	627	rico	ADJ		
+recuerdo_NOUN	628	recuerdo	NOUN	Gender=Masc	
+total_ADJ	629	total	ADJ		
+exigir_VERB	630	exigir	VERB		
+abajo_ADV	631	abajo	ADV		
+opinión_NOUN	632	opinión	NOUN	Gender=Fem	
+aumentar_VERB	633	aumentar	VERB		
+recoger_VERB	634	recoger	VERB		
+boca_NOUN	635	boca	NOUN	Gender=Fem	
+dirección_NOUN	636	dirección	NOUN	Gender=Fem	
+puro_ADJ	637	puro	ADJ		
+abandonar_VERB	638	abandonar	VERB		
+pieza_NOUN	639	pieza	NOUN	Gender=Fem	
+profesional_ADJ	640	profesional	ADJ		
+imponer_VERB	641	imponer	VERB		
+obligar_VERB	642	obligar	VERB		
+físico_ADJ	643	físico	ADJ		
+actitud_NOUN	644	actitud	NOUN	Gender=Fem	
+mar_NOUN	645	mar	NOUN	Gender=Masc,Fem	
+francés_ADJ	646	francés	ADJ		
+entrada_NOUN	647	entrada	NOUN	Gender=Fem	
+contacto_NOUN	648	contacto	NOUN	Gender=Masc	
+corazón_NOUN	649	corazón	NOUN	Gender=Masc	
+aplicar_VERB	650	aplicar	VERB		
+capital_NOUN	651	capital	NOUN	Gender=Masc,Fem	
+rápido_ADJ	652	rápido	ADJ		
+título_NOUN	653	título	NOUN	Gender=Masc	
+pertenecer_VERB	654	pertenecer	VERB		
+cuarto_NOUN	655	cuarto	NOUN	Gender=Masc	
+material_NOUN	656	material	NOUN	Gender=Masc	
+golpe_NOUN	657	golpe	NOUN	Gender=Masc	
+disponer_VERB	658	disponer	VERB		
+comunicación_NOUN	659	comunicación	NOUN	Gender=Fem	
+expresar_VERB	660	expresar	VERB		
+simple_ADJ	661	simple	ADJ		
+totalmente_ADV	662	totalmente	ADV		
+provocar_VERB	663	provocar	VERB		
+normal_ADJ	664	normal	ADJ		
+defender_VERB	665	defender	VERB		
+enfermedad_NOUN	666	enfermedad	NOUN	Gender=Fem	
+bien_NOUN	667	bien	NOUN	Gender=Masc	
+materia_NOUN	668	materia	NOUN	Gender=Fem	
+quitar_VERB	669	quitar	VERB		
+conservar_VERB	670	conservar	VERB		
+moderno_ADJ	671	moderno	ADJ		
+sitio_NOUN	672	sitio	NOUN	Gender=Masc	
+depender_VERB	673	depender	VERB		
+naturaleza_NOUN	674	naturaleza	NOUN	Gender=Fem	
+capacidad_NOUN	675	capacidad	NOUN	Gender=Fem	
+actual_ADJ	676	actual	ADJ		
+marcar_VERB	677	marcar	VERB		
+distancia_NOUN	678	distancia	NOUN	Gender=Fem	
+pleno_ADJ	679	pleno	ADJ		
+cerrado_ADJ	680	cerrado	ADJ		
+compartir_VERB	681	compartir	VERB		
+información_NOUN	682	información	NOUN	Gender=Fem	
+ambiente_NOUN	683	ambiente	NOUN	Gender=Masc	
+especialmente_ADV	684	especialmente	ADV		
+desarrollo_NOUN	685	desarrollo	NOUN	Gender=Masc	
+sol_NOUN	686	sol	NOUN	Gender=Masc	
+muerto_ADJ	687	muerto	ADJ		
+consistir_VERB	688	consistir	VERB		
+constituir_VERB	689	constituir	VERB		
+dispuesto_ADJ	690	dispuesto	ADJ		
+cubrir_VERB	691	cubrir	VERB		
+funcionar_VERB	692	funcionar	VERB		
+compañero_NOUN	693	compañero	NOUN	Gender=Masc	
+salida_NOUN	694	salida	NOUN	Gender=Fem	
+caber_VERB	695	caber	VERB		
+conciencia_NOUN	696	conciencia	NOUN	Gender=Fem	
+atender_VERB	697	atender	VERB		
+enfermo_ADJ	698	enfermo	ADJ		
+insistir_VERB	699	insistir	VERB		
+costumbre_NOUN	700	costumbre	NOUN	Gender=Fem	
+detrás_ADV	701	detrás	ADV		
+paz_NOUN	702	paz	NOUN	Gender=Fem	
+noticia_NOUN	703	noticia	NOUN	Gender=Fem	
+circunstancia_NOUN	704	circunstancia	NOUN	Gender=Fem	
+dolor_NOUN	705	dolor	NOUN	Gender=Masc	
+privado_ADJ	706	privado	ADJ		
+estilo_NOUN	707	estilo	NOUN	Gender=Masc	
+precio_NOUN	708	precio	NOUN	Gender=Masc	
+popular_ADJ	709	popular	ADJ		
+sentar_VERB	710	sentar	VERB		
+planta_NOUN	711	planta	NOUN	Gender=Fem	
+personaje_NOUN	712	personaje	NOUN	Gender=Masc	
+famoso_ADJ	713	famoso	ADJ		
+éxito_NOUN	714	éxito	NOUN	Gender=Masc	
+hija_NOUN	715	hija	NOUN	Gender=Fem	
+merecer_VERB	716	merecer	VERB		
+edificio_NOUN	717	edificio	NOUN	Gender=Masc	
+autoridad_NOUN	718	autoridad	NOUN	Gender=Fem	
+piedra_NOUN	719	piedra	NOUN	Gender=Fem	
+incluir_VERB	720	incluir	VERB		
+conjunto_NOUN	721	conjunto	NOUN	Gender=Masc	
+treinta_NUM	722	treinta	NUM		
+cuánto_ADJ	723	cuánto	ADJ		
+inmediato_ADJ	724	inmediato	ADJ		
+suerte_NOUN	725	suerte	NOUN	Gender=Fem	
+cruzar_VERB	726	cruzar	VERB		
+tender_VERB	727	tender	VERB		
+finalmente_ADV	728	finalmente	ADV		
+junto_ADJ	729	junto	ADJ		
+anunciar_VERB	730	anunciar	VERB		
+espíritu_NOUN	731	espíritu	NOUN	Gender=Masc	
+miembro_NOUN	732	miembro	NOUN	Gender=Masc	
+directo_ADJ	733	directo	ADJ		
+despertar_VERB	734	despertar	VERB		
+recurso_NOUN	735	recurso	NOUN	Gender=Masc	
+pared_NOUN	736	pared	NOUN	Gender=Fem	
+equipo_NOUN	737	equipo	NOUN	Gender=Masc	
+error_NOUN	738	error	NOUN	Gender=Masc	
+preciso_ADJ	739	preciso	ADJ		
+diverso_ADJ	740	diverso	ADJ		
+dificultad_NOUN	741	dificultad	NOUN	Gender=Fem	
+comentar_VERB	742	comentar	VERB		
+publicar_VERB	743	publicar	VERB		
+familiar_ADJ	744	familiar	ADJ		
+voluntad_NOUN	745	voluntad	NOUN	Gender=Fem	
+reunión_NOUN	746	reunión	NOUN	Gender=Fem	
+modelo_NOUN	747	modelo	NOUN	Gender=Com	
+cargar_VERB	748	cargar	VERB		
+fecha_NOUN	749	fecha	NOUN	Gender=Fem	
+participar_VERB	750	participar	VERB		
+impedir_VERB	751	impedir	VERB		
+propósito_NOUN	752	propósito	NOUN	Gender=Masc	
+salvar_VERB	753	salvar	VERB		
+cuidado_NOUN	754	cuidado	NOUN	Gender=Masc	
+puesto_NOUN	755	puesto	NOUN	Gender=Masc	
+grado_NOUN	756	grado	NOUN	Gender=Masc	
+escapar_VERB	757	escapar	VERB		
+lucha_NOUN	758	lucha	NOUN	Gender=Fem	
+tirar_VERB	759	tirar	VERB		
+entero_ADJ	760	entero	ADJ		
+jefe_NOUN	761	jefe	NOUN	Gender=Masc,Fem	
+interesante_ADJ	762	interesante	ADJ		
+amplio_ADJ	763	amplio	ADJ		
+contestar_VERB	764	contestar	VERB		
+periódico_NOUN	765	periódico	NOUN	Gender=Masc	
+preocupar_VERB	766	preocupar	VERB		
+prestar_VERB	767	prestar	VERB		
+par_NOUN	768	par	NOUN	Gender=Masc,Fem	
+público_NOUN	769	público	NOUN	Gender=Masc	
+pesar_VERB	770	pesar	VERB		
+final_ADJ	771	final	ADJ		
+calidad_NOUN	772	calidad	NOUN	Gender=Fem	
+exponer_VERB	773	exponer	VERB		
+civil_ADJ	774	civil	ADJ		
+ciencia_NOUN	775	ciencia	NOUN	Gender=Fem	
+tamaño_NOUN	776	tamaño	NOUN	Gender=Masc	
+mas_CCONJ	777	mas	CCONJ		
+doctor_NOUN	778	doctor	NOUN	Gender=Masc,Fem	doctora
+cuadro_NOUN	779	cuadro	NOUN	Gender=Masc	
+caballo_NOUN	780	caballo	NOUN	Gender=Masc	
+responsabilidad_NOUN	781	responsabilidad	NOUN	Gender=Fem	
+cincuenta_NUM	782	cincuenta	NUM		
+interno_ADJ	783	interno	ADJ		
+detalle_NOUN	784	detalle	NOUN	Gender=Masc	
+marcha_NOUN	785	marcha	NOUN	Gender=Fem	
+nueve_NUM	786	nueve	NUM		
+carne_NOUN	787	carne	NOUN	Gender=Fem	
+jamás_ADV	788	jamás	ADV		
+pensamiento_NOUN	789	pensamiento	NOUN	Gender=Masc	
+viajar_VERB	790	viajar	VERB		
+cargo_NOUN	791	cargo	NOUN	Gender=Masc	
+separar_VERB	792	separar	VERB		
+santa_NOUN	793	santa	NOUN	Gender=Fem	
+construcción_NOUN	794	construcción	NOUN	Gender=Fem	
+juicio_NOUN	795	juicio	NOUN	Gender=Masc	
+terreno_NOUN	796	terreno	NOUN	Gender=Masc	
+piso_NOUN	797	piso	NOUN	Gender=Masc	
+compañía_NOUN	798	compañía	NOUN	Gender=Fem	
+regresar_VERB	799	regresar	VERB		
+texto_NOUN	800	texto	NOUN	Gender=Masc	
+fuente_NOUN	801	fuente	NOUN	Gender=Fem	
+presente_NOUN	802	presente	NOUN	Gender=Masc	
+definitivo_ADJ	803	definitivo	ADJ		
+revista_NOUN	804	revista	NOUN	Gender=Fem	
+esperanza_NOUN	805	esperanza	NOUN	Gender=Fem	
+máquina_NOUN	806	máquina	NOUN	Gender=Fem	
+contemplar_VERB	807	contemplar	VERB		
+recorrer_VERB	808	recorrer	VERB		
+frase_NOUN	809	frase	NOUN	Gender=Fem	
+perfecto_ADJ	810	perfecto	ADJ		
+sala_NOUN	811	sala	NOUN	Gender=Fem	
+durar_VERB	812	durar	VERB		
+instrumento_NOUN	813	instrumento	NOUN	Gender=Masc	
+aquello_PRON	814	aquello	PRON		
+defensa_NOUN	815	defensa	NOUN	Gender=Fem	
+director_NOUN	816	director	NOUN	Gender=Masc,Fem	directora
+retirar_VERB	817	retirar	VERB		
+explicación_NOUN	818	explicación	NOUN	Gender=Fem	
+artículo_NOUN	819	artículo	NOUN	Gender=Masc	
+debajo_ADV	820	debajo	ADV		
+permanecer_VERB	821	permanecer	VERB		
+asistir_VERB	822	asistir	VERB		
+doce_NUM	823	doce	NUM		
+radio_NOUN	824	radio	NOUN	Gender=Masc,Fem	
+organizar_VERB	825	organizar	VERB		
+película_NOUN	826	película	NOUN	Gender=Fem	
+elección_NOUN	827	elección	NOUN	Gender=Fem	
+visita_NOUN	828	visita	NOUN	Gender=Fem	
+contener_VERB	829	contener	VERB		
+apoyo_NOUN	830	apoyo	NOUN	Gender=Masc	
+presidente_NOUN	831	presidente	NOUN	Gender=Masc	
+arma_NOUN	832	arma	NOUN	Gender=Fem	
+árbol_NOUN	833	árbol	NOUN	Gender=Masc	
+visitar_VERB	834	visitar	VERB		
+informar_VERB	835	informar	VERB		
+encuentro_NOUN	836	encuentro	NOUN	Gender=Masc	
+parecido_ADJ	837	parecido	ADJ		
+corriente_NOUN	838	corriente	NOUN	Gender=Fem	
+lectura_NOUN	839	lectura	NOUN	Gender=Fem	
+existencia_NOUN	840	existencia	NOUN	Gender=Fem	
+lenguaje_NOUN	841	lenguaje	NOUN	Gender=Masc	
+enviar_VERB	842	enviar	VERB		
+aun_ADV	843	aun	ADV		
+destino_NOUN	844	destino	NOUN	Gender=Masc	
+educación_NOUN	845	educación	NOUN	Gender=Fem	
+cuidar_VERB	846	cuidar	VERB		
+intervenir_VERB	847	intervenir	VERB		
+operación_NOUN	848	operación	NOUN	Gender=Fem	
+raro_ADJ	849	raro	ADJ		
+perfectamente_ADV	850	perfectamente	ADV		
+extender_VERB	851	extender	VERB		
+comprobar_VERB	852	comprobar	VERB		
+nota_NOUN	853	nota	NOUN	Gender=Fem	
+particular_ADJ	854	particular	ADJ		
+ése_PRON	855	ése	PRON		ésa|ésos|ésas
+militar_ADJ	856	militar	ADJ		
+dormir_VERB	857	dormir	VERB		
+unido_ADJ	858	unido	ADJ		
+discutir_VERB	859	discutir	VERB		
+extraordinario_ADJ	860	extraordinario	ADJ		
+teatro_NOUN	861	teatro	NOUN	Gender=Masc	
+enfrentar_VERB	862	enfrentar	VERB		
+recién_ADV	863	recién	ADV		
+negocio_NOUN	864	negocio	NOUN	Gender=Masc	
+letra_NOUN	865	letra	NOUN	Gender=Fem	
+peor_ADV	866	peor	ADV		
+sentimiento_NOUN	867	sentimiento	NOUN	Gender=Masc	
+conducir_VERB	868	conducir	VERB		
+completamente_ADV	869	completamente	ADV		
+firmar_VERB	870	firmar	VERB		
+solución_NOUN	871	solución	NOUN	Gender=Fem	
+mío_PRON	872	mío	PRON		
+comida_NOUN	873	comida	NOUN	Gender=Fem	
+impresión_NOUN	874	impresión	NOUN	Gender=Fem	
+plano_NOUN	875	plano	NOUN	Gender=Masc	
+intención_NOUN	876	intención	NOUN	Gender=Fem	
+ritmo_NOUN	877	ritmo	NOUN	Gender=Masc	
+verde_ADJ	878	verde	ADJ		
+exacto_ADJ	879	exacto	ADJ		
+respetar_VERB	880	respetar	VERB		
+banco_NOUN	881	banco	NOUN	Gender=Masc	
+inmediatamente_ADV	882	inmediatamente	ADV		
+sostener_VERB	883	sostener	VERB		
+piel_NOUN	884	piel	NOUN	Gender=Fem	
+delante_ADV	885	delante	ADV		
+religioso_ADJ	886	religioso	ADJ		
+advertir_VERB	887	advertir	VERB		
+oscuro_ADJ	888	oscuro	ADJ		
+control_NOUN	889	control	NOUN	Gender=Masc	
+investigación_NOUN	890	investigación	NOUN	Gender=Fem	
+transformar_VERB	891	transformar	VERB		
+conversación_NOUN	892	conversación	NOUN	Gender=Fem	
+verano_NOUN	893	verano	NOUN	Gender=Masc	
+respeto_NOUN	894	respeto	NOUN	Gender=Masc	
+norte_NOUN	895	norte	NOUN	Gender=Masc	
+mediante_ADP	896	mediante	ADP		
+cuarto_ADJ	897	cuarto	ADJ		
+tradición_NOUN	898	tradición	NOUN	Gender=Fem	
+bastar_VERB	899	bastar	VERB		
+población_NOUN	900	población	NOUN	Gender=Fem	
+pareja_NOUN	901	pareja	NOUN	Gender=Fem	
+pasado_NOUN	902	pasado	NOUN	Gender=Masc	
+diario_NOUN	903	diario	NOUN	Gender=Masc	
+azul_ADJ	904	azul	ADJ		
+mencionar_VERB	905	mencionar	VERB		
+generación_NOUN	906	generación	NOUN	Gender=Fem	
+frío_ADJ	907	frío	ADJ		
+visión_NOUN	908	visión	NOUN	Gender=Fem	
+concreto_ADJ	909	concreto	ADJ		
+plantear_VERB	910	plantear	VERB		
+probar_VERB	911	probar	VERB		
+derecho_ADJ	912	derecho	ADJ		
+peligro_NOUN	913	peligro	NOUN	Gender=Masc	
+oro_NOUN	914	oro	NOUN	Gender=Masc	
+justo_ADV	915	justo	ADV		
+manejar_VERB	916	manejar	VERB		
+vino_NOUN	917	vino	NOUN	Gender=Masc	
+unir_VERB	918	unir	VERB		
+caminar_VERB	919	caminar	VERB		
+coincidir_VERB	920	coincidir	VERB		
+etapa_NOUN	921	etapa	NOUN	Gender=Fem	
+sencillo_ADJ	922	sencillo	ADJ		
+silencio_NOUN	923	silencio	NOUN	Gender=Masc	
+salvo_ADV	924	salvo	ADV		
+llenar_VERB	925	llenar	VERB		
+dominar_VERB	926	dominar	VERB		
+determinado_ADJ	927	determinado	ADJ		
+artista_NOUN	928	artista	NOUN	Gender=Com	
+medir_VERB	929	medir	VERB		
+labor_NOUN	930	labor	NOUN	Gender=Fem	
+perdido_ADJ	931	perdido	ADJ		
+cielo_NOUN	932	cielo	NOUN	Gender=Masc	
+práctica_NOUN	933	práctica	NOUN	Gender=Fem	
+límite_NOUN	934	límite	NOUN	Gender=Masc	
+masa_NOUN	935	masa	NOUN	Gender=Fem	
+directamente_ADV	936	directamente	ADV		
+atravesar_VERB	937	atravesar	VERB		
+formación_NOUN	938	formación	NOUN	Gender=Fem	
+perro_NOUN	939	perro	NOUN	Gender=Masc	
+izquierda_NOUN	940	izquierda	NOUN	Gender=Fem	
+destacar_VERB	941	destacar	VERB		
+cercano_ADJ	942	cercano	ADJ		
+cuarenta_NUM	943	cuarenta	NUM		
+pronunciar_VERB	944	pronunciar	VERB		
+distinguir_VERB	945	distinguir	VERB		
+energía_NOUN	946	energía	NOUN	Gender=Fem	
+confianza_NOUN	947	confianza	NOUN	Gender=Fem	
+adecuado_ADJ	948	adecuado	ADJ		
+introducir_VERB	949	introducir	VERB		
+flor_NOUN	950	flor	NOUN	Gender=Fem	
+esposa_NOUN	951	esposa	NOUN	Gender=Fem	
+comunicar_VERB	952	comunicar	VERB		
+italiano_ADJ	953	italiano	ADJ		
+invitar_VERB	954	invitar	VERB		
+responsable_ADJ	955	responsable	ADJ		
+feliz_ADJ	956	feliz	ADJ		
+revolución_NOUN	957	revolución	NOUN	Gender=Fem	
+instalar_VERB	958	instalar	VERB		
+tardar_VERB	959	tardar	VERB		
+mejorar_VERB	960	mejorar	VERB		
+maestro_NOUN	961	maestro	NOUN	Gender=Masc	
+emplear_VERB	962	emplear	VERB		
+alemán_ADJ	963	alemán	ADJ		
+convenir_VERB	964	convenir	VERB		
+recuperar_VERB	965	recuperar	VERB		
+fenómeno_NOUN	966	fenómeno	NOUN	Gender=Masc	
+presión_NOUN	967	presión	NOUN	Gender=Fem	
+dado_ADJ	968	dado	ADJ		
+alumno_NOUN	969	alumno	NOUN	Gender=Masc	
+teoría_NOUN	970	teoría	NOUN	Gender=Fem	
+probablemente_ADV	971	probablemente	ADV		
+tono_NOUN	972	tono	NOUN	Gender=Masc	
+salud_NOUN	973	salud	NOUN	Gender=Fem	
+definir_VERB	974	definir	VERB		
+superar_VERB	975	superar	VERB		
+señora_NOUN	976	señora	NOUN	Gender=Fem	
+exactamente_ADV	977	exactamente	ADV		
+afirmar_VERB	978	afirmar	VERB		
+diario_ADJ	979	diario	ADJ		
+histórico_ADJ	980	histórico	ADJ		
+debido_ADJ	981	debido	ADJ		
+vía_NOUN	982	vía	NOUN	Gender=Fem	
+interpretar_VERB	983	interpretar	VERB		
+alma_NOUN	984	alma	NOUN	Gender=Fem	
+admitir_VERB	985	admitir	VERB		
+identificar_VERB	986	identificar	VERB		
+madera_NOUN	987	madera	NOUN	Gender=Fem	
+fiesta_NOUN	988	fiesta	NOUN	Gender=Fem	
+calor_NOUN	989	calor	NOUN	Gender=Masc	
+mínimo_ADJ	990	mínimo	ADJ		
+afectar_VERB	991	afectar	VERB		
+hogar_NOUN	992	hogar	NOUN	Gender=Masc	
+mente_NOUN	993	mente	NOUN	Gender=Fem	
+seguramente_ADV	994	seguramente	ADV		
+preocupación_NOUN	995	preocupación	NOUN	Gender=Fem	
+reducir_VERB	996	reducir	VERB		
+concepto_NOUN	997	concepto	NOUN	Gender=Masc	
+montar_VERB	998	montar	VERB		
+teléfono_NOUN	999	teléfono	NOUN	Gender=Masc	
+hoja_NOUN	1000	hoja	NOUN	Gender=Fem	
+parar_VERB	1001	parar	VERB		
+doble_ADJ	1002	doble	ADJ		
+devolver_VERB	1003	devolver	VERB		
+ejercer_VERB	1004	ejercer	VERB		
+poseer_VERB	1005	poseer	VERB		
+proteger_VERB	1006	proteger	VERB		
+causar_VERB	1007	causar	VERB		
+rápidamente_ADV	1008	rápidamente	ADV		
+determinar_VERB	1009	determinar	VERB		
+fuerte_ADJ	1010	fuerte	ADJ		
+escritor_NOUN	1011	escritor	NOUN	Gender=Masc,Fem	escritora
+intento_NOUN	1012	intento	NOUN	Gender=Masc	
+cobrar_VERB	1013	cobrar	VERB		
+regla_NOUN	1014	regla	NOUN	Gender=Fem	
+dividir_VERB	1015	dividir	VERB		
+riesgo_NOUN	1016	riesgo	NOUN	Gender=Masc	
+policía_NOUN	1017	policía	NOUN	Gender=Com	
+inventar_VERB	1018	inventar	VERB		
+estudiante_NOUN	1019	estudiante	NOUN	Gender=Com	
+plaza_NOUN	1020	plaza	NOUN	Gender=Fem	
+limitar_VERB	1021	limitar	VERB		
+llamada_NOUN	1022	llamada	NOUN	Gender=Fem	
+sensación_NOUN	1023	sensación	NOUN	Gender=Fem	
+enemigo_NOUN	1024	enemigo	NOUN	Gender=Masc	
+unidad_NOUN	1025	unidad	NOUN	Gender=Fem	
+luchar_VERB	1026	luchar	VERB		
+idioma_NOUN	1027	idioma	NOUN	Gender=Masc	
+raíz_NOUN	1028	raíz	NOUN	Gender=Fem	
+compromiso_NOUN	1029	compromiso	NOUN	Gender=Masc	
+comentario_NOUN	1030	comentario	NOUN	Gender=Masc	
+carga_NOUN	1031	carga	NOUN	Gender=Fem	
+marido_NOUN	1032	marido	NOUN	Gender=Masc	
+quince_NUM	1033	quince	NUM		
+constante_ADJ	1034	constante	ADJ		
+derecha_NOUN	1035	derecha	NOUN	Gender=Fem	
+extremo_NOUN	1036	extremo	NOUN	Gender=Masc	
+individuo_NOUN	1037	individuo	NOUN	Gender=Masc	
+contenido_NOUN	1038	contenido	NOUN	Gender=Masc	
+semejante_DET	1039	semejante	DET		
+obligación_NOUN	1040	obligación	NOUN	Gender=Fem	
+corte_NOUN	1041	corte	NOUN	Gender=Masc,Fem	
+extranjero_ADJ	1042	extranjero	ADJ		
+total_NOUN	1043	total	NOUN	Gender=Masc	
+acudir_VERB	1044	acudir	VERB		
+daño_NOUN	1045	daño	NOUN	Gender=Masc	
+tarde_ADV	1046	tarde	ADV		
+mensaje_NOUN	1047	mensaje	NOUN	Gender=Masc	
+analizar_VERB	1048	analizar	VERB		
+lista_NOUN	1049	lista	NOUN	Gender=Fem	
+región_NOUN	1050	región	NOUN	Gender=Fem	
+evidente_ADJ	1051	evidente	ADJ		
+niña_NOUN	1052	niña	NOUN	Gender=Fem	
+culpa_NOUN	1053	culpa	NOUN	Gender=Fem	
+encargar_VERB	1054	encargar	VERB		
+discusión_NOUN	1055	discusión	NOUN	Gender=Fem	
+pelo_NOUN	1056	pelo	NOUN	Gender=Masc	
+destinar_VERB	1057	destinar	VERB		
+comparar_VERB	1058	comparar	VERB		
+celebrar_VERB	1059	celebrar	VERB		
+fe_NOUN	1060	fe	NOUN	Gender=Fem	
+fijo_ADJ	1061	fijo	ADJ		
+central_ADJ	1062	central	ADJ		
+referencia_NOUN	1063	referencia	NOUN	Gender=Fem	
+sur_NOUN	1064	sur	NOUN	Gender=Masc	
+gesto_NOUN	1065	gesto	NOUN	Gender=Masc	
+perspectiva_NOUN	1066	perspectiva	NOUN	Gender=Fem	
+preparado_ADJ	1067	preparado	ADJ		
+sonar_VERB	1068	sonar	VERB		
+manifestar_VERB	1069	manifestar	VERB		
+controlar_VERB	1070	controlar	VERB		
+saltar_VERB	1071	saltar	VERB		
+acaso_ADV	1072	acaso	ADV		
+colegio_NOUN	1073	colegio	NOUN	Gender=Masc	
+inmenso_ADJ	1074	inmenso	ADJ		
+venta_NOUN	1075	venta	NOUN	Gender=Fem	
+documento_NOUN	1076	documento	NOUN	Gender=Masc	
+citar_VERB	1077	citar	VERB		
+televisión_NOUN	1078	televisión	NOUN	Gender=Fem	
+chico_NOUN	1079	chico	NOUN	Gender=Masc	
+novela_NOUN	1080	novela	NOUN	Gender=Fem	
+requerir_VERB	1081	requerir	VERB		
+moral_ADJ	1082	moral	ADJ		
+alcance_NOUN	1083	alcance	NOUN	Gender=Masc	
+curioso_ADJ	1084	curioso	ADJ		
+crisis_NOUN	1085	crisis	NOUN	Gender=Fem	
+fundamental_ADJ	1086	fundamental	ADJ		
+incorporar_VERB	1087	incorporar	VERB		
+presente_ADJ	1088	presente	ADJ		
+máximo_ADJ	1089	máximo	ADJ		
+literatura_NOUN	1090	literatura	NOUN	Gender=Fem	
+batalla_NOUN	1091	batalla	NOUN	Gender=Fem	
+europeo_ADJ	1092	europeo	ADJ		
+dueño_NOUN	1093	dueño	NOUN	Gender=Masc	
+perseguir_VERB	1094	perseguir	VERB		
+vecino_NOUN	1095	vecino	NOUN	Gender=Masc	
+sector_NOUN	1096	sector	NOUN	Gender=Masc	
+pintura_NOUN	1097	pintura	NOUN	Gender=Fem	
+accidente_NOUN	1098	accidente	NOUN	Gender=Masc	
+oficial_ADJ	1099	oficial	ADJ		
+procurar_VERB	1100	procurar	VERB		
+numeroso_ADJ	1101	numeroso	ADJ		
+influencia_NOUN	1102	influencia	NOUN	Gender=Fem	
+intelectual_ADJ	1103	intelectual	ADJ		
+empleado_NOUN	1104	empleado	NOUN	Gender=Masc	
+casar_VERB	1105	casar	VERB		
+prácticamente_ADV	1106	prácticamente	ADV		
+moneda_NOUN	1107	moneda	NOUN	Gender=Fem	
+facilidad_NOUN	1108	facilidad	NOUN	Gender=Fem	
+matrimonio_NOUN	1109	matrimonio	NOUN	Gender=Masc	
+escaso_ADJ	1110	escaso	ADJ		
+iglesia_NOUN	1111	iglesia	NOUN	Gender=Fem	
+ayer_ADV	1112	ayer	ADV		
+oficina_NOUN	1113	oficina	NOUN	Gender=Fem	
+cristiano_ADJ	1114	cristiano	ADJ		
+institución_NOUN	1115	institución	NOUN	Gender=Fem	
+someter_VERB	1116	someter	VERB		
+fundar_VERB	1117	fundar	VERB		
+seguro_ADJ	1118	seguro	ADJ		
+intenso_ADJ	1119	intenso	ADJ		
+frío_NOUN	1120	frío	NOUN	Gender=Masc	
+domingo_NOUN	1121	domingo	NOUN	Gender=Masc	
+reacción_NOUN	1122	reacción	NOUN	Gender=Fem	
+elevar_VERB	1123	elevar	VERB		
+cantar_VERB	1124	cantar	VERB		
+acontecimiento_NOUN	1125	acontecimiento	NOUN	Gender=Masc	
+costa_NOUN	1126	costa	NOUN	Gender=Fem	
+peligroso_ADJ	1127	peligroso	ADJ		
+lento_ADJ	1128	lento	ADJ		
+método_NOUN	1129	método	NOUN	Gender=Masc	
+comunidad_NOUN	1130	comunidad	NOUN	Gender=Fem	
+coche_NOUN	1131	coche	NOUN	Gender=Masc	
+asumir_VERB	1132	asumir	VERB		
+aclarar_VERB	1133	aclarar	VERB		
+arrastrar_VERB	1134	arrastrar	VERB		
+página_NOUN	1135	página	NOUN	Gender=Fem	
+declarar_VERB	1136	declarar	VERB		
+frecuencia_NOUN	1137	frecuencia	NOUN	Gender=Fem	
+conclusión_NOUN	1138	conclusión	NOUN	Gender=Fem	
+escena_NOUN	1139	escena	NOUN	Gender=Fem	
+falso_ADJ	1140	falso	ADJ		
+estructura_NOUN	1141	estructura	NOUN	Gender=Fem	
+beneficio_NOUN	1142	beneficio	NOUN	Gender=Masc	
+alimento_NOUN	1143	alimento	NOUN	Gender=Masc	
+tranquilo_ADJ	1144	tranquilo	ADJ		
+velocidad_NOUN	1145	velocidad	NOUN	Gender=Fem	
+barrio_NOUN	1146	barrio	NOUN	Gender=Masc	
+nombrar_VERB	1147	nombrar	VERB		
+análisis_NOUN	1148	análisis	NOUN	Gender=Masc	
+confundir_VERB	1149	confundir	VERB		
+frontera_NOUN	1150	frontera	NOUN	Gender=Fem	
+describir_VERB	1151	describir	VERB		
+lejano_ADJ	1152	lejano	ADJ		
+breve_ADJ	1153	breve	ADJ		
+temor_NOUN	1154	temor	NOUN	Gender=Masc	
+calcular_VERB	1155	calcular	VERB		
+conformar_VERB	1156	conformar	VERB		
+ataque_NOUN	1157	ataque	NOUN	Gender=Masc	
+pintar_VERB	1158	pintar	VERB		
+cine_NOUN	1159	cine	NOUN	Gender=Masc	
+rama_NOUN	1160	rama	NOUN	Gender=Fem	
+repartir_VERB	1161	repartir	VERB		
+comienzo_NOUN	1162	comienzo	NOUN	Gender=Masc	
+exterior_ADJ	1163	exterior	ADJ		
+barco_NOUN	1164	barco	NOUN	Gender=Masc	
+partida_NOUN	1165	partida	NOUN	Gender=Fem	
+hallar_VERB	1166	hallar	VERB		
+ordenar_VERB	1167	ordenar	VERB		
+aparato_NOUN	1168	aparato	NOUN	Gender=Masc	
+convencer_VERB	1169	convencer	VERB		
+médico_ADJ	1170	médico	ADJ		
+extranjero_NOUN	1171	extranjero	NOUN	Gender=Masc	
+cámara_NOUN	1172	cámara	NOUN	Gender=Fem	
+creación_NOUN	1173	creación	NOUN	Gender=Fem	
+rodear_VERB	1174	rodear	VERB		
+ajeno_ADJ	1175	ajeno	ADJ		
+reflejar_VERB	1176	reflejar	VERB		
+gana_NOUN	1177	gana	NOUN	Gender=Fem	
+seco_ADJ	1178	seco	ADJ		
+quinto_ADJ	1179	quinto	ADJ		
+moda_NOUN	1180	moda	NOUN	Gender=Fem	
+absolutamente_ADV	1181	absolutamente	ADV		
+rechazar_VERB	1182	rechazar	VERB		
+contribuir_VERB	1183	contribuir	VERB		
+ruido_NOUN	1184	ruido	NOUN	Gender=Masc	
+cama_NOUN	1185	cama	NOUN	Gender=Fem	
+infantil_ADJ	1186	infantil	ADJ		
+técnica_NOUN	1187	técnica	NOUN	Gender=Fem	
+consejo_NOUN	1188	consejo	NOUN	Gender=Masc	
+internacional_ADJ	1189	internacional	ADJ		
+violencia_NOUN	1190	violencia	NOUN	Gender=Fem	
+original_ADJ	1191	original	ADJ		
+sonido_NOUN	1192	sonido	NOUN	Gender=Masc	
+vencer_VERB	1193	vencer	VERB		
+estrella_NOUN	1194	estrella	NOUN	Gender=Fem	
+útil_ADJ	1195	útil	ADJ		
+alejar_VERB	1196	alejar	VERB		
+mirada_NOUN	1197	mirada	NOUN	Gender=Fem	
+tremendo_ADJ	1198	tremendo	ADJ		
+cuándo_ADV	1199	cuándo	ADV		
+temprano_ADJ	1200	temprano	ADJ		
+pierna_NOUN	1201	pierna	NOUN	Gender=Fem	
+transmitir_VERB	1202	transmitir	VERB		
+marchar_VERB	1203	marchar	VERB		
+hambre_NOUN	1204	hambre	NOUN	Gender=Fem	
+placer_NOUN	1205	placer	NOUN	Gender=Masc	
+profesión_NOUN	1206	profesión	NOUN	Gender=Fem	
+destruir_VERB	1207	destruir	VERB		
+separado_ADJ	1208	separado	ADJ		
+opinar_VERB	1209	opinar	VERB		
+objetivo_NOUN	1210	objetivo	NOUN	Gender=Masc	
+honor_NOUN	1211	honor	NOUN	Gender=Masc	
+montaña_NOUN	1212	montaña	NOUN	Gender=Fem	
+cometer_VERB	1213	cometer	VERB		
+lógico_ADJ	1214	lógico	ADJ		
+instante_NOUN	1215	instante	NOUN	Gender=Masc	
+viento_NOUN	1216	viento	NOUN	Gender=Masc	
+lluvia_NOUN	1217	lluvia	NOUN	Gender=Fem	
+ejército_NOUN	1218	ejército	NOUN	Gender=Masc	
+trasladar_VERB	1219	trasladar	VERB		
+tren_NOUN	1220	tren	NOUN	Gender=Masc	
+concluir_VERB	1221	concluir	VERB		
+círculo_NOUN	1222	círculo	NOUN	Gender=Masc	
+auténtico_ADJ	1223	auténtico	ADJ		
+hermoso_ADJ	1224	hermoso	ADJ		
+oponer_VERB	1225	oponer	VERB		
+ventaja_NOUN	1226	ventaja	NOUN	Gender=Fem	
+figurar_VERB	1227	figurar	VERB		
+terrible_ADJ	1228	terrible	ADJ		
+isla_NOUN	1229	isla	NOUN	Gender=Fem	
+torno_NOUN	1230	torno	NOUN	Gender=Masc	
+sentado_ADJ	1231	sentado	ADJ		
+amistad_NOUN	1232	amistad	NOUN	Gender=Fem	
+concentrar_VERB	1233	concentrar	VERB		
+correcto_ADJ	1234	correcto	ADJ		
+mañana_ADV	1235	mañana	ADV		
+cadena_NOUN	1236	cadena	NOUN	Gender=Fem	
+político_NOUN	1237	político	NOUN	Gender=Masc,Fem	política
+rey_NOUN	1238	rey	NOUN	Gender=Masc	
+permanente_ADJ	1239	permanente	ADJ		
+ánimo_NOUN	1240	ánimo	NOUN	Gender=Masc	
+trato_NOUN	1241	trato	NOUN	Gender=Masc	
+ejercicio_NOUN	1242	ejercicio	NOUN	Gender=Masc	
+organización_NOUN	1243	organización	NOUN	Gender=Fem	
+agosto_NOUN	1244	agosto	NOUN	Gender=Masc	
+secretario_NOUN	1245	secretario	NOUN	Gender=Masc,Fem	secretaria
+norteamericano_ADJ	1246	norteamericano	ADJ		
+ignorar_VERB	1247	ignorar	VERB		
+dedo_NOUN	1248	dedo	NOUN	Gender=Masc	
+gasto_NOUN	1249	gasto	NOUN	Gender=Masc	
+café_NOUN	1250	café	NOUN	Gender=Masc	
+diálogo_NOUN	1251	diálogo	NOUN	Gender=Masc	
+dudar_VERB	1252	dudar	VERB		
+comercial_ADJ	1253	comercial	ADJ		
+discurso_NOUN	1254	discurso	NOUN	Gender=Masc	
+obligado_ADJ	1255	obligado	ADJ		
+hermana_NOUN	1256	hermana	NOUN	Gender=Fem	
+descansar_VERB	1257	descansar	VERB		
+caja_NOUN	1258	caja	NOUN	Gender=Fem	
+juez_NOUN	1259	juez	NOUN	Gender=Com	
+particular_NOUN	1260	particular	NOUN	Gender=Masc	
+americano_ADJ	1261	americano	ADJ		
+poeta_NOUN	1262	poeta	NOUN	Gender=Com	
+interior_ADJ	1263	interior	ADJ		
+sorpresa_NOUN	1264	sorpresa	NOUN	Gender=Fem	
+ventana_NOUN	1265	ventana	NOUN	Gender=Fem	
+característica_NOUN	1266	característica	NOUN	Gender=Fem	
+adoptar_VERB	1267	adoptar	VERB		
+arrancar_VERB	1268	arrancar	VERB		
+disfrutar_VERB	1269	disfrutar	VERB		
+práctico_ADJ	1270	práctico	ADJ		
+suma_NOUN	1271	suma	NOUN	Gender=Fem	
+molestar_VERB	1272	molestar	VERB		
+excelente_ADJ	1273	excelente	ADJ		
+volumen_NOUN	1274	volumen	NOUN	Gender=Masc	
+estación_NOUN	1275	estación	NOUN	Gender=Fem	
+atrever_VERB	1276	atrever	VERB		
+cultural_ADJ	1277	cultural	ADJ		
+complejo_ADJ	1278	complejo	ADJ		
+argumento_NOUN	1279	argumento	NOUN	Gender=Masc	
+categoría_NOUN	1280	categoría	NOUN	Gender=Fem	
+plata_NOUN	1281	plata	NOUN	Gender=Fem	
+conflicto_NOUN	1282	conflicto	NOUN	Gender=Masc	
+avión_NOUN	1283	avión	NOUN	Gender=Masc	
+débil_ADJ	1284	débil	ADJ		
+ropa_NOUN	1285	ropa	NOUN	Gender=Fem	
+examen_NOUN	1286	examen	NOUN	Gender=Masc	
+habitante_NOUN	1287	habitante	NOUN	Gender=Masc	
+acerca_ADV	1288	acerca	ADV		
+ceder_VERB	1289	ceder	VERB		
+justicia_NOUN	1290	justicia	NOUN	Gender=Fem	
+independiente_ADJ	1291	independiente	ADJ		
+criterio_NOUN	1292	criterio	NOUN	Gender=Masc	
+atraer_VERB	1293	atraer	VERB		
+convencido_ADJ	1294	convencido	ADJ		
+plazo_NOUN	1295	plazo	NOUN	Gender=Masc	
+pendiente_ADJ	1296	pendiente	ADJ		
+kilómetro_NOUN	1297	kilómetro	NOUN	Gender=Masc	
+hospital_NOUN	1298	hospital	NOUN	Gender=Masc	
+satisfacción_NOUN	1299	satisfacción	NOUN	Gender=Fem	
+futuro_ADJ	1300	futuro	ADJ		
+acumular_VERB	1301	acumular	VERB		
+desconocido_ADJ	1302	desconocido	ADJ		
+practicar_VERB	1303	practicar	VERB		
+gozar_VERB	1304	gozar	VERB		
+muchísimo_ADJ	1305	muchísimo	ADJ		
+sesenta_NUM	1306	sesenta	NUM		
+silla_NOUN	1307	silla	NOUN	Gender=Fem	
+justificar_VERB	1308	justificar	VERB		
+tradicional_ADJ	1309	tradicional	ADJ		
+soportar_VERB	1310	soportar	VERB		
+juventud_NOUN	1311	juventud	NOUN	Gender=Fem	
+resistir_VERB	1312	resistir	VERB		
+aparte_ADV	1313	aparte	ADV		
+triste_ADJ	1314	triste	ADJ		
+acceso_NOUN	1315	acceso	NOUN	Gender=Masc	
+marco_NOUN	1316	marco	NOUN	Gender=Masc	
+vestir_VERB	1317	vestir	VERB		
+prensa_NOUN	1318	prensa	NOUN	Gender=Fem	
+excepción_NOUN	1319	excepción	NOUN	Gender=Fem	
+sorprender_VERB	1320	sorprender	VERB		
+ausencia_NOUN	1321	ausencia	NOUN	Gender=Fem	
+proceder_VERB	1322	proceder	VERB		
+condenar_VERB	1323	condenar	VERB		
+sombra_NOUN	1324	sombra	NOUN	Gender=Fem	
+similar_ADJ	1325	similar	ADJ		
+consumir_VERB	1326	consumir	VERB		
+sugerir_VERB	1327	sugerir	VERB		
+activo_ADJ	1328	activo	ADJ		
+clásico_ADJ	1329	clásico	ADJ		
+profundidad_NOUN	1330	profundidad	NOUN	Gender=Fem	
+conceder_VERB	1331	conceder	VERB		
+reciente_ADJ	1332	reciente	ADJ		
+eléctrico_ADJ	1333	eléctrico	ADJ		
+leche_NOUN	1334	leche	NOUN	Gender=Fem	
+consideración_NOUN	1335	consideración	NOUN	Gender=Fem	
+componer_VERB	1336	componer	VERB		
+premio_NOUN	1337	premio	NOUN	Gender=Masc	
+bello_ADJ	1338	bello	ADJ		
+nacimiento_NOUN	1339	nacimiento	NOUN	Gender=Masc	
+invierno_NOUN	1340	invierno	NOUN	Gender=Masc	
+diciembre_NOUN	1341	diciembre	NOUN	Gender=Masc	
+brillante_ADJ	1342	brillante	ADJ		
+comportamiento_NOUN	1343	comportamiento	NOUN	Gender=Masc	
+crítica_NOUN	1344	crítica	NOUN	Gender=Fem	
+femenino_ADJ	1345	femenino	ADJ		
+fuego_NOUN	1346	fuego	NOUN	Gender=Masc	
+tendencia_NOUN	1347	tendencia	NOUN	Gender=Fem	
+fino_ADJ	1348	fino	ADJ		
+norma_NOUN	1349	norma	NOUN	Gender=Fem	
+inferior_ADJ	1350	inferior	ADJ		
+arreglar_VERB	1351	arreglar	VERB		
+rueda_NOUN	1352	rueda	NOUN	Gender=Fem	
+puente_NOUN	1353	puente	NOUN	Gender=Masc	
+animar_VERB	1354	animar	VERB		
+rasgo_NOUN	1355	rasgo	NOUN	Gender=Masc	
+positivo_ADJ	1356	positivo	ADJ		
+cuento_NOUN	1357	cuento	NOUN	Gender=Masc	
+definitivamente_ADV	1358	definitivamente	ADV		
+signo_NOUN	1359	signo	NOUN	Gender=Masc	
+señal_NOUN	1360	señal	NOUN	Gender=Fem	
+apuntar_VERB	1361	apuntar	VERB		
+campaña_NOUN	1362	campaña	NOUN	Gender=Fem	
+liberar_VERB	1363	liberar	VERB		
+puerto_NOUN	1364	puerto	NOUN	Gender=Masc	
+profundamente_ADV	1365	profundamente	ADV		
+aventura_NOUN	1366	aventura	NOUN	Gender=Fem	
+pesado_ADJ	1367	pesado	ADJ		
+complicado_ADJ	1368	complicado	ADJ		
+añadir_VERB	1369	añadir	VERB		
+marca_NOUN	1370	marca	NOUN	Gender=Fem	
+girar_VERB	1371	girar	VERB		
+ilusión_NOUN	1372	ilusión	NOUN	Gender=Fem	
+os_PRON	1373	os	PRON		
+compra_NOUN	1374	compra	NOUN	Gender=Fem	
+inteligencia_NOUN	1375	inteligencia	NOUN	Gender=Fem	
+volar_VERB	1376	volar	VERB		
+loco_ADJ	1377	loco	ADJ		
+virtud_NOUN	1378	virtud	NOUN	Gender=Fem	
+remedio_NOUN	1379	remedio	NOUN	Gender=Masc	
+delicado_ADJ	1380	delicado	ADJ		
+facilitar_VERB	1381	facilitar	VERB		
+territorio_NOUN	1382	territorio	NOUN	Gender=Masc	
+facultad_NOUN	1383	facultad	NOUN	Gender=Fem	
+solicitar_VERB	1384	solicitar	VERB		
+fotografía_NOUN	1385	fotografía	NOUN	Gender=Fem	
+techo_NOUN	1386	techo	NOUN	Gender=Masc	
+temer_VERB	1387	temer	VERB		
+conducta_NOUN	1388	conducta	NOUN	Gender=Fem	
+violento_ADJ	1389	violento	ADJ		
+aquél_PRON	1390	aquél	PRON		aquélla|aquéllos|aquéllas
+salto_NOUN	1391	salto	NOUN	Gender=Masc	
+pan_NOUN	1392	pan	NOUN	Gender=Masc	
+atacar_VERB	1393	atacar	VERB		
+sano_ADJ	1394	sano	ADJ		
+pegar_VERB	1395	pegar	VERB		
+juzgar_VERB	1396	juzgar	VERB		
+limpio_ADJ	1397	limpio	ADJ		
+disposición_NOUN	1398	disposición	NOUN	Gender=Fem	
+posterior_ADJ	1399	posterior	ADJ		
+general_NOUN	1400	general	NOUN	Gender=Masc	
+disciplina_NOUN	1401	disciplina	NOUN	Gender=Fem	
+relacionado_ADJ	1402	relacionado	ADJ		
+habitual_ADJ	1403	habitual	ADJ		
+personal_NOUN	1404	personal	NOUN	Gender=Masc	
+interrumpir_VERB	1405	interrumpir	VERB		
+columna_NOUN	1406	columna	NOUN	Gender=Fem	
+verdaderamente_ADV	1407	verdaderamente	ADV		
+fabricar_VERB	1408	fabricar	VERB		
+únicamente_ADV	1409	únicamente	ADV		
+nervioso_ADJ	1410	nervioso	ADJ		
+indio_NOUN	1411	indio	NOUN	Gender=Masc	
+gato_NOUN	1412	gato	NOUN	Gender=Masc	
+margen_NOUN	1413	margen	NOUN	Gender=Masc,Fem	
+material_ADJ	1414	material	ADJ		
+resistencia_NOUN	1415	resistencia	NOUN	Gender=Fem	
+consciente_ADJ	1416	consciente	ADJ		
+pérdida_NOUN	1417	pérdida	NOUN	Gender=Fem	
+tratamiento_NOUN	1418	tratamiento	NOUN	Gender=Masc	
+entrevista_NOUN	1419	entrevista	NOUN	Gender=Fem	
+espectáculo_NOUN	1420	espectáculo	NOUN	Gender=Masc	
+personalidad_NOUN	1421	personalidad	NOUN	Gender=Fem	
+mayo_NOUN	1422	mayo	NOUN	Gender=Masc	
+confiar_VERB	1423	confiar	VERB		
+operar_VERB	1424	operar	VERB		
+representación_NOUN	1425	representación	NOUN	Gender=Fem	
+régimen_NOUN	1426	régimen	NOUN	Gender=Masc	
+punta_NOUN	1427	punta	NOUN	Gender=Fem	
+vital_ADJ	1428	vital	ADJ		
+alegría_NOUN	1429	alegría	NOUN	Gender=Fem	
+basar_VERB	1430	basar	VERB		
+igualmente_ADV	1431	igualmente	ADV		
+misión_NOUN	1432	misión	NOUN	Gender=Fem	
+estimar_VERB	1433	estimar	VERB		
+cotidiano_ADJ	1434	cotidiano	ADJ		
+confirmar_VERB	1435	confirmar	VERB		
+empleo_NOUN	1436	empleo	NOUN	Gender=Masc	
+previo_ADJ	1437	previo	ADJ		
+participación_NOUN	1438	participación	NOUN	Gender=Fem	
+integrar_VERB	1439	integrar	VERB		
+período_NOUN	1440	período	NOUN	Gender=Masc	
+busca_NOUN	1441	busca	NOUN	Gender=Fem	
+superficie_NOUN	1442	superficie	NOUN	Gender=Fem	
+aprobar_VERB	1443	aprobar	VERB		
+chino_ADJ	1444	chino	ADJ		
+pasión_NOUN	1445	pasión	NOUN	Gender=Fem	
+vehículo_NOUN	1446	vehículo	NOUN	Gender=Masc	
+inteligente_ADJ	1447	inteligente	ADJ		
+grabar_VERB	1448	grabar	VERB		
+enero_NOUN	1449	enero	NOUN	Gender=Masc	
+capítulo_NOUN	1450	capítulo	NOUN	Gender=Masc	
+fracaso_NOUN	1451	fracaso	NOUN	Gender=Masc	
+experto_NOUN	1452	experto	NOUN	Gender=Masc	
+inquietud_NOUN	1453	inquietud	NOUN	Gender=Fem	
+nuevamente_ADV	1454	nuevamente	ADV		
+once_NUM	1455	once	NUM		
+listo_ADJ	1456	listo	ADJ		
+equivocar_VERB	1457	equivocar	VERB		
+organismo_NOUN	1458	organismo	NOUN	Gender=Masc	
+canción_NOUN	1459	canción	NOUN	Gender=Fem	
+religión_NOUN	1460	religión	NOUN	Gender=Fem	
+correspondiente_ADJ	1461	correspondiente	ADJ		
+departamento_NOUN	1462	departamento	NOUN	Gender=Masc	
+generalmente_ADV	1463	generalmente	ADV		
+periodista_NOUN	1464	periodista	NOUN	Gender=Com	
+seguido_ADJ	1465	seguido	ADJ		
+llorar_VERB	1466	llorar	VERB		
+griego_ADJ	1467	griego	ADJ		
+interpretación_NOUN	1468	interpretación	NOUN	Gender=Fem	
+maestro_ADJ	1469	maestro	ADJ		
+barato_ADJ	1470	barato	ADJ		
+proyectar_VERB	1471	proyectar	VERB		
+belleza_NOUN	1472	belleza	NOUN	Gender=Fem	
+universidad_NOUN	1473	universidad	NOUN	Gender=Fem	
+riqueza_NOUN	1474	riqueza	NOUN	Gender=Fem	
+notable_ADJ	1475	notable	ADJ		
+beber_VERB	1476	beber	VERB		
+claramente_ADV	1477	claramente	ADV		
+rato_NOUN	1478	rato	NOUN	Gender=Masc	
+encargado_ADJ	1479	encargado	ADJ		
+técnico_ADJ	1480	técnico	ADJ		
+ciego_ADJ	1481	ciego	ADJ		
+individual_ADJ	1482	individual	ADJ		
+apreciar_VERB	1483	apreciar	VERB		
+experimentar_VERB	1484	experimentar	VERB		
+justamente_ADV	1485	justamente	ADV		
+amar_VERB	1486	amar	VERB		
+equilibrio_NOUN	1487	equilibrio	NOUN	Gender=Masc	
+universal_ADJ	1488	universal	ADJ		
+ah_INTJ	1489	ah	INTJ		
+fruto_NOUN	1490	fruto	NOUN	Gender=Masc	
+representante_NOUN	1491	representante	NOUN	Gender=Com	
+robar_VERB	1492	robar	VERB		
+reír_VERB	1493	reír	VERB		
+literario_ADJ	1494	literario	ADJ		
+exceso_NOUN	1495	exceso	NOUN	Gender=Masc	
+capa_NOUN	1496	capa	NOUN	Gender=Fem	
+defecto_NOUN	1497	defecto	NOUN	Gender=Masc	
+fábrica_NOUN	1498	fábrica	NOUN	Gender=Fem	
+espalda_NOUN	1499	espalda	NOUN	Gender=Fem	
+mezclar_VERB	1500	mezclar	VERB		
+género_NOUN	1501	género	NOUN	Gender=Masc	
+continuo_ADJ	1502	continuo	ADJ		
+distribuir_VERB	1503	distribuir	VERB		
+economía_NOUN	1504	economía	NOUN	Gender=Fem	
+apartar_VERB	1505	apartar	VERB		
+bosque_NOUN	1506	bosque	NOUN	Gender=Masc	
+reclamar_VERB	1507	reclamar	VERB		
+paisaje_NOUN	1508	paisaje	NOUN	Gender=Masc	
+quemar_VERB	1509	quemar	VERB		
+llamado_NOUN	1510	llamado	NOUN	Gender=Masc	
+paciente_NOUN	1511	paciente	NOUN	Gender=Com	
+elevado_ADJ	1512	elevado	ADJ		
+obedecer_VERB	1513	obedecer	VERB		
+tensión_NOUN	1514	tensión	NOUN	Gender=Fem	
+establecido_ADJ	1515	establecido	ADJ		
+local_ADJ	1516	local	ADJ		
+satisfacer_VERB	1517	satisfacer	VERB		
+concebir_VERB	1518	concebir	VERB		
+ministro_NOUN	1519	ministro	NOUN	Gender=Masc,Fem	ministra
+impulso_NOUN	1520	impulso	NOUN	Gender=Masc	
+reaccionar_VERB	1521	reaccionar	VERB		
+comercio_NOUN	1522	comercio	NOUN	Gender=Masc	
+naturalmente_ADV	1523	naturalmente	ADV		
+acusar_VERB	1524	acusar	VERB		
+espera_NOUN	1525	espera	NOUN	Gender=Fem	
+gastar_VERB	1526	gastar	VERB		
+reserva_NOUN	1527	reserva	NOUN	Gender=Fem	
+regalar_VERB	1528	regalar	VERB		
+competencia_NOUN	1529	competencia	NOUN	Gender=Fem	
+quejar_VERB	1530	quejar	VERB		
+penetrar_VERB	1531	penetrar	VERB		
+vacío_ADJ	1532	vacío	ADJ		
+aislado_ADJ	1533	aislado	ADJ		
+rendir_VERB	1534	rendir	VERB		
+observación_NOUN	1535	observación	NOUN	Gender=Fem	
+registrar_VERB	1536	registrar	VERB		
+limpiar_VERB	1537	limpiar	VERB		
+vacío_NOUN	1538	vacío	NOUN	Gender=Masc	
+atribuir_VERB	1539	atribuir	VERB		
+cifra_NOUN	1540	cifra	NOUN	Gender=Fem	
+ocultar_VERB	1541	ocultar	VERB		
+escala_NOUN	1542	escala	NOUN	Gender=Fem	
+enterar_VERB	1543	enterar	VERB		
+procedimiento_NOUN	1544	procedimiento	NOUN	Gender=Masc	
+ajustar_VERB	1545	ajustar	VERB		
+fórmula_NOUN	1546	fórmula	NOUN	Gender=Fem	
+ámbito_NOUN	1547	ámbito	NOUN	Gender=Masc	
+informe_NOUN	1548	informe	NOUN	Gender=Masc	
+dimensión_NOUN	1549	dimensión	NOUN	Gender=Fem	
+cliente_NOUN	1550	cliente	NOUN	Gender=Com	
+manifestación_NOUN	1551	manifestación	NOUN	Gender=Fem	
+aspirar_VERB	1552	aspirar	VERB		
+pico_NOUN	1553	pico	NOUN	Gender=Masc	
+sensibilidad_NOUN	1554	sensibilidad	NOUN	Gender=Fem	
+recurrir_VERB	1555	recurrir	VERB		
+múltiple_ADJ	1556	múltiple	ADJ		
+regreso_NOUN	1557	regreso	NOUN	Gender=Masc	
+temperatura_NOUN	1558	temperatura	NOUN	Gender=Fem	
+julio_NOUN	1559	julio	NOUN	Gender=Masc	
+poderoso_ADJ	1560	poderoso	ADJ		
+digno_ADJ	1561	digno	ADJ		
+bomba_NOUN	1562	bomba	NOUN	Gender=Fem	
+órgano_NOUN	1563	órgano	NOUN	Gender=Masc	
+inútil_ADJ	1564	inútil	ADJ		
+avance_NOUN	1565	avance	NOUN	Gender=Masc	
+humanidad_NOUN	1566	humanidad	NOUN	Gender=Fem	
+firma_NOUN	1567	firma	NOUN	Gender=Fem	
+soldado_NOUN	1568	soldado	NOUN	Gender=Masc,Fem	soldada
+sólido_ADJ	1569	sólido	ADJ		
+firme_ADJ	1570	firme	ADJ		
+extremo_ADJ	1571	extremo	ADJ		
+conforme_ADJ	1572	conforme	ADJ		
+esencial_ADJ	1573	esencial	ADJ		
+huir_VERB	1574	huir	VERB		
+percibir_VERB	1575	percibir	VERB		
+clima_NOUN	1576	clima	NOUN	Gender=Masc	
+emoción_NOUN	1577	emoción	NOUN	Gender=Fem	
+automóvil_NOUN	1578	automóvil	NOUN	Gender=Masc	
+transcurrir_VERB	1579	transcurrir	VERB		
+mal_NOUN	1580	mal	NOUN	Gender=Masc	
+recomendar_VERB	1581	recomendar	VERB		
+habilidad_NOUN	1582	habilidad	NOUN	Gender=Fem	
+identidad_NOUN	1583	identidad	NOUN	Gender=Fem	
+desgracia_NOUN	1584	desgracia	NOUN	Gender=Fem	
+corregir_VERB	1585	corregir	VERB		
+amarillo_ADJ	1586	amarillo	ADJ		
+consultar_VERB	1587	consultar	VERB		
+deber_NOUN	1588	deber	NOUN	Gender=Masc	
+cola_NOUN	1589	cola	NOUN	Gender=Fem	
+padecer_VERB	1590	padecer	VERB		
+progreso_NOUN	1591	progreso	NOUN	Gender=Masc	
+elaborar_VERB	1592	elaborar	VERB		
+soñar_VERB	1593	soñar	VERB		
+muestra_NOUN	1594	muestra	NOUN	Gender=Fem	
+acostumbrado_ADJ	1595	acostumbrado	ADJ		
+hábito_NOUN	1596	hábito	NOUN	Gender=Masc	
+gritar_VERB	1597	gritar	VERB		
+artístico_ADJ	1598	artístico	ADJ		
+mecanismo_NOUN	1599	mecanismo	NOUN	Gender=Masc	
+vivienda_NOUN	1600	vivienda	NOUN	Gender=Fem	
+ocupado_ADJ	1601	ocupado	ADJ		
+área_NOUN	1602	área	NOUN	Gender=Fem	
+traducir_VERB	1603	traducir	VERB		
+efectivamente_ADV	1604	efectivamente	ADV		
+interesado_ADJ	1605	interesado	ADJ		
+mezcla_NOUN	1606	mezcla	NOUN	Gender=Fem	
+excesivo_ADJ	1607	excesivo	ADJ		
+sumar_VERB	1608	sumar	VERB		
+alimentar_VERB	1609	alimentar	VERB		
+habitación_NOUN	1610	habitación	NOUN	Gender=Fem	
+instrucción_NOUN	1611	instrucción	NOUN	Gender=Fem	
+eliminar_VERB	1612	eliminar	VERB		
+versión_NOUN	1613	versión	NOUN	Gender=Fem	
+lujo_NOUN	1614	lujo	NOUN	Gender=Masc	
+intervención_NOUN	1615	intervención	NOUN	Gender=Fem	
+llegada_NOUN	1616	llegada	NOUN	Gender=Fem	
+alrededor_NOUN	1617	alrededor	NOUN	Gender=Masc	
+testigo_NOUN	1618	testigo	NOUN	Gender=Masc	
+dominio_NOUN	1619	dominio	NOUN	Gender=Masc	
+raza_NOUN	1620	raza	NOUN	Gender=Fem	
+renunciar_VERB	1621	renunciar	VERB		
+descubrimiento_NOUN	1622	descubrimiento	NOUN	Gender=Masc	
+vacaciones_NOUN	1623	vacaciones	NOUN	Gender=Fem	
+provincia_NOUN	1624	provincia	NOUN	Gender=Fem	
+saber_NOUN	1625	saber	NOUN	Gender=Masc	
+argentino_ADJ	1626	argentino	ADJ		
+cómodo_ADJ	1627	cómodo	ADJ		
+acostumbrar_VERB	1628	acostumbrar	VERB		
+fácilmente_ADV	1629	fácilmente	ADV		
+claridad_NOUN	1630	claridad	NOUN	Gender=Fem	
+negativo_ADJ	1631	negativo	ADJ		
+revisar_VERB	1632	revisar	VERB		
+carecer_VERB	1633	carecer	VERB		
+científico_ADJ	1634	científico	ADJ		
+arena_NOUN	1635	arena	NOUN	Gender=Fem	
+postura_NOUN	1636	postura	NOUN	Gender=Fem	
+salón_NOUN	1637	salón	NOUN	Gender=Masc	
+escenario_NOUN	1638	escenario	NOUN	Gender=Masc	
+armado_ADJ	1639	armado	ADJ		
+largo_NOUN	1640	largo	NOUN	Gender=Masc	
+prometer_VERB	1641	prometer	VERB		
+contento_ADJ	1642	contento	ADJ		
+hotel_NOUN	1643	hotel	NOUN	Gender=Masc	
+oficio_NOUN	1644	oficio	NOUN	Gender=Masc	
+descender_VERB	1645	descender	VERB		
+cubierto_ADJ	1646	cubierto	ADJ		
+fila_NOUN	1647	fila	NOUN	Gender=Fem	
+patrón_NOUN	1648	patrón	NOUN	Gender=Masc	
+pecho_NOUN	1649	pecho	NOUN	Gender=Masc	
+tienda_NOUN	1650	tienda	NOUN	Gender=Fem	
+típico_ADJ	1651	típico	ADJ		
+protección_NOUN	1652	protección	NOUN	Gender=Fem	
+funcionario_NOUN	1653	funcionario	NOUN	Gender=Masc	
+reproducir_VERB	1654	reproducir	VERB		
+constar_VERB	1655	constar	VERB		
+crítico_ADJ	1656	crítico	ADJ		
+transporte_NOUN	1657	transporte	NOUN	Gender=Masc	
+red_NOUN	1658	red	NOUN	Gender=Fem	
+caída_NOUN	1659	caída	NOUN	Gender=Fem	
+castellano_ADJ	1660	castellano	ADJ		
+asociar_VERB	1661	asociar	VERB		
+desconocer_VERB	1662	desconocer	VERB		
+valle_NOUN	1663	valle	NOUN	Gender=Masc	
+fallar_VERB	1664	fallar	VERB		
+vuelo_NOUN	1665	vuelo	NOUN	Gender=Masc	
+vecino_ADJ	1666	vecino	ADJ		
+sexo_NOUN	1667	sexo	NOUN	Gender=Masc	
+iniciativa_NOUN	1668	iniciativa	NOUN	Gender=Fem	
+increíble_ADJ	1669	increíble	ADJ		
+concentración_NOUN	1670	concentración	NOUN	Gender=Fem	
+grito_NOUN	1671	grito	NOUN	Gender=Masc	
+esencia_NOUN	1672	esencia	NOUN	Gender=Fem	
+cocina_NOUN	1673	cocina	NOUN	Gender=Fem	
+mental_ADJ	1674	mental	ADJ		
+reflejo_NOUN	1675	reflejo	NOUN	Gender=Masc	
+definición_NOUN	1676	definición	NOUN	Gender=Fem	
+preocupado_ADJ	1677	preocupado	ADJ		
+perdonar_VERB	1678	perdonar	VERB		
+obstante_ADJ	1679	obstante	ADJ		
+abogado_NOUN	1680	abogado	NOUN	Gender=Masc,Fem	abogada
+agradecer_VERB	1681	agradecer	VERB		
+admirar_VERB	1682	admirar	VERB		
+sesión_NOUN	1683	sesión	NOUN	Gender=Fem	
+íntimo_ADJ	1684	íntimo	ADJ		
+reloj_NOUN	1685	reloj	NOUN	Gender=Masc	
+estrecho_ADJ	1686	estrecho	ADJ		
+muchacho_NOUN	1687	muchacho	NOUN	Gender=Masc	
+octubre_NOUN	1688	octubre	NOUN	Gender=Masc	
+exposición_NOUN	1689	exposición	NOUN	Gender=Fem	
+ingreso_NOUN	1690	ingreso	NOUN	Gender=Masc	
+revelar_VERB	1691	revelar	VERB		
+dibujo_NOUN	1692	dibujo	NOUN	Gender=Masc	
+frecuente_ADJ	1693	frecuente	ADJ		
+inevitable_ADJ	1694	inevitable	ADJ		
+hueso_NOUN	1695	hueso	NOUN	Gender=Masc	
+ligero_ADJ	1696	ligero	ADJ		
+militar_NOUN	1697	militar	NOUN	Gender=Masc	
+motor_NOUN	1698	motor	NOUN	Gender=Masc	
+oposición_NOUN	1699	oposición	NOUN	Gender=Fem	
+patio_NOUN	1700	patio	NOUN	Gender=Masc	
+fruta_NOUN	1701	fruta	NOUN	Gender=Fem	
+ideal_NOUN	1702	ideal	NOUN	Gender=Masc	
+izquierdo_ADJ	1703	izquierdo	ADJ		
+ti_PRON	1704	ti	PRON		
+actor_NOUN	1705	actor	NOUN	Gender=Masc	
+confusión_NOUN	1706	confusión	NOUN	Gender=Fem	
+bonito_ADJ	1707	bonito	ADJ		
+agregar_VERB	1708	agregar	VERB		
+corriente_ADJ	1709	corriente	ADJ		
+traje_NOUN	1710	traje	NOUN	Gender=Masc	
+exigencia_NOUN	1711	exigencia	NOUN	Gender=Fem	
+víctima_NOUN	1712	víctima	NOUN	Gender=Fem	
+playa_NOUN	1713	playa	NOUN	Gender=Fem	
+trabajador_NOUN	1714	trabajador	NOUN	Gender=Masc,Fem	trabajadora
+primario_ADJ	1715	primario	ADJ		
+hierro_NOUN	1716	hierro	NOUN	Gender=Masc	
+ideal_ADJ	1717	ideal	ADJ		
+completar_VERB	1718	completar	VERB		
+tela_NOUN	1719	tela	NOUN	Gender=Fem	
+ancho_ADJ	1720	ancho	ADJ		
+producción_NOUN	1721	producción	NOUN	Gender=Fem	
+febrero_NOUN	1722	febrero	NOUN	Gender=Masc	
+símbolo_NOUN	1723	símbolo	NOUN	Gender=Masc	
+agradable_ADJ	1724	agradable	ADJ		
+medicina_NOUN	1725	medicina	NOUN	Gender=Fem	
+combatir_VERB	1726	combatir	VERB		
+búsqueda_NOUN	1727	búsqueda	NOUN	Gender=Fem	
+colectivo_ADJ	1728	colectivo	ADJ		
+tranquilidad_NOUN	1729	tranquilidad	NOUN	Gender=Fem	
+espejo_NOUN	1730	espejo	NOUN	Gender=Masc	
+secreto_ADJ	1731	secreto	ADJ		
+comprensión_NOUN	1732	comprensión	NOUN	Gender=Fem	
+incapaz_ADJ	1733	incapaz	ADJ		
+cerebro_NOUN	1734	cerebro	NOUN	Gender=Masc	
+satisfecho_ADJ	1735	satisfecho	ADJ		
+reducido_ADJ	1736	reducido	ADJ		
+tiro_NOUN	1737	tiro	NOUN	Gender=Masc	
+aportar_VERB	1738	aportar	VERB		
+derivar_VERB	1739	derivar	VERB		
+abuelo_NOUN	1740	abuelo	NOUN	Gender=Masc	
+prohibir_VERB	1741	prohibir	VERB		
+proporcionar_VERB	1742	proporcionar	VERB		
+maravilloso_ADJ	1743	maravilloso	ADJ		
+saludar_VERB	1744	saludar	VERB		
+relacionar_VERB	1745	relacionar	VERB		
+declaración_NOUN	1746	declaración	NOUN	Gender=Fem	
+relativo_ADJ	1747	relativo	ADJ		
+sujeto_NOUN	1748	sujeto	NOUN	Gender=Masc	
+investigar_VERB	1749	investigar	VERB		
+ubicar_VERB	1750	ubicar	VERB		
+enseñanza_NOUN	1751	enseñanza	NOUN	Gender=Fem	
+musical_ADJ	1752	musical	ADJ		
+permiso_NOUN	1753	permiso	NOUN	Gender=Masc	
+evolución_NOUN	1754	evolución	NOUN	Gender=Fem	
+tío_NOUN	1755	tío	NOUN	Gender=Masc	
+moral_NOUN	1756	moral	NOUN	Gender=Fem	
+redondo_ADJ	1757	redondo	ADJ		
+modificar_VERB	1758	modificar	VERB		
+sujeto_ADJ	1759	sujeto	ADJ		
+parque_NOUN	1760	parque	NOUN	Gender=Masc	
+ingeniero_NOUN	1761	ingeniero	NOUN	Gender=Masc,Fem	ingeniera
+lavar_VERB	1762	lavar	VERB		
+borde_NOUN	1763	borde	NOUN	Gender=Masc	
+invadir_VERB	1764	invadir	VERB		
+entusiasmo_NOUN	1765	entusiasmo	NOUN	Gender=Masc	
+evidentemente_ADV	1766	evidentemente	ADV		
+independencia_NOUN	1767	independencia	NOUN	Gender=Fem	
+mentira_NOUN	1768	mentira	NOUN	Gender=Fem	
+exclusivamente_ADV	1769	exclusivamente	ADV		
+sueldo_NOUN	1770	sueldo	NOUN	Gender=Masc	
+desplazar_VERB	1771	desplazar	VERB		
+comparación_NOUN	1772	comparación	NOUN	Gender=Fem	
+setenta_NUM	1773	setenta	NUM		
+romano_ADJ	1774	romano	ADJ		
+sagrado_ADJ	1775	sagrado	ADJ		
+seno_NOUN	1776	seno	NOUN	Gender=Masc	
+adelantar_VERB	1777	adelantar	VERB		
+canto_NOUN	1778	canto	NOUN	Gender=Masc	
+potencia_NOUN	1779	potencia	NOUN	Gender=Fem	
+examinar_VERB	1780	examinar	VERB		
+oficial_NOUN	1781	oficial	NOUN	Gender=Com	
+fortuna_NOUN	1782	fortuna	NOUN	Gender=Fem	
+crimen_NOUN	1783	crimen	NOUN	Gender=Masc	
+suave_ADJ	1784	suave	ADJ		
+opuesto_ADJ	1785	opuesto	ADJ		
+sustituir_VERB	1786	sustituir	VERB		
+ciudadano_NOUN	1787	ciudadano	NOUN	Gender=Masc	
+implicar_VERB	1788	implicar	VERB		
+baño_NOUN	1789	baño	NOUN	Gender=Masc	
+sabio_ADJ	1790	sabio	ADJ		
+ingresar_VERB	1791	ingresar	VERB		
+respirar_VERB	1792	respirar	VERB		
+caliente_ADJ	1793	caliente	ADJ		
+reconocimiento_NOUN	1794	reconocimiento	NOUN	Gender=Masc	
+exterior_NOUN	1795	exterior	NOUN	Gender=Masc	
+sexual_ADJ	1796	sexual	ADJ		
+respectivo_ADJ	1797	respectivo	ADJ		
+situado_ADJ	1798	situado	ADJ		
+crédito_NOUN	1799	crédito	NOUN	Gender=Masc	
+alternativa_NOUN	1800	alternativa	NOUN	Gender=Fem	
+rodeado_ADJ	1801	rodeado	ADJ		
+esconder_VERB	1802	esconder	VERB		
+cuando_ADV	1803	cuando	ADV		
+canal_NOUN	1804	canal	NOUN	Gender=Masc	
+suficientemente_ADV	1805	suficientemente	ADV		
+agente_NOUN	1806	agente	NOUN	Gender=Com	
+pago_NOUN	1807	pago	NOUN	Gender=Masc	
+filosofía_NOUN	1808	filosofía	NOUN	Gender=Fem	
+alterar_VERB	1809	alterar	VERB		
+lector_NOUN	1810	lector	NOUN	Gender=Masc	
+emitir_VERB	1811	emitir	VERB		
+magnífico_ADJ	1812	magnífico	ADJ		
+triunfo_NOUN	1813	triunfo	NOUN	Gender=Masc	
+inclinar_VERB	1814	inclinar	VERB		
+campesino_ADJ	1815	campesino	ADJ		
+sábado_NOUN	1816	sábado	NOUN	Gender=Masc	
+amiga_NOUN	1817	amiga	NOUN	Gender=Fem	
+carretera_NOUN	1818	carretera	NOUN	Gender=Fem	
+desprender_VERB	1819	desprender	VERB		
+efectivo_ADJ	1820	efectivo	ADJ		
+victoria_NOUN	1821	victoria	NOUN	Gender=Fem	
+circular_VERB	1822	circular	VERB		
+pelear_VERB	1823	pelear	VERB		
+pájaro_NOUN	1824	pájaro	NOUN	Gender=Masc	
+biblioteca_NOUN	1825	biblioteca	NOUN	Gender=Fem	
+reflexión_NOUN	1826	reflexión	NOUN	Gender=Fem	
+aplicado_ADJ	1827	aplicado	ADJ		
+aconsejar_VERB	1828	aconsejar	VERB		
+vocación_NOUN	1829	vocación	NOUN	Gender=Fem	
+casado_ADJ	1830	casado	ADJ		
+continente_NOUN	1831	continente	NOUN	Gender=Masc	
+severo_ADJ	1832	severo	ADJ		
+tabla_NOUN	1833	tabla	NOUN	Gender=Fem	
+justo_ADJ	1834	justo	ADJ		
+ensayo_NOUN	1835	ensayo	NOUN	Gender=Masc	
+plato_NOUN	1836	plato	NOUN	Gender=Masc	
+jardín_NOUN	1837	jardín	NOUN	Gender=Masc	
+imaginación_NOUN	1838	imaginación	NOUN	Gender=Fem	
+precioso_ADJ	1839	precioso	ADJ		
+probable_ADJ	1840	probable	ADJ		
+poesía_NOUN	1841	poesía	NOUN	Gender=Fem	
+guardia_NOUN	1842	guardia	NOUN	Gender=Com	
+privilegio_NOUN	1843	privilegio	NOUN	Gender=Masc	
+monte_NOUN	1844	monte	NOUN	Gender=Masc	
+conmigo_PRON	1845	conmigo	PRON		
+arrojar_VERB	1846	arrojar	VERB		
+precisión_NOUN	1847	precisión	NOUN	Gender=Fem	
+sacrificio_NOUN	1848	sacrificio	NOUN	Gender=Masc	
+criticar_VERB	1849	criticar	VERB		
+hundir_VERB	1850	hundir	VERB		
+hilo_NOUN	1851	hilo	NOUN	Gender=Masc	
+entendido_ADJ	1852	entendido	ADJ		
+aparentemente_ADV	1853	aparentemente	ADV		
+aparición_NOUN	1854	aparición	NOUN	Gender=Fem	
+poema_NOUN	1855	poema	NOUN	Gender=Masc	
+avanzado_ADJ	1856	avanzado	ADJ		
+curiosidad_NOUN	1857	curiosidad	NOUN	Gender=Fem	
+afuera_ADV	1858	afuera	ADV		
+diente_NOUN	1859	diente	NOUN	Gender=Masc	
+primo_NOUN	1860	primo	NOUN	Gender=Masc	
+encerrar_VERB	1861	encerrar	VERB		
+latino_ADJ	1862	latino	ADJ		
+apariencia_NOUN	1863	apariencia	NOUN	Gender=Fem	
+novedad_NOUN	1864	novedad	NOUN	Gender=Fem	
+espiritual_ADJ	1865	espiritual	ADJ		
+limitado_ADJ	1866	limitado	ADJ		
+castigo_NOUN	1867	castigo	NOUN	Gender=Masc	
+constantemente_ADV	1868	constantemente	ADV		
+denominar_VERB	1869	denominar	VERB		
+vestido_ADJ	1870	vestido	ADJ		
+carro_NOUN	1871	carro	NOUN	Gender=Masc	
+eterno_ADJ	1872	eterno	ADJ		
+aumento_NOUN	1873	aumento	NOUN	Gender=Masc	
+pobreza_NOUN	1874	pobreza	NOUN	Gender=Fem	
+impulsar_VERB	1875	impulsar	VERB		
+caro_ADJ	1876	caro	ADJ		
+empujar_VERB	1877	empujar	VERB		
+dólar_NOUN	1878	dólar	NOUN	Gender=Masc	
+inicial_ADJ	1879	inicial	ADJ		
+local_NOUN	1880	local	NOUN	Gender=Masc	
+dictar_VERB	1881	dictar	VERB		
+dulce_ADJ	1882	dulce	ADJ		
+chocar_VERB	1883	chocar	VERB		
+industria_NOUN	1884	industria	NOUN	Gender=Fem	
+caballero_NOUN	1885	caballero	NOUN	Gender=Masc	
+especialista_NOUN	1886	especialista	NOUN	Gender=Com	
+temporada_NOUN	1887	temporada	NOUN	Gender=Fem	
+divino_ADJ	1888	divino	ADJ		
+humor_NOUN	1889	humor	NOUN	Gender=Masc	
+borrar_VERB	1890	borrar	VERB		
+nación_NOUN	1891	nación	NOUN	Gender=Fem	
+felicidad_NOUN	1892	felicidad	NOUN	Gender=Fem	
+amante_NOUN	1893	amante	NOUN	Gender=Com	
+alejado_ADJ	1894	alejado	ADJ		
+aguantar_VERB	1895	aguantar	VERB		
+coger_VERB	1896	coger	VERB		
+cálculo_NOUN	1897	cálculo	NOUN	Gender=Masc	
+composición_NOUN	1898	composición	NOUN	Gender=Fem	
+rapidez_NOUN	1899	rapidez	NOUN	Gender=Fem	
+huevo_NOUN	1900	huevo	NOUN	Gender=Masc	
+elemental_ADJ	1901	elemental	ADJ		
+crecimiento_NOUN	1902	crecimiento	NOUN	Gender=Masc	
+clave_NOUN	1903	clave	NOUN	Gender=Fem	
+golpear_VERB	1904	golpear	VERB		
+tragedia_NOUN	1905	tragedia	NOUN	Gender=Fem	
+colección_NOUN	1906	colección	NOUN	Gender=Fem	
+chica_NOUN	1907	chica	NOUN	Gender=Fem	
+prestigio_NOUN	1908	prestigio	NOUN	Gender=Masc	
+ascender_VERB	1909	ascender	VERB		
+sección_NOUN	1910	sección	NOUN	Gender=Fem	
+complicar_VERB	1911	complicar	VERB		
+anciano_ADJ	1912	anciano	ADJ		
+fiel_ADJ	1913	fiel	ADJ		
+roto_ADJ	1914	roto	ADJ		
+bolsa_NOUN	1915	bolsa	NOUN	Gender=Fem	
+cinta_NOUN	1916	cinta	NOUN	Gender=Fem	
+engañar_VERB	1917	engañar	VERB		
+elegante_ADJ	1918	elegante	ADJ		
+agotar_VERB	1919	agotar	VERB		
+cuello_NOUN	1920	cuello	NOUN	Gender=Masc	
+continuación_NOUN	1921	continuación	NOUN	Gender=Fem	
+abril_NOUN	1922	abril	NOUN	Gender=Masc	
+precisar_VERB	1923	precisar	VERB		
+actuación_NOUN	1924	actuación	NOUN	Gender=Fem	
+factor_NOUN	1925	factor	NOUN	Gender=Masc	
+esquina_NOUN	1926	esquina	NOUN	Gender=Fem	
+hombro_NOUN	1927	hombro	NOUN	Gender=Masc	
+infancia_NOUN	1928	infancia	NOUN	Gender=Fem	
+suspender_VERB	1929	suspender	VERB		
+descanso_NOUN	1930	descanso	NOUN	Gender=Masc	
+ampliar_VERB	1931	ampliar	VERB		
+zapato_NOUN	1932	zapato	NOUN	Gender=Masc	
+parecer_NOUN	1933	parecer	NOUN	Gender=Masc	
+familiar_NOUN	1934	familiar	NOUN	Gender=Masc	
+mérito_NOUN	1935	mérito	NOUN	Gender=Masc	
+cultivar_VERB	1936	cultivar	VERB		
+oportuno_ADJ	1937	oportuno	ADJ		
+explotar_VERB	1938	explotar	VERB		
+significativo_ADJ	1939	significativo	ADJ		
+despedir_VERB	1940	despedir	VERB		
+suelto_ADJ	1941	suelto	ADJ		
+muro_NOUN	1942	muro	NOUN	Gender=Masc	
+colaborar_VERB	1943	colaborar	VERB		
+menudo_ADV	1944	menudo	ADV		
+invertir_VERB	1945	invertir	VERB		
+montón_NOUN	1946	montón	NOUN	Gender=Masc	
+revolucionario_ADJ	1947	revolucionario	ADJ		
+disco_NOUN	1948	disco	NOUN	Gender=Masc	
+indispensable_ADJ	1949	indispensable	ADJ		
+demanda_NOUN	1950	demanda	NOUN	Gender=Fem	
+mundial_ADJ	1951	mundial	ADJ		
+mueble_NOUN	1952	mueble	NOUN	Gender=Masc	
+desastre_NOUN	1953	desastre	NOUN	Gender=Masc	
+secreto_NOUN	1954	secreto	NOUN	Gender=Masc	
+oriental_ADJ	1955	oriental	ADJ		
+regular_ADJ	1956	regular	ADJ		
+angustia_NOUN	1957	angustia	NOUN	Gender=Fem	
+provenir_VERB	1958	provenir	VERB		
+forzar_VERB	1959	forzar	VERB		
+doméstico_ADJ	1960	doméstico	ADJ		
+nube_NOUN	1961	nube	NOUN	Gender=Fem	
+criar_VERB	1962	criar	VERB		
+miseria_NOUN	1963	miseria	NOUN	Gender=Fem	
+personalmente_ADV	1964	personalmente	ADV		
+peor_ADJ	1965	peor	ADJ		
+significado_NOUN	1966	significado	NOUN	Gender=Masc	
+fama_NOUN	1967	fama	NOUN	Gender=Fem	
+palacio_NOUN	1968	palacio	NOUN	Gender=Masc	
+oído_NOUN	1969	oído	NOUN	Gender=Masc	
+conveniente_ADJ	1970	conveniente	ADJ		
+polvo_NOUN	1971	polvo	NOUN	Gender=Masc	
+confesar_VERB	1972	confesar	VERB		
+mecánico_ADJ	1973	mecánico	ADJ		
+sacerdote_NOUN	1974	sacerdote	NOUN	Gender=Masc	
+lentamente_ADV	1975	lentamente	ADV		
+eficaz_ADJ	1976	eficaz	ADJ		
+lección_NOUN	1977	lección	NOUN	Gender=Fem	
+rosa_NOUN	1978	rosa	NOUN	Gender=Fem	
+nocturno_ADJ	1979	nocturno	ADJ		
+posiblemente_ADV	1980	posiblemente	ADV		
+doblar_VERB	1981	doblar	VERB		
+disminuir_VERB	1982	disminuir	VERB		
+averiguar_VERB	1983	averiguar	VERB		
+sospechar_VERB	1984	sospechar	VERB		
+pasear_VERB	1985	pasear	VERB		
+olor_NOUN	1986	olor	NOUN	Gender=Masc	
+radical_ADJ	1987	radical	ADJ		
+decidido_ADJ	1988	decidido	ADJ		
+contrato_NOUN	1989	contrato	NOUN	Gender=Masc	
+presentación_NOUN	1990	presentación	NOUN	Gender=Fem	
+cárcel_NOUN	1991	cárcel	NOUN	Gender=Fem	
+división_NOUN	1992	división	NOUN	Gender=Fem	
+revés_NOUN	1993	revés	NOUN	Gender=Masc	
+sucio_ADJ	1994	sucio	ADJ		
+depositar_VERB	1995	depositar	VERB		
+captar_VERB	1996	captar	VERB		
+cualidad_NOUN	1997	cualidad	NOUN	Gender=Fem	
+empeñar_VERB	1998	empeñar	VERB		
+sobrevivir_VERB	1999	sobrevivir	VERB		
+índice_NOUN	2000	índice	NOUN	Gender=Masc	
+salvaje_ADJ	2001	salvaje	ADJ		
+marzo_NOUN	2002	marzo	NOUN	Gender=Masc	
+atmósfera_NOUN	2003	atmósfera	NOUN	Gender=Fem	
+planeta_NOUN	2004	planeta	NOUN	Gender=Masc	
+industrial_ADJ	2005	industrial	ADJ		
+orgullo_NOUN	2006	orgullo	NOUN	Gender=Masc	
+jornada_NOUN	2007	jornada	NOUN	Gender=Fem	
+desnudo_ADJ	2008	desnudo	ADJ		
+querido_ADJ	2009	querido	ADJ		
+absurdo_ADJ	2010	absurdo	ADJ		
+dramático_ADJ	2011	dramático	ADJ		
+palo_NOUN	2012	palo	NOUN	Gender=Masc	
+diseño_NOUN	2013	diseño	NOUN	Gender=Masc	
+liberal_ADJ	2014	liberal	ADJ		
+lógica_NOUN	2015	lógica	NOUN	Gender=Fem	
+herencia_NOUN	2016	herencia	NOUN	Gender=Fem	
+legal_ADJ	2017	legal	ADJ		
+artificial_ADJ	2018	artificial	ADJ		
+deporte_NOUN	2019	deporte	NOUN	Gender=Masc	
+reina_NOUN	2020	reina	NOUN	Gender=Fem	
+bandera_NOUN	2021	bandera	NOUN	Gender=Fem	
+influir_VERB	2022	influir	VERB		
+maravilla_NOUN	2023	maravilla	NOUN	Gender=Fem	
+modesto_ADJ	2024	modesto	ADJ		
+banda_NOUN	2025	banda	NOUN	Gender=Fem	
+cristal_NOUN	2026	cristal	NOUN	Gender=Masc	
+objetivo_ADJ	2027	objetivo	ADJ		
+anécdota_NOUN	2028	anécdota	NOUN	Gender=Fem	
+universitario_ADJ	2029	universitario	ADJ		
+sensible_ADJ	2030	sensible	ADJ		
+leyenda_NOUN	2031	leyenda	NOUN	Gender=Fem	
+muerto_NOUN	2032	muerto	NOUN	Gender=Masc	
+azúcar_NOUN	2033	azúcar	NOUN	Gender=Masc	
+multiplicar_VERB	2034	multiplicar	VERB		
+inclinación_NOUN	2035	inclinación	NOUN	Gender=Fem	
+formal_ADJ	2036	formal	ADJ		
+doler_VERB	2037	doler	VERB		
+primitivo_ADJ	2038	primitivo	ADJ		
+oculto_ADJ	2039	oculto	ADJ		
+rostro_NOUN	2040	rostro	NOUN	Gender=Masc	
+separación_NOUN	2041	separación	NOUN	Gender=Fem	
+eco_NOUN	2042	eco	NOUN	Gender=Masc	
+definido_ADJ	2043	definido	ADJ		
+favorecer_VERB	2044	favorecer	VERB		
+cita_NOUN	2045	cita	NOUN	Gender=Fem	
+actualidad_NOUN	2046	actualidad	NOUN	Gender=Fem	
+externo_ADJ	2047	externo	ADJ		
+escoger_VERB	2048	escoger	VERB		
+colgar_VERB	2049	colgar	VERB		
+fantasía_NOUN	2050	fantasía	NOUN	Gender=Fem	
+promesa_NOUN	2051	promesa	NOUN	Gender=Fem	
+pata_NOUN	2052	pata	NOUN	Gender=Fem	
+llover_VERB	2053	llover	VERB		
+foto_NOUN	2054	foto	NOUN	Gender=Fem	
+administración_NOUN	2055	administración	NOUN	Gender=Fem	
+absorber_VERB	2056	absorber	VERB		
+civilización_NOUN	2057	civilización	NOUN	Gender=Fem	
+organizado_ADJ	2058	organizado	ADJ		
+ocupación_NOUN	2059	ocupación	NOUN	Gender=Fem	
+mero_ADJ	2060	mero	ADJ		
+asiento_NOUN	2061	asiento	NOUN	Gender=Masc	
+compuesto_ADJ	2062	compuesto	ADJ		
+imitar_VERB	2063	imitar	VERB		
+solitario_ADJ	2064	solitario	ADJ		
+pista_NOUN	2065	pista	NOUN	Gender=Fem	
+testimonio_NOUN	2066	testimonio	NOUN	Gender=Masc	
+regalo_NOUN	2067	regalo	NOUN	Gender=Masc	
+educar_VERB	2068	educar	VERB		
+comprometer_VERB	2069	comprometer	VERB		
+aproximar_VERB	2070	aproximar	VERB		
+bailar_VERB	2071	bailar	VERB		
+inspirar_VERB	2072	inspirar	VERB		
+contradicción_NOUN	2073	contradicción	NOUN	Gender=Fem	
+agarrar_VERB	2074	agarrar	VERB		
+metal_NOUN	2075	metal	NOUN	Gender=Masc	
+aceite_NOUN	2076	aceite	NOUN	Gender=Masc	
+prolongar_VERB	2077	prolongar	VERB		
+código_NOUN	2078	código	NOUN	Gender=Masc	
+estricto_ADJ	2079	estricto	ADJ		
+doloroso_ADJ	2080	doloroso	ADJ		
+unión_NOUN	2081	unión	NOUN	Gender=Fem	
+extensión_NOUN	2082	extensión	NOUN	Gender=Fem	
+duro_NOUN	2083	duro	NOUN	Gender=Masc	
+adentro_ADV	2084	adentro	ADV		
+idéntico_ADJ	2085	idéntico	ADJ		
+previsto_ADJ	2086	previsto	ADJ		
+adaptar_VERB	2087	adaptar	VERB		
+varón_NOUN	2088	varón	NOUN	Gender=Masc	
+situar_VERB	2089	situar	VERB		
+característico_ADJ	2090	característico	ADJ		
+evidencia_NOUN	2091	evidencia	NOUN	Gender=Fem	
+dignidad_NOUN	2092	dignidad	NOUN	Gender=Fem	
+escándalo_NOUN	2093	escándalo	NOUN	Gender=Masc	
+colega_NOUN	2094	colega	NOUN	Gender=Com	
+horario_NOUN	2095	horario	NOUN	Gender=Masc	
+orilla_NOUN	2096	orilla	NOUN	Gender=Fem	
+curar_VERB	2097	curar	VERB		
+copia_NOUN	2098	copia	NOUN	Gender=Fem	
+huella_NOUN	2099	huella	NOUN	Gender=Fem	
+desempeñar_VERB	2100	desempeñar	VERB		
+ejemplar_NOUN	2101	ejemplar	NOUN	Gender=Masc	
+extraer_VERB	2102	extraer	VERB		
+cura_NOUN	2103	cura	NOUN	Gender=Masc,Fem	
+apagar_VERB	2104	apagar	VERB		
+prever_VERB	2105	prever	VERB		
+garantía_NOUN	2106	garantía	NOUN	Gender=Fem	
+vaso_NOUN	2107	vaso	NOUN	Gender=Masc	
+perfil_NOUN	2108	perfil	NOUN	Gender=Masc	
+proporción_NOUN	2109	proporción	NOUN	Gender=Fem	
+expulsar_VERB	2110	expulsar	VERB		
+ceremonia_NOUN	2111	ceremonia	NOUN	Gender=Fem	
+vidrio_NOUN	2112	vidrio	NOUN	Gender=Masc	
+ruta_NOUN	2113	ruta	NOUN	Gender=Fem	
+anuncio_NOUN	2114	anuncio	NOUN	Gender=Masc	
+trece_NUM	2115	trece	NUM		
+soledad_NOUN	2116	soledad	NOUN	Gender=Fem	
+tesis_NOUN	2117	tesis	NOUN	Gender=Fem	
+rincón_NOUN	2118	rincón	NOUN	Gender=Masc	
+nariz_NOUN	2119	nariz	NOUN	Gender=Fem	
+ochenta_NUM	2120	ochenta	NUM		
+bolsillo_NOUN	2121	bolsillo	NOUN	Gender=Masc	
+exhibir_VERB	2122	exhibir	VERB		
+asociación_NOUN	2123	asociación	NOUN	Gender=Fem	
+fresco_ADJ	2124	fresco	ADJ		
+mando_NOUN	2125	mando	NOUN	Gender=Masc	
+sabor_NOUN	2126	sabor	NOUN	Gender=Masc	
+década_NOUN	2127	década	NOUN	Gender=Fem	
+preparación_NOUN	2128	preparación	NOUN	Gender=Fem	
+tapar_VERB	2129	tapar	VERB		
+acceder_VERB	2130	acceder	VERB		
+atractivo_ADJ	2131	atractivo	ADJ		
+afecto_NOUN	2132	afecto	NOUN	Gender=Masc	
+encender_VERB	2133	encender	VERB		
+protesta_NOUN	2134	protesta	NOUN	Gender=Fem	
+patria_NOUN	2135	patria	NOUN	Gender=Fem	
+consumo_NOUN	2136	consumo	NOUN	Gender=Masc	
+católico_ADJ	2137	católico	ADJ		
+selva_NOUN	2138	selva	NOUN	Gender=Fem	
+deuda_NOUN	2139	deuda	NOUN	Gender=Fem	
+horizonte_NOUN	2140	horizonte	NOUN	Gender=Masc	
+disparar_VERB	2141	disparar	VERB		
+masculino_ADJ	2142	masculino	ADJ		
+talento_NOUN	2143	talento	NOUN	Gender=Masc	
+gas_NOUN	2144	gas	NOUN	Gender=Masc	
+té_NOUN	2145	té	NOUN	Gender=Masc	
+gloria_NOUN	2146	gloria	NOUN	Gender=Fem	
+cansado_ADJ	2147	cansado	ADJ		
+noviembre_NOUN	2148	noviembre	NOUN	Gender=Masc	
+candidato_NOUN	2149	candidato	NOUN	Gender=Masc	
+llave_NOUN	2150	llave	NOUN	Gender=Fem	
+inconveniente_NOUN	2151	inconveniente	NOUN	Gender=Masc	
+afán_NOUN	2152	afán	NOUN	Gender=Masc	
+atar_VERB	2153	atar	VERB		
+etcétera_NOUN	2154	etcétera	NOUN		
+comisión_NOUN	2155	comisión	NOUN	Gender=Fem	
+desesperado_ADJ	2156	desesperado	ADJ		
+generar_VERB	2157	generar	VERB		
+posesión_NOUN	2158	posesión	NOUN	Gender=Fem	
+dama_NOUN	2159	dama	NOUN	Gender=Fem	
+onda_NOUN	2160	onda	NOUN	Gender=Fem	
+botella_NOUN	2161	botella	NOUN	Gender=Fem	
+torre_NOUN	2162	torre	NOUN	Gender=Fem	
+abarcar_VERB	2163	abarcar	VERB		
+combinación_NOUN	2164	combinación	NOUN	Gender=Fem	
+cadáver_NOUN	2165	cadáver	NOUN	Gender=Masc	
+paquete_NOUN	2166	paquete	NOUN	Gender=Masc	
+apellido_NOUN	2167	apellido	NOUN	Gender=Masc	
+caído_ADJ	2168	caído	ADJ		
+japonés_ADJ	2169	japonés	ADJ		
+brindar_VERB	2170	brindar	VERB		
+conferencia_NOUN	2171	conferencia	NOUN	Gender=Fem	
+espontáneo_ADJ	2172	espontáneo	ADJ		
+propuesta_NOUN	2173	propuesta	NOUN	Gender=Fem	
+intensidad_NOUN	2174	intensidad	NOUN	Gender=Fem	
+explosión_NOUN	2175	explosión	NOUN	Gender=Fem	
+urbano_ADJ	2176	urbano	ADJ		
+odio_NOUN	2177	odio	NOUN	Gender=Masc	
+valioso_ADJ	2178	valioso	ADJ		
+universo_NOUN	2179	universo	NOUN	Gender=Masc	
+agudo_ADJ	2180	agudo	ADJ		
+milagro_NOUN	2181	milagro	NOUN	Gender=Masc	
+entrega_NOUN	2182	entrega	NOUN	Gender=Fem	
+repente_ADV	2183	repente	ADV		
+solucionar_VERB	2184	solucionar	VERB		
+mapa_NOUN	2185	mapa	NOUN	Gender=Masc	
+héroe_NOUN	2186	héroe	NOUN	Gender=Masc	
+lunes_NOUN	2187	lunes	NOUN	Gender=Masc	
+tráfico_NOUN	2188	tráfico	NOUN	Gender=Masc	
+terror_NOUN	2189	terror	NOUN	Gender=Masc	
+casualidad_NOUN	2190	casualidad	NOUN	Gender=Fem	
+tonto_ADJ	2191	tonto	ADJ		
+risa_NOUN	2192	risa	NOUN	Gender=Fem	
+cuerda_NOUN	2193	cuerda	NOUN	Gender=Fem	
+consulta_NOUN	2194	consulta	NOUN	Gender=Fem	
+edición_NOUN	2195	edición	NOUN	Gender=Fem	
+acomodar_VERB	2196	acomodar	VERB		
+rayo_NOUN	2197	rayo	NOUN	Gender=Masc	
+cuadrado_ADJ	2198	cuadrado	ADJ		
+tía_NOUN	2199	tía	NOUN	Gender=Fem	
+adulto_NOUN	2200	adulto	NOUN	Gender=Masc	
+voto_NOUN	2201	voto	NOUN	Gender=Masc	
+calma_NOUN	2202	calma	NOUN	Gender=Fem	
+sorprendente_ADJ	2203	sorprendente	ADJ		
+favorable_ADJ	2204	favorable	ADJ		
+oferta_NOUN	2205	oferta	NOUN	Gender=Fem	
+vergüenza_NOUN	2206	vergüenza	NOUN	Gender=Fem	
+ave_NOUN	2207	ave	NOUN	Gender=Masc	
+rodilla_NOUN	2208	rodilla	NOUN	Gender=Fem	
+paseo_NOUN	2209	paseo	NOUN	Gender=Masc	
+variar_VERB	2210	variar	VERB		
+culpable_ADJ	2211	culpable	ADJ		
+normalmente_ADV	2212	normalmente	ADV		
+secundario_ADJ	2213	secundario	ADJ		
+registro_NOUN	2214	registro	NOUN	Gender=Masc	
+infinito_ADJ	2215	infinito	ADJ		
+válido_ADJ	2216	válido	ADJ		
+gordo_ADJ	2217	gordo	ADJ		
+pintor_NOUN	2218	pintor	NOUN	Gender=Masc,Fem	pintora
+delito_NOUN	2219	delito	NOUN	Gender=Masc	
+vestido_NOUN	2220	vestido	NOUN	Gender=Masc	
+relato_NOUN	2221	relato	NOUN	Gender=Masc	
+baile_NOUN	2222	baile	NOUN	Gender=Masc	
+misterio_NOUN	2223	misterio	NOUN	Gender=Masc	
+otorgar_VERB	2224	otorgar	VERB		
+ciclo_NOUN	2225	ciclo	NOUN	Gender=Masc	
+principalmente_ADV	2226	principalmente	ADV		
+cesar_VERB	2227	cesar	VERB		
+síntoma_NOUN	2228	síntoma	NOUN	Gender=Masc	
+amenaza_NOUN	2229	amenaza	NOUN	Gender=Fem	
+acá_ADV	2230	acá	ADV		
+recorrido_NOUN	2231	recorrido	NOUN	Gender=Masc	
+concepción_NOUN	2232	concepción	NOUN	Gender=Fem	
+tristeza_NOUN	2233	tristeza	NOUN	Gender=Fem	
+vaca_NOUN	2234	vaca	NOUN	Gender=Fem	
+criatura_NOUN	2235	criatura	NOUN	Gender=Fem	
+creencia_NOUN	2236	creencia	NOUN	Gender=Fem	
+desagradable_ADJ	2237	desagradable	ADJ		
+núcleo_NOUN	2238	núcleo	NOUN	Gender=Masc	
+amenazar_VERB	2239	amenazar	VERB		
+perdón_NOUN	2240	perdón	NOUN	Gender=Masc	
+madrugada_NOUN	2241	madrugada	NOUN	Gender=Fem	
+agresivo_ADJ	2242	agresivo	ADJ		
+obrero_NOUN	2243	obrero	NOUN	Gender=Masc,Fem	obrera
+parado_ADJ	2244	parado	ADJ		
+callar_VERB	2245	callar	VERB		
+cariño_NOUN	2246	cariño	NOUN	Gender=Masc	
+vigilar_VERB	2247	vigilar	VERB		
+ángel_NOUN	2248	ángel	NOUN	Gender=Masc	
+rigor_NOUN	2249	rigor	NOUN	Gender=Masc	
+orientar_VERB	2250	orientar	VERB		
+contraste_NOUN	2251	contraste	NOUN	Gender=Masc	
+turno_NOUN	2252	turno	NOUN	Gender=Masc	
+exclusivo_ADJ	2253	exclusivo	ADJ		
+portar_VERB	2254	portar	VERB		
+reino_NOUN	2255	reino	NOUN	Gender=Masc	
+aproximadamente_ADV	2256	aproximadamente	ADV		
+prohibido_ADJ	2257	prohibido	ADJ		
+funcionamiento_NOUN	2258	funcionamiento	NOUN	Gender=Masc	
+auto_NOUN	2259	auto	NOUN	Gender=Masc	
+ala_NOUN	2260	ala	NOUN	Gender=Fem	
+debate_NOUN	2261	debate	NOUN	Gender=Masc	
+grueso_ADJ	2262	grueso	ADJ		
+aplicación_NOUN	2263	aplicación	NOUN	Gender=Fem	
+laboratorio_NOUN	2264	laboratorio	NOUN	Gender=Masc	
+urgente_ADJ	2265	urgente	ADJ		
+vendedor_NOUN	2266	vendedor	NOUN	Gender=Masc,Fem	vendedora
+copa_NOUN	2267	copa	NOUN	Gender=Fem	
+avisar_VERB	2268	avisar	VERB		
+renovar_VERB	2269	renovar	VERB		
+tratado_NOUN	2270	tratado	NOUN	Gender=Masc	
+democrático_ADJ	2271	democrático	ADJ		
+soltar_VERB	2272	soltar	VERB		
+abordar_VERB	2273	abordar	VERB		
+castigar_VERB	2274	castigar	VERB		
+rechazo_NOUN	2275	rechazo	NOUN	Gender=Masc	
+totalidad_NOUN	2276	totalidad	NOUN	Gender=Fem	
+fracasar_VERB	2277	fracasar	VERB		
+catorce_NUM	2278	catorce	NUM		
+calificar_VERB	2279	calificar	VERB		
+juntar_VERB	2280	juntar	VERB		
+papá_NOUN	2281	papá	NOUN	Gender=Masc	
+necesariamente_ADV	2282	necesariamente	ADV		
+considerable_ADJ	2283	considerable	ADJ		
+cero_NUM	2284	cero	NUM		
+ejecutar_VERB	2285	ejecutar	VERB		
+mamá_NOUN	2286	mamá	NOUN	Gender=Fem	
+vela_NOUN	2287	vela	NOUN	Gender=Fem	
+protestar_VERB	2288	protestar	VERB		
+establecimiento_NOUN	2289	establecimiento	NOUN	Gender=Masc	
+gris_ADJ	2290	gris	ADJ		
+matiz_NOUN	2291	matiz	NOUN	Gender=Masc	
+impresionar_VERB	2292	impresionar	VERB		
+meta_NOUN	2293	meta	NOUN	Gender=Fem	
+comportar_VERB	2294	comportar	VERB		
+básico_ADJ	2295	básico	ADJ		
+comodidad_NOUN	2296	comodidad	NOUN	Gender=Fem	
+pariente_NOUN	2297	pariente	NOUN	Gender=Com	
+abandonado_ADJ	2298	abandonado	ADJ		
+distribución_NOUN	2299	distribución	NOUN	Gender=Fem	
+invitación_NOUN	2300	invitación	NOUN	Gender=Fem	
+destrucción_NOUN	2301	destrucción	NOUN	Gender=Fem	
+indígena_ADJ	2302	indígena	ADJ		
+moreno_ADJ	2303	moreno	ADJ		
+alegre_ADJ	2304	alegre	ADJ		
+opción_NOUN	2305	opción	NOUN	Gender=Fem	
+extenso_ADJ	2306	extenso	ADJ		
+ruso_ADJ	2307	ruso	ADJ		
+máximo_NOUN	2308	máximo	NOUN	Gender=Masc	
+tarjeta_NOUN	2309	tarjeta	NOUN	Gender=Fem	
+fase_NOUN	2310	fase	NOUN	Gender=Fem	
+veinticinco_NUM	2311	veinticinco	NUM		
+tropa_NOUN	2312	tropa	NOUN	Gender=Fem	
+remoto_ADJ	2313	remoto	ADJ		
+socio_NOUN	2314	socio	NOUN	Gender=Masc	
+comunista_ADJ	2315	comunista	ADJ		
+abundante_ADJ	2316	abundante	ADJ		
+dibujar_VERB	2317	dibujar	VERB		
+guía_NOUN	2318	guía	NOUN	Gender=Com	
+judío_ADJ	2319	judío	ADJ		
+impresionante_ADJ	2320	impresionante	ADJ		
+hielo_NOUN	2321	hielo	NOUN	Gender=Masc	
+gobernar_VERB	2322	gobernar	VERB		
+occidental_ADJ	2323	occidental	ADJ		
+deshacer_VERB	2324	deshacer	VERB		
+primavera_NOUN	2325	primavera	NOUN	Gender=Fem	
+mutuo_ADJ	2326	mutuo	ADJ		
+simpatía_NOUN	2327	simpatía	NOUN	Gender=Fem	
+reconstruir_VERB	2328	reconstruir	VERB		
+centímetro_NOUN	2329	centímetro	NOUN	Gender=Masc	
+pantalla_NOUN	2330	pantalla	NOUN	Gender=Fem	
+toro_NOUN	2331	toro	NOUN	Gender=Masc	
+denunciar_VERB	2332	denunciar	VERB		
+cultivo_NOUN	2333	cultivo	NOUN	Gender=Masc	
+horror_NOUN	2334	horror	NOUN	Gender=Masc	
+bienestar_NOUN	2335	bienestar	NOUN	Gender=Masc	
+paciencia_NOUN	2336	paciencia	NOUN	Gender=Fem	
+ay_INTJ	2337	ay	INTJ		
+romántico_ADJ	2338	romántico	ADJ		
+convicción_NOUN	2339	convicción	NOUN	Gender=Fem	
+plenamente_ADV	2340	plenamente	ADV		
+uniforme_NOUN	2341	uniforme	NOUN	Gender=Masc	
+media_NOUN	2342	media	NOUN	Gender=Fem	
+mínimo_NOUN	2343	mínimo	NOUN	Gender=Masc	
+doscientos_NUM	2344	doscientos	NUM		
+garantizar_VERB	2345	garantizar	VERB		
+compañera_NOUN	2346	compañera	NOUN	Gender=Fem	
+pintado_ADJ	2347	pintado	ADJ		
+combinar_VERB	2348	combinar	VERB		
+junio_NOUN	2349	junio	NOUN	Gender=Masc	
+drama_NOUN	2350	drama	NOUN	Gender=Masc	
+distante_ADJ	2351	distante	ADJ		
+sencillamente_ADV	2352	sencillamente	ADV		
+equivocado_ADJ	2353	equivocado	ADJ		
+doble_NOUN	2354	doble	NOUN	Gender=Masc	
+episodio_NOUN	2355	episodio	NOUN	Gender=Masc	
+divertir_VERB	2356	divertir	VERB		
+afirmación_NOUN	2357	afirmación	NOUN	Gender=Fem	
+conquistar_VERB	2358	conquistar	VERB		
+bar_NOUN	2359	bar	NOUN	Gender=Masc	
+fantástico_ADJ	2360	fantástico	ADJ		
+liberación_NOUN	2361	liberación	NOUN	Gender=Fem	
+actualmente_ADV	2362	actualmente	ADV		
+envolver_VERB	2363	envolver	VERB		
+estancia_NOUN	2364	estancia	NOUN	Gender=Fem	
+emprender_VERB	2365	emprender	VERB		
+anticipar_VERB	2366	anticipar	VERB		
+humilde_ADJ	2367	humilde	ADJ		
+variedad_NOUN	2368	variedad	NOUN	Gender=Fem	
+desarrollado_ADJ	2369	desarrollado	ADJ		
+capitán_NOUN	2370	capitán	NOUN	Gender=Masc	
+droga_NOUN	2371	droga	NOUN	Gender=Fem	
+específico_ADJ	2372	específico	ADJ		
+taller_NOUN	2373	taller	NOUN	Gender=Masc	
+desorden_NOUN	2374	desorden	NOUN	Gender=Masc	
+quebrar_VERB	2375	quebrar	VERB		
+encerrado_ADJ	2376	encerrado	ADJ		
+esclavo_NOUN	2377	esclavo	NOUN	Gender=Masc	
+injusto_ADJ	2378	injusto	ADJ		
+sucesivo_ADJ	2379	sucesivo	ADJ		
+sumamente_ADV	2380	sumamente	ADV		
+feo_ADJ	2381	feo	ADJ		
+equilibrar_VERB	2382	equilibrar	VERB		
+asomar_VERB	2383	asomar	VERB		
+optar_VERB	2384	optar	VERB		
+manejo_NOUN	2385	manejo	NOUN	Gender=Masc	
+lágrima_NOUN	2386	lágrima	NOUN	Gender=Fem	
+colaboración_NOUN	2387	colaboración	NOUN	Gender=Fem	
+orgulloso_ADJ	2388	orgulloso	ADJ		
+ángulo_NOUN	2389	ángulo	NOUN	Gender=Masc	
+impacto_NOUN	2390	impacto	NOUN	Gender=Masc	
+urgencia_NOUN	2391	urgencia	NOUN	Gender=Fem	
+excepcional_ADJ	2392	excepcional	ADJ		
+creador_NOUN	2393	creador	NOUN	Gender=Masc	
+luna_NOUN	2394	luna	NOUN	Gender=Fem	
+instalación_NOUN	2395	instalación	NOUN	Gender=Fem	
+homenaje_NOUN	2396	homenaje	NOUN	Gender=Masc	
+ruina_NOUN	2397	ruina	NOUN	Gender=Fem	
+generoso_ADJ	2398	generoso	ADJ		
+académico_ADJ	2399	académico	ADJ		
+azar_NOUN	2400	azar	NOUN	Gender=Masc	
+estallar_VERB	2401	estallar	VERB		
+copiar_VERB	2402	copiar	VERB		
+inaugurar_VERB	2403	inaugurar	VERB		
+apretar_VERB	2404	apretar	VERB		
+razonable_ADJ	2405	razonable	ADJ		
+ola_NOUN	2406	ola	NOUN	Gender=Fem	
+oreja_NOUN	2407	oreja	NOUN	Gender=Fem	
+abuela_NOUN	2408	abuela	NOUN	Gender=Fem	
+amable_ADJ	2409	amable	ADJ		
+doña_NOUN	2410	doña	NOUN	Gender=Fem	
+rígido_ADJ	2411	rígido	ADJ		
+arco_NOUN	2412	arco	NOUN	Gender=Masc	
+oriente_NOUN	2413	oriente	NOUN	Gender=Masc	
+rumbo_NOUN	2414	rumbo	NOUN	Gender=Masc	
+ejecución_NOUN	2415	ejecución	NOUN	Gender=Fem	
+mentir_VERB	2416	mentir	VERB		
+ordenado_ADJ	2417	ordenado	ADJ		
+contratar_VERB	2418	contratar	VERB		
+caos_NOUN	2419	caos	NOUN	Gender=Masc	
+colonia_NOUN	2420	colonia	NOUN	Gender=Fem	
+alcohol_NOUN	2421	alcohol	NOUN	Gender=Masc	
+apropiado_ADJ	2422	apropiado	ADJ		
+nieve_NOUN	2423	nieve	NOUN	Gender=Fem	
+multitud_NOUN	2424	multitud	NOUN	Gender=Fem	
+ganado_NOUN	2425	ganado	NOUN	Gender=Masc	
+pez_NOUN	2426	pez	NOUN	Gender=Masc	
+líder_NOUN	2427	líder	NOUN	Gender=Com	
+resuelto_ADJ	2428	resuelto	ADJ		
+club_NOUN	2429	club	NOUN	Gender=Masc	
+posteriormente_ADV	2430	posteriormente	ADV		
+desierto_NOUN	2431	desierto	NOUN	Gender=Masc	
+escritura_NOUN	2432	escritura	NOUN	Gender=Fem	
+árabe_ADJ	2433	árabe	ADJ		
+danza_NOUN	2434	danza	NOUN	Gender=Fem	
+concierto_NOUN	2435	concierto	NOUN	Gender=Masc	
+partidario_NOUN	2436	partidario	NOUN	Gender=Masc	
+templo_NOUN	2437	templo	NOUN	Gender=Masc	
+líquido_NOUN	2438	líquido	NOUN	Gender=Masc	
+debilidad_NOUN	2439	debilidad	NOUN	Gender=Fem	
+ambición_NOUN	2440	ambición	NOUN	Gender=Fem	
+locura_NOUN	2441	locura	NOUN	Gender=Fem	
+comerciante_NOUN	2442	comerciante	NOUN	Gender=Com	
+camisa_NOUN	2443	camisa	NOUN	Gender=Fem	
+pluma_NOUN	2444	pluma	NOUN	Gender=Fem	
+pelota_NOUN	2445	pelota	NOUN	Gender=Fem	
+pasaje_NOUN	2446	pasaje	NOUN	Gender=Masc	
+limpieza_NOUN	2447	limpieza	NOUN	Gender=Fem	
+admiración_NOUN	2448	admiración	NOUN	Gender=Fem	
+fantasma_NOUN	2449	fantasma	NOUN	Gender=Masc	
+transformación_NOUN	2450	transformación	NOUN	Gender=Fem	
+caza_NOUN	2451	caza	NOUN	Gender=Fem	
+retener_VERB	2452	retener	VERB		
+cruel_ADJ	2453	cruel	ADJ		
+prender_VERB	2454	prender	VERB		
+almacén_NOUN	2455	almacén	NOUN	Gender=Masc	
+expectativa_NOUN	2456	expectativa	NOUN	Gender=Fem	
+ruptura_NOUN	2457	ruptura	NOUN	Gender=Fem	
+inversión_NOUN	2458	inversión	NOUN	Gender=Fem	
+visible_ADJ	2459	visible	ADJ		
+herida_NOUN	2460	herida	NOUN	Gender=Fem	
+hipótesis_NOUN	2461	hipótesis	NOUN	Gender=Fem	
+formular_VERB	2462	formular	VERB		
+poquito_ADJ	2463	poquito	ADJ		
+variado_ADJ	2464	variado	ADJ		
+giro_NOUN	2465	giro	NOUN	Gender=Masc	
+esquema_NOUN	2466	esquema	NOUN	Gender=Masc	
+mito_NOUN	2467	mito	NOUN	Gender=Masc	
+oscuridad_NOUN	2468	oscuridad	NOUN	Gender=Fem	
+pensión_NOUN	2469	pensión	NOUN	Gender=Fem	
+desaparición_NOUN	2470	desaparición	NOUN	Gender=Fem	
+repetido_ADJ	2471	repetido	ADJ		
+fumar_VERB	2472	fumar	VERB		
+envuelto_ADJ	2473	envuelto	ADJ		
+especializar_VERB	2474	especializar	VERB		
+últimamente_ADV	2475	últimamente	ADV		
+caracterizar_VERB	2476	caracterizar	VERB		
+paralelo_ADJ	2477	paralelo	ADJ		
+ordinario_ADJ	2478	ordinario	ADJ		
+designar_VERB	2479	designar	VERB		
+bloque_NOUN	2480	bloque	NOUN	Gender=Masc	
+cierre_NOUN	2481	cierre	NOUN	Gender=Masc	
+broma_NOUN	2482	broma	NOUN	Gender=Fem	
+viernes_NOUN	2483	viernes	NOUN	Gender=Masc	
+creciente_ADJ	2484	creciente	ADJ		
+tumba_NOUN	2485	tumba	NOUN	Gender=Fem	
+competir_VERB	2486	competir	VERB		
+despacho_NOUN	2487	despacho	NOUN	Gender=Masc	
+viuda_NOUN	2488	viuda	NOUN	Gender=Fem	
+pantalón_NOUN	2489	pantalón	NOUN	Gender=Masc	
+intercambio_NOUN	2490	intercambio	NOUN	Gender=Masc	
+mancha_NOUN	2491	mancha	NOUN	Gender=Fem	
+retrato_NOUN	2492	retrato	NOUN	Gender=Masc	
+lata_NOUN	2493	lata	NOUN	Gender=Fem	
+combate_NOUN	2494	combate	NOUN	Gender=Masc	
+instancia_NOUN	2495	instancia	NOUN	Gender=Fem	
+secar_VERB	2496	secar	VERB		
+roca_NOUN	2497	roca	NOUN	Gender=Fem	
+herramienta_NOUN	2498	herramienta	NOUN	Gender=Fem	
+anónimo_ADJ	2499	anónimo	ADJ		
+panorama_NOUN	2500	panorama	NOUN	Gender=Masc	
+trágico_ADJ	2501	trágico	ADJ		
+imprimir_VERB	2502	imprimir	VERB		
+camión_NOUN	2503	camión	NOUN	Gender=Masc	
+olvido_NOUN	2504	olvido	NOUN	Gender=Masc	
+estrategia_NOUN	2505	estrategia	NOUN	Gender=Fem	
+muchacha_NOUN	2506	muchacha	NOUN	Gender=Fem	
+conversar_VERB	2507	conversar	VERB		
+propaganda_NOUN	2508	propaganda	NOUN	Gender=Fem	
+lamentar_VERB	2509	lamentar	VERB		
+misa_NOUN	2510	misa	NOUN	Gender=Fem	
+alzar_VERB	2511	alzar	VERB		
+inicio_NOUN	2512	inicio	NOUN	Gender=Masc	
+fútbol_NOUN	2513	fútbol	NOUN	Gender=Masc	
+esfera_NOUN	2514	esfera	NOUN	Gender=Fem	
+iluminar_VERB	2515	iluminar	VERB		
+arquitectura_NOUN	2516	arquitectura	NOUN	Gender=Fem	
+especialidad_NOUN	2517	especialidad	NOUN	Gender=Fem	
+músico_NOUN	2518	músico	NOUN	Gender=Masc,Fem	música
+relativamente_ADV	2519	relativamente	ADV		
+eh_INTJ	2520	eh	INTJ		
+eje_NOUN	2521	eje	NOUN	Gender=Masc	
+guiar_VERB	2522	guiar	VERB		
+efectuar_VERB	2523	efectuar	VERB		
+abandono_NOUN	2524	abandono	NOUN	Gender=Masc	
+museo_NOUN	2525	museo	NOUN	Gender=Masc	
+propietario_NOUN	2526	propietario	NOUN	Gender=Masc	
+trozo_NOUN	2527	trozo	NOUN	Gender=Masc	
+riguroso_ADJ	2528	riguroso	ADJ		
+armonía_NOUN	2529	armonía	NOUN	Gender=Fem	
+pacto_NOUN	2530	pacto	NOUN	Gender=Masc	
+calentar_VERB	2531	calentar	VERB		
+atento_ADJ	2532	atento	ADJ		
+selección_NOUN	2533	selección	NOUN	Gender=Fem	
+proseguir_VERB	2534	proseguir	VERB		
+incómodo_ADJ	2535	incómodo	ADJ		
+protagonista_NOUN	2536	protagonista	NOUN	Gender=Com	
+ferrocarril_NOUN	2537	ferrocarril	NOUN	Gender=Masc	
+inocente_ADJ	2538	inocente	ADJ		
+fatal_ADJ	2539	fatal	ADJ		
+intimidad_NOUN	2540	intimidad	NOUN	Gender=Fem	
+enfrente_ADV	2541	enfrente	ADV		
+nave_NOUN	2542	nave	NOUN	Gender=Fem	
+oración_NOUN	2543	oración	NOUN	Gender=Fem	
+cansancio_NOUN	2544	cansancio	NOUN	Gender=Masc	
+noble_ADJ	2545	noble	ADJ		
+escondido_ADJ	2546	escondido	ADJ		
+tejido_NOUN	2547	tejido	NOUN	Gender=Masc	
+trampa_NOUN	2548	trampa	NOUN	Gender=Fem	
+hondo_ADJ	2549	hondo	ADJ		
+descripción_NOUN	2550	descripción	NOUN	Gender=Fem	
+pecado_NOUN	2551	pecado	NOUN	Gender=Masc	
+cansar_VERB	2552	cansar	VERB		
+divertido_ADJ	2553	divertido	ADJ		
+injusticia_NOUN	2554	injusticia	NOUN	Gender=Fem	
+heredar_VERB	2555	heredar	VERB		
+librar_VERB	2556	librar	VERB		
+adiós_NOUN	2557	adiós	NOUN	Gender=Masc	
+brillar_VERB	2558	brillar	VERB		
+rescatar_VERB	2559	rescatar	VERB		
+tabaco_NOUN	2560	tabaco	NOUN	Gender=Masc	
+juvenil_ADJ	2561	juvenil	ADJ		
+ausente_ADJ	2562	ausente	ADJ		
+suceso_NOUN	2563	suceso	NOUN	Gender=Masc	
+extrañar_VERB	2564	extrañar	VERB		
+asustar_VERB	2565	asustar	VERB		
+mediado_ADJ	2566	mediado	ADJ		
+antecedente_NOUN	2567	antecedente	NOUN	Gender=Masc	
+barrera_NOUN	2568	barrera	NOUN	Gender=Fem	
+estético_ADJ	2569	estético	ADJ		
+anotar_VERB	2570	anotar	VERB		
+tribunal_NOUN	2571	tribunal	NOUN	Gender=Masc	
+bravo_ADJ	2572	bravo	ADJ		
+invasión_NOUN	2573	invasión	NOUN	Gender=Fem	
+septiembre_NOUN	2574	septiembre	NOUN	Gender=Masc	
+dependencia_NOUN	2575	dependencia	NOUN	Gender=Fem	
+democracia_NOUN	2576	democracia	NOUN	Gender=Fem	
+sutil_ADJ	2577	sutil	ADJ		
+maduro_ADJ	2578	maduro	ADJ		
+mezclado_ADJ	2579	mezclado	ADJ		
+remontar_VERB	2580	remontar	VERB		
+limitación_NOUN	2581	limitación	NOUN	Gender=Fem	
+lindo_ADJ	2582	lindo	ADJ		
+invitado_NOUN	2583	invitado	NOUN	Gender=Masc	
+pescado_NOUN	2584	pescado	NOUN	Gender=Masc	
+continuamente_ADV	2585	continuamente	ADV		
+obvio_ADJ	2586	obvio	ADJ		
+estrictamente_ADV	2587	estrictamente	ADV		
+obstáculo_NOUN	2588	obstáculo	NOUN	Gender=Masc	
+aspiración_NOUN	2589	aspiración	NOUN	Gender=Fem	
+simpático_ADJ	2590	simpático	ADJ		
+corredor_NOUN	2591	corredor	NOUN	Gender=Masc,Fem	corredora
+exquisito_ADJ	2592	exquisito	ADJ		
+resumen_NOUN	2593	resumen	NOUN	Gender=Masc	
+basura_NOUN	2594	basura	NOUN	Gender=Fem	
+escalera_NOUN	2595	escalera	NOUN	Gender=Fem	
+gravedad_NOUN	2596	gravedad	NOUN	Gender=Fem	
+fundamento_NOUN	2597	fundamento	NOUN	Gender=Masc	
+sustancia_NOUN	2598	sustancia	NOUN	Gender=Fem	
+convocar_VERB	2599	convocar	VERB		
+harto_ADJ	2600	harto	ADJ		
+derrota_NOUN	2601	derrota	NOUN	Gender=Fem	
+sospecha_NOUN	2602	sospecha	NOUN	Gender=Fem	
+exagerado_ADJ	2603	exagerado	ADJ		
+huelga_NOUN	2604	huelga	NOUN	Gender=Fem	
+abuso_NOUN	2605	abuso	NOUN	Gender=Masc	
+jueves_NOUN	2606	jueves	NOUN	Gender=Masc	
+arreglo_NOUN	2607	arreglo	NOUN	Gender=Masc	
+sal_NOUN	2608	sal	NOUN	Gender=Fem	
+dosis_NOUN	2609	dosis	NOUN	Gender=Fem	
+acento_NOUN	2610	acento	NOUN	Gender=Masc	
+aviso_NOUN	2611	aviso	NOUN	Gender=Masc	
+lazo_NOUN	2612	lazo	NOUN	Gender=Masc	
+conservador_ADJ	2613	conservador	ADJ		
+entorno_NOUN	2614	entorno	NOUN	Gender=Masc	
+nieto_NOUN	2615	nieto	NOUN	Gender=Masc	
+príncipe_NOUN	2616	príncipe	NOUN	Gender=Masc	
+imprescindible_ADJ	2617	imprescindible	ADJ		
+mediodía_NOUN	2618	mediodía	NOUN	Gender=Masc	
+gota_NOUN	2619	gota	NOUN	Gender=Fem	
+cajón_NOUN	2620	cajón	NOUN	Gender=Masc	
+generalizar_VERB	2621	generalizar	VERB		
+señorita_NOUN	2622	señorita	NOUN	Gender=Fem	
+preferencia_NOUN	2623	preferencia	NOUN	Gender=Fem	
+habitar_VERB	2624	habitar	VERB		
+pozo_NOUN	2625	pozo	NOUN	Gender=Masc	
+rumor_NOUN	2626	rumor	NOUN	Gender=Masc	
+armar_VERB	2627	armar	VERB		
+concurso_NOUN	2628	concurso	NOUN	Gender=Masc	
+tesoro_NOUN	2629	tesoro	NOUN	Gender=Masc	
+presupuesto_NOUN	2630	presupuesto	NOUN	Gender=Masc	
+rural_ADJ	2631	rural	ADJ		
+vigilancia_NOUN	2632	vigilancia	NOUN	Gender=Fem	
+supremo_ADJ	2633	supremo	ADJ		
+confuso_ADJ	2634	confuso	ADJ		
+presa_NOUN	2635	presa	NOUN	Gender=Fem	
+estómago_NOUN	2636	estómago	NOUN	Gender=Masc	
+anular_VERB	2637	anular	VERB		
+decisivo_ADJ	2638	decisivo	ADJ		
+bola_NOUN	2639	bola	NOUN	Gender=Fem	
+determinación_NOUN	2640	determinación	NOUN	Gender=Fem	
+reforma_NOUN	2641	reforma	NOUN	Gender=Fem	
+bruto_ADJ	2642	bruto	ADJ		
+verso_NOUN	2643	verso	NOUN	Gender=Masc	
+requisito_NOUN	2644	requisito	NOUN	Gender=Masc	
+adolescente_NOUN	2645	adolescente	NOUN	Gender=Com	
+sentimental_ADJ	2646	sentimental	ADJ		
+herido_ADJ	2647	herido	ADJ		
+kilo_NOUN	2648	kilo	NOUN	Gender=Masc	
+alargar_VERB	2649	alargar	VERB		
+conquista_NOUN	2650	conquista	NOUN	Gender=Fem	
+luminoso_ADJ	2651	luminoso	ADJ		
+particularmente_ADV	2652	particularmente	ADV		
+filósofo_NOUN	2653	filósofo	NOUN	Gender=Masc	
+genio_NOUN	2654	genio	NOUN	Gender=Masc	
+sucesión_NOUN	2655	sucesión	NOUN	Gender=Fem	
+componente_NOUN	2656	componente	NOUN	Gender=Masc	
+transparente_ADJ	2657	transparente	ADJ		
+sufrimiento_NOUN	2658	sufrimiento	NOUN	Gender=Masc	
+aparente_ADJ	2659	aparente	ADJ		
+entidad_NOUN	2660	entidad	NOUN	Gender=Fem	
+saludo_NOUN	2661	saludo	NOUN	Gender=Masc	
+estimular_VERB	2662	estimular	VERB		
+certeza_NOUN	2663	certeza	NOUN	Gender=Fem	
+depósito_NOUN	2664	depósito	NOUN	Gender=Masc	
+húmedo_ADJ	2665	húmedo	ADJ		
+pasillo_NOUN	2666	pasillo	NOUN	Gender=Masc	
+pisar_VERB	2667	pisar	VERB		
+solidaridad_NOUN	2668	solidaridad	NOUN	Gender=Fem	
+papa_NOUN	2669	papa	NOUN	Gender=Masc,Fem	
+geografía_NOUN	2670	geografía	NOUN	Gender=Fem	
+leve_ADJ	2671	leve	ADJ		
+juguete_NOUN	2672	juguete	NOUN	Gender=Masc	
+violar_VERB	2673	violar	VERB		
+chiste_NOUN	2674	chiste	NOUN	Gender=Masc	
+aprendizaje_NOUN	2675	aprendizaje	NOUN	Gender=Masc	
+esposo_NOUN	2676	esposo	NOUN	Gender=Masc	
+boda_NOUN	2677	boda	NOUN	Gender=Fem	
+realista_ADJ	2678	realista	ADJ		
+fresco_NOUN	2679	fresco	NOUN	Gender=Masc	
+lago_NOUN	2680	lago	NOUN	Gender=Masc	
+enriquecer_VERB	2681	enriquecer	VERB		
+prestado_ADJ	2682	prestado	ADJ		
+orientación_NOUN	2683	orientación	NOUN	Gender=Fem	
+madurez_NOUN	2684	madurez	NOUN	Gender=Fem	
+adulto_ADJ	2685	adulto	ADJ		
+municipal_ADJ	2686	municipal	ADJ		
+demostración_NOUN	2687	demostración	NOUN	Gender=Fem	
+fundamentalmente_ADV	2688	fundamentalmente	ADV		
+alegrar_VERB	2689	alegrar	VERB		
+transportar_VERB	2690	transportar	VERB		
+cumplimiento_NOUN	2691	cumplimiento	NOUN	Gender=Masc	
+respaldo_NOUN	2692	respaldo	NOUN	Gender=Masc	
+superficial_ADJ	2693	superficial	ADJ		
+dieciocho_NUM	2694	dieciocho	NUM		
+incendio_NOUN	2695	incendio	NOUN	Gender=Masc	
+dorado_ADJ	2696	dorado	ADJ		
+triunfar_VERB	2697	triunfar	VERB		
+joya_NOUN	2698	joya	NOUN	Gender=Fem	
+favorito_ADJ	2699	favorito	ADJ		
+cementerio_NOUN	2700	cementerio	NOUN	Gender=Masc	
+escolar_ADJ	2701	escolar	ADJ		
+publicación_NOUN	2702	publicación	NOUN	Gender=Fem	
+variación_NOUN	2703	variación	NOUN	Gender=Fem	
+cálido_ADJ	2704	cálido	ADJ		
+inconsciente_ADJ	2705	inconsciente	ADJ		
+promoción_NOUN	2706	promoción	NOUN	Gender=Fem	
+enseguida_ADV	2707	enseguida	ADV		
+mágico_ADJ	2708	mágico	ADJ		
+sentencia_NOUN	2709	sentencia	NOUN	Gender=Fem	
+amargo_ADJ	2710	amargo	ADJ		
+resolución_NOUN	2711	resolución	NOUN	Gender=Fem	
+afortunadamente_ADV	2712	afortunadamente	ADV		
+coincidencia_NOUN	2713	coincidencia	NOUN	Gender=Fem	
+estímulo_NOUN	2714	estímulo	NOUN	Gender=Masc	
+acoger_VERB	2715	acoger	VERB		
+filosófico_ADJ	2716	filosófico	ADJ		
+sembrar_VERB	2717	sembrar	VERB		
+acentuar_VERB	2718	acentuar	VERB		
+anteriormente_ADV	2719	anteriormente	ADV		
+marino_ADJ	2720	marino	ADJ		
+barra_NOUN	2721	barra	NOUN	Gender=Fem	
+entretener_VERB	2722	entretener	VERB		
+desviar_VERB	2723	desviar	VERB		
+retroceder_VERB	2724	retroceder	VERB		
+culto_ADJ	2725	culto	ADJ		
+novia_NOUN	2726	novia	NOUN	Gender=Fem	
+piano_NOUN	2727	piano	NOUN	Gender=Masc	
+pretensión_NOUN	2728	pretensión	NOUN	Gender=Fem	
+habla_NOUN	2729	habla	NOUN	Gender=Fem	
+novio_NOUN	2730	novio	NOUN	Gender=Masc	
+sonreír_VERB	2731	sonreír	VERB		
+espectador_NOUN	2732	espectador	NOUN	Gender=Masc	
+relatar_VERB	2733	relatar	VERB		
+pensado_ADJ	2734	pensado	ADJ		
+bota_NOUN	2735	bota	NOUN	Gender=Fem	
+oh_INTJ	2736	oh	INTJ		
+pretexto_NOUN	2737	pretexto	NOUN	Gender=Masc	
+horrible_ADJ	2738	horrible	ADJ		
+fiebre_NOUN	2739	fiebre	NOUN	Gender=Fem	
+difundir_VERB	2740	difundir	VERB		
+lucir_VERB	2741	lucir	VERB		
+síntesis_NOUN	2742	síntesis	NOUN	Gender=Fem	
+este_NOUN	2743	este	NOUN	Gender=Masc	
+nervio_NOUN	2744	nervio	NOUN	Gender=Masc	
+científico_NOUN	2745	científico	NOUN	Gender=Masc,Fem	científica
+peculiar_ADJ	2746	peculiar	ADJ		
+ejemplar_ADJ	2747	ejemplar	ADJ		
+grano_NOUN	2748	grano	NOUN	Gender=Masc	
+recientemente_ADV	2749	recientemente	ADV		
+reservar_VERB	2750	reservar	VERB		
+asistencia_NOUN	2751	asistencia	NOUN	Gender=Fem	
+sacrificar_VERB	2752	sacrificar	VERB		
+puramente_ADV	2753	puramente	ADV		
+sonrisa_NOUN	2754	sonrisa	NOUN	Gender=Fem	
+exagerar_VERB	2755	exagerar	VERB		
+león_NOUN	2756	león	NOUN	Gender=Masc	
+bárbaro_ADJ	2757	bárbaro	ADJ		
+aceptación_NOUN	2758	aceptación	NOUN	Gender=Fem	
+labio_NOUN	2759	labio	NOUN	Gender=Masc	
+visitante_NOUN	2760	visitante	NOUN	Gender=Com	
+autónomo_ADJ	2761	autónomo	ADJ		
+sonoro_ADJ	2762	sonoro	ADJ		
+traslado_NOUN	2763	traslado	NOUN	Gender=Masc	
+residir_VERB	2764	residir	VERB		
+tentación_NOUN	2765	tentación	NOUN	Gender=Fem	
+porvenir_NOUN	2766	porvenir	NOUN	Gender=Masc	
+promover_VERB	2767	promover	VERB		
+atracción_NOUN	2768	atracción	NOUN	Gender=Fem	
+jurídico_ADJ	2769	jurídico	ADJ		
+reparar_VERB	2770	reparar	VERB		
+ilustre_ADJ	2771	ilustre	ADJ		
+corona_NOUN	2772	corona	NOUN	Gender=Fem	
+administrar_VERB	2773	administrar	VERB		
+docena_NOUN	2774	docena	NOUN	Gender=Fem	
+ahorrar_VERB	2775	ahorrar	VERB		
+perfección_NOUN	2776	perfección	NOUN	Gender=Fem	
+humedad_NOUN	2777	humedad	NOUN	Gender=Fem	
+cosecha_NOUN	2778	cosecha	NOUN	Gender=Fem	
+enterrar_VERB	2779	enterrar	VERB		
+desesperación_NOUN	2780	desesperación	NOUN	Gender=Fem	
+curva_NOUN	2781	curva	NOUN	Gender=Fem	
+contraer_VERB	2782	contraer	VERB		
+blando_ADJ	2783	blando	ADJ		
+estable_ADJ	2784	estable	ADJ		
+ciertamente_ADV	2785	ciertamente	ADV		
+dormido_ADJ	2786	dormido	ADJ		
+amo_NOUN	2787	amo	NOUN	Gender=Masc	
+reflexionar_VERB	2788	reflexionar	VERB		
+humo_NOUN	2789	humo	NOUN	Gender=Masc	
+realización_NOUN	2790	realización	NOUN	Gender=Fem	
+cuartel_NOUN	2791	cuartel	NOUN	Gender=Masc	
+tránsito_NOUN	2792	tránsito	NOUN	Gender=Masc	
+dieciséis_NUM	2793	dieciséis	NUM		
+énfasis_NOUN	2794	énfasis	NOUN	Gender=Masc	
+tímido_ADJ	2795	tímido	ADJ		
+empresario_NOUN	2796	empresario	NOUN	Gender=Masc	
+tuyo_PRON	2797	tuyo	PRON		
+saco_NOUN	2798	saco	NOUN	Gender=Masc	
+vasto_ADJ	2799	vasto	ADJ		
+cruz_NOUN	2800	cruz	NOUN	Gender=Fem	
+frustrado_ADJ	2801	frustrado	ADJ		
+pausa_NOUN	2802	pausa	NOUN	Gender=Fem	
+comprometido_ADJ	2803	comprometido	ADJ		
+libremente_ADV	2804	libremente	ADV		
+vicio_NOUN	2805	vicio	NOUN	Gender=Masc	
+impuesto_NOUN	2806	impuesto	NOUN	Gender=Masc	
+consiguiente_ADJ	2807	consiguiente	ADJ		
+arquitecto_NOUN	2808	arquitecto	NOUN	Gender=Masc,Fem	arquitecta
+cruce_NOUN	2809	cruce	NOUN	Gender=Masc	
+centrar_VERB	2810	centrar	VERB		
+convivencia_NOUN	2811	convivencia	NOUN	Gender=Fem	
+cable_NOUN	2812	cable	NOUN	Gender=Masc	
+aburrido_ADJ	2813	aburrido	ADJ		
+bondad_NOUN	2814	bondad	NOUN	Gender=Fem	
+experimento_NOUN	2815	experimento	NOUN	Gender=Masc	
+recto_ADJ	2816	recto	ADJ		
+crónica_NOUN	2817	crónica	NOUN	Gender=Fem	
+seguida_ADV	2818	seguida	ADV		
+originar_VERB	2819	originar	VERB		
+socialista_ADJ	2820	socialista	ADJ		
+ahogar_VERB	2821	ahogar	VERB		
+espléndido_ADJ	2822	espléndido	ADJ		
+esforzar_VERB	2823	esforzar	VERB		
+dictadura_NOUN	2824	dictadura	NOUN	Gender=Fem	
+eficacia_NOUN	2825	eficacia	NOUN	Gender=Fem	
+detectar_VERB	2826	detectar	VERB		
+vapor_NOUN	2827	vapor	NOUN	Gender=Masc	
+bebida_NOUN	2828	bebida	NOUN	Gender=Fem	
+autorizar_VERB	2829	autorizar	VERB		
+charla_NOUN	2830	charla	NOUN	Gender=Fem	
+gestión_NOUN	2831	gestión	NOUN	Gender=Fem	
+afrontar_VERB	2832	afrontar	VERB		
+existente_ADJ	2833	existente	ADJ		
+cartera_NOUN	2834	cartera	NOUN	Gender=Fem	
+inclinado_ADJ	2835	inclinado	ADJ		
+restar_VERB	2836	restar	VERB		
+circulación_NOUN	2837	circulación	NOUN	Gender=Fem	
+denuncia_NOUN	2838	denuncia	NOUN	Gender=Fem	
+concretar_VERB	2839	concretar	VERB		
+picar_VERB	2840	picar	VERB		
+tormenta_NOUN	2841	tormenta	NOUN	Gender=Fem	
+metálico_ADJ	2842	metálico	ADJ		
+foco_NOUN	2843	foco	NOUN	Gender=Masc	
+residencia_NOUN	2844	residencia	NOUN	Gender=Fem	
+espectacular_ADJ	2845	espectacular	ADJ		
+jurar_VERB	2846	jurar	VERB		
+rezar_VERB	2847	rezar	VERB		
+cuero_NOUN	2848	cuero	NOUN	Gender=Masc	
+misterioso_ADJ	2849	misterioso	ADJ		
+hierba_NOUN	2850	hierba	NOUN	Gender=Fem	
+obrero_ADJ	2851	obrero	ADJ		
+administrativo_ADJ	2852	administrativo	ADJ		
+manzana_NOUN	2853	manzana	NOUN	Gender=Fem	
+singular_ADJ	2854	singular	ADJ		
+pedazo_NOUN	2855	pedazo	NOUN	Gender=Masc	
+sabiduría_NOUN	2856	sabiduría	NOUN	Gender=Fem	
+inducir_VERB	2857	inducir	VERB		
+cigarrillo_NOUN	2858	cigarrillo	NOUN	Gender=Masc	
+encantar_VERB	2859	encantar	VERB		
+crudo_ADJ	2860	crudo	ADJ		
+agotado_ADJ	2861	agotado	ADJ		
+deportivo_ADJ	2862	deportivo	ADJ		
+magnitud_NOUN	2863	magnitud	NOUN	Gender=Fem	
+químico_ADJ	2864	químico	ADJ		
+botón_NOUN	2865	botón	NOUN	Gender=Masc	
+teórico_ADJ	2866	teórico	ADJ		
+igualdad_NOUN	2867	igualdad	NOUN	Gender=Fem	
+privar_VERB	2868	privar	VERB		
+deducir_VERB	2869	deducir	VERB		
+redactar_VERB	2870	redactar	VERB		
+noción_NOUN	2871	noción	NOUN	Gender=Fem	
+planear_VERB	2872	planear	VERB		
+abrazar_VERB	2873	abrazar	VERB		
+tolerar_VERB	2874	tolerar	VERB		
+semilla_NOUN	2875	semilla	NOUN	Gender=Fem	
+avenida_NOUN	2876	avenida	NOUN	Gender=Fem	
+descartar_VERB	2877	descartar	VERB		
+diablo_NOUN	2878	diablo	NOUN	Gender=Masc	
+sujetar_VERB	2879	sujetar	VERB		
+hueco_NOUN	2880	hueco	NOUN	Gender=Masc	
+colaborador_NOUN	2881	colaborador	NOUN	Gender=Masc	
+capricho_NOUN	2882	capricho	NOUN	Gender=Masc	
+ciudadano_ADJ	2883	ciudadano	ADJ		
+prudente_ADJ	2884	prudente	ADJ		
+guitarra_NOUN	2885	guitarra	NOUN	Gender=Fem	
+agencia_NOUN	2886	agencia	NOUN	Gender=Fem	
+rabia_NOUN	2887	rabia	NOUN	Gender=Fem	
+telefónico_ADJ	2888	telefónico	ADJ		
+monumento_NOUN	2889	monumento	NOUN	Gender=Masc	
+racional_ADJ	2890	racional	ADJ		
+previamente_ADV	2891	previamente	ADV		
+trazar_VERB	2892	trazar	VERB		
+correspondencia_NOUN	2893	correspondencia	NOUN	Gender=Fem	
+barro_NOUN	2894	barro	NOUN	Gender=Masc	
+fuga_NOUN	2895	fuga	NOUN	Gender=Fem	
+presionar_VERB	2896	presionar	VERB		
+identificación_NOUN	2897	identificación	NOUN	Gender=Fem	
+contexto_NOUN	2898	contexto	NOUN	Gender=Masc	
+sombrero_NOUN	2899	sombrero	NOUN	Gender=Masc	
+reiterar_VERB	2900	reiterar	VERB		
+ayudante_NOUN	2901	ayudante	NOUN	Gender=Com	
+indiferente_ADJ	2902	indiferente	ADJ		
+maniobra_NOUN	2903	maniobra	NOUN	Gender=Fem	
+inesperado_ADJ	2904	inesperado	ADJ		
+distraer_VERB	2905	distraer	VERB		
+prejuicio_NOUN	2906	prejuicio	NOUN	Gender=Masc	
+tropezar_VERB	2907	tropezar	VERB		
+recomendación_NOUN	2908	recomendación	NOUN	Gender=Fem	
+francamente_ADV	2909	francamente	ADV		
+diseñar_VERB	2910	diseñar	VERB		
+proveer_VERB	2911	proveer	VERB		
+seleccionar_VERB	2912	seleccionar	VERB		
+convivir_VERB	2913	convivir	VERB		
+instinto_NOUN	2914	instinto	NOUN	Gender=Masc	
+sincero_ADJ	2915	sincero	ADJ		
+progresar_VERB	2916	progresar	VERB		
+ideológico_ADJ	2917	ideológico	ADJ		
+precaución_NOUN	2918	precaución	NOUN	Gender=Fem	
+robo_NOUN	2919	robo	NOUN	Gender=Masc	
+cabello_NOUN	2920	cabello	NOUN	Gender=Masc	
+utilidad_NOUN	2921	utilidad	NOUN	Gender=Fem	
+queja_NOUN	2922	queja	NOUN	Gender=Fem	
+abundar_VERB	2923	abundar	VERB		
+celo_NOUN	2924	celo	NOUN	Gender=Masc	
+publicidad_NOUN	2925	publicidad	NOUN	Gender=Fem	
+ligado_ADJ	2926	ligado	ADJ		
+índole_NOUN	2927	índole	NOUN	Gender=Fem	
+asimilar_VERB	2928	asimilar	VERB		
+prolongado_ADJ	2929	prolongado	ADJ		
+choque_NOUN	2930	choque	NOUN	Gender=Masc	
+tecnología_NOUN	2931	tecnología	NOUN	Gender=Fem	
+tubo_NOUN	2932	tubo	NOUN	Gender=Masc	
+sordo_ADJ	2933	sordo	ADJ		
+admirable_ADJ	2934	admirable	ADJ		
+mercancía_NOUN	2935	mercancía	NOUN	Gender=Fem	
+tronco_NOUN	2936	tronco	NOUN	Gender=Masc	
+culto_NOUN	2937	culto	NOUN	Gender=Masc	
+palma_NOUN	2938	palma	NOUN	Gender=Fem	
+prenda_NOUN	2939	prenda	NOUN	Gender=Fem	
+coro_NOUN	2940	coro	NOUN	Gender=Masc	
+tejer_VERB	2941	tejer	VERB		
+túnel_NOUN	2942	túnel	NOUN	Gender=Masc	
+cercanía_NOUN	2943	cercanía	NOUN	Gender=Fem	
+proclamar_VERB	2944	proclamar	VERB		
+cuchillo_NOUN	2945	cuchillo	NOUN	Gender=Masc	
+desprecio_NOUN	2946	desprecio	NOUN	Gender=Masc	
+plástico_NOUN	2947	plástico	NOUN	Gender=Masc	
+complejo_NOUN	2948	complejo	NOUN	Gender=Masc	
+plantar_VERB	2949	plantar	VERB		
+naranja_NOUN	2950	naranja	NOUN	Gender=Fem	
+derrotar_VERB	2951	derrotar	VERB		
+frenar_VERB	2952	frenar	VERB		
+voluntario_ADJ	2953	voluntario	ADJ		
+adivinar_VERB	2954	adivinar	VERB		
+cuota_NOUN	2955	cuota	NOUN	Gender=Fem	
+mosca_NOUN	2956	mosca	NOUN	Gender=Fem	
+judicial_ADJ	2957	judicial	ADJ		
+pescar_VERB	2958	pescar	VERB		
+doctrina_NOUN	2959	doctrina	NOUN	Gender=Fem	
+reservado_ADJ	2960	reservado	ADJ		
+laguna_NOUN	2961	laguna	NOUN	Gender=Fem	
+distinción_NOUN	2962	distinción	NOUN	Gender=Fem	
+tribu_NOUN	2963	tribu	NOUN	Gender=Fem	
+refugio_NOUN	2964	refugio	NOUN	Gender=Masc	
+tragar_VERB	2965	tragar	VERB		
+legítimo_ADJ	2966	legítimo	ADJ		
+flotar_VERB	2967	flotar	VERB		
+convencional_ADJ	2968	convencional	ADJ		
+sacudir_VERB	2969	sacudir	VERB		
+gigantesco_ADJ	2970	gigantesco	ADJ		
+cena_NOUN	2971	cena	NOUN	Gender=Fem	
+incertidumbre_NOUN	2972	incertidumbre	NOUN	Gender=Fem	
+tierno_ADJ	2973	tierno	ADJ		
+ligeramente_ADV	2974	ligeramente	ADV		
+aéreo_ADJ	2975	aéreo	ADJ		
+suprimir_VERB	2976	suprimir	VERB		
+ahorro_NOUN	2977	ahorro	NOUN	Gender=Masc	
+sobrar_VERB	2978	sobrar	VERB		
+brotar_VERB	2979	brotar	VERB		
+prisión_NOUN	2980	prisión	NOUN	Gender=Fem	
+investigador_NOUN	2981	investigador	NOUN	Gender=Masc,Fem	investigadora
+técnico_NOUN	2982	técnico	NOUN	Gender=Masc,Fem	técnica
+paraíso_NOUN	2983	paraíso	NOUN	Gender=Masc	
+automático_ADJ	2984	automático	ADJ		
+postre_NOUN	2985	postre	NOUN	Gender=Masc,Fem	
+inquieto_ADJ	2986	inquieto	ADJ		
+helado_ADJ	2987	helado	ADJ		
+plástico_ADJ	2988	plástico	ADJ		
+alimentación_NOUN	2989	alimentación	NOUN	Gender=Fem	
+miel_NOUN	2990	miel	NOUN	Gender=Fem	
+vulgar_ADJ	2991	vulgar	ADJ		
+desafío_NOUN	2992	desafío	NOUN	Gender=Masc	
+aeropuerto_NOUN	2993	aeropuerto	NOUN	Gender=Masc	
+valorar_VERB	2994	valorar	VERB		
+diferenciar_VERB	2995	diferenciar	VERB		
+abrigo_NOUN	2996	abrigo	NOUN	Gender=Masc	
+hábil_ADJ	2997	hábil	ADJ		
+veinticuatro_NUM	2998	veinticuatro	NUM		
+sello_NOUN	2999	sello	NOUN	Gender=Masc	
+campana_NOUN	3000	campana	NOUN	Gender=Fem	
+destacado_ADJ	3001	destacado	ADJ		
+encendido_ADJ	3002	encendido	ADJ		
+incidente_NOUN	3003	incidente	NOUN	Gender=Masc	
+fragmento_NOUN	3004	fragmento	NOUN	Gender=Masc	
+plano_ADJ	3005	plano	ADJ		
+compensar_VERB	3006	compensar	VERB		
+obligatorio_ADJ	3007	obligatorio	ADJ		
+asignar_VERB	3008	asignar	VERB		
+contemporáneo_ADJ	3009	contemporáneo	ADJ		
+suscitar_VERB	3010	suscitar	VERB		
+finalizar_VERB	3011	finalizar	VERB		
+reforzar_VERB	3012	reforzar	VERB		
+mina_NOUN	3013	mina	NOUN	Gender=Fem	
+restaurante_NOUN	3014	restaurante	NOUN	Gender=Masc	
+porcentaje_NOUN	3015	porcentaje	NOUN	Gender=Masc	
+conductor_NOUN	3016	conductor	NOUN	Gender=Masc,Fem	conductora
+contigo_PRON	3017	contigo	PRON		
+evolucionar_VERB	3018	evolucionar	VERB		
+magia_NOUN	3019	magia	NOUN	Gender=Fem	
+presidir_VERB	3020	presidir	VERB		
+comedor_NOUN	3021	comedor	NOUN	Gender=Masc	
+seriedad_NOUN	3022	seriedad	NOUN	Gender=Fem	
+gallina_NOUN	3023	gallina	NOUN	Gender=Fem	
+espada_NOUN	3024	espada	NOUN	Gender=Fem	
+discreto_ADJ	3025	discreto	ADJ		
+excelencia_NOUN	3026	excelencia	NOUN	Gender=Fem	
+agitar_VERB	3027	agitar	VERB		
+amoroso_ADJ	3028	amoroso	ADJ		
+músculo_NOUN	3029	músculo	NOUN	Gender=Masc	
+optimista_ADJ	3030	optimista	ADJ		
+persecución_NOUN	3031	persecución	NOUN	Gender=Fem	
+imperio_NOUN	3032	imperio	NOUN	Gender=Masc	
+casco_NOUN	3033	casco	NOUN	Gender=Masc	
+pelea_NOUN	3034	pelea	NOUN	Gender=Fem	
+retorno_NOUN	3035	retorno	NOUN	Gender=Masc	
+oler_VERB	3036	oler	VERB		
+aludir_VERB	3037	aludir	VERB		
+vera_NOUN	3038	vera	NOUN	Gender=Fem	
+delgado_ADJ	3039	delgado	ADJ		
+latín_NOUN	3040	latín	NOUN	Gender=Masc	
+resumir_VERB	3041	resumir	VERB		
+rutina_NOUN	3042	rutina	NOUN	Gender=Fem	
+tenso_ADJ	3043	tenso	ADJ		
+mejora_NOUN	3044	mejora	NOUN	Gender=Fem	
+domicilio_NOUN	3045	domicilio	NOUN	Gender=Masc	
+porquería_NOUN	3046	porquería	NOUN	Gender=Fem	
+burlar_VERB	3047	burlar	VERB		
+susto_NOUN	3048	susto	NOUN	Gender=Masc	
+encajar_VERB	3049	encajar	VERB		
+nadar_VERB	3050	nadar	VERB		
+amanecer_NOUN	3051	amanecer	NOUN	Gender=Masc	
+célula_NOUN	3052	célula	NOUN	Gender=Fem	
+acelerar_VERB	3053	acelerar	VERB		
+crítico_NOUN	3054	crítico	NOUN	Gender=Masc	
+inspiración_NOUN	3055	inspiración	NOUN	Gender=Fem	
+ladrillo_NOUN	3056	ladrillo	NOUN	Gender=Masc	
+proyección_NOUN	3057	proyección	NOUN	Gender=Fem	
+desplegar_VERB	3058	desplegar	VERB		
+desembocar_VERB	3059	desembocar	VERB		
+lana_NOUN	3060	lana	NOUN	Gender=Fem	
+indirecto_ADJ	3061	indirecto	ADJ		
+infierno_NOUN	3062	infierno	NOUN	Gender=Masc	
+aliviar_VERB	3063	aliviar	VERB		
+acero_NOUN	3064	acero	NOUN	Gender=Masc	
+ejecutivo_ADJ	3065	ejecutivo	ADJ		
+cazar_VERB	3066	cazar	VERB		
+ojalá_ADV	3067	ojalá	ADV		
+aplaudir_VERB	3068	aplaudir	VERB		
+preso_NOUN	3069	preso	NOUN	Gender=Masc	
+billete_NOUN	3070	billete	NOUN	Gender=Masc	
+motivar_VERB	3071	motivar	VERB		
+descuidar_VERB	3072	descuidar	VERB		
+referente_ADJ	3073	referente	ADJ		
+tontería_NOUN	3074	tontería	NOUN	Gender=Fem	
+cauce_NOUN	3075	cauce	NOUN	Gender=Masc	
+ignorancia_NOUN	3076	ignorancia	NOUN	Gender=Fem	
+acostar_VERB	3077	acostar	VERB		
+encanto_NOUN	3078	encanto	NOUN	Gender=Masc	
+propiamente_ADV	3079	propiamente	ADV		
+sed_NOUN	3080	sed	NOUN	Gender=Fem	
+escudo_NOUN	3081	escudo	NOUN	Gender=Masc	
+muñeca_NOUN	3082	muñeca	NOUN	Gender=Fem	
+dotado_ADJ	3083	dotado	ADJ		
+conectar_VERB	3084	conectar	VERB		
+rango_NOUN	3085	rango	NOUN	Gender=Masc	
+invento_NOUN	3086	invento	NOUN	Gender=Masc	
+arder_VERB	3087	arder	VERB		
+recinto_NOUN	3088	recinto	NOUN	Gender=Masc	
+tinta_NOUN	3089	tinta	NOUN	Gender=Fem	
+garganta_NOUN	3090	garganta	NOUN	Gender=Fem	
+viajero_NOUN	3091	viajero	NOUN	Gender=Masc	
+asesino_NOUN	3092	asesino	NOUN	Gender=Masc	
+rito_NOUN	3093	rito	NOUN	Gender=Masc	
+atractivo_NOUN	3094	atractivo	NOUN	Gender=Masc	
+callado_ADJ	3095	callado	ADJ		
+frustración_NOUN	3096	frustración	NOUN	Gender=Fem	
+flexible_ADJ	3097	flexible	ADJ		
+cemento_NOUN	3098	cemento	NOUN	Gender=Masc	
+catástrofe_NOUN	3099	catástrofe	NOUN	Gender=Fem	
+dulce_NOUN	3100	dulce	NOUN	Gender=Masc	
+recuperación_NOUN	3101	recuperación	NOUN	Gender=Fem	
+localizar_VERB	3102	localizar	VERB		
+mediano_ADJ	3103	mediano	ADJ		
+almuerzo_NOUN	3104	almuerzo	NOUN	Gender=Masc	
+pacífico_ADJ	3105	pacífico	ADJ		
+uña_NOUN	3106	uña	NOUN	Gender=Fem	
+contradictorio_ADJ	3107	contradictorio	ADJ		
+excepto_ADP	3108	excepto	ADP		
+herir_VERB	3109	herir	VERB		
+costo_NOUN	3110	costo	NOUN	Gender=Masc	
+manifiesto_NOUN	3111	manifiesto	NOUN	Gender=Masc	
+mortal_ADJ	3112	mortal	ADJ		
+repetición_NOUN	3113	repetición	NOUN	Gender=Fem	
+patrimonio_NOUN	3114	patrimonio	NOUN	Gender=Masc	
+solemne_ADJ	3115	solemne	ADJ		
+estatua_NOUN	3116	estatua	NOUN	Gender=Fem	
+decadencia_NOUN	3117	decadencia	NOUN	Gender=Fem	
+mudo_ADJ	3118	mudo	ADJ		
+precipitar_VERB	3119	precipitar	VERB		
+sorprendido_ADJ	3120	sorprendido	ADJ		
+excluir_VERB	3121	excluir	VERB		
+enfermero_NOUN	3122	enfermero	NOUN	Gender=Masc,Fem	enfermera
+psicológico_ADJ	3123	psicológico	ADJ		
+adorar_VERB	3124	adorar	VERB		
+aficionado_NOUN	3125	aficionado	NOUN	Gender=Masc	
+preferible_ADJ	3126	preferible	ADJ		
+célebre_ADJ	3127	célebre	ADJ		
+agujero_NOUN	3128	agujero	NOUN	Gender=Masc	
+beneficiar_VERB	3129	beneficiar	VERB		
+arroz_NOUN	3130	arroz	NOUN	Gender=Masc	
+valiente_ADJ	3131	valiente	ADJ		
+delicioso_ADJ	3132	delicioso	ADJ		
+potente_ADJ	3133	potente	ADJ		
+cerveza_NOUN	3134	cerveza	NOUN	Gender=Fem	
+escasez_NOUN	3135	escasez	NOUN	Gender=Fem	
+ministerio_NOUN	3136	ministerio	NOUN	Gender=Masc	
+vuestro_DET	3137	vuestro	DET		
+notorio_ADJ	3138	notorio	ADJ		
+transición_NOUN	3139	transición	NOUN	Gender=Fem	
+sexto_ADJ	3140	sexto	ADJ		
+despreciar_VERB	3141	despreciar	VERB		
+negativa_NOUN	3142	negativa	NOUN	Gender=Fem	
+falda_NOUN	3143	falda	NOUN	Gender=Fem	
+improvisar_VERB	3144	improvisar	VERB		
+emerger_VERB	3145	emerger	VERB		
+clavar_VERB	3146	clavar	VERB		
+cantante_NOUN	3147	cantante	NOUN	Gender=Com	
+constancia_NOUN	3148	constancia	NOUN	Gender=Fem	
+electrónico_ADJ	3149	electrónico	ADJ		
+anillo_NOUN	3150	anillo	NOUN	Gender=Masc	
+balance_NOUN	3151	balance	NOUN	Gender=Masc	
+entendimiento_NOUN	3152	entendimiento	NOUN	Gender=Masc	
+volcar_VERB	3153	volcar	VERB		
+quieto_ADJ	3154	quieto	ADJ		
+transcurso_NOUN	3155	transcurso	NOUN	Gender=Masc	
+barrer_VERB	3156	barrer	VERB		
+desayuno_NOUN	3157	desayuno	NOUN	Gender=Masc	
+alfombra_NOUN	3158	alfombra	NOUN	Gender=Fem	
+historiador_NOUN	3159	historiador	NOUN	Gender=Masc,Fem	historiadora
+rogar_VERB	3160	rogar	VERB		
+pálido_ADJ	3161	pálido	ADJ		
+programar_VERB	3162	programar	VERB		
+animado_ADJ	3163	animado	ADJ		
+chileno_ADJ	3164	chileno	ADJ		
+ficción_NOUN	3165	ficción	NOUN	Gender=Fem	
+ensayar_VERB	3166	ensayar	VERB		
+materno_ADJ	3167	materno	ADJ		
+jugador_NOUN	3168	jugador	NOUN	Gender=Masc	
+cartel_NOUN	3169	cartel	NOUN	Gender=Masc	
+desconfianza_NOUN	3170	desconfianza	NOUN	Gender=Fem	
+respiración_NOUN	3171	respiración	NOUN	Gender=Fem	
+votar_VERB	3172	votar	VERB		
+caña_NOUN	3173	caña	NOUN	Gender=Fem	
+aislar_VERB	3174	aislar	VERB		
+soltero_ADJ	3175	soltero	ADJ		
+prisionero_NOUN	3176	prisionero	NOUN	Gender=Masc	
+turista_NOUN	3177	turista	NOUN	Gender=Com	
+abundancia_NOUN	3178	abundancia	NOUN	Gender=Fem	
+rodar_VERB	3179	rodar	VERB		
+asistente_NOUN	3180	asistente	NOUN	Gender=Com	
+vinculado_ADJ	3181	vinculado	ADJ		
+queso_NOUN	3182	queso	NOUN	Gender=Masc	
+arriesgar_VERB	3183	arriesgar	VERB		
+indicio_NOUN	3184	indicio	NOUN	Gender=Masc	
+colgado_ADJ	3185	colgado	ADJ		
+bautizar_VERB	3186	bautizar	VERB		
+cerro_NOUN	3187	cerro	NOUN	Gender=Masc	
+desatar_VERB	3188	desatar	VERB		
+alentar_VERB	3189	alentar	VERB		
+descargar_VERB	3190	descargar	VERB		
+galería_NOUN	3191	galería	NOUN	Gender=Fem	
+engaño_NOUN	3192	engaño	NOUN	Gender=Masc	
+enamorar_VERB	3193	enamorar	VERB		
+geográfico_ADJ	3194	geográfico	ADJ		
+continuidad_NOUN	3195	continuidad	NOUN	Gender=Fem	
+receta_NOUN	3196	receta	NOUN	Gender=Fem	
+conveniencia_NOUN	3197	conveniencia	NOUN	Gender=Fem	
+reemplazar_VERB	3198	reemplazar	VERB		
+carencia_NOUN	3199	carencia	NOUN	Gender=Fem	
+cerdo_NOUN	3200	cerdo	NOUN	Gender=Masc	
+soplar_VERB	3201	soplar	VERB		
+frágil_ADJ	3202	frágil	ADJ		
+empeño_NOUN	3203	empeño	NOUN	Gender=Masc	
+agresión_NOUN	3204	agresión	NOUN	Gender=Fem	
+fortaleza_NOUN	3205	fortaleza	NOUN	Gender=Fem	
+seriamente_ADV	3206	seriamente	ADV		
+balcón_NOUN	3207	balcón	NOUN	Gender=Masc	
+observador_NOUN	3208	observador	NOUN	Gender=Masc	
+ridículo_ADJ	3209	ridículo	ADJ		
+renta_NOUN	3210	renta	NOUN	Gender=Fem	
+justificación_NOUN	3211	justificación	NOUN	Gender=Fem	
+enfrentamiento_NOUN	3212	enfrentamiento	NOUN	Gender=Masc	
+junta_NOUN	3213	junta	NOUN	Gender=Fem	
+irregular_ADJ	3214	irregular	ADJ		
+trayectoria_NOUN	3215	trayectoria	NOUN	Gender=Fem	
+genial_ADJ	3216	genial	ADJ		
+indiferencia_NOUN	3217	indiferencia	NOUN	Gender=Fem	
+taza_NOUN	3218	taza	NOUN	Gender=Fem	
+vínculo_NOUN	3219	vínculo	NOUN	Gender=Masc	
+cuaderno_NOUN	3220	cuaderno	NOUN	Gender=Masc	
+gracioso_ADJ	3221	gracioso	ADJ		
+regir_VERB	3222	regir	VERB		
+intermedio_ADJ	3223	intermedio	ADJ		
+bañar_VERB	3224	bañar	VERB		
+temporal_ADJ	3225	temporal	ADJ		
+rozar_VERB	3226	rozar	VERB		
+pánico_NOUN	3227	pánico	NOUN	Gender=Masc	
+distinguido_ADJ	3228	distinguido	ADJ		
+cañón_NOUN	3229	cañón	NOUN	Gender=Masc	
+dudoso_ADJ	3230	dudoso	ADJ		
+pollo_NOUN	3231	pollo	NOUN	Gender=Masc	
+lamentable_ADJ	3232	lamentable	ADJ		
+trascendencia_NOUN	3233	trascendencia	NOUN	Gender=Fem	
+remitir_VERB	3234	remitir	VERB		
+interminable_ADJ	3235	interminable	ADJ		
+corrupción_NOUN	3236	corrupción	NOUN	Gender=Fem	
+confesión_NOUN	3237	confesión	NOUN	Gender=Fem	
+corbata_NOUN	3238	corbata	NOUN	Gender=Fem	
+macho_NOUN	3239	macho	NOUN	Gender=Masc	
+disolver_VERB	3240	disolver	VERB		
+secuencia_NOUN	3241	secuencia	NOUN	Gender=Fem	
+cáncer_NOUN	3242	cáncer	NOUN	Gender=Masc	
+velar_VERB	3243	velar	VERB		
+archivo_NOUN	3244	archivo	NOUN	Gender=Masc	
+habitualmente_ADV	3245	habitualmente	ADV		
+trámite_NOUN	3246	trámite	NOUN	Gender=Masc	
+tranquilamente_ADV	3247	tranquilamente	ADV		
+innecesario_ADJ	3248	innecesario	ADJ		
+raya_NOUN	3249	raya	NOUN	Gender=Fem	
+televisor_NOUN	3250	televisor	NOUN	Gender=Masc	
+estabilidad_NOUN	3251	estabilidad	NOUN	Gender=Fem	
+grandeza_NOUN	3252	grandeza	NOUN	Gender=Fem	
+prisa_NOUN	3253	prisa	NOUN	Gender=Fem	
+persistir_VERB	3254	persistir	VERB		
+temblar_VERB	3255	temblar	VERB		
+verbal_ADJ	3256	verbal	ADJ		
+matemática_NOUN	3257	matemática	NOUN	Gender=Fem	
+demonio_NOUN	3258	demonio	NOUN	Gender=Masc	
+intacto_ADJ	3259	intacto	ADJ		
+procedente_ADJ	3260	procedente	ADJ		
+cenar_VERB	3261	cenar	VERB		
+disponible_ADJ	3262	disponible	ADJ		
+tornar_VERB	3263	tornar	VERB		
+encantado_ADJ	3264	encantado	ADJ		
+británico_ADJ	3265	británico	ADJ		
+manga_NOUN	3266	manga	NOUN	Gender=Fem	
+perjudicar_VERB	3267	perjudicar	VERB		
+laboral_ADJ	3268	laboral	ADJ		
+rubio_ADJ	3269	rubio	ADJ		
+prevenir_VERB	3270	prevenir	VERB		
+seda_NOUN	3271	seda	NOUN	Gender=Fem	
+envidia_NOUN	3272	envidia	NOUN	Gender=Fem	
+emergencia_NOUN	3273	emergencia	NOUN	Gender=Fem	
+enamorado_ADJ	3274	enamorado	ADJ		
+grasa_NOUN	3275	grasa	NOUN	Gender=Fem	
+culminar_VERB	3276	culminar	VERB		
+alcalde_NOUN	3277	alcalde	NOUN	Gender=Masc	
+insuficiente_ADJ	3278	insuficiente	ADJ		
+sostenido_ADJ	3279	sostenido	ADJ		
+congreso_NOUN	3280	congreso	NOUN	Gender=Masc	
+espantoso_ADJ	3281	espantoso	ADJ		
+aplauso_NOUN	3282	aplauso	NOUN	Gender=Masc	
+prima_NOUN	3283	prima	NOUN	Gender=Fem	
+ansiedad_NOUN	3284	ansiedad	NOUN	Gender=Fem	
+dirigente_NOUN	3285	dirigente	NOUN	Gender=Com	
+ascenso_NOUN	3286	ascenso	NOUN	Gender=Masc	
+finalidad_NOUN	3287	finalidad	NOUN	Gender=Fem	
+preceder_VERB	3288	preceder	VERB		
+financiero_ADJ	3289	financiero	ADJ		
+nostalgia_NOUN	3290	nostalgia	NOUN	Gender=Fem	
+mención_NOUN	3291	mención	NOUN	Gender=Fem	
+afición_NOUN	3292	afición	NOUN	Gender=Fem	
+colonial_ADJ	3293	colonial	ADJ		
+lástima_NOUN	3294	lástima	NOUN	Gender=Fem	
+teatral_ADJ	3295	teatral	ADJ		
+lápiz_NOUN	3296	lápiz	NOUN	Gender=Masc	
+vertical_ADJ	3297	vertical	ADJ		
+nido_NOUN	3298	nido	NOUN	Gender=Masc	
+gratuito_ADJ	3299	gratuito	ADJ		
+difícilmente_ADV	3300	difícilmente	ADV		
+orquesta_NOUN	3301	orquesta	NOUN	Gender=Fem	
+conexión_NOUN	3302	conexión	NOUN	Gender=Fem	
+alternar_VERB	3303	alternar	VERB		
+vegetal_ADJ	3304	vegetal	ADJ		
+usado_ADJ	3305	usado	ADJ		
+vigor_NOUN	3306	vigor	NOUN	Gender=Masc	
+salario_NOUN	3307	salario	NOUN	Gender=Masc	
+acertar_VERB	3308	acertar	VERB		
+filo_NOUN	3309	filo	NOUN	Gender=Masc	
+ambicioso_ADJ	3310	ambicioso	ADJ		
+policial_ADJ	3311	policial	ADJ		
+poético_ADJ	3312	poético	ADJ		
+batir_VERB	3313	batir	VERB		
+maíz_NOUN	3314	maíz	NOUN	Gender=Masc	
+desgraciadamente_ADV	3315	desgraciadamente	ADV		
+satisfactorio_ADJ	3316	satisfactorio	ADJ		
+autonomía_NOUN	3317	autonomía	NOUN	Gender=Fem	
+vago_ADJ	3318	vago	ADJ		
+estúpido_ADJ	3319	estúpido	ADJ		
+demorar_VERB	3320	demorar	VERB		
+ama_NOUN	3321	ama	NOUN	Gender=Com	
+beso_NOUN	3322	beso	NOUN	Gender=Masc	
+cintura_NOUN	3323	cintura	NOUN	Gender=Fem	
+automáticamente_ADV	3324	automáticamente	ADV		
+pauta_NOUN	3325	pauta	NOUN	Gender=Fem	
+honesto_ADJ	3326	honesto	ADJ		
+recepción_NOUN	3327	recepción	NOUN	Gender=Fem	
+bala_NOUN	3328	bala	NOUN	Gender=Fem	
+suicidio_NOUN	3329	suicidio	NOUN	Gender=Masc	
+placa_NOUN	3330	placa	NOUN	Gender=Fem	
+calmar_VERB	3331	calmar	VERB		
+brusco_ADJ	3332	brusco	ADJ		
+asesinato_NOUN	3333	asesinato	NOUN	Gender=Masc	
+mentalidad_NOUN	3334	mentalidad	NOUN	Gender=Fem	
+jerarquía_NOUN	3335	jerarquía	NOUN	Gender=Fem	
+duración_NOUN	3336	duración	NOUN	Gender=Fem	
+hallazgo_NOUN	3337	hallazgo	NOUN	Gender=Masc	
+proximidad_NOUN	3338	proximidad	NOUN	Gender=Fem	
+estadística_NOUN	3339	estadística	NOUN	Gender=Fem	
+presumir_VERB	3340	presumir	VERB		
+trescientos_NUM	3341	trescientos	NUM		
+iluminado_ADJ	3342	iluminado	ADJ		
+castillo_NOUN	3343	castillo	NOUN	Gender=Masc	
+traducción_NOUN	3344	traducción	NOUN	Gender=Fem	
+diversión_NOUN	3345	diversión	NOUN	Gender=Fem	
+introducción_NOUN	3346	introducción	NOUN	Gender=Fem	
+lámpara_NOUN	3347	lámpara	NOUN	Gender=Fem	
+dicho_NOUN	3348	dicho	NOUN	Gender=Masc	
+simbólico_ADJ	3349	simbólico	ADJ		
+fluir_VERB	3350	fluir	VERB		
+heroico_ADJ	3351	heroico	ADJ		
+asesinar_VERB	3352	asesinar	VERB		
+audiencia_NOUN	3353	audiencia	NOUN	Gender=Fem	
+pasajero_NOUN	3354	pasajero	NOUN	Gender=Masc	
+décimo_ADJ	3355	décimo	ADJ		
+costado_NOUN	3356	costado	NOUN	Gender=Masc	
+otoño_NOUN	3357	otoño	NOUN	Gender=Masc	
+feria_NOUN	3358	feria	NOUN	Gender=Fem	
+exilio_NOUN	3359	exilio	NOUN	Gender=Masc	
+indudablemente_ADV	3360	indudablemente	ADV		
+preservar_VERB	3361	preservar	VERB		
+portador_NOUN	3362	portador	NOUN	Gender=Masc	
+obispo_NOUN	3363	obispo	NOUN	Gender=Masc	
+disimular_VERB	3364	disimular	VERB		
+quemado_ADJ	3365	quemado	ADJ		
+perfeccionar_VERB	3366	perfeccionar	VERB		
+vano_ADJ	3367	vano	ADJ		
+apertura_NOUN	3368	apertura	NOUN	Gender=Fem	
+ideología_NOUN	3369	ideología	NOUN	Gender=Fem	
+casero_ADJ	3370	casero	ADJ		
+molesto_ADJ	3371	molesto	ADJ		
+cocinar_VERB	3372	cocinar	VERB		
+auxiliar_ADJ	3373	auxiliar	ADJ		
+silencioso_ADJ	3374	silencioso	ADJ		
+navegar_VERB	3375	navegar	VERB		
+cazador_NOUN	3376	cazador	NOUN	Gender=Masc,Fem	cazadora
+seguro_NOUN	3377	seguro	NOUN	Gender=Masc	
+ingenio_NOUN	3378	ingenio	NOUN	Gender=Masc	
+hembra_NOUN	3379	hembra	NOUN	Gender=Fem	
+bando_NOUN	3380	bando	NOUN	Gender=Masc	
+nativo_ADJ	3381	nativo	ADJ		
+dormitorio_NOUN	3382	dormitorio	NOUN	Gender=Masc	
+plenitud_NOUN	3383	plenitud	NOUN	Gender=Fem	
+aceptable_ADJ	3384	aceptable	ADJ		
+coraje_NOUN	3385	coraje	NOUN	Gender=Masc	
+plomo_NOUN	3386	plomo	NOUN	Gender=Masc	
+descendiente_NOUN	3387	descendiente	NOUN	Gender=Com	
+rotundo_ADJ	3388	rotundo	ADJ		
+república_NOUN	3389	república	NOUN	Gender=Fem	
+sierra_NOUN	3390	sierra	NOUN	Gender=Fem	
+aplastar_VERB	3391	aplastar	VERB		
+guante_NOUN	3392	guante	NOUN	Gender=Masc	
+cartón_NOUN	3393	cartón	NOUN	Gender=Masc	
+repentino_ADJ	3394	repentino	ADJ		
+ansioso_ADJ	3395	ansioso	ADJ		
+subrayar_VERB	3396	subrayar	VERB		
+adolescencia_NOUN	3397	adolescencia	NOUN	Gender=Fem	
+despacio_ADJ	3398	despacio	ADJ		
+innumerable_ADJ	3399	innumerable	ADJ		
+complicación_NOUN	3400	complicación	NOUN	Gender=Fem	
+insoportable_ADJ	3401	insoportable	ADJ		
+taxi_NOUN	3402	taxi	NOUN	Gender=Masc	
+porción_NOUN	3403	porción	NOUN	Gender=Fem	
+timbre_NOUN	3404	timbre	NOUN	Gender=Masc	
+monstruo_NOUN	3405	monstruo	NOUN	Gender=Masc	
+bebé_NOUN	3406	bebé	NOUN	Gender=Masc	
+trayecto_NOUN	3407	trayecto	NOUN	Gender=Masc	
+globo_NOUN	3408	globo	NOUN	Gender=Masc	
+celebración_NOUN	3409	celebración	NOUN	Gender=Fem	
+quehacer_NOUN	3410	quehacer	NOUN	Gender=Masc	
+electoral_ADJ	3411	electoral	ADJ		
+obsesión_NOUN	3412	obsesión	NOUN	Gender=Fem	
+bronce_NOUN	3413	bronce	NOUN	Gender=Masc	
+formidable_ADJ	3414	formidable	ADJ		
+licencia_NOUN	3415	licencia	NOUN	Gender=Fem	
+motivación_NOUN	3416	motivación	NOUN	Gender=Fem	
+noventa_NUM	3417	noventa	NUM		
+anoche_ADV	3418	anoche	ADV		
+depresión_NOUN	3419	depresión	NOUN	Gender=Fem	
+pulmón_NOUN	3420	pulmón	NOUN	Gender=Masc	
+apoderar_VERB	3421	apoderar	VERB		
+debatir_VERB	3422	debatir	VERB		
+reponer_VERB	3423	reponer	VERB		
+fibra_NOUN	3424	fibra	NOUN	Gender=Fem	
+disputar_VERB	3425	disputar	VERB		
+quinientos_NUM	3426	quinientos	NUM		
+petróleo_NOUN	3427	petróleo	NOUN	Gender=Masc	
+sucesivamente_ADV	3428	sucesivamente	ADV		
+permanencia_NOUN	3429	permanencia	NOUN	Gender=Fem	
+vos_PRON	3430	vos	PRON		
+miércoles_NOUN	3431	miércoles	NOUN	Gender=Masc	
+horno_NOUN	3432	horno	NOUN	Gender=Masc	
+logro_NOUN	3433	logro	NOUN	Gender=Masc	
+vientre_NOUN	3434	vientre	NOUN	Gender=Masc	
+petición_NOUN	3435	petición	NOUN	Gender=Fem	
+civil_NOUN	3436	civil	NOUN	Gender=Com	
+reparto_NOUN	3437	reparto	NOUN	Gender=Masc	
+advertencia_NOUN	3438	advertencia	NOUN	Gender=Fem	
+arrebatar_VERB	3439	arrebatar	VERB		
+previsión_NOUN	3440	previsión	NOUN	Gender=Fem	
+miserable_ADJ	3441	miserable	ADJ		
+grato_ADJ	3442	grato	ADJ		
+mandato_NOUN	3443	mandato	NOUN	Gender=Masc	
+odiar_VERB	3444	odiar	VERB		
+clave_ADJ	3445	clave	ADJ		
+diecisiete_NUM	3446	diecisiete	NUM		
+timidez_NOUN	3447	timidez	NOUN	Gender=Fem	
+toque_NOUN	3448	toque	NOUN	Gender=Masc	
+máscara_NOUN	3449	máscara	NOUN	Gender=Fem	
+venganza_NOUN	3450	venganza	NOUN	Gender=Fem	
+barba_NOUN	3451	barba	NOUN	Gender=Fem	
+alarma_NOUN	3452	alarma	NOUN	Gender=Fem	
+insinuar_VERB	3453	insinuar	VERB		
+aliento_NOUN	3454	aliento	NOUN	Gender=Masc	
+pureza_NOUN	3455	pureza	NOUN	Gender=Fem	
+fallecer_VERB	3456	fallecer	VERB		
+comedia_NOUN	3457	comedia	NOUN	Gender=Fem	
+aldea_NOUN	3458	aldea	NOUN	Gender=Fem	
+enérgico_ADJ	3459	enérgico	ADJ		
+eludir_VERB	3460	eludir	VERB		
+párrafo_NOUN	3461	párrafo	NOUN	Gender=Masc	
+permanentemente_ADV	3462	permanentemente	ADV		
+brillo_NOUN	3463	brillo	NOUN	Gender=Masc	
+ocasionar_VERB	3464	ocasionar	VERB		
+rastro_NOUN	3465	rastro	NOUN	Gender=Masc	
+concretamente_ADV	3466	concretamente	ADV		
+ignorante_ADJ	3467	ignorante	ADJ		
+adorno_NOUN	3468	adorno	NOUN	Gender=Masc	
+curiosamente_ADV	3469	curiosamente	ADV		
+lógicamente_ADV	3470	lógicamente	ADV		
+mono_NOUN	3471	mono	NOUN	Gender=Masc	
+razonamiento_NOUN	3472	razonamiento	NOUN	Gender=Masc	
+ilustrado_ADJ	3473	ilustrado	ADJ		
+pastor_NOUN	3474	pastor	NOUN	Gender=Masc,Fem	pastora
+tramo_NOUN	3475	tramo	NOUN	Gender=Masc	
+reto_NOUN	3476	reto	NOUN	Gender=Masc	
+altísimo_ADJ	3477	altísimo	ADJ		
+estupendo_ADJ	3478	estupendo	ADJ		
+pesadilla_NOUN	3479	pesadilla	NOUN	Gender=Fem	
+centenar_NOUN	3480	centenar	NOUN	Gender=Masc	
+molestia_NOUN	3481	molestia	NOUN	Gender=Fem	
+restante_ADJ	3482	restante	ADJ		
+paja_NOUN	3483	paja	NOUN	Gender=Fem	
+regional_ADJ	3484	regional	ADJ		
+cómico_ADJ	3485	cómico	ADJ		
+concesión_NOUN	3486	concesión	NOUN	Gender=Fem	
+tardío_ADJ	3487	tardío	ADJ		
+nudo_NOUN	3488	nudo	NOUN	Gender=Masc	
+retomar_VERB	3489	retomar	VERB		
+martes_NOUN	3490	martes	NOUN	Gender=Masc	
+utilización_NOUN	3491	utilización	NOUN	Gender=Fem	
+tapa_NOUN	3492	tapa	NOUN	Gender=Fem	
+traición_NOUN	3493	traición	NOUN	Gender=Fem	
+asentar_VERB	3494	asentar	VERB		
+pesca_NOUN	3495	pesca	NOUN	Gender=Fem	
+malestar_NOUN	3496	malestar	NOUN	Gender=Masc	
+rata_NOUN	3497	rata	NOUN	Gender=Fem	
+puntual_ADJ	3498	puntual	ADJ		
+defensor_NOUN	3499	defensor	NOUN	Gender=Masc	
+auxilio_NOUN	3500	auxilio	NOUN	Gender=Masc	
+estrechar_VERB	3501	estrechar	VERB		
+traspasar_VERB	3502	traspasar	VERB		
+cobre_NOUN	3503	cobre	NOUN	Gender=Masc	
+imaginario_ADJ	3504	imaginario	ADJ		
+brutal_ADJ	3505	brutal	ADJ		
+disperso_ADJ	3506	disperso	ADJ		
+ingenuo_ADJ	3507	ingenuo	ADJ		
+anual_ADJ	3508	anual	ADJ		
+intuición_NOUN	3509	intuición	NOUN	Gender=Fem	
+invención_NOUN	3510	invención	NOUN	Gender=Fem	
+asimismo_ADV	3511	asimismo	ADV		
+vena_NOUN	3512	vena	NOUN	Gender=Fem	
+freno_NOUN	3513	freno	NOUN	Gender=Masc	
+costoso_ADJ	3514	costoso	ADJ		
+repleto_ADJ	3515	repleto	ADJ		
+consumar_VERB	3516	consumar	VERB		
+asaltar_VERB	3517	asaltar	VERB		
+interrupción_NOUN	3518	interrupción	NOUN	Gender=Fem	
+condena_NOUN	3519	condena	NOUN	Gender=Fem	
+inocencia_NOUN	3520	inocencia	NOUN	Gender=Fem	
+relieve_NOUN	3521	relieve	NOUN	Gender=Masc	
+semejanza_NOUN	3522	semejanza	NOUN	Gender=Fem	
+cumbre_NOUN	3523	cumbre	NOUN	Gender=Fem	
+diariamente_ADV	3524	diariamente	ADV		
+colmo_NOUN	3525	colmo	NOUN	Gender=Masc	
+asombroso_ADJ	3526	asombroso	ADJ		
+administrador_NOUN	3527	administrador	NOUN	Gender=Masc,Fem	administradora
+arrepentir_VERB	3528	arrepentir	VERB		
+decreto_NOUN	3529	decreto	NOUN	Gender=Masc	
+exigente_ADJ	3530	exigente	ADJ		
+ironía_NOUN	3531	ironía	NOUN	Gender=Fem	
+felicitar_VERB	3532	felicitar	VERB		
+seña_NOUN	3533	seña	NOUN	Gender=Fem	
+ritual_NOUN	3534	ritual	NOUN	Gender=Masc	
+apto_ADJ	3535	apto	ADJ		
+incierto_ADJ	3536	incierto	ADJ		
+espeso_ADJ	3537	espeso	ADJ		
+presenciar_VERB	3538	presenciar	VERB		
+escritorio_NOUN	3539	escritorio	NOUN	Gender=Masc	
+solicitud_NOUN	3540	solicitud	NOUN	Gender=Fem	
+víspera_NOUN	3541	víspera	NOUN	Gender=Fem	
+insecto_NOUN	3542	insecto	NOUN	Gender=Masc	
+ridículo_NOUN	3543	ridículo	NOUN	Gender=Masc	
+derrumbar_VERB	3544	derrumbar	VERB		
+ira_NOUN	3545	ira	NOUN	Gender=Fem	
+ceniza_NOUN	3546	ceniza	NOUN	Gender=Fem	
+apasionado_ADJ	3547	apasionado	ADJ		
+monja_NOUN	3548	monja	NOUN	Gender=Fem	
+abstracto_ADJ	3549	abstracto	ADJ		
+parto_NOUN	3550	parto	NOUN	Gender=Masc	
+creativo_ADJ	3551	creativo	ADJ		
+autoritario_ADJ	3552	autoritario	ADJ		
+excesivamente_ADV	3553	excesivamente	ADV		
+circuito_NOUN	3554	circuito	NOUN	Gender=Masc	
+subterráneo_ADJ	3555	subterráneo	ADJ		
+oveja_NOUN	3556	oveja	NOUN	Gender=Fem	
+dueña_NOUN	3557	dueña	NOUN	Gender=Fem	
+dañar_VERB	3558	dañar	VERB		
+ubicación_NOUN	3559	ubicación	NOUN	Gender=Fem	
+feroz_ADJ	3560	feroz	ADJ		
+hacienda_NOUN	3561	hacienda	NOUN	Gender=Fem	
+antigüedad_NOUN	3562	antigüedad	NOUN	Gender=Fem	
+puño_NOUN	3563	puño	NOUN	Gender=Masc	
+excusa_NOUN	3564	excusa	NOUN	Gender=Fem	
+asombrar_VERB	3565	asombrar	VERB		
+trama_NOUN	3566	trama	NOUN	Gender=Fem	
+sistemático_ADJ	3567	sistemático	ADJ		
+inclusive_ADV	3568	inclusive	ADV		
+alteración_NOUN	3569	alteración	NOUN	Gender=Fem	
+sumo_ADJ	3570	sumo	ADJ		
+eficiente_ADJ	3571	eficiente	ADJ		
+invisible_ADJ	3572	invisible	ADJ		
+acusación_NOUN	3573	acusación	NOUN	Gender=Fem	
+sinceramente_ADV	3574	sinceramente	ADV		
+salvación_NOUN	3575	salvación	NOUN	Gender=Fem	
+rebelde_ADJ	3576	rebelde	ADJ		
+fundador_NOUN	3577	fundador	NOUN	Gender=Masc	
+oscilar_VERB	3578	oscilar	VERB		
+privilegiado_ADJ	3579	privilegiado	ADJ		
+recobrar_VERB	3580	recobrar	VERB		
+original_NOUN	3581	original	NOUN	Gender=Masc	
+maquinaria_NOUN	3582	maquinaria	NOUN	Gender=Fem	
+dominante_ADJ	3583	dominante	ADJ		
+vaciar_VERB	3584	vaciar	VERB		
+tortura_NOUN	3585	tortura	NOUN	Gender=Fem	
+humano_NOUN	3586	humano	NOUN	Gender=Masc	
+insistencia_NOUN	3587	insistencia	NOUN	Gender=Fem	
+morder_VERB	3588	morder	VERB		
+atrapar_VERB	3589	atrapar	VERB		
+tibio_ADJ	3590	tibio	ADJ		
+amanecer_VERB	3591	amanecer	VERB		
+sospechoso_ADJ	3592	sospechoso	ADJ		
+sobrino_NOUN	3593	sobrino	NOUN	Gender=Masc	
+recitar_VERB	3594	recitar	VERB		
+explorar_VERB	3595	explorar	VERB		
+fabuloso_ADJ	3596	fabuloso	ADJ		
+embarcar_VERB	3597	embarcar	VERB		
+aguardar_VERB	3598	aguardar	VERB		
+apunte_NOUN	3599	apunte	NOUN	Gender=Masc	
+antepasado_NOUN	3600	antepasado	NOUN	Gender=Masc	
+antemano_ADV	3601	antemano	ADV		
+parir_VERB	3602	parir	VERB		
+refugiar_VERB	3603	refugiar	VERB		
+sillón_NOUN	3604	sillón	NOUN	Gender=Masc	
+denso_ADJ	3605	denso	ADJ		
+colectivo_NOUN	3606	colectivo	NOUN	Gender=Masc	
+dieta_NOUN	3607	dieta	NOUN	Gender=Fem	
+teniente_NOUN	3608	teniente	NOUN	Gender=Masc	
+polo_NOUN	3609	polo	NOUN	Gender=Masc	
+verificar_VERB	3610	verificar	VERB		
+agrícola_ADJ	3611	agrícola	ADJ		
+abismo_NOUN	3612	abismo	NOUN	Gender=Masc	
+algodón_NOUN	3613	algodón	NOUN	Gender=Masc	
+harina_NOUN	3614	harina	NOUN	Gender=Fem	
+exactitud_NOUN	3615	exactitud	NOUN	Gender=Fem	
+extinguir_VERB	3616	extinguir	VERB		
+provecho_NOUN	3617	provecho	NOUN	Gender=Masc	
+mensual_ADJ	3618	mensual	ADJ		
+agradar_VERB	3619	agradar	VERB		
+sobrepasar_VERB	3620	sobrepasar	VERB		
+prudencia_NOUN	3621	prudencia	NOUN	Gender=Fem	
+insulto_NOUN	3622	insulto	NOUN	Gender=Masc	
+narrar_VERB	3623	narrar	VERB		
+flujo_NOUN	3624	flujo	NOUN	Gender=Masc	
+aguja_NOUN	3625	aguja	NOUN	Gender=Fem	
+planteamiento_NOUN	3626	planteamiento	NOUN	Gender=Masc	
+simultáneamente_ADV	3627	simultáneamente	ADV		
+florecer_VERB	3628	florecer	VERB		
+torpe_ADJ	3629	torpe	ADJ		
+cortina_NOUN	3630	cortina	NOUN	Gender=Fem	
+acarrear_VERB	3631	acarrear	VERB		
+liso_ADJ	3632	liso	ADJ		
+asustado_ADJ	3633	asustado	ADJ		
+profundizar_VERB	3634	profundizar	VERB		
+apostar_VERB	3635	apostar	VERB		
+propicio_ADJ	3636	propicio	ADJ		
+reproducción_NOUN	3637	reproducción	NOUN	Gender=Fem	
+expansión_NOUN	3638	expansión	NOUN	Gender=Fem	
+umbral_NOUN	3639	umbral	NOUN	Gender=Masc	
+alusión_NOUN	3640	alusión	NOUN	Gender=Fem	
+descenso_NOUN	3641	descenso	NOUN	Gender=Masc	
+clasificar_VERB	3642	clasificar	VERB		
+recortar_VERB	3643	recortar	VERB		
+dicho_ADJ	3644	dicho	ADJ		
+ambiguo_ADJ	3645	ambiguo	ADJ		
+océano_NOUN	3646	océano	NOUN	Gender=Masc	
+proposición_NOUN	3647	proposición	NOUN	Gender=Fem	
+absurdo_NOUN	3648	absurdo	NOUN	Gender=Masc	
+parada_NOUN	3649	parada	NOUN	Gender=Fem	
+encantador_ADJ	3650	encantador	ADJ		
+deslizar_VERB	3651	deslizar	VERB		
+estirar_VERB	3652	estirar	VERB		
+respetuoso_ADJ	3653	respetuoso	ADJ		
+africano_ADJ	3654	africano	ADJ		
+titular_NOUN	3655	titular	NOUN	Gender=Masc	
+calendario_NOUN	3656	calendario	NOUN	Gender=Masc	
+interlocutor_NOUN	3657	interlocutor	NOUN	Gender=Masc	
+abusar_VERB	3658	abusar	VERB		
+complementar_VERB	3659	complementar	VERB		
+disgusto_NOUN	3660	disgusto	NOUN	Gender=Masc	
+conservación_NOUN	3661	conservación	NOUN	Gender=Fem	
+revivir_VERB	3662	revivir	VERB		
+elaboración_NOUN	3663	elaboración	NOUN	Gender=Fem	
+conmover_VERB	3664	conmover	VERB		
+correo_NOUN	3665	correo	NOUN	Gender=Masc	
+circo_NOUN	3666	circo	NOUN	Gender=Masc	
+adversario_NOUN	3667	adversario	NOUN	Gender=Masc	
+cubierta_NOUN	3668	cubierta	NOUN	Gender=Fem	
+aniversario_NOUN	3669	aniversario	NOUN	Gender=Masc	
+franja_NOUN	3670	franja	NOUN	Gender=Fem	
+charlar_VERB	3671	charlar	VERB		
+pila_NOUN	3672	pila	NOUN	Gender=Fem	
+flaco_ADJ	3673	flaco	ADJ		
+biológico_ADJ	3674	biológico	ADJ		
+equivaler_VERB	3675	equivaler	VERB		
+fomentar_VERB	3676	fomentar	VERB		
+goma_NOUN	3677	goma	NOUN	Gender=Fem	
+enormemente_ADV	3678	enormemente	ADV		
+ancho_NOUN	3679	ancho	NOUN	Gender=Masc	
+emocional_ADJ	3680	emocional	ADJ		
+diplomático_ADJ	3681	diplomático	ADJ		
+uva_NOUN	3682	uva	NOUN	Gender=Fem	
+ética_NOUN	3683	ética	NOUN	Gender=Fem	
+inscripción_NOUN	3684	inscripción	NOUN	Gender=Fem	
+progresivo_ADJ	3685	progresivo	ADJ		
+reanudar_VERB	3686	reanudar	VERB		
+adquisición_NOUN	3687	adquisición	NOUN	Gender=Fem	
+mudar_VERB	3688	mudar	VERB		
+glorioso_ADJ	3689	glorioso	ADJ		
+sentir_NOUN	3690	sentir	NOUN	Gender=Masc	
+turco_ADJ	3691	turco	ADJ		
+prescindir_VERB	3692	prescindir	VERB		
+renuncia_NOUN	3693	renuncia	NOUN	Gender=Fem	
+préstamo_NOUN	3694	préstamo	NOUN	Gender=Masc	
+poblado_ADJ	3695	poblado	ADJ		
+besar_VERB	3696	besar	VERB		
+impreso_ADJ	3697	impreso	ADJ		
+dedicación_NOUN	3698	dedicación	NOUN	Gender=Fem	
+instituto_NOUN	3699	instituto	NOUN	Gender=Masc	
+paloma_NOUN	3700	paloma	NOUN	Gender=Fem	
+resaltar_VERB	3701	resaltar	VERB		
+devoción_NOUN	3702	devoción	NOUN	Gender=Fem	
+inverso_ADJ	3703	inverso	ADJ		
+intercambiar_VERB	3704	intercambiar	VERB		
+consolar_VERB	3705	consolar	VERB		
+descomponer_VERB	3706	descomponer	VERB		
+enfocar_VERB	3707	enfocar	VERB		
+espina_NOUN	3708	espina	NOUN	Gender=Fem	
+aprobación_NOUN	3709	aprobación	NOUN	Gender=Fem	
+fachada_NOUN	3710	fachada	NOUN	Gender=Fem	
+funcional_ADJ	3711	funcional	ADJ		
+jugo_NOUN	3712	jugo	NOUN	Gender=Masc	
+traicionar_VERB	3713	traicionar	VERB		
+discípulo_NOUN	3714	discípulo	NOUN	Gender=Masc	
+coronel_NOUN	3715	coronel	NOUN	Gender=Masc	
+orgánico_ADJ	3716	orgánico	ADJ		
+modificación_NOUN	3717	modificación	NOUN	Gender=Fem	
+acumulación_NOUN	3718	acumulación	NOUN	Gender=Fem	
+comparable_ADJ	3719	comparable	ADJ		
+mantenimiento_NOUN	3720	mantenimiento	NOUN	Gender=Masc	
+marginal_ADJ	3721	marginal	ADJ		
+pardo_ADJ	3722	pardo	ADJ		
+cabecera_NOUN	3723	cabecera	NOUN	Gender=Fem	
+revelación_NOUN	3724	revelación	NOUN	Gender=Fem	
+peseta_NOUN	3725	peseta	NOUN	Gender=Fem	
+cuna_NOUN	3726	cuna	NOUN	Gender=Fem	
+tendido_ADJ	3727	tendido	ADJ		
+horizontal_ADJ	3728	horizontal	ADJ		
+ácido_NOUN	3729	ácido	NOUN	Gender=Masc	
+incapacidad_NOUN	3730	incapacidad	NOUN	Gender=Fem	
+villa_NOUN	3731	villa	NOUN	Gender=Fem	
+lecho_NOUN	3732	lecho	NOUN	Gender=Masc	
+alquiler_NOUN	3733	alquiler	NOUN	Gender=Masc	
+contrastar_VERB	3734	contrastar	VERB		
+redacción_NOUN	3735	redacción	NOUN	Gender=Fem	
+ficha_NOUN	3736	ficha	NOUN	Gender=Fem	
+penoso_ADJ	3737	penoso	ADJ		
+inseguridad_NOUN	3738	inseguridad	NOUN	Gender=Fem	
+coma_NOUN	3739	coma	NOUN	Gender=Masc,Fem	
+desenvolver_VERB	3740	desenvolver	VERB		
+agricultura_NOUN	3741	agricultura	NOUN	Gender=Fem	
+naturalidad_NOUN	3742	naturalidad	NOUN	Gender=Fem	
+serenidad_NOUN	3743	serenidad	NOUN	Gender=Fem	
+preferido_ADJ	3744	preferido	ADJ		
+pistola_NOUN	3745	pistola	NOUN	Gender=Fem	
+interrogar_VERB	3746	interrogar	VERB		
+insignificante_ADJ	3747	insignificante	ADJ		
+subsistir_VERB	3748	subsistir	VERB		
+diputado_NOUN	3749	diputado	NOUN	Gender=Masc	
+literalmente_ADV	3750	literalmente	ADV		
+duelo_NOUN	3751	duelo	NOUN	Gender=Masc	
+revolver_VERB	3752	revolver	VERB		
+frecuentemente_ADV	3753	frecuentemente	ADV		
+retornar_VERB	3754	retornar	VERB		
+comandante_NOUN	3755	comandante	NOUN	Gender=Masc	
+preso_ADJ	3756	preso	ADJ		
+ópera_NOUN	3757	ópera	NOUN	Gender=Fem	
+réplica_NOUN	3758	réplica	NOUN	Gender=Fem	
+fuertemente_ADV	3759	fuertemente	ADV		
+global_ADJ	3760	global	ADJ		
+alquilar_VERB	3761	alquilar	VERB		
+pulso_NOUN	3762	pulso	NOUN	Gender=Masc	
+radicar_VERB	3763	radicar	VERB		
+explotación_NOUN	3764	explotación	NOUN	Gender=Fem	
+bestia_NOUN	3765	bestia	NOUN	Gender=Fem	
+mojar_VERB	3766	mojar	VERB		
+abrazo_NOUN	3767	abrazo	NOUN	Gender=Masc	
+asalto_NOUN	3768	asalto	NOUN	Gender=Masc	
+reposo_NOUN	3769	reposo	NOUN	Gender=Masc	
+lámina_NOUN	3770	lámina	NOUN	Gender=Fem	
+pasta_NOUN	3771	pasta	NOUN	Gender=Fem	
+derribar_VERB	3772	derribar	VERB		
+oral_ADJ	3773	oral	ADJ		
+polémica_NOUN	3774	polémica	NOUN	Gender=Fem	
+parcial_ADJ	3775	parcial	ADJ		
+chocolate_NOUN	3776	chocolate	NOUN	Gender=Masc	
+generosidad_NOUN	3777	generosidad	NOUN	Gender=Fem	
+masivo_ADJ	3778	masivo	ADJ		
+sobresalir_VERB	3779	sobresalir	VERB		
+realismo_NOUN	3780	realismo	NOUN	Gender=Masc	
+filtrar_VERB	3781	filtrar	VERB		
+desierto_ADJ	3782	desierto	ADJ		
+acorde_NOUN	3783	acorde	NOUN	Gender=Masc	
+sugerencia_NOUN	3784	sugerencia	NOUN	Gender=Fem	
+cumpleaños_NOUN	3785	cumpleaños	NOUN	Gender=Masc	
+ronda_NOUN	3786	ronda	NOUN	Gender=Fem	
+movilizar_VERB	3787	movilizar	VERB		
+capilla_NOUN	3788	capilla	NOUN	Gender=Fem	
+enteramente_ADV	3789	enteramente	ADV		
+apelar_VERB	3790	apelar	VERB		
+expediente_NOUN	3791	expediente	NOUN	Gender=Masc	
+tolerancia_NOUN	3792	tolerancia	NOUN	Gender=Fem	
+entusiasmar_VERB	3793	entusiasmar	VERB		
+educativo_ADJ	3794	educativo	ADJ		
+sopa_NOUN	3795	sopa	NOUN	Gender=Fem	
+rival_NOUN	3796	rival	NOUN	Gender=Com	
+ternura_NOUN	3797	ternura	NOUN	Gender=Fem	
+variante_NOUN	3798	variante	NOUN	Gender=Fem	
+coser_VERB	3799	coser	VERB		
+molde_NOUN	3800	molde	NOUN	Gender=Masc	
+vigente_ADJ	3801	vigente	ADJ		
+espectro_NOUN	3802	espectro	NOUN	Gender=Masc	
+saludable_ADJ	3803	saludable	ADJ		
+recorte_NOUN	3804	recorte	NOUN	Gender=Masc	
+reglamento_NOUN	3805	reglamento	NOUN	Gender=Masc	
+apretado_ADJ	3806	apretado	ADJ		
+vitalidad_NOUN	3807	vitalidad	NOUN	Gender=Fem	
+cuidadosamente_ADV	3808	cuidadosamente	ADV		
+adaptación_NOUN	3809	adaptación	NOUN	Gender=Fem	
+etiqueta_NOUN	3810	etiqueta	NOUN	Gender=Fem	
+obviamente_ADV	3811	obviamente	ADV		
+muralla_NOUN	3812	muralla	NOUN	Gender=Fem	
+desaparecido_ADJ	3813	desaparecido	ADJ		
+represión_NOUN	3814	represión	NOUN	Gender=Fem	
+reducción_NOUN	3815	reducción	NOUN	Gender=Fem	
+difusión_NOUN	3816	difusión	NOUN	Gender=Fem	
+pésimo_ADJ	3817	pésimo	ADJ		
+encargo_NOUN	3818	encargo	NOUN	Gender=Masc	
+madurar_VERB	3819	madurar	VERB		
+almorzar_VERB	3820	almorzar	VERB		
+oeste_NOUN	3821	oeste	NOUN	Gender=Masc	
+albergar_VERB	3822	albergar	VERB		
+complacer_VERB	3823	complacer	VERB		
+pescador_NOUN	3824	pescador	NOUN	Gender=Masc,Fem	pescadora
+diagnóstico_NOUN	3825	diagnóstico	NOUN	Gender=Masc	
+cuadra_NOUN	3826	cuadra	NOUN	Gender=Fem	
+remover_VERB	3827	remover	VERB		
+pecar_VERB	3828	pecar	VERB		
+rienda_NOUN	3829	rienda	NOUN	Gender=Fem	
+crueldad_NOUN	3830	crueldad	NOUN	Gender=Fem	
+acontecer_VERB	3831	acontecer	VERB		
+ansia_NOUN	3832	ansia	NOUN	Gender=Fem	
+cúpula_NOUN	3833	cúpula	NOUN	Gender=Fem	
+desbordar_VERB	3834	desbordar	VERB		
+llama_NOUN	3835	llama	NOUN	Gender=Fem	
+alegar_VERB	3836	alegar	VERB		
+vegetación_NOUN	3837	vegetación	NOUN	Gender=Fem	
+lema_NOUN	3838	lema	NOUN	Gender=Masc	
+encarar_VERB	3839	encarar	VERB		
+bote_NOUN	3840	bote	NOUN	Gender=Masc	
+solar_ADJ	3841	solar	ADJ		
+inevitablemente_ADV	3842	inevitablemente	ADV		
+perfume_NOUN	3843	perfume	NOUN	Gender=Masc	
+central_NOUN	3844	central	NOUN	Gender=Fem	
+egoísta_ADJ	3845	egoísta	ADJ		
+pertenencia_NOUN	3846	pertenencia	NOUN	Gender=Fem	
+exótico_ADJ	3847	exótico	ADJ		
+tranquilizar_VERB	3848	tranquilizar	VERB		
+casita_NOUN	3849	casita	NOUN	Gender=Fem	
+emigrar_VERB	3850	emigrar	VERB		
+alianza_NOUN	3851	alianza	NOUN	Gender=Fem	
+físicamente_ADV	3852	físicamente	ADV		
+fascinante_ADJ	3853	fascinante	ADJ		
+áspero_ADJ	3854	áspero	ADJ		
+desechar_VERB	3855	desechar	VERB		
+ratón_NOUN	3856	ratón	NOUN	Gender=Masc	
+hazaña_NOUN	3857	hazaña	NOUN	Gender=Fem	
+dureza_NOUN	3858	dureza	NOUN	Gender=Fem	
+sábana_NOUN	3859	sábana	NOUN	Gender=Fem	
+revisión_NOUN	3860	revisión	NOUN	Gender=Fem	
+retirada_NOUN	3861	retirada	NOUN	Gender=Fem	
+básicamente_ADV	3862	básicamente	ADV		
+aroma_NOUN	3863	aroma	NOUN	Gender=Masc	
+optimismo_NOUN	3864	optimismo	NOUN	Gender=Masc	
+mate_NOUN	3865	mate	NOUN	Gender=Masc	
+lujoso_ADJ	3866	lujoso	ADJ		
+evento_NOUN	3867	evento	NOUN	Gender=Masc	
+físico_NOUN	3868	físico	NOUN	Gender=Masc,Fem	física
+estrenar_VERB	3869	estrenar	VERB		
+pasto_NOUN	3870	pasto	NOUN	Gender=Masc	
+hostil_ADJ	3871	hostil	ADJ		
+gallo_NOUN	3872	gallo	NOUN	Gender=Masc	
+tropical_ADJ	3873	tropical	ADJ		
+rendimiento_NOUN	3874	rendimiento	NOUN	Gender=Masc	
+lentitud_NOUN	3875	lentitud	NOUN	Gender=Fem	
+aula_NOUN	3876	aula	NOUN	Gender=Fem	
+incitar_VERB	3877	incitar	VERB		
+franco_ADJ	3878	franco	ADJ		
+inédito_ADJ	3879	inédito	ADJ		
+uniforme_ADJ	3880	uniforme	ADJ		
+himno_NOUN	3881	himno	NOUN	Gender=Masc	
+sindicato_NOUN	3882	sindicato	NOUN	Gender=Masc	
+mariposa_NOUN	3883	mariposa	NOUN	Gender=Fem	
+propiciar_VERB	3884	propiciar	VERB		
+fidelidad_NOUN	3885	fidelidad	NOUN	Gender=Fem	
+retraso_NOUN	3886	retraso	NOUN	Gender=Masc	
+desplazamiento_NOUN	3887	desplazamiento	NOUN	Gender=Masc	
+cuestionar_VERB	3888	cuestionar	VERB		
+integrante_ADJ	3889	integrante	ADJ		
+lingüístico_ADJ	3890	lingüístico	ADJ		
+compatriota_NOUN	3891	compatriota	NOUN	Gender=Com	
+mexicano_ADJ	3892	mexicano	ADJ		
+fundir_VERB	3893	fundir	VERB		
+localidad_NOUN	3894	localidad	NOUN	Gender=Fem	
+reprimir_VERB	3895	reprimir	VERB		
+autorizado_ADJ	3896	autorizado	ADJ		
+leal_ADJ	3897	leal	ADJ		
+lobo_NOUN	3898	lobo	NOUN	Gender=Masc	
+asamblea_NOUN	3899	asamblea	NOUN	Gender=Fem	
+pañuelo_NOUN	3900	pañuelo	NOUN	Gender=Masc	
+meditar_VERB	3901	meditar	VERB		
+temblor_NOUN	3902	temblor	NOUN	Gender=Masc	
+gira_NOUN	3903	gira	NOUN	Gender=Fem	
+manto_NOUN	3904	manto	NOUN	Gender=Masc	
+cubano_ADJ	3905	cubano	ADJ		
+asombro_NOUN	3906	asombro	NOUN	Gender=Masc	
+gobernador_NOUN	3907	gobernador	NOUN	Gender=Masc	
+amplitud_NOUN	3908	amplitud	NOUN	Gender=Fem	
+carbón_NOUN	3909	carbón	NOUN	Gender=Masc	
+campamento_NOUN	3910	campamento	NOUN	Gender=Masc	
+sangriento_ADJ	3911	sangriento	ADJ		
+matemático_ADJ	3912	matemático	ADJ		
+portugués_ADJ	3913	portugués	ADJ		
+intensamente_ADV	3914	intensamente	ADV		
+suavemente_ADV	3915	suavemente	ADV		
+excursión_NOUN	3916	excursión	NOUN	Gender=Fem	
+predicar_VERB	3917	predicar	VERB		
+encarnar_VERB	3918	encarnar	VERB		
+lamentablemente_ADV	3919	lamentablemente	ADV		
+tomate_NOUN	3920	tomate	NOUN	Gender=Masc	
+negociar_VERB	3921	negociar	VERB		
+cinturón_NOUN	3922	cinturón	NOUN	Gender=Masc	
+estático_ADJ	3923	estático	ADJ		
+antaño_ADV	3924	antaño	ADV		
+bulto_NOUN	3925	bulto	NOUN	Gender=Masc	
+adónde_ADV	3926	adónde	ADV		
+vocabulario_NOUN	3927	vocabulario	NOUN	Gender=Masc	
+especulación_NOUN	3928	especulación	NOUN	Gender=Fem	
+manual_NOUN	3929	manual	NOUN	Gender=Masc	
+representativo_ADJ	3930	representativo	ADJ		
+honrar_VERB	3931	honrar	VERB		
+disparo_NOUN	3932	disparo	NOUN	Gender=Masc	
+desencadenar_VERB	3933	desencadenar	VERB		
+residuo_NOUN	3934	residuo	NOUN	Gender=Masc	
+vanidad_NOUN	3935	vanidad	NOUN	Gender=Fem	
+ofender_VERB	3936	ofender	VERB		
+renovación_NOUN	3937	renovación	NOUN	Gender=Fem	
+enfriar_VERB	3938	enfriar	VERB		
+furioso_ADJ	3939	furioso	ADJ		
+estudioso_ADJ	3940	estudioso	ADJ		
+ilustrar_VERB	3941	ilustrar	VERB		
+ratificar_VERB	3942	ratificar	VERB		
+peste_NOUN	3943	peste	NOUN	Gender=Fem	
+expedición_NOUN	3944	expedición	NOUN	Gender=Fem	
+destrozar_VERB	3945	destrozar	VERB		
+vasco_ADJ	3946	vasco	ADJ		
+simular_VERB	3947	simular	VERB		
+complementario_ADJ	3948	complementario	ADJ		
+mecánica_NOUN	3949	mecánica	NOUN	Gender=Fem	
+electricidad_NOUN	3950	electricidad	NOUN	Gender=Fem	
+insólito_ADJ	3951	insólito	ADJ		
+temeroso_ADJ	3952	temeroso	ADJ		
+extraordinariamente_ADV	3953	extraordinariamente	ADV		
+ascensor_NOUN	3954	ascensor	NOUN	Gender=Masc	
+bicicleta_NOUN	3955	bicicleta	NOUN	Gender=Fem	
+consagrado_ADJ	3956	consagrado	ADJ		
+aporte_NOUN	3957	aporte	NOUN	Gender=Masc	
+despierto_ADJ	3958	despierto	ADJ		
+beca_NOUN	3959	beca	NOUN	Gender=Fem	
+consentir_VERB	3960	consentir	VERB		
+trigo_NOUN	3961	trigo	NOUN	Gender=Masc	
+paralizar_VERB	3962	paralizar	VERB		
+disipar_VERB	3963	disipar	VERB		
+incrementar_VERB	3964	incrementar	VERB		
+plataforma_NOUN	3965	plataforma	NOUN	Gender=Fem	
+maestra_NOUN	3966	maestra	NOUN	Gender=Fem	
+clínica_NOUN	3967	clínica	NOUN	Gender=Fem	
+heredero_NOUN	3968	heredero	NOUN	Gender=Masc	
+embarazada_ADJ	3969	embarazada	ADJ		
+estadio_NOUN	3970	estadio	NOUN	Gender=Masc	
+latinoamericano_ADJ	3971	latinoamericano	ADJ		
+tecnológico_ADJ	3972	tecnológico	ADJ		
+desfile_NOUN	3973	desfile	NOUN	Gender=Masc	
+buque_NOUN	3974	buque	NOUN	Gender=Masc	
+parentesco_NOUN	3975	parentesco	NOUN	Gender=Masc	
+fallo_NOUN	3976	fallo	NOUN	Gender=Masc	
+rebeldía_NOUN	3977	rebeldía	NOUN	Gender=Fem	
+desigual_ADJ	3978	desigual	ADJ		
+corrección_NOUN	3979	corrección	NOUN	Gender=Fem	
+chispa_NOUN	3980	chispa	NOUN	Gender=Fem	
+virgen_NOUN	3981	virgen	NOUN	Gender=Fem	
+reprochar_VERB	3982	reprochar	VERB		
+supervivencia_NOUN	3983	supervivencia	NOUN	Gender=Fem	
+caridad_NOUN	3984	caridad	NOUN	Gender=Fem	
+alumbrar_VERB	3985	alumbrar	VERB		
+comunión_NOUN	3986	comunión	NOUN	Gender=Fem	
+embajador_NOUN	3987	embajador	NOUN	Gender=Masc,Fem	embajadora
+tercio_NOUN	3988	tercio	NOUN	Gender=Masc	
+iluminación_NOUN	3989	iluminación	NOUN	Gender=Fem	
+censura_NOUN	3990	censura	NOUN	Gender=Fem	
+disputa_NOUN	3991	disputa	NOUN	Gender=Fem	
+esplendor_NOUN	3992	esplendor	NOUN	Gender=Masc	
+inscribir_VERB	3993	inscribir	VERB		
+perjuicio_NOUN	3994	perjuicio	NOUN	Gender=Masc	
+medalla_NOUN	3995	medalla	NOUN	Gender=Fem	
+lealtad_NOUN	3996	lealtad	NOUN	Gender=Fem	
+divorcio_NOUN	3997	divorcio	NOUN	Gender=Masc	
+dotar_VERB	3998	dotar	VERB		
+enfoque_NOUN	3999	enfoque	NOUN	Gender=Masc	
+civilizado_ADJ	4000	civilizado	ADJ		
+firmeza_NOUN	4001	firmeza	NOUN	Gender=Fem	
+indudable_ADJ	4002	indudable	ADJ		
+colina_NOUN	4003	colina	NOUN	Gender=Fem	
+parcela_NOUN	4004	parcela	NOUN	Gender=Fem	
+jaula_NOUN	4005	jaula	NOUN	Gender=Fem	
+ajuste_NOUN	4006	ajuste	NOUN	Gender=Masc	
+lateral_ADJ	4007	lateral	ADJ		
+entierro_NOUN	4008	entierro	NOUN	Gender=Masc	
+reventar_VERB	4009	reventar	VERB		
+servidor_NOUN	4010	servidor	NOUN	Gender=Masc,Fem	servidora
+superioridad_NOUN	4011	superioridad	NOUN	Gender=Fem	
+turismo_NOUN	4012	turismo	NOUN	Gender=Masc	
+barbaridad_NOUN	4013	barbaridad	NOUN	Gender=Fem	
+rollo_NOUN	4014	rollo	NOUN	Gender=Masc	
+arbitrario_ADJ	4015	arbitrario	ADJ		
+triángulo_NOUN	4016	triángulo	NOUN	Gender=Masc	
+aislamiento_NOUN	4017	aislamiento	NOUN	Gender=Masc	
+alivio_NOUN	4018	alivio	NOUN	Gender=Masc	
+entrenamiento_NOUN	4019	entrenamiento	NOUN	Gender=Masc	
+truco_NOUN	4020	truco	NOUN	Gender=Masc	
+respetable_ADJ	4021	respetable	ADJ		
+disparate_NOUN	4022	disparate	NOUN	Gender=Masc	
+cocinero_NOUN	4023	cocinero	NOUN	Gender=Masc,Fem	cocinera
+aburrir_VERB	4024	aburrir	VERB		
+diminuto_ADJ	4025	diminuto	ADJ		
+celeste_ADJ	4026	celeste	ADJ		
+fotógrafo_NOUN	4027	fotógrafo	NOUN	Gender=Masc,Fem	fotógrafa
+imposición_NOUN	4028	imposición	NOUN	Gender=Fem	
+diluir_VERB	4029	diluir	VERB		
+convincente_ADJ	4030	convincente	ADJ		
+consuelo_NOUN	4031	consuelo	NOUN	Gender=Masc	
+periodístico_ADJ	4032	periodístico	ADJ		
+cariñoso_ADJ	4033	cariñoso	ADJ		
+transmisión_NOUN	4034	transmisión	NOUN	Gender=Fem	
+titular_VERB	4035	titular	VERB		
+sendero_NOUN	4036	sendero	NOUN	Gender=Masc	
+frecuentar_VERB	4037	frecuentar	VERB		
+desacuerdo_NOUN	4038	desacuerdo	NOUN	Gender=Masc	
+academia_NOUN	4039	academia	NOUN	Gender=Fem	
+acertado_ADJ	4040	acertado	ADJ		
+catedral_NOUN	4041	catedral	NOUN	Gender=Fem	
+mediocre_ADJ	4042	mediocre	ADJ		
+vanguardia_NOUN	4043	vanguardia	NOUN	Gender=Fem	
+desafiar_VERB	4044	desafiar	VERB		
+agitado_ADJ	4045	agitado	ADJ		
+precario_ADJ	4046	precario	ADJ		
+sanitario_ADJ	4047	sanitario	ADJ		
+comprensible_ADJ	4048	comprensible	ADJ		
+cuidadoso_ADJ	4049	cuidadoso	ADJ		
+despojar_VERB	4050	despojar	VERB		
+embarazo_NOUN	4051	embarazo	NOUN	Gender=Masc	
+imposibilidad_NOUN	4052	imposibilidad	NOUN	Gender=Fem	
+irracional_ADJ	4053	irracional	ADJ		
+reinar_VERB	4054	reinar	VERB		
+hundido_ADJ	4055	hundido	ADJ		
+reportaje_NOUN	4056	reportaje	NOUN	Gender=Masc	
+tambor_NOUN	4057	tambor	NOUN	Gender=Masc	
+fundación_NOUN	4058	fundación	NOUN	Gender=Fem	
+transparencia_NOUN	4059	transparencia	NOUN	Gender=Fem	
+elegancia_NOUN	4060	elegancia	NOUN	Gender=Fem	
+criminal_NOUN	4061	criminal	NOUN	Gender=Com	
+elogio_NOUN	4062	elogio	NOUN	Gender=Masc	
+manta_NOUN	4063	manta	NOUN	Gender=Fem	
+dinámico_ADJ	4064	dinámico	ADJ		
+hervir_VERB	4065	hervir	VERB		
+sereno_ADJ	4066	sereno	ADJ		
+retirado_ADJ	4067	retirado	ADJ		
+alerta_NOUN	4068	alerta	NOUN	Gender=Fem	
+sinceridad_NOUN	4069	sinceridad	NOUN	Gender=Fem	
+cátedra_NOUN	4070	cátedra	NOUN	Gender=Fem	
+refinado_ADJ	4071	refinado	ADJ		
+repertorio_NOUN	4072	repertorio	NOUN	Gender=Masc	
+plancha_NOUN	4073	plancha	NOUN	Gender=Fem	
+terraza_NOUN	4074	terraza	NOUN	Gender=Fem	
+gala_NOUN	4075	gala	NOUN	Gender=Fem	
+era_NOUN	4076	era	NOUN	Gender=Fem	
+arranque_NOUN	4077	arranque	NOUN	Gender=Masc	
+patada_NOUN	4078	patada	NOUN	Gender=Fem	
+disculpar_VERB	4079	disculpar	VERB		
+lapso_NOUN	4080	lapso	NOUN	Gender=Masc	
+sudor_NOUN	4081	sudor	NOUN	Gender=Masc	
+apetito_NOUN	4082	apetito	NOUN	Gender=Masc	
+íntimamente_ADV	4083	íntimamente	ADV		
+indicación_NOUN	4084	indicación	NOUN	Gender=Fem	
+perdurar_VERB	4085	perdurar	VERB		
+aliado_NOUN	4086	aliado	NOUN	Gender=Masc	
+presidencia_NOUN	4087	presidencia	NOUN	Gender=Fem	
+maldito_ADJ	4088	maldito	ADJ		
+consejero_NOUN	4089	consejero	NOUN	Gender=Masc,Fem	consejera
+inundar_VERB	4090	inundar	VERB		
+consigna_NOUN	4091	consigna	NOUN	Gender=Fem	
+cortesía_NOUN	4092	cortesía	NOUN	Gender=Fem	
+inmóvil_ADJ	4093	inmóvil	ADJ		
+atributo_NOUN	4094	atributo	NOUN	Gender=Masc	
+furia_NOUN	4095	furia	NOUN	Gender=Fem	
+grosero_ADJ	4096	grosero	ADJ		
+catalán_ADJ	4097	catalán	ADJ		
+estatura_NOUN	4098	estatura	NOUN	Gender=Fem	
+vejez_NOUN	4099	vejez	NOUN	Gender=Fem	
+terremoto_NOUN	4100	terremoto	NOUN	Gender=Masc	
+articular_VERB	4101	articular	VERB		
+tira_NOUN	4102	tira	NOUN	Gender=Fem	
+emisor_NOUN	4103	emisor	NOUN	Gender=Masc	
+relevante_ADJ	4104	relevante	ADJ		
+integridad_NOUN	4105	integridad	NOUN	Gender=Fem	
+autorización_NOUN	4106	autorización	NOUN	Gender=Fem	
+audaz_ADJ	4107	audaz	ADJ		
+seminario_NOUN	4108	seminario	NOUN	Gender=Masc	
+marea_NOUN	4109	marea	NOUN	Gender=Fem	
+resentimiento_NOUN	4110	resentimiento	NOUN	Gender=Masc	
+delincuente_NOUN	4111	delincuente	NOUN	Gender=Com	
+debilitar_VERB	4112	debilitar	VERB		
+fingir_VERB	4113	fingir	VERB		
+igualar_VERB	4114	igualar	VERB		
+disfrazado_ADJ	4115	disfrazado	ADJ		
+trepar_VERB	4116	trepar	VERB		
+mutuamente_ADV	4117	mutuamente	ADV		
+correctamente_ADV	4118	correctamente	ADV		
+ágil_ADJ	4119	ágil	ADJ		
+atrasado_ADJ	4120	atrasado	ADJ		
+esqueleto_NOUN	4121	esqueleto	NOUN	Gender=Masc	
+indignación_NOUN	4122	indignación	NOUN	Gender=Fem	
+agradecido_ADJ	4123	agradecido	ADJ		
+adicional_ADJ	4124	adicional	ADJ		
+escultura_NOUN	4125	escultura	NOUN	Gender=Fem	
+condicionado_ADJ	4126	condicionado	ADJ		
+infinidad_NOUN	4127	infinidad	NOUN	Gender=Fem	
+pilar_NOUN	4128	pilar	NOUN	Gender=Masc	
+óptimo_ADJ	4129	óptimo	ADJ		
+súbito_ADJ	4130	súbito	ADJ		
+regular_VERB	4131	regular	VERB		
+vosotros_PRON	4132	vosotros	PRON		vosotras
+rematar_VERB	4133	rematar	VERB		
+incomprensible_ADJ	4134	incomprensible	ADJ		
+independientemente_ADV	4135	independientemente	ADV		
+percepción_NOUN	4136	percepción	NOUN	Gender=Fem	
+minoría_NOUN	4137	minoría	NOUN	Gender=Fem	
+deterioro_NOUN	4138	deterioro	NOUN	Gender=Masc	
+argumentar_VERB	4139	argumentar	VERB		
+guapo_ADJ	4140	guapo	ADJ		
+sanción_NOUN	4141	sanción	NOUN	Gender=Fem	
+poblar_VERB	4142	poblar	VERB		
+contradecir_VERB	4143	contradecir	VERB		
+inmerso_ADJ	4144	inmerso	ADJ		
+manipular_VERB	4145	manipular	VERB		
+maleta_NOUN	4146	maleta	NOUN	Gender=Fem	
+faena_NOUN	4147	faena	NOUN	Gender=Fem	
+regar_VERB	4148	regar	VERB		
+evocar_VERB	4149	evocar	VERB		
+serpiente_NOUN	4150	serpiente	NOUN	Gender=Fem	
+proveniente_ADJ	4151	proveniente	ADJ		
+primordial_ADJ	4152	primordial	ADJ		
+agitación_NOUN	4153	agitación	NOUN	Gender=Fem	
+prosperar_VERB	4154	prosperar	VERB		
+ganancia_NOUN	4155	ganancia	NOUN	Gender=Fem	
+genético_ADJ	4156	genético	ADJ		
+pino_NOUN	4157	pino	NOUN	Gender=Masc	
+arrasar_VERB	4158	arrasar	VERB		
+rebajar_VERB	4159	rebajar	VERB		
+entrevistar_VERB	4160	entrevistar	VERB		
+infeliz_ADJ	4161	infeliz	ADJ		
+compacto_ADJ	4162	compacto	ADJ		
+llanto_NOUN	4163	llanto	NOUN	Gender=Masc	
+ida_NOUN	4164	ida	NOUN	Gender=Fem	
+criminal_ADJ	4165	criminal	ADJ		
+coherente_ADJ	4166	coherente	ADJ		
+falla_NOUN	4167	falla	NOUN	Gender=Fem	
+contribución_NOUN	4168	contribución	NOUN	Gender=Fem	
+burla_NOUN	4169	burla	NOUN	Gender=Fem	
+seguidor_NOUN	4170	seguidor	NOUN	Gender=Masc	
+estratégico_ADJ	4171	estratégico	ADJ		
+perla_NOUN	4172	perla	NOUN	Gender=Fem	
+ético_ADJ	4173	ético	ADJ		
+integración_NOUN	4174	integración	NOUN	Gender=Fem	
+enterado_ADJ	4175	enterado	ADJ		
+siesta_NOUN	4176	siesta	NOUN	Gender=Fem	
+replicar_VERB	4177	replicar	VERB		
+incipiente_ADJ	4178	incipiente	ADJ		
+adornar_VERB	4179	adornar	VERB		
+alternativo_ADJ	4180	alternativo	ADJ		
+expresivo_ADJ	4181	expresivo	ADJ		
+bigote_NOUN	4182	bigote	NOUN	Gender=Masc	
+concurrir_VERB	4183	concurrir	VERB		
+niñez_NOUN	4184	niñez	NOUN	Gender=Fem	
+leña_NOUN	4185	leña	NOUN	Gender=Fem	
+atardecer_NOUN	4186	atardecer	NOUN	Gender=Masc	
+restaurar_VERB	4187	restaurar	VERB		
+retrasar_VERB	4188	retrasar	VERB		
+estatal_ADJ	4189	estatal	ADJ		
+interrogante_NOUN	4190	interrogante	NOUN	Gender=Com	
+palpar_VERB	4191	palpar	VERB		
+perpetuo_ADJ	4192	perpetuo	ADJ		
+lente_NOUN	4193	lente	NOUN	Gender=Masc,Fem	
+compás_NOUN	4194	compás	NOUN	Gender=Masc	
+estéril_ADJ	4195	estéril	ADJ		
+llanura_NOUN	4196	llanura	NOUN	Gender=Fem	
+collar_NOUN	4197	collar	NOUN	Gender=Masc	
+veneno_NOUN	4198	veneno	NOUN	Gender=Masc	
+mármol_NOUN	4199	mármol	NOUN	Gender=Masc	
+biografía_NOUN	4200	biografía	NOUN	Gender=Fem	
+latente_ADJ	4201	latente	ADJ		
+rebelión_NOUN	4202	rebelión	NOUN	Gender=Fem	
+hígado_NOUN	4203	hígado	NOUN	Gender=Masc	
+ladrón_NOUN	4204	ladrón	NOUN	Gender=Masc	
+aparentar_VERB	4205	aparentar	VERB		
+holandés_ADJ	4206	holandés	ADJ		
+tablero_NOUN	4207	tablero	NOUN	Gender=Masc	
+enterrado_ADJ	4208	enterrado	ADJ		
+imitación_NOUN	4209	imitación	NOUN	Gender=Fem	
+adelanto_NOUN	4210	adelanto	NOUN	Gender=Masc	
+celoso_ADJ	4211	celoso	ADJ		
+oscurecer_VERB	4212	oscurecer	VERB		
+constitucional_ADJ	4213	constitucional	ADJ		
+intervalo_NOUN	4214	intervalo	NOUN	Gender=Masc	
+trago_NOUN	4215	trago	NOUN	Gender=Masc	
+fracción_NOUN	4216	fracción	NOUN	Gender=Fem	
+convento_NOUN	4217	convento	NOUN	Gender=Masc	
+arroyo_NOUN	4218	arroyo	NOUN	Gender=Masc	
+circular_ADJ	4219	circular	ADJ		
+enlace_NOUN	4220	enlace	NOUN	Gender=Masc	
+torcer_VERB	4221	torcer	VERB		
+derramar_VERB	4222	derramar	VERB		
+diccionario_NOUN	4223	diccionario	NOUN	Gender=Masc	
+reflejado_ADJ	4224	reflejado	ADJ		
+afueras_NOUN	4225	afueras	NOUN	Gender=Fem	
+agravar_VERB	4226	agravar	VERB		
+ceja_NOUN	4227	ceja	NOUN	Gender=Fem	
+detallado_ADJ	4228	detallado	ADJ		
+interponer_VERB	4229	interponer	VERB		
+topar_VERB	4230	topar	VERB		
+constitución_NOUN	4231	constitución	NOUN	Gender=Fem	
+enlazar_VERB	4232	enlazar	VERB		
+clasificación_NOUN	4233	clasificación	NOUN	Gender=Fem	
+atrapado_ADJ	4234	atrapado	ADJ		
+lío_NOUN	4235	lío	NOUN	Gender=Masc	
+sede_NOUN	4236	sede	NOUN	Gender=Fem	
+colar_VERB	4237	colar	VERB		
+altamente_ADV	4238	altamente	ADV		
+litro_NOUN	4239	litro	NOUN	Gender=Masc	
+bandeja_NOUN	4240	bandeja	NOUN	Gender=Fem	
+aproximación_NOUN	4241	aproximación	NOUN	Gender=Fem	
+liviano_ADJ	4242	liviano	ADJ		
+entusiasmado_ADJ	4243	entusiasmado	ADJ		
+trapo_NOUN	4244	trapo	NOUN	Gender=Masc	
+conocedor_NOUN	4245	conocedor	NOUN	Gender=Masc	
+encaminar_VERB	4246	encaminar	VERB		
+altar_NOUN	4247	altar	NOUN	Gender=Masc	
+acierto_NOUN	4248	acierto	NOUN	Gender=Masc	
+piloto_NOUN	4249	piloto	NOUN	Gender=Masc,Fem	pilota
+susceptible_ADJ	4250	susceptible	ADJ		
+inolvidable_ADJ	4251	inolvidable	ADJ		
+invocar_VERB	4252	invocar	VERB		
+computadora_NOUN	4253	computadora	NOUN	Gender=Fem	
+ostentar_VERB	4254	ostentar	VERB		
+alambre_NOUN	4255	alambre	NOUN	Gender=Masc	
+mango_NOUN	4256	mango	NOUN	Gender=Masc	
+configurar_VERB	4257	configurar	VERB		
+rosario_NOUN	4258	rosario	NOUN	Gender=Masc	
+reconstrucción_NOUN	4259	reconstrucción	NOUN	Gender=Fem	
+parroquia_NOUN	4260	parroquia	NOUN	Gender=Fem	
+ruidoso_ADJ	4261	ruidoso	ADJ		
+supuestamente_ADV	4262	supuestamente	ADV		
+ampliamente_ADV	4263	ampliamente	ADV		
+gigante_ADJ	4264	gigante	ADJ		
+prevalecer_VERB	4265	prevalecer	VERB		
+comprador_NOUN	4266	comprador	NOUN	Gender=Masc	
+piedad_NOUN	4267	piedad	NOUN	Gender=Fem	
+semanal_ADJ	4268	semanal	ADJ		
+clandestino_ADJ	4269	clandestino	ADJ		
+defensivo_ADJ	4270	defensivo	ADJ		
+manual_ADJ	4271	manual	ADJ		
+engendrar_VERB	4272	engendrar	VERB		
+contagiar_VERB	4273	contagiar	VERB		
+niebla_NOUN	4274	niebla	NOUN	Gender=Fem	
+adonde_ADV	4275	adonde	ADV		
+consagrar_VERB	4276	consagrar	VERB		
+mixto_ADJ	4277	mixto	ADJ		
+verbo_NOUN	4278	verbo	NOUN	Gender=Masc	
+cadera_NOUN	4279	cadera	NOUN	Gender=Fem	
+procesión_NOUN	4280	procesión	NOUN	Gender=Fem	
+encuesta_NOUN	4281	encuesta	NOUN	Gender=Fem	
+cría_NOUN	4282	cría	NOUN	Gender=Fem	
+narración_NOUN	4283	narración	NOUN	Gender=Fem	
+ramo_NOUN	4284	ramo	NOUN	Gender=Masc	
+penal_ADJ	4285	penal	ADJ		
+traidor_NOUN	4286	traidor	NOUN	Gender=Masc	
+catálogo_NOUN	4287	catálogo	NOUN	Gender=Masc	
+protector_NOUN	4288	protector	NOUN	Gender=Masc	
+amparo_NOUN	4289	amparo	NOUN	Gender=Masc	
+farmacia_NOUN	4290	farmacia	NOUN	Gender=Fem	
+cima_NOUN	4291	cima	NOUN	Gender=Fem	
+riñón_NOUN	4292	riñón	NOUN	Gender=Masc	
+pintoresco_ADJ	4293	pintoresco	ADJ		
+finca_NOUN	4294	finca	NOUN	Gender=Fem	
+calificación_NOUN	4295	calificación	NOUN	Gender=Fem	
+caudal_NOUN	4296	caudal	NOUN	Gender=Masc	
+publicitario_ADJ	4297	publicitario	ADJ		
+trastorno_NOUN	4298	trastorno	NOUN	Gender=Masc	
+ceñir_VERB	4299	ceñir	VERB		
+jovencito_NOUN	4300	jovencito	NOUN	Gender=Masc	
+incorporación_NOUN	4301	incorporación	NOUN	Gender=Fem	
+corral_NOUN	4302	corral	NOUN	Gender=Masc	
+fatiga_NOUN	4303	fatiga	NOUN	Gender=Fem	
+virgen_ADJ	4304	virgen	ADJ		
+bruja_NOUN	4305	bruja	NOUN	Gender=Fem	
+exploración_NOUN	4306	exploración	NOUN	Gender=Fem	
+matrimonial_ADJ	4307	matrimonial	ADJ		
+equivalente_ADJ	4308	equivalente	ADJ		
+ilustración_NOUN	4309	ilustración	NOUN	Gender=Fem	
+cómplice_NOUN	4310	cómplice	NOUN	Gender=Com	
+melodía_NOUN	4311	melodía	NOUN	Gender=Fem	
+productor_NOUN	4312	productor	NOUN	Gender=Masc	
+deseable_ADJ	4313	deseable	ADJ		
+constatar_VERB	4314	constatar	VERB		
+portero_NOUN	4315	portero	NOUN	Gender=Masc,Fem	portera
+conejo_NOUN	4316	conejo	NOUN	Gender=Masc	
+pasivo_ADJ	4317	pasivo	ADJ		
+densidad_NOUN	4318	densidad	NOUN	Gender=Fem	
+dispersar_VERB	4319	dispersar	VERB		
+apuesta_NOUN	4320	apuesta	NOUN	Gender=Fem	
+nacionalidad_NOUN	4321	nacionalidad	NOUN	Gender=Fem	
+llamativo_ADJ	4322	llamativo	ADJ		
+vacilar_VERB	4323	vacilar	VERB		
+mozo_NOUN	4324	mozo	NOUN	Gender=Masc	
+capturar_VERB	4325	capturar	VERB		
+cuerno_NOUN	4326	cuerno	NOUN	Gender=Masc	
+remediar_VERB	4327	remediar	VERB		
+fiar_VERB	4328	fiar	VERB		
+desfilar_VERB	4329	desfilar	VERB		
+talla_NOUN	4330	talla	NOUN	Gender=Fem	
+justificado_ADJ	4331	justificado	ADJ		
+comisario_NOUN	4332	comisario	NOUN	Gender=Masc	
+fotográfico_ADJ	4333	fotográfico	ADJ		
+acercamiento_NOUN	4334	acercamiento	NOUN	Gender=Masc	
+desordenado_ADJ	4335	desordenado	ADJ		
+gráfico_ADJ	4336	gráfico	ADJ		
+reaparecer_VERB	4337	reaparecer	VERB		
+revuelto_ADJ	4338	revuelto	ADJ		
+contorno_NOUN	4339	contorno	NOUN	Gender=Masc	
+egoísmo_NOUN	4340	egoísmo	NOUN	Gender=Masc	
+bordo_NOUN	4341	bordo	NOUN	Gender=Masc	
+compensación_NOUN	4342	compensación	NOUN	Gender=Fem	
+prohibición_NOUN	4343	prohibición	NOUN	Gender=Fem	
+obrar_VERB	4344	obrar	VERB		
+expreso_ADJ	4345	expreso	ADJ		
+coronar_VERB	4346	coronar	VERB		
+liquidar_VERB	4347	liquidar	VERB		
+laberinto_NOUN	4348	laberinto	NOUN	Gender=Masc	
+erótico_ADJ	4349	erótico	ADJ		
+amenazado_ADJ	4350	amenazado	ADJ		
+inminente_ADJ	4351	inminente	ADJ		
+eternidad_NOUN	4352	eternidad	NOUN	Gender=Fem	
+repasar_VERB	4353	repasar	VERB		
+pastilla_NOUN	4354	pastilla	NOUN	Gender=Fem	
+mierda_NOUN	4355	mierda	NOUN	Gender=Fem	
+contienda_NOUN	4356	contienda	NOUN	Gender=Fem	
+imperial_ADJ	4357	imperial	ADJ		
+inexplicable_ADJ	4358	inexplicable	ADJ		
+peruano_ADJ	4359	peruano	ADJ		
+experimental_ADJ	4360	experimental	ADJ		
+chorro_NOUN	4361	chorro	NOUN	Gender=Masc	
+opaco_ADJ	4362	opaco	ADJ		
+clavo_NOUN	4363	clavo	NOUN	Gender=Masc	
+sequía_NOUN	4364	sequía	NOUN	Gender=Fem	
+dinámica_NOUN	4365	dinámica	NOUN	Gender=Fem	
+ocio_NOUN	4366	ocio	NOUN	Gender=Masc	
+normalidad_NOUN	4367	normalidad	NOUN	Gender=Fem	
+intuir_VERB	4368	intuir	VERB		
+resonancia_NOUN	4369	resonancia	NOUN	Gender=Fem	
+devorar_VERB	4370	devorar	VERB		
+efímero_ADJ	4371	efímero	ADJ		
+chaqueta_NOUN	4372	chaqueta	NOUN	Gender=Fem	
+aferrar_VERB	4373	aferrar	VERB		
+invertido_ADJ	4374	invertido	ADJ		
+asco_NOUN	4375	asco	NOUN	Gender=Masc	
+consolidar_VERB	4376	consolidar	VERB		
+apresurar_VERB	4377	apresurar	VERB		
+pleito_NOUN	4378	pleito	NOUN	Gender=Masc	
+latir_VERB	4379	latir	VERB		
+sencillez_NOUN	4380	sencillez	NOUN	Gender=Fem	
+transitorio_ADJ	4381	transitorio	ADJ		
+estupidez_NOUN	4382	estupidez	NOUN	Gender=Fem	
+mojado_ADJ	4383	mojado	ADJ		
+descalzo_ADJ	4384	descalzo	ADJ		
+orientado_ADJ	4385	orientado	ADJ		
+senador_NOUN	4386	senador	NOUN	Gender=Masc,Fem	senadora
+rencor_NOUN	4387	rencor	NOUN	Gender=Masc	
+presidencial_ADJ	4388	presidencial	ADJ		
+apurar_VERB	4389	apurar	VERB		
+insultar_VERB	4390	insultar	VERB		
+brasileño_ADJ	4391	brasileño	ADJ		
+sustentar_VERB	4392	sustentar	VERB		
+probabilidad_NOUN	4393	probabilidad	NOUN	Gender=Fem	
+minucioso_ADJ	4394	minucioso	ADJ		
+rústico_ADJ	4395	rústico	ADJ		
+gobernante_NOUN	4396	gobernante	NOUN	Gender=Com	
+merced_NOUN	4397	merced	NOUN	Gender=Fem	
+acariciar_VERB	4398	acariciar	VERB		
+tonelada_NOUN	4399	tonelada	NOUN	Gender=Fem	
+rebelde_NOUN	4400	rebelde	NOUN	Gender=Com	
+anhelo_NOUN	4401	anhelo	NOUN	Gender=Masc	
+princesa_NOUN	4402	princesa	NOUN	Gender=Fem	
+decididamente_ADV	4403	decididamente	ADV		
+embajada_NOUN	4404	embajada	NOUN	Gender=Fem	
+apagado_ADJ	4405	apagado	ADJ		
+bruscamente_ADV	4406	bruscamente	ADV		
+vincular_VERB	4407	vincular	VERB		
+amargura_NOUN	4408	amargura	NOUN	Gender=Fem	
+fortalecer_VERB	4409	fortalecer	VERB		
+validez_NOUN	4410	validez	NOUN	Gender=Fem	
+tacto_NOUN	4411	tacto	NOUN	Gender=Masc	
+codo_NOUN	4412	codo	NOUN	Gender=Masc	
+vibrar_VERB	4413	vibrar	VERB		
+calzar_VERB	4414	calzar	VERB		
+chimenea_NOUN	4415	chimenea	NOUN	Gender=Fem	
+comunitario_ADJ	4416	comunitario	ADJ		
+explícito_ADJ	4417	explícito	ADJ		
+silvestre_ADJ	4418	silvestre	ADJ		
+evaluar_VERB	4419	evaluar	VERB		
+emocionar_VERB	4420	emocionar	VERB		
+editar_VERB	4421	editar	VERB		
+abanico_NOUN	4422	abanico	NOUN	Gender=Masc	
+fiscal_ADJ	4423	fiscal	ADJ		
+espacial_ADJ	4424	espacial	ADJ		
+violentamente_ADV	4425	violentamente	ADV		
+medieval_ADJ	4426	medieval	ADJ		
+camiseta_NOUN	4427	camiseta	NOUN	Gender=Fem	
+honrado_ADJ	4428	honrado	ADJ		
+veloz_ADJ	4429	veloz	ADJ		
+corteza_NOUN	4430	corteza	NOUN	Gender=Fem	
+sumergir_VERB	4431	sumergir	VERB		
+cordillera_NOUN	4432	cordillera	NOUN	Gender=Fem	
+monótono_ADJ	4433	monótono	ADJ		
+longitud_NOUN	4434	longitud	NOUN	Gender=Fem	
+espantar_VERB	4435	espantar	VERB		
+imprevisto_ADJ	4436	imprevisto	ADJ		
+psicología_NOUN	4437	psicología	NOUN	Gender=Fem	
+soviético_ADJ	4438	soviético	ADJ		
+potencial_ADJ	4439	potencial	ADJ		
+ambulante_ADJ	4440	ambulante	ADJ		
+agrupar_VERB	4441	agrupar	VERB		
+exageración_NOUN	4442	exageración	NOUN	Gender=Fem	
+apreciación_NOUN	4443	apreciación	NOUN	Gender=Fem	
+perverso_ADJ	4444	perverso	ADJ		
+estallido_NOUN	4445	estallido	NOUN	Gender=Masc	
+ardiente_ADJ	4446	ardiente	ADJ		
+talón_NOUN	4447	talón	NOUN	Gender=Masc	
+atener_VERB	4448	atener	VERB		
+colchón_NOUN	4449	colchón	NOUN	Gender=Masc	
+tenue_ADJ	4450	tenue	ADJ		
+tinte_NOUN	4451	tinte	NOUN	Gender=Masc	
+indiscutible_ADJ	4452	indiscutible	ADJ		
+imprenta_NOUN	4453	imprenta	NOUN	Gender=Fem	
+bastón_NOUN	4454	bastón	NOUN	Gender=Masc	
+sombrío_ADJ	4455	sombrío	ADJ		
+humillación_NOUN	4456	humillación	NOUN	Gender=Fem	
+trance_NOUN	4457	trance	NOUN	Gender=Masc	
+volante_NOUN	4458	volante	NOUN	Gender=Masc	
+adolescente_ADJ	4459	adolescente	ADJ		
+encabezar_VERB	4460	encabezar	VERB		
+rosado_ADJ	4461	rosado	ADJ		
+amistoso_ADJ	4462	amistoso	ADJ		
+noble_NOUN	4463	noble	NOUN	Gender=Com	
+radicalmente_ADV	4464	radicalmente	ADV		
+reclamo_NOUN	4465	reclamo	NOUN	Gender=Masc	
+asesor_NOUN	4466	asesor	NOUN	Gender=Masc,Fem	asesora
+perteneciente_ADJ	4467	perteneciente	ADJ		
+novelista_NOUN	4468	novelista	NOUN	Gender=Com	
+herido_NOUN	4469	herido	NOUN	Gender=Masc	
+necesitado_ADJ	4470	necesitado	ADJ		
+indefinido_ADJ	4471	indefinido	ADJ		
+solidario_ADJ	4472	solidario	ADJ		
+paralizado_ADJ	4473	paralizado	ADJ		
+grueso_NOUN	4474	grueso	NOUN	Gender=Masc	
+chupar_VERB	4475	chupar	VERB		
+grabación_NOUN	4476	grabación	NOUN	Gender=Fem	
+frasco_NOUN	4477	frasco	NOUN	Gender=Masc	
+inquietante_ADJ	4478	inquietante	ADJ		
+visual_ADJ	4479	visual	ADJ		
+verdura_NOUN	4480	verdura	NOUN	Gender=Fem	
+violación_NOUN	4481	violación	NOUN	Gender=Fem	
+innovación_NOUN	4482	innovación	NOUN	Gender=Fem	
+tertulia_NOUN	4483	tertulia	NOUN	Gender=Fem	
+carcajada_NOUN	4484	carcajada	NOUN	Gender=Fem	
+cancha_NOUN	4485	cancha	NOUN	Gender=Fem	
+republicano_ADJ	4486	republicano	ADJ		
+destruido_ADJ	4487	destruido	ADJ		
+aburrimiento_NOUN	4488	aburrimiento	NOUN	Gender=Masc	
+trabajador_ADJ	4489	trabajador	ADJ		
+inquietar_VERB	4490	inquietar	VERB		
+grandioso_ADJ	4491	grandioso	ADJ		
+específicamente_ADV	4492	específicamente	ADV		
+exportación_NOUN	4493	exportación	NOUN	Gender=Fem	
+extremadamente_ADV	4494	extremadamente	ADV		
+expandir_VERB	4495	expandir	VERB		
+predecir_VERB	4496	predecir	VERB		
+dichoso_ADJ	4497	dichoso	ADJ		
+condicionar_VERB	4498	condicionar	VERB		
+agrario_ADJ	4499	agrario	ADJ		
+suizo_ADJ	4500	suizo	ADJ		
+presunto_ADJ	4501	presunto	ADJ		
+tranvía_NOUN	4502	tranvía	NOUN	Gender=Masc	
+alertar_VERB	4503	alertar	VERB		
+cordón_NOUN	4504	cordón	NOUN	Gender=Masc	
+prioridad_NOUN	4505	prioridad	NOUN	Gender=Fem	
+modalidad_NOUN	4506	modalidad	NOUN	Gender=Fem	
+desenlace_NOUN	4507	desenlace	NOUN	Gender=Masc	
+bailarín_NOUN	4508	bailarín	NOUN	Gender=Masc,Fem	bailarina
+artefacto_NOUN	4509	artefacto	NOUN	Gender=Masc	
+trono_NOUN	4510	trono	NOUN	Gender=Masc	
+adjetivo_NOUN	4511	adjetivo	NOUN	Gender=Masc	
+gama_NOUN	4512	gama	NOUN	Gender=Fem	
+enfermar_VERB	4513	enfermar	VERB		
+gabinete_NOUN	4514	gabinete	NOUN	Gender=Masc	
+indagar_VERB	4515	indagar	VERB		
+vertiginoso_ADJ	4516	vertiginoso	ADJ		
+decente_ADJ	4517	decente	ADJ		
+congelado_ADJ	4518	congelado	ADJ		
+peón_NOUN	4519	peón	NOUN	Gender=Masc	
+triple_ADJ	4520	triple	ADJ		
+inspector_NOUN	4521	inspector	NOUN	Gender=Masc,Fem	inspectora
+órbita_NOUN	4522	órbita	NOUN	Gender=Fem	
+autopista_NOUN	4523	autopista	NOUN	Gender=Fem	
+prosa_NOUN	4524	prosa	NOUN	Gender=Fem	
+paréntesis_NOUN	4525	paréntesis	NOUN	Gender=Masc	
+fabricación_NOUN	4526	fabricación	NOUN	Gender=Fem	
+lesión_NOUN	4527	lesión	NOUN	Gender=Fem	
+mejilla_NOUN	4528	mejilla	NOUN	Gender=Fem	
+inseguro_ADJ	4529	inseguro	ADJ		
+muelle_NOUN	4530	muelle	NOUN	Gender=Masc	
+velo_NOUN	4531	velo	NOUN	Gender=Masc	
+decoración_NOUN	4532	decoración	NOUN	Gender=Fem	
+rancho_NOUN	4533	rancho	NOUN	Gender=Masc	
+exceder_VERB	4534	exceder	VERB		
+joder_VERB	4535	joder	VERB		
+irónico_ADJ	4536	irónico	ADJ		
+alarmar_VERB	4537	alarmar	VERB		
+negociación_NOUN	4538	negociación	NOUN	Gender=Fem	
+euforia_NOUN	4539	euforia	NOUN	Gender=Fem	
+convencimiento_NOUN	4540	convencimiento	NOUN	Gender=Masc	
+asombrado_ADJ	4541	asombrado	ADJ		
+rascar_VERB	4542	rascar	VERB		
+desconcierto_NOUN	4543	desconcierto	NOUN	Gender=Masc	
+economista_NOUN	4544	economista	NOUN	Gender=Masc,Fem	
+oficialmente_ADV	4545	oficialmente	ADV		
+sofisticado_ADJ	4546	sofisticado	ADJ		
+sobra_NOUN	4547	sobra	NOUN	Gender=Fem	
+enredar_VERB	4548	enredar	VERB		
+ingenioso_ADJ	4549	ingenioso	ADJ		
+tasa_NOUN	4550	tasa	NOUN	Gender=Fem	
+balanza_NOUN	4551	balanza	NOUN	Gender=Fem	
+factura_NOUN	4552	factura	NOUN	Gender=Fem	
+hormiga_NOUN	4553	hormiga	NOUN	Gender=Fem	
+vulnerable_ADJ	4554	vulnerable	ADJ		
+oso_NOUN	4555	oso	NOUN	Gender=Masc	
+trazo_NOUN	4556	trazo	NOUN	Gender=Masc	
+geométrico_ADJ	4557	geométrico	ADJ		
+suspirar_VERB	4558	suspirar	VERB		
+gusano_NOUN	4559	gusano	NOUN	Gender=Masc	
+bendito_ADJ	4560	bendito	ADJ		
+conferir_VERB	4561	conferir	VERB		
+manía_NOUN	4562	manía	NOUN	Gender=Fem	
+disculpa_NOUN	4563	disculpa	NOUN	Gender=Fem	
+trascendente_ADJ	4564	trascendente	ADJ		
+alarmante_ADJ	4565	alarmante	ADJ		
+pequeñito_ADJ	4566	pequeñito	ADJ		
+predominar_VERB	4567	predominar	VERB		
+metáfora_NOUN	4568	metáfora	NOUN	Gender=Fem	
+penetración_NOUN	4569	penetración	NOUN	Gender=Fem	
+pasajero_ADJ	4570	pasajero	ADJ		
+whisky_NOUN	4571	whisky	NOUN	Gender=Masc	
+turístico_ADJ	4572	turístico	ADJ		
+despejar_VERB	4573	despejar	VERB		
+delirio_NOUN	4574	delirio	NOUN	Gender=Masc	
+impecable_ADJ	4575	impecable	ADJ		
+soberbio_ADJ	4576	soberbio	ADJ		
+librería_NOUN	4577	librería	NOUN	Gender=Fem	
+documentación_NOUN	4578	documentación	NOUN	Gender=Fem	
+sonriente_ADJ	4579	sonriente	ADJ		
+decena_NOUN	4580	decena	NOUN	Gender=Fem	
+nulo_ADJ	4581	nulo	ADJ		
+tigre_NOUN	4582	tigre	NOUN	Gender=Masc	
+premiar_VERB	4583	premiar	VERB		
+implacable_ADJ	4584	implacable	ADJ		
+senda_NOUN	4585	senda	NOUN	Gender=Fem	
+temperamento_NOUN	4586	temperamento	NOUN	Gender=Masc	
+brevemente_ADV	4587	brevemente	ADV		
+desayunar_VERB	4588	desayunar	VERB		
+productivo_ADJ	4589	productivo	ADJ		
+dicha_NOUN	4590	dicha	NOUN	Gender=Fem	
+andaluz_ADJ	4591	andaluz	ADJ		
+acta_NOUN	4592	acta	NOUN	Gender=Fem	
+cera_NOUN	4593	cera	NOUN	Gender=Fem	
+tanque_NOUN	4594	tanque	NOUN	Gender=Masc	
+institucional_ADJ	4595	institucional	ADJ		
+vigoroso_ADJ	4596	vigoroso	ADJ		
+batería_NOUN	4597	batería	NOUN	Gender=Fem	
+crema_NOUN	4598	crema	NOUN	Gender=Fem	
+atroz_ADJ	4599	atroz	ADJ		
+entretenimiento_NOUN	4600	entretenimiento	NOUN	Gender=Masc	
+pala_NOUN	4601	pala	NOUN	Gender=Fem	
+servidumbre_NOUN	4602	servidumbre	NOUN	Gender=Fem	
+resucitar_VERB	4603	resucitar	VERB		
+psicólogo_NOUN	4604	psicólogo	NOUN	Gender=Masc,Fem	psicóloga
+sabroso_ADJ	4605	sabroso	ADJ		
+actriz_NOUN	4606	actriz	NOUN	Gender=Fem	
+esencialmente_ADV	4607	esencialmente	ADV		
+larguísimo_ADJ	4608	larguísimo	ADJ		
+simultáneo_ADJ	4609	simultáneo	ADJ		
+burro_NOUN	4610	burro	NOUN	Gender=Masc	
+procedencia_NOUN	4611	procedencia	NOUN	Gender=Fem	
+fiscal_NOUN	4612	fiscal	NOUN	Gender=Com	
+trascendental_ADJ	4613	trascendental	ADJ		
+colorado_ADJ	4614	colorado	ADJ		
+financiar_VERB	4615	financiar	VERB		
+participante_NOUN	4616	participante	NOUN	Gender=Masc	
+rescate_NOUN	4617	rescate	NOUN	Gender=Masc	
+apuro_NOUN	4618	apuro	NOUN	Gender=Masc	
+sudar_VERB	4619	sudar	VERB		
+prestigioso_ADJ	4620	prestigioso	ADJ		
+cautela_NOUN	4621	cautela	NOUN	Gender=Fem	
+crónico_ADJ	4622	crónico	ADJ		
+táctica_NOUN	4623	táctica	NOUN	Gender=Fem	
+descuido_NOUN	4624	descuido	NOUN	Gender=Masc	
+bíblico_ADJ	4625	bíblico	ADJ		
+matanza_NOUN	4626	matanza	NOUN	Gender=Fem	
+perturbar_VERB	4627	perturbar	VERB		
+paterno_ADJ	4628	paterno	ADJ		
+escrito_NOUN	4629	escrito	NOUN	Gender=Masc	
+pinta_NOUN	4630	pinta	NOUN	Gender=Fem	
+envidiar_VERB	4631	envidiar	VERB		
+reposar_VERB	4632	reposar	VERB		
+acelerado_ADJ	4633	acelerado	ADJ		
+árido_ADJ	4634	árido	ADJ		
+caprichoso_ADJ	4635	caprichoso	ADJ		
+minúsculo_ADJ	4636	minúsculo	ADJ		
+caldo_NOUN	4637	caldo	NOUN	Gender=Masc	
+agonía_NOUN	4638	agonía	NOUN	Gender=Fem	
+deteriorar_VERB	4639	deteriorar	VERB		
+tregua_NOUN	4640	tregua	NOUN	Gender=Fem	
+vestuario_NOUN	4641	vestuario	NOUN	Gender=Masc	
+desesperar_VERB	4642	desesperar	VERB		
+bodega_NOUN	4643	bodega	NOUN	Gender=Fem	
+antena_NOUN	4644	antena	NOUN	Gender=Fem	
+ligar_VERB	4645	ligar	VERB		
+maldad_NOUN	4646	maldad	NOUN	Gender=Fem	
+obediencia_NOUN	4647	obediencia	NOUN	Gender=Fem	
+ocurrencia_NOUN	4648	ocurrencia	NOUN	Gender=Fem	
+abiertamente_ADV	4649	abiertamente	ADV		
+complemento_NOUN	4650	complemento	NOUN	Gender=Masc	
+editor_NOUN	4651	editor	NOUN	Gender=Masc,Fem	editora
+periodismo_NOUN	4652	periodismo	NOUN	Gender=Masc	
+piscina_NOUN	4653	piscina	NOUN	Gender=Fem	
+provincial_ADJ	4654	provincial	ADJ		
+mediar_VERB	4655	mediar	VERB		
+endurecer_VERB	4656	endurecer	VERB		
+tradicionalmente_ADV	4657	tradicionalmente	ADV		
+inyección_NOUN	4658	inyección	NOUN	Gender=Fem	
+ilegal_ADJ	4659	ilegal	ADJ		
+reproche_NOUN	4660	reproche	NOUN	Gender=Masc	
+consistencia_NOUN	4661	consistencia	NOUN	Gender=Fem	
+nobleza_NOUN	4662	nobleza	NOUN	Gender=Fem	
+terrestre_ADJ	4663	terrestre	ADJ		
+impotencia_NOUN	4664	impotencia	NOUN	Gender=Fem	
+vislumbrar_VERB	4665	vislumbrar	VERB		
+cordial_ADJ	4666	cordial	ADJ		
+hostilidad_NOUN	4667	hostilidad	NOUN	Gender=Fem	
+angustiado_ADJ	4668	angustiado	ADJ		
+medicamento_NOUN	4669	medicamento	NOUN	Gender=Masc	
+entrenar_VERB	4670	entrenar	VERB		
+piadoso_ADJ	4671	piadoso	ADJ		
+corporal_ADJ	4672	corporal	ADJ		
+conspiración_NOUN	4673	conspiración	NOUN	Gender=Fem	
+ilimitado_ADJ	4674	ilimitado	ADJ		
+detención_NOUN	4675	detención	NOUN	Gender=Fem	
+autobús_NOUN	4676	autobús	NOUN	Gender=Masc	
+firmemente_ADV	4677	firmemente	ADV		
+esporádico_ADJ	4678	esporádico	ADJ		
+destreza_NOUN	4679	destreza	NOUN	Gender=Fem	
+razonar_VERB	4680	razonar	VERB		
+entrañas_NOUN	4681	entrañas	NOUN	Gender=Fem	
+gratitud_NOUN	4682	gratitud	NOUN	Gender=Fem	
+rectificar_VERB	4683	rectificar	VERB		
+melancólico_ADJ	4684	melancólico	ADJ		
+editorial_NOUN	4685	editorial	NOUN	Gender=Masc,Fem	
+móvil_ADJ	4686	móvil	ADJ		
+bicho_NOUN	4687	bicho	NOUN	Gender=Masc	
+martillo_NOUN	4688	martillo	NOUN	Gender=Masc	
+robusto_ADJ	4689	robusto	ADJ		
+cooperación_NOUN	4690	cooperación	NOUN	Gender=Fem	
+elevación_NOUN	4691	elevación	NOUN	Gender=Fem	
+atentado_NOUN	4692	atentado	NOUN	Gender=Masc	
+puñado_NOUN	4693	puñado	NOUN	Gender=Masc	
+llano_ADJ	4694	llano	ADJ		
+colombiano_ADJ	4695	colombiano	ADJ		
+sirena_NOUN	4696	sirena	NOUN	Gender=Fem	
+espuma_NOUN	4697	espuma	NOUN	Gender=Fem	
+cirujano_NOUN	4698	cirujano	NOUN	Gender=Masc,Fem	cirujana
+angustioso_ADJ	4699	angustioso	ADJ		
+vereda_NOUN	4700	vereda	NOUN	Gender=Fem	
+excitar_VERB	4701	excitar	VERB		
+reivindicación_NOUN	4702	reivindicación	NOUN	Gender=Fem	
+infección_NOUN	4703	infección	NOUN	Gender=Fem	
+chiquillo_NOUN	4704	chiquillo	NOUN	Gender=Masc	
+distracción_NOUN	4705	distracción	NOUN	Gender=Fem	
+enumerar_VERB	4706	enumerar	VERB		
+estadístico_ADJ	4707	estadístico	ADJ		
+ingrediente_NOUN	4708	ingrediente	NOUN	Gender=Masc	
+posar_VERB	4709	posar	VERB		
+maligno_ADJ	4710	maligno	ADJ		
+irritar_VERB	4711	irritar	VERB		
+pugna_NOUN	4712	pugna	NOUN	Gender=Fem	
+comprensivo_ADJ	4713	comprensivo	ADJ		
+hueco_ADJ	4714	hueco	ADJ		
+torta_NOUN	4715	torta	NOUN	Gender=Fem	
+intérprete_NOUN	4716	intérprete	NOUN	Gender=Com	
+araña_NOUN	4717	araña	NOUN	Gender=Fem	
+facción_NOUN	4718	facción	NOUN	Gender=Fem	
+elocuente_ADJ	4719	elocuente	ADJ		
+tumbar_VERB	4720	tumbar	VERB		
+adentrar_VERB	4721	adentrar	VERB		
+diplomático_NOUN	4722	diplomático	NOUN	Gender=Masc,Fem	diplomática
+exhibición_NOUN	4723	exhibición	NOUN	Gender=Fem	
+relajar_VERB	4724	relajar	VERB		
+escaparate_NOUN	4725	escaparate	NOUN	Gender=Masc	
+afín_ADJ	4726	afín	ADJ		
+sargento_NOUN	4727	sargento	NOUN	Gender=Masc	
+recrear_VERB	4728	recrear	VERB		
+usual_ADJ	4729	usual	ADJ		
+estética_NOUN	4730	estética	NOUN	Gender=Fem	
+caballería_NOUN	4731	caballería	NOUN	Gender=Fem	
+padrino_NOUN	4732	padrino	NOUN	Gender=Masc	
+diversidad_NOUN	4733	diversidad	NOUN	Gender=Fem	
+banquete_NOUN	4734	banquete	NOUN	Gender=Masc	
+bancario_ADJ	4735	bancario	ADJ		
+impartir_VERB	4736	impartir	VERB		
+andar_NOUN	4737	andar	NOUN	Gender=Masc	
+gigante_NOUN	4738	gigante	NOUN	Gender=Com	
+afortunado_ADJ	4739	afortunado	ADJ		
+pabellón_NOUN	4740	pabellón	NOUN	Gender=Masc	
+abeja_NOUN	4741	abeja	NOUN	Gender=Fem	
+asentir_VERB	4742	asentir	VERB		
+espontáneamente_ADV	4743	espontáneamente	ADV		
+informativo_ADJ	4744	informativo	ADJ		
+violín_NOUN	4745	violín	NOUN	Gender=Masc	
+astro_NOUN	4746	astro	NOUN	Gender=Masc	
+dictador_NOUN	4747	dictador	NOUN	Gender=Masc	
+roce_NOUN	4748	roce	NOUN	Gender=Masc	
+prolongación_NOUN	4749	prolongación	NOUN	Gender=Fem	
+cráneo_NOUN	4750	cráneo	NOUN	Gender=Masc	
+aflojar_VERB	4751	aflojar	VERB		
+hola_INTJ	4752	hola	INTJ		
+importado_ADJ	4753	importado	ADJ		
+íntegro_ADJ	4754	íntegro	ADJ		
+agradecimiento_NOUN	4755	agradecimiento	NOUN	Gender=Masc	
+extra_ADJ	4756	extra	ADJ		
+audacia_NOUN	4757	audacia	NOUN	Gender=Fem	
+cólera_NOUN	4758	cólera	NOUN	Gender=Masc,Fem	
+resignación_NOUN	4759	resignación	NOUN	Gender=Fem	
+legislación_NOUN	4760	legislación	NOUN	Gender=Fem	
+recíproco_ADJ	4761	recíproco	ADJ		
+caramelo_NOUN	4762	caramelo	NOUN	Gender=Masc	
+pólvora_NOUN	4763	pólvora	NOUN	Gender=Fem	
+rol_NOUN	4764	rol	NOUN	Gender=Masc	
+fértil_ADJ	4765	fértil	ADJ		
+ensuciar_VERB	4766	ensuciar	VERB		
+largar_VERB	4767	largar	VERB		
+acomodado_ADJ	4768	acomodado	ADJ		
+idiota_NOUN	4769	idiota	NOUN	Gender=Com	
+bahía_NOUN	4770	bahía	NOUN	Gender=Fem	
+latitud_NOUN	4771	latitud	NOUN	Gender=Fem	
+buey_NOUN	4772	buey	NOUN	Gender=Masc	
+vaivén_NOUN	4773	vaivén	NOUN	Gender=Masc	
+equivocación_NOUN	4774	equivocación	NOUN	Gender=Fem	
+comunismo_NOUN	4775	comunismo	NOUN	Gender=Masc	
+partícula_NOUN	4776	partícula	NOUN	Gender=Fem	
+intermedio_NOUN	4777	intermedio	NOUN	Gender=Masc	
+económicamente_ADV	4778	económicamente	ADV		
+limosna_NOUN	4779	limosna	NOUN	Gender=Fem	
+equivalente_NOUN	4780	equivalente	NOUN	Gender=Masc	
+flecha_NOUN	4781	flecha	NOUN	Gender=Fem	
+soberano_ADJ	4782	soberano	ADJ		
+presentir_VERB	4783	presentir	VERB		
+desilusión_NOUN	4784	desilusión	NOUN	Gender=Fem	
+insertar_VERB	4785	insertar	VERB		
+pato_NOUN	4786	pato	NOUN	Gender=Masc	
+guerrero_ADJ	4787	guerrero	ADJ		
+grieta_NOUN	4788	grieta	NOUN	Gender=Fem	
+jinete_NOUN	4789	jinete	NOUN	Gender=Masc	
+involuntario_ADJ	4790	involuntario	ADJ		
+discurrir_VERB	4791	discurrir	VERB		
+inexistente_ADJ	4792	inexistente	ADJ		
+subjetivo_ADJ	4793	subjetivo	ADJ		
+agricultor_NOUN	4794	agricultor	NOUN	Gender=Masc,Fem	agricultora
+garra_NOUN	4795	garra	NOUN	Gender=Fem	
+engordar_VERB	4796	engordar	VERB		
+soporte_NOUN	4797	soporte	NOUN	Gender=Masc	
+concurrencia_NOUN	4798	concurrencia	NOUN	Gender=Fem	
+pirámide_NOUN	4799	pirámide	NOUN	Gender=Fem	
+aventurar_VERB	4800	aventurar	VERB		
+neutro_ADJ	4801	neutro	ADJ		
+demandar_VERB	4802	demandar	VERB		
+fósforo_NOUN	4803	fósforo	NOUN	Gender=Masc	
+profeta_NOUN	4804	profeta	NOUN	Gender=Masc	
+renacer_VERB	4805	renacer	VERB		
+restablecer_VERB	4806	restablecer	VERB		
+muslo_NOUN	4807	muslo	NOUN	Gender=Masc	
+desconcertado_ADJ	4808	desconcertado	ADJ		
+retiro_NOUN	4809	retiro	NOUN	Gender=Masc	
+comando_NOUN	4810	comando	NOUN	Gender=Masc	
+sobrevenir_VERB	4811	sobrevenir	VERB		
+emisión_NOUN	4812	emisión	NOUN	Gender=Fem	
+rebasar_VERB	4813	rebasar	VERB		
+tenor_NOUN	4814	tenor	NOUN	Gender=Masc	
+recompensa_NOUN	4815	recompensa	NOUN	Gender=Fem	
+complicidad_NOUN	4816	complicidad	NOUN	Gender=Fem	
+recelo_NOUN	4817	recelo	NOUN	Gender=Masc	
+vibración_NOUN	4818	vibración	NOUN	Gender=Fem	
+restricción_NOUN	4819	restricción	NOUN	Gender=Fem	
+acatar_VERB	4820	acatar	VERB		
+transitar_VERB	4821	transitar	VERB		
+vara_NOUN	4822	vara	NOUN	Gender=Fem	
+clientela_NOUN	4823	clientela	NOUN	Gender=Fem	
+soberanía_NOUN	4824	soberanía	NOUN	Gender=Fem	
+impreciso_ADJ	4825	impreciso	ADJ		
+percatar_VERB	4826	percatar	VERB		
+frialdad_NOUN	4827	frialdad	NOUN	Gender=Fem	
+encomendar_VERB	4828	encomendar	VERB		
+inspección_NOUN	4829	inspección	NOUN	Gender=Fem	
+inicial_NOUN	4830	inicial	NOUN	Gender=Fem	
+seducir_VERB	4831	seducir	VERB		
+incidencia_NOUN	4832	incidencia	NOUN	Gender=Fem	
+retroceso_NOUN	4833	retroceso	NOUN	Gender=Masc	
+micrófono_NOUN	4834	micrófono	NOUN	Gender=Masc	
+previsible_ADJ	4835	previsible	ADJ		
+ventanilla_NOUN	4836	ventanilla	NOUN	Gender=Fem	
+frontal_ADJ	4837	frontal	ADJ		
+extinción_NOUN	4838	extinción	NOUN	Gender=Fem	
+infinito_NOUN	4839	infinito	NOUN	Gender=Masc	
+campeón_NOUN	4840	campeón	NOUN	Gender=Masc	
+incidir_VERB	4841	incidir	VERB		
+monstruoso_ADJ	4842	monstruoso	ADJ		
+persistente_ADJ	4843	persistente	ADJ		
+oxígeno_NOUN	4844	oxígeno	NOUN	Gender=Masc	
+rigidez_NOUN	4845	rigidez	NOUN	Gender=Fem	
+educado_ADJ	4846	educado	ADJ		
+irreversible_ADJ	4847	irreversible	ADJ		
+despedida_NOUN	4848	despedida	NOUN	Gender=Fem	
+vengar_VERB	4849	vengar	VERB		
+encaje_NOUN	4850	encaje	NOUN	Gender=Masc	
+estropear_VERB	4851	estropear	VERB		
+repercusión_NOUN	4852	repercusión	NOUN	Gender=Fem	
+prematuro_ADJ	4853	prematuro	ADJ		
+fascinar_VERB	4854	fascinar	VERB		
+ganador_NOUN	4855	ganador	NOUN	Gender=Masc	
+emperador_NOUN	4856	emperador	NOUN	Gender=Masc	
+cometa_NOUN	4857	cometa	NOUN	Gender=Masc,Fem	
+precedente_NOUN	4858	precedente	NOUN	Gender=Masc	
+rudo_ADJ	4859	rudo	ADJ		
+cerebral_ADJ	4860	cerebral	ADJ		
+mosaico_NOUN	4861	mosaico	NOUN	Gender=Masc	
+significación_NOUN	4862	significación	NOUN	Gender=Fem	
+contestación_NOUN	4863	contestación	NOUN	Gender=Fem	
+pedagógico_ADJ	4864	pedagógico	ADJ		
+asilo_NOUN	4865	asilo	NOUN	Gender=Masc	
+incremento_NOUN	4866	incremento	NOUN	Gender=Masc	
+incurrir_VERB	4867	incurrir	VERB		
+lomo_NOUN	4868	lomo	NOUN	Gender=Masc	
+tentar_VERB	4869	tentar	VERB		
+navegación_NOUN	4870	navegación	NOUN	Gender=Fem	
+edificación_NOUN	4871	edificación	NOUN	Gender=Fem	
+abstracción_NOUN	4872	abstracción	NOUN	Gender=Fem	
+veintidós_NUM	4873	veintidós	NUM		
+grotesco_ADJ	4874	grotesco	ADJ		
+duramente_ADV	4875	duramente	ADV		
+sumido_ADJ	4876	sumido	ADJ		
+públicamente_ADV	4877	públicamente	ADV		
+resignar_VERB	4878	resignar	VERB		
+mortal_NOUN	4879	mortal	NOUN	Gender=Com	
+siniestro_ADJ	4880	siniestro	ADJ		
+místico_ADJ	4881	místico	ADJ		
+cabina_NOUN	4882	cabina	NOUN	Gender=Fem	
+dialogar_VERB	4883	dialogar	VERB		
+exento_ADJ	4884	exento	ADJ		
+guerrero_NOUN	4885	guerrero	NOUN	Gender=Masc,Fem	guerrera
+acera_NOUN	4886	acera	NOUN	Gender=Fem	
+clínico_ADJ	4887	clínico	ADJ		
+largamente_ADV	4888	largamente	ADV		
+callejero_ADJ	4889	callejero	ADJ		
+adherir_VERB	4890	adherir	VERB		
+voluntariamente_ADV	4891	voluntariamente	ADV		
+centavo_NOUN	4892	centavo	NOUN	Gender=Masc	
+molino_NOUN	4893	molino	NOUN	Gender=Masc	
+parcialmente_ADV	4894	parcialmente	ADV		
+decepción_NOUN	4895	decepción	NOUN	Gender=Fem	
+alojar_VERB	4896	alojar	VERB		
+debidamente_ADV	4897	debidamente	ADV		
+ente_NOUN	4898	ente	NOUN	Gender=Masc	
+internar_VERB	4899	internar	VERB		
+mismísimo_ADJ	4900	mismísimo	ADJ		
+contundente_ADJ	4901	contundente	ADJ		
+inundación_NOUN	4902	inundación	NOUN	Gender=Fem	
+diligencia_NOUN	4903	diligencia	NOUN	Gender=Fem	
+viceversa_ADV	4904	viceversa	ADV		
+séptimo_ADJ	4905	séptimo	ADJ		
+complejidad_NOUN	4906	complejidad	NOUN	Gender=Fem	
+carente_ADJ	4907	carente	ADJ		
+nítido_ADJ	4908	nítido	ADJ		
+imponente_ADJ	4909	imponente	ADJ		
+vecindad_NOUN	4910	vecindad	NOUN	Gender=Fem	
+secular_ADJ	4911	secular	ADJ		
+cabra_NOUN	4912	cabra	NOUN	Gender=Fem	
+olfato_NOUN	4913	olfato	NOUN	Gender=Masc	
+denominación_NOUN	4914	denominación	NOUN	Gender=Fem	
+bordear_VERB	4915	bordear	VERB		
+envergadura_NOUN	4916	envergadura	NOUN	Gender=Fem	
+admirador_NOUN	4917	admirador	NOUN	Gender=Masc	
+instruir_VERB	4918	instruir	VERB		
+rebaño_NOUN	4919	rebaño	NOUN	Gender=Masc	
+inicialmente_ADV	4920	inicialmente	ADV		
+vegetal_NOUN	4921	vegetal	NOUN	Gender=Masc	
+inseparable_ADJ	4922	inseparable	ADJ		
+fiera_NOUN	4923	fiera	NOUN	Gender=Fem	
+verter_VERB	4924	verter	VERB		
+desmentir_VERB	4925	desmentir	VERB		
+inestable_ADJ	4926	inestable	ADJ		
+olla_NOUN	4927	olla	NOUN	Gender=Fem	
+terriblemente_ADV	4928	terriblemente	ADV		
+coco_NOUN	4929	coco	NOUN	Gender=Masc	
+sótano_NOUN	4930	sótano	NOUN	Gender=Masc	
+agresividad_NOUN	4931	agresividad	NOUN	Gender=Fem	
+mentalmente_ADV	4932	mentalmente	ADV		
+adhesión_NOUN	4933	adhesión	NOUN	Gender=Fem	
+convención_NOUN	4934	convención	NOUN	Gender=Fem	
+paraje_NOUN	4935	paraje	NOUN	Gender=Masc	
+frívolo_ADJ	4936	frívolo	ADJ		
+cohete_NOUN	4937	cohete	NOUN	Gender=Masc	
+prodigioso_ADJ	4938	prodigioso	ADJ		
+almohada_NOUN	4939	almohada	NOUN	Gender=Fem	
+eficiencia_NOUN	4940	eficiencia	NOUN	Gender=Fem	
+laborioso_ADJ	4941	laborioso	ADJ		
+eclesiástico_ADJ	4942	eclesiástico	ADJ		
+confundido_ADJ	4943	confundido	ADJ		
+tejado_NOUN	4944	tejado	NOUN	Gender=Masc	
+elefante_NOUN	4945	elefante	NOUN	Gender=Masc	
+descifrar_VERB	4946	descifrar	VERB		
+navaja_NOUN	4947	navaja	NOUN	Gender=Fem	
+maldición_NOUN	4948	maldición	NOUN	Gender=Fem	
+marinero_NOUN	4949	marinero	NOUN	Gender=Masc,Fem	marinera
+bachillerato_NOUN	4950	bachillerato	NOUN	Gender=Masc	
+marrón_ADJ	4951	marrón	ADJ		
+entablar_VERB	4952	entablar	VERB		
+desequilibrio_NOUN	4953	desequilibrio	NOUN	Gender=Masc	
+sintético_ADJ	4954	sintético	ADJ		
+bélico_ADJ	4955	bélico	ADJ		
+combinado_ADJ	4956	combinado	ADJ		
+desperdicio_NOUN	4957	desperdicio	NOUN	Gender=Masc	
+propagar_VERB	4958	propagar	VERB		
+ampliación_NOUN	4959	ampliación	NOUN	Gender=Fem	
+recipiente_NOUN	4960	recipiente	NOUN	Gender=Masc	
+parlamentario_ADJ	4961	parlamentario	ADJ		
+trasero_ADJ	4962	trasero	ADJ		
+despliegue_NOUN	4963	despliegue	NOUN	Gender=Masc	
+libra_NOUN	4964	libra	NOUN	Gender=Fem	
+incursión_NOUN	4965	incursión	NOUN	Gender=Fem	
+irreal_ADJ	4966	irreal	ADJ		
+toalla_NOUN	4967	toalla	NOUN	Gender=Fem	
+tenis_NOUN	4968	tenis	NOUN	Gender=Masc	
+perfilar_VERB	4969	perfilar	VERB		
+entusiasta_ADJ	4970	entusiasta	ADJ		
+descarga_NOUN	4971	descarga	NOUN	Gender=Fem	
+patriótico_ADJ	4972	patriótico	ADJ		
+higiene_NOUN	4973	higiene	NOUN	Gender=Fem	
+decaer_VERB	4974	decaer	VERB		
+cuenca_NOUN	4975	cuenca	NOUN	Gender=Fem	
+aplastado_ADJ	4976	aplastado	ADJ		
+cal_NOUN	4977	cal	NOUN	Gender=Fem	
+rítmico_ADJ	4978	rítmico	ADJ		
+disfrazar_VERB	4979	disfrazar	VERB		
+pionero_NOUN	4980	pionero	NOUN	Gender=Masc	
+volcán_NOUN	4981	volcán	NOUN	Gender=Masc	
+puta_NOUN	4982	puta	NOUN	Gender=Fem	
+hispano_ADJ	4983	hispano	ADJ		
+diamante_NOUN	4984	diamante	NOUN	Gender=Masc	
+constructivo_ADJ	4985	constructivo	ADJ		
+delicadeza_NOUN	4986	delicadeza	NOUN	Gender=Fem	
+ocasional_ADJ	4987	ocasional	ADJ		
+expulsión_NOUN	4988	expulsión	NOUN	Gender=Fem	
+enigma_NOUN	4989	enigma	NOUN	Gender=Masc	
+monumental_ADJ	4990	monumental	ADJ		
+hectárea_NOUN	4991	hectárea	NOUN	Gender=Fem	
+accesible_ADJ	4992	accesible	ADJ		
+inmigrante_NOUN	4993	inmigrante	NOUN	Gender=Com	
+irrumpir_VERB	4994	irrumpir	VERB		
+prevención_NOUN	4995	prevención	NOUN	Gender=Fem	
+cerco_NOUN	4996	cerco	NOUN	Gender=Masc	
+penumbra_NOUN	4997	penumbra	NOUN	Gender=Fem	
+jugada_NOUN	4998	jugada	NOUN	Gender=Fem	
+estampa_NOUN	4999	estampa	NOUN	Gender=Fem	
+cueva_NOUN	5000	cueva	NOUN	Gender=Fem	

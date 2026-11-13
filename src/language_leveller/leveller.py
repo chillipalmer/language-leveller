@@ -30,7 +30,7 @@ class Leveller:
         if morph is not None:
             vocab.morph = morph
             self.corrector = MorphCorrector(morph, config.get("morph") or {}, vocab.rank_of,
-                                            vocab.clitic_patterns, fold)
+                                            vocab.clitic_patterns, fold, vocab.known_as)
         scoring = config.get("scoring") or {}
         self.unranked_counts = scoring.get("unranked_counts", True)
         self.low_coverage = scoring.get("low_coverage_threshold", 0.5)
@@ -81,7 +81,7 @@ class Leveller:
 
     def level_sentence(self, sent: Sentence, seg: Segment | None = None,
                        first_in_segment: bool = True) -> dict:
-        fixes = self.corrector.correct(sent) if self.corrector else {}
+        fixes = self._annotate(sent)
         tokens, levels, unranked, rankable, found = [], [], [], 0, 0
         max_rank = 0
         for t in sent.tokens:
@@ -154,6 +154,17 @@ class Leveller:
                 rec["source"]["ignored"] = seg.ignored
         return rec
 
+    def _annotate(self, sent: Sentence) -> dict[int, str]:
+        """Pre-grammar annotation: morphology correction, then vocabulary-derived
+        features grammar patterns can use. `Lexicalised=Yes` marks a participle the
+        vocab lists as an adjective (cansado, abierto), i.e. learnt as a word rather
+        than formed productively (tomado, firmado)."""
+        fixes = self.corrector.correct(sent) if self.corrector else {}
+        for t in sent.tokens:
+            if t.feats.get("VerbForm") == "Part" and self.vocab.known_as(t.text, t.lemma, "ADJ"):
+                t.feats["Lexicalised"] = "Yes"
+        return fixes
+
     # ---- grammar self-test -----------------------------------------------------
     def test_grammar(self) -> list[dict]:
         """Run every feature's tests.pos / tests.neg sentences through the parser."""
@@ -162,9 +173,8 @@ class Leveller:
             for kind in ("pos", "neg"):
                 for text in f.tests.get(kind, []) or []:
                     sents = self.parser.parse(text)
-                    if self.corrector:
-                        for s in sents:
-                            self.corrector.correct(s)
+                    for s in sents:
+                        self._annotate(s)
                     hit = any(f.find(s) for s in sents)
                     ok = hit if kind == "pos" else not hit
                     results.append({"feature": f.id, "kind": kind, "text": text, "ok": ok})

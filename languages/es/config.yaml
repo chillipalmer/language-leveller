@@ -18,20 +18,24 @@ vocab:
     - {level: C1, max_rank: 4000}
     - {level: C2, max_rank: 5000}
   unranked_level: C2+
-  # POS codes used in the list -> compatible Universal POS tags (for homograph choice)
+  # POS in the list (Universal POS) -> parser tags it may legitimately receive.
+  # An exact match is preferred; the others only resolve parser disagreements.
   pos_map:
-    v: [VERB, AUX]
-    n: [NOUN, PROPN]
-    adj: [ADJ, VERB]
-    adv: [ADV]
-    prep: [ADP]
-    conj: [CCONJ, SCONJ]
-    art: [DET]
-    det: [DET]
-    pron: [PRON, DET]
-    num: [NUM, DET, PRON]
-    interj: [INTJ]
-  exclude_upos: [PUNCT, SYM, NUM, PROPN, SPACE]
+    VERB: [VERB, AUX]
+    AUX: [AUX, VERB]
+    NOUN: [NOUN, PROPN]
+    ADJ: [ADJ, VERB, DET, ADV]
+    ADV: [ADV, ADJ, SCONJ]
+    PRON: [PRON]
+    DET: [DET, PRON, ADJ]
+    ADP: [ADP]
+    CCONJ: [CCONJ, SCONJ]
+    SCONJ: [SCONJ, CCONJ, ADV, PRON]
+    NUM: [NUM, DET, PRON]
+    INTJ: [INTJ]
+  exclude_upos: [PUNCT, SYM, PROPN, SPACE]   # digits are skipped as non-words; number words are ranked
+  exclude_patterns:                          # regexes on the surface form (case-sensitive)
+    - '^[IVXLCDM]+$'                         # Roman numerals (siglo XIX)
   # enclitic pronouns: dímelo -> díme -> dí; decírselo -> decírse -> decír (accent folded)
   clitic_suffixes:
     - '^(.{2,}?)(nos|os|me|te|se|lo|la|le|los|las|les)$'
@@ -77,5 +81,6 @@ scoring:
 morph:
   file: morph.tsv.gz              # built by tools/build_morph.py (UniMorph + verbecc)
   verb_cues: [no, me, te, se, lo, la, le, nos, os, los, las, les, que, aunque, cuando, si, ojalá]
+  adj_verb_cues: [no, me, te, se, nos, os, que, aunque, cuando, si, ojalá]   # no lo/la/los: articles too
   mood_preference: [Ind, Sub, Imp, Cnd]
   initial_subjectless_boost: {mood: Imp, weight: 2}   # "Ven aquí" = come (not "they see")

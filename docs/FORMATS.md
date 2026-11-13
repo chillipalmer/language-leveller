@@ -66,6 +66,8 @@ features:
     tests:                         # run by `leveller test-grammar`
       pos: ["Me pidió que lo ayudara."]   # must match
       neg: ["Me pide que lo ayude."]      # must not match
+    except:                        # optional patterns; matches overlapping them are dropped
+      - sequence: [{form: o}, {form: sea}]
     regions: [ES]                  # optional ISO 3166 codes where this is standard;
                                    # always detected, reported in output for the app to judge
     enabled: true                  # optional; false skips the feature
@@ -106,6 +108,7 @@ match:
 | `rel` | dependency relation; `aux` also matches `aux:pass` | `rel: [root, conj]` |
 | `regex` | regex on the lowercased form | `regex: '^haber'` |
 | `sent_start` | first non-punctuation token | `sent_start: true` |
+| `clause_start` | first token of the sentence or right after punctuation | `clause_start: true` |
 | `has_child` / `no_child` | some / no dependent satisfies a constraint | `no_child: {rel: mark}` |
 | `head_is` | the token's head satisfies a constraint | `head_is: {lemma: querer}` |
 | `optional` | (sequence only) element may be absent | |
@@ -141,7 +144,8 @@ vocab:
   bands: [{level: A1, max_rank: 1000}, ...]
   unranked_level: C2+
   pos_map: {v: [VERB, AUX], n: [NOUN, PROPN], ...}
-  exclude_upos: [PUNCT, SYM, NUM, PROPN, SPACE]
+  exclude_upos: [PUNCT, SYM, PROPN, SPACE]
+  exclude_patterns: ['^[IVXLCDM]+$']         # case-sensitive regexes on the form
   clitic_suffixes: ['^(.{2,}?)(me|te|se|lo|la|le|nos|os|los|las|les)$']
   accent_fold_fallback: true
   variant_separator: "|"
@@ -149,6 +153,7 @@ grammar: {file: grammar.yaml}
 morph:
   file: morph.tsv.gz
   verb_cues: [no, me, te, que, ...]          # retag noun → verb after these
+  adj_verb_cues: [no, me, te, que, ...]      # stricter list for words the vocab lists as adjectives
   mood_preference: [Ind, Sub, Imp, Cnd]      # tie-break between readings
   initial_subjectless_boost: {mood: Imp, weight: 2}
 cleaning:

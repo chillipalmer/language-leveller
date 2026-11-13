@@ -116,13 +116,27 @@ features:
 - id: es.perfect.present
   level: A2
   label: Present perfect
-  match:
-    graph:
-      v: {VerbForm: Part}
-      aux: {lemma: haber, Mood: Ind, Tense: Pres, rel: aux, head: v}
+  match_any:
+    - graph:
+        v: {VerbForm: Part}
+        aux: {lemma: haber, Mood: Ind, Tense: Pres, rel: aux, head: v}
+    - sequence: [{lemma: haber, Mood: Ind, Tense: Pres}, {VerbForm: Part}]
   tests:
-    pos: ["He visto esa película."]
+    pos: ["He visto esa película.", "He sido radical en mis ideas."]
     neg: ["Vi esa película.", "Hay mucha gente."]
+
+- id: es.participle.productive
+  level: A2
+  label: Participle formed from a verb (una decisión mal tomada, está terminado)
+  description: >
+    Participles the vocab lists as adjectives (cansado, abierto, ocupado) are learnt as
+    words and carry Lexicalised=Yes; they do not trigger this feature. Productive
+    participles need participle morphology, taught with the present perfect at A2.
+  match:
+    token: {VerbForm: Part, Lexicalised: null}
+  tests:
+    pos: ["Es una decisión mal tomada.", "Tengo los documentos firmados.", "El trabajo está terminado."]
+    neg: ["Estoy muy cansado.", "La puerta está abierta.", "Este cuarto está ocupado.", "Siempre olvido su nombre."]
 
 - id: es.conditional.courtesy
   level: A2
@@ -148,28 +162,55 @@ features:
   label: Present subjunctive
   match:
     token: {Mood: Sub, Tense: Pres}
+  except:                                   # fixed expressions, not productive subjunctive
+    - sequence: [{form: o}, {form: sea}]
   tests:
     pos: ["Quiero que vengas mañana.", "Espero que estés bien.", "Cuando llegues, llámame."]
-    neg: ["Sé que vienes mañana."]
+    neg: ["Sé que vienes mañana.", "Es un problema grave.", "El quinto mes, o sea mayo.", "¿Estás libre esta tarde?", "Sus sentimientos son todavía tan firmes."]
 
 - id: es.imperative.negative
   level: B1
   label: Negative imperative (no + subjunctive)
-  match:
-    graph:
-      v: {Mood: Sub, Tense: Pres, rel: [root, parataxis, conj], no_child: {rel: mark}}
-      neg: {lemma: "no", head: v}
+  match_any:
+    - graph:
+        v: {Mood: Sub, Tense: Pres, rel: [root, parataxis, conj], no_child: {rel: mark}}
+        neg: {lemma: "no", head: v}
+    # parser-independent: clause-initial "no" + up to two clitics + 2nd-person subjunctive
+    - sequence: [{form: "no", clause_start: true}, {upos: PRON, optional: true},
+                 {upos: PRON, optional: true}, {Mood: Sub, Tense: Pres, Person: "2"}]
   tests:
-    pos: ["No me lo digas.", "No toques eso."]
+    pos: ["No me lo digas.", "No toques eso.", "No firmes el contrato sin leerlo."]
     neg: ["No quiero que lo toques.", "No lo toco."]
+
+- id: es.subj.perfect
+  level: B1
+  label: Present perfect subjunctive (haya hecho)
+  match_any:
+    - graph:
+        v: {VerbForm: Part}
+        aux: {lemma: haber, Mood: Sub, Tense: Pres, rel: aux, head: v}
+    - sequence: [{lemma: haber, Mood: Sub, Tense: Pres}, {VerbForm: Part}]
+  tests:
+    pos: ["Espero que hayas dormido bien.", "Aunque haya sido difícil, lo logramos."]
+    neg: ["Espero que duermas bien.", "Hay que dormir."]
+
+- id: es.inf.perfect
+  level: B1
+  label: Perfect infinitive (haber + participle)
+  match:
+    sequence: [{regex: '^haber', VerbForm: Inf}, {VerbForm: Part}]
+  tests:
+    pos: ["¿Podrían haber dado un nuevo aliento a este texto?", "Debe de haberlo olvidado."]
+    neg: ["Podrían dar un nuevo aliento a este texto."]
 
 - id: es.perfect.pluperfect
   level: B1
   label: Pluperfect indicative
-  match:
-    graph:
-      v: {VerbForm: Part}
-      aux: {lemma: haber, Mood: Ind, Tense: Imp, rel: aux, head: v}
+  match_any:
+    - graph:
+        v: {VerbForm: Part}
+        aux: {lemma: haber, Mood: Ind, Tense: Imp, rel: aux, head: v}
+    - sequence: [{lemma: haber, Mood: Ind, Tense: Imp}, {VerbForm: Part}]
   tests:
     pos: ["Cuando llegué, ya se había ido."]
     neg: ["Cuando llegué, ya se fue.", "Había mucha gente."]
@@ -188,11 +229,21 @@ features:
 - id: es.relative.prep_article_que
   level: B1
   label: Preposition + article + que/cual (relative)
-  match:
-    sequence: [{upos: ADP}, {form: [el, la, los, las, lo]}, {form: [que, cual, cuales]}]
+  match_any:
+    - sequence: [{upos: ADP}, {form: [el, la, los, las, lo]}, {form: [que, cual, cuales]}]
+    - sequence: [{form: [del, al]}, {form: [que, cual]}]
   tests:
-    pos: ["Es la ciudad en la que nací.", "El amigo con el que viajo es mexicano."]
+    pos: ["Es la ciudad en la que nací.", "El amigo con el que viajo es mexicano.", "Es un universo del que sabemos muy poco."]
     neg: ["La ciudad que visité es bonita."]
+
+- id: es.relative.cuyo
+  level: B1
+  label: Relative cuyo
+  match:
+    token: {form: [cuyo, cuya, cuyos, cuyas]}
+  tests:
+    pos: ["Es un hombre cuyo nombre no recuerdo."]
+    neg: ["Es un hombre que no recuerdo."]
 
 - id: es.periphrasis.continuative
   level: B1
@@ -216,21 +267,35 @@ features:
 - id: es.subj.pluperfect
   level: B2
   label: Pluperfect subjunctive
-  match:
-    graph:
-      v: {VerbForm: Part}
-      aux: {lemma: haber, Mood: Sub, Tense: Imp, rel: aux, head: v}
+  match_any:
+    - graph:
+        v: {VerbForm: Part}
+        aux: {lemma: haber, Mood: Sub, Tense: Imp, rel: aux, head: v}
+    - sequence: [{lemma: haber, Mood: Sub, Tense: Imp}, {VerbForm: Part}]
   tests:
     pos: ["Ojalá hubiera estudiado más."]
     neg: ["Ojalá estudie más.", "Había estudiado mucho."]
 
+- id: es.future.perfect
+  level: B2
+  label: Future perfect (habrá hecho)
+  match_any:
+    - graph:
+        v: {VerbForm: Part}
+        aux: {lemma: haber, Mood: Ind, Tense: Fut, rel: aux, head: v}
+    - sequence: [{lemma: haber, Mood: Ind, Tense: Fut}, {VerbForm: Part}]
+  tests:
+    pos: ["Ella te habrá dicho que está comprometida.", "Para mayo habremos terminado."]
+    neg: ["Ella te dirá que está comprometida."]
+
 - id: es.conditional.perfect
   level: B2
   label: Conditional perfect
-  match:
-    graph:
-      v: {VerbForm: Part}
-      aux: {lemma: haber, Mood: Cnd, rel: aux, head: v}
+  match_any:
+    - graph:
+        v: {VerbForm: Part}
+        aux: {lemma: haber, Mood: Cnd, rel: aux, head: v}
+    - sequence: [{lemma: haber, Mood: Cnd}, {VerbForm: Part}]
   tests:
     pos: ["Yo no lo habría hecho."]
     neg: ["Yo no lo haría."]
@@ -245,8 +310,11 @@ features:
     - graph:
         v: {VerbForm: Part, has_child: {lemma: haber, Mood: Sub}}
         si: {lemma: si, rel: mark, head: v}
+    - graph:
+        v: {has_child: {Mood: Sub, Tense: Imp, rel: cop}}
+        si: {lemma: si, rel: mark, head: v}
   tests:
-    pos: ["Si tuviera dinero, viajaría.", "Si hubiera sabido la verdad, no habría venido."]
+    pos: ["Si tuviera dinero, viajaría.", "Si hubiera sabido la verdad, no habría venido.", "Si fuera rico, viajaría."]
     neg: ["Si tengo dinero, viajo."]
 
 - id: es.aunque.subj
@@ -257,10 +325,13 @@ features:
         v: {Mood: Sub}
         a: {lemma: aunque, head: v}
     - graph:
+        v: {has_child: {Mood: Sub, rel: [cop, aux]}}
+        a: {lemma: aunque, head: v}
+    - graph:
         v: {VerbForm: Part, has_child: {lemma: haber, Mood: Sub}}
         a: {lemma: aunque, head: v}
   tests:
-    pos: ["Aunque llueva, saldremos.", "Iré aunque no me inviten."]
+    pos: ["Aunque llueva, saldremos.", "Iré aunque no me inviten.", "Aunque el camión sea viejo, todavía funciona."]
     neg: ["Aunque llueve, salimos."]
 
 - id: es.como_si
@@ -294,7 +365,7 @@ features:
       - {upos: [ADJ, ADV], form: {not: [mismo, misma, único, única, primero, último, otro, mejor, peor, más, menos]}}
       - {form: que}
   tests:
-    pos: ["No sabes lo difícil que es.", "Me sorprendió lo bien que canta."]
+    pos: ["No sabes lo difícil que es.", "Me sorprendió lo bien que canta.", "Me sorprendió lo firme que era su determinación."]
     neg: ["Pienso lo mismo que tú."]
 
 # ---------------------------------------------------------------- C1
@@ -302,11 +373,21 @@ features:
   level: C1
   label: Cleft sentence (fue X quien/donde/cuando…)
   match_any:
-    - sequence: [{lemma: ser, VerbForm: Fin}, {gap: [1, 4]}, {form: [quien, quienes]}]
-    - sequence: [{lemma: ser, VerbForm: Fin, sent_start: true}, {gap: [1, 4]}, {form: [donde, cuando, como]}]
+    - sequence: [{lemma: ser, VerbForm: Fin, clause_start: true}, {gap: [1, 5]}, {form: [quien, quienes]}]
+    # focus must be adverbial or prepositional (fue entonces cuando, fue en Sevilla donde),
+    # which excludes plain relatives (es el lecho donde nací)
+    - sequence: [{lemma: ser, VerbForm: Fin, clause_start: true}, {upos: [ADV, ADP]}, {gap: [0, 5]},
+                 {form: [donde, cuando, como]}]
+    - sequence: [{lemma: ser, VerbForm: Fin, clause_start: true}, {form: por}, {form: [eso, esto, ello]}, {form: que}]
+    - sequence: [{lemma: ser, VerbForm: Fin, clause_start: true}, {gap: [0, 5]},
+                 {upos: {not: ADP}}, {form: [lo, el, la, los, las]}, {form: que}]
   tests:
-    pos: ["Fue Juan quien lo dijo.", "Fue en Sevilla donde nos conocimos."]
-    neg: ["Juan lo dijo en Sevilla."]
+    pos: ["Fue Juan quien lo dijo.", "Fue en Sevilla donde nos conocimos.", "Fue así como el ejército tomó la ciudad.",
+          "Es por eso que hay diferencias.",
+          "Fue el brillo de sus ojos lo que me enamoró.", "Monstruo o no, fue entonces cuando todos empezaron a tenerle miedo."]
+    neg: ["Juan lo dijo en Sevilla.", "Es la casa en la que vivo.", "¿Quién es el hombre con quien hablas?",
+          "Es difícil tomar una decisión como ésta.", "Era un árbol enorme, como si tuviera mil años.",
+          "Es el lecho donde yo nací."]
 
 - id: es.inf.compound_de
   level: C1
@@ -316,6 +397,29 @@ features:
   tests:
     pos: ["De haberlo sabido, habría venido."]
     neg: ["Antes de saberlo, vine."]
+
+- id: es.conditional.de_inf
+  level: C1
+  label: de + infinitive as a condition (de seguir así…)
+  match:
+    # the condition clause must be followed by a main clause
+    sequence: [{form: de, clause_start: true}, {VerbForm: Inf}, {gap: [0, 8]}, {form: ","}]
+  except:                                   # de + compound infinitive is es.inf.compound_de
+    - sequence: [{form: de}, {regex: '^haber'}]
+  tests:
+    pos: ["De seguir comiendo tanta grasa, acabarás enfermo."]
+    neg: ["De niño jugaba en la calle.", "Trata de comer menos.", "De aprender cada día un poco más.",
+          "De haberlo sabido, no habría venido."]
+
+- id: es.conditional.como_subj
+  level: C1
+  label: como + subjunctive as a condition/threat (como no comas…)
+  match:
+    sequence: [{form: como, clause_start: true}, {form: "no", optional: true}, {upos: PRON, optional: true},
+               {upos: PRON, optional: true}, {Mood: Sub}]
+  tests:
+    pos: ["Como no comas más verduras, te pondrás enfermo.", "Como lo vuelvas a hacer, te castigo."]
+    neg: ["Como no tenía dinero, se quedó en casa.", "Como siempre, llegó tarde."]
 
 - id: es.de_no_ser_por
   level: C1
@@ -359,9 +463,9 @@ features:
   label: Reduplicated subjunctive (pase lo que pase)
   match_any:
     - sequence: [{Mood: [Sub, Imp], as: V}, {form: lo}, {form: que}, {same_form: V}]
-    - sequence: [{Mood: [Sub, Imp], as: V}, {form: [quien, donde, como, cuando, adonde]}, {same_form: V}]
+    - sequence: [{Mood: [Sub, Imp], as: V}, {form: [quien, donde, como, cuando, adonde, cual]}, {same_form: V}]
   tests:
-    pos: ["Pase lo que pase, te llamo.", "Digan lo que digan, iré.", "Sea como sea, hay que hacerlo."]
+    pos: ["Pase lo que pase, te llamo.", "Digan lo que digan, iré.", "Sea como sea, hay que hacerlo.", "Sea cual sea la excusa, no le creeré."]
     neg: ["Pasa lo que pasa siempre."]
 
 - id: es.absolute
@@ -390,12 +494,13 @@ features:
 - id: es.preterite_anterior
   level: C2
   label: Preterite anterior (apenas hubo terminado…)
-  match:
-    graph:
-      v: {VerbForm: Part}
-      aux: {lemma: haber, Mood: Ind, Tense: Past, rel: aux, head: v}
+  match_any:
+    - graph:
+        v: {VerbForm: Part}
+        aux: {lemma: haber, Mood: Ind, Tense: Past, rel: aux, head: v}
+    - sequence: [{lemma: haber, Mood: Ind, Tense: Past}, {VerbForm: Part}]
   tests:
-    pos: ["Apenas hubo terminado, se marchó."]
+    pos: ["Apenas hubo terminado, se marchó.", "Apenas hubo comido algo liviano, se fue a dormir."]
     neg: ["Hubo una fiesta.", "Apenas terminó, se marchó."]
 
 - id: es.conj.literary

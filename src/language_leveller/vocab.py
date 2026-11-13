@@ -76,9 +76,10 @@ class Vocab:
         # language POS codes in the list -> set of UPOS tags they are compatible with
         self.pos_map = {k: set(v if isinstance(v, list) else [v])
                         for k, v in config.get("pos_map", {}).items()}
-        self.exclude_upos = set(config.get("exclude_upos", ["PUNCT", "SYM", "NUM", "PROPN", "SPACE"]))
+        self.exclude_upos = set(config.get("exclude_upos", ["PUNCT", "SYM", "PROPN", "SPACE"]))
         self.clitic_patterns = [re.compile(p) for p in config.get("clitic_suffixes", [])]
         self.accent_fallback = config.get("accent_fold_fallback", True)
+        self.exclude_patterns = [re.compile(p) for p in config.get("exclude_patterns", [])]
         self.morph = None   # optional MorphLexicon, attached by the Leveller
 
         self.by_lemma: dict[str, list[Entry]] = {}
@@ -149,6 +150,14 @@ class Vocab:
                 return b["level"]
         return self.unranked_level
 
+    def known_as(self, form: str, lemma: str, upos: str) -> bool:
+        """Is the word listed with exactly this POS (by lemma or by form)?"""
+        for key in (lemma, form):
+            if any(e.pos == upos for e in self.by_lemma.get(norm(key), []) + self.by_form.get(norm(key), [])):
+                return True
+        return any(e.pos == upos for lem in (self.morph.lemmas(form) if self.morph else [])
+                   for e in self.by_lemma.get(norm(lem), []))
+
     def rank_of(self, lemma: str) -> int | None:
         hits = self.by_lemma.get(norm(lemma))
         return min(e.rank for e in hits) if hits else None
@@ -163,8 +172,10 @@ class Vocab:
         return True if allowed is None else upos in allowed
 
     def _best(self, cands: list[tuple[Entry, int]], upos: str) -> Entry:
-        # prefer POS-compatible, then method priority, then most frequent
-        return min(cands, key=lambda c: (not self._pos_ok(c[0], upos), c[1], c[0].rank))[0]
+        # prefer an exact POS match, then a compatible one, then method priority,
+        # then the more frequent entry
+        return min(cands, key=lambda c: (not self._pos_ok(c[0], upos), c[0].pos != upos,
+                                         c[1], c[0].rank))[0]
 
     def _direct(self, form: str, lemma: str | None, upos: str) -> tuple[Entry | None, str, int]:
         cands: list[tuple[Entry, int, str]] = []
@@ -216,6 +227,8 @@ class Vocab:
         """Reason a token is not ranked at all (punctuation, numbers, names...)."""
         if not any(ch.isalpha() for ch in tok.text):
             return "non-word"
+        if any(p.search(tok.text) for p in self.exclude_patterns):
+            return "excluded-pattern"
         if tok.upos in self.exclude_upos:
             # sentence-initial capitalised common words are often mis-tagged PROPN
             if tok.upos == "PROPN" and tok.i == 0 and self._direct(tok.text, None, "X")[0]:

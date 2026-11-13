@@ -19,7 +19,7 @@ from .levels import Scale
 from .model import Sentence, Token
 
 # keys in a constraint that are not UD morphological features
-STRUCTURAL = {"form", "lemma", "upos", "rel", "regex", "sent_start", "has_child",
+STRUCTURAL = {"form", "lemma", "upos", "rel", "regex", "sent_start", "clause_start", "has_child",
               "no_child", "head_is", "as", "same_form", "same_lemma", "optional", "gap"}
 
 
@@ -73,6 +73,11 @@ def token_ok(c: dict, t: Token, s: Sentence, binds: dict | None = None) -> bool:
         elif k == "sent_start":
             first = next((x.i for x in s.tokens if x.upos != "PUNCT"), 0)
             ok = (t.i == first) == bool(v)
+        elif k == "clause_start":
+            # first word of the sentence, or first word after , ; : — ( etc.
+            first = next((x.i for x in s.tokens if x.upos != "PUNCT"), 0)
+            prev = s.tokens[t.i - 1] if t.i > 0 else None
+            ok = (t.i == first or (prev is not None and prev.upos == "PUNCT")) == bool(v)
         elif k == "has_child":
             ok = any(token_ok(v, ch, s) for ch in s.children(t.i))
         elif k == "no_child":
@@ -185,13 +190,18 @@ class Feature:
     description: str = ""
     tests: dict = field(default_factory=dict)
     regions: list[str] = field(default_factory=list)   # empty = all regions
+    exceptions: list[dict] = field(default_factory=list)  # matches overlapping these are dropped
 
     def find(self, s: Sentence) -> list[list[int]]:
+        blocked: set[int] = set()
+        for p in self.exceptions:
+            for m in run_pattern(p, s):
+                blocked.update(m)
         hits, seen = [], set()
         for p in self.patterns:
             for m in run_pattern(p, s):
                 key = tuple(m)
-                if key not in seen:
+                if key not in seen and not blocked.intersection(m):
                     seen.add(key)
                     hits.append(m)
         return hits
@@ -231,7 +241,8 @@ class GrammarProfile:
                 regions = f.get("regions") or []
                 self.features.append(Feature(f["id"], f["level"], f["label"], pats,
                                              f.get("description", ""), f.get("tests") or {},
-                                             [regions] if isinstance(regions, str) else list(regions)))
+                                             [regions] if isinstance(regions, str) else list(regions),
+                                             f.get("except") or []))
         self.combinations = data.get("combinations") or []
         for c in self.combinations:
             for k in ("id", "level", "min_distinct", "result", "label"):
