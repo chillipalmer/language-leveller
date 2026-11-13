@@ -17,7 +17,17 @@ def test_strips_internet_noise_and_records_it():
     kinds = {i["type"] for i in seg.ignored}
     assert {"mention", "emoji", "url", "hashtag", "interjection", "emoticon",
             "abbreviation", "elongation"} <= kinds
-    assert "internet_text" in seg.flags
+    assert Cleaner.internet_text(seg.ignored)
+
+
+def test_ignored_items_carry_positions_in_clean_text():
+    seg = c().clean("q tal?? 😂 jajaja bien xq si https://x.co")
+    assert seg.clean == "que tal? bien porque si"
+    pos = {i["type"] + ":" + i["text"]: i["pos"] for i in seg.ignored}
+    assert pos["abbreviation:q"] == 0                       # start of "que"
+    assert pos["emoji:😂"] == seg.clean.index("tal") + 3     # end of "tal"
+    assert pos["abbreviation:xq"] == seg.clean.index("porque")
+    assert pos["url:https://x.co"] == len(seg.clean)         # after the last word
 
 
 def test_elongation_uses_vocabulary():

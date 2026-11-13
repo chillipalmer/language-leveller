@@ -85,43 +85,61 @@ class Cleaner:
 
     # ---- per-line cleaning -------------------------------------------------
     def clean(self, original: str) -> Segment:
-        ignored: list[dict] = []
+        """Clean one line. Every removed or rewritten item is recorded with `pos`, a
+        character offset into the cleaned text, so it can later be attached to the
+        sentence it came from:
+          - removed items (url, emoji, laughter…): end of the word before them
+            (start of line if none), so "¿qué tal? 😂" belongs to "¿qué tal?";
+          - rewritten words (abbreviation, elongation): start of the word itself.
+        Positions are tracked as word indices through the edits, then converted to
+        offsets in the final string."""
         flags: list[str] = []
         s = LIST_MARK.sub("", original)
 
-        def drop(pattern, kind, s):
-            def rep(m):
-                ignored.append({"type": kind, "text": m.group()})
-                return " "
-            return pattern.sub(rep, s)
-
-        s = drop(URL, "url", s)
-        s = drop(EMAIL, "email", s)
-        s = drop(MENTION, "mention", s)
-        s = drop(HASHTAG, "hashtag", s)
-        s = drop(EMOJI, "emoji", s)
-        s = drop(EMOTICON, "emoticon", s)
-        for p in self.ignore:
-            s = drop(p, "interjection", s)
+        # 1. remove non-lexical spans in one pass; earlier patterns win overlaps
+        kinds = [("url", URL), ("email", EMAIL), ("mention", MENTION), ("hashtag", HASHTAG),
+                 ("emoji", EMOJI), ("emoticon", EMOTICON)] + [("interjection", p) for p in self.ignore]
+        spans: list[tuple[int, int, str, str]] = []
+        for kind, pat in kinds:
+            for m in pat.finditer(s):
+                if m.group() and not any(m.start() < e and b < m.end() for b, e, _, _ in spans):
+                    spans.append((m.start(), m.end(), kind, m.group()))
+        spans.sort()
+        removed: list[tuple[dict, int]] = []          # (item, number of words before it)
+        out, pos = [], 0
+        for b, e, kind, text in spans:
+            out.append(s[pos:b])
+            removed.append(({"type": kind, "text": text}, len(WORD.findall("".join(out)))))
+            out.append(" ")
+            pos = e
+        out.append(s[pos:])
+        s = "".join(out)
 
         s = ELLIPSIS.sub("...", s)
         s = REPEAT_PUNCT.sub(r"\1", s)
 
-        # word-level normalisation
+        # 2. word-level normalisation, tracking old word index -> new word index
+        rewritten: list[tuple[dict, int]] = []        # (item, index of the new word)
+        old_to_new: list[int] = []
+        counter = [0]
+
         def fix_word(m):
             w = m.group()
-            new = w
-            if ELONGATED.search(w):
-                new = self._de_elongate(w)
+            new = self._de_elongate(w) if ELONGATED.search(w) else w
+            item = None
             ab = self.abbrev.get(new.lower())
             if ab is not None:
-                ab = ab[0].upper() + ab[1:] if new[:1].isupper() else ab
-                ignored.append({"type": "abbreviation", "text": w, "as": ab})
-                return ab
-            if new != w:
-                ignored.append({"type": "elongation", "text": w, "as": new})
+                new = ab[0].upper() + ab[1:] if new[:1].isupper() else ab
+                item = {"type": "abbreviation", "text": w, "as": new}
+            elif new != w:
+                item = {"type": "elongation", "text": w, "as": new}
+            old_to_new.append(counter[0])
+            if item:
+                rewritten.append((item, counter[0]))
+            counter[0] += max(1, len(WORD.findall(new)))
             return new
         s = WORD.sub(fix_word, s)
+        total = counter[0]
 
         letters = [c for c in s if c.isalpha()]
         if len(letters) >= 8 and sum(c.isupper() for c in letters) / len(letters) >= self.caps_ratio:
@@ -133,10 +151,25 @@ class Cleaner:
         s = re.sub(r"([¿¡(\[])\s+", r"\1", s)
         s = re.sub(r"\s{2,}", " ", s).strip()
         s = re.sub(r"^[,.;:\s]+", "", s)
-        if ignored and any(i["type"] in ("url", "mention", "hashtag", "emoji") for i in ignored):
-            flags.append("internet_text")
+
+        # 3. word indices -> character offsets in the final text
+        word_spans = [m.span() for m in WORD.finditer(s)]
+        ok = len(word_spans) == total
+        ignored: list[dict] = []
+        for item, before in removed:
+            k = old_to_new[before] if before < len(old_to_new) else total   # new words before
+            item["pos"] = word_spans[k - 1][1] if ok and k > 0 else 0
+            ignored.append(item)
+        for item, idx in rewritten:
+            item["pos"] = word_spans[idx][0] if ok and idx < len(word_spans) else 0
+            ignored.append(item)
+        ignored.sort(key=lambda i: i["pos"])
         return Segment(original=original, clean=s, start=0, end=len(original),
                        ignored=ignored, flags=flags)
+
+    @staticmethod
+    def internet_text(items: list[dict]) -> bool:
+        return any(i["type"] in ("url", "mention", "hashtag", "emoji") for i in items)
 
     def _de_elongate(self, w: str) -> str:
         """holaaaa -> hola, carrrro -> carro, leeeer -> leer: try collapsing each long

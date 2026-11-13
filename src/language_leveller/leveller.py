@@ -75,12 +75,18 @@ class Leveller:
     def level_text(self, text: str, fmt: str = "auto") -> list[dict]:
         records = []
         for seg in self.cleaner.segments(text, fmt):
-            for n, sent in enumerate(self.parser.parse(seg.clean)):
-                records.append(self.level_sentence(sent, seg, first_in_segment=(n == 0)))
+            sents = self.parser.parse(seg.clean)
+            # each removed/rewritten item goes to the last sentence starting at or before it
+            per_sent: list[list[dict]] = [[] for _ in sents]
+            for item in seg.ignored if sents else []:
+                n = max((j for j, st in enumerate(sents) if st.start <= item.get("pos", 0)), default=0)
+                per_sent[n].append(item)
+            for sent, items in zip(sents, per_sent):
+                records.append(self.level_sentence(sent, seg, items))
         return records
 
     def level_sentence(self, sent: Sentence, seg: Segment | None = None,
-                       first_in_segment: bool = True) -> dict:
+                       ignored: list[dict] | None = None) -> dict:
         fixes = self._annotate(sent)
         tokens, levels, unranked, rankable, found = [], [], [], 0, 0
         max_rank = 0
@@ -128,6 +134,9 @@ class Leveller:
         alpha = sum(1 for t in sent.tokens if any(ch.isalpha() for ch in t.text))
 
         flags = list(seg.flags) if seg else []
+        ignored = ignored if ignored is not None else (seg.ignored if seg else [])
+        if self.cleaner.internet_text(ignored):
+            flags.append("internet_text")
         if alpha and found / alpha < self.low_coverage:
             flags.append("low_coverage")
         if not any(t.upos in ("VERB", "AUX") for t in sent.tokens):
@@ -150,8 +159,9 @@ class Leveller:
         }
         if seg:
             rec["source"] = {"original": seg.original, "start": seg.start, "end": seg.end}
-            if seg.ignored and first_in_segment:
-                rec["source"]["ignored"] = seg.ignored
+            if ignored:
+                rec["source"]["ignored"] = [{k: v for k, v in i.items() if k != "pos"}
+                                            for i in ignored]
         return rec
 
     def _annotate(self, sent: Sentence) -> dict[int, str]:

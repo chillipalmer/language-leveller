@@ -52,7 +52,8 @@ class SpacyParser:
                     start=t.idx - cbase, end=t.idx - cbase + len(t.text)))
             # re-index after dropping whitespace tokens
             _reindex(toks)
-            out.append(Sentence(text=sent.text, tokens=toks))
+            out.append(Sentence(text=sent.text, tokens=toks, start=sent.start_char,
+                                end=sent.end_char))
         return out
 
 
@@ -75,7 +76,8 @@ class StanzaParser:
                     feats=_feats(w.feats or ""), head=(w.head - 1) if w.head else w.id - 1,
                     rel=w.deprel, start=(tok.start_char or 0) - cbase,
                     end=(tok.end_char or 0) - cbase))
-            out.append(Sentence(text=sent.text, tokens=toks))
+            out.append(Sentence(text=sent.text, tokens=toks, start=cbase,
+                                end=(sent.tokens[-1].end_char if sent.tokens else cbase)))
         return out
 
 

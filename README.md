@@ -78,6 +78,8 @@ Before parsing, LL cleans the input and records everything it changes in `source
 - Elongated words are repaired using the vocabulary, so `holaaaa` → `hola` but
   `leeeer` → `leer`.
 - Chat abbreviations are expanded (`q` → `que`, `xq` → `porque`).
+- Each removed or rewritten item is attached to the sentence it came from, even when one
+  line holds several sentences.
 - Repeated punctuation is collapsed, and ALL-CAPS lines are lowercased.
 
 ## Morphology correction
@@ -152,7 +154,6 @@ Only 6 sentences contain a word that isn't in the 5,000-word list.
   the parser in these cases.
 - *ser*/*ir* in the preterite (*fue*, *fueron*) gets whichever lemma the parser picks, so
   *fueron al mar* ("went") can be credited to *ser*.
-- Each sentence's `ignored` list covers the whole source line it came from.
 
 ## Licences
 

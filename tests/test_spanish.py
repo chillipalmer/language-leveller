@@ -54,6 +54,15 @@ def test_record_shape_and_internet_text(ll):
     assert any(i["type"] == "abbreviation" for i in r["source"]["ignored"])
 
 
+def test_ignored_items_attach_to_their_own_sentence(ll):
+    recs = ll.level_text("holaaa q tal?? 😂 mañana vamos a la playa #verano")
+    assert len(recs) == 2
+    first = {i["text"] for i in recs[0]["source"]["ignored"]}
+    second = {i["text"] for i in recs[1]["source"]["ignored"]}
+    assert first == {"holaaa", "q", "😂"} and second == {"#verano"}
+    assert "internet_text" in recs[0]["flags"] and "internet_text" in recs[1]["flags"]
+
+
 def test_unranked_words_and_names(ll):
     r = ll.level_text("María compró un ornitorrinco.")[0]
     toks = {t["text"]: t for t in r["tokens"]}

@@ -32,6 +32,8 @@ class Token:
 class Sentence:
     text: str
     tokens: list[Token] = field(default_factory=list)
+    start: int = 0              # char offsets within the text given to the parser
+    end: int = -1               # -1 = unknown
 
     def children(self, i: int) -> list[Token]:
         return [t for t in self.tokens if t.head == i and t.i != i]
