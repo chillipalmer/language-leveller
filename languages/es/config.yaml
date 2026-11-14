@@ -87,3 +87,8 @@ morph:
   mood_preference: [Ind, Sub, Imp, Cnd]
   initial_subjectless_boost: {mood: Imp, weight: 2}   # "Ven aquí" = come (not "they see")
   capitalised_midsentence_is_name: true   # Spanish capitalises only names mid-sentence
+  no_imperative_after_subject: true       # "Andrés mira" is indicative, not a command
+  # after these, a clause-final "la busca" is clitic + verb (¿por qué la busca?)
+  # (not que/como: comparatives "más que las cenas" take nouns)
+  clause_openers: [qué, quién, quiénes, cuál, dónde, donde, cuándo, cuando, cómo, porque, si,
+                   aunque, mientras]

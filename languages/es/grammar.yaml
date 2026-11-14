@@ -330,12 +330,19 @@ features:
     - token: {Mood: Imp, Person: "3", no_child: {Polarity: Neg}}
     - token: {Mood: Sub, Tense: Pres, Person: "3", sent_start: true, no_child: {rel: mark}}
     - sequence: [{Mood: Sub, Tense: Pres, Person: "3", no_child: {Polarity: Neg}}, {form: [usted, ustedes]}]
+    # after a sentence-initial linking word: Entonces vaya ahora. Bueno, siéntese.
+    - sequence: [{form: &usted_lead [entonces, pues, bueno, bien, ahora, luego, después, y, pero, ya, oiga, mire,
+                                     señor, señora, señorita, perdone, disculpe], sent_start: true},
+                 {upos: PUNCT, optional: true},
+                 {Mood: Sub, Tense: Pres, Person: "3"}]   # adjacent: no que/no can intervene
   except:                                   # reduplicated subjunctive (es.subj.reduplicated)
     - sequence: [{Mood: [Sub, Imp], as: V}, {form: lo}, {form: que}, {same_form: V}]
     - sequence: [{Mood: [Sub, Imp], as: V}, {form: [quien, donde, como, cuando, adonde, cual]}, {same_form: V}]
   tests:
-    pos: ["Hable usted más despacio, por favor.", "Tenga cuidado con el perro.", "Siéntense, por favor."]
-    neg: ["Quiero que hable más despacio.", "Ojalá venga pronto.", "Ven aquí.", "Pase lo que pase, te llamo."]
+    pos: ["Hable usted más despacio, por favor.", "Tenga cuidado con el perro.", "Siéntense, por favor.",
+          "Entonces vaya ahora, hombre.", "Bueno, siéntese."]
+    neg: ["Quiero que hable más despacio.", "Ojalá venga pronto.", "Ven aquí.", "Pase lo que pase, te llamo.",
+          "Quizás venga mañana.", "Entonces no vaya."]
 
 - id: es.periphrasis.iba_a
   level: A2
@@ -421,24 +428,30 @@ features:
   level: A2
   label: hace + time expression (hace dos años, desde hace)
   source: "UCM A2 programme (PCIC-based)"
-  match:
-    sequence: [{form: [hace, hacía]}, {upos: [NUM, DET, ADJ], optional: true}, {upos: [NUM, DET, ADJ], optional: true},
-               {lemma: [segundo, minuto, hora, día, semana, mes, año, siglo, tiempo, rato, momento, década, instante]}]
+  match_any:
+    - sequence: [{form: [hace, hacía]}, {upos: [NUM, DET, ADJ], optional: true}, {upos: [NUM, DET, ADJ], optional: true},
+                 {lemma: [segundo, minuto, hora, día, semana, mes, año, siglo, tiempo, rato, momento, década, instante]}]
+    # time noun left out: desde hace mucho, hace poco., hace tanto que
+    - sequence: [{form: desde}, {form: [hace, hacía]}, {form: [mucho, poco, tanto]}]
+    - sequence: [{form: [hace, hacía]}, {form: [mucho, poco, tanto]}, {upos: PUNCT}]
+    - sequence: [{form: [hace, hacía]}, {form: [mucho, poco, tanto]}, {form: que}]
   except:
     - sequence: [{form: [hace, hacía]}, {form: [buen, mal, muy]}]   # weather: hace buen tiempo
   tests:
-    pos: ["Llegué hace dos años.", "Vivo aquí desde hace dos años.", "Hace mucho tiempo que no te veo."]
-    neg: ["Hace buen tiempo.", "Hace frío.", "Hace sus deberes."]
+    pos: ["Llegué hace dos años.", "Vivo aquí desde hace dos años.", "Hace mucho tiempo que no te veo.",
+          "No siente eso desde hace mucho.", "Llegó hace poco.", "Hace mucho que no te veo."]
+    neg: ["Hace buen tiempo.", "Hace frío.", "Hace sus deberes.", "Hace mucho frío.", "Hace poco ejercicio."]
 
 - id: es.hace_que
   level: A2
   label: hace + time + que (hace dos años que vivo aquí)
   source: "UCM A2 programme (PCIC-based)"
-  match:
-    sequence: [{form: [hace, hacía]}, {upos: [NUM, DET, ADJ], optional: true}, {upos: [NUM, DET, ADJ], optional: true},
-               {lemma: [segundo, minuto, hora, día, semana, mes, año, siglo, tiempo, rato, momento, década]}, {form: que}]
+  match_any:
+    - sequence: [{form: [hace, hacía]}, {upos: [NUM, DET, ADJ], optional: true}, {upos: [NUM, DET, ADJ], optional: true},
+                 {lemma: [segundo, minuto, hora, día, semana, mes, año, siglo, tiempo, rato, momento, década]}, {form: que}]
+    - sequence: [{form: [hace, hacía]}, {form: [mucho, poco, tanto]}, {form: que}]   # time noun left out
   tests:
-    pos: ["Hace dos años que vivo aquí.", "Hacía mucho tiempo que no la veía."]
+    pos: ["Hace dos años que vivo aquí.", "Hacía mucho tiempo que no la veía.", "Hace mucho que no te veo."]
     neg: ["Llegué hace dos años."]
 
 - id: es.personal_a
@@ -454,7 +467,8 @@ features:
                                                      explicar, gustar, encantar, enseñar, mostrar, ofrecer,
                                                      prestar, devolver, traer, ayudar, invitar, obligar, jugar]}},
                  {form: a},
-                 {upos: [PROPN, PRON], form: {not: [mí, ti, sí, él, ella, ellos, ellas, usted, ustedes, nosotros, vosotros]}}]
+                 {upos: [PROPN, PRON], rel: {not: obl},     # a place name is a goal (obl): vivir a Valparaíso
+                  form: {not: [mí, ti, sí, él, ella, ellos, ellas, usted, ustedes, nosotros, vosotros]}}]
     - sequence: [{upos: VERB, lemma: {not: *a_verbs}}, {form: [a, al]}, {upos: DET, optional: true},
                  {lemma: [madre, padre, hermano, hermana, hijo, hija, amigo, amiga, abuelo, abuela, mujer, marido,
                           esposo, esposa, novio, novia, niño, niña, chico, chica, profesor, profesora, médico,
@@ -462,7 +476,8 @@ features:
                           persona, policía, cliente, tío, tía, primo, prima, padres, hijos]}]
   tests:
     pos: ["Veo a Juan.", "Busco a alguien que hable francés.", "Llamé a mi madre.", "No veo a nadie."]
-    neg: ["Voy a Madrid.", "Le escribí una carta a mi madre.", "Voy a comer.", "Les enseña a otros las mismas cosas."]
+    neg: ["Voy a Madrid.", "Le escribí una carta a mi madre.", "Voy a comer.", "Les enseña a otros las mismas cosas.",
+          "Vamos a vivir a Valparaíso.", "Se mudó a Santiago.", "Volaron a París."]
 
 - id: es.relative.lo_que
   level: A2
@@ -599,10 +614,12 @@ features:
     - token: {Mood: Sub, Tense: Pres, Person: "3", sent_start: true, no_child: {rel: mark}}
     - sequence: [{Mood: Sub, Tense: Pres, Person: "3", no_child: {Polarity: Neg}}, {form: [usted, ustedes]}]
     - token: {Mood: Sub, Tense: Pres, Person: "1", Number: Plur, sent_start: true, no_child: {rel: mark}}
+    - sequence: [{form: *usted_lead, sent_start: true}, {upos: PUNCT, optional: true},
+                 {Mood: Sub, Tense: Pres, Person: "3"}]   # adjacent: no que/no can intervene
   tests:
     pos: ["Quiero que vengas mañana.", "Espero que estés bien.", "Cuando llegues, llámame.", "Ojalá venga pronto."]
     neg: ["Sé que vienes mañana.", "Es un problema grave.", "El quinto mes, o sea mayo.", "¿Estás libre esta tarde?", "Sus sentimientos son todavía tan firmes.",
-          "Hable usted más despacio, por favor."]
+          "Hable usted más despacio, por favor.", "Entonces vaya ahora, hombre."]
 
 - id: es.imperative.nosotros
   level: B1

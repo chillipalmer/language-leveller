@@ -75,6 +75,12 @@ class MorphCorrector:
         # in languages that capitalise only names mid-sentence, a capitalised word after
         # the first one is never a verb (Rules, Charles in Spanish text)
         self.caps_names = cfg.get("capitalised_midsentence_is_name", False)
+        # a verb with a nominal subject before it is not an imperative ("Andrés mira")
+        self.no_imp_after_subject = cfg.get("no_imperative_after_subject", False)
+        # words that open a clause needing a finite verb (¿por qué la busca?): there,
+        # lo/la/los/las + a noun-or-verb form is clitic + verb when nothing else in the
+        # clause can be its verb
+        self.clause_openers = {c.lower() for c in cfg.get("clause_openers", [])}
         self.clitics = clitic_patterns or []
         self.fold = fold or (lambda s: s)
         # known_as(form, lemma, upos): is this word listed with this POS in the vocab?
@@ -136,6 +142,43 @@ class MorphCorrector:
                 changed.append(f"{k} {before[2][k] or '_'}→{after[2][k] or '_'}")
         return "; ".join(changed)
 
+    @staticmethod
+    def _subject_before(t: Token, s: Sentence) -> bool:
+        """A noun or name that is t's subject and comes right before it, with no comma
+        between (a vocative is set off by one: "Andrés, mira")."""
+        for c in s.children(t.i):
+            if c.i < t.i and c.rel.split(":")[0] == "nsubj" and c.upos in ("NOUN", "PROPN"):
+                between = s.tokens[c.i + 1:t.i]
+                if not any(x.upos == "PUNCT" for x in between):
+                    return True
+        return False
+
+    def _clitic_in_open_clause(self, det: Token, t: Token, s: Sentence) -> bool:
+        """det (lo/la/los/las) sits in a clause opened by a wh-word or subordinator,
+        and no other word in that clause can be its finite verb."""
+        if not self.clause_openers or det.text.lower() not in self.cues:
+            return False
+        opener = None
+        for x in reversed(s.tokens[:det.i]):
+            if x.upos == "PUNCT" and x.text not in ("¿", "¡"):
+                return False
+            if x.upos in ("VERB", "AUX") and x.feats.get("VerbForm") == "Fin":
+                return False
+            if x.text.lower() in self.clause_openers:
+                opener = x
+                break
+            if x.upos not in ("ADP", "PRON", "ADV"):
+                return False
+        if opener is None:
+            return False
+        # the word must end the clause (¿por qué la busca?), optionally followed by a
+        # subject pronoun (¿dónde la pone usted?); "que la reforma del código…" is a noun
+        rest = s.tokens[t.i + 1:]
+        if rest and rest[0].upos == "PRON" and rest[0].feats.get("PronType") == "Prs" \
+                and "Case" not in rest[0].feats:
+            rest = rest[1:]
+        return not rest or rest[0].upos == "PUNCT"
+
     def correct(self, s: Sentence) -> dict[int, str]:
         fixes: dict[int, str] = {}
         first = next((x.i for x in s.tokens if x.upos != "PUNCT"), 0)
@@ -159,7 +202,10 @@ class MorphCorrector:
             first = next((x.i for x in s.tokens if x.upos != "PUNCT"), 0)
             initial = t.i == first and not any(
                 c.rel.split(":")[0] == "nsubj" for c in s.children(t.i))
-            best = min(same or verbs, key=lambda a: self._score(a, t, initial))
+            pool = same or verbs
+            if self.no_imp_after_subject and self._subject_before(t, s):
+                pool = [a for a in pool if a[2].get("Mood") != "Imp"] or pool
+            best = min(pool, key=lambda a: self._score(a, t, initial))
             change = None
             nominal_listed = [a for a in an if a[1] in ("NOUN", "ADJ") and self.rank_of(a[0]) is not None]
             if (t.upos == "VERB" and nominal_listed and not same
@@ -208,11 +254,14 @@ class MorphCorrector:
                 # la/los/las/lo are articles (DET) or clitic pronouns (PRON): only the
                 # pronoun is a verb cue; the article is evidence for a noun
                 article = prev is not None and prev.upos == "DET"
+                clitic_in_clause = article and self._clitic_in_open_clause(prev, t, s)
+                if clitic_in_clause:
+                    article = False
                 # before a word listed as an adjective, lo/la/los/las are articles
                 # (a lo largo); before a noun-only word they can only be clitics (no lo toques)
                 cues = self.adj_cues if self.known_as(t.text, t.lemma, "ADJ") else self.cues
-                cue = prev is not None and not article and (
-                    prev.text.lower() in cues or prev.lemma.lower() in cues)
+                cue = clitic_in_clause or (prev is not None and not article and (
+                    prev.text.lower() in cues or prev.lemma.lower() in cues))
                 # a capitalised sentence-initial "proper noun" is usually a capitalisation
                 # artefact, unless the vocab lists it as a noun (heading "Historia")
                 words = [x for x in s.tokens if x.upos != "PUNCT"]
@@ -222,7 +271,12 @@ class MorphCorrector:
                     # all-caps token, or a multi-word name (Han Yu)
                     nxt = s.tokens[t.i + 1] if t.i + 1 < len(s.tokens) else None
                     in_name = nxt is not None and nxt.text[:1].isupper()
-                    cue = (len(words) > 1 and not nominal and not in_name and not t.text.isupper()
+                    # directly followed by a finite verb, it is that verb's subject (Tomás
+                    # tiene…), not a verb itself
+                    subject = nxt is not None and nxt.upos in ("VERB", "AUX") \
+                        and nxt.feats.get("VerbForm") == "Fin"
+                    cue = (len(words) > 1 and not nominal and not in_name and not subject
+                           and not t.text.isupper()
                            and not self.known_as(t.text.lower(), t.text.lower(), "NOUN"))
                 # surface evidence for a noun: an article/determiner (not a cue word such
                 # as clitic "lo") or a finite verb immediately before it (los toques,

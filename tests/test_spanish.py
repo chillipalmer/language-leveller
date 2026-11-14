@@ -99,3 +99,34 @@ def test_items_list_for_learner_matching(ll):
     assert all(i["id"] != "._PUNCT" for i in items)
     r2 = ll.level_text("La casa y la casa.")[0]
     assert sum(1 for i in r2["items"] if i["id"] == "casa_NOUN") == 1
+
+
+def _tok(r, text):
+    return next(t for t in r["tokens"] if t["text"] == text)
+
+
+def test_sentence_initial_name_before_a_verb_is_not_a_verb(ll):
+    # "Tomás" is also tomar (2sg); followed by a finite verb it is that verb's subject
+    r = ll.level_text("Tomás tiene 70 años.")[0]
+    t = _tok(r, "Tomás")
+    assert t["upos"] == "PROPN" and t.get("headword") is None
+    # a sentence-initial verb is still a verb
+    assert _tok(ll.level_text("Mira la carta.")[0], "Mira")["upos"] == "VERB"
+
+
+def test_verb_after_its_subject_is_not_imperative(ll):
+    r = ll.level_text("Andrés mira por la ventana.")[0]
+    assert _tok(r, "mira")["feats"].startswith("Mood=Ind")
+    assert "es.imperative.affirmative" not in {f["id"] for f in r["grammar"]["features"]}
+    # a vocative (set off by a comma) still allows the command
+    r = ll.level_text("Andrés, mira por la ventana.")[0]
+    assert "es.imperative.affirmative" in {f["id"] for f in r["grammar"]["features"]}
+
+
+def test_clause_final_la_plus_verb_after_wh_word(ll):
+    r = ll.level_text("¿Puedo saber por qué la busca?")[0]
+    t = _tok(r, "busca")
+    assert t["upos"] == "VERB" and t["headword"] == "buscar"
+    # but an article + noun inside a longer clause stays a noun
+    r = ll.level_text("Explicó que la reforma del código es necesaria.")[0]
+    assert _tok(r, "reforma")["upos"] == "NOUN"
