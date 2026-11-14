@@ -248,6 +248,17 @@ class MorphCorrector:
                     if cue or (not listed and not nominal
                                and best[2].get("VerbForm") in ("Inf", "Ger")):
                         change = self._apply(t, best, "VERB")
+            elif self.caps_names and t.upos == "PROPN" and t.text[:1].islower():
+                # a lower-case word is never a name where names are capitalised (Julia toca
+                # Bach): take the more frequent of its verb and noun readings
+                nominal = [a for a in an if a[1] != "VERB" and self.rank_of(a[0]) is not None]
+                vr = self.rank_of(best[0])
+                nom = min(nominal, key=lambda a: self.rank_of(a[0]), default=None)
+                if vr is not None and (nom is None or vr <= self.rank_of(nom[0])):
+                    change = self._apply(t, best, "VERB")
+                elif nom is not None:
+                    change = f"PROPN→{nom[1]}; lemma {t.lemma}→{nom[0]}"
+                    t.upos, t.lemma = nom[1], nom[0]
             elif t.upos in RETAGGABLE:
                 nominal = [a for a in an if a[1] != "VERB"]
                 prev = next((x for x in reversed(s.tokens[:t.i]) if x.upos != "PUNCT"), None)
@@ -278,6 +289,16 @@ class MorphCorrector:
                     cue = (len(words) > 1 and not nominal and not in_name and not subject
                            and not t.text.isupper()
                            and not self.known_as(t.text.lower(), t.text.lower(), "NOUN"))
+                    # a question or exclamation that opens with a finite verb and then a
+                    # name is subject inversion (¿Toca Lucas el piano?), not a two-word name
+                    opener = t.i > 0 and s.tokens[t.i - 1].text in ("¿", "¡")
+                    finite = any(a[2].get("VerbForm") == "Fin" for a in verbs)
+                    if opener and finite and in_name and nxt.upos == "PROPN" and not t.text.isupper():
+                        cue = True
+                        # the name after it is the subject: indicative, not a command
+                        ind = [a for a in verbs if a[2].get("Mood") == "Ind"]
+                        if ind:
+                            best = min(ind, key=lambda a: self._score(a, t, False))
                 # surface evidence for a noun: an article/determiner (not a cue word such
                 # as clitic "lo") or a finite verb immediately before it (los toques,
                 # sobreviven reportes). Children in the parse are not used: a parser that
