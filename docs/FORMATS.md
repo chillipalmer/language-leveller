@@ -143,6 +143,9 @@ name: Spanish
 script: LATIN                             # optional; words in other scripts are marked foreign
 levels: [A1, A2, B1, B2, C1, C2, C2+]     # optional; the CEFR scale is the default
 parser: [spacy:es_core_news_md, stanza:es]
+parser_options:                           # optional: Stanza model per processor
+  stanza: {packages: {tokenize: perdt_charlm, mwt: perdt, pos: perdt_charlm,
+                      lemma: perdt_charlm, depparse: perdt_charlm}}
 vocab:
   file: vocab.tsv
   fallback_file: vocab.sample.tsv

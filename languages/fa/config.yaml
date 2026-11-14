@@ -4,9 +4,22 @@ script: ARABIC       # words in other scripts (Latin, Finglish) are marked forei
 
 # Stanza's default Persian package (UD Persian-PerDT). Install with:
 #   pip install stanza && python -c "import stanza; stanza.download('fa')"
-# spaCy has no Persian model.
+# spaCy has no Persian model. parser_options below picks the packages.
 parser:
   - stanza:fa
+
+# Stanza's default Persian tokenizer (perdt_nocharlm) makes about three times as many
+# word-splitting errors as the character-LM one on the PerDT dev set (F1 0.9924 vs
+# 0.9973), e.g. خریدم -> خرید + م, کمکم unsplit, دیدمش. not split from the full stop.
+# The grammar profile was written and tested against these packages.
+parser_options:
+  stanza:
+    packages:
+      tokenize: perdt_charlm
+      mwt: perdt
+      pos: perdt_charlm
+      lemma: perdt_charlm
+      depparse: perdt_charlm
 
 vocab:
   file: vocab.tsv

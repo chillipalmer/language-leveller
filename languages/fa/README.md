@@ -8,10 +8,14 @@ python -c "import stanza; stanza.download('fa')"
 leveller test-grammar --lang languages/fa
 ```
 
-The parser is Stanza's default Persian package, trained on UD Persian-PerDT. spaCy has
-no Persian model. Stanza only needs the tokenize, mwt, pos, lemma and depparse models,
-plus the pretrained vectors and character language models they use. The NER and other
-models in the download are not used.
+The parser is Stanza, trained on UD Persian-PerDT; spaCy has no Persian model.
+`config.yaml` (`parser_options`) selects the character-LM tokenizer and lemmatizer
+(`perdt_charlm`) rather than Stanza's default `perdt_nocharlm` ones, which are included
+in the default download. On the PerDT dev set, the default tokenizer makes about three
+times as many word-splitting errors (word F1 0.9924 vs 0.9973). For example, it splits
+*خریدم* into *خرید* + *م*, leaves *کمکم* unsplit, and does not separate *دیدمش* from a
+following full stop. The grammar profile was written and tested against the charlm
+packages. NER and the other models in the download are not used.
 
 ## How the profile works
 

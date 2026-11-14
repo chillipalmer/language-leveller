@@ -72,7 +72,7 @@ class Leveller:
             vocab.set_bands(bands)
         grammar = GrammarProfile.load(gpath, scale)
         if parser is None or isinstance(parser, (str, list)):
-            parser = load_parser(parser or cfg.get("parser") or [])
+            parser = load_parser(parser or cfg.get("parser") or [], cfg.get("parser_options"))
         morph = None
         mcfg = cfg.get("morph") or {}
         if morph_path is not False:
