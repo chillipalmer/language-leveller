@@ -58,10 +58,14 @@ class SpacyParser:
 
 
 class StanzaParser:
-    def __init__(self, lang: str):
+    """`packages` picks a model per processor, e.g. {tokenize: perdt_charlm, ...};
+    without it Stanza uses the language's default package."""
+    def __init__(self, lang: str, packages: dict | None = None):
         import stanza
-        self.nlp = stanza.Pipeline(lang, processors="tokenize,mwt,pos,lemma,depparse",
-                                   verbose=False)
+        procs = ("tokenize", "mwt", "pos", "lemma", "depparse")
+        processors = ({p: packages[p] for p in procs if p in packages} if packages
+                      else ",".join(procs))
+        self.nlp = stanza.Pipeline(lang, processors=processors, verbose=False)
 
     def parse(self, text: str) -> list[Sentence]:
         doc = self.nlp(text)
@@ -118,8 +122,10 @@ def _reindex(toks: list[Token]) -> None:
         t.head = mapping.get(t.head, t.i)
 
 
-def load_parser(spec: str | Iterable[str]) -> Parser:
-    """Load the first available backend from a spec or list of specs."""
+def load_parser(spec: str | Iterable[str], options: dict | None = None) -> Parser:
+    """Load the first available backend from a spec or list of specs. `options` is the
+    config's `parser_options` section, e.g. {stanza: {packages: {tokenize: ...}}}."""
+    options = options or {}
     specs = [spec] if isinstance(spec, str) else list(spec)
     errors = []
     for s in specs:
@@ -128,7 +134,7 @@ def load_parser(spec: str | Iterable[str]) -> Parser:
             if kind == "spacy":
                 return SpacyParser(arg)
             if kind == "stanza":
-                return StanzaParser(arg)
+                return StanzaParser(arg, (options.get("stanza") or {}).get("packages"))
             if kind == "conllu":
                 return ConlluParser()
             errors.append(f"{s}: unknown backend")

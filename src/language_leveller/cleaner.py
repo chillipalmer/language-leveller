@@ -44,10 +44,23 @@ class Cleaner:
         self.caps_ratio = cfg.get("all_caps_ratio", 0.7)
         self.split_lines = cfg.get("split_on_newlines", True)
         self.known_form = known_form or (lambda w: False)
+        # orthographic normalisation, applied before anything else: a character map
+        # (Arabic ي/ك -> Persian ی/ک, tatweel removed) then regex rewrites in order
+        # (Persian "می روم" / "میروم" -> "می‌روم")
+        self.char_map = str.maketrans({k: v for k, v in (cfg.get("char_map") or {}).items()})
+        self.rewrites = [(re.compile(r["pattern"]), r["replace"])
+                         for r in (cfg.get("normalise") or [])]
 
     # ---- entry point ----------------------------------------------------
+    def normalise(self, text: str) -> str:
+        """NFC, then the language's character map and regex rewrites."""
+        text = unicodedata.normalize("NFC", text).translate(self.char_map)
+        for pat, rep in self.rewrites:
+            text = pat.sub(rep, text)
+        return text
+
     def segments(self, text: str, fmt: str = "auto") -> list[Segment]:
-        text = unicodedata.normalize("NFC", text)
+        text = self.normalise(text)
         if fmt == "auto":
             fmt = "html" if re.search(r"<(p|div|br|span|a|li|html|body)\b", text, re.I) else "text"
         if fmt == "html":

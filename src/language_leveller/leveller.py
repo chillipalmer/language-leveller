@@ -6,6 +6,7 @@
 
 from __future__ import annotations
 
+import re
 import unicodedata
 from pathlib import Path
 
@@ -39,6 +40,11 @@ class Leveller:
         self.coverage_target = scoring.get("coverage_target", 0.98)
         # Unicode script name of the language's writing system ("LATIN", "CYRILLIC", "CJK"…)
         self.script = (config.get("script") or "").upper() or None
+        # lemma_rules: [{regex, lemma, upos?}] fix a parser's lemma convention by surface
+        # form. Persian PerDT gives passive شد (شده, می‌شود) the lemma of the active verb,
+        # کرد; the rule restores شد. Applied before morphology, vocabulary and grammar.
+        self.lemma_rules = [(re.compile(r["regex"]), r["lemma"], set(r.get("upos") or []))
+                            for r in (config.get("lemma_rules") or [])]
         self.cleaner = Cleaner(config.get("cleaning") or {},
                                known_form=lambda w: norm(w) in vocab.by_form or bool(
                                    vocab.morph and vocab.morph.get(w)))
@@ -66,7 +72,7 @@ class Leveller:
             vocab.set_bands(bands)
         grammar = GrammarProfile.load(gpath, scale)
         if parser is None or isinstance(parser, (str, list)):
-            parser = load_parser(parser or cfg.get("parser") or [])
+            parser = load_parser(parser or cfg.get("parser") or [], cfg.get("parser_options"))
         morph = None
         mcfg = cfg.get("morph") or {}
         if morph_path is not False:
@@ -263,7 +269,15 @@ class Leveller:
                 if any(ch.isalpha() for ch in t.text) and not any(
                         self.script in unicodedata.name(ch, "") for ch in t.text if ch.isalpha()):
                     t.upos, t.feats = "X", {"Foreign": "Yes"}
-        fixes = self.corrector.correct(sent) if self.corrector else {}
+        fixes = {}
+        for t in sent.tokens:
+            for rx, lemma, upos in self.lemma_rules:
+                if (not upos or t.upos in upos) and t.lemma != lemma and rx.search(t.text.lower()):
+                    fixes[t.i] = f"lemma {t.lemma}→{lemma}"
+                    t.lemma = lemma
+                    break
+        for i, change in (self.corrector.correct(sent) if self.corrector else {}).items():
+            fixes[i] = f"{fixes[i]}; {change}" if i in fixes else change
         for t in sent.tokens:
             if t.feats.get("VerbForm") == "Part" and self.vocab.known_as(t.text, t.lemma, "ADJ"):
                 t.feats["Lexicalised"] = "Yes"
@@ -276,7 +290,7 @@ class Leveller:
         for f in self.grammar.features:
             for kind in ("pos", "neg"):
                 for text in f.tests.get(kind, []) or []:
-                    sents = self.parser.parse(text)
+                    sents = self.parser.parse(self.cleaner.normalise(text))
                     for s in sents:
                         self._annotate(s)
                     hit = any(f.find(s) for s in sents)

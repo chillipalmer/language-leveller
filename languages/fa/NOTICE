@@ -3,3 +3,9 @@ vocab.tsv
   most frequent Persian words. Glosses are the project's own wording.
   Homographs are split into separate lemmas; rare readings carry placeholder
   ranks 5001-5080 until real frequencies are available.
+
+grammar.yaml, config.yaml
+  The project's own work. Levels follow the usual sequence of Persian-as-a-foreign-
+  language courses and are provisional. Patterns were written against the output of
+  Stanza's Persian model (trained on UD Persian-PerDT, CC BY-SA 4.0); no treebank
+  data is included here. tools/fa_eval_perdt.py reads the treebank at run time.

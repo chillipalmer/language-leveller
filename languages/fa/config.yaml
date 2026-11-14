@@ -1,0 +1,91 @@
+language: fa
+name: Persian
+script: ARABIC       # words in other scripts (Latin, Finglish) are marked foreign and excluded
+
+# Stanza's default Persian package (UD Persian-PerDT). Install with:
+#   pip install stanza && python -c "import stanza; stanza.download('fa')"
+# spaCy has no Persian model. parser_options below picks the packages.
+parser:
+  - stanza:fa
+
+# Stanza's default Persian tokenizer (perdt_nocharlm) makes about three times as many
+# word-splitting errors as the character-LM one on the PerDT dev set (F1 0.9924 vs
+# 0.9973), e.g. خریدم -> خرید + م, کمکم unsplit, دیدمش. not split from the full stop.
+# The grammar profile was written and tested against these packages.
+parser_options:
+  stanza:
+    packages:
+      tokenize: perdt_charlm
+      mwt: perdt
+      pos: perdt_charlm
+      lemma: perdt_charlm
+      depparse: perdt_charlm
+
+vocab:
+  file: vocab.tsv
+  bands:                          # rank -> CEFR band (used when a row has no level column)
+    - {level: A1, max_rank: 1000}
+    - {level: A2, max_rank: 1750}
+    - {level: B1, max_rank: 2500}
+    - {level: B2, max_rank: 3250}
+    - {level: C1, max_rank: 4000}
+    - {level: C2, max_rank: 5000}
+  unranked_level: C2+
+  # The list uses Universal POS. Values: parser tags each entry may legitimately receive.
+  pos_map:
+    VERB: [VERB, AUX]
+    AUX: [AUX, VERB]
+    NOUN: [NOUN, PROPN]
+    PROPN: [PROPN, NOUN]
+    ADJ: [ADJ, ADV, NOUN]
+    ADV: [ADV, ADJ]
+    PRON: [PRON, DET]
+    DET: [DET, PRON]
+    ADP: [ADP]
+    CCONJ: [CCONJ, SCONJ]
+    SCONJ: [SCONJ, CCONJ, ADV]
+    NUM: [NUM, DET]
+    INTJ: [INTJ, ADV]
+  exclude_upos: [PUNCT, SYM, PROPN, SPACE]
+  # Stanza (PerDT) lemmatises verbs to the past stem (رفت, کرد); the list has infinitives
+  # (رفتن, کردن). The copula and modals have their own lemmas.
+  lemma_suffix: {VERB: ن, AUX: ن}
+  lemma_map:
+    است: بودن
+    هست: بودن
+    توان: توانستن
+  accent_fold_fallback: false     # folding would strip the hamza and short-vowel marks
+
+# PerDT lemmatises passive شدن (شد, شده, می‌شود) as کرد, the active verb. Restore شد.
+lemma_rules:
+  - {upos: [VERB, AUX], lemma: شد,
+     regex: '^(ن|ب|بی|نمی\u200c?|می\u200c?)?(شد|شو)(ه|ن)?(\u200c?(م|ی|د|یم|ید|ند|ام|ای|ایم|اید|اند|است))?$'}
+
+grammar:
+  file: grammar.yaml
+
+cleaning:
+  # Arabic code points that look identical to Persian ones; tatweel (ـ) is decoration
+  char_map:
+    ي: ی
+    ى: ی
+    ك: ک
+    ـ: ""
+  # Spacing conventions vary: the standard joins prefixes and suffixes with a zero-width
+  # non-joiner (ZWNJ, U+200C), but much text uses a space. The parser only reads the ZWNJ
+  # spelling correctly ("می خوانم" becomes the noun می + a verb).
+  normalise:
+    - {pattern: '(?<![^\s\u200c(«"])(ن?می) +(?=[^\s\d])', replace: "\\1\u200c"}
+    - {pattern: '(?<=\S) +(ها|های|هایی|هایم|هایت|هایش|هایمان|هایتان|هایشان)(?=[\s.،؛؟!:»)]|$)', replace: "\u200c\\1"}
+    - {pattern: '(?<=\S) +(تر|ترین)(?=[\s.،؛؟!:»)]|$)', replace: "\u200c\\1"}
+    - {pattern: '(?<=\Sه) +(ام|ای|ایم|اید|اند)(?=[\s.،؛؟!:»)]|$)', replace: "\u200c\\1"}
+  abbreviations: {}
+  ignore_patterns:        # laughter
+    - '(?<!\w)خ{2,}(?!\w)'
+    - '(?<!\w)ه{3,}(?!\w)'
+    - '\bxd+\b'
+
+scoring:
+  unranked_counts: true
+  low_coverage_threshold: 0.5
+  coverage_target: 0.98

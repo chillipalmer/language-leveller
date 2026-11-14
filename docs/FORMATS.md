@@ -45,6 +45,10 @@ How a word is looked up, best first:
 3. the morphology lexicon gives a lemma that matches a `word`;
 4. the surface form equals a `word`.
 
+Steps 1 and 3 also try the parser's lemma rewritten by `lemma_map` and `lemma_suffix`
+(config.yaml), for parsers whose lemma convention differs from the list's headwords.
+Persian parsers give the past stem (رفت), Persian dictionaries the infinitive (رفتن).
+
 If none of those match, LL tries the clitic-stripped form (`clitic_suffixes`), then an
 accent-folded match. Among several matches it prefers a POS-compatible entry, then the more
 frequent one.
@@ -139,6 +143,9 @@ name: Spanish
 script: LATIN                             # optional; words in other scripts are marked foreign
 levels: [A1, A2, B1, B2, C1, C2, C2+]     # optional; the CEFR scale is the default
 parser: [spacy:es_core_news_md, stanza:es]
+parser_options:                           # optional: Stanza model per processor
+  stanza: {packages: {tokenize: perdt_charlm, mwt: perdt, pos: perdt_charlm,
+                      lemma: perdt_charlm, depparse: perdt_charlm}}
 vocab:
   file: vocab.tsv
   fallback_file: vocab.sample.tsv
@@ -150,6 +157,8 @@ vocab:
   clitic_suffixes: ['^(.{2,}?)(me|te|se|lo|la|le|nos|os|los|las|les)$']
   accent_fold_fallback: true
   variant_separator: "|"
+  lemma_suffix: {VERB: ن}                    # parser lemma + suffix = headword (Persian رفت -> رفتن)
+  lemma_map: {است: بودن}                     # parser lemma -> headword
 grammar: {file: grammar.yaml}
 morph:
   file: morph.tsv.gz
@@ -159,6 +168,9 @@ morph:
   initial_subjectless_boost: {mood: Imp, weight: 2}
   capitalised_midsentence_is_name: true     # capitalised words after the first are never verbs
 cleaning:
+  char_map: {ي: ی, ك: ک}                     # applied first, before parsing and grammar tests
+  normalise:                                 # regex rewrites, in order
+    - {pattern: '(?<![^\s])(ن?می) +(?=\S)', replace: "\\1\u200c"}
   abbreviations: {q: que, xq: porque}
   ignore_patterns: ['\b(?:ja){2,}\b']
   split_on_newlines: true

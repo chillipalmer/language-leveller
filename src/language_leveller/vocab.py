@@ -80,6 +80,12 @@ class Vocab:
         self.clitic_patterns = [re.compile(p) for p in config.get("clitic_suffixes", [])]
         self.accent_fallback = config.get("accent_fold_fallback", True)
         self.exclude_patterns = [re.compile(p) for p in config.get("exclude_patterns", [])]
+        # the parser's lemma convention may differ from the list's headwords: Persian
+        # parsers lemmatise verbs to the past stem (رفت) while dictionaries list the
+        # infinitive (رفتن). lemma_map rewrites whole lemmas (است -> بودن);
+        # lemma_suffix appends to the lemma by UPOS ({VERB: ن}).
+        self.lemma_map = {norm(k): v for k, v in (config.get("lemma_map") or {}).items()}
+        self.lemma_suffix = config.get("lemma_suffix") or {}
         self.morph = None   # optional MorphLexicon, attached by the Leveller
 
         self.by_lemma: dict[str, list[Entry]] = {}
@@ -177,6 +183,16 @@ class Vocab:
         return min(cands, key=lambda c: (not self._pos_ok(c[0], upos), c[0].pos != upos,
                                          c[1], c[0].rank))[0]
 
+    def _lemma_keys(self, lemma: str, upos: str) -> list[str]:
+        keys = [lemma]
+        mapped = self.lemma_map.get(norm(lemma))
+        if mapped:
+            keys.append(mapped)
+        suffix = self.lemma_suffix.get(upos)
+        if suffix:
+            keys.append(lemma + suffix)
+        return keys
+
     def _direct(self, form: str, lemma: str | None, upos: str) -> tuple[Entry | None, str, int]:
         cands: list[tuple[Entry, int, str]] = []
         # the surface form is itself a headword with a compatible POS: trust it over the
@@ -184,7 +200,8 @@ class Vocab:
         cands += [(e, -1, "form") for e in self.by_lemma.get(norm(form), [])
                   if self.pos_map.get(e.pos) and self._pos_ok(e, upos)]
         if lemma:
-            cands += [(e, 0, "lemma") for e in self.by_lemma.get(norm(lemma), [])]
+            for key in self._lemma_keys(lemma, upos):
+                cands += [(e, 0, "lemma") for e in self.by_lemma.get(norm(key), [])]
         cands += [(e, 1, "variant") for e in self.by_form.get(norm(form), [])
                   if norm(form) != norm(e.word)]
         if self.morph is not None:
