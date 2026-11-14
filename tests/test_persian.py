@@ -90,6 +90,38 @@ def test_common_words_are_found(ll):
     assert heads["کمی"] == "کمی"
 
 
+# PerDT drops verb prefixes (برداشت -> داشت), keeps old stems (برساند -> رسانید) and
+# variant spellings (مسأله) as lemmas.
+PREFIXED = """# text = دیگران کتاب را برداشتند و برگشتند تا مسأله‌ها را به او برسانند و ببرند.
+1\tدیگران\tدیگری\tNOUN\t_\tNumber=Plur\t4\tnsubj\t_\t_
+2\tکتاب\tکتاب\tNOUN\t_\tNumber=Sing\t4\tobj\t_\t_
+3\tرا\tرا\tADP\t_\t_\t2\tcase\t_\t_
+4\tبرداشتند\tداشت\tVERB\t_\tNumber=Plur|Person=3|Tense=Past\t0\troot\t_\t_
+5\tو\tو\tCCONJ\t_\t_\t6\tcc\t_\t_
+6\tبرگشتند\tگشت\tVERB\t_\tNumber=Plur|Person=3|Tense=Past\t4\tconj\t_\t_
+7\tتا\tتا\tSCONJ\t_\t_\t12\tmark\t_\t_
+8\tمسأله‌ها\tمسأله\tNOUN\t_\tNumber=Plur\t12\tobj\t_\t_
+9\tرا\tرا\tADP\t_\t_\t8\tcase\t_\t_
+10\tبه\tبه\tADP\t_\t_\t11\tcase\t_\t_
+11\tاو\tاو\tPRON\t_\tNumber=Sing|Person=3|PronType=Prs\t12\tobl\t_\t_
+12\tبرسانند\tرسانید\tVERB\t_\tMood=Sub|Number=Plur|Person=3|Tense=Pres\t6\tadvcl\t_\t_
+13\tو\tو\tCCONJ\t_\t_\t14\tcc\t_\t_
+14\tببرند\tبرد\tVERB\t_\tMood=Sub|Number=Plur|Person=3|Tense=Pres\t12\tconj\t_\t_
+15\t.\t.\tPUNCT\t_\t_\t4\tpunct\t_\t_
+"""
+
+
+def test_prefixed_verbs_stems_and_variant_lemmas(ll):
+    rec = ll.level_sentence(parse_conllu(PREFIXED)[0])
+    heads = {t["text"]: t["headword"] for t in rec["tokens"] if "headword" in t}
+    assert heads["دیگران"] == "دیگر"
+    assert heads["برداشتند"] == "برداشتن"     # not داشتن (have)
+    assert heads["برگشتند"] == "برگشتن"       # not گشتن (wander)
+    assert heads["مسأله‌ها"] == "مسئله"        # lemma is a listed variant spelling
+    assert heads["برسانند"] == "رساندن"       # ب + رسان, not a بر- verb
+    assert heads["ببرند"] == "بردن"
+
+
 def test_grammar_patterns_compile(ll):
     s = parse_conllu(PERFECT)[0]
     for f in ll.grammar.features:
