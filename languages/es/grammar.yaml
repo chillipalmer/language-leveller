@@ -1,7 +1,9 @@
 # Spanish grammar profile for Language Leveller.
 # Levels follow the Instituto Cervantes Plan Curricular as adapted in the
-# project's graded-sentences method (v2). Patterns match UD annotations;
-# see docs/FORMATS.md. Run `leveller test-grammar --lang languages/es` after edits.
+# project's graded-sentences method (v2). Where a feature has `source:`, its level was
+# checked against the Universidad Complutense de Madrid's PCIC-based grammar programmes
+# (A1, A2, B1); levels without a source are judgement calls. Patterns match UD
+# annotations; see docs/FORMATS.md. Run `leveller test-grammar --lang languages/es` after edits.
 
 language: es
 default_level: A1
@@ -67,7 +69,168 @@ features:
     pos: ["Vos sabés la verdad.", "Esto es para vos."]
     neg: ["Tú sabes la verdad."]
 
+- id: es.hay
+  level: A1
+  label: hay (existential haber)
+  source: "UCM A1 programme (PCIC-based)"
+  match:
+    token: {lemma: haber, Person: "3", Number: Sing, VerbForm: Fin, rel: {not: aux}}
+  except:
+    - sequence: [{lemma: haber}, {VerbForm: Part}]          # compound tenses
+    - sequence: [{lemma: haber}, {form: que}, {VerbForm: Inf}]   # es.periphrasis.hay_que
+  tests:
+    pos: ["Hay mucha gente en la calle.", "Había un gato en el jardín."]
+    neg: ["Ha llegado tarde.", "Hay que estudiar más."]
+
+- id: es.periphrasis.hay_que
+  level: A1
+  label: hay que + infinitive
+  match:
+    sequence: [{lemma: haber, Person: "3"}, {form: que}, {VerbForm: Inf}]
+  tests:
+    pos: ["Hay que estudiar más."]
+    neg: ["Hay mucha gente.", "Tengo que estudiar."]
+
+- id: es.gustar
+  level: A1
+  label: gustar-type verbs with an indirect object (me gusta, le encantan, me duele)
+  source: "UCM A1 programme (PCIC-based)"
+  match_any:
+    - token: {lemma: [gustar, encantar, interesar, importar, molestar, doler, parecer, faltar, apetecer,
+                      fascinar, preocupar, quedar, sobrar, convenir],
+              has_child: {upos: PRON, Case: Dat}}
+    - sequence: [{form: [me, te, le, nos, os, les]},
+                 {lemma: [gustar, encantar, interesar, importar, molestar, doler, apetecer, fascinar, preocupar]}]
+  tests:
+    pos: ["Me gusta el chocolate.", "A mi hermana le encantan los perros.", "Me duele la cabeza.", "¿Te interesa la historia?"]
+    neg: ["El chocolate es bueno.", "Quedamos a las ocho."]
+
+- id: es.reflexive
+  level: A1
+  label: Reflexive verbs (me llamo, se levanta, nos vemos, ducharme)
+  source: "UCM A1 programme (PCIC-based)"
+  description: >
+    The parser marks most reflexive clitics Reflex=Yes, but not 1st/2nd-person me/te, so
+    those are matched by agreement with the verb. Reciprocal se (se quieren) is often
+    parsed as passive se and then counts as es.se.impersonal instead.
+  match_any:
+    - graph:
+        v: {upos: [VERB, AUX]}
+        p: {form: se, Reflex: "Yes", rel: [expl:pv, obj, iobj], head: v}
+    # pronominal verbs the parser labels as passive/impersonal se (se acuerdan, se pelean)
+    - graph:
+        v: {lemma: &pronominal [acordar, acostar, afeitar, alegrar, apresurar, arrepentir, atrever, bañar, burlar,
+                                caer, casar, convertir, creer, despedir, despertar, divertir, dormir, duchar,
+                                enamorar, encontrar, enfadar, enojar, enterar, equivocar, ir, lavar, levantar, llamar,
+                                maquillar, marchar, morir, mover, mudar, olvidar, parecer, peinar, pelear, poner,
+                                preocupar, quedar, quejar, quitar, reír, reunir, secar, sentar, sentir, vestir,
+                                volver, desaparecer, besar, abrazar, querer, odiar, ayudar, separar, detener, llevar]}
+        p: {form: se, rel: [expl:pass, expl:impers], head: v}
+    - sequence: [{form: me, upos: PRON}, {upos: [VERB, AUX], Person: "1", Number: Sing}]
+    - sequence: [{form: te, upos: PRON}, {upos: [VERB, AUX], Person: "2", Number: Sing}]
+    - sequence: [{form: nos, upos: PRON}, {upos: [VERB, AUX], Person: "1", Number: Plur}]
+    - sequence: [{form: os, upos: PRON}, {upos: [VERB, AUX], Person: "2", Number: Plur}]
+    - token: {VerbForm: [Inf, Ger], Reflex: "Yes"}
+    - token: {VerbForm: Inf, regex: 'rse$'}
+  tests:
+    pos: ["Me llamo Ana.", "Ella se levanta temprano.", "Nos vemos mañana.", "Quiero ducharme ahora."]
+    neg: ["Te llamo mañana.", "Se lo di ayer.", "Aquí se habla español.", "Me gusta el chocolate."]
+
+- id: es.neg.double
+  level: A1
+  label: Double negation (no … nada / nadie / nunca)
+  match:
+    sequence: [{form: "no"}, {gap: [0, 5]},
+               {form: [nada, nadie, nunca, jamás, ningún, ninguno, ninguna, ningunos, ningunas, tampoco, ni]}]
+  tests:
+    pos: ["No veo a nadie.", "No he comido nada.", "Yo no voy nunca al cine."]
+    neg: ["Nadie vino.", "No veo el coche."]
+
+- id: es.pron.object.direct
+  level: A1
+  label: Direct object pronoun (lo veo, cómpralo, quiero verla)
+  source: "UCM A1 programme (PCIC-based)"
+  description: >
+    Covers 3rd-person lo/la/los/las, before the verb or attached to it. me/te/nos/os are
+    left out because the parser cannot tell direct from indirect objects for them.
+  match_any:
+    - token: {upos: PRON, form: [lo, la, los, las], Case: Acc, rel: {not: det}}
+    - token: {Mood: Imp, regex: '[áéíóú]\w*(lo|la|los|las)$'}
+    - token: {regex: '^(hazlo|hazla|hazlos|hazlas|dilo|dila|ponlo|ponla|ponlos|ponlas|tenlo|tenla|dalo|dala)$'}
+    - token: {VerbForm: Inf, regex: 'r(lo|la|los|las)$'}
+    - token: {VerbForm: Ger, regex: 'ndo(lo|la|los|las)$'}
+  except:                                   # lo in fixed phrases and lo + adjective
+    - sequence: [{form: por}, {form: lo}, {form: [menos, tanto, general, visto, pronto]}]
+    - sequence: [{form: a}, {form: lo}]
+    - sequence: [{form: lo}, {upos: ADJ}]
+  tests:
+    pos: ["Lo veo todos los días.", "Cómpralo mañana.", "Quiero verla pronto.", "Hazlo ahora."]
+    neg: ["Lo bueno es que no llueve.", "Veo la casa.", "No entiendo lo que dices.", "Está sucio, pero por lo menos es pequeño.",
+          "A lo lejos se ve el mar."]
+
+- id: es.pron.object.indirect
+  level: A1
+  label: Indirect object pronoun (le escribí, me dijo)
+  source: "UCM A1 programme (PCIC-based)"
+  match_any:
+    - token: {upos: PRON, form: [le, les]}
+    - graph:
+        v: {lemma: [dar, decir, enviar, mandar, escribir, preguntar, pedir, contar, explicar, regalar, prestar,
+                    mostrar, enseñar, traer, devolver, comprar, responder, contestar, ofrecer, dejar]}
+        p: {upos: PRON, form: [me, te, nos, os], Case: Dat, head: v}
+  tests:
+    pos: ["Le escribí una carta a mi madre.", "Me dijo que vendría."]
+    neg: ["Lo veo todos los días.", "Me llamo Ana."]
+
+- id: es.pron.double
+  level: A1
+  label: Two object pronouns together (se lo, me lo, dímelo)
+  source: "UCM A1 programme (PCIC-based)"
+  match_any:
+    - sequence: [{form: [me, te, se, nos, os], upos: PRON}, {form: [lo, la, los, las], upos: PRON}]
+    - token: {regex: '[áéíóú]\w*(me|te|se|nos|os)(lo|la|los|las)$'}
+  tests:
+    pos: ["Se lo di ayer.", "Dímelo ya.", "Dáselo a tu hermano.", "Voy a decírtelo."]
+    neg: ["Lo veo todos los días.", "Ella se levanta temprano.", "Me llamo Ana."]
+
+- id: es.relative.que
+  level: A1
+  label: Relative clause with que (el chico que vive aquí)
+  source: "UCM A1 programme (PCIC-based)"
+  match:
+    graph:
+      v: {rel: [acl, acl:relcl]}
+      r: {form: que, PronType: Rel, head: v}
+  except:
+    - sequence: [{form: [hace, hacía]}, {gap: [0, 3]}, {form: que}]   # hace dos años que (es.hace_que)
+  tests:
+    pos: ["El chico que vive aquí es mi primo.", "La película que vimos era buena."]
+    neg: ["Creo que vive aquí.", "Hace dos años que vivo aquí."]
+
+- id: es.superlative.absolute
+  level: A1
+  label: Absolute superlative -ísimo (riquísima, carísimo)
+  source: "UCM A1 programme (PCIC-based)"
+  match:
+    token: {regex: 'ísim[oa]s?$|ísimamente$'}
+  tests:
+    pos: ["La comida está riquísima.", "Es un libro carísimo."]
+    neg: ["La comida está muy rica."]
+
 # ---------------------------------------------------------------- A2
+- id: es.comparative
+  level: A2
+  label: Comparative (más/menos … que, mejor/peor que)
+  source: "UCM A2 programme (PCIC-based)"
+  match_any:
+    - sequence: [{form: [más, menos]}, {gap: [0, 3]}, {form: que}]
+    - sequence: [{form: [mejor, peor, mejores, peores, mayor, menor, mayores, menores]}, {gap: [0, 2]}, {form: que}]
+  except:
+    - sequence: [{form: por}, {form: más}]                   # por más que (es.por_muy_que)
+  tests:
+    pos: ["Juan es más alto que Pedro.", "Tengo menos libros que tú.", "Este libro es mejor que el otro."]
+    neg: ["Juan es alto.", "Por más que lo intento, no puedo.", "Es el mejor."]
+
 - id: es.past.preterite
   level: A2
   label: Preterite
@@ -154,7 +317,264 @@ features:
     pos: ["Me gustaría un café.", "¿Podría ayudarme?", "Querría hablar con usted."]
     neg: ["Me gusta el café.", "La palabra podría traducirse al español.", "Debería ser definido como evolución."]
 
+- id: es.imperative.usted
+  level: A2
+  label: usted/ustedes command (hable usted, tenga cuidado, siéntense)
+  source: "UCM A2 programme (PCIC-based)"
+  description: >
+    Formal commands use present-subjunctive forms, and the parser often tags them Mood=Sub.
+    A sentence-initial 3rd-person subjunctive with no subordinator, or one followed by
+    usted/ustedes, is read as a command (and es.subj.present ignores it). Negative formal
+    commands (no hable) are es.imperative.negative.
+  match_any:
+    - token: {Mood: Imp, Person: "3", no_child: {Polarity: Neg}}
+    - token: {Mood: Sub, Tense: Pres, Person: "3", sent_start: true, no_child: {rel: mark}}
+    - sequence: [{Mood: Sub, Tense: Pres, Person: "3", no_child: {Polarity: Neg}}, {form: [usted, ustedes]}]
+  except:                                   # reduplicated subjunctive (es.subj.reduplicated)
+    - sequence: [{Mood: [Sub, Imp], as: V}, {form: lo}, {form: que}, {same_form: V}]
+    - sequence: [{Mood: [Sub, Imp], as: V}, {form: [quien, donde, como, cuando, adonde, cual]}, {same_form: V}]
+  tests:
+    pos: ["Hable usted más despacio, por favor.", "Tenga cuidado con el perro.", "Siéntense, por favor."]
+    neg: ["Quiero que hable más despacio.", "Ojalá venga pronto.", "Ven aquí.", "Pase lo que pase, te llamo."]
+
+- id: es.periphrasis.iba_a
+  level: A2
+  label: iba a + infinitive (past intention)
+  match:
+    sequence: [{lemma: ir, Tense: Imp}, {form: a}, {VerbForm: Inf}]
+  tests:
+    pos: ["Iba a llamarte, pero se me olvidó."]
+    neg: ["Voy a llamarte.", "Iba a la playa."]
+
+- id: es.periphrasis.acabar_de
+  level: A2
+  label: acabar de + infinitive (acabo de llegar)
+  source: "UCM A2 programme (PCIC-based)"
+  match:
+    sequence: [{lemma: acabar}, {form: de}, {VerbForm: Inf}]
+  tests:
+    pos: ["Acabo de llegar."]
+    neg: ["Acabo el trabajo."]
+
+- id: es.periphrasis.volver_a
+  level: A2
+  label: volver a + infinitive (volvió a llamar)
+  source: "UCM A2 programme (PCIC-based)"
+  match:
+    sequence: [{lemma: volver}, {form: a}, {VerbForm: Inf}]
+  tests:
+    pos: ["Volvió a llamar."]
+    neg: ["Volvió a casa."]
+
+- id: es.periphrasis.phase
+  level: A2
+  label: empezar/comenzar/ponerse a, dejar/terminar de + infinitive
+  source: "UCM A2 programme (PCIC-based)"
+  match_any:
+    - sequence: [{lemma: [empezar, comenzar, poner, echar]}, {form: a}, {VerbForm: Inf}]
+    - sequence: [{lemma: [dejar, terminar, parar]}, {form: de}, {VerbForm: Inf}]
+  tests:
+    pos: ["Empezó a llover.", "Dejé de fumar.", "Se puso a llorar."]
+    neg: ["Empezó la clase.", "Dejé el libro en la mesa."]
+
+- id: es.periphrasis.soler
+  level: A2
+  label: soler + infinitive (suelo levantarme temprano)
+  source: "UCM A2 programme (PCIC-based)"
+  match:
+    sequence: [{form: [suelo, sueles, suele, solemos, soléis, suelen, solía, solías, solíamos, solíais, solían]},
+               {VerbForm: Inf}]
+  tests:
+    pos: ["Suelo levantarme temprano.", "Solíamos ir a la playa."]
+    neg: ["El suelo está sucio."]
+
+- id: es.periphrasis.a_punto_de
+  level: A2
+  label: estar a punto de + infinitive
+  match:
+    sequence: [{form: a}, {form: punto}, {form: de}, {VerbForm: Inf}]
+  tests:
+    pos: ["Estoy a punto de salir."]
+    neg: ["Estoy listo para salir."]
+
+- id: es.progressive.past
+  level: A2
+  label: Past progressive (estaba/estuve + gerund)
+  match:
+    sequence: [{lemma: estar, Mood: Ind, Tense: [Imp, Past]}, {gap: [0, 2]}, {VerbForm: Ger}]
+  tests:
+    pos: ["Estaba leyendo cuando llamaste.", "Estuve trabajando toda la tarde."]
+    neg: ["Estoy leyendo un libro.", "Estaba cansado."]
+
+- id: es.inf.prep
+  level: A2
+  label: antes de / después de / sin + infinitive
+  source: "UCM A2 programme (PCIC-based)"
+  match_any:
+    - sequence: [{form: [antes, después]}, {form: de}, {VerbForm: Inf}]
+    - sequence: [{form: sin}, {VerbForm: Inf}]
+  tests:
+    pos: ["Antes de salir, cierra la puerta.", "Se fue sin decir nada."]
+    neg: ["Antes de la cena, salimos.", "Café sin azúcar."]
+
+- id: es.hace_time
+  level: A2
+  label: hace + time expression (hace dos años, desde hace)
+  source: "UCM A2 programme (PCIC-based)"
+  match:
+    sequence: [{form: [hace, hacía]}, {upos: [NUM, DET, ADJ], optional: true}, {upos: [NUM, DET, ADJ], optional: true},
+               {lemma: [segundo, minuto, hora, día, semana, mes, año, siglo, tiempo, rato, momento, década, instante]}]
+  except:
+    - sequence: [{form: [hace, hacía]}, {form: [buen, mal, muy]}]   # weather: hace buen tiempo
+  tests:
+    pos: ["Llegué hace dos años.", "Vivo aquí desde hace dos años.", "Hace mucho tiempo que no te veo."]
+    neg: ["Hace buen tiempo.", "Hace frío.", "Hace sus deberes."]
+
+- id: es.hace_que
+  level: A2
+  label: hace + time + que (hace dos años que vivo aquí)
+  source: "UCM A2 programme (PCIC-based)"
+  match:
+    sequence: [{form: [hace, hacía]}, {upos: [NUM, DET, ADJ], optional: true}, {upos: [NUM, DET, ADJ], optional: true},
+               {lemma: [segundo, minuto, hora, día, semana, mes, año, siglo, tiempo, rato, momento, década]}, {form: que}]
+  tests:
+    pos: ["Hace dos años que vivo aquí.", "Hacía mucho tiempo que no la veía."]
+    neg: ["Llegué hace dos años."]
+
+- id: es.personal_a
+  level: A2
+  label: Personal a before a human direct object (veo a Juan, busco a alguien)
+  description: >
+    Approximation: a after a verb (not of motion or giving/telling), followed by a name,
+    a person pronoun or a common person noun.
+  match_any:
+    - sequence: [{upos: VERB, lemma: {not: &a_verbs [ir, venir, llegar, volver, viajar, regresar, entrar, subir, bajar,
+                                                     salir, acercar, dirigir, empezar, comenzar, aprender, dar, decir,
+                                                     escribir, enviar, mandar, regalar, preguntar, pedir, contar,
+                                                     explicar, gustar, encantar, enseñar, mostrar, ofrecer,
+                                                     prestar, devolver, traer, ayudar, invitar, obligar, jugar]}},
+                 {form: a},
+                 {upos: [PROPN, PRON], form: {not: [mí, ti, sí, él, ella, ellos, ellas, usted, ustedes, nosotros, vosotros]}}]
+    - sequence: [{upos: VERB, lemma: {not: *a_verbs}}, {form: [a, al]}, {upos: DET, optional: true},
+                 {lemma: [madre, padre, hermano, hermana, hijo, hija, amigo, amiga, abuelo, abuela, mujer, marido,
+                          esposo, esposa, novio, novia, niño, niña, chico, chica, profesor, profesora, médico,
+                          médica, jefe, jefa, gente, familia, vecino, vecina, compañero, compañera, hombre,
+                          persona, policía, cliente, tío, tía, primo, prima, padres, hijos]}]
+  tests:
+    pos: ["Veo a Juan.", "Busco a alguien que hable francés.", "Llamé a mi madre.", "No veo a nadie."]
+    neg: ["Voy a Madrid.", "Le escribí una carta a mi madre.", "Voy a comer.", "Les enseña a otros las mismas cosas."]
+
+- id: es.relative.lo_que
+  level: A2
+  label: lo que (free relative)
+  match:
+    sequence: [{form: lo}, {form: que}]
+  tests:
+    pos: ["No entiendo lo que dices."]
+    neg: ["No lo quiero.", "Lo bueno es que no llueve."]
+
+- id: es.possessive.pronoun
+  level: A2
+  label: Stressed possessives (el mío, un amigo mío, la nuestra)
+  source: "UCM A2 programme (PCIC-based)"
+  match_any:
+    - token: {form: [mío, mía, míos, mías, tuyo, tuya, tuyos, tuyas, suyo, suya, suyos, suyas]}
+    - sequence: [{form: [el, la, los, las, lo]},
+                 {form: [nuestro, nuestra, nuestros, nuestras, vuestro, vuestra, vuestros, vuestras]}]
+  tests:
+    pos: ["Tu coche es más rápido que el mío.", "Un amigo mío vive aquí.", "Esta casa es la nuestra."]
+    neg: ["Mi coche es rápido.", "Nuestro coche es rápido."]
+
+- id: es.comparative.equality
+  level: A2
+  label: Comparative of equality (tan … como, tanto … como)
+  source: "UCM A2 programme (PCIC-based)"
+  match_any:
+    - sequence: [{form: tan}, {gap: [1, 3]}, {form: como}]
+    - sequence: [{form: [tanto, tanta, tantos, tantas]}, {gap: [0, 3]}, {form: como}]
+  tests:
+    pos: ["Ana es tan alta como su madre.", "Tengo tantos libros como tú.", "No trabajo tanto como antes."]
+    neg: ["Es tan alta.", "Como siempre, llegó tarde."]
+
+- id: es.si.real
+  level: A2
+  label: Real condition (si + present indicative)
+  source: "UCM A2 programme (PCIC-based)"
+  match_any:
+    - graph:
+        v: {Mood: Ind, Tense: Pres, rel: advcl}
+        si: {lemma: si, rel: mark, head: v}
+    - graph:
+        v: {rel: advcl, has_child: {rel: cop, Mood: Ind, Tense: Pres}}
+        si: {lemma: si, rel: mark, head: v}
+  tests:
+    pos: ["Si llueve, me quedo en casa.", "Si tienes tiempo, llámame.", "Si estás cansado, descansa."]
+    neg: ["No sé si viene.", "Si tuviera dinero, viajaría."]
+
+- id: es.indirect_question
+  level: A2
+  label: Indirect question (no sé si viene, me preguntó dónde vivía)
+  match:
+    sequence: [{lemma: [saber, preguntar, entender, explicar, decir, recordar, imaginar, importar, depender, ver]},
+               {gap: [0, 2]},
+               {form: [si, qué, quién, quiénes, dónde, adónde, cuándo, cómo, cuánto, cuánta, cuántos, cuántas, cuál, cuáles]}]
+  tests:
+    pos: ["No sé si viene.", "Me preguntó dónde vivía.", "No entiendo qué quieres."]
+    neg: ["Si llueve, me quedo en casa.", "¿Dónde vives?"]
+
+- id: es.preterite.meaning_shift
+  level: A2
+  label: Verbs that change meaning in the preterite (supe, conocí, no quiso, pude)
+  description: >
+    Kept at A2, the level of the preterite itself, so it adds a learning item without raising
+    the sentence level.
+  match:
+    token: {lemma: [saber, conocer, querer, poder], Mood: Ind, Tense: Past, VerbForm: Fin}
+  tests:
+    pos: ["Ayer supe la verdad.", "Conocí a mi mujer en Madrid.", "No pude abrir la puerta."]
+    neg: ["Sabía la verdad.", "Conozco a tu mujer."]
+
+- id: es.relative.quien
+  level: A2
+  label: Relative quien/quienes (la mujer con quien hablé)
+  source: "UCM A2 programme (PCIC-based)"
+  match:
+    token: {form: [quien, quienes]}
+  tests:
+    pos: ["La mujer con quien hablé es mi jefa.", "Mi hermano, quien vive en Lima, viene mañana."]
+    neg: ["¿Quién es?", "¿Con quién hablas?"]
+
 # ---------------------------------------------------------------- B1
+- id: es.superlative
+  level: B1
+  label: Relative superlative (el más alto de, la mejor)
+  source: "UCM B1 programme (PCIC-based)"
+  match_any:
+    - sequence: [{form: [el, la, los, las]}, {upos: NOUN, optional: true}, {form: [más, menos]}, {upos: ADJ}]
+    - sequence: [{form: [el, la, los, las]}, {form: [mejor, peor, mejores, peores]}]
+  tests:
+    pos: ["Es el chico más alto de la clase.", "Es la mejor película del año.", "Ana es la más alta."]
+    neg: ["Juan es más alto que Pedro.", "Es un chico alto.", "Les deseo lo mejor.", "Se oyen las ranas más allá del río."]
+
+- id: es.se.impersonal
+  level: B1
+  label: Impersonal / passive se (se habla español, se venden casas)
+  source: "UCM B1 programme (PCIC-based)"
+  description: >
+    The parser labels many pronominal and reciprocal verbs as passive se (se acuerdan,
+    se pelean). Those verbs, and clauses with a pronoun or name as subject, count as
+    es.reflexive instead.
+  match:
+    graph:
+      v: {lemma: {not: *pronominal}, no_child: {rel: nsubj, upos: [PRON, PROPN]}}
+      p: {form: se, rel: [expl:impers, expl:pass], head: v}
+  except:
+    - sequence: [{form: se}, {form: [me, te, le, nos, os, les]}]   # es.se.accidental
+  tests:
+    pos: ["Aquí se habla español.", "Se venden casas.", "En España se cena tarde.", "Se ve que es conservadora."]
+    neg: ["Ella se levanta temprano.", "Se lo di ayer.", "Se me olvidaron las llaves.", "¿Se acuerdan ustedes de Querefón?",
+          "Se quieren mucho."]
+
 - id: es.conditional.simple
   level: B1
   label: Conditional (non-courtesy)
@@ -175,9 +595,117 @@ features:
     token: {Mood: Sub, Tense: Pres}
   except:                                   # fixed expressions, not productive subjunctive
     - sequence: [{form: o}, {form: sea}]
+    # affirmative usted/ustedes and nosotros commands (es.imperative.usted, es.imperative.nosotros)
+    - token: {Mood: Sub, Tense: Pres, Person: "3", sent_start: true, no_child: {rel: mark}}
+    - sequence: [{Mood: Sub, Tense: Pres, Person: "3", no_child: {Polarity: Neg}}, {form: [usted, ustedes]}]
+    - token: {Mood: Sub, Tense: Pres, Person: "1", Number: Plur, sent_start: true, no_child: {rel: mark}}
   tests:
-    pos: ["Quiero que vengas mañana.", "Espero que estés bien.", "Cuando llegues, llámame."]
-    neg: ["Sé que vienes mañana.", "Es un problema grave.", "El quinto mes, o sea mayo.", "¿Estás libre esta tarde?", "Sus sentimientos son todavía tan firmes."]
+    pos: ["Quiero que vengas mañana.", "Espero que estés bien.", "Cuando llegues, llámame.", "Ojalá venga pronto."]
+    neg: ["Sé que vienes mañana.", "Es un problema grave.", "El quinto mes, o sea mayo.", "¿Estás libre esta tarde?", "Sus sentimientos son todavía tan firmes.",
+          "Hable usted más despacio, por favor."]
+
+- id: es.imperative.nosotros
+  level: B1
+  label: nosotros command (hablemos, comamos, vámonos)
+  match_any:
+    - token: {Mood: Imp, Person: "1", Number: Plur, no_child: {Polarity: Neg}}
+    - token: {Mood: Sub, Tense: Pres, Person: "1", Number: Plur, sent_start: true, no_child: {rel: mark}}
+    - token: {regex: '[áéíóú]\w*monos$'}
+  tests:
+    pos: ["Hablemos de otra cosa.", "Comamos ahora.", "Vámonos."]
+    neg: ["Hablamos de otra cosa.", "Quiere que comamos ahora."]
+
+- id: es.subj.ojala
+  level: B1
+  label: ojalá + subjunctive
+  match:
+    sequence: [{form: [ojalá, ojala]}, {form: que, optional: true}, {gap: [0, 3]}, {Mood: Sub}]
+  tests:
+    pos: ["Ojalá venga pronto.", "Ojalá no llueva mañana."]
+    neg: ["Espero que venga pronto."]
+
+- id: es.subj.doubt_adverb
+  level: B1
+  label: quizás / tal vez / posiblemente + subjunctive
+  match_any:
+    - sequence: [{form: [quizás, quizá, posiblemente, probablemente]}, {gap: [0, 3]}, {Mood: Sub}]
+    - sequence: [{form: tal}, {form: vez}, {gap: [0, 3]}, {Mood: Sub}]
+  tests:
+    pos: ["Quizás tenga razón.", "Tal vez llueva mañana."]
+    neg: ["Quizás tiene razón.", "A lo mejor llueve."]
+
+- id: es.subj.noun_clause
+  level: B1
+  label: Subjunctive after verbs of wish, emotion or doubt (quiero que vengas)
+  match_any:
+    - graph:
+        m: {upos: VERB}
+        v: {Mood: Sub, rel: ccomp, head: m}
+    - graph:
+        m: {upos: VERB}
+        v: {rel: ccomp, head: m, has_child: {Mood: Sub, rel: [cop, aux]}}
+  except:                                   # reduplicated subjunctive (es.subj.reduplicated)
+    - sequence: [{Mood: [Sub, Imp], as: V}, {form: lo}, {form: que}, {same_form: V}]
+    - sequence: [{Mood: [Sub, Imp], as: V}, {form: [quien, donde, como, cuando, adonde, cual]}, {same_form: V}]
+  tests:
+    pos: ["Quiero que vengas mañana.", "Espero que estés bien.", "Dudo que sea verdad."]
+    neg: ["Sé que vienes mañana.", "Creo que es verdad.", "Pase lo que pase, te llamo."]
+
+- id: es.subj.impersonal
+  level: B1
+  label: Impersonal expression + que + subjunctive (es importante que…)
+  source: "UCM B1 programme (PCIC-based)"
+  match_any:
+    - graph:
+        a: {has_child: {lemma: ser, rel: cop}}
+        v: {Mood: Sub, rel: [csubj, ccomp], head: a}
+    - graph:
+        a: {has_child: {lemma: ser, rel: cop}}
+        v: {rel: [csubj, ccomp], head: a, has_child: {Mood: Sub, rel: [cop, aux]}}
+    - sequence: [{lemma: ser}, {upos: DET, optional: true}, {upos: [ADJ, ADV, NOUN]}, {form: que}, {gap: [0, 3]}, {Mood: Sub}]
+  tests:
+    pos: ["Es importante que estudies.", "Es mejor que te quedes en casa.", "Es una pena que no puedas venir."]
+    neg: ["Es verdad que estudias mucho.", "Es importante estudiar."]
+
+- id: es.subj.relative
+  level: B1
+  label: Subjunctive in a relative clause (busco a alguien que hable francés)
+  match_any:
+    - graph:
+        v: {Mood: Sub, rel: [acl, acl:relcl]}
+        r: {form: [que, quien, quienes, donde, cual, cuales], head: v}
+    - graph:
+        v: {rel: [acl, acl:relcl], has_child: {Mood: Sub, rel: cop}}
+        r: {form: [que, quien, quienes, donde, cual, cuales], head: v}
+  tests:
+    pos: ["Busco a alguien que hable francés.", "Quiero una casa que tenga jardín."]
+    neg: ["Conozco a alguien que habla francés."]
+
+- id: es.subj.temporal
+  level: B1
+  label: Subjunctive in future-time clauses (cuando llegues, hasta que, antes de que)
+  source: "UCM B1 programme (PCIC-based)"
+  match_any:
+    - sequence: [{form: [cuando, mientras]}, {gap: [0, 3]}, {Mood: Sub}]
+    - sequence: [{form: hasta}, {form: que}, {gap: [0, 3]}, {Mood: Sub}]
+    - sequence: [{form: [antes, después]}, {form: de}, {form: que}, {gap: [0, 3]}, {Mood: Sub}]
+    - sequence: [{form: en}, {form: cuanto}, {gap: [0, 3]}, {Mood: Sub}]
+    - sequence: [{form: tan}, {form: pronto}, {form: como}, {gap: [0, 3]}, {Mood: Sub}]
+  tests:
+    pos: ["Te llamo cuando llegue.", "Espera hasta que vuelva.", "Sal antes de que llueva."]
+    neg: ["Te llamé cuando llegué.", "¿Cuándo llega?"]
+
+- id: es.subj.purpose
+  level: B1
+  label: para que / sin que + subjunctive
+  source: "UCM B1 programme (PCIC-based)"
+  match_any:
+    - sequence: [{form: para}, {form: que}, {gap: [0, 3]}, {Mood: Sub}]
+    - sequence: [{form: a}, {form: fin}, {form: de}, {form: que}]
+    - sequence: [{form: sin}, {form: que}, {gap: [0, 3]}, {Mood: Sub}]
+  tests:
+    pos: ["Lo hago para que estés contento.", "Salió sin que nadie lo viera."]
+    neg: ["Lo hago para estar contento.", "¿Para qué lo haces?"]
 
 - id: es.imperative.negative
   level: B1
@@ -264,6 +792,120 @@ features:
   tests:
     pos: ["Sigo trabajando aquí.", "Llevo dos años estudiando español."]
     neg: ["Sigo aquí.", "Estoy trabajando aquí."]
+
+- id: es.periphrasis.ir_gerund
+  level: B1
+  label: ir + gerund (va mejorando poco a poco)
+  match:
+    sequence: [{lemma: ir, VerbForm: Fin}, {gap: [0, 1]}, {VerbForm: Ger}]
+  tests:
+    pos: ["Va mejorando poco a poco."]
+    neg: ["Voy a mejorar.", "Está mejorando."]
+
+- id: es.periphrasis.deber_de
+  level: B1
+  label: deber de + infinitive (probability)
+  match:
+    sequence: [{lemma: deber}, {form: de}, {VerbForm: Inf}]
+  tests:
+    pos: ["Debe de ser muy tarde."]
+    neg: ["Debes estudiar más."]
+
+- id: es.progressive.compound
+  level: B1
+  label: Progressive in other tenses (estaré / estaría / he estado / esté + gerund)
+  match_any:
+    - sequence: [{lemma: estar, Tense: Fut}, {gap: [0, 2]}, {VerbForm: Ger}]
+    - sequence: [{lemma: estar, Mood: [Cnd, Sub]}, {gap: [0, 2]}, {VerbForm: Ger}]
+    - sequence: [{lemma: haber}, {form: estado}, {gap: [0, 2]}, {VerbForm: Ger}]
+  tests:
+    pos: ["Estaré trabajando a esa hora.", "He estado estudiando todo el día."]
+    neg: ["Estoy trabajando.", "He estado en Madrid."]
+
+- id: es.al_inf
+  level: B1
+  label: al + infinitive (al llegar a casa…)
+  source: "UCM B1 programme (PCIC-based)"
+  match:
+    sequence: [{form: al}, {VerbForm: Inf}]
+  tests:
+    pos: ["Al llegar a casa, me duché."]
+    neg: ["Voy al cine.", "Al final llegó."]
+
+- id: es.reported_speech
+  level: B1
+  label: Reported speech with tense shift (dijo que vendría / que estaba cansado)
+  source: "UCM B1 programme (PCIC-based)"
+  match_any:
+    - graph:
+        v: {lemma: &say [decir, contar, explicar, preguntar, comentar, responder, contestar, asegurar, prometer, avisar, escribir],
+            Tense: [Past, Imp]}
+        c: {head: v, rel: ccomp, Mood: Cnd, has_child: {form: [que, si, dónde, cuándo, cómo, qué, quién, quiénes, cuánto, cuánta, cuántos, cuántas, cuál, cuáles, adónde]}}
+    - graph:
+        v: {lemma: *say, Tense: [Past, Imp]}
+        c: {head: v, rel: ccomp, Mood: Ind, Tense: Imp, has_child: {form: [que, si, dónde, cuándo, cómo, qué, quién, quiénes, cuánto, cuánta, cuántos, cuántas, cuál, cuáles, adónde]}}
+    - graph:
+        v: {lemma: *say, Tense: [Past, Imp]}
+        c: {head: v, rel: ccomp, has_child: {rel: [cop, aux], Mood: Ind, Tense: Imp}}
+        q: {form: [que, si, dónde, cuándo, cómo, qué, quién, quiénes, cuánto, cuánta, cuántos, cuántas, cuál, cuáles, adónde], head: c}
+    - graph:
+        v: {lemma: *say, Tense: [Past, Imp]}
+        c: {head: v, rel: ccomp, has_child: {rel: [cop, aux], Mood: Cnd}}
+        q: {form: [que, si, dónde, cuándo, cómo, qué, quién, quiénes, cuánto, cuánta, cuántos, cuántas, cuál, cuáles, adónde], head: c}
+  tests:
+    pos: ["Me dijo que vendría.", "Dijo que estaba cansado.", "Me preguntó dónde vivía.", "Nos contó que había perdido el tren."]
+    neg: ["Dice que viene.", "Me dijo la verdad.", "Dijo que viene mañana.", "“Costaría menos,” dijo la agente."]
+
+- id: es.probability
+  level: B1
+  label: Future/conditional of probability (¿dónde estará?, serán las ocho)
+  source: "UCM B1 programme (PCIC-based)"
+  description: >
+    Only the clear cases: a wh-question in the future of ser/estar/tener/haber, and
+    ser + la(s) + hour. A genuine future question (¿dónde estarás mañana?) also matches.
+  match_any:
+    - sequence: [{form: "¿"}, {form: [dónde, qué, quién, quiénes, cuántos, cuántas, cuánto, cómo, cuál]},
+                 {gap: [0, 2]}, {lemma: [ser, estar, tener, haber], Tense: Fut}]
+    - sequence: [{lemma: ser, Tense: Fut}, {form: [la, las]}, {upos: [NUM, NOUN]}]
+    - sequence: [{lemma: ser, Mood: Cnd}, {form: [la, las]}, {upos: [NUM, NOUN]}]
+  tests:
+    pos: ["¿Dónde estará mi llave?", "Serán las ocho.", "¿Cuántos años tendrá?", "Serían las diez cuando llegó."]
+    neg: ["Mañana estaré en casa.", "Son las ocho."]
+
+- id: es.lo_adj
+  level: B1
+  label: lo + adjective as a noun (lo bueno, lo importante, lo mejor)
+  match:
+    sequence: [{form: lo}, {upos: ADJ, form: {not: [mismo]}}]
+  tests:
+    pos: ["Lo bueno es que no llueve.", "Lo mejor es esperar.", "Lo importante es participar."]
+    neg: ["Lo veo todos los días.", "Pienso lo mismo que tú."]
+
+- id: es.se.accidental
+  level: B1
+  label: se for unplanned events (se me olvidó, se le cayó)
+  match:
+    sequence: [{form: se}, {form: [me, te, le, nos, os, les]},
+               {lemma: [olvidar, caer, perder, romper, quedar, acabar, escapar, ocurrir, morir, estropear, quemar,
+                        ir, pasar, mojar, manchar, descomponer, averiar, hacer]}]
+  tests:
+    pos: ["Se me olvidaron las llaves.", "Se le cayó el vaso.", "Se nos acabó la leche."]
+    neg: ["Se lo di ayer.", "Se le dijo la verdad."]
+
+- id: es.causal.como
+  level: B1
+  label: Causal como at the start of a sentence (como no tenía dinero, …)
+  source: "UCM B1 programme (PCIC-based)"
+  match_any:
+    - graph:
+        v: {Mood: Ind, rel: advcl}
+        c: {form: como, rel: mark, head: v, sent_start: true}
+    - graph:
+        v: {rel: advcl, has_child: {rel: cop, Mood: Ind}}
+        c: {form: como, rel: mark, head: v, sent_start: true}
+  tests:
+    pos: ["Como no tenía dinero, se quedó en casa.", "Como estaba cansado, me fui a dormir."]
+    neg: ["Como siempre, llegó tarde.", "Como pizza los viernes.", "Hazlo como quieras."]
 
 # ---------------------------------------------------------------- B2
 - id: es.subj.imperfect
@@ -382,6 +1024,33 @@ features:
   tests:
     pos: ["No sabes lo difícil que es.", "Me sorprendió lo bien que canta.", "Me sorprendió lo firme que era su determinación."]
     neg: ["Pienso lo mismo que tú."]
+
+- id: es.relative.el_cual
+  level: B2
+  label: el cual / lo cual without a preposition (…, la cual compramos; …, lo cual me molestó)
+  match:
+    sequence: [{form: ","}, {form: [el, la, los, las, lo]}, {form: [cual, cuales]}]
+  tests:
+    pos: ["La casa, la cual compramos en 1990, es grande.", "Llegó tarde, lo cual me molestó."]
+    neg: ["¿Cuál prefieres?", "Es la casa en la cual vivo."]
+
+- id: es.subj.quiera
+  level: B2
+  label: -quiera compounds + subjunctive (dondequiera que vayas, quienquiera que llame)
+  match:
+    token: {regex: '^(quien|quienes|donde|adonde|como|cuando)quiera$'}
+  tests:
+    pos: ["Dondequiera que vayas, te seguiré.", "Quienquiera que llame, di que no estoy."]
+    neg: ["Donde quieras, te sigo.", "Cualquiera puede hacerlo."]
+
+- id: es.periphrasis.andar_venir_gerund
+  level: B2
+  label: andar / venir + gerund (anda buscando trabajo)
+  match:
+    sequence: [{lemma: [andar, venir], VerbForm: Fin}, {gap: [0, 1]}, {VerbForm: Ger}]
+  tests:
+    pos: ["Ana anda buscando trabajo.", "Vengo diciendo lo mismo desde hace años."]
+    neg: ["Ana anda por la calle."]
 
 # ---------------------------------------------------------------- C1
 - id: es.cleft
