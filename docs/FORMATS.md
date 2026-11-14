@@ -168,6 +168,8 @@ morph:
   mood_preference: [Ind, Sub, Imp, Cnd]      # tie-break between readings
   initial_subjectless_boost: {mood: Imp, weight: 2}
   capitalised_midsentence_is_name: true     # capitalised words after the first are never verbs
+  no_imperative_after_subject: true         # a verb right after its noun subject is not a command
+  clause_openers: [qué, dónde, porque, ...]  # after these, clause-final lo/la + noun-or-verb = clitic + verb
 cleaning:
   char_map: {ي: ی, ك: ک}                     # applied first, before parsing and grammar tests
   normalise:                                 # regex rewrites, in order
