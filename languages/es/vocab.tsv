@@ -2406,7 +2406,7 @@ apretar_VERB	2404	apretar	VERB	to squeeze; tighten; compress
 razonable_ADJ	2405	razonable	ADJ	reasonable				
 ola_NOUN	2406	ola	NOUN	wave; billow	Gender=Fem			
 oreja_NOUN	2407	oreja	NOUN	ear	Gender=Fem			
-abuela_NOUN	2408	abuela	NOUN	grandmother	Gender=Fem			
+abuela_NOUN	2408	abuela	NOUN	grandmother	Gender=Fem		visual=tree	
 amable_ADJ	2409	amable	ADJ	kind; nice; friendly				
 doña_NOUN	2410	doña	NOUN	courtesy title (f); Mrs.	Gender=Fem			
 rígido_ADJ	2411	rígido	ADJ	rigid; stiff; firm			cognate=en	
@@ -2674,7 +2674,7 @@ juguete_NOUN	2672	juguete	NOUN	toy	Gender=Masc
 violar_VERB	2673	violar	VERB	to violate; trespass; rape				
 chiste_NOUN	2674	chiste	NOUN	joke; funny story	Gender=Masc			
 aprendizaje_NOUN	2675	aprendizaje	NOUN	learning; apprenticeship	Gender=Masc			
-esposo_NOUN	2676	esposo	NOUN	husband; spouse	Gender=Masc			
+esposo_NOUN	2676	esposo	NOUN	husband; spouse	Gender=Masc		visual=tree	
 boda_NOUN	2677	boda	NOUN	marriage; wedding	Gender=Fem			
 realista_ADJ	2678	realista	ADJ	realistic			cognate=en	
 fresco_NOUN	2679	fresco	NOUN	freshness; coolness	Gender=Masc			
