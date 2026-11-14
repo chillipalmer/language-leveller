@@ -9,8 +9,7 @@ parser:
   - stanza:es
 
 vocab:
-  file: vocab.tsv                 # your full list (kept out of git, see .gitignore)
-  fallback_file: vocab.sample.tsv # tiny illustrative list used when vocab.tsv is absent
+  file: vocab.tsv
   bands:                          # rank -> CEFR band (used when a row has no level column)
     - {level: A1, max_rank: 1000}
     - {level: A2, max_rank: 1750}
