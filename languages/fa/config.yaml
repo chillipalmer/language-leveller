@@ -81,6 +81,13 @@ vocab:
     خاست: برخاستن       # برخاست, برخیزید (PerDT drops the بر)
     رسانید: رساندن       # برساند, رسانیده
     گردانید: گرداندن     # with the بر prefix: برگرداندن
+    انگیخت: برانگیختن     # برانگیخته, also bare انگیخته
+    افراشت: برافراشتن     # برافراشته, also bare افراشته
+    # Arabic plurals: the list folds them into the singular (no افراد, مسائل); PerDT
+    # does too, except for these
+    شرایط: شرط
+    اطلاعات: اطلاع
+    همگان: همه
   # PerDT drops verb prefixes from the lemma (برداشت -> داشت, درآورد -> آورد,
   # برگشت -> گشت). Tried first when the surface form starts with one of these.
   lemma_prefixes:

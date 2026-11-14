@@ -706,6 +706,7 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 سید_NOUN	691	سید	NOUN	descendant of prophet; Seyyed				sejjed
 پیام_NOUN	692	پیام	NOUN	message				pæjɑm
 خصوصی_ADJ	693	خصوصی	ADJ	private				xosusi
+نزد_ADP	693	نزد	ADP	near; with; in the view of			rank=estimated	næzd
 حداقل_ADV	694	حداقل	ADV	at least; minimum			pos_also=DET,NOUN	hæddeæɣæl
 هرچه_PRON	695	هرچه	PRON	whatever; the more… (هرچه… بیشتر)			pos_also=ADV	hærʧe
 وابسته_ADJ	696	وابسته	ADJ	dependent; attached			pos_also=NOUN	vɑbæste
@@ -1057,6 +1058,7 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 فقیر_ADJ	1038	فقیر	ADJ	poor			pos_also=NOUN	fæɣir
 کشوری_ADJ	1039	کشوری	ADJ	state; national			pos_also=NOUN	keʃværi
 راستا_NOUN	1040	راستا	NOUN	direction				rɑstɑ
+متأسفانه_ADV	1040	متأسفانه	ADV	unfortunately		متاسفانه	rank=estimated	motæʔæssefɑne
 شرقی_ADJ	1041	شرقی	ADJ	eastern				ʃærɣi
 فکری_ADJ	1042	فکری	ADJ	mental; intellectual			pos_also=NOUN,PROPN	fekri
 عمیق_ADJ	1043	عمیق	ADJ	deep				æmiɣ
@@ -1197,6 +1199,7 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 گرم_ADJ	1177	گرم	ADJ	warm, hot			split=1177	gærm
 گرم_NOUN	1177	گرم	NOUN	gram			split=1177	geræm
 الگو_NOUN	1178	الگو	NOUN	pattern				olɡu
+بریدن_VERB	1178	بریدن	VERB	cut			rank=estimated	boridæn
 خبرگزاری_NOUN	1179	خبرگزاری	NOUN	news agency				xæbærɡozɑri
 آسیب_NOUN	1180	آسیب	NOUN	injury; damage				ɑsib
 سلامت_NOUN	1181	سلامت	NOUN	health			pos_also=ADJ	sælɑmæt
@@ -1248,6 +1251,7 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 ایستادن_VERB	1223	ایستادن	VERB	stand			pos_also=NOUN,PROPN	istɑdæn
 موج_NOUN	1224	موج	NOUN	wave				mowʤ
 اتخاذ_NOUN	1225	اتخاذ	NOUN	adoption				ettexɑz
+برانگیختن_VERB	1225	برانگیختن	VERB	provoke; arouse			rank=estimated	bærænɡixtæn
 تقاضا_NOUN	1226	تقاضا	NOUN	demand				tæɣɑzɑ
 لزوم_NOUN	1227	لزوم	NOUN	need				lozum
 معامله_NOUN	1228	معامله	NOUN	transaction			pos_also=ADJ	moʔɑmele
@@ -1311,6 +1315,7 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 واقعاً_ADV	1285	واقعاً	ADV	really				vɑɣeʔæn
 تبریز_PROPN	1286	تبریز	PROPN	Tabriz				tæbriz
 تیر_NOUN	1287	تیر	NOUN	arrow; Tir (4th month of the Iranian calendar)			pos_also=PROPN	tir
+آفریدن_VERB	1287	آفریدن	VERB	create			rank=estimated	ɑfæridæn
 قریب_ADJ	1288	قریب	ADJ	near; relative			pos_also=PROPN	ɣærib
 مجله_NOUN	1289	مجله	NOUN	magazine				mæʤælle
 هماهنگی_NOUN	1290	هماهنگی	NOUN	harmony; coordination				hæmɑhænɡi
@@ -1584,6 +1589,7 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 سقف_NOUN	1550	سقف	NOUN	ceiling; roof				sæɣf
 غنی_ADJ	1551	غنی	ADJ	rich				ɣæni
 قطعاً_ADV	1552	قطعاً	ADV	certainly				ɣætʔæn
+لطفاً_ADV	1552	لطفاً	ADV	please		لطفا	rank=estimated	lotfæn
 سپاه_NOUN	1553	سپاه	NOUN	army				sepɑh
 هشتم_ADJ	1554	هشتم	ADJ	eighth			pos_also=NOUN	hæʃtom
 درگیر_ADJ	1555	درگیر	ADJ	involved				dærɡir
@@ -2303,6 +2309,7 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 عراقی_ADJ	2261	عراقی	ADJ	Iraqi			pos_also=NOUN,PROPN	erɑɣi
 اتمی_ADJ	2262	اتمی	ADJ	atomic				ætomi
 رانندگی_NOUN	2263	رانندگی	NOUN	driving				rɑnændeɡi
+گریستن_VERB	2263	گریستن	VERB	weep			rank=estimated	ɡerjæstæn
 مصمم_ADJ	2264	مصمم	ADJ	determined				mosæmmæm
 هادی_NOUN	2265	هادی	NOUN	conductor; Hadi			pos_also=PROPN	hɑdi
 خودکشی_NOUN	2266	خودکشی	NOUN	suicide				xodkoʃi
@@ -2338,6 +2345,7 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 شوهر_NOUN	2296	شوهر	NOUN	husband				ʃowhær
 مکرر_ADJ	2297	مکرر	ADJ	repeated			pos_also=ADV	mokærrær
 گلستان_NOUN	2298	گلستان	NOUN	rose garden; Golestan			pos_also=PROPN	ɡolestɑn
+آویختن_VERB	2298	آویختن	VERB	hang			rank=estimated	ɑvixtæn
 فراری_ADJ	2299	فراری	ADJ	fugitive			pos_also=NOUN	færɑri
 بابا_NOUN	2300	بابا	NOUN	dad				bɑbɑ
 مخصوصاً_ADV	2301	مخصوصاً	ADV	especially				mæxsusæn
@@ -2482,6 +2490,8 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 اتومبیل_NOUN	2437	اتومبیل	NOUN	car				otomobil
 فراگیر_ADJ	2438	فراگیر	ADJ	comprehensive			pos_also=NOUN	færɑɡir
 رسول_NOUN	2439	رسول	NOUN	messenger			pos_also=PROPN	ræsul
+باریدن_VERB	2439	باریدن	VERB	rain; fall (rain, snow)			rank=estimated	bɑridæn
+برافراشتن_VERB	2439	برافراشتن	VERB	raise (a flag); erect			rank=estimated	bærɑfrɑʃtæn
 توانمندی_NOUN	2440	توانمندی	NOUN	strength				tævɑnmændi
 یوسف_PROPN	2441	یوسف	PROPN	Yusuf, Joseph				jusof / jusef
 اختلال_NOUN	2442	اختلال	NOUN	disruption				extelɑl
