@@ -344,7 +344,29 @@ features:
     pos: ["وقتی بچه بودم، اینجا زندگی می‌کردیم.", "وقتی رسیدم، او رفته بود.", "وقتی که زلزله آمد، خواب بودم."]
     neg: ["وقت ندارم.", "یک وقتی برای جلسه تعیین کنیم."]
 
+- id: fa.ra
+  level: A2
+  label: Direct-object marker را
+  source: "Chaarchoob 2, L3 (taught explicitly); A2 by project decision, since را is used throughout volume 1; Mace 3/3"
+  match:
+    token: {form: را}
+  tests:
+    pos: ["کتاب را خریدم.", "او را دیدم."]
+    neg: ["کتابی خریدم."]
+
 # ---------------------------------------------------------------- B1
+- id: fa.relative.ke
+  level: B1
+  label: Relative clause with که (کتابی که خریدم)
+  source: "Chaarchoob 2, L20; B1 by project decision (the lesson-position rule gives B2)"
+  match:
+    graph:
+      v: {rel: acl, head_is: {upos: [NOUN, PRON, PROPN], form: {not: [این, آن]}}}
+      k: {form: که, rel: mark, head: v}
+  tests:
+    pos: ["کتابی که خریدم جالب است.", "مردی که دیروز دیدیم معلم است."]
+    neg: ["او گفت که فردا می‌آید.", "کتاب را خریدم.", "مثل این است که خواب دیده باشیم."]
+
 - id: fa.clitic.object
   level: B1
   label: Object suffix (دیدمش، کمکم کن)
@@ -436,18 +458,6 @@ features:
     neg: ["کتابی که خریدم جالب است.", "او گفت فردا می‌آید."]
 
 # ---------------------------------------------------------------- B2
-- id: fa.relative.ke
-  level: B2
-  label: Relative clause with که (کتابی که خریدم)
-  source: "Chaarchoob 2, L20"
-  match:
-    graph:
-      v: {rel: acl, head_is: {upos: [NOUN, PRON, PROPN], form: {not: [این, آن]}}}
-      k: {form: که, rel: mark, head: v}
-  tests:
-    pos: ["کتابی که خریدم جالب است.", "مردی که دیروز دیدیم معلم است."]
-    neg: ["او گفت که فردا می‌آید.", "کتاب را خریدم.", "مثل این است که خواب دیده باشیم."]
-
 - id: fa.passive
   level: B2
   label: Passive with شدن (ساخته شد)
