@@ -35,6 +35,12 @@ appear in any order.
 All columns are passed through to the output (`id`, `lex_feats`, `tags`), so the app can
 use them without a second lookup.
 
+`cognate=<L1>` marks a word a reader whose first language is `<L1>` can understand on
+sight (`cognate=en` on *familia*, *problema*, *teléfono*). It is relative to that first
+language, so a row can carry several (`cognate=en,fr`). LL only passes it through; whether a
+cognate counts as known is the consumer's decision. `tools/cognate_candidates.py` proposes
+candidates for review by comparing each headword (or its `translit`) with its own gloss.
+
 The same word may appear twice with different POS (`como` conj / `como` from *comer*);
 LL uses the parser's tag to choose between them.
 
