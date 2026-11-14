@@ -130,3 +130,43 @@ def test_clause_final_la_plus_verb_after_wh_word(ll):
     # but an article + noun inside a longer clause stays a noun
     r = ll.level_text("Explicó que la reforma del código es necesaria.")[0]
     assert _tok(r, "reforma")["upos"] == "NOUN"
+
+
+def test_question_inversion_before_a_name(ll):
+    r = ll.level_text("¿Toca Lucas el piano?")[0]
+    t = _tok(r, "Toca")
+    assert t["upos"] == "VERB" and t["headword"] == "tocar" and "Mood=Ind" in t["feats"]
+    assert "es.imperative.affirmative" not in {f["id"] for f in r["grammar"]["features"]}
+
+
+def test_lower_case_word_is_not_a_name(ll):
+    t = _tok(ll.level_text("Julia toca Bach y Chopin.")[0], "toca")
+    assert t["upos"] == "VERB" and t["headword"] == "tocar"
+
+
+def test_sentence_initial_word_after_inverted_punctuation(ll):
+    t = _tok(ll.level_text("¡Silencio, Martín!")[0], "Silencio")
+    assert t.get("headword") == "silencio"
+
+
+def test_multi_word_place_name_is_not_counted(ll):
+    t = _tok(ll.level_text("Buenos Aires es la capital.")[0], "Buenos")
+    assert t.get("headword") is None and t.get("excluded")
+
+
+def test_coordinated_verb_and_question_subject_are_not_commands(ll):
+    for text, verb in [("Julia come pan, bebe leche y mira el mar.", "mira"),
+                       ("¿Duerme Martín en la cocina?", "Duerme"), ("¿Qué mira Toby?", "mira")]:
+        r = ll.level_text(text)[0]
+        assert "Mood=Ind" in _tok(r, verb)["feats"], text
+        assert "es.imperative.affirmative" not in {f["id"] for f in r["grammar"]["features"]}, text
+    # a real command is still one
+    assert "es.imperative.affirmative" in {f["id"] for f in ll.level_text("Come y mira.")[0]["grammar"]["features"]}
+
+
+def test_lower_case_noun_after_names_is_counted(ll):
+    t = _tok(ll.level_text("¿Come Ana pan?")[0], "pan")
+    assert t["upos"] == "NOUN" and t["headword"] == "pan"
+    # leche is also a form of the unlisted verb lechar: the listed noun wins
+    t = _tok(ll.level_text("¿Bebe Ana leche?")[0], "leche")
+    assert t["upos"] == "NOUN" and t["headword"] == "leche"

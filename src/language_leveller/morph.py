@@ -144,14 +144,26 @@ class MorphCorrector:
 
     @staticmethod
     def _subject_before(t: Token, s: Sentence) -> bool:
-        """A noun or name that is t's subject and comes right before it, with no comma
-        between (a vocative is set off by one: "Andrés, mira")."""
-        for c in s.children(t.i):
-            if c.i < t.i and c.rel.split(":")[0] == "nsubj" and c.upos in ("NOUN", "PROPN"):
-                between = s.tokens[c.i + 1:t.i]
-                if not any(x.upos == "PUNCT" for x in between):
-                    return True
-        return False
+        """t has a noun or name subject, so it is not a command:
+        * the subject comes right before it, with no comma between (a vocative is set off
+          by one: "Andrés, mira")
+        * t is coordinated with a verb that has such a subject (Julia come pan y mira el mar)
+        * in a question, a name follows it directly (¿Duerme Martín?, ¿Qué mira Toby?)"""
+        def before(v: Token) -> bool:
+            for c in s.children(v.i):
+                if c.i < v.i and c.rel.split(":")[0] == "nsubj" and c.upos in ("NOUN", "PROPN"):
+                    if not any(x.upos == "PUNCT" for x in s.tokens[c.i + 1:v.i]):
+                        return True
+            return False
+        if before(t):
+            return True
+        if t.rel.split(":")[0] == "conj" and t.head != t.i:
+            h = s.tokens[t.head]
+            if h.upos in ("VERB", "AUX") and h.feats.get("Mood") != "Imp" and before(h):
+                return True
+        question = any(x.text in ("¿", "?") for x in s.tokens)
+        nxt = s.tokens[t.i + 1] if t.i + 1 < len(s.tokens) else None
+        return question and nxt is not None and nxt.upos == "PROPN"
 
     def _clitic_in_open_clause(self, det: Token, t: Token, s: Sentence) -> bool:
         """det (lo/la/los/las) sits in a clause opened by a wh-word or subordinator,
@@ -183,6 +195,12 @@ class MorphCorrector:
         fixes: dict[int, str] = {}
         first = next((x.i for x in s.tokens if x.upos != "PUNCT"), 0)
         for t in s.tokens:
+            lower_propn = self.caps_names and t.upos == "PROPN" and t.text[:1].islower()
+            if lower_propn:
+                # a lower-case word is never a name where names are capitalised (¿Come Ana
+                # pan?): treat it as a noun, which the rules below may still retag as a verb
+                fixes[t.i] = "PROPN→NOUN (lower case)"
+                t.upos = "NOUN"
             if self.caps_names and t.i != first and t.text[:1].isupper():
                 # a name, an acronym or a Roman numeral: never a verb
                 if t.upos in ("VERB", "AUX") and not t.text.isupper():
@@ -262,6 +280,13 @@ class MorphCorrector:
                 cues = self.adj_cues if self.known_as(t.text, t.lemma, "ADJ") else self.cues
                 cue = clitic_in_clause or (prev is not None and not article and (
                     prev.text.lower() in cues or prev.lemma.lower() in cues))
+                # a lower-case word the parser took for part of a name, right after a name,
+                # is that name's verb (Julia toca Bach), when the verb is a listed word and no
+                # listed noun competes (not ¿Bebe Ana leche?: leche, not lechar)
+                if (lower_propn and prev is not None and prev.upos == "PROPN"
+                        and prev.text[:1].isupper() and self.rank_of(best[0]) is not None
+                        and not any(self.rank_of(a[0]) is not None for a in nominal)):
+                    cue = True
                 # a capitalised sentence-initial "proper noun" is usually a capitalisation
                 # artefact, unless the vocab lists it as a noun (heading "Historia")
                 words = [x for x in s.tokens if x.upos != "PUNCT"]
@@ -278,6 +303,16 @@ class MorphCorrector:
                     cue = (len(words) > 1 and not nominal and not in_name and not subject
                            and not t.text.isupper()
                            and not self.known_as(t.text.lower(), t.text.lower(), "NOUN"))
+                    # a question or exclamation that opens with a finite verb and then a
+                    # name is subject inversion (¿Toca Lucas el piano?), not a two-word name
+                    opener = t.i > 0 and s.tokens[t.i - 1].text in ("¿", "¡")
+                    finite = any(a[2].get("VerbForm") == "Fin" for a in verbs)
+                    if opener and finite and in_name and nxt.upos == "PROPN" and not t.text.isupper():
+                        cue = True
+                        # the name after it is the subject: indicative, not a command
+                        ind = [a for a in verbs if a[2].get("Mood") == "Ind"]
+                        if ind:
+                            best = min(ind, key=lambda a: self._score(a, t, False))
                 # surface evidence for a noun: an article/determiner (not a cue word such
                 # as clitic "lo") or a finite verb immediately before it (los toques,
                 # sobreviven reportes). Children in the parse are not used: a parser that
