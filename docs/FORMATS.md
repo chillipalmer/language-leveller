@@ -38,8 +38,16 @@ use them without a second lookup.
 `cognate=<L1>` marks a word a reader whose first language is `<L1>` can understand on
 sight (`cognate=en` on *familia*, *problema*, *teléfono*). It is relative to that first
 language, so a row can carry several (`cognate=en,fr`). LL only passes it through; whether a
-cognate counts as known is the consumer's decision. `tools/cognate_candidates.py` proposes
-candidates for review by comparing each headword (or its `translit`) with its own gloss.
+cognate counts as known is the consumer's decision. `tools/cognate_candidates.py` (Latin
+script) and `tools/cognate_candidates_translit.py` (via `translit`) propose candidates for
+review by comparing each headword with its own gloss.
+
+`visual=yes` marks a noun a single picture shows unambiguously (*casa*, *perro*, *montaña*):
+a graded story or the app can show it instead of a gloss. Kinship and other relational nouns
+(*padre*, *hermana*) are not tagged, since a picture alone does not say which relation is
+meant. `tools/visual_candidates.py` proposes candidates from WordNet's sense classes
+(artifact, animal, plant, body, food, natural object) for review. It is a first pass only:
+a gloss's first WordNet sense is often not the one meant (*banco*: bank vs bench).
 
 The same word may appear twice with different POS (`como` conj / `como` from *comer*);
 LL uses the parser's tag to choose between them.
