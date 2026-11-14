@@ -49,11 +49,19 @@ vocab:
   exclude_upos: [PUNCT, SYM, PROPN, SPACE]
   # Stanza (PerDT) lemmatises verbs to the past stem (رفت, کرد); the list has infinitives
   # (رفتن, کردن). The copula and modals have their own lemmas.
+  # PerDT also keeps some inflected forms as lemmas of their own: آنها (and the clitic
+  # شان, lemmatised آنها), یکی, اولین, and the present stem گذارد for most forms of
+  # گذاشتن (بگذارد, می‌گذارم, گذارده). Variants would only catch the bare surface form.
   lemma_suffix: {VERB: ن, AUX: ن}
   lemma_map:
     است: بودن
     هست: بودن
     توان: توانستن
+    آنها: آن
+    آن‌ها: آن
+    یکی: یک
+    اولین: اول
+    گذارد: گذاشتن
   accent_fold_fallback: false     # folding would strip the hamza and short-vowel marks
 
 # PerDT lemmatises passive شدن (شد, شده, می‌شود) as کرد, the active verb. Restore شد.

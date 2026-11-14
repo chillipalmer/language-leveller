@@ -3,6 +3,11 @@ vocab.tsv
   most frequent Persian words. Glosses are the project's own wording.
   Homographs are split into separate lemmas; rare readings carry placeholder
   ranks 5001-5080 until real frequencies are available.
+  را, روی, کمی and شاید are not in the source frequency list. Their ranks
+  (4, 139, 456, 490) are estimates, tagged rank=estimated: each word's count in
+  UD Persian-PerDT, scaled to the source list's counts by the median ratio of
+  58 prepositions, adverbs and conjunctions found in both, then placed at the
+  rank of the source words with the nearest counts.
 
 grammar.yaml, config.yaml
   The project's own work. Levels follow the usual sequence of Persian-as-a-foreign-

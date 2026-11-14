@@ -26,6 +26,7 @@ packages. NER and the other models in the download are not used.
 - **Lemmas.**
   - Stanza gives verbs their past stem (*رفت*). `vocab.lemma_suffix` adds ن to reach the list's infinitive (*رفتن*).
   - `vocab.lemma_map` handles the copula (*است*, *هست* → *بودن*) and *توان*.
+  - It also maps lemmas PerDT keeps for inflected forms: *آنها* (also the lemma of the clitic *شان*) → *آن*, *یکی* → *یک*, *اولین* → *اول*, and the present stem *گذارد* (*بگذارد*, *می‌گذارم*, *گذارده*) → *گذاشتن*.
   - `lemma_rules` restores *شد* where PerDT lemmatises passive *شد / می‌شود* as *کرد*.
 - **Grammar patterns.**
   - PerDT marks mood only on imperatives and some auxiliaries. The present subjunctive and the past imperfective both come out with no Tense, and participles often lack `VerbForm=Part`.
