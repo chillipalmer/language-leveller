@@ -113,10 +113,11 @@ conjugator. See [docs/ADDING_A_LANGUAGE.md](docs/ADDING_A_LANGUAGE.md).
 ```
 src/language_leveller/   cleaner, parsing backends, vocab, morph, grammar engine, CLI
 languages/es/            config.yaml, grammar.yaml, morph.tsv.gz, vocab.tsv
-languages/fa/            config.yaml, grammar.yaml, vocab.tsv (Persian, Stanza parser)
+languages/fa/            config.yaml, grammar.yaml, vocab.tsv, README.md (Persian, Stanza parser)
 docs/FORMATS.md          vocabulary, grammar-pattern and config reference
 docs/ADDING_A_LANGUAGE.md
 tools/build_morph.py     builds a morphology lexicon from UniMorph / verbecc
+tools/fa_eval_perdt.py   checks the Persian profile against the UD Persian-PerDT treebank
 tests/                   engine tests (no model needed) + Spanish and Persian integration tests
 ```
 
