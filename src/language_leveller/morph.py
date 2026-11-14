@@ -144,14 +144,26 @@ class MorphCorrector:
 
     @staticmethod
     def _subject_before(t: Token, s: Sentence) -> bool:
-        """A noun or name that is t's subject and comes right before it, with no comma
-        between (a vocative is set off by one: "Andrés, mira")."""
-        for c in s.children(t.i):
-            if c.i < t.i and c.rel.split(":")[0] == "nsubj" and c.upos in ("NOUN", "PROPN"):
-                between = s.tokens[c.i + 1:t.i]
-                if not any(x.upos == "PUNCT" for x in between):
-                    return True
-        return False
+        """t has a noun or name subject, so it is not a command:
+        * the subject comes right before it, with no comma between (a vocative is set off
+          by one: "Andrés, mira")
+        * t is coordinated with a verb that has such a subject (Julia come pan y mira el mar)
+        * in a question, a name follows it directly (¿Duerme Martín?, ¿Qué mira Toby?)"""
+        def before(v: Token) -> bool:
+            for c in s.children(v.i):
+                if c.i < v.i and c.rel.split(":")[0] == "nsubj" and c.upos in ("NOUN", "PROPN"):
+                    if not any(x.upos == "PUNCT" for x in s.tokens[c.i + 1:v.i]):
+                        return True
+            return False
+        if before(t):
+            return True
+        if t.rel.split(":")[0] == "conj" and t.head != t.i:
+            h = s.tokens[t.head]
+            if h.upos in ("VERB", "AUX") and h.feats.get("Mood") != "Imp" and before(h):
+                return True
+        question = any(x.text in ("¿", "?") for x in s.tokens)
+        nxt = s.tokens[t.i + 1] if t.i + 1 < len(s.tokens) else None
+        return question and nxt is not None and nxt.upos == "PROPN"
 
     def _clitic_in_open_clause(self, det: Token, t: Token, s: Sentence) -> bool:
         """det (lo/la/los/las) sits in a clause opened by a wh-word or subordinator,
@@ -183,6 +195,12 @@ class MorphCorrector:
         fixes: dict[int, str] = {}
         first = next((x.i for x in s.tokens if x.upos != "PUNCT"), 0)
         for t in s.tokens:
+            lower_propn = self.caps_names and t.upos == "PROPN" and t.text[:1].islower()
+            if lower_propn:
+                # a lower-case word is never a name where names are capitalised (¿Come Ana
+                # pan?): treat it as a noun, which the rules below may still retag as a verb
+                fixes[t.i] = "PROPN→NOUN (lower case)"
+                t.upos = "NOUN"
             if self.caps_names and t.i != first and t.text[:1].isupper():
                 # a name, an acronym or a Roman numeral: never a verb
                 if t.upos in ("VERB", "AUX") and not t.text.isupper():
@@ -248,17 +266,6 @@ class MorphCorrector:
                     if cue or (not listed and not nominal
                                and best[2].get("VerbForm") in ("Inf", "Ger")):
                         change = self._apply(t, best, "VERB")
-            elif self.caps_names and t.upos == "PROPN" and t.text[:1].islower():
-                # a lower-case word is never a name where names are capitalised (Julia toca
-                # Bach): take the more frequent of its verb and noun readings
-                nominal = [a for a in an if a[1] != "VERB" and self.rank_of(a[0]) is not None]
-                vr = self.rank_of(best[0])
-                nom = min(nominal, key=lambda a: self.rank_of(a[0]), default=None)
-                if vr is not None and (nom is None or vr <= self.rank_of(nom[0])):
-                    change = self._apply(t, best, "VERB")
-                elif nom is not None:
-                    change = f"PROPN→{nom[1]}; lemma {t.lemma}→{nom[0]}"
-                    t.upos, t.lemma = nom[1], nom[0]
             elif t.upos in RETAGGABLE:
                 nominal = [a for a in an if a[1] != "VERB"]
                 prev = next((x for x in reversed(s.tokens[:t.i]) if x.upos != "PUNCT"), None)
@@ -273,6 +280,10 @@ class MorphCorrector:
                 cues = self.adj_cues if self.known_as(t.text, t.lemma, "ADJ") else self.cues
                 cue = clitic_in_clause or (prev is not None and not article and (
                     prev.text.lower() in cues or prev.lemma.lower() in cues))
+                # a lower-case word the parser took for part of a name, right after a name,
+                # is that name's verb (Julia toca Bach)
+                if lower_propn and prev is not None and prev.upos == "PROPN" and prev.text[:1].isupper():
+                    cue = True
                 # a capitalised sentence-initial "proper noun" is usually a capitalisation
                 # artefact, unless the vocab lists it as a noun (heading "Historia")
                 words = [x for x in s.tokens if x.upos != "PUNCT"]

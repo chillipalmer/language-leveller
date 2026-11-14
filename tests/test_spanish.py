@@ -152,3 +152,18 @@ def test_sentence_initial_word_after_inverted_punctuation(ll):
 def test_multi_word_place_name_is_not_counted(ll):
     t = _tok(ll.level_text("Buenos Aires es la capital.")[0], "Buenos")
     assert t.get("headword") is None and t.get("excluded")
+
+
+def test_coordinated_verb_and_question_subject_are_not_commands(ll):
+    for text, verb in [("Julia come pan, bebe leche y mira el mar.", "mira"),
+                       ("¿Duerme Martín en la cocina?", "Duerme"), ("¿Qué mira Toby?", "mira")]:
+        r = ll.level_text(text)[0]
+        assert "Mood=Ind" in _tok(r, verb)["feats"], text
+        assert "es.imperative.affirmative" not in {f["id"] for f in r["grammar"]["features"]}, text
+    # a real command is still one
+    assert "es.imperative.affirmative" in {f["id"] for f in ll.level_text("Come y mira.")[0]["grammar"]["features"]}
+
+
+def test_lower_case_noun_after_names_is_counted(ll):
+    t = _tok(ll.level_text("¿Come Ana pan?")[0], "pan")
+    assert t["upos"] == "NOUN" and t["headword"] == "pan"
