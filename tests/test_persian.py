@@ -49,6 +49,47 @@ def test_verb_lemmas_reach_infinitives(ll):
     assert [f["id"] for f in rec["grammar"]["features"]] == ["fa.perfect.present"]
 
 
+# "شاید آنها کتاب را روی میز بگذارند." and "یکی از اولین کتاب‌هایشان کمی ..." in PerDT style:
+# آنها, شان, یکی, اولین keep their own lemmas; most forms of گذاشتن get the present stem گذارد.
+COMMON = """# text = شاید آنها کتاب را روی میز بگذارند.
+1\tشاید\tشاید\tADV\t_\t_\t7\tadvmod\t_\t_
+2\tآنها\tآنها\tPRON\t_\tNumber=Plur|Person=3|PronType=Prs\t7\tnsubj\t_\t_
+3\tکتاب\tکتاب\tNOUN\t_\tNumber=Sing\t7\tobj\t_\t_
+4\tرا\tرا\tADP\t_\t_\t3\tcase\t_\t_
+5\tروی\tروی\tADP\t_\t_\t6\tcase\t_\t_
+6\tمیز\tمیز\tNOUN\t_\tNumber=Sing\t7\tobl\t_\t_
+7\tبگذارند\tگذارد\tVERB\t_\tMood=Sub|Number=Plur|Person=3|Tense=Pres\t0\troot\t_\t_
+8\t.\t.\tPUNCT\t_\t_\t7\tpunct\t_\t_
+
+# text = یکی از اولین کتاب‌هایشان کمی بود.
+1\tیکی\tیکی\tNOUN\t_\tNumber=Sing\t6\tnsubj\t_\t_
+2\tاز\tاز\tADP\t_\t_\t4\tcase\t_\t_
+3\tاولین\tاولین\tADJ\t_\t_\t4\tamod\t_\t_
+4-5\tکتاب‌هایشان\t_\t_\t_\t_\t_\t_\t_\t_
+4\tکتاب‌های\tکتاب\tNOUN\t_\tNumber=Plur\t1\tnmod\t_\t_
+5\tشان\tآنها\tPRON\t_\tNumber=Plur|Person=3|PronType=Prs\t4\tnmod:poss\t_\t_
+6\tکمی\tکمی\tADV\t_\t_\t0\troot\t_\t_
+7\tبود\tبود\tAUX\t_\tNumber=Sing|Person=3|Tense=Past\t6\tcop\t_\t_
+8\t.\t.\tPUNCT\t_\t_\t6\tpunct\t_\t_
+"""
+
+
+def test_common_words_are_found(ll):
+    heads = {}
+    for s in parse_conllu(COMMON):
+        rec = ll.level_sentence(s)
+        assert "C2+" not in rec["vocab"]["level"], rec["vocab"]
+        heads.update({t["text"]: t["headword"] for t in rec["tokens"] if "headword" in t})
+    assert heads["شاید"] == "شاید"
+    assert heads["آنها"] == heads["شان"] == "آن"
+    assert heads["را"] == "را"
+    assert heads["روی"] == "روی"
+    assert heads["بگذارند"] == "گذاشتن"
+    assert heads["یکی"] == "یک"
+    assert heads["اولین"] == "اول"
+    assert heads["کمی"] == "کمی"
+
+
 def test_grammar_patterns_compile(ll):
     s = parse_conllu(PERFECT)[0]
     for f in ll.grammar.features:

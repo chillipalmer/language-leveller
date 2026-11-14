@@ -3,6 +3,7 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 بودن_VERB	2	بودن	VERB	be				budæn
 از_ADP	3	از	ADP	from				æz
 به_ADP	4	به	ADP	to				be
+را_ADP	4	را	ADP	[definite direct-object marker]			rank=estimated	rɑ
 که_SCONJ	5	که	SCONJ	which; that				ke
 این_PRON	6	این	PRON	this; it				in
 در_ADP	7	در	ADP	in				dær
@@ -135,6 +136,7 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 قرار گرفتن_VERB	137	قرار گرفتن	VERB	be located				ɣærɑr ɡereftæn
 شرکت_NOUN	138	شرکت	NOUN	company				ʃerkæt
 طرح_NOUN	139	طرح	NOUN	design				tærh
+روی_ADP	139	روی	ADP	on; on top of			rank=estimated	ruje
 تهران_PROPN	140	تهران	PROPN	Tehran				tehrɑn
 برخی_DET	141	برخی	DET	some			pos_also=PRON	bærxi
 سه_NUM	142	سه	NUM	three			pos_also=NOUN	se
@@ -460,6 +462,7 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 جز_ADP	454	جز	ADP	except			pos_also=SCONJ	ʤoz
 تازه_ADJ	455	تازه	ADJ	fresh			pos_also=ADV	tɑze
 ساخته_ADJ	456	ساخته	ADJ	manufactured			pos_also=NOUN	sɑxte
+کمی_ADV	456	کمی	ADV	a little; slightly			rank=estimated	kæmi
 مقاله_NOUN	457	مقاله	NOUN	article				mæɣɑle
 چین_PROPN	458	چین	PROPN	China				ʧin
 مرد_NOUN	459	مرد	NOUN	man				mærd
@@ -495,6 +498,7 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 شدید_ADJ	488	شدید	ADJ	severe				ʃædid
 مربوط_ADJ	489	مربوط	ADJ	related				mærbut
 فوتبال_NOUN	490	فوتبال	NOUN	soccer				futbɑl
+شاید_ADV	490	شاید	ADV	maybe; perhaps			rank=estimated	ʃɑjæd
 واقع_ADJ	491	واقع	ADJ	located				vɑɣeʔ
 کافی_ADJ	492	کافی	ADJ	sufficient				kɑfi
 آموزش_NOUN	493	آموزش	NOUN	teaching				ɑmuzeʃ
