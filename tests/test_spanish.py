@@ -167,3 +167,6 @@ def test_coordinated_verb_and_question_subject_are_not_commands(ll):
 def test_lower_case_noun_after_names_is_counted(ll):
     t = _tok(ll.level_text("¿Come Ana pan?")[0], "pan")
     assert t["upos"] == "NOUN" and t["headword"] == "pan"
+    # leche is also a form of the unlisted verb lechar: the listed noun wins
+    t = _tok(ll.level_text("¿Bebe Ana leche?")[0], "leche")
+    assert t["upos"] == "NOUN" and t["headword"] == "leche"

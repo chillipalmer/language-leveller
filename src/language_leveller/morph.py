@@ -281,8 +281,11 @@ class MorphCorrector:
                 cue = clitic_in_clause or (prev is not None and not article and (
                     prev.text.lower() in cues or prev.lemma.lower() in cues))
                 # a lower-case word the parser took for part of a name, right after a name,
-                # is that name's verb (Julia toca Bach)
-                if lower_propn and prev is not None and prev.upos == "PROPN" and prev.text[:1].isupper():
+                # is that name's verb (Julia toca Bach), when the verb is a listed word and no
+                # listed noun competes (not ¿Bebe Ana leche?: leche, not lechar)
+                if (lower_propn and prev is not None and prev.upos == "PROPN"
+                        and prev.text[:1].isupper() and self.rank_of(best[0]) is not None
+                        and not any(self.rank_of(a[0]) is not None for a in nominal)):
                     cue = True
                 # a capitalised sentence-initial "proper noun" is usually a capitalisation
                 # artefact, unless the vocab lists it as a noun (heading "Historia")
