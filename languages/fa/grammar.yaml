@@ -199,6 +199,23 @@ features:
     pos: ["من فارسی را دوست دارم.", "او به من کمک کرد."]
     neg: ["من به خانه رفتم."]
 
+- id: fa.compound_verb.shodan
+  level: A1
+  label: Compound verb with شدن (باز شد، انجام شد، سرد شد)
+  source: "Chaarchoob 1, L14"
+  description: >
+    The شدن counterpart of a کردن compound (باز کردن / باز شدن). Mace (5/30) treats
+    many of these as the passive of the کردن verb; Chaarchoob teaches the pairing with
+    compound verbs at A1. No attempt is made to tell passive (انجام شد) from "become"
+    (سرد شد). The participle passive (ساخته شد) is fa.passive.
+  match:
+    graph:
+      v: {upos: [VERB, AUX], lemma: شد}
+      n: {upos: [NOUN, ADJ], rel: ["compound:lvc", xcomp], head: v}
+  tests:
+    pos: ["کار انجام شد.", "این فایل باز نمی‌شود.", "هوا سرد شد.", "کتاب سال گذشته چاپ شد."]
+    neg: ["خانه در سال ۱۳۹۰ ساخته شد.", "او به من کمک کرد.", "او به خانه رفت."]
+
 - id: fa.present.future
   level: A1
   label: Present tense with future meaning (فردا می‌روم)
