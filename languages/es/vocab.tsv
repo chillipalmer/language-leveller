@@ -4,7 +4,7 @@ de_ADP	2	de	ADP	of; from		del
 que_SCONJ	3	que	SCONJ	that; which				
 y_CCONJ	4	y	CCONJ	and		e		
 a_ADP	5	a	ADP	to; at		al		
-en_ADP	6	en	ADP	in; on				
+en_ADP	6	en	ADP	in; on			visual=place	
 un_DET	7	un	DET	a; an	PronType=Art	una|unos|unas		
 ser_VERB	8	ser	VERB	to be (norm)				
 se_PRON	9	se	PRON	[“reflexive” marker]				
@@ -28,16 +28,16 @@ o_CCONJ	26	o	CCONJ	or		u
 poder_VERB	27	poder	VERB	to be able to; can				
 decir_VERB	28	decir	VERB	to tell; say				
 este_DET	29	este	DET	this (m) [esta (f)]		esta|estos|estas		
-ir_VERB	30	ir	VERB	to go				
+ir_VERB	30	ir	VERB	to go			visual=action	
 otro_DET	31	otro	DET	other; another				
 ese_DET	32	ese	DET	that (m) [esa (f)]		esa|esos|esas		
 la_PRON	33	la	PRON	[3rd person] (dir obj-f)		las		
 si_SCONJ	34	si	SCONJ	if; whether				
 me_PRON	35	me	PRON	me (obj)				
 ya_ADV	36	ya	ADV	already; still				
-ver_VERB	37	ver	VERB	to see				
+ver_VERB	37	ver	VERB	to see			visual=action	
 porque_SCONJ	38	porque	SCONJ	because				
-dar_VERB	39	dar	VERB	to give				
+dar_VERB	39	dar	VERB	to give			visual=action	
 cuando_SCONJ	40	cuando	SCONJ	when				
 él_PRON	41	él	PRON	he; [ellos] them (m)		ellos		
 muy_ADV	42	muy	ADV	very; really				
@@ -46,7 +46,7 @@ vez_NOUN	44	vez	NOUN	time (specific occurrence)	Gender=Fem
 mucho_DET	45	mucho	DET	much; many; a lot (adv)			cognate=en	
 saber_VERB	46	saber	VERB	to know (a fact); find out				
 qué_PRON	47	qué	PRON	what?; which?; how (+ adj)!				
-sobre_ADP	48	sobre	ADP	on top of; over; about				
+sobre_ADP	48	sobre	ADP	on top of; over; about			visual=place	
 mi_DET	49	mi	DET	my		mis		
 alguno_DET	50	alguno	DET	some; someone (pron)		algún|alguna|algunos|algunas		
 mismo_DET	51	mismo	DET	same				
@@ -56,15 +56,15 @@ hasta_ADP	54	hasta	ADP	until; up to; even (adv)
 año_NOUN	55	año	NOUN	year	Gender=Masc			
 dos_NUM	56	dos	NUM	two				
 querer_VERB	57	querer	VERB	to want; love				
-entre_ADP	58	entre	ADP	between; among				
+entre_ADP	58	entre	ADP	between; among			visual=place	
 así_ADV	59	así	ADV	like that				
 primero_ADJ	60	primero	ADJ	first		primer		
-desde_ADP	61	desde	ADP	from; since				
-grande_ADJ	62	grande	ADJ	large; great; big		gran		
+desde_ADP	61	desde	ADP	from; since			visual=place	
+grande_ADJ	62	grande	ADJ	large; great; big		gran	visual=pair	
 eso_PRON	63	eso	PRON	that (n)				
 ni_CCONJ	64	ni	CCONJ	not even; neither; nor				
 nos_PRON	65	nos	PRON	us (obj)				
-llegar_VERB	66	llegar	VERB	to arrive				
+llegar_VERB	66	llegar	VERB	to arrive			visual=action	
 pasar_VERB	67	pasar	VERB	to pass; spend (time)			cognate=en	
 tiempo_NOUN	68	tiempo	NOUN	time (general); weather	Gender=Masc			
 ella_PRON	69	ella	PRON	she; [ellas] them (f)		ellas		
@@ -75,10 +75,10 @@ bien_ADV	73	bien	ADV	well
 poco_DET	74	poco	DET	little; few; a little bit (adv)				
 deber_VERB	75	deber	VERB	should; ought to; to owe				
 entonces_ADV	76	entonces	ADV	so; then				
-poner_VERB	77	poner	VERB	to put (on); get (+adj)				
+poner_VERB	77	poner	VERB	to put (on); get (+adj)			visual=action	
 cosa_NOUN	78	cosa	NOUN	thing	Gender=Fem			
 tanto_DET	79	tanto	DET	so much; so many				
-hombre_NOUN	80	hombre	NOUN	man; mankind; husband	Gender=Masc		visual=yes	
+hombre_NOUN	80	hombre	NOUN	man; mankind; husband	Gender=Masc		visual=object	
 parecer_VERB	81	parecer	VERB	to seem; look like				
 nuestro_DET	82	nuestro	DET	our				
 tan_ADV	83	tan	ADV	such; as; too; so				
@@ -90,57 +90,57 @@ vida_NOUN	88	vida	NOUN	life	Gender=Fem
 quedar_VERB	89	quedar	VERB	to remain; stay				
 siempre_ADV	90	siempre	ADV	always; forever				
 creer_VERB	91	creer	VERB	to believe; think				
-hablar_VERB	92	hablar	VERB	to speak; talk				
-llevar_VERB	93	llevar	VERB	to take; carry				
+hablar_VERB	92	hablar	VERB	to speak; talk			visual=action	
+llevar_VERB	93	llevar	VERB	to take; carry			visual=action	
 dejar_VERB	94	dejar	VERB	to let; leave				
 nada_PRON	95	nada	PRON	nothing; (not) at all				
 cada_DET	96	cada	DET	each; every				
 seguir_VERB	97	seguir	VERB	to follow; keep on				
 menos_ADJ	98	menos	ADJ	less; fewer				
-nuevo_ADJ	99	nuevo	ADJ	new				
+nuevo_ADJ	99	nuevo	ADJ	new			visual=pair	
 encontrar_VERB	100	encontrar	VERB	to find				
 algo_PRON	101	algo	PRON	something; somewhat				
 sólo_ADV	102	sólo	ADV	only; just				
 pues_SCONJ	103	pues	SCONJ	then; well then				
 llamar_VERB	104	llamar	VERB	to call; name				
-venir_VERB	105	venir	VERB	to come				
+venir_VERB	105	venir	VERB	to come			visual=action	
 pensar_VERB	106	pensar	VERB	to think				
 aquel_DET	107	aquel	DET	that (over there)		aquella|aquellos|aquellas		
 momento_NOUN	108	momento	NOUN	moment; time	Gender=Masc		cognate=en	
 sino_CCONJ	109	sino	CCONJ	but; except; rather				
 esto_PRON	110	esto	PRON	this (n)				
-salir_VERB	111	salir	VERB	to leave; go out				
+salir_VERB	111	salir	VERB	to leave; go out			visual=action	
 volver_VERB	112	volver	VERB	to return; to V again				
 forma_NOUN	113	forma	NOUN	form; shape; way	Gender=Fem		cognate=en	
 antes_ADV	114	antes	ADV	before				
 bueno_ADJ	115	bueno	ADJ	good		buen		
-casa_NOUN	116	casa	NOUN	house	Gender=Fem		visual=yes	
+casa_NOUN	116	casa	NOUN	house	Gender=Fem		visual=object	
 aunque_SCONJ	117	aunque	SCONJ	although; even though				
-mundo_NOUN	118	mundo	NOUN	world	Gender=Masc		visual=yes	
+mundo_NOUN	118	mundo	NOUN	world	Gender=Masc		visual=object	
 tres_NUM	119	tres	NUM	three				
 tal_DET	120	tal	DET	such (a)				
 mejor_ADJ	121	mejor	ADJ	best; better (adv)				
 tomar_VERB	122	tomar	VERB	to take; drink				
 cierto_DET	123	cierto	DET	certain; sure; true				
 conocer_VERB	124	conocer	VERB	to know (someone or place)				
-hacia_ADP	125	hacia	ADP	toward; towards				
+hacia_ADP	125	hacia	ADP	toward; towards			visual=place	
 cómo_ADV	126	cómo	ADV	how?				
-mujer_NOUN	127	mujer	NOUN	woman; wife	Gender=Fem		visual=yes	
+mujer_NOUN	127	mujer	NOUN	woman; wife	Gender=Fem		visual=object	
 vivir_VERB	128	vivir	VERB	to live				
 aquí_ADV	129	aquí	ADV	here				
 caso_NOUN	130	caso	NOUN	case; occasion	Gender=Masc		cognate=en	
 sentir_VERB	131	sentir	VERB	to feel; regret				
 luego_ADV	132	luego	ADV	later; afterwards				
-país_NOUN	133	país	NOUN	country	Gender=Masc			
+país_NOUN	133	país	NOUN	country	Gender=Masc		visual=map	
 tratar_VERB	134	tratar	VERB	to try; treat; deal with				
 lugar_NOUN	135	lugar	NOUN	place; position	Gender=Masc			
 te_PRON	136	te	PRON	you (obj/+fam)				
-persona_NOUN	137	persona	NOUN	person	Gender=Fem		cognate=en; visual=yes	
+persona_NOUN	137	persona	NOUN	person	Gender=Fem		cognate=en; visual=object	
 mayor_ADJ	138	mayor	ADJ	larger; older; main				
 último_ADJ	139	último	ADJ	last; final				
 propio_ADJ	140	propio	ADJ	own; proper; typical				
 quien_PRON	141	quien	PRON	who; whom		quienes		
-mirar_VERB	142	mirar	VERB	to look; watch				
+mirar_VERB	142	mirar	VERB	to look; watch			visual=action	
 hora_NOUN	143	hora	NOUN	hour; time (specific)	Gender=Fem		cognate=en	
 ninguno_DET	144	ninguno	DET	no; none; nobody (pron)		ningún|ninguna|ningunos|ningunas		
 trabajo_NOUN	145	trabajo	NOUN	work; job; effort	Gender=Masc			
@@ -148,7 +148,7 @@ casi_ADV	146	casi	ADV	almost; nearly
 punto_NOUN	147	punto	NOUN	point; dot; period	Gender=Masc			
 durante_ADV	148	durante	ADV	during; for (time)				
 cualquier_DET	149	cualquier	DET	any; anyone (pron)		cualquiera|cualesquiera		
-mano_NOUN	150	mano	NOUN	hand	Gender=Fem		visual=yes	
+mano_NOUN	150	mano	NOUN	hand	Gender=Fem		visual=object	
 nunca_ADV	151	nunca	ADV	never; ever				
 manera_NOUN	152	manera	NOUN	way; manner	Gender=Fem		cognate=en	
 cual_PRON	153	cual	PRON	which; who; whom		cuales		
@@ -164,7 +164,7 @@ ejemplo_NOUN	162	ejemplo	NOUN	example	Gender=Masc
 esperar_VERB	163	esperar	VERB	to wait; hope (for); expect				
 hoy_ADV	164	hoy	ADV	today; nowadays				
 lado_NOUN	165	lado	NOUN	side	Gender=Masc			
-hijo_NOUN	166	hijo	NOUN	son; [pl] children	Gender=Masc			
+hijo_NOUN	166	hijo	NOUN	son; [pl] children	Gender=Masc		visual=tree	
 allí_ADV	167	allí	ADV	there; over there				
 éste_PRON	168	éste	PRON	this one (m); [ésta (f)]		ésta|éstos|éstas		
 problema_NOUN	169	problema	NOUN	problem	Gender=Masc		cognate=en	
@@ -172,34 +172,34 @@ cuenta_NOUN	170	cuenta	NOUN	bill; account	Gender=Fem
 medio_NOUN	171	medio	NOUN	means; middle; por medio: through	Gender=Masc			
 contra_ADP	172	contra	ADP	against; opposite				
 buscar_VERB	173	buscar	VERB	to look for				
-dentro_ADV	174	dentro	ADV	inside				
-largo_ADJ	175	largo	ADJ	long				
+dentro_ADV	174	dentro	ADV	inside			visual=place	
+largo_ADJ	175	largo	ADJ	long			visual=pair	
 palabra_NOUN	176	palabra	NOUN	word	Gender=Fem			
 existir_VERB	177	existir	VERB	to exist			cognate=en	
-niño_NOUN	178	niño	NOUN	child; little boy	Gender=Masc		visual=yes	
-entrar_VERB	179	entrar	VERB	to enter			cognate=en	
+niño_NOUN	178	niño	NOUN	child; little boy	Gender=Masc		visual=object	
+entrar_VERB	179	entrar	VERB	to enter			cognate=en; visual=action	
 embargo_NOUN	180	embargo	NOUN	sin embargo: nevertheless	Gender=Masc			
 único_ADJ	181	único	ADJ	only; unique; sole				
-padre_NOUN	182	padre	NOUN	father	Gender=Masc			
+padre_NOUN	182	padre	NOUN	father	Gender=Masc		visual=tree	
 trabajar_VERB	183	trabajar	VERB	to work				
-pequeño_ADJ	184	pequeño	ADJ	little; small; young				
-alto_ADJ	185	alto	ADJ	tall; high				
+pequeño_ADJ	184	pequeño	ADJ	little; small; young			visual=pair	
+alto_ADJ	185	alto	ADJ	tall; high			visual=pair	
 cambio_NOUN	186	cambio	NOUN	change	Gender=Masc			
-escribir_VERB	187	escribir	VERB	to write				
+escribir_VERB	187	escribir	VERB	to write			visual=action	
 cuatro_NUM	188	cuatro	NUM	four				
 ahí_ADV	189	ahí	ADV	there				
 perder_VERB	190	perder	VERB	to lose; miss				
 nosotros_PRON	191	nosotros	PRON	we (subj)		nosotras		
 historia_NOUN	192	historia	NOUN	history; story	Gender=Fem		cognate=en	
 idea_NOUN	193	idea	NOUN	idea	Gender=Fem		cognate=en	
-agua_NOUN	194	agua	NOUN	(el) water	Gender=Fem		visual=yes	
+agua_NOUN	194	agua	NOUN	(el) water	Gender=Fem		visual=object	
 producir_VERB	195	producir	VERB	to produce; cause			cognate=en	
-noche_NOUN	196	noche	NOUN	night; evening	Gender=Fem		visual=yes	
-ciudad_NOUN	197	ciudad	NOUN	city	Gender=Fem		cognate=en; visual=yes	
+noche_NOUN	196	noche	NOUN	night; evening	Gender=Fem		visual=object	
+ciudad_NOUN	197	ciudad	NOUN	city	Gender=Fem		cognate=en; visual=object	
 modo_NOUN	198	modo	NOUN	way; manner	Gender=Masc			
 nombre_NOUN	199	nombre	NOUN	name; noun	Gender=Masc			
 ocurrir_VERB	200	ocurrir	VERB	to happen; occur			cognate=en	
-familia_NOUN	201	familia	NOUN	family	Gender=Fem		cognate=en	
+familia_NOUN	201	familia	NOUN	family	Gender=Fem		cognate=en; visual=tree	
 realidad_NOUN	202	realidad	NOUN	reality; actuality	Gender=Fem		cognate=en	
 entender_VERB	203	entender	VERB	to understand				
 pedir_VERB	204	pedir	VERB	to ask for; request				
@@ -212,7 +212,7 @@ mes_NOUN	210	mes	NOUN	month	Gender=Masc
 todavía_ADV	211	todavía	ADV	still; yet				
 razón_NOUN	212	razón	NOUN	reason; tener razón: to be right	Gender=Fem		cognate=en	
 cuanto_DET	213	cuanto	DET	en cuanto a: in terms of; regarding				
-bajo_ADP	214	bajo	ADP	under; underneath				
+bajo_ADP	214	bajo	ADP	under; underneath			visual=place	
 recordar_VERB	215	recordar	VERB	to remember; remind				
 grupo_NOUN	216	grupo	NOUN	group	Gender=Masc		cognate=en	
 mil_NUM	217	mil	NUM	thousand				
@@ -226,11 +226,11 @@ varios_DET	224	varios	DET	several; various			cognate=en
 posible_ADJ	225	posible	ADJ	possible			cognate=en	
 servir_VERB	226	servir	VERB	to serve			cognate=en	
 general_ADJ	227	general	ADJ	general			cognate=en	
-sacar_VERB	228	sacar	VERB	to take out				
+sacar_VERB	228	sacar	VERB	to take out			visual=action	
 necesitar_VERB	229	necesitar	VERB	to need				
 relación_NOUN	230	relación	NOUN	relationship; relation	Gender=Fem		cognate=en	
 cinco_NUM	231	cinco	NUM	five				
-cuerpo_NOUN	232	cuerpo	NOUN	body	Gender=Masc		visual=yes	
+cuerpo_NOUN	232	cuerpo	NOUN	body	Gender=Masc		visual=object	
 nadie_PRON	233	nadie	PRON	nobody; anybody				
 mantener_VERB	234	mantener	VERB	to keep; maintain			cognate=en	
 hecho_NOUN	235	hecho	NOUN	fact; happening	Gender=Masc			
@@ -242,16 +242,16 @@ señor_NOUN	240	señor	NOUN	sir; Mr; lord	Gender=Masc
 pueblo_NOUN	241	pueblo	NOUN	people; village	Gender=Masc			
 tarde_NOUN	242	tarde	NOUN	afternoon; evening	Gender=Fem			
 segundo_ADJ	243	segundo	ADJ	second				
-leer_VERB	244	leer	VERB	to read				
-caer_VERB	245	caer	VERB	to fall				
+leer_VERB	244	leer	VERB	to read			visual=action	
+caer_VERB	245	caer	VERB	to fall			visual=action	
 cambiar_VERB	246	cambiar	VERB	to change				
-ojo_NOUN	247	ojo	NOUN	eye	Gender=Masc		visual=yes	
-calle_NOUN	248	calle	NOUN	street	Gender=Fem		visual=yes	
+ojo_NOUN	247	ojo	NOUN	eye	Gender=Masc		visual=object	
+calle_NOUN	248	calle	NOUN	street	Gender=Fem		visual=object	
 presentar_VERB	249	presentar	VERB	to introduce; present			cognate=en	
-blanco_ADJ	250	blanco	ADJ	white				
+blanco_ADJ	250	blanco	ADJ	white			visual=pair	
 crear_VERB	251	crear	VERB	to create			cognate=en	
-abrir_VERB	252	abrir	VERB	to open				
-libro_NOUN	253	libro	NOUN	book	Gender=Masc		visual=yes	
+abrir_VERB	252	abrir	VERB	to open			visual=action	
+libro_NOUN	253	libro	NOUN	book	Gender=Masc		visual=object	
 distinto_ADJ	254	distinto	ADJ	distinct; different			cognate=en	
 fuerza_NOUN	255	fuerza	NOUN	strength; force; power	Gender=Fem			
 luz_NOUN	256	luz	NOUN	light	Gender=Fem			
@@ -275,11 +275,11 @@ siglo_NOUN	273	siglo	NOUN	century; age	Gender=Masc
 dios_NOUN	274	dios	NOUN	god; divinity	Gender=Masc			
 malo_ADJ	275	malo	ADJ	bad		mal		
 tierra_NOUN	276	tierra	NOUN	earth; land; ground	Gender=Fem			
-papel_NOUN	277	papel	NOUN	paper; role; part	Gender=Masc		visual=yes	
-madre_NOUN	278	madre	NOUN	mother	Gender=Fem			
+papel_NOUN	277	papel	NOUN	paper; role; part	Gender=Masc		visual=object	
+madre_NOUN	278	madre	NOUN	mother	Gender=Fem		visual=tree	
 tampoco_ADV	279	tampoco	ADV	neither; nor; either				
 social_ADJ	280	social	ADJ	social			cognate=en	
-viejo_ADJ	281	viejo	ADJ	old; aged				
+viejo_ADJ	281	viejo	ADJ	old; aged			visual=pair	
 aún_ADV	282	aún	ADV	still; yet				
 tema_NOUN	283	tema	NOUN	theme; subject; topic	Gender=Masc			
 político_ADJ	284	político	ADJ	political			cognate=en	
@@ -287,16 +287,16 @@ español_ADJ	285	español	ADJ	Spanish
 ganar_VERB	286	ganar	VERB	to win; earn				
 formar_VERB	287	formar	VERB	to form			cognate=en	
 clase_NOUN	288	clase	NOUN	kind; class; order	Gender=Fem			
-traer_VERB	289	traer	VERB	to bring; carry				
+traer_VERB	289	traer	VERB	to bring; carry			visual=action	
 partir_VERB	290	partir	VERB	to divide; leave; a partir de: starting				
-dinero_NOUN	291	dinero	NOUN	money	Gender=Masc		visual=yes	
+dinero_NOUN	291	dinero	NOUN	money	Gender=Masc		visual=object	
 quién_PRON	292	quién	PRON	who?; whom?		quiénes		
 morir_VERB	293	morir	VERB	to die				
 incluso_ADV	294	incluso	ADV	including; even (adv)				
-campo_NOUN	295	campo	NOUN	field; country	Gender=Masc		visual=yes	
+campo_NOUN	295	campo	NOUN	field; country	Gender=Masc		visual=object	
 aceptar_VERB	296	aceptar	VERB	to accept			cognate=en	
 quizás_ADV	297	quizás	ADV	perhaps; maybe		quizá		
-cabeza_NOUN	298	cabeza	NOUN	head (part of body)	Gender=Fem		visual=yes	
+cabeza_NOUN	298	cabeza	NOUN	head (part of body)	Gender=Fem		visual=object	
 realizar_VERB	299	realizar	VERB	to fulfill; carry out				
 ciento_NUM	300	ciento	NUM	hundred		cien		
 mal_ADV	301	mal	ADV	badly				
@@ -315,22 +315,22 @@ acuerdo_NOUN	313	acuerdo	NOUN	accord; de acuerdo: in agreement	Gender=Masc
 difícil_ADJ	314	difícil	ADJ	difficult; hard			cognate=en	
 número_NOUN	315	número	NOUN	number	Gender=Masc		cognate=en	
 explicar_VERB	316	explicar	VERB	to explain			cognate=en	
-negro_ADJ	317	negro	ADJ	black				
+negro_ADJ	317	negro	ADJ	black			visual=pair	
 fondo_NOUN	318	fondo	NOUN	bottom; end	Gender=Masc			
-camino_NOUN	319	camino	NOUN	road; route; path	Gender=Masc		visual=yes	
+camino_NOUN	319	camino	NOUN	road; route; path	Gender=Masc		visual=object	
 voz_NOUN	320	voz	NOUN	voice	Gender=Fem			
 estudio_NOUN	321	estudio	NOUN	study; learning	Gender=Masc		cognate=en	
 necesario_ADJ	322	necesario	ADJ	necessary			cognate=en	
 preguntar_VERB	323	preguntar	VERB	to ask (a question)				
 allá_ADV	324	allá	ADV	there; over there				
-tocar_VERB	325	tocar	VERB	to touch; play (instrument)				
+tocar_VERB	325	tocar	VERB	to touch; play (instrument)			visual=action	
 valor_NOUN	326	valor	NOUN	value; worth	Gender=Masc			
 reconocer_VERB	327	reconocer	VERB	to recognize; admit				
 estudiar_VERB	328	estudiar	VERB	to study				
 alcanzar_VERB	329	alcanzar	VERB	to reach; catch up with				
 nacer_VERB	330	nacer	VERB	to be born				
 dirigir_VERB	331	dirigir	VERB	to direct; manage				
-correr_VERB	332	correr	VERB	to run				
+correr_VERB	332	correr	VERB	to run			visual=action	
 medida_NOUN	333	medida	NOUN	measure; a medida que: to the extent	Gender=Fem			
 menor_ADJ	334	menor	ADJ	younger; youngest				
 demasiado_DET	335	demasiado	DET	too much; too many				
@@ -340,25 +340,25 @@ utilizar_VERB	338	utilizar	VERB	to use; utilize			cognate=en
 centro_NOUN	339	centro	NOUN	center; middle; downtown	Gender=Masc		cognate=en	
 necesidad_NOUN	340	necesidad	NOUN	necessity; need	Gender=Fem		cognate=en	
 condición_NOUN	341	condición	NOUN	condition	Gender=Fem		cognate=en	
-pagar_VERB	342	pagar	VERB	to pay				
+pagar_VERB	342	pagar	VERB	to pay			visual=action	
 ello_PRON	343	ello	PRON	it (subj-n)				
 falta_NOUN	344	falta	NOUN	lack; shortage	Gender=Fem			
 ayudar_VERB	345	ayudar	VERB	to help				
 diez_NUM	346	diez	NUM	ten				
 través_ADV	347	través	ADV	a través: across; over; through				
-antiguo_ADJ	348	antiguo	ADJ	old; ancient; former				
+antiguo_ADJ	348	antiguo	ADJ	old; ancient; former			visual=pair	
 tu_DET	349	tu	DET	your (sg/+fam)		tus		
 edad_NOUN	350	edad	NOUN	age	Gender=Fem			
 estado_NOUN	351	estado	NOUN	state; condition; status	Gender=Masc			
 ser_NOUN	352	ser	NOUN	being	Gender=Masc			
 gustar_VERB	353	gustar	VERB	to be pleasing to				
-puerta_NOUN	354	puerta	NOUN	door	Gender=Fem		visual=yes	
-jugar_VERB	355	jugar	VERB	to play (sport/game)				
-cara_NOUN	356	cara	NOUN	face; expression	Gender=Fem		visual=yes	
+puerta_NOUN	354	puerta	NOUN	door	Gender=Fem		visual=object	
+jugar_VERB	355	jugar	VERB	to play (sport/game)			visual=action	
+cara_NOUN	356	cara	NOUN	face; expression	Gender=Fem		visual=object	
 mí_PRON	357	mí	PRON	me (obj prep)				
 época_NOUN	358	época	NOUN	time; age; period	Gender=Fem			
 color_NOUN	359	color	NOUN	color	Gender=Masc		cognate=en	
-escuchar_VERB	360	escuchar	VERB	to listen to				
+escuchar_VERB	360	escuchar	VERB	to listen to			visual=action	
 experiencia_NOUN	361	experiencia	NOUN	experience	Gender=Fem		cognate=en	
 movimiento_NOUN	362	movimiento	NOUN	movement	Gender=Masc		cognate=en	
 cumplir_VERB	363	cumplir	VERB	to fulfill				
@@ -370,13 +370,13 @@ ofrecer_VERB	368	ofrecer	VERB	to offer; present
 descubrir_VERB	369	descubrir	VERB	to discover				
 anterior_ADJ	370	anterior	ADJ	previous; preceding				
 juego_NOUN	371	juego	NOUN	game; play; sport	Gender=Masc			
-levantar_VERB	372	levantar	VERB	to raise; lift				
-pobre_ADJ	373	pobre	ADJ	poor				
+levantar_VERB	372	levantar	VERB	to raise; lift			visual=action	
+pobre_ADJ	373	pobre	ADJ	poor			visual=pair	
 aire_NOUN	374	aire	NOUN	air; wind; appearance	Gender=Masc		cognate=en	
 seis_NUM	375	seis	NUM	six				
 intentar_VERB	376	intentar	VERB	to try; attempt				
 guerra_NOUN	377	guerra	NOUN	war; warfare	Gender=Fem			
-junto_ADV	378	junto	ADV	together with; next to				
+junto_ADV	378	junto	ADV	together with; next to			visual=place	
 resultado_NOUN	379	resultado	NOUN	result; outcome	Gender=Masc		cognate=en	
 usar_VERB	380	usar	VERB	to use			cognate=en	
 decidir_VERB	381	decidir	VERB	to decide			cognate=en	
@@ -384,13 +384,13 @@ repetir_VERB	382	repetir	VERB	to repeat			cognate=en
 olvidar_VERB	383	olvidar	VERB	to forget				
 ley_NOUN	384	ley	NOUN	law; bill; rule	Gender=Fem			
 aspecto_NOUN	385	aspecto	NOUN	aspect; appearance	Gender=Masc		cognate=en	
-pie_NOUN	386	pie	NOUN	foot; base	Gender=Masc		visual=yes	
+pie_NOUN	386	pie	NOUN	foot; base	Gender=Masc		visual=object	
 valer_VERB	387	valer	VERB	to be worth; cost				
 especie_NOUN	388	especie	NOUN	kind; sort; species	Gender=Fem			
-comer_VERB	389	comer	VERB	to eat				
+comer_VERB	389	comer	VERB	to eat			visual=action	
 servicio_NOUN	390	servicio	NOUN	service; helpfulness	Gender=Masc		cognate=en	
-cerca_ADV	391	cerca	ADV	close; near				
-mostrar_VERB	392	mostrar	VERB	to show				
+cerca_ADV	391	cerca	ADV	close; near			visual=place	
+mostrar_VERB	392	mostrar	VERB	to show			visual=action	
 actividad_NOUN	393	actividad	NOUN	activity; action	Gender=Fem		cognate=en	
 tercero_ADJ	394	tercero	ADJ	third		tercer		
 cuál_PRON	395	cuál	PRON	which?		cuáles		
@@ -410,7 +410,7 @@ sociedad_NOUN	408	sociedad	NOUN	society	Gender=Fem		cognate=en
 referir_VERB	409	referir	VERB	to refer (to)			cognate=en	
 acercar_VERB	410	acercar	VERB	to come near				
 capaz_ADJ	411	capaz	ADJ	capable; able				
-bajo_ADJ	412	bajo	ADJ	short; low				
+bajo_ADJ	412	bajo	ADJ	short; low			visual=pair	
 libre_ADJ	413	libre	ADJ	free; vacant				
 natural_ADJ	414	natural	ADJ	natural			cognate=en	
 dedicar_VERB	415	dedicar	VERB	to dedicate; devote			cognate=en	
@@ -430,18 +430,18 @@ poder_NOUN	428	poder	NOUN	power	Gender=Masc
 importancia_NOUN	429	importancia	NOUN	importance	Gender=Fem		cognate=en	
 sistema_NOUN	430	sistema	NOUN	system	Gender=Masc		cognate=en	
 viaje_NOUN	431	viaje	NOUN	travel; trip	Gender=Masc			
-suelo_NOUN	432	suelo	NOUN	ground; floor	Gender=Masc		visual=yes	
+suelo_NOUN	432	suelo	NOUN	ground; floor	Gender=Masc		visual=object	
 respecto_NOUN	433	respecto	NOUN	respect; con respecto a: with regards to	Gender=Masc		cognate=en	
 conocimiento_NOUN	434	conocimiento	NOUN	knowledge	Gender=Masc			
 libertad_NOUN	435	libertad	NOUN	freedom; liberty	Gender=Fem		cognate=en	
-encima_ADV	436	encima	ADV	above; on top; in addition				
-comprar_VERB	437	comprar	VERB	to buy				
+encima_ADV	436	encima	ADV	above; on top; in addition			visual=place	
+comprar_VERB	437	comprar	VERB	to buy			visual=action	
 común_ADJ	438	común	ADJ	common			cognate=en	
-abierto_ADJ	439	abierto	ADJ	open; unlocked				
+abierto_ADJ	439	abierto	ADJ	open; unlocked			visual=pair	
 próximo_ADJ	440	próximo	ADJ	next				
 atención_NOUN	441	atención	NOUN	attention	Gender=Fem		cognate=en	
-joven_ADJ	442	joven	ADJ	young				
-subir_VERB	443	subir	VERB	to go up				
+joven_ADJ	442	joven	ADJ	young			visual=pair	
+subir_VERB	443	subir	VERB	to go up			visual=action	
 esfuerzo_NOUN	444	esfuerzo	NOUN	effort; endeavor	Gender=Masc			
 pasado_ADJ	445	pasado	ADJ	past; last				
 evitar_VERB	446	evitar	VERB	to avoid; prevent				
@@ -449,17 +449,17 @@ resto_NOUN	447	resto	NOUN	rest; remainder; leftover	Gender=Masc		cognate=en
 interesar_VERB	448	interesar	VERB	to interest			cognate=en	
 zona_NOUN	449	zona	NOUN	area; zone	Gender=Fem		cognate=en	
 miedo_NOUN	450	miedo	NOUN	fear	Gender=Masc			
-fuera_ADV	451	fuera	ADV	out; outside; away				
+fuera_ADV	451	fuera	ADV	out; outside; away			visual=place	
 proceso_NOUN	452	proceso	NOUN	process; procedure	Gender=Masc		cognate=en	
 vivo_ADJ	453	vivo	ADJ	alive; bright				
-cerrar_VERB	454	cerrar	VERB	to close				
+cerrar_VERB	454	cerrar	VERB	to close			visual=action	
 echar_VERB	455	echar	VERB	to throw; cast				
 responder_VERB	456	responder	VERB	to answer; respond			cognate=en	
 sufrir_VERB	457	sufrir	VERB	to suffer; undergo			cognate=en	
 completo_ADJ	458	completo	ADJ	complete			cognate=en	
 minuto_NOUN	459	minuto	NOUN	minute	Gender=Masc		cognate=en	
 contrario_ADJ	460	contrario	ADJ	contrary; opposite			cognate=en	
-mesa_NOUN	461	mesa	NOUN	table; board	Gender=Fem		visual=yes	
+mesa_NOUN	461	mesa	NOUN	table; board	Gender=Fem		visual=object	
 real_ADJ	462	real	ADJ	royal; real; authentic				
 ocasión_NOUN	463	ocasión	NOUN	opportunity; occasion	Gender=Fem			
 importar_VERB	464	importar	VERB	to matter; import			cognate=en	
@@ -467,11 +467,11 @@ público_ADJ	465	público	ADJ	public			cognate=en
 obtener_VERB	466	obtener	VERB	to obtain			cognate=en	
 programa_NOUN	467	programa	NOUN	program; plan	Gender=Masc		cognate=en	
 favor_NOUN	468	favor	NOUN	favor; benefit	Gender=Masc		cognate=en	
-lejos_ADV	469	lejos	ADV	far (away, off)				
+lejos_ADV	469	lejos	ADV	far (away, off)			visual=place	
 siete_NUM	470	siete	NUM	seven				
 enorme_ADJ	471	enorme	ADJ	enormous; vast			cognate=en	
 respuesta_NOUN	472	respuesta	NOUN	answer; reply	Gender=Fem			
-línea_NOUN	473	línea	NOUN	line; course	Gender=Fem		cognate=en; visual=yes	
+línea_NOUN	473	línea	NOUN	line; course	Gender=Fem		cognate=en; visual=object	
 espacio_NOUN	474	espacio	NOUN	space; room	Gender=Masc			
 nivel_NOUN	475	nivel	NOUN	level	Gender=Masc			
 gobierno_NOUN	476	gobierno	NOUN	government	Gender=Masc			
@@ -491,11 +491,11 @@ profundo_ADJ	489	profundo	ADJ	deep; profound
 detener_VERB	490	detener	VERB	to stop; detain				
 desarrollar_VERB	491	desarrollar	VERB	to develop				
 ocho_NUM	492	ocho	NUM	eight				
-señalar_VERB	493	señalar	VERB	to point (out); signal				
+señalar_VERB	493	señalar	VERB	to point (out); signal			visual=action	
 elegir_VERB	494	elegir	VERB	to choose; elect				
 figura_NOUN	495	figura	NOUN	figure	Gender=Fem		cognate=en	
 principal_ADJ	496	principal	ADJ	main; principal			cognate=en	
-animal_NOUN	497	animal	NOUN	animal	Gender=Masc		cognate=en; visual=yes	
+animal_NOUN	497	animal	NOUN	animal	Gender=Masc		cognate=en; visual=object	
 base_NOUN	498	base	NOUN	base; basis	Gender=Fem		cognate=en	
 preparar_VERB	499	preparar	VERB	to prepare			cognate=en	
 proponer_VERB	500	proponer	VERB	to propose				
@@ -506,7 +506,7 @@ motivo_NOUN	504	motivo	NOUN	motive; cause	Gender=Masc		cognate=en
 prueba_NOUN	505	prueba	NOUN	proof; trial; test	Gender=Fem			
 política_NOUN	506	política	NOUN	politics; policy	Gender=Fem		cognate=en	
 nacional_ADJ	507	nacional	ADJ	national			cognate=en	
-lleno_ADJ	508	lleno	ADJ	full; filled				
+lleno_ADJ	508	lleno	ADJ	full; filled			visual=pair	
 reunir_VERB	509	reunir	VERB	to gather; meet; collect				
 faltar_VERB	510	faltar	VERB	to be lacking				
 supuesto_ADJ	511	supuesto	ADJ	supposed; por supuesto: of course				
@@ -530,19 +530,19 @@ desaparecer_VERB	528	desaparecer	VERB	to disappear; vanish
 mandar_VERB	529	mandar	VERB	to send; order				
 carácter_NOUN	530	carácter	NOUN	personality; nature	Gender=Masc			
 mayoría_NOUN	531	mayoría	NOUN	majority	Gender=Fem			
-escuela_NOUN	532	escuela	NOUN	school	Gender=Fem		visual=yes	
-rojo_ADJ	533	rojo	ADJ	red				
+escuela_NOUN	532	escuela	NOUN	school	Gender=Fem		visual=object	
+rojo_ADJ	533	rojo	ADJ	red			visual=pair	
 tras_ADP	534	tras	ADP	after; behind				
 superior_ADJ	535	superior	ADJ	superior; upper			cognate=en	
-andar_VERB	536	andar	VERB	to walk; function				
-corto_ADJ	537	corto	ADJ	short; brief				
+andar_VERB	536	andar	VERB	to walk; function			visual=action	
+corto_ADJ	537	corto	ADJ	short; brief			visual=pair	
 autor_NOUN	538	autor	NOUN	writer; author	Gender=Masc,Fem	autora	cognate=en	
-hermano_NOUN	539	hermano	NOUN	brother; [pl] siblings	Gender=Masc			
+hermano_NOUN	539	hermano	NOUN	brother; [pl] siblings	Gender=Masc		visual=tree	
 conocido_ADJ	540	conocido	ADJ	known; well-known				
 preferir_VERB	541	preferir	VERB	to prefer			cognate=en	
 asegurar_VERB	542	asegurar	VERB	to assure; secure; insure				
 función_NOUN	543	función	NOUN	function; meeting	Gender=Fem		cognate=en	
-arriba_ADV	544	arriba	ADV	up; above				
+arriba_ADV	544	arriba	ADV	up; above			visual=place	
 serio_ADJ	545	serio	ADJ	serious			cognate=en	
 causa_NOUN	546	causa	NOUN	cause	Gender=Fem		cognate=en	
 suficiente_ADJ	547	suficiente	ADJ	sufficient; enough			cognate=en	
@@ -554,24 +554,24 @@ crecer_VERB	552	crecer	VERB	to grow; increase
 surgir_VERB	553	surgir	VERB	to appear; spring (forth)				
 tú_PRON	554	tú	PRON	you (subj-sg/+fam)				
 expresión_NOUN	555	expresión	NOUN	expression	Gender=Fem		cognate=en	
-alrededor_ADV	556	alrededor	ADV	about; around; round				
+alrededor_ADV	556	alrededor	ADV	about; around; round			visual=place	
 matar_VERB	557	matar	VERB	to kill				
-entregar_VERB	558	entregar	VERB	to deliver				
-río_NOUN	559	río	NOUN	river	Gender=Masc		visual=yes	
+entregar_VERB	558	entregar	VERB	to deliver			visual=action	
+río_NOUN	559	río	NOUN	river	Gender=Masc		visual=object	
 seguridad_NOUN	560	seguridad	NOUN	security; safety	Gender=Fem		cognate=en	
 término_NOUN	561	término	NOUN	term (language); end	Gender=Masc			
 colocar_VERB	562	colocar	VERB	to place; position				
 metro_NOUN	563	metro	NOUN	meter; subway	Gender=Masc		cognate=en	
-médico_NOUN	564	médico	NOUN	doctor	Gender=Masc,Fem	médica	visual=yes	
+médico_NOUN	564	médico	NOUN	doctor	Gender=Masc,Fem	médica	visual=object	
 establecer_VERB	565	establecer	VERB	to establish				
 guardar_VERB	566	guardar	VERB	to keep; save				
 arte_NOUN	567	arte	NOUN	art; skill	Gender=Masc		cognate=en	
 iniciar_VERB	568	iniciar	VERB	to initiate; start				
-bajar_VERB	569	bajar	VERB	to come down; let down				
+bajar_VERB	569	bajar	VERB	to come down; let down			visual=action	
 consecuencia_NOUN	570	consecuencia	NOUN	consequence	Gender=Fem		cognate=en	
 notar_VERB	571	notar	VERB	to notice				
 acto_NOUN	572	acto	NOUN	act; action	Gender=Masc		cognate=en	
-meter_VERB	573	meter	VERB	to put (into)				
+meter_VERB	573	meter	VERB	to put (into)			visual=action	
 absoluto_ADJ	574	absoluto	ADJ	absolute			cognate=en	
 pena_NOUN	575	pena	NOUN	trouble; valer la pena: be of worth	Gender=Fem			
 actuar_VERB	576	actuar	VERB	to act			cognate=en	
@@ -584,7 +584,7 @@ veinte_NUM	582	veinte	NUM	twenty
 sueño_NOUN	583	sueño	NOUN	dream; sleep	Gender=Masc			
 pretender_VERB	584	pretender	VERB	to attempt				
 tarea_NOUN	585	tarea	NOUN	task; job	Gender=Fem			
-carta_NOUN	586	carta	NOUN	letter; (playing) card	Gender=Fem		visual=yes	
+carta_NOUN	586	carta	NOUN	letter; (playing) card	Gender=Fem		visual=object	
 apenas_ADV	587	apenas	ADV	hardly; barely				
 propiedad_NOUN	588	propiedad	NOUN	property	Gender=Fem		cognate=en	
 producto_NOUN	589	producto	NOUN	product	Gender=Masc		cognate=en	
@@ -595,11 +595,11 @@ gusto_NOUN	593	gusto	NOUN	pleasure; taste; preference	Gender=Masc
 ayuda_NOUN	594	ayuda	NOUN	help; aid	Gender=Fem			
 acordar_VERB	595	acordar	VERB	to remember; remind				
 lengua_NOUN	596	lengua	NOUN	language; tongue; strip (of land)	Gender=Fem			
-cortar_VERB	597	cortar	VERB	to cut				
+cortar_VERB	597	cortar	VERB	to cut			visual=action	
 plan_NOUN	598	plan	NOUN	plan	Gender=Masc		cognate=en	
 corresponder_VERB	599	corresponder	VERB	to correspond with			cognate=en	
 vuelta_NOUN	600	vuelta	NOUN	return; turn	Gender=Fem			
-romper_VERB	601	romper	VERB	to break				
+romper_VERB	601	romper	VERB	to break			visual=action	
 siquiera_ADV	602	siquiera	ADV	even (if)				
 adquirir_VERB	603	adquirir	VERB	to acquire; get			cognate=en	
 proyecto_NOUN	604	proyecto	NOUN	project; plan	Gender=Masc		cognate=en	
@@ -607,33 +607,33 @@ memoria_NOUN	605	memoria	NOUN	memory	Gender=Fem		cognate=en
 origen_NOUN	606	origen	NOUN	origin; cause	Gender=Masc		cognate=en	
 elemento_NOUN	607	elemento	NOUN	element	Gender=Masc		cognate=en	
 inglés_ADJ	608	inglés	ADJ	English				
-mercado_NOUN	609	mercado	NOUN	market	Gender=Masc		visual=yes	
+mercado_NOUN	609	mercado	NOUN	market	Gender=Masc		visual=object	
 curso_NOUN	610	curso	NOUN	course; direction	Gender=Masc			
-lanzar_VERB	611	lanzar	VERB	to throw; launch				
+lanzar_VERB	611	lanzar	VERB	to throw; launch			visual=action	
 aprovechar_VERB	612	aprovechar	VERB	to take advantage of				
-sangre_NOUN	613	sangre	NOUN	blood	Gender=Fem		visual=yes	
+sangre_NOUN	613	sangre	NOUN	blood	Gender=Fem		visual=object	
 interior_NOUN	614	interior	NOUN	interior; inside	Gender=Masc		cognate=en	
 duro_ADJ	615	duro	ADJ	hard				
 apoyar_VERB	616	apoyar	VERB	to support; lean on				
 negar_VERB	617	negar	VERB	to deny; refuse				
 avanzar_VERB	618	avanzar	VERB	to advance; progress			cognate=en	
 uso_NOUN	619	uso	NOUN	use	Gender=Masc		cognate=en	
-brazo_NOUN	620	brazo	NOUN	arm	Gender=Masc		visual=yes	
-profesor_NOUN	621	profesor	NOUN	professor; teacher	Gender=Masc,Fem	profesora	cognate=en; visual=yes	
+brazo_NOUN	620	brazo	NOUN	arm	Gender=Masc		visual=object	
+profesor_NOUN	621	profesor	NOUN	professor; teacher	Gender=Masc,Fem	profesora	cognate=en; visual=object	
 resolver_VERB	622	resolver	VERB	to resolve; settle; work out			cognate=en	
 futuro_NOUN	623	futuro	NOUN	future	Gender=Masc		cognate=en	
 oportunidad_NOUN	624	oportunidad	NOUN	opportunity; chance	Gender=Fem		cognate=en	
 mitad_NOUN	625	mitad	NOUN	half; middle	Gender=Fem			
 costar_VERB	626	costar	VERB	to cost; be hard			cognate=en	
-rico_ADJ	627	rico	ADJ	rich; tasty			cognate=en	
+rico_ADJ	627	rico	ADJ	rich; tasty			cognate=en; visual=pair	
 recuerdo_NOUN	628	recuerdo	NOUN	memory; keepsake	Gender=Masc			
 total_ADJ	629	total	ADJ	total; entire			cognate=en	
 exigir_VERB	630	exigir	VERB	to demand				
-abajo_ADV	631	abajo	ADV	down; below; downward				
+abajo_ADV	631	abajo	ADV	down; below; downward			visual=place	
 opinión_NOUN	632	opinión	NOUN	opinion; view	Gender=Fem		cognate=en	
 aumentar_VERB	633	aumentar	VERB	to increase				
-recoger_VERB	634	recoger	VERB	to pick up				
-boca_NOUN	635	boca	NOUN	mouth; entrance; opening	Gender=Fem		visual=yes	
+recoger_VERB	634	recoger	VERB	to pick up			visual=action	
+boca_NOUN	635	boca	NOUN	mouth; entrance; opening	Gender=Fem		visual=object	
 dirección_NOUN	636	dirección	NOUN	direction; address	Gender=Fem		cognate=en	
 puro_ADJ	637	puro	ADJ	pure; clean			cognate=en	
 abandonar_VERB	638	abandonar	VERB	to abandon; leave (a place)			cognate=en	
@@ -643,17 +643,17 @@ imponer_VERB	641	imponer	VERB	to impose; enforce
 obligar_VERB	642	obligar	VERB	to obligate; force			cognate=en	
 físico_ADJ	643	físico	ADJ	physical			cognate=en	
 actitud_NOUN	644	actitud	NOUN	attitude	Gender=Fem			
-mar_NOUN	645	mar	NOUN	sea	Gender=Masc,Fem		visual=yes	
+mar_NOUN	645	mar	NOUN	sea	Gender=Masc,Fem		visual=object	
 francés_ADJ	646	francés	ADJ	French			cognate=en	
 entrada_NOUN	647	entrada	NOUN	entrance; admission ticket	Gender=Fem			
 contacto_NOUN	648	contacto	NOUN	contact	Gender=Masc		cognate=en	
-corazón_NOUN	649	corazón	NOUN	heart; core	Gender=Masc		visual=yes	
+corazón_NOUN	649	corazón	NOUN	heart; core	Gender=Masc		visual=object	
 aplicar_VERB	650	aplicar	VERB	to apply				
-capital_NOUN	651	capital	NOUN	capital; city (f); money (m)	Gender=Masc,Fem		cognate=en	
-rápido_ADJ	652	rápido	ADJ	quick; fast				
+capital_NOUN	651	capital	NOUN	capital; city (f); money (m)	Gender=Masc,Fem		cognate=en; visual=map	
+rápido_ADJ	652	rápido	ADJ	quick; fast			visual=pair	
 título_NOUN	653	título	NOUN	title; heading	Gender=Masc		cognate=en	
 pertenecer_VERB	654	pertenecer	VERB	to belong				
-cuarto_NOUN	655	cuarto	NOUN	room; chamber	Gender=Masc		visual=yes	
+cuarto_NOUN	655	cuarto	NOUN	room; chamber	Gender=Masc		visual=object	
 material_NOUN	656	material	NOUN	material; element	Gender=Masc		cognate=en	
 golpe_NOUN	657	golpe	NOUN	hit; strike; punch	Gender=Masc			
 disponer_VERB	658	disponer	VERB	to have means; dispose				
@@ -678,28 +678,28 @@ actual_ADJ	676	actual	ADJ	current
 marcar_VERB	677	marcar	VERB	to mark; note; dial			cognate=en	
 distancia_NOUN	678	distancia	NOUN	distance	Gender=Fem		cognate=en	
 pleno_ADJ	679	pleno	ADJ	complete; full				
-cerrado_ADJ	680	cerrado	ADJ	closed				
+cerrado_ADJ	680	cerrado	ADJ	closed			visual=pair	
 compartir_VERB	681	compartir	VERB	to share				
 información_NOUN	682	información	NOUN	information	Gender=Fem		cognate=en	
 ambiente_NOUN	683	ambiente	NOUN	environment; atmosphere	Gender=Masc			
 especialmente_ADV	684	especialmente	ADV	especially			cognate=en	
 desarrollo_NOUN	685	desarrollo	NOUN	development	Gender=Masc			
-sol_NOUN	686	sol	NOUN	sun	Gender=Masc		visual=yes	
+sol_NOUN	686	sol	NOUN	sun	Gender=Masc		visual=object	
 muerto_ADJ	687	muerto	ADJ	dead				
 consistir_VERB	688	consistir	VERB	to consist of			cognate=en	
 constituir_VERB	689	constituir	VERB	to constitute; consist of			cognate=en	
 dispuesto_ADJ	690	dispuesto	ADJ	willing; ready				
-cubrir_VERB	691	cubrir	VERB	to cover				
+cubrir_VERB	691	cubrir	VERB	to cover			visual=action	
 funcionar_VERB	692	funcionar	VERB	to work; function			cognate=en	
 compañero_NOUN	693	compañero	NOUN	companion; classmate	Gender=Masc			
 salida_NOUN	694	salida	NOUN	exit; escape; outcome	Gender=Fem			
 caber_VERB	695	caber	VERB	to fit (into)				
 conciencia_NOUN	696	conciencia	NOUN	conscience; consciousness	Gender=Fem		cognate=en	
 atender_VERB	697	atender	VERB	to serve; attend to				
-enfermo_ADJ	698	enfermo	ADJ	ill; sick				
+enfermo_ADJ	698	enfermo	ADJ	ill; sick			visual=pair	
 insistir_VERB	699	insistir	VERB	to insist on			cognate=en	
 costumbre_NOUN	700	costumbre	NOUN	habit; custom; usage	Gender=Fem			
-detrás_ADV	701	detrás	ADV	behind				
+detrás_ADV	701	detrás	ADV	behind			visual=place	
 paz_NOUN	702	paz	NOUN	peace	Gender=Fem			
 noticia_NOUN	703	noticia	NOUN	news	Gender=Fem			
 circunstancia_NOUN	704	circunstancia	NOUN	circumstance	Gender=Fem		cognate=en	
@@ -708,23 +708,23 @@ privado_ADJ	706	privado	ADJ	private			cognate=en
 estilo_NOUN	707	estilo	NOUN	style	Gender=Masc			
 precio_NOUN	708	precio	NOUN	price; cost; value	Gender=Masc			
 popular_ADJ	709	popular	ADJ	popular			cognate=en	
-sentar_VERB	710	sentar	VERB	to sit (down); seat				
-planta_NOUN	711	planta	NOUN	plant; floor	Gender=Fem		cognate=en; visual=yes	
+sentar_VERB	710	sentar	VERB	to sit (down); seat			visual=action	
+planta_NOUN	711	planta	NOUN	plant; floor	Gender=Fem		cognate=en; visual=object	
 personaje_NOUN	712	personaje	NOUN	character (e.g. movie)	Gender=Masc			
 famoso_ADJ	713	famoso	ADJ	famous; well-known			cognate=en	
 éxito_NOUN	714	éxito	NOUN	success	Gender=Masc			
-hija_NOUN	715	hija	NOUN	daughter	Gender=Fem			
+hija_NOUN	715	hija	NOUN	daughter	Gender=Fem		visual=tree	
 merecer_VERB	716	merecer	VERB	to deserve; be worthy (of)				
-edificio_NOUN	717	edificio	NOUN	building	Gender=Masc		visual=yes	
+edificio_NOUN	717	edificio	NOUN	building	Gender=Masc		visual=object	
 autoridad_NOUN	718	autoridad	NOUN	authority	Gender=Fem		cognate=en	
-piedra_NOUN	719	piedra	NOUN	stone; rock	Gender=Fem		visual=yes	
+piedra_NOUN	719	piedra	NOUN	stone; rock	Gender=Fem		visual=object	
 incluir_VERB	720	incluir	VERB	to include			cognate=en	
 conjunto_NOUN	721	conjunto	NOUN	group; set	Gender=Masc			
 treinta_NUM	722	treinta	NUM	thirty				
 cuánto_ADJ	723	cuánto	ADJ	how much?				
 inmediato_ADJ	724	inmediato	ADJ	immediate			cognate=en	
 suerte_NOUN	725	suerte	NOUN	luck; fortune	Gender=Fem			
-cruzar_VERB	726	cruzar	VERB	to cross				
+cruzar_VERB	726	cruzar	VERB	to cross			visual=action	
 tender_VERB	727	tender	VERB	to tend to; lay out			cognate=en	
 finalmente_ADV	728	finalmente	ADV	finally; at last			cognate=en	
 junto_ADJ	729	junto	ADJ	together				
@@ -732,9 +732,9 @@ anunciar_VERB	730	anunciar	VERB	to announce; advertise
 espíritu_NOUN	731	espíritu	NOUN	spirit; ghost	Gender=Masc		cognate=en	
 miembro_NOUN	732	miembro	NOUN	member; limb	Gender=Masc			
 directo_ADJ	733	directo	ADJ	direct; straight			cognate=en	
-despertar_VERB	734	despertar	VERB	to wake (up); arouse				
+despertar_VERB	734	despertar	VERB	to wake (up); arouse			visual=action	
 recurso_NOUN	735	recurso	NOUN	resource; recourse; means	Gender=Masc			
-pared_NOUN	736	pared	NOUN	(interior) wall	Gender=Fem		visual=yes	
+pared_NOUN	736	pared	NOUN	(interior) wall	Gender=Fem		visual=object	
 equipo_NOUN	737	equipo	NOUN	team; equipment; outfit	Gender=Masc			
 error_NOUN	738	error	NOUN	error; mistake	Gender=Masc		cognate=en	
 preciso_ADJ	739	preciso	ADJ	precise; necessary			cognate=en	
@@ -763,7 +763,7 @@ jefe_NOUN	761	jefe	NOUN	leader; boss; manager	Gender=Masc,Fem
 interesante_ADJ	762	interesante	ADJ	interesting			cognate=en	
 amplio_ADJ	763	amplio	ADJ	wide; ample; broad				
 contestar_VERB	764	contestar	VERB	to answer; reply				
-periódico_NOUN	765	periódico	NOUN	newspaper; periodical	Gender=Masc		visual=yes	
+periódico_NOUN	765	periódico	NOUN	newspaper; periodical	Gender=Masc		visual=object	
 preocupar_VERB	766	preocupar	VERB	to worry				
 prestar_VERB	767	prestar	VERB	to lend				
 par_NOUN	768	par	NOUN	pair; couple (m); a la par: at same time	Gender=Masc,Fem		cognate=en	
@@ -776,16 +776,16 @@ civil_ADJ	774	civil	ADJ	civil			cognate=en
 ciencia_NOUN	775	ciencia	NOUN	science; knowledge	Gender=Fem		cognate=en	
 tamaño_NOUN	776	tamaño	NOUN	size; dimension	Gender=Masc			
 mas_CCONJ	777	mas	CCONJ	but; however				
-doctor_NOUN	778	doctor	NOUN	doctor	Gender=Masc,Fem	doctora	cognate=en; visual=yes	
-cuadro_NOUN	779	cuadro	NOUN	painting; picture	Gender=Masc		visual=yes	
-caballo_NOUN	780	caballo	NOUN	horse	Gender=Masc		visual=yes	
+doctor_NOUN	778	doctor	NOUN	doctor	Gender=Masc,Fem	doctora	cognate=en; visual=object	
+cuadro_NOUN	779	cuadro	NOUN	painting; picture	Gender=Masc		visual=object	
+caballo_NOUN	780	caballo	NOUN	horse	Gender=Masc		visual=object	
 responsabilidad_NOUN	781	responsabilidad	NOUN	responsibility	Gender=Fem		cognate=en	
 cincuenta_NUM	782	cincuenta	NUM	fifty				
 interno_ADJ	783	interno	ADJ	internal			cognate=en	
 detalle_NOUN	784	detalle	NOUN	detail	Gender=Masc		cognate=en	
 marcha_NOUN	785	marcha	NOUN	march; progress	Gender=Fem		cognate=en	
 nueve_NUM	786	nueve	NUM	nine				
-carne_NOUN	787	carne	NOUN	meat; flesh	Gender=Fem		visual=yes	
+carne_NOUN	787	carne	NOUN	meat; flesh	Gender=Fem		visual=object	
 jamás_ADV	788	jamás	ADV	never				
 pensamiento_NOUN	789	pensamiento	NOUN	thought; thinking	Gender=Masc			
 viajar_VERB	790	viajar	VERB	to travel				
@@ -795,43 +795,43 @@ santa_NOUN	793	santa	NOUN	saint (f)	Gender=Fem		cognate=en
 construcción_NOUN	794	construcción	NOUN	construction	Gender=Fem		cognate=en	
 juicio_NOUN	795	juicio	NOUN	judgment	Gender=Masc			
 terreno_NOUN	796	terreno	NOUN	ground; earth; terrain	Gender=Masc			
-piso_NOUN	797	piso	NOUN	floor; story	Gender=Masc		visual=yes	
+piso_NOUN	797	piso	NOUN	floor; story	Gender=Masc		visual=object	
 compañía_NOUN	798	compañía	NOUN	company	Gender=Fem		cognate=en	
 regresar_VERB	799	regresar	VERB	to return (to a place)				
 texto_NOUN	800	texto	NOUN	text	Gender=Masc		cognate=en	
 fuente_NOUN	801	fuente	NOUN	source; fountain	Gender=Fem			
 presente_NOUN	802	presente	NOUN	present	Gender=Masc		cognate=en	
 definitivo_ADJ	803	definitivo	ADJ	definitive; conclusive			cognate=en	
-revista_NOUN	804	revista	NOUN	magazine; journal	Gender=Fem		visual=yes	
+revista_NOUN	804	revista	NOUN	magazine; journal	Gender=Fem		visual=object	
 esperanza_NOUN	805	esperanza	NOUN	hope	Gender=Fem			
-máquina_NOUN	806	máquina	NOUN	machine	Gender=Fem		visual=yes	
+máquina_NOUN	806	máquina	NOUN	machine	Gender=Fem		visual=object	
 contemplar_VERB	807	contemplar	VERB	to contemplate			cognate=en	
 recorrer_VERB	808	recorrer	VERB	to travel; cover (distance)				
 frase_NOUN	809	frase	NOUN	phrase	Gender=Fem		cognate=en	
 perfecto_ADJ	810	perfecto	ADJ	perfect			cognate=en	
-sala_NOUN	811	sala	NOUN	room; hall	Gender=Fem		visual=yes	
+sala_NOUN	811	sala	NOUN	room; hall	Gender=Fem		visual=object	
 durar_VERB	812	durar	VERB	to last				
-instrumento_NOUN	813	instrumento	NOUN	instrument	Gender=Masc		cognate=en; visual=yes	
+instrumento_NOUN	813	instrumento	NOUN	instrument	Gender=Masc		cognate=en; visual=object	
 aquello_PRON	814	aquello	PRON	that over there (n)				
 defensa_NOUN	815	defensa	NOUN	defense; plea	Gender=Fem		cognate=en	
 director_NOUN	816	director	NOUN	director; manager; principal	Gender=Masc,Fem	directora	cognate=en	
 retirar_VERB	817	retirar	VERB	to take away; retire				
 explicación_NOUN	818	explicación	NOUN	explanation	Gender=Fem		cognate=en	
 artículo_NOUN	819	artículo	NOUN	article; product; item	Gender=Masc		cognate=en	
-debajo_ADV	820	debajo	ADV	underneath; below				
+debajo_ADV	820	debajo	ADV	underneath; below			visual=place	
 permanecer_VERB	821	permanecer	VERB	to stay; remain				
 asistir_VERB	822	asistir	VERB	to attend				
 doce_NUM	823	doce	NUM	twelve				
-radio_NOUN	824	radio	NOUN	radio; set (m); communication (f)	Gender=Masc,Fem		cognate=en; visual=yes	
+radio_NOUN	824	radio	NOUN	radio; set (m); communication (f)	Gender=Masc,Fem		cognate=en; visual=object	
 organizar_VERB	825	organizar	VERB	to organize			cognate=en	
-película_NOUN	826	película	NOUN	movie; film	Gender=Fem		visual=yes	
+película_NOUN	826	película	NOUN	movie; film	Gender=Fem		visual=object	
 elección_NOUN	827	elección	NOUN	election; choice	Gender=Fem		cognate=en	
 visita_NOUN	828	visita	NOUN	visit; visitor; guest	Gender=Fem		cognate=en	
 contener_VERB	829	contener	VERB	to contain				
 apoyo_NOUN	830	apoyo	NOUN	support; backing	Gender=Masc			
 presidente_NOUN	831	presidente	NOUN	president	Gender=Masc		cognate=en	
-arma_NOUN	832	arma	NOUN	(el) weapon	Gender=Fem		visual=yes	
-árbol_NOUN	833	árbol	NOUN	tree	Gender=Masc		visual=yes	
+arma_NOUN	832	arma	NOUN	(el) weapon	Gender=Fem		visual=object	
+árbol_NOUN	833	árbol	NOUN	tree	Gender=Masc		visual=object	
 visitar_VERB	834	visitar	VERB	to visit			cognate=en	
 informar_VERB	835	informar	VERB	to inform			cognate=en	
 encuentro_NOUN	836	encuentro	NOUN	meeting; game; skirmish	Gender=Masc			
@@ -855,7 +855,7 @@ nota_NOUN	853	nota	NOUN	note; grade	Gender=Fem		cognate=en
 particular_ADJ	854	particular	ADJ	particular; peculiar			cognate=en	
 ése_PRON	855	ése	PRON	that one (m); [ésa (f)]		ésa|ésos|ésas		
 militar_ADJ	856	militar	ADJ	military			cognate=en	
-dormir_VERB	857	dormir	VERB	to sleep				
+dormir_VERB	857	dormir	VERB	to sleep			visual=action	
 unido_ADJ	858	unido	ADJ	united				
 discutir_VERB	859	discutir	VERB	to argue; discuss				
 extraordinario_ADJ	860	extraordinario	ADJ	extraordinary; exceptional			cognate=en	
@@ -866,34 +866,34 @@ negocio_NOUN	864	negocio	NOUN	business; transaction	Gender=Masc
 letra_NOUN	865	letra	NOUN	letter; handwriting; lyrics	Gender=Fem		cognate=en	
 peor_ADV	866	peor	ADV	worse				
 sentimiento_NOUN	867	sentimiento	NOUN	feeling; sentiment	Gender=Masc		cognate=en	
-conducir_VERB	868	conducir	VERB	to lead; drive				
+conducir_VERB	868	conducir	VERB	to lead; drive			visual=action	
 completamente_ADV	869	completamente	ADV	completely			cognate=en	
 firmar_VERB	870	firmar	VERB	to sign				
 solución_NOUN	871	solución	NOUN	solution; answer	Gender=Fem		cognate=en	
 mío_PRON	872	mío	PRON	mine				
-comida_NOUN	873	comida	NOUN	food; meal	Gender=Fem		visual=yes	
+comida_NOUN	873	comida	NOUN	food; meal	Gender=Fem		visual=object	
 impresión_NOUN	874	impresión	NOUN	impression; printing	Gender=Fem		cognate=en	
 plano_NOUN	875	plano	NOUN	plane; map; level	Gender=Masc		cognate=en	
 intención_NOUN	876	intención	NOUN	intention	Gender=Fem		cognate=en	
 ritmo_NOUN	877	ritmo	NOUN	rhythm	Gender=Masc			
-verde_ADJ	878	verde	ADJ	green				
+verde_ADJ	878	verde	ADJ	green			visual=pair	
 exacto_ADJ	879	exacto	ADJ	exact; faithful; true			cognate=en	
 respetar_VERB	880	respetar	VERB	to respect			cognate=en	
-banco_NOUN	881	banco	NOUN	(financial) bank; bench	Gender=Masc		visual=yes	
+banco_NOUN	881	banco	NOUN	(financial) bank; bench	Gender=Masc		visual=object	
 inmediatamente_ADV	882	inmediatamente	ADV	immediately			cognate=en	
 sostener_VERB	883	sostener	VERB	to support; hold up				
-piel_NOUN	884	piel	NOUN	skin; hide; fur	Gender=Fem		visual=yes	
-delante_ADV	885	delante	ADV	(in) front (of); ahead				
+piel_NOUN	884	piel	NOUN	skin; hide; fur	Gender=Fem		visual=object	
+delante_ADV	885	delante	ADV	(in) front (of); ahead			visual=place	
 religioso_ADJ	886	religioso	ADJ	religious			cognate=en	
 advertir_VERB	887	advertir	VERB	to notice; warn				
-oscuro_ADJ	888	oscuro	ADJ	dark; obscure				
+oscuro_ADJ	888	oscuro	ADJ	dark; obscure			visual=pair	
 control_NOUN	889	control	NOUN	control	Gender=Masc		cognate=en	
 investigación_NOUN	890	investigación	NOUN	investigation	Gender=Fem		cognate=en	
 transformar_VERB	891	transformar	VERB	to transform; change			cognate=en	
 conversación_NOUN	892	conversación	NOUN	conversation	Gender=Fem		cognate=en	
 verano_NOUN	893	verano	NOUN	summer	Gender=Masc			
 respeto_NOUN	894	respeto	NOUN	respect; regard	Gender=Masc		cognate=en	
-norte_NOUN	895	norte	NOUN	north	Gender=Masc		cognate=en	
+norte_NOUN	895	norte	NOUN	north	Gender=Masc		cognate=en; visual=map	
 mediante_ADP	896	mediante	ADP	by means of				
 cuarto_ADJ	897	cuarto	ADJ	fourth				
 tradición_NOUN	898	tradición	NOUN	tradition	Gender=Fem		cognate=en	
@@ -901,8 +901,8 @@ bastar_VERB	899	bastar	VERB	to be sufficient
 población_NOUN	900	población	NOUN	population	Gender=Fem		cognate=en	
 pareja_NOUN	901	pareja	NOUN	couple; pair	Gender=Fem			
 pasado_NOUN	902	pasado	NOUN	past	Gender=Masc			
-diario_NOUN	903	diario	NOUN	newspaper	Gender=Masc		visual=yes	
-azul_ADJ	904	azul	ADJ	blue				
+diario_NOUN	903	diario	NOUN	newspaper	Gender=Masc		visual=object	
+azul_ADJ	904	azul	ADJ	blue			visual=pair	
 mencionar_VERB	905	mencionar	VERB	to mention; cite			cognate=en	
 generación_NOUN	906	generación	NOUN	generation	Gender=Fem		cognate=en	
 frío_ADJ	907	frío	ADJ	cold				
@@ -912,32 +912,32 @@ plantear_VERB	910	plantear	VERB	to propose; present
 probar_VERB	911	probar	VERB	to test; prove; try				
 derecho_ADJ	912	derecho	ADJ	right; straight				
 peligro_NOUN	913	peligro	NOUN	danger; menace	Gender=Masc			
-oro_NOUN	914	oro	NOUN	gold	Gender=Masc		visual=yes	
+oro_NOUN	914	oro	NOUN	gold	Gender=Masc		visual=object	
 justo_ADV	915	justo	ADV	just			cognate=en	
 manejar_VERB	916	manejar	VERB	to drive; handle				
-vino_NOUN	917	vino	NOUN	wine	Gender=Masc		visual=yes	
+vino_NOUN	917	vino	NOUN	wine	Gender=Masc		visual=object	
 unir_VERB	918	unir	VERB	to unite; join (together)				
-caminar_VERB	919	caminar	VERB	to walk				
+caminar_VERB	919	caminar	VERB	to walk			visual=action	
 coincidir_VERB	920	coincidir	VERB	to coincide; agree			cognate=en	
 etapa_NOUN	921	etapa	NOUN	stage; period	Gender=Fem			
 sencillo_ADJ	922	sencillo	ADJ	simple; plain; easy				
 silencio_NOUN	923	silencio	NOUN	silence	Gender=Masc		cognate=en	
 salvo_ADV	924	salvo	ADV	except (for); but				
-llenar_VERB	925	llenar	VERB	to fill				
+llenar_VERB	925	llenar	VERB	to fill			visual=action	
 dominar_VERB	926	dominar	VERB	to dominate; master			cognate=en	
 determinado_ADJ	927	determinado	ADJ	determined; fixed			cognate=en	
 artista_NOUN	928	artista	NOUN	artist; performer	Gender=Com		cognate=en	
 medir_VERB	929	medir	VERB	to measure				
 labor_NOUN	930	labor	NOUN	labor; work; task	Gender=Fem		cognate=en	
 perdido_ADJ	931	perdido	ADJ	lost				
-cielo_NOUN	932	cielo	NOUN	sky; heaven; ceiling	Gender=Masc		visual=yes	
+cielo_NOUN	932	cielo	NOUN	sky; heaven; ceiling	Gender=Masc		visual=object	
 práctica_NOUN	933	práctica	NOUN	practice; skill	Gender=Fem		cognate=en	
 límite_NOUN	934	límite	NOUN	limit	Gender=Masc		cognate=en	
 masa_NOUN	935	masa	NOUN	mass; dough; bulk; crowd	Gender=Fem		cognate=en	
 directamente_ADV	936	directamente	ADV	directly; straight away			cognate=en	
 atravesar_VERB	937	atravesar	VERB	to cross				
 formación_NOUN	938	formación	NOUN	formation; education	Gender=Fem		cognate=en	
-perro_NOUN	939	perro	NOUN	dog	Gender=Masc		visual=yes	
+perro_NOUN	939	perro	NOUN	dog	Gender=Masc		visual=object	
 izquierda_NOUN	940	izquierda	NOUN	left	Gender=Fem			
 destacar_VERB	941	destacar	VERB	to emphasize; stand out				
 cercano_ADJ	942	cercano	ADJ	near				
@@ -948,13 +948,13 @@ energía_NOUN	946	energía	NOUN	energy; power	Gender=Fem		cognate=en
 confianza_NOUN	947	confianza	NOUN	confidence; trust	Gender=Fem			
 adecuado_ADJ	948	adecuado	ADJ	adequate; suitable				
 introducir_VERB	949	introducir	VERB	to introduce; bring in			cognate=en	
-flor_NOUN	950	flor	NOUN	flower	Gender=Fem		visual=yes	
-esposa_NOUN	951	esposa	NOUN	wife	Gender=Fem			
+flor_NOUN	950	flor	NOUN	flower	Gender=Fem		visual=object	
+esposa_NOUN	951	esposa	NOUN	wife	Gender=Fem		visual=tree	
 comunicar_VERB	952	comunicar	VERB	to communicate			cognate=en	
 italiano_ADJ	953	italiano	ADJ	Italian			cognate=en	
 invitar_VERB	954	invitar	VERB	to invite			cognate=en	
 responsable_ADJ	955	responsable	ADJ	responsible			cognate=en	
-feliz_ADJ	956	feliz	ADJ	happy; fortunate				
+feliz_ADJ	956	feliz	ADJ	happy; fortunate			visual=pair	
 revolución_NOUN	957	revolución	NOUN	revolution	Gender=Fem		cognate=en	
 instalar_VERB	958	instalar	VERB	to install			cognate=en	
 tardar_VERB	959	tardar	VERB	to delay; take long				
@@ -985,7 +985,7 @@ interpretar_VERB	983	interpretar	VERB	to interpret			cognate=en
 alma_NOUN	984	alma	NOUN	(el) soul	Gender=Fem			
 admitir_VERB	985	admitir	VERB	to admit			cognate=en	
 identificar_VERB	986	identificar	VERB	to identify			cognate=en	
-madera_NOUN	987	madera	NOUN	wood	Gender=Fem		visual=yes	
+madera_NOUN	987	madera	NOUN	wood	Gender=Fem		visual=object	
 fiesta_NOUN	988	fiesta	NOUN	party; feast	Gender=Fem			
 calor_NOUN	989	calor	NOUN	heat; warmth	Gender=Masc			
 mínimo_ADJ	990	mínimo	ADJ	minimum			cognate=en	
@@ -997,9 +997,9 @@ preocupación_NOUN	995	preocupación	NOUN	worry; concern	Gender=Fem
 reducir_VERB	996	reducir	VERB	to reduce			cognate=en	
 concepto_NOUN	997	concepto	NOUN	concept	Gender=Masc		cognate=en	
 montar_VERB	998	montar	VERB	to ride; mount; assemble				
-teléfono_NOUN	999	teléfono	NOUN	phone; telephone	Gender=Masc		cognate=en; visual=yes	
-hoja_NOUN	1000	hoja	NOUN	sheet; leaf	Gender=Fem		visual=yes	
-parar_VERB	1001	parar	VERB	to stop (moving)				
+teléfono_NOUN	999	teléfono	NOUN	phone; telephone	Gender=Masc		cognate=en; visual=object	
+hoja_NOUN	1000	hoja	NOUN	sheet; leaf	Gender=Fem		visual=object	
+parar_VERB	1001	parar	VERB	to stop (moving)			visual=action	
 doble_ADJ	1002	doble	ADJ	double			cognate=en	
 devolver_VERB	1003	devolver	VERB	to return; give back				
 ejercer_VERB	1004	ejercer	VERB	to practice; exercise				
@@ -1008,17 +1008,17 @@ proteger_VERB	1006	proteger	VERB	to protect
 causar_VERB	1007	causar	VERB	to cause; bring about			cognate=en	
 rápidamente_ADV	1008	rápidamente	ADV	rapidly; quickly			cognate=en	
 determinar_VERB	1009	determinar	VERB	to determine; decide			cognate=en	
-fuerte_ADJ	1010	fuerte	ADJ	strong				
+fuerte_ADJ	1010	fuerte	ADJ	strong			visual=pair	
 escritor_NOUN	1011	escritor	NOUN	writer	Gender=Masc,Fem	escritora		
 intento_NOUN	1012	intento	NOUN	attempt; try	Gender=Masc			
 cobrar_VERB	1013	cobrar	VERB	to charge (money)				
 regla_NOUN	1014	regla	NOUN	rule; ruler; regulation	Gender=Fem			
 dividir_VERB	1015	dividir	VERB	to divide			cognate=en	
 riesgo_NOUN	1016	riesgo	NOUN	risk	Gender=Masc			
-policía_NOUN	1017	policía	NOUN	police; police force; police officer	Gender=Com		cognate=en; visual=yes	
+policía_NOUN	1017	policía	NOUN	police; police force; police officer	Gender=Com		cognate=en; visual=object	
 inventar_VERB	1018	inventar	VERB	to invent; make up			cognate=en	
 estudiante_NOUN	1019	estudiante	NOUN	student	Gender=Com			
-plaza_NOUN	1020	plaza	NOUN	square; marketplace	Gender=Fem		visual=yes	
+plaza_NOUN	1020	plaza	NOUN	square; marketplace	Gender=Fem		visual=object	
 limitar_VERB	1021	limitar	VERB	to limit			cognate=en	
 llamada_NOUN	1022	llamada	NOUN	call; knock	Gender=Fem			
 sensación_NOUN	1023	sensación	NOUN	sensation; feeling	Gender=Fem		cognate=en	
@@ -1026,11 +1026,11 @@ enemigo_NOUN	1024	enemigo	NOUN	enemy	Gender=Masc
 unidad_NOUN	1025	unidad	NOUN	unit; unity	Gender=Fem			
 luchar_VERB	1026	luchar	VERB	to fight; wrestle				
 idioma_NOUN	1027	idioma	NOUN	(specific) language	Gender=Masc			
-raíz_NOUN	1028	raíz	NOUN	root	Gender=Fem		visual=yes	
+raíz_NOUN	1028	raíz	NOUN	root	Gender=Fem		visual=object	
 compromiso_NOUN	1029	compromiso	NOUN	compromise; engagement	Gender=Masc		cognate=en	
 comentario_NOUN	1030	comentario	NOUN	remark; comment	Gender=Masc		cognate=en	
 carga_NOUN	1031	carga	NOUN	load; charge; cargo	Gender=Fem			
-marido_NOUN	1032	marido	NOUN	husband	Gender=Masc			
+marido_NOUN	1032	marido	NOUN	husband	Gender=Masc		visual=tree	
 quince_NUM	1033	quince	NUM	fifteen				
 constante_ADJ	1034	constante	ADJ	constant			cognate=en	
 derecha_NOUN	1035	derecha	NOUN	right; right hand	Gender=Fem			
@@ -1048,13 +1048,13 @@ tarde_ADV	1046	tarde	ADV	late
 mensaje_NOUN	1047	mensaje	NOUN	message	Gender=Masc			
 analizar_VERB	1048	analizar	VERB	to analyze			cognate=en	
 lista_NOUN	1049	lista	NOUN	list; roster; roll	Gender=Fem		cognate=en	
-región_NOUN	1050	región	NOUN	region	Gender=Fem		cognate=en	
+región_NOUN	1050	región	NOUN	region	Gender=Fem		cognate=en; visual=map	
 evidente_ADJ	1051	evidente	ADJ	evident; obvious			cognate=en	
-niña_NOUN	1052	niña	NOUN	child; young girl	Gender=Fem		visual=yes	
+niña_NOUN	1052	niña	NOUN	child; young girl	Gender=Fem		visual=object	
 culpa_NOUN	1053	culpa	NOUN	blame; fault	Gender=Fem			
 encargar_VERB	1054	encargar	VERB	to entrust; [se] take charge of				
 discusión_NOUN	1055	discusión	NOUN	discussion; argument	Gender=Fem		cognate=en	
-pelo_NOUN	1056	pelo	NOUN	hair	Gender=Masc		visual=yes	
+pelo_NOUN	1056	pelo	NOUN	hair	Gender=Masc		visual=object	
 destinar_VERB	1057	destinar	VERB	to assign; appoint				
 comparar_VERB	1058	comparar	VERB	to compare			cognate=en	
 celebrar_VERB	1059	celebrar	VERB	to celebrate				
@@ -1062,22 +1062,22 @@ fe_NOUN	1060	fe	NOUN	faith	Gender=Fem
 fijo_ADJ	1061	fijo	ADJ	fixed; steady				
 central_ADJ	1062	central	ADJ	central			cognate=en	
 referencia_NOUN	1063	referencia	NOUN	reference; allusion	Gender=Fem		cognate=en	
-sur_NOUN	1064	sur	NOUN	south	Gender=Masc			
+sur_NOUN	1064	sur	NOUN	south	Gender=Masc		visual=map	
 gesto_NOUN	1065	gesto	NOUN	gesture	Gender=Masc			
 perspectiva_NOUN	1066	perspectiva	NOUN	perspective	Gender=Fem		cognate=en	
 preparado_ADJ	1067	preparado	ADJ	prepared			cognate=en	
 sonar_VERB	1068	sonar	VERB	to sound; ring				
 manifestar_VERB	1069	manifestar	VERB	to express; show				
 controlar_VERB	1070	controlar	VERB	to control			cognate=en	
-saltar_VERB	1071	saltar	VERB	to jump; leap; hop				
+saltar_VERB	1071	saltar	VERB	to jump; leap; hop			visual=action	
 acaso_ADV	1072	acaso	ADV	by chance; maybe				
 colegio_NOUN	1073	colegio	NOUN	(high) school; college	Gender=Masc			
 inmenso_ADJ	1074	inmenso	ADJ	immense; vast; huge				
 venta_NOUN	1075	venta	NOUN	sale	Gender=Fem			
 documento_NOUN	1076	documento	NOUN	document	Gender=Masc		cognate=en	
 citar_VERB	1077	citar	VERB	to cite; quote			cognate=en	
-televisión_NOUN	1078	televisión	NOUN	TV; television	Gender=Fem		visual=yes	
-chico_NOUN	1079	chico	NOUN	boy	Gender=Masc		visual=yes	
+televisión_NOUN	1078	televisión	NOUN	TV; television	Gender=Fem		visual=object	
+chico_NOUN	1079	chico	NOUN	boy	Gender=Masc		visual=object	
 novela_NOUN	1080	novela	NOUN	novel	Gender=Fem		cognate=en	
 requerir_VERB	1081	requerir	VERB	to require				
 moral_ADJ	1082	moral	ADJ	moral			cognate=en	
@@ -1095,7 +1095,7 @@ dueño_NOUN	1093	dueño	NOUN	owner; landlord (m)	Gender=Masc
 perseguir_VERB	1094	perseguir	VERB	to persecute; pursue; chase				
 vecino_NOUN	1095	vecino	NOUN	neighbor	Gender=Masc			
 sector_NOUN	1096	sector	NOUN	sector; area; section	Gender=Masc		cognate=en	
-pintura_NOUN	1097	pintura	NOUN	painting; paint	Gender=Fem		visual=yes	
+pintura_NOUN	1097	pintura	NOUN	painting; paint	Gender=Fem		visual=object	
 accidente_NOUN	1098	accidente	NOUN	accident; irregularity	Gender=Masc		cognate=en	
 oficial_ADJ	1099	oficial	ADJ	official; authorized			cognate=en	
 procurar_VERB	1100	procurar	VERB	to try; seek				
@@ -1105,13 +1105,13 @@ intelectual_ADJ	1103	intelectual	ADJ	intellectual			cognate=en
 empleado_NOUN	1104	empleado	NOUN	employee	Gender=Masc			
 casar_VERB	1105	casar	VERB	to marry				
 prácticamente_ADV	1106	prácticamente	ADV	practically			cognate=en	
-moneda_NOUN	1107	moneda	NOUN	coins; currency	Gender=Fem		visual=yes	
+moneda_NOUN	1107	moneda	NOUN	coins; currency	Gender=Fem		visual=object	
 facilidad_NOUN	1108	facilidad	NOUN	ease; facility	Gender=Fem			
 matrimonio_NOUN	1109	matrimonio	NOUN	marriage; married couple	Gender=Masc			
 escaso_ADJ	1110	escaso	ADJ	scarce; very little				
-iglesia_NOUN	1111	iglesia	NOUN	church	Gender=Fem		visual=yes	
+iglesia_NOUN	1111	iglesia	NOUN	church	Gender=Fem		visual=object	
 ayer_ADV	1112	ayer	ADV	yesterday				
-oficina_NOUN	1113	oficina	NOUN	office	Gender=Fem		visual=yes	
+oficina_NOUN	1113	oficina	NOUN	office	Gender=Fem		visual=object	
 cristiano_ADJ	1114	cristiano	ADJ	Christian			cognate=en	
 institución_NOUN	1115	institución	NOUN	institution	Gender=Fem		cognate=en	
 someter_VERB	1116	someter	VERB	to subject				
@@ -1122,18 +1122,18 @@ frío_NOUN	1120	frío	NOUN	cold	Gender=Masc
 domingo_NOUN	1121	domingo	NOUN	Sunday	Gender=Masc			
 reacción_NOUN	1122	reacción	NOUN	reaction	Gender=Fem		cognate=en	
 elevar_VERB	1123	elevar	VERB	to elevate; raise				
-cantar_VERB	1124	cantar	VERB	to sing				
+cantar_VERB	1124	cantar	VERB	to sing			visual=action	
 acontecimiento_NOUN	1125	acontecimiento	NOUN	event; happening	Gender=Masc			
-costa_NOUN	1126	costa	NOUN	coast	Gender=Fem		cognate=en; visual=yes	
+costa_NOUN	1126	costa	NOUN	coast	Gender=Fem		cognate=en; visual=object	
 peligroso_ADJ	1127	peligroso	ADJ	dangerous				
-lento_ADJ	1128	lento	ADJ	slow				
+lento_ADJ	1128	lento	ADJ	slow			visual=pair	
 método_NOUN	1129	método	NOUN	method	Gender=Masc		cognate=en	
 comunidad_NOUN	1130	comunidad	NOUN	community	Gender=Fem		cognate=en	
-coche_NOUN	1131	coche	NOUN	car; carriage	Gender=Masc		visual=yes	
+coche_NOUN	1131	coche	NOUN	car; carriage	Gender=Masc		visual=object	
 asumir_VERB	1132	asumir	VERB	to assume; take on				
 aclarar_VERB	1133	aclarar	VERB	to clarify; clear up				
-arrastrar_VERB	1134	arrastrar	VERB	to drag; pull				
-página_NOUN	1135	página	NOUN	page	Gender=Fem		visual=yes	
+arrastrar_VERB	1134	arrastrar	VERB	to drag; pull			visual=action	
+página_NOUN	1135	página	NOUN	page	Gender=Fem		visual=object	
 declarar_VERB	1136	declarar	VERB	to declare; testify			cognate=en	
 frecuencia_NOUN	1137	frecuencia	NOUN	frequency	Gender=Fem		cognate=en	
 conclusión_NOUN	1138	conclusión	NOUN	conclusion; end	Gender=Fem		cognate=en	
@@ -1148,7 +1148,7 @@ barrio_NOUN	1146	barrio	NOUN	neighborhood; district	Gender=Masc
 nombrar_VERB	1147	nombrar	VERB	to name; appoint				
 análisis_NOUN	1148	análisis	NOUN	analysis	Gender=Masc		cognate=en	
 confundir_VERB	1149	confundir	VERB	to confuse				
-frontera_NOUN	1150	frontera	NOUN	border; frontier	Gender=Fem			
+frontera_NOUN	1150	frontera	NOUN	border; frontier	Gender=Fem		visual=map	
 describir_VERB	1151	describir	VERB	to describe			cognate=en	
 lejano_ADJ	1152	lejano	ADJ	distant				
 breve_ADJ	1153	breve	ADJ	brief; short				
@@ -1156,13 +1156,13 @@ temor_NOUN	1154	temor	NOUN	fear	Gender=Masc
 calcular_VERB	1155	calcular	VERB	to calculate; figure out				
 conformar_VERB	1156	conformar	VERB	to conform			cognate=en	
 ataque_NOUN	1157	ataque	NOUN	attack; raid	Gender=Masc			
-pintar_VERB	1158	pintar	VERB	to paint			cognate=en	
+pintar_VERB	1158	pintar	VERB	to paint			cognate=en; visual=action	
 cine_NOUN	1159	cine	NOUN	cinema; US movie theater	Gender=Masc			
-rama_NOUN	1160	rama	NOUN	branch; bough; limb	Gender=Fem		visual=yes	
+rama_NOUN	1160	rama	NOUN	branch; bough; limb	Gender=Fem		visual=object	
 repartir_VERB	1161	repartir	VERB	to divide; deliver; distribute				
 comienzo_NOUN	1162	comienzo	NOUN	start; beginning	Gender=Masc			
 exterior_ADJ	1163	exterior	ADJ	exterior; outside			cognate=en	
-barco_NOUN	1164	barco	NOUN	boat; ship	Gender=Masc		visual=yes	
+barco_NOUN	1164	barco	NOUN	boat; ship	Gender=Masc		visual=object	
 partida_NOUN	1165	partida	NOUN	game; match; departure	Gender=Fem			
 hallar_VERB	1166	hallar	VERB	to find (out)				
 ordenar_VERB	1167	ordenar	VERB	to put in order; organize				
@@ -1170,20 +1170,20 @@ aparato_NOUN	1168	aparato	NOUN	apparatus; device	Gender=Masc
 convencer_VERB	1169	convencer	VERB	to convince; persuade				
 médico_ADJ	1170	médico	ADJ	medical				
 extranjero_NOUN	1171	extranjero	NOUN	foreigner	Gender=Masc			
-cámara_NOUN	1172	cámara	NOUN	camera; chamber	Gender=Fem		visual=yes	
+cámara_NOUN	1172	cámara	NOUN	camera; chamber	Gender=Fem		visual=object	
 creación_NOUN	1173	creación	NOUN	creation	Gender=Fem		cognate=en	
 rodear_VERB	1174	rodear	VERB	to surround				
 ajeno_ADJ	1175	ajeno	ADJ	not belonging to; detached				
 reflejar_VERB	1176	reflejar	VERB	to reflect				
 gana_NOUN	1177	gana	NOUN	desire	Gender=Fem			
-seco_ADJ	1178	seco	ADJ	dry; arid				
+seco_ADJ	1178	seco	ADJ	dry; arid			visual=pair	
 quinto_ADJ	1179	quinto	ADJ	fifth				
 moda_NOUN	1180	moda	NOUN	fashion; form	Gender=Fem			
 absolutamente_ADV	1181	absolutamente	ADV	absolutely; completely			cognate=en	
 rechazar_VERB	1182	rechazar	VERB	to reject				
 contribuir_VERB	1183	contribuir	VERB	to contribute			cognate=en	
 ruido_NOUN	1184	ruido	NOUN	noise	Gender=Masc			
-cama_NOUN	1185	cama	NOUN	bed (furniture)	Gender=Fem		visual=yes	
+cama_NOUN	1185	cama	NOUN	bed (furniture)	Gender=Fem		visual=object	
 infantil_ADJ	1186	infantil	ADJ	of children; childlike; infantile				
 técnica_NOUN	1187	técnica	NOUN	technique; skill	Gender=Fem			
 consejo_NOUN	1188	consejo	NOUN	advice; council; counsel	Gender=Masc			
@@ -1192,14 +1192,14 @@ violencia_NOUN	1190	violencia	NOUN	violence	Gender=Fem		cognate=en
 original_ADJ	1191	original	ADJ	original			cognate=en	
 sonido_NOUN	1192	sonido	NOUN	sound	Gender=Masc			
 vencer_VERB	1193	vencer	VERB	to overcome; conquer				
-estrella_NOUN	1194	estrella	NOUN	star	Gender=Fem		visual=yes	
+estrella_NOUN	1194	estrella	NOUN	star	Gender=Fem		visual=object	
 útil_ADJ	1195	útil	ADJ	useful				
 alejar_VERB	1196	alejar	VERB	to move away				
 mirada_NOUN	1197	mirada	NOUN	gaze; look	Gender=Fem			
 tremendo_ADJ	1198	tremendo	ADJ	tremendous; dreadful; huge			cognate=en	
 cuándo_ADV	1199	cuándo	ADV	when?				
 temprano_ADJ	1200	temprano	ADJ	early				
-pierna_NOUN	1201	pierna	NOUN	leg	Gender=Fem		visual=yes	
+pierna_NOUN	1201	pierna	NOUN	leg	Gender=Fem		visual=object	
 transmitir_VERB	1202	transmitir	VERB	to transmit; broadcast			cognate=en	
 marchar_VERB	1203	marchar	VERB	to go; leave; march				
 hambre_NOUN	1204	hambre	NOUN	(el) hunger; starvation	Gender=Fem			
@@ -1210,33 +1210,33 @@ separado_ADJ	1208	separado	ADJ	separate
 opinar_VERB	1209	opinar	VERB	to think; be of the opinion				
 objetivo_NOUN	1210	objetivo	NOUN	objective	Gender=Masc		cognate=en	
 honor_NOUN	1211	honor	NOUN	honor; honesty	Gender=Masc		cognate=en	
-montaña_NOUN	1212	montaña	NOUN	mountain	Gender=Fem		cognate=en; visual=yes	
+montaña_NOUN	1212	montaña	NOUN	mountain	Gender=Fem		cognate=en; visual=object	
 cometer_VERB	1213	cometer	VERB	to commit				
 lógico_ADJ	1214	lógico	ADJ	logical				
 instante_NOUN	1215	instante	NOUN	instant; moment	Gender=Masc		cognate=en	
 viento_NOUN	1216	viento	NOUN	wind; scent	Gender=Masc			
-lluvia_NOUN	1217	lluvia	NOUN	rain	Gender=Fem		visual=yes	
+lluvia_NOUN	1217	lluvia	NOUN	rain	Gender=Fem		visual=object	
 ejército_NOUN	1218	ejército	NOUN	army	Gender=Masc			
 trasladar_VERB	1219	trasladar	VERB	to move; transfer				
-tren_NOUN	1220	tren	NOUN	train; convoy	Gender=Masc		visual=yes	
+tren_NOUN	1220	tren	NOUN	train; convoy	Gender=Masc		visual=object	
 concluir_VERB	1221	concluir	VERB	to conclude; finish			cognate=en	
-círculo_NOUN	1222	círculo	NOUN	circle; club	Gender=Masc		visual=yes	
+círculo_NOUN	1222	círculo	NOUN	circle; club	Gender=Masc		visual=object	
 auténtico_ADJ	1223	auténtico	ADJ	authentic			cognate=en	
 hermoso_ADJ	1224	hermoso	ADJ	beautiful; lovely				
 oponer_VERB	1225	oponer	VERB	to oppose				
 ventaja_NOUN	1226	ventaja	NOUN	advantage; benefit	Gender=Fem			
 figurar_VERB	1227	figurar	VERB	to appear; represent; figure (in)				
 terrible_ADJ	1228	terrible	ADJ	terrible			cognate=en	
-isla_NOUN	1229	isla	NOUN	island	Gender=Fem		visual=yes	
+isla_NOUN	1229	isla	NOUN	island	Gender=Fem		visual=object	
 torno_NOUN	1230	torno	NOUN	en torno a: about; regarding	Gender=Masc			
-sentado_ADJ	1231	sentado	ADJ	seated				
+sentado_ADJ	1231	sentado	ADJ	seated			visual=pair	
 amistad_NOUN	1232	amistad	NOUN	friendship	Gender=Fem			
 concentrar_VERB	1233	concentrar	VERB	to concentrate			cognate=en	
 correcto_ADJ	1234	correcto	ADJ	correct; suitable			cognate=en	
 mañana_ADV	1235	mañana	ADV	tomorrow				
-cadena_NOUN	1236	cadena	NOUN	chain	Gender=Fem		visual=yes	
+cadena_NOUN	1236	cadena	NOUN	chain	Gender=Fem		visual=object	
 político_NOUN	1237	político	NOUN	politician	Gender=Masc,Fem	política		
-rey_NOUN	1238	rey	NOUN	king	Gender=Masc		visual=yes	
+rey_NOUN	1238	rey	NOUN	king	Gender=Masc		visual=object	
 permanente_ADJ	1239	permanente	ADJ	permanent			cognate=en	
 ánimo_NOUN	1240	ánimo	NOUN	zest; spirit; heart	Gender=Masc			
 trato_NOUN	1241	trato	NOUN	treatment; manner; agreement	Gender=Masc			
@@ -1246,24 +1246,24 @@ agosto_NOUN	1244	agosto	NOUN	August	Gender=Masc
 secretario_NOUN	1245	secretario	NOUN	secretary	Gender=Masc,Fem	secretaria	cognate=en	
 norteamericano_ADJ	1246	norteamericano	ADJ	North American			cognate=en	
 ignorar_VERB	1247	ignorar	VERB	to be unaware				
-dedo_NOUN	1248	dedo	NOUN	finger; toe; digit	Gender=Masc		visual=yes	
+dedo_NOUN	1248	dedo	NOUN	finger; toe; digit	Gender=Masc		visual=object	
 gasto_NOUN	1249	gasto	NOUN	expense; expenditure	Gender=Masc			
-café_NOUN	1250	café	NOUN	coffee; café	Gender=Masc		visual=yes	
+café_NOUN	1250	café	NOUN	coffee; café	Gender=Masc		visual=object	
 diálogo_NOUN	1251	diálogo	NOUN	dialogue; conversation	Gender=Masc		cognate=en	
 dudar_VERB	1252	dudar	VERB	to (have) doubt				
 comercial_ADJ	1253	comercial	ADJ	commercial; shopping			cognate=en	
 discurso_NOUN	1254	discurso	NOUN	lecture; discourse; talk	Gender=Masc			
 obligado_ADJ	1255	obligado	ADJ	obliged; required			cognate=en	
-hermana_NOUN	1256	hermana	NOUN	sister	Gender=Fem			
-descansar_VERB	1257	descansar	VERB	to rest				
-caja_NOUN	1258	caja	NOUN	bank; box; safe	Gender=Fem		visual=yes	
+hermana_NOUN	1256	hermana	NOUN	sister	Gender=Fem		visual=tree	
+descansar_VERB	1257	descansar	VERB	to rest			visual=action	
+caja_NOUN	1258	caja	NOUN	bank; box; safe	Gender=Fem		visual=object	
 juez_NOUN	1259	juez	NOUN	judge	Gender=Com			
 particular_NOUN	1260	particular	NOUN	particular; detail; individual	Gender=Masc		cognate=en	
 americano_ADJ	1261	americano	ADJ	American			cognate=en	
 poeta_NOUN	1262	poeta	NOUN	poet	Gender=Com		cognate=en	
 interior_ADJ	1263	interior	ADJ	interior; inside			cognate=en	
 sorpresa_NOUN	1264	sorpresa	NOUN	surprise	Gender=Fem			
-ventana_NOUN	1265	ventana	NOUN	window	Gender=Fem		visual=yes	
+ventana_NOUN	1265	ventana	NOUN	window	Gender=Fem		visual=object	
 característica_NOUN	1266	característica	NOUN	characteristic; aspect	Gender=Fem		cognate=en	
 adoptar_VERB	1267	adoptar	VERB	to adopt			cognate=en	
 arrancar_VERB	1268	arrancar	VERB	to start (machine); uproot				
@@ -1281,9 +1281,9 @@ argumento_NOUN	1279	argumento	NOUN	argument; plot	Gender=Masc		cognate=en
 categoría_NOUN	1280	categoría	NOUN	category	Gender=Fem		cognate=en	
 plata_NOUN	1281	plata	NOUN	silver; money	Gender=Fem			
 conflicto_NOUN	1282	conflicto	NOUN	conflict	Gender=Masc		cognate=en	
-avión_NOUN	1283	avión	NOUN	plane; airplane; aircraft	Gender=Masc		visual=yes	
-débil_ADJ	1284	débil	ADJ	weak				
-ropa_NOUN	1285	ropa	NOUN	clothes; clothing	Gender=Fem		visual=yes	
+avión_NOUN	1283	avión	NOUN	plane; airplane; aircraft	Gender=Masc		visual=object	
+débil_ADJ	1284	débil	ADJ	weak			visual=pair	
+ropa_NOUN	1285	ropa	NOUN	clothes; clothing	Gender=Fem		visual=object	
 examen_NOUN	1286	examen	NOUN	examination; exam	Gender=Masc			
 habitante_NOUN	1287	habitante	NOUN	inhabitant	Gender=Masc		cognate=en	
 acerca_ADV	1288	acerca	ADV	about; concerning				
@@ -1296,7 +1296,7 @@ convencido_ADJ	1294	convencido	ADJ	convinced; persuaded
 plazo_NOUN	1295	plazo	NOUN	deadline; installment	Gender=Masc			
 pendiente_ADJ	1296	pendiente	ADJ	aware of; pending				
 kilómetro_NOUN	1297	kilómetro	NOUN	kilometer	Gender=Masc		cognate=en	
-hospital_NOUN	1298	hospital	NOUN	hospital	Gender=Masc		cognate=en; visual=yes	
+hospital_NOUN	1298	hospital	NOUN	hospital	Gender=Masc		cognate=en; visual=object	
 satisfacción_NOUN	1299	satisfacción	NOUN	satisfaction	Gender=Fem		cognate=en	
 futuro_ADJ	1300	futuro	ADJ	future			cognate=en	
 acumular_VERB	1301	acumular	VERB	to accumulate; amass				
@@ -1305,24 +1305,24 @@ practicar_VERB	1303	practicar	VERB	to practice			cognate=en
 gozar_VERB	1304	gozar	VERB	to enjoy				
 muchísimo_ADJ	1305	muchísimo	ADJ	great many; great amount				
 sesenta_NUM	1306	sesenta	NUM	sixty				
-silla_NOUN	1307	silla	NOUN	chair; seat	Gender=Fem		visual=yes	
+silla_NOUN	1307	silla	NOUN	chair; seat	Gender=Fem		visual=object	
 justificar_VERB	1308	justificar	VERB	to justify; excuse			cognate=en	
 tradicional_ADJ	1309	tradicional	ADJ	traditional			cognate=en	
 soportar_VERB	1310	soportar	VERB	to endure; stand (something)				
 juventud_NOUN	1311	juventud	NOUN	youth	Gender=Fem			
 resistir_VERB	1312	resistir	VERB	to resist; endure			cognate=en	
 aparte_ADV	1313	aparte	ADV	apart; aside; separately			cognate=en	
-triste_ADJ	1314	triste	ADJ	sad; unhappy				
+triste_ADJ	1314	triste	ADJ	sad; unhappy			visual=pair	
 acceso_NOUN	1315	acceso	NOUN	access; entry	Gender=Masc		cognate=en	
 marco_NOUN	1316	marco	NOUN	frame; mark; setting	Gender=Masc			
-vestir_VERB	1317	vestir	VERB	to wear; dress				
+vestir_VERB	1317	vestir	VERB	to wear; dress			visual=action	
 prensa_NOUN	1318	prensa	NOUN	press	Gender=Fem			
 excepción_NOUN	1319	excepción	NOUN	exception	Gender=Fem		cognate=en	
 sorprender_VERB	1320	sorprender	VERB	to surprise				
 ausencia_NOUN	1321	ausencia	NOUN	absence	Gender=Fem			
 proceder_VERB	1322	proceder	VERB	to proceed; start			cognate=en	
 condenar_VERB	1323	condenar	VERB	to convict; condemn				
-sombra_NOUN	1324	sombra	NOUN	shade; shadow	Gender=Fem		visual=yes	
+sombra_NOUN	1324	sombra	NOUN	shade; shadow	Gender=Fem		visual=object	
 similar_ADJ	1325	similar	ADJ	similar			cognate=en	
 consumir_VERB	1326	consumir	VERB	to consume; take in			cognate=en	
 sugerir_VERB	1327	sugerir	VERB	to suggest; hint at				
@@ -1332,7 +1332,7 @@ profundidad_NOUN	1330	profundidad	NOUN	depth; profundity	Gender=Fem
 conceder_VERB	1331	conceder	VERB	to grant; concede				
 reciente_ADJ	1332	reciente	ADJ	recent			cognate=en	
 eléctrico_ADJ	1333	eléctrico	ADJ	electric			cognate=en	
-leche_NOUN	1334	leche	NOUN	milk	Gender=Fem		visual=yes	
+leche_NOUN	1334	leche	NOUN	milk	Gender=Fem		visual=object	
 consideración_NOUN	1335	consideración	NOUN	consideration; regard	Gender=Fem		cognate=en	
 componer_VERB	1336	componer	VERB	to compose; be part of				
 premio_NOUN	1337	premio	NOUN	prize; reward	Gender=Masc			
@@ -1344,14 +1344,14 @@ brillante_ADJ	1342	brillante	ADJ	brilliant; shiny; sparkling			cognate=en
 comportamiento_NOUN	1343	comportamiento	NOUN	behavior; conduct	Gender=Masc			
 crítica_NOUN	1344	crítica	NOUN	criticism; critique	Gender=Fem			
 femenino_ADJ	1345	femenino	ADJ	feminine; female				
-fuego_NOUN	1346	fuego	NOUN	fire; gunfire	Gender=Masc		visual=yes	
+fuego_NOUN	1346	fuego	NOUN	fire; gunfire	Gender=Masc		visual=object	
 tendencia_NOUN	1347	tendencia	NOUN	tendency; style	Gender=Fem		cognate=en	
 fino_ADJ	1348	fino	ADJ	fine; delicate			cognate=en	
 norma_NOUN	1349	norma	NOUN	standard; pattern; norm	Gender=Fem			
 inferior_ADJ	1350	inferior	ADJ	lower; inferior				
 arreglar_VERB	1351	arreglar	VERB	to fix; arrange				
-rueda_NOUN	1352	rueda	NOUN	wheel	Gender=Fem		visual=yes	
-puente_NOUN	1353	puente	NOUN	bridge	Gender=Masc		visual=yes	
+rueda_NOUN	1352	rueda	NOUN	wheel	Gender=Fem		visual=object	
+puente_NOUN	1353	puente	NOUN	bridge	Gender=Masc		visual=object	
 animar_VERB	1354	animar	VERB	to cheer up				
 rasgo_NOUN	1355	rasgo	NOUN	feature; trait	Gender=Masc			
 positivo_ADJ	1356	positivo	ADJ	positive			cognate=en	
@@ -1362,19 +1362,19 @@ señal_NOUN	1360	señal	NOUN	sign; mark; token	Gender=Fem
 apuntar_VERB	1361	apuntar	VERB	to point; note; aim				
 campaña_NOUN	1362	campaña	NOUN	campaign	Gender=Fem		cognate=en	
 liberar_VERB	1363	liberar	VERB	to free; liberate				
-puerto_NOUN	1364	puerto	NOUN	port; harbor	Gender=Masc		visual=yes	
+puerto_NOUN	1364	puerto	NOUN	port; harbor	Gender=Masc		visual=object	
 profundamente_ADV	1365	profundamente	ADV	profoundly; deeply			cognate=en	
 aventura_NOUN	1366	aventura	NOUN	adventure	Gender=Fem		cognate=en	
-pesado_ADJ	1367	pesado	ADJ	heavy; boring; tiresome				
+pesado_ADJ	1367	pesado	ADJ	heavy; boring; tiresome			visual=pair	
 complicado_ADJ	1368	complicado	ADJ	complicated; complex			cognate=en	
 añadir_VERB	1369	añadir	VERB	to add				
 marca_NOUN	1370	marca	NOUN	mark; brand; trademark	Gender=Fem			
-girar_VERB	1371	girar	VERB	to rotate; revolve				
+girar_VERB	1371	girar	VERB	to rotate; revolve			visual=action	
 ilusión_NOUN	1372	ilusión	NOUN	illusion; hope; dream	Gender=Fem		cognate=en	
 os_PRON	1373	os	PRON	you (obj-pl/+fam)				
 compra_NOUN	1374	compra	NOUN	shopping; buy; purchase	Gender=Fem			
 inteligencia_NOUN	1375	inteligencia	NOUN	intelligence	Gender=Fem		cognate=en	
-volar_VERB	1376	volar	VERB	to fly				
+volar_VERB	1376	volar	VERB	to fly			visual=action	
 loco_ADJ	1377	loco	ADJ	crazy; insane				
 virtud_NOUN	1378	virtud	NOUN	virtue; quality	Gender=Fem			
 remedio_NOUN	1379	remedio	NOUN	alternative; cure; solution	Gender=Masc			
@@ -1383,19 +1383,19 @@ facilitar_VERB	1381	facilitar	VERB	to facilitate
 territorio_NOUN	1382	territorio	NOUN	territory	Gender=Masc		cognate=en	
 facultad_NOUN	1383	facultad	NOUN	faculty; ability	Gender=Fem		cognate=en	
 solicitar_VERB	1384	solicitar	VERB	to solicit; request			cognate=en	
-fotografía_NOUN	1385	fotografía	NOUN	photograph	Gender=Fem		cognate=en; visual=yes	
-techo_NOUN	1386	techo	NOUN	roof	Gender=Masc		visual=yes	
+fotografía_NOUN	1385	fotografía	NOUN	photograph	Gender=Fem		cognate=en; visual=object	
+techo_NOUN	1386	techo	NOUN	roof	Gender=Masc		visual=object	
 temer_VERB	1387	temer	VERB	to fear				
 conducta_NOUN	1388	conducta	NOUN	conduct; behavior	Gender=Fem		cognate=en	
 violento_ADJ	1389	violento	ADJ	violent			cognate=en	
 aquél_PRON	1390	aquél	PRON	that one over there (m)		aquélla|aquéllos|aquéllas		
 salto_NOUN	1391	salto	NOUN	jump; hop; skip	Gender=Masc			
-pan_NOUN	1392	pan	NOUN	bread	Gender=Masc		visual=yes	
+pan_NOUN	1392	pan	NOUN	bread	Gender=Masc		visual=object	
 atacar_VERB	1393	atacar	VERB	to attack				
-sano_ADJ	1394	sano	ADJ	healthy; wholesome				
+sano_ADJ	1394	sano	ADJ	healthy; wholesome			visual=pair	
 pegar_VERB	1395	pegar	VERB	to hit; stick (on)				
 juzgar_VERB	1396	juzgar	VERB	to judge				
-limpio_ADJ	1397	limpio	ADJ	clean				
+limpio_ADJ	1397	limpio	ADJ	clean			visual=pair	
 disposición_NOUN	1398	disposición	NOUN	disposal; disposition	Gender=Fem			
 posterior_ADJ	1399	posterior	ADJ	rear; backside				
 general_NOUN	1400	general	NOUN	general	Gender=Masc		cognate=en	
@@ -1404,13 +1404,13 @@ relacionado_ADJ	1402	relacionado	ADJ	related; regarding
 habitual_ADJ	1403	habitual	ADJ	usual; habitual; customary				
 personal_NOUN	1404	personal	NOUN	personnel; staff; staffing	Gender=Masc			
 interrumpir_VERB	1405	interrumpir	VERB	to interrupt			cognate=en	
-columna_NOUN	1406	columna	NOUN	column; spine	Gender=Fem		cognate=en; visual=yes	
+columna_NOUN	1406	columna	NOUN	column; spine	Gender=Fem		cognate=en; visual=object	
 verdaderamente_ADV	1407	verdaderamente	ADV	truly				
 fabricar_VERB	1408	fabricar	VERB	to manufacture				
 únicamente_ADV	1409	únicamente	ADV	only				
 nervioso_ADJ	1410	nervioso	ADJ	nervous; uptight			cognate=en	
 indio_NOUN	1411	indio	NOUN	Indian	Gender=Masc			
-gato_NOUN	1412	gato	NOUN	cat	Gender=Masc		visual=yes	
+gato_NOUN	1412	gato	NOUN	cat	Gender=Masc		visual=object	
 margen_NOUN	1413	margen	NOUN	edge; margin; border; brink	Gender=Masc,Fem			
 material_ADJ	1414	material	ADJ	material			cognate=en	
 resistencia_NOUN	1415	resistencia	NOUN	resistance; opposition	Gender=Fem			
@@ -1444,7 +1444,7 @@ superficie_NOUN	1442	superficie	NOUN	surface; area	Gender=Fem
 aprobar_VERB	1443	aprobar	VERB	to pass (test); approve				
 chino_ADJ	1444	chino	ADJ	Chinese				
 pasión_NOUN	1445	pasión	NOUN	passion; desire	Gender=Fem		cognate=en	
-vehículo_NOUN	1446	vehículo	NOUN	vehicle; car	Gender=Masc		cognate=en; visual=yes	
+vehículo_NOUN	1446	vehículo	NOUN	vehicle; car	Gender=Masc		cognate=en; visual=object	
 inteligente_ADJ	1447	inteligente	ADJ	intelligent			cognate=en	
 grabar_VERB	1448	grabar	VERB	to record; engrave				
 enero_NOUN	1449	enero	NOUN	January	Gender=Masc			
@@ -1464,7 +1464,7 @@ departamento_NOUN	1462	departamento	NOUN	department; apartment	Gender=Masc		cogn
 generalmente_ADV	1463	generalmente	ADV	generally; usually			cognate=en	
 periodista_NOUN	1464	periodista	NOUN	journalist	Gender=Com			
 seguido_ADJ	1465	seguido	ADJ	in a row; successive				
-llorar_VERB	1466	llorar	VERB	to cry				
+llorar_VERB	1466	llorar	VERB	to cry			visual=action	
 griego_ADJ	1467	griego	ADJ	Greek				
 interpretación_NOUN	1468	interpretación	NOUN	interpretation; interpreting	Gender=Fem		cognate=en	
 maestro_ADJ	1469	maestro	ADJ	master				
@@ -1474,7 +1474,7 @@ belleza_NOUN	1472	belleza	NOUN	beauty	Gender=Fem
 universidad_NOUN	1473	universidad	NOUN	university; college	Gender=Fem		cognate=en	
 riqueza_NOUN	1474	riqueza	NOUN	riches; wealth	Gender=Fem			
 notable_ADJ	1475	notable	ADJ	outstanding; noteworthy				
-beber_VERB	1476	beber	VERB	to drink				
+beber_VERB	1476	beber	VERB	to drink			visual=action	
 claramente_ADV	1477	claramente	ADV	clearly			cognate=en	
 rato_NOUN	1478	rato	NOUN	moment; while; time	Gender=Masc			
 encargado_ADJ	1479	encargado	ADJ	in charge of				
@@ -1491,23 +1491,23 @@ ah_INTJ	1489	ah	INTJ	oh
 fruto_NOUN	1490	fruto	NOUN	fruit; result	Gender=Masc		cognate=en	
 representante_NOUN	1491	representante	NOUN	representative	Gender=Com		cognate=en	
 robar_VERB	1492	robar	VERB	to rob; steal			cognate=en	
-reír_VERB	1493	reír	VERB	to laugh (at)				
+reír_VERB	1493	reír	VERB	to laugh (at)			visual=action	
 literario_ADJ	1494	literario	ADJ	literary			cognate=en	
 exceso_NOUN	1495	exceso	NOUN	excess	Gender=Masc		cognate=en	
 capa_NOUN	1496	capa	NOUN	layer; coat	Gender=Fem			
 defecto_NOUN	1497	defecto	NOUN	defect	Gender=Masc		cognate=en	
-fábrica_NOUN	1498	fábrica	NOUN	factory; manufacture	Gender=Fem		visual=yes	
-espalda_NOUN	1499	espalda	NOUN	back (body)	Gender=Fem		visual=yes	
-mezclar_VERB	1500	mezclar	VERB	to mix				
+fábrica_NOUN	1498	fábrica	NOUN	factory; manufacture	Gender=Fem		visual=object	
+espalda_NOUN	1499	espalda	NOUN	back (body)	Gender=Fem		visual=object	
+mezclar_VERB	1500	mezclar	VERB	to mix			visual=action	
 género_NOUN	1501	género	NOUN	sort; gender; genre	Gender=Masc			
 continuo_ADJ	1502	continuo	ADJ	continuous			cognate=en	
 distribuir_VERB	1503	distribuir	VERB	to distribute; deliver			cognate=en	
 economía_NOUN	1504	economía	NOUN	economy; economics; thriftiness	Gender=Fem		cognate=en	
 apartar_VERB	1505	apartar	VERB	to move away; separate				
-bosque_NOUN	1506	bosque	NOUN	forest	Gender=Masc		visual=yes	
+bosque_NOUN	1506	bosque	NOUN	forest	Gender=Masc		visual=object	
 reclamar_VERB	1507	reclamar	VERB	to demand; require				
-paisaje_NOUN	1508	paisaje	NOUN	landscape	Gender=Masc		visual=yes	
-quemar_VERB	1509	quemar	VERB	to burn				
+paisaje_NOUN	1508	paisaje	NOUN	landscape	Gender=Masc		visual=object	
+quemar_VERB	1509	quemar	VERB	to burn			visual=action	
 llamado_NOUN	1510	llamado	NOUN	call; calling	Gender=Masc			
 paciente_NOUN	1511	paciente	NOUN	patient	Gender=Com		cognate=en	
 elevado_ADJ	1512	elevado	ADJ	elevated; high; lofty			cognate=en	
@@ -1526,16 +1526,16 @@ acusar_VERB	1524	acusar	VERB	to accuse
 espera_NOUN	1525	espera	NOUN	wait	Gender=Fem			
 gastar_VERB	1526	gastar	VERB	to spend (money)				
 reserva_NOUN	1527	reserva	NOUN	reservation; reserve	Gender=Fem			
-regalar_VERB	1528	regalar	VERB	to give (as a gift)				
+regalar_VERB	1528	regalar	VERB	to give (as a gift)			visual=action	
 competencia_NOUN	1529	competencia	NOUN	competition; contest	Gender=Fem			
 quejar_VERB	1530	quejar	VERB	to complain				
 penetrar_VERB	1531	penetrar	VERB	to penetrate; come in				
-vacío_ADJ	1532	vacío	ADJ	empty; vacant				
+vacío_ADJ	1532	vacío	ADJ	empty; vacant			visual=pair	
 aislado_ADJ	1533	aislado	ADJ	isolated				
 rendir_VERB	1534	rendir	VERB	[se] to give in; to render				
 observación_NOUN	1535	observación	NOUN	observation	Gender=Fem		cognate=en	
 registrar_VERB	1536	registrar	VERB	to register; record			cognate=en	
-limpiar_VERB	1537	limpiar	VERB	to clean				
+limpiar_VERB	1537	limpiar	VERB	to clean			visual=action	
 vacío_NOUN	1538	vacío	NOUN	emptiness; void	Gender=Masc			
 atribuir_VERB	1539	atribuir	VERB	to attribute				
 cifra_NOUN	1540	cifra	NOUN	figure; number; amount	Gender=Fem			
@@ -1560,13 +1560,13 @@ temperatura_NOUN	1558	temperatura	NOUN	temperature	Gender=Fem		cognate=en
 julio_NOUN	1559	julio	NOUN	July	Gender=Masc		cognate=en	
 poderoso_ADJ	1560	poderoso	ADJ	powerful				
 digno_ADJ	1561	digno	ADJ	worthy				
-bomba_NOUN	1562	bomba	NOUN	bomb; explosion; pump	Gender=Fem		cognate=en; visual=yes	
+bomba_NOUN	1562	bomba	NOUN	bomb; explosion; pump	Gender=Fem		cognate=en; visual=object	
 órgano_NOUN	1563	órgano	NOUN	organ	Gender=Masc		cognate=en	
 inútil_ADJ	1564	inútil	ADJ	useless				
 avance_NOUN	1565	avance	NOUN	advance; progress	Gender=Masc		cognate=en	
 humanidad_NOUN	1566	humanidad	NOUN	humanity; mankind	Gender=Fem		cognate=en	
 firma_NOUN	1567	firma	NOUN	company; signature; signing	Gender=Fem			
-soldado_NOUN	1568	soldado	NOUN	soldier	Gender=Masc,Fem	soldada	visual=yes	
+soldado_NOUN	1568	soldado	NOUN	soldier	Gender=Masc,Fem	soldada	visual=object	
 sólido_ADJ	1569	sólido	ADJ	solid; strong			cognate=en	
 firme_ADJ	1570	firme	ADJ	firm; steady			cognate=en	
 extremo_ADJ	1571	extremo	ADJ	extreme			cognate=en	
@@ -1576,7 +1576,7 @@ huir_VERB	1574	huir	VERB	to flee; run away
 percibir_VERB	1575	percibir	VERB	to perceive; notice				
 clima_NOUN	1576	clima	NOUN	climate	Gender=Masc			
 emoción_NOUN	1577	emoción	NOUN	emotion; excitement	Gender=Fem		cognate=en	
-automóvil_NOUN	1578	automóvil	NOUN	automobile	Gender=Masc		visual=yes	
+automóvil_NOUN	1578	automóvil	NOUN	automobile	Gender=Masc		visual=object	
 transcurrir_VERB	1579	transcurrir	VERB	to occur; take place				
 mal_NOUN	1580	mal	NOUN	evil	Gender=Masc			
 recomendar_VERB	1581	recomendar	VERB	to recommend			cognate=en	
@@ -1584,7 +1584,7 @@ habilidad_NOUN	1582	habilidad	NOUN	ability; skill; talent	Gender=Fem		cognate=en
 identidad_NOUN	1583	identidad	NOUN	identity	Gender=Fem		cognate=en	
 desgracia_NOUN	1584	desgracia	NOUN	misfortune; bad luck	Gender=Fem			
 corregir_VERB	1585	corregir	VERB	to correct; rectify				
-amarillo_ADJ	1586	amarillo	ADJ	yellow				
+amarillo_ADJ	1586	amarillo	ADJ	yellow			visual=pair	
 consultar_VERB	1587	consultar	VERB	to consult			cognate=en	
 deber_NOUN	1588	deber	NOUN	duty; obligation	Gender=Masc			
 cola_NOUN	1589	cola	NOUN	line; queue; tail	Gender=Fem			
@@ -1595,7 +1595,7 @@ soñar_VERB	1593	soñar	VERB	to dream
 muestra_NOUN	1594	muestra	NOUN	proof; sample; sign	Gender=Fem			
 acostumbrado_ADJ	1595	acostumbrado	ADJ	accustomed				
 hábito_NOUN	1596	hábito	NOUN	habit	Gender=Masc		cognate=en	
-gritar_VERB	1597	gritar	VERB	to shout				
+gritar_VERB	1597	gritar	VERB	to shout			visual=action	
 artístico_ADJ	1598	artístico	ADJ	artistic			cognate=en	
 mecanismo_NOUN	1599	mecanismo	NOUN	mechanism	Gender=Masc		cognate=en	
 vivienda_NOUN	1600	vivienda	NOUN	housing; dwelling	Gender=Fem			
@@ -1608,7 +1608,7 @@ mezcla_NOUN	1606	mezcla	NOUN	mixture; blend	Gender=Fem
 excesivo_ADJ	1607	excesivo	ADJ	excessive			cognate=en	
 sumar_VERB	1608	sumar	VERB	to add up; amount to				
 alimentar_VERB	1609	alimentar	VERB	to feed; support				
-habitación_NOUN	1610	habitación	NOUN	room; bedroom; habitat	Gender=Fem		visual=yes	
+habitación_NOUN	1610	habitación	NOUN	room; bedroom; habitat	Gender=Fem		visual=object	
 instrucción_NOUN	1611	instrucción	NOUN	instruction	Gender=Fem		cognate=en	
 eliminar_VERB	1612	eliminar	VERB	to eliminate; exclude				
 versión_NOUN	1613	versión	NOUN	version; account	Gender=Fem		cognate=en	
@@ -1622,7 +1622,7 @@ raza_NOUN	1620	raza	NOUN	race; lineage	Gender=Fem		cognate=en
 renunciar_VERB	1621	renunciar	VERB	to give up; renounce				
 descubrimiento_NOUN	1622	descubrimiento	NOUN	discovery	Gender=Masc			
 vacaciones_NOUN	1623	vacaciones	NOUN	vacation	Gender=Fem		cognate=en	
-provincia_NOUN	1624	provincia	NOUN	province; region	Gender=Fem		cognate=en	
+provincia_NOUN	1624	provincia	NOUN	province; region	Gender=Fem		cognate=en; visual=map	
 saber_NOUN	1625	saber	NOUN	knowledge	Gender=Masc			
 argentino_ADJ	1626	argentino	ADJ	Argentine			cognate=en	
 cómodo_ADJ	1627	cómodo	ADJ	comfortable; convenient				
@@ -1633,22 +1633,22 @@ negativo_ADJ	1631	negativo	ADJ	negative; pessimistic			cognate=en
 revisar_VERB	1632	revisar	VERB	to check; revise; inspect				
 carecer_VERB	1633	carecer	VERB	to be without				
 científico_ADJ	1634	científico	ADJ	scientific			cognate=en	
-arena_NOUN	1635	arena	NOUN	sand	Gender=Fem		visual=yes	
+arena_NOUN	1635	arena	NOUN	sand	Gender=Fem		visual=object	
 postura_NOUN	1636	postura	NOUN	posture; position; attitude	Gender=Fem		cognate=en	
-salón_NOUN	1637	salón	NOUN	hall; room	Gender=Masc		visual=yes	
+salón_NOUN	1637	salón	NOUN	hall; room	Gender=Masc		visual=object	
 escenario_NOUN	1638	escenario	NOUN	stage; setting; scene	Gender=Masc			
 armado_ADJ	1639	armado	ADJ	armed				
 largo_NOUN	1640	largo	NOUN	a lo largo: throughout; length	Gender=Masc			
 prometer_VERB	1641	prometer	VERB	to promise				
-contento_ADJ	1642	contento	ADJ	happy; content				
-hotel_NOUN	1643	hotel	NOUN	hotel	Gender=Masc		cognate=en; visual=yes	
+contento_ADJ	1642	contento	ADJ	happy; content			visual=pair	
+hotel_NOUN	1643	hotel	NOUN	hotel	Gender=Masc		cognate=en; visual=object	
 oficio_NOUN	1644	oficio	NOUN	job; occupation; function	Gender=Masc			
 descender_VERB	1645	descender	VERB	to descend			cognate=en	
 cubierto_ADJ	1646	cubierto	ADJ	covered				
 fila_NOUN	1647	fila	NOUN	line; row; file	Gender=Fem			
 patrón_NOUN	1648	patrón	NOUN	employer; landlord; patron saint	Gender=Masc			
-pecho_NOUN	1649	pecho	NOUN	chest; breast	Gender=Masc		visual=yes	
-tienda_NOUN	1650	tienda	NOUN	shop; store; tent	Gender=Fem		visual=yes	
+pecho_NOUN	1649	pecho	NOUN	chest; breast	Gender=Masc		visual=object	
+tienda_NOUN	1650	tienda	NOUN	shop; store; tent	Gender=Fem		visual=object	
 típico_ADJ	1651	típico	ADJ	typical				
 protección_NOUN	1652	protección	NOUN	protection	Gender=Fem		cognate=en	
 funcionario_NOUN	1653	funcionario	NOUN	civil servant	Gender=Masc			
@@ -1661,7 +1661,7 @@ caída_NOUN	1659	caída	NOUN	fall; drop; falling	Gender=Fem
 castellano_ADJ	1660	castellano	ADJ	Castilian; Spanish				
 asociar_VERB	1661	asociar	VERB	to associate with				
 desconocer_VERB	1662	desconocer	VERB	to not know; not recognize				
-valle_NOUN	1663	valle	NOUN	valley	Gender=Masc		cognate=en; visual=yes	
+valle_NOUN	1663	valle	NOUN	valley	Gender=Masc		cognate=en; visual=object	
 fallar_VERB	1664	fallar	VERB	to fail; miss				
 vuelo_NOUN	1665	vuelo	NOUN	flight	Gender=Masc			
 vecino_ADJ	1666	vecino	ADJ	nearby; neighboring				
@@ -1671,7 +1671,7 @@ increíble_ADJ	1669	increíble	ADJ	incredible; unbelievable			cognate=en
 concentración_NOUN	1670	concentración	NOUN	concentration; gathering	Gender=Fem		cognate=en	
 grito_NOUN	1671	grito	NOUN	cry; shout; scream	Gender=Masc			
 esencia_NOUN	1672	esencia	NOUN	essence	Gender=Fem			
-cocina_NOUN	1673	cocina	NOUN	kitchen	Gender=Fem		visual=yes	
+cocina_NOUN	1673	cocina	NOUN	kitchen	Gender=Fem		visual=object	
 mental_ADJ	1674	mental	ADJ	mental			cognate=en	
 reflejo_NOUN	1675	reflejo	NOUN	reflection	Gender=Masc			
 definición_NOUN	1676	definición	NOUN	definition	Gender=Fem		cognate=en	
@@ -1683,23 +1683,23 @@ agradecer_VERB	1681	agradecer	VERB	to thank for
 admirar_VERB	1682	admirar	VERB	to admire			cognate=en	
 sesión_NOUN	1683	sesión	NOUN	session; meeting	Gender=Fem		cognate=en	
 íntimo_ADJ	1684	íntimo	ADJ	close; intimate				
-reloj_NOUN	1685	reloj	NOUN	clock; watch	Gender=Masc		visual=yes	
-estrecho_ADJ	1686	estrecho	ADJ	narrow				
-muchacho_NOUN	1687	muchacho	NOUN	boy	Gender=Masc		visual=yes	
+reloj_NOUN	1685	reloj	NOUN	clock; watch	Gender=Masc		visual=object	
+estrecho_ADJ	1686	estrecho	ADJ	narrow			visual=pair	
+muchacho_NOUN	1687	muchacho	NOUN	boy	Gender=Masc		visual=object	
 octubre_NOUN	1688	octubre	NOUN	October	Gender=Masc			
 exposición_NOUN	1689	exposición	NOUN	exhibition; display	Gender=Fem			
 ingreso_NOUN	1690	ingreso	NOUN	entrance; admission; income	Gender=Masc			
 revelar_VERB	1691	revelar	VERB	to reveal; disclose			cognate=en	
-dibujo_NOUN	1692	dibujo	NOUN	drawing; sketch	Gender=Masc		visual=yes	
+dibujo_NOUN	1692	dibujo	NOUN	drawing; sketch	Gender=Masc		visual=object	
 frecuente_ADJ	1693	frecuente	ADJ	frequent			cognate=en	
 inevitable_ADJ	1694	inevitable	ADJ	inevitable; unavoidable			cognate=en	
-hueso_NOUN	1695	hueso	NOUN	bone	Gender=Masc		visual=yes	
-ligero_ADJ	1696	ligero	ADJ	light (in weight); slight				
+hueso_NOUN	1695	hueso	NOUN	bone	Gender=Masc		visual=object	
+ligero_ADJ	1696	ligero	ADJ	light (in weight); slight			visual=pair	
 militar_NOUN	1697	militar	NOUN	soldier; military person	Gender=Masc			
-motor_NOUN	1698	motor	NOUN	engine; motor	Gender=Masc		visual=yes	
+motor_NOUN	1698	motor	NOUN	engine; motor	Gender=Masc		visual=object	
 oposición_NOUN	1699	oposición	NOUN	opposition	Gender=Fem		cognate=en	
-patio_NOUN	1700	patio	NOUN	courtyard; playground; yard	Gender=Masc		visual=yes	
-fruta_NOUN	1701	fruta	NOUN	fruit	Gender=Fem		cognate=en; visual=yes	
+patio_NOUN	1700	patio	NOUN	courtyard; playground; yard	Gender=Masc		visual=object	
+fruta_NOUN	1701	fruta	NOUN	fruit	Gender=Fem		cognate=en; visual=object	
 ideal_NOUN	1702	ideal	NOUN	ideal; goal	Gender=Masc		cognate=en	
 izquierdo_ADJ	1703	izquierdo	ADJ	left (opposite of right)				
 ti_PRON	1704	ti	PRON	you (obj prep-sg/+fam)				
@@ -1708,17 +1708,17 @@ confusión_NOUN	1706	confusión	NOUN	confusion	Gender=Fem		cognate=en
 bonito_ADJ	1707	bonito	ADJ	pretty; nice				
 agregar_VERB	1708	agregar	VERB	to add; gather				
 corriente_ADJ	1709	corriente	ADJ	current; common				
-traje_NOUN	1710	traje	NOUN	suit; dress; costume	Gender=Masc		visual=yes	
+traje_NOUN	1710	traje	NOUN	suit; dress; costume	Gender=Masc		visual=object	
 exigencia_NOUN	1711	exigencia	NOUN	requirement; demand	Gender=Fem			
 víctima_NOUN	1712	víctima	NOUN	victim; casualty	Gender=Fem		cognate=en	
-playa_NOUN	1713	playa	NOUN	beach; seaside	Gender=Fem		visual=yes	
+playa_NOUN	1713	playa	NOUN	beach; seaside	Gender=Fem		visual=object	
 trabajador_NOUN	1714	trabajador	NOUN	worker; laborer	Gender=Masc,Fem	trabajadora		
 primario_ADJ	1715	primario	ADJ	primary			cognate=en	
 hierro_NOUN	1716	hierro	NOUN	iron	Gender=Masc			
 ideal_ADJ	1717	ideal	ADJ	ideal			cognate=en	
 completar_VERB	1718	completar	VERB	to complete			cognate=en	
-tela_NOUN	1719	tela	NOUN	cloth; fabric	Gender=Fem		visual=yes	
-ancho_ADJ	1720	ancho	ADJ	wide				
+tela_NOUN	1719	tela	NOUN	cloth; fabric	Gender=Fem		visual=object	
+ancho_ADJ	1720	ancho	ADJ	wide			visual=pair	
 producción_NOUN	1721	producción	NOUN	production	Gender=Fem		cognate=en	
 febrero_NOUN	1722	febrero	NOUN	February	Gender=Masc			
 símbolo_NOUN	1723	símbolo	NOUN	symbol	Gender=Masc			
@@ -1728,21 +1728,21 @@ combatir_VERB	1726	combatir	VERB	to fight against
 búsqueda_NOUN	1727	búsqueda	NOUN	search	Gender=Fem			
 colectivo_ADJ	1728	colectivo	ADJ	collective; joint			cognate=en	
 tranquilidad_NOUN	1729	tranquilidad	NOUN	tranquility; peace	Gender=Fem		cognate=en	
-espejo_NOUN	1730	espejo	NOUN	mirror; reflection	Gender=Masc		visual=yes	
+espejo_NOUN	1730	espejo	NOUN	mirror; reflection	Gender=Masc		visual=object	
 secreto_ADJ	1731	secreto	ADJ	secret			cognate=en	
 comprensión_NOUN	1732	comprensión	NOUN	understanding	Gender=Fem			
 incapaz_ADJ	1733	incapaz	ADJ	incapable				
-cerebro_NOUN	1734	cerebro	NOUN	brain	Gender=Masc		visual=yes	
+cerebro_NOUN	1734	cerebro	NOUN	brain	Gender=Masc		visual=object	
 satisfecho_ADJ	1735	satisfecho	ADJ	satisfied				
 reducido_ADJ	1736	reducido	ADJ	reduced; limited			cognate=en	
 tiro_NOUN	1737	tiro	NOUN	throw; shot	Gender=Masc			
 aportar_VERB	1738	aportar	VERB	to provide; contribute				
 derivar_VERB	1739	derivar	VERB	to derive; come (from)			cognate=en	
-abuelo_NOUN	1740	abuelo	NOUN	grandfather	Gender=Masc			
+abuelo_NOUN	1740	abuelo	NOUN	grandfather	Gender=Masc		visual=tree	
 prohibir_VERB	1741	prohibir	VERB	to prohibit; forbid			cognate=en	
 proporcionar_VERB	1742	proporcionar	VERB	to supply				
 maravilloso_ADJ	1743	maravilloso	ADJ	wonderful; marvelous				
-saludar_VERB	1744	saludar	VERB	to greet; say hello				
+saludar_VERB	1744	saludar	VERB	to greet; say hello			visual=action	
 relacionar_VERB	1745	relacionar	VERB	to relate				
 declaración_NOUN	1746	declaración	NOUN	declaration; statement	Gender=Fem		cognate=en	
 relativo_ADJ	1747	relativo	ADJ	relative			cognate=en	
