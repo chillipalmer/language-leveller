@@ -29,6 +29,7 @@ packages. NER and the other models in the download are not used.
   - It also maps lemmas PerDT keeps for inflected forms: *آنها* (also the lemma of the clitic *شان*) → *آن*, *یکی* → *یک*, *اولین* → *اول*, and the present stem *گذارد* (*بگذارد*, *می‌گذارم*, *گذارده*) → *گذاشتن*.
   - More of the same: *آنان*, *اینها* → *آن*, *این*; *دیگری* (also the lemma of *دیگران*), *بسیاری*, *تمامی*, *توی*, *نخستین*, *آخرین*, *بیشتر*, *هزاران*; the ezafe forms *جلوی*, *جای*, *پای*; and the stems *خاست*, *رسانید*, *گردانید*.
   - PerDT drops verb prefixes from lemmas (*برداشت* → *داشت*, *درآورد* → *آورد*, *برگشت* → *گشت*). `vocab.lemma_prefixes` restores them: a verb whose surface form starts with بر, در, باز, فرا or وا is tried as prefix + lemma first, and used if that infinitive is listed.
+  - Arabic plurals are counted under the singular, as in the source list: PerDT already does this (*افراد* → *فرد*) except for *شرایط*, *اطلاعات* and *همگان*, which `lemma_map` handles.
   - Spelling variants (*مسأله*, *هیأت*, *رییس*, *گفتگو*, *معنی*) are in the `variants` column; LL also checks the parser's lemma against variants, so plurals such as *مسأله‌ها* match.
   - `lemma_rules` restores *شد* where PerDT lemmatises passive *شد / می‌شود* as *کرد*.
 - **Grammar patterns.**

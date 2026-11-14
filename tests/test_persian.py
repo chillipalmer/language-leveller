@@ -122,6 +122,28 @@ def test_prefixed_verbs_stems_and_variant_lemmas(ll):
     assert heads["ببرند"] == "بردن"
 
 
+ADDED = """# text = متأسفانه شرایط و اطلاعات نزد همگان باران را برانگیخت.
+1\tمتأسفانه\tمتأسفانه\tADV\t_\t_\t9\tadvmod\t_\t_
+2\tشرایط\tشرایط\tNOUN\t_\tNumber=Plur\t9\tnsubj\t_\t_
+3\tو\tو\tCCONJ\t_\t_\t4\tcc\t_\t_
+4\tاطلاعات\tاطلاعات\tNOUN\t_\tNumber=Plur\t2\tconj\t_\t_
+5\tنزد\tنزد\tADP\t_\t_\t6\tcase\t_\t_
+6\tهمگان\tهمگان\tNOUN\t_\tNumber=Plur\t2\tnmod\t_\t_
+7\tباران\tباران\tNOUN\t_\tNumber=Sing\t9\tobj\t_\t_
+8\tرا\tرا\tADP\t_\t_\t7\tcase\t_\t_
+9\tبرانگیخت\tانگیخت\tVERB\t_\tNumber=Sing|Person=3|Tense=Past\t0\troot\t_\t_
+10\t.\t.\tPUNCT\t_\t_\t9\tpunct\t_\t_
+"""
+
+
+def test_added_words_and_plurals(ll):
+    rec = ll.level_sentence(parse_conllu(ADDED)[0])
+    heads = {t["text"]: t["headword"] for t in rec["tokens"] if "headword" in t}
+    assert heads == {"متأسفانه": "متأسفانه", "شرایط": "شرط", "و": "و", "اطلاعات": "اطلاع",
+                     "نزد": "نزد", "همگان": "همه", "باران": "باران", "را": "را",
+                     "برانگیخت": "برانگیختن"}
+
+
 def test_grammar_patterns_compile(ll):
     s = parse_conllu(PERFECT)[0]
     for f in ll.grammar.features:
