@@ -1,0 +1,5 @@
+vocab.tsv
+  Frequency ranks, parts of speech, transliterations and glosses for the 5,000
+  most frequent Persian words. Glosses are the project's own wording.
+  Homographs are split into separate lemmas; rare readings carry placeholder
+  ranks 5001-5080 until real frequencies are available.

@@ -112,7 +112,8 @@ conjugator. See [docs/ADDING_A_LANGUAGE.md](docs/ADDING_A_LANGUAGE.md).
 
 ```
 src/language_leveller/   cleaner, parsing backends, vocab, morph, grammar engine, CLI
-languages/es/            config.yaml, grammar.yaml, morph.tsv.gz, vocab.sample.tsv
+languages/es/            config.yaml, grammar.yaml, morph.tsv.gz, vocab.tsv
+languages/fa/            vocab.tsv (Persian; no config or grammar file yet)
 docs/FORMATS.md          vocabulary, grammar-pattern and config reference
 docs/ADDING_A_LANGUAGE.md
 tools/build_morph.py     builds a morphology lexicon from UniMorph / verbecc
@@ -121,18 +122,15 @@ tests/                   engine tests (no model needed) + Spanish integration te
 
 ## Vocabulary lists
 
-Only facts go in the repo: rank, word and POS (plus `level`, `variants` and `translit` if you
-created them yourself). Glosses and example sentences from published dictionaries are
-copyrightable, so strip them first:
+Each language has one `vocab.tsv` with the columns `id, rank, word, pos, gloss, feats,
+variants, tags, translit` (see [docs/FORMATS.md](docs/FORMATS.md)). One row per lemma + POS;
+glosses are the project's own wording, with senses separated by `;`.
 
-```bash
-python tools/strip_vocab.py my_full_list.csv languages/es/vocab.tsv
-```
-
-The Spanish list (`languages/es/vocab.tsv`) is derived from the ranks and parts of speech in
-Davies, *A Frequency Dictionary of Spanish* (Routledge), with no glosses or examples. When
-`vocab.tsv` is absent, LL falls back to `vocab.sample.tsv`, which has illustrative ranks for
-tests only.
+- `languages/es/vocab.tsv`: 5,000 Spanish lemmas.
+- `languages/fa/vocab.tsv`: 5,000 Persian spellings, with homographs split into separate
+  lemmas (5,148 rows). Readings judged rare were given placeholder ranks 5001–5080; their true
+  frequency is not yet known. `tags` records `split=<source rank>` for split rows and
+  `pos_also=…` for other parts of speech a word can take.
 
 ## Parser backends
 
