@@ -19,6 +19,10 @@
    - Inflecting languages (Russian, Arabic) mostly need `token` patterns on features.
    - Languages with little inflection (Mandarin, Vietnamese) mostly need `sequence` and
      `graph` patterns on lemmas, e.g. 把 constructions, aspect particles 了/过/着.
+   - Persian: the PerDT-trained parser leaves mood and often tense unmarked, so
+     `languages/fa/grammar.yaml` matches prefixes and endings with `regex` alongside
+     UPOS, lemma and relation. Normalise spelling first (`cleaning.char_map`,
+     `cleaning.normalise`): the parser only reads the ZWNJ spelling می‌روم correctly.
    - Japanese and Korean: UD tokenisation splits verb endings into separate AUX tokens, so
      write `graph` patterns over them.
 

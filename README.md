@@ -113,11 +113,11 @@ conjugator. See [docs/ADDING_A_LANGUAGE.md](docs/ADDING_A_LANGUAGE.md).
 ```
 src/language_leveller/   cleaner, parsing backends, vocab, morph, grammar engine, CLI
 languages/es/            config.yaml, grammar.yaml, morph.tsv.gz, vocab.tsv
-languages/fa/            vocab.tsv (Persian; no config or grammar file yet)
+languages/fa/            config.yaml, grammar.yaml, vocab.tsv (Persian, Stanza parser)
 docs/FORMATS.md          vocabulary, grammar-pattern and config reference
 docs/ADDING_A_LANGUAGE.md
 tools/build_morph.py     builds a morphology lexicon from UniMorph / verbecc
-tests/                   engine tests (no model needed) + Spanish integration tests
+tests/                   engine tests (no model needed) + Spanish and Persian integration tests
 ```
 
 ## Vocabulary lists
@@ -136,9 +136,10 @@ glosses are the project's own wording, with senses separated by `;`.
 
 `spacy:<model>` (default for Spanish), `stanza:<lang>`, or `conllu` (pre-parsed input from
 any UD parser, e.g. UDPipe). The config lists backends in order of preference, and
-`--parser` overrides it. The Stanza backend is implemented but has not been run in
-development. Stanza usually tags morphology more accurately than spaCy, so it is worth
-benchmarking with `leveller test-grammar --parser stanza:es`.
+`--parser` overrides it. Persian uses Stanza (`stanza:fa`, trained on UD Persian-PerDT);
+spaCy has no Persian model. The Spanish profile has not been run on Stanza yet. Stanza
+usually tags morphology more accurately than spaCy, so it is worth benchmarking with
+`leveller test-grammar --parser stanza:es`.
 
 ## Benchmark
 

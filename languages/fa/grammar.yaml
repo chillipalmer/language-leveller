@@ -1,0 +1,440 @@
+# Persian grammar profile for Language Leveller.
+#
+# Levels follow the usual sequence of Persian-as-a-foreign-language courses (simple
+# tenses and the modal subjunctive first; counterfactuals, short infinitives and the
+# evidential perfects late). They are provisional: no official Persian CEFR grammar
+# inventory is published in machine-readable form.
+#
+# Parser: Stanza `fa` (UD Persian-PerDT). PerDT's morphological features are incomplete:
+#   - verb lemmas are past stems (رفت, کرد), never infinitives;
+#   - Mood is set only for imperatives and a few auxiliaries. Present subjunctive and
+#     past imperfective both come out with no Tense; only the prefix می‌ tells them apart;
+#   - participles often lack VerbForm=Part (رفته بود), and Voice is unreliable.
+# Patterns therefore combine UPOS, lemma and dependency relation with regexes on the
+# surface form (prefixes می‌/ب/ن, the participle's final ه, person endings).
+# Text is normalised first (config.yaml): "می روم" and Arabic ي/ك become standard
+# spelling, which the parser needs.
+#
+# Run `leveller test-grammar --lang languages/fa` after edits.
+
+language: fa
+default_level: A1
+
+combinations:
+  - id: fa.combo.two_c1
+    level: C1
+    min_distinct: 2
+    result: C2
+    label: Two different C1 structures in one sentence
+
+features:
+
+# ---------------------------------------------------------------- A1
+- id: fa.pres.indicative
+  level: A1
+  label: Present indicative (می‌روم, دارم)
+  match:
+    token: {upos: VERB, Tense: Pres, VerbForm: null}
+  tests:
+    pos: ["من هر روز کتاب می‌خوانم.", "او قهوه نمی‌نوشد.", "من هر روز کتاب می خوانم."]
+    neg: ["دیروز به بازار رفتم."]
+
+- id: fa.copula.present
+  level: A1
+  label: Present of "to be" (است، هستم، نیست)
+  match:
+    token: {lemma: [است, هست], rel: [cop, root], Tense: {not: Past}}
+  tests:
+    pos: ["من دانشجو هستم.", "هوا امروز سرد است.", "او خسته نیست."]
+    neg: ["او به ایران رفته است.", "وقتی بچه بودم، اینجا زندگی می‌کردم."]
+
+- id: fa.imperative
+  level: A1
+  label: Imperative (بنشینید، بیا)
+  match:
+    token: {Mood: Imp, Polarity: null}
+  tests:
+    pos: ["بنشینید.", "لطفاً در را باز کن.", "فردا ساعت پنج بیا."]
+    neg: ["فردا ساعت پنج می‌آید."]
+
+- id: fa.clitic.possessive
+  level: A1
+  label: Possessive suffix (کتابم، خانه‌اش)
+  match:
+    token: {upos: PRON, form: [م, ت, ش, مان, تان, شان, ام, ات, اش], rel: [nmod, "nmod:poss"]}
+  tests:
+    pos: ["کتابم روی میز است.", "خانه‌اش خیلی بزرگ است."]
+    neg: ["کتاب من روی میز است."]
+
+# ---------------------------------------------------------------- A2
+- id: fa.past.simple
+  level: A2
+  label: Simple past (رفتم، دیدند، بودم)
+  match_any:
+    # past stem (ends in ت or د) + person ending; not a short infinitive (باید رفت)
+    # or the main verb of the future (خواهد رفت)
+    - token:
+        upos: VERB
+        Tense: Past
+        VerbForm: null
+        regex: '^(?!(بر|در|باز|فرو|فرا|وا|ور)?ن?می)\S*[تد](م|ی|یم|ید|ند)?$'
+        no_child: {rel: aux, lemma: [خواست, بایست, توان]}
+    - token: {lemma: بود, rel: [cop, root], regex: '^ن?بود(م|ی|یم|ید|ند)?$'}
+  tests:
+    pos: ["دیروز به بازار رفتم.", "دیروز به بازار نرفتیم.", "وقتی بچه بودم، اینجا زندگی می‌کردم."]
+    neg: ["من هر روز کتاب می‌خوانم.", "فردا باران خواهد بارید.", "باید رفت."]
+
+- id: fa.past.imperfective
+  level: A2
+  label: Past imperfective (می‌رفتم)
+  description: >
+    می‌ + past stem. The parser gives no Tense here, and Tense=Pres for می‌ + present stem.
+  match:
+    token: {upos: VERB, regex: '^(بر|در|باز|فرو|فرا|وا|ور)?ن?می(?!.*ه(\u200c?(ام|ای|ایم|اید|اند))?$)', VerbForm: null, Tense: {not: Pres}}
+  except:
+    - token: {regex: '^ن?می\u200c?(باش|توان$|بایست)'}
+  tests:
+    pos: ["وقتی بچه بودم، در کوچه بازی می‌کردم.", "او هر روز به مدرسه نمی‌رفت.", "هر شب ستاره‌ای برمی‌آمد."]
+    neg: ["من هر روز کتاب می‌خوانم.", "دیروز به بازار رفتم."]
+
+- id: fa.perfect.present
+  level: A2
+  label: Present perfect (دیده‌ام، رفته است)
+  match_any:
+    - token: {upos: VERB, regex: '^(?!(بر|در|باز|فرو|فرا|وا|ور)?ن?می)\S*ه\u200c?(ام|ای|ایم|اید|اند)$'}
+    - graph:
+        v: {upos: VERB, regex: '^(?!(بر|در|باز|فرو|فرا|وا|ور)?ن?می)\S*ه$'}
+        aux: {lemma: است, rel: aux, head: v}
+  tests:
+    pos: ["من این فیلم را دیده‌ام.", "او به ایران رفته است.", "ما هنوز غذا نخورده‌ایم.", "آنها هرگز به تهران نرفته اند."]
+    neg: ["من این فیلم را دیدم.", "وقتی رسیدم، او رفته بود."]
+
+- id: fa.progressive.present
+  level: A2
+  label: Present progressive (دارم می‌روم)
+  match_any:
+    - graph:
+        v: {upos: VERB, regex: '^(بر|در|باز|فرو|فرا|وا|ور)?می', Tense: Pres}
+        aux: {lemma: داشت, rel: aux, head: v}
+    # the parser sometimes splits دارم into دار + م
+    - sequence: [{form: [دارم, داری, دارد, داریم, دارید, دارند]}, {gap: [0, 3]}, {regex: '^(بر|در|باز|فرو|فرا|وا|ور)?می', Tense: Pres}]
+    - sequence: [{form: دار}, {form: [م, ی, د, یم, ید, ند]}, {gap: [0, 3]}, {regex: '^(بر|در|باز|فرو|فرا|وا|ور)?می', Tense: Pres}]
+  tests:
+    pos: ["دارم غذا می‌خورم.", "بچه‌ها دارند بازی می‌کنند.", "داری چه کار می‌کنی؟"]
+    neg: ["من غذا می‌خورم.", "او دو برادر دارد."]
+
+- id: fa.subj.modal
+  level: A2
+  label: Subjunctive after باید / خواستن / توانستن (باید بروم، می‌خواهم ببینم)
+  description: >
+    The parser marks neither mood nor tense on the present subjunctive. It is a finite
+    verb with no Tense, no می‌, and not an imperative.
+  match_any:
+    - graph:
+        v: {upos: VERB, Tense: null, VerbForm: null, Mood: {not: Imp}, Person: ["1", "2", "3"],
+            regex: '^(?!(بر|در|باز|فرو|فرا|وا|ور)?ن?می)(?!.*ه$)', lemma: {not: [هست, است]}}
+        m: {lemma: بایست, head: v}
+    - graph:
+        v: {upos: VERB, Tense: null, VerbForm: null, Mood: {not: Imp}, Person: ["1", "2", "3"],
+            regex: '^(?!(بر|در|باز|فرو|فرا|وا|ور)?ن?می)(?!.*ه$)', lemma: {not: [هست, است]},
+            head_is: {lemma: [خواست, توانست, توان]}}
+    # داشتن has a periphrastic subjunctive: داشته باشم
+    - graph:
+        v: {lemma: داشت, regex: '^ن?داشته$', has_child: {regex: '^ن?باش(م|ی|د|یم|ید|ند)$', rel: aux}}
+        m: {lemma: بایست, head: v}
+    - graph:
+        v: {lemma: داشت, regex: '^ن?داشته$', has_child: {regex: '^ن?باش(م|ی|د|یم|ید|ند)$', rel: aux},
+            head_is: {lemma: [خواست, توانست, توان]}}
+  tests:
+    pos: ["می‌خواهم فردا به سینما بروم.", "باید بیشتر کار کنیم.", "می‌توانی کمکم کنی؟", "نمی‌توانم بیایم.",
+          "باید صبر داشته باشیم."]
+    neg: ["فردا به سینما می‌روم.", "شاید فردا بیاید.", "فردا باران خواهد بارید."]
+
+- id: fa.comparative
+  level: A2
+  label: Comparative -تر (بزرگ‌تر، بیشتر)
+  match:
+    token: {upos: [ADJ, ADV], regex: '\S\u200c?تر$'}
+  tests:
+    pos: ["این خانه بزرگ‌تر از آن خانه است.", "تهران از شیراز بزرگ تر است.", "باید بیشتر کار کنیم."]
+    neg: ["این خانه خیلی بزرگ است.", "این بزرگ‌ترین شهر ایران است."]
+
+- id: fa.superlative
+  level: A2
+  label: Superlative -ترین (بزرگ‌ترین)
+  match:
+    token: {upos: [ADJ, ADV], regex: '\S\u200c?ترین$'}
+  tests:
+    pos: ["این بزرگترین شهر ایران است.", "این بهترین کتابی است که خوانده‌ام."]
+    neg: ["این خانه بزرگ‌تر از آن خانه است."]
+
+- id: fa.relative.ke
+  level: A2
+  label: Relative clause with که (کتابی که خریدم)
+  match:
+    graph:
+      v: {rel: acl, head_is: {upos: [NOUN, PRON, PROPN], form: {not: [این, آن]}}}
+      k: {form: که, rel: mark, head: v}
+  tests:
+    pos: ["کتابی که خریدم جالب است.", "مردی که دیروز دیدیم معلم است."]
+    neg: ["او گفت که فردا می‌آید.", "کتاب را خریدم.", "مثل این است که خواب دیده باشیم."]
+
+- id: fa.imperative.negative
+  level: A2
+  label: Negative imperative (نخور، نروید)
+  match:
+    token: {Mood: Imp, Polarity: Neg}
+  tests:
+    pos: ["این را نخور.", "لطفاً اینجا سیگار نکشید."]
+    neg: ["این را بخور.", "او این را نمی‌خورد."]
+
+- id: fa.clitic.object
+  level: A2
+  label: Object suffix (دیدمش، کمکم کن)
+  match:
+    token: {upos: PRON, form: [م, ت, ش, مان, تان, شان, ام, ات, اش], rel: [obj, obl, "obl:arg", iobj]}
+  tests:
+    pos: ["می‌توانی کمکم کنی؟", "دیروز دیدمش."]
+    neg: ["کتابم روی میز است.", "دیروز او را دیدم."]
+
+# ---------------------------------------------------------------- B1
+- id: fa.future
+  level: B1
+  label: Future (خواهم رفت)
+  match_any:
+    - token: {upos: AUX, Tense: Fut}
+    - sequence: [{regex: '^(ن|بر|در|باز|فرو|فرا|وا)?خواه(م|ی|د|یم|ید|ند)$'}, {upos: VERB, Tense: Past}]
+  tests:
+    pos: ["فردا باران خواهد بارید.", "فردا به تهران خواهم رفت.", "ما هرگز فراموش نخواهیم کرد."]
+    neg: ["می‌خواهم فردا به تهران بروم.", "فردا به تهران می‌روم."]
+
+- id: fa.perfect.past
+  level: B1
+  label: Past perfect (رفته بودم)
+  match:
+    graph:
+      v: {upos: VERB, regex: 'ه$'}
+      aux: {lemma: بود, rel: aux, head: v, regex: '^ن?بود(م|ی|یم|ید|ند)?$'}
+  tests:
+    pos: ["وقتی رسیدم، او رفته بود.", "قبلاً این فیلم را ندیده بودم."]
+    neg: ["او به ایران رفته است.", "وقتی بچه بودم، اینجا زندگی می‌کردم."]
+
+- id: fa.progressive.past
+  level: B1
+  label: Past progressive (داشتم می‌رفتم)
+  match_any:
+    - graph:
+        v: {upos: VERB, regex: '^(بر|در|باز|فرو|فرا|وا|ور)?می', Tense: {not: Pres}}
+        aux: {lemma: داشت, rel: aux, head: v}
+    - sequence: [{regex: '^داشت(م|ی|یم|ید|ند)?$'}, {gap: [0, 3]}, {upos: VERB, regex: '^(بر|در|باز|فرو|فرا|وا|ور)?می', Tense: {not: Pres}}]
+  tests:
+    pos: ["داشتم غذا می‌خوردم که تلفن زنگ زد.", "وقتی رسیدی، داشتند می‌رفتند."]
+    neg: ["غذا می‌خوردم.", "او ماشین قرمزی داشت."]
+
+- id: fa.subj.present
+  level: B1
+  label: Present subjunctive (که / تا / شاید / اگر + بروم)
+  description: >
+    Subjunctive outside the modal contexts of fa.subj.modal: after که, تا, شاید,
+    اگر, امیدوارم, بهتر است and the like.
+  match_any:
+    - token: {upos: VERB, Tense: null, VerbForm: null, Mood: {not: Imp}, Person: ["1", "2", "3"],
+              regex: '^(?!(بر|در|باز|فرو|فرا|وا|ور)?ن?می)(?!.*ه$)', lemma: {not: [هست, است]}}
+    - token: {lemma: بود, regex: '^ن?باش(م|ی|د|یم|ید|ند)$', rel: [cop, root]}
+    # داشتن has a periphrastic subjunctive: داشته باشم
+    - graph:
+        v: {lemma: داشت, regex: '^ن?داشته$'}
+        aux: {regex: '^ن?باش(م|ی|د|یم|ید|ند)$', rel: aux, head: v}
+  except:                                   # the modal contexts (fa.subj.modal)
+    - graph:
+        v: {upos: VERB}
+        m: {lemma: بایست, head: v}
+    - graph:
+        v: {upos: VERB, head_is: {lemma: [خواست, توانست, توان]}}
+  tests:
+    pos: ["شاید فردا بیاید.", "امیدوارم حالت خوب باشد.", "آمدم تا تو را ببینم.", "اگر وقت داشته باشی، به ما سر بزن."]
+    neg: ["ستاره برمی‌دمید و شب می‌گذشت.", "می‌خواهم فردا به سینما بروم.", "باید بیشتر کار کنیم.", "فردا می‌آید.", "من دانشجو هستم."]
+
+- id: fa.passive
+  level: B1
+  label: Passive with شدن (ساخته شد)
+  match:
+    graph:
+      sh: {upos: VERB, lemma: شد}
+      p: {upos: VERB, regex: 'ه$', rel: xcomp, head: sh}
+  tests:
+    pos: ["خانه در سال ۱۳۹۰ ساخته شد.", "نامه نوشته شده است."]
+    neg: ["هوا سرد شد.", "او خسته شد.", "او نامه را نوشت."]
+
+- id: fa.conj.inke
+  level: B1
+  label: Clause linkers with اینکه (قبل از اینکه، بدون اینکه، برای اینکه)
+  match_any:
+    - sequence: [{form: [قبل, بعد, پیش, پس, بدون, برای]}, {form: از, optional: true}, {form: [اینکه, آنکه]}]
+    - sequence: [{form: [قبل, بعد, پیش, پس, بدون, برای]}, {form: از, optional: true}, {form: [این, آن]}, {form: که}]
+  tests:
+    pos: ["قبل از اینکه بروی، به من زنگ بزن.", "بدون اینکه چیزی بگوید رفت.", "برای این که دیر نشود، زود رفتیم."]
+    neg: ["قبل از ناهار به من زنگ بزن.", "این کتاب برای تو است."]
+
+# ---------------------------------------------------------------- B2
+- id: fa.subj.past
+  level: B2
+  label: Past subjunctive (رفته باشم)
+  match:
+    graph:
+      v: {upos: VERB, regex: 'ه$'}
+      aux: {regex: '^ن?باش(م|ی|د|یم|ید|ند)$', rel: aux, head: v}
+  except:                                   # داشته باشم is the present subjunctive of داشتن
+    - token: {lemma: داشت, regex: '^ن?داشته$'}
+  tests:
+    pos: ["امیدوارم نامه را خوانده باشی.", "شاید او رفته باشد."]
+    neg: ["امیدوارم نامه را بخوانی.", "او رفته است.", "اگر وقت داشته باشی، به ما سر بزن."]
+
+- id: fa.conditional.counterfactual
+  level: B2
+  label: Counterfactual (اگر می‌دانستم… / اگر رفته بودی… / کاش)
+  match_any:
+    - graph:
+        v: {upos: VERB, regex: '^(بر|در|باز|فرو|فرا|وا|ور)?ن?می', VerbForm: null, Tense: {not: Pres}}
+        k: {form: اگر, rel: mark, head: v}
+    - graph:
+        v: {upos: VERB, regex: 'ه$', has_child: {lemma: بود, rel: aux, regex: '^ن?بود(م|ی|یم|ید|ند)?$'}}
+        k: {form: اگر, rel: mark, head: v}
+    - sequence: [{form: کاش}, {gap: [0, 6]}, {upos: VERB, regex: '^(بر|در|باز|فرو|فرا|وا|ور)?ن?می', VerbForm: null, Tense: {not: Pres}}]
+    - sequence: [{form: کاش}, {gap: [0, 6]}, {upos: VERB, regex: 'ه$'}, {regex: '^ن?بود(م|ی|یم|ید|ند)?$'}]
+  tests:
+    pos: ["اگر می‌دانستم، می‌آمدم.", "اگر زودتر رفته بودی، او را می‌دیدی.", "کاش اینجا بودی و این را می‌دیدی."]
+    neg: ["اگر وقت داری، بیا.", "اگر وقت داشته باشی، به ما سر بزن."]
+
+- id: fa.modal.should_have
+  level: B2
+  label: باید + past imperfective (باید می‌رفتم 'I should have gone')
+  match:
+    graph:
+      v: {upos: VERB, regex: '^(بر|در|باز|فرو|فرا|وا|ور)?ن?می', VerbForm: null, Tense: {not: Pres}}
+      m: {lemma: بایست, rel: aux, head: v}
+  tests:
+    pos: ["باید زودتر می‌آمدی.", "نباید این حرف را می‌زدم."]
+    neg: ["باید زودتر بیایی.", "باید رفت."]
+
+- id: fa.impersonal.short_infinitive
+  level: B2
+  label: Impersonal modal + short infinitive (باید رفت، می‌توان گفت)
+  match:
+    graph:
+      v: {upos: VERB, Tense: Past, VerbForm: null, regex: '^(?!(بر|در|باز|فرو|فرا|وا|ور)?ن?می)\S*[تد]$'}
+      m: {lemma: [بایست, توان], rel: aux, head: v}
+  tests:
+    pos: ["باید رفت.", "می‌توان گفت که او درست می‌گوید.", "نباید فراموش کرد که او جوان است."]
+    neg: ["باید بروم.", "می‌توانم بگویم که او درست می‌گوید.", "قناری باید ارزن بخورد."]
+
+- id: fa.concessive
+  level: B2
+  label: Concessive (با اینکه، اگرچه، هرچند)
+  match_any:
+    - token: {form: [اگرچه, گرچه, هرچند, هر‌چند, باآنکه, بااینکه]}
+    - sequence: [{form: با}, {form: [اینکه, آنکه]}]
+    - sequence: [{form: با}, {form: [این, آن]}, {form: که}]
+    - sequence: [{form: با}, {form: وجود}, {form: [اینکه, آنکه]}]
+    - sequence: [{form: با}, {form: وجود}, {form: [این, آن]}, {form: که}]
+  tests:
+    pos: ["با اینکه خسته بود، کار کرد.", "اگرچه باران می‌بارد، بیرون می‌رویم.", "با وجود این که پول نداشت، خانه خرید."]
+    neg: ["با این کتاب فارسی یاد گرفتم.", "چون خسته بود، کار نکرد."]
+
+# ---------------------------------------------------------------- C1
+- id: fa.perfect.remote
+  level: C1
+  label: Remote/evidential past perfect (رفته بوده است)
+  match:
+    sequence: [{upos: VERB, regex: 'ه$'}, {regex: '^ن?بوده(\u200c?(ام|ای|ایم|اید|اند))?$'}]
+  tests:
+    pos: ["گویا او قبلاً اینجا آمده بوده است.", "ظاهراً نامه را خوانده بوده‌اند."]
+    neg: ["او قبلاً اینجا بوده است.", "او قبلاً اینجا آمده بود."]
+
+- id: fa.perfect.continuous
+  level: C1
+  label: Evidential imperfective (می‌رفته است)
+  match_any:
+    - token: {upos: VERB, regex: '^(بر|در|باز|فرو|فرا|وا|ور)?ن?می\S*ه(\u200c?(ام|ای|ایم|اید|اند))?$'}
+    - token: {upos: VERB, VerbForm: Part, regex: '^(بر|در|باز|فرو|فرا|وا|ور)?ن?می'}
+  tests:
+    pos: ["ظاهراً هر روز به آنجا می‌رفته است.", "گویا آنها در این خانه زندگی می‌کرده‌اند."]
+    neg: ["او هر روز به آنجا می‌رفت.", "می‌خواهند بیایند.", "من هر روز کتاب می‌خوانم."]
+
+- id: fa.participle.conjunctive
+  level: C1
+  label: Conjunctive participle (به خانه رفته، شام خورد)
+  description: >
+    A bare past participle closing a clause, chaining it to the next. Written style.
+    The auxiliary of a perfect is often dropped before و in written prose (جابه‌جا شده و
+    …), which is the same construction.
+  match:
+    sequence:
+      - {upos: VERB, regex: '^(?!(بر|در|باز|فرو|فرا|وا|ور)?ن?می)\S*[^\u200c]ه$', no_child: {rel: [aux, cop]}}
+      - {form: ["،", ",", و]}
+  tests:
+    pos: ["به خانه رفته، شام خورد.", "نامه را نوشته، به پست داد.", "تیم دو پله بالا رفته و به رتبهٔ سوم رسید."]
+    neg: ["او به خانه رفته است.", "به خانه رفت، شام خورد.", "وقتی رسیدم، او رفته بود."]
+
+- id: fa.passive.gardidan
+  level: C1
+  label: Formal passive with گردیدن (ساخته گردید)
+  description: >
+    Also covers compound verbs with گردیدن (امضا گردید, انجام گردید), the formal
+    counterpart of امضا شد. Compound verbs with شدن are not detected as passive: the
+    parser cannot tell انجام شد (was done) from سرد شد (became cold).
+  match_any:
+    - graph:
+        g: {upos: VERB, lemma: گردید}
+        p: {upos: VERB, regex: 'ه$', rel: xcomp, head: g}
+    - graph:
+        g: {upos: VERB, lemma: گردید}
+        n: {upos: NOUN, rel: "compound:lvc", head: g}
+  tests:
+    pos: ["این ساختمان در سال ۱۳۵۰ ساخته گردید.", "قرارداد امضا گردید."]
+    neg: ["این ساختمان در سال ۱۳۵۰ ساخته شد.", "قرارداد امضا شد.", "او به خانه برگشت."]
+
+- id: fa.mibayest
+  level: C1
+  label: می‌بایست (had to / should have, formal)
+  match:
+    token: {regex: '^(ن)?می\u200c?بایست'}
+  tests:
+    pos: ["او می‌بایست زودتر می‌آمد.", "می‌بایست این کار را انجام می‌دادیم."]
+    neg: ["او باید زودتر بیاید."]
+
+# ---------------------------------------------------------------- C2
+- id: fa.literary.be_past
+  level: C2
+  label: Literary ب + past (بگفت، بدید)
+  description: >
+    Classical prefix on the simple past. Listed verbs only: many ordinary verbs begin
+    with ب (بست, برد, بارید, بخشید), and some past stems equal present stem + د, so
+    their ب-forms are ordinary subjunctives (بخورد, بماند). Requires Tense=Past.
+  match:
+    token: {upos: VERB, Tense: Past, regex: '^ب(گفت|دید|رفت|کرد|آمد|نشست|شنید|کشت|گرفت|داد|شد|زد|خاست|افتاد)(م|ی|یم|ید|ند)?$'}
+  tests:
+    pos: ["چون این سخن بشنید، برخاست و برفت."]
+    neg: ["او در را بست و رفت.", "باید غذا بخورد.", "می‌خواهد اینجا بماند."]
+
+- id: fa.literary.hami
+  level: C2
+  label: Literary durative همی (همی‌رفت)
+  match:
+    token: {regex: '^همی(\u200c|$)'}
+  tests:
+    pos: ["کاروان همی‌رفت و شب همی‌گذشت."]
+    neg: ["کاروان می‌رفت و شب می‌گذشت."]
+
+# ---------------------------------------------------------------- regional
+# `regions` lists ISO 3166 codes where the feature is standard. LL always detects it;
+# the app decides what it means for a learner.
+- id: fa.dari.copula
+  level: A1
+  label: Dari copula استم / استی / استند
+  regions: [AF]
+  match:
+    token: {regex: '^است(م|ی|یم|ید|ند)$'}
+  tests:
+    pos: ["من خوب استم.", "شما از کابل استید؟"]
+    neg: ["من خوب هستم."]
