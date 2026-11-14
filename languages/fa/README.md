@@ -31,7 +31,13 @@ packages. NER and the other models in the download are not used.
 - **Grammar patterns.**
   - PerDT marks mood only on imperatives and some auxiliaries. The present subjunctive and the past imperfective both come out with no Tense, and participles often lack `VerbForm=Part`.
   - So patterns combine UPOS, lemma and relation with regexes on prefixes (می‌, ب, ن, and the preverbs بر/در/باز/فرو/فرا/وا/ور) and endings (the participle's ه, person endings).
-- **Levels** follow the usual order of Persian-as-a-foreign-language courses. They are provisional, because no official Persian CEFR grammar inventory is available in machine-readable form.
+- **Levels** follow the Saadi Foundation's grammar course *Chaarchoob* (چارچوب), written for its Persian Teaching Standard Reference (PTSR). Each feature's `source` names the lesson where the structure is first taught.
+  - Volume 1 covers PTSR elementary and pre-intermediate; volume 2 covers intermediate and upper-intermediate. The PTSR equates pre-intermediate with CEFR A2, intermediate with B1 and upper-intermediate with B2.
+  - The books do not level single lessons, so lessons are mapped by position: volume 1 lessons 1–25 → A1, 26–35 → A2; volume 2 lessons 1–13 → B1, 14–27 → B2.
+  - C1–C2 features are not in volumes 1–2. Volume 3 (advanced) has no published contents page, so those levels are unchecked.
+  - Two project decisions override the position rule, and their `source` says so:
+    - relative clauses with *که* (volume 2, lesson 20, which the rule makes B2) are B1, in line with CEFR-aligned courses for other languages;
+    - *را* (taught explicitly only in volume 2, lesson 3) is A2, because it occurs throughout volume 1.
 - **Regional:** `fa.dari.copula` (*استم*, *استی*, …) is tagged `regions: [AF]`.
 
 ## Checking against the treebank

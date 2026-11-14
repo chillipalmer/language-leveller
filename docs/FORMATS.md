@@ -72,6 +72,7 @@ features:
       neg: ["Me pide que lo ayude."]      # must not match
     except:                        # optional patterns; matches overlapping them are dropped
       - sequence: [{form: o}, {form: sea}]
+    source: "Plan Curricular, A2"   # optional, informational: where the level comes from
     regions: [ES]                  # optional ISO 3166 codes where this is standard;
                                    # always detected, reported in output for the app to judge
     enabled: true                  # optional; false skips the feature

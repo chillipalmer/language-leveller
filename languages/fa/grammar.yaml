@@ -1,9 +1,16 @@
 # Persian grammar profile for Language Leveller.
 #
-# Levels follow the usual sequence of Persian-as-a-foreign-language courses (simple
-# tenses and the modal subjunctive first; counterfactuals, short infinitives and the
-# evidential perfects late). They are provisional: no official Persian CEFR grammar
-# inventory is published in machine-readable form.
+# Levels follow the Saadi Foundation's grammar course "Chaarchoob" (چارچوب), written for
+# its Persian Teaching Standard Reference (PTSR). `source` gives the lesson where each
+# structure is first taught. Volume 1 covers PTSR elementary and pre-intermediate,
+# volume 2 intermediate and upper-intermediate; the PTSR equates pre-intermediate with
+# CEFR A2, intermediate with B1 and upper-intermediate with B2. The books do not level
+# single lessons, so lessons are mapped by position:
+#   Chaarchoob 1, lessons 1-25 (chapters 1-8)   -> A1
+#   Chaarchoob 1, lessons 26-35 (chapters 9-12) -> A2
+#   Chaarchoob 2, lessons 1-13 (chapters 1-3)   -> B1
+#   Chaarchoob 2, lessons 14-27 (chapters 4-8)  -> B2
+# C1-C2 features are not in volumes 1-2; volume 3 (advanced) has not been checked.
 #
 # Parser: Stanza `fa` (UD Persian-PerDT). PerDT's morphological features are incomplete:
 #   - verb lemmas are past stems (رفت, کرد), never infinitives;
@@ -33,6 +40,7 @@ features:
 - id: fa.pres.indicative
   level: A1
   label: Present indicative (می‌روم, دارم)
+  source: "Chaarchoob 1, L13"
   match:
     token: {upos: VERB, Tense: Pres, VerbForm: null}
   tests:
@@ -42,6 +50,7 @@ features:
 - id: fa.copula.present
   level: A1
   label: Present of "to be" (است، هستم، نیست)
+  source: "Chaarchoob 1, L1"
   match:
     token: {lemma: [است, هست], rel: [cop, root], Tense: {not: Past}}
   tests:
@@ -51,6 +60,7 @@ features:
 - id: fa.imperative
   level: A1
   label: Imperative (بنشینید، بیا)
+  source: "Chaarchoob 1, L22"
   match:
     token: {Mood: Imp, Polarity: null}
   tests:
@@ -60,16 +70,17 @@ features:
 - id: fa.clitic.possessive
   level: A1
   label: Possessive suffix (کتابم، خانه‌اش)
+  source: "Chaarchoob 1, L2"
   match:
     token: {upos: PRON, form: [م, ت, ش, مان, تان, شان, ام, ات, اش], rel: [nmod, "nmod:poss"]}
   tests:
     pos: ["کتابم روی میز است.", "خانه‌اش خیلی بزرگ است."]
     neg: ["کتاب من روی میز است."]
 
-# ---------------------------------------------------------------- A2
 - id: fa.past.simple
-  level: A2
+  level: A1
   label: Simple past (رفتم، دیدند، بودم)
+  source: "Chaarchoob 1, L20"
   match_any:
     # past stem (ends in ت or د) + person ending; not a short infinitive (باید رفت)
     # or the main verb of the future (خواهد رفت)
@@ -84,9 +95,158 @@ features:
     pos: ["دیروز به بازار رفتم.", "دیروز به بازار نرفتیم.", "وقتی بچه بودم، اینجا زندگی می‌کردم."]
     neg: ["من هر روز کتاب می‌خوانم.", "فردا باران خواهد بارید.", "باید رفت."]
 
+- id: fa.progressive.present
+  level: A1
+  label: Present progressive (دارم می‌روم)
+  source: "Chaarchoob 1, L21"
+  match_any:
+    - graph:
+        v: {upos: VERB, regex: '^(بر|در|باز|فرو|فرا|وا|ور)?می', Tense: Pres}
+        aux: {lemma: داشت, rel: aux, head: v}
+    # the parser sometimes splits دارم into دار + م
+    - sequence: [{form: [دارم, داری, دارد, داریم, دارید, دارند]}, {gap: [0, 3]}, {regex: '^(بر|در|باز|فرو|فرا|وا|ور)?می', Tense: Pres}]
+    - sequence: [{form: دار}, {form: [م, ی, د, یم, ید, ند]}, {gap: [0, 3]}, {regex: '^(بر|در|باز|فرو|فرا|وا|ور)?می', Tense: Pres}]
+  tests:
+    pos: ["دارم غذا می‌خورم.", "بچه‌ها دارند بازی می‌کنند.", "داری چه کار می‌کنی؟"]
+    neg: ["من غذا می‌خورم.", "او دو برادر دارد."]
+
+- id: fa.comparative
+  level: A1
+  label: Comparative -تر (بزرگ‌تر، بیشتر)
+  source: "Chaarchoob 1, L11"
+  match:
+    token: {upos: [ADJ, ADV], regex: '\S\u200c?تر$'}
+  tests:
+    pos: ["این خانه بزرگ‌تر از آن خانه است.", "تهران از شیراز بزرگ تر است.", "باید بیشتر کار کنیم."]
+    neg: ["این خانه خیلی بزرگ است.", "این بزرگ‌ترین شهر ایران است."]
+
+- id: fa.superlative
+  level: A1
+  label: Superlative -ترین (بزرگ‌ترین)
+  source: "Chaarchoob 1, L11"
+  match:
+    token: {upos: [ADJ, ADV], regex: '\S\u200c?ترین$'}
+  tests:
+    pos: ["این بزرگترین شهر ایران است.", "این بهترین کتابی است که خوانده‌ام."]
+    neg: ["این خانه بزرگ‌تر از آن خانه است."]
+
+- id: fa.imperative.negative
+  level: A1
+  label: Negative imperative (نخور، نروید)
+  source: "Chaarchoob 1, L23"
+  match:
+    token: {Mood: Imp, Polarity: Neg}
+  tests:
+    pos: ["این را نخور.", "لطفاً اینجا سیگار نکشید."]
+    neg: ["این را بخور.", "او این را نمی‌خورد."]
+
+- id: fa.negation
+  level: A1
+  label: Negative verb (نمی‌روم، نرفتم، نیستم)
+  source: "Chaarchoob 1, L1, L13"
+  match:
+    token: {upos: [VERB, AUX], Polarity: Neg}
+  tests:
+    pos: ["او قهوه نمی‌نوشد.", "دیروز به بازار نرفتیم.", "او خسته نیست."]
+    neg: ["او قهوه می‌نوشد."]
+
+- id: fa.question.aya
+  level: A1
+  label: Yes-no question with آیا
+  source: "Chaarchoob 1, L1; Chaarchoob 2, L6"
+  match:
+    token: {form: آیا}
+  tests:
+    pos: ["آیا تو دانشجو هستی؟", "آیا دزد به خانه آمده است؟"]
+    neg: ["تو دانشجو هستی؟"]
+
+- id: fa.ezafe
+  level: A1
+  label: Ezafe (کیفِ مدیر، کیفِ بزرگ)
+  source: "Chaarchoob 1, L3, L7-8"
+  description: >
+    The ezafe vowel is usually unwritten. A noun with a following adjective or noun
+    modifier (amod, nmod) is an ezafe construction; superlatives (بزرگ‌ترین شهر) and
+    suffixed pronouns (کتابم) are not.
+  match:
+    graph:
+      n: {upos: [NOUN, PROPN, PRON]}
+      m: {upos: [ADJ, NOUN, PROPN], rel: [amod, nmod], head: n, regex: '^(?!.*ترین$)'}
+  tests:
+    pos: ["خانهٔ بزرگ پدرم در تهران است.", "کتاب‌های خوب را خریدم.", "به گزارش خبرنگار مهر، باران آمد."]
+    neg: ["کتابم روی میز است.", "این بزرگترین شهر است.", "او خسته است."]
+
+- id: fa.plural
+  level: A1
+  label: Plural -ها / -ان (کتاب‌ها، دانشجویان)
+  source: "Chaarchoob 1, L4, L10"
+  match_any:
+    - token: {upos: NOUN, Number: Plur, regex: 'ها(ی|یی|یم|یت|یش|یمان|یتان|یشان)?$'}
+    - token: {upos: NOUN, Number: Plur, regex: '(ان|گان|یان)$'}
+  tests:
+    pos: ["کتاب‌های خوب را خریدم.", "دانشجویان در کلاس هستند."]
+    neg: ["کتاب خوب را خریدم.", "مردم اینجا مهربان هستند."]
+
+- id: fa.compound_verb
+  level: A1
+  label: Compound verb (کار کردن، دوست داشتن)
+  source: "Chaarchoob 1, L9, L14"
+  match:
+    graph:
+      v: {upos: [VERB, AUX]}
+      n: {rel: "compound:lvc", head: v}
+  tests:
+    pos: ["من فارسی را دوست دارم.", "او به من کمک کرد."]
+    neg: ["من به خانه رفتم."]
+
+- id: fa.compound_verb.shodan
+  level: A1
+  label: Compound verb with شدن (باز شد، انجام شد، سرد شد)
+  source: "Chaarchoob 1, L14"
+  description: >
+    The شدن counterpart of a کردن compound (باز کردن / باز شدن). Mace (5/30) treats
+    many of these as the passive of the کردن verb; Chaarchoob teaches the pairing with
+    compound verbs at A1. No attempt is made to tell passive (انجام شد) from "become"
+    (سرد شد). The participle passive (ساخته شد) is fa.passive.
+  match:
+    graph:
+      v: {upos: [VERB, AUX], lemma: شد}
+      n: {upos: [NOUN, ADJ], rel: ["compound:lvc", xcomp], head: v}
+  tests:
+    pos: ["کار انجام شد.", "این فایل باز نمی‌شود.", "هوا سرد شد.", "کتاب سال گذشته چاپ شد."]
+    neg: ["خانه در سال ۱۳۹۰ ساخته شد.", "او به من کمک کرد.", "او به خانه رفت."]
+
+- id: fa.present.future
+  level: A1
+  label: Present tense with future meaning (فردا می‌روم)
+  source: "Chaarchoob 1, L17-19"
+  match:
+    sequence:
+      - {form: [فردا, امشب, پس‌فردا, بعداً, آینده]}
+      - {gap: [0, 6]}
+      - {upos: VERB, Tense: Pres, regex: '^(بر|در|باز|فرو|فرا|وا|ور)?ن?می'}
+  tests:
+    pos: ["فردا به تهران می‌روم.", "هفتهٔ آینده او را می‌بینم."]
+    neg: ["فردا به تهران خواهم رفت.", "دیروز به تهران رفتم.", "هر روز به مدرسه می‌روم."]
+
+- id: fa.negative_concord
+  level: A1
+  label: هیچ / هیچ‌وقت / هرگز + negative verb
+  source: "Chaarchoob 1, L13, L35"
+  match:
+    sequence:
+      - {regex: '^(هیچ|هرگز)'}
+      - {gap: [0, 6]}
+      - {upos: [VERB, AUX], Polarity: Neg}
+  tests:
+    pos: ["من هیچ‌وقت قهوه نمی‌نوشم.", "هیچ کس نیامد.", "هرگز به شیراز نرفته‌ام."]
+    neg: ["من همیشه قهوه می‌نوشم.", "من قهوه نمی‌نوشم."]
+
+# ---------------------------------------------------------------- A2
 - id: fa.past.imperfective
   level: A2
   label: Past imperfective (می‌رفتم)
+  source: "Chaarchoob 1, L32"
   description: >
     می‌ + past stem. The parser gives no Tense here, and Tense=Pres for می‌ + present stem.
   match:
@@ -100,6 +260,7 @@ features:
 - id: fa.perfect.present
   level: A2
   label: Present perfect (دیده‌ام، رفته است)
+  source: "Chaarchoob 1, L34"
   match_any:
     - token: {upos: VERB, regex: '^(?!(بر|در|باز|فرو|فرا|وا|ور)?ن?می)\S*ه\u200c?(ام|ای|ایم|اید|اند)$'}
     - graph:
@@ -109,23 +270,10 @@ features:
     pos: ["من این فیلم را دیده‌ام.", "او به ایران رفته است.", "ما هنوز غذا نخورده‌ایم.", "آنها هرگز به تهران نرفته اند."]
     neg: ["من این فیلم را دیدم.", "وقتی رسیدم، او رفته بود."]
 
-- id: fa.progressive.present
-  level: A2
-  label: Present progressive (دارم می‌روم)
-  match_any:
-    - graph:
-        v: {upos: VERB, regex: '^(بر|در|باز|فرو|فرا|وا|ور)?می', Tense: Pres}
-        aux: {lemma: داشت, rel: aux, head: v}
-    # the parser sometimes splits دارم into دار + م
-    - sequence: [{form: [دارم, داری, دارد, داریم, دارید, دارند]}, {gap: [0, 3]}, {regex: '^(بر|در|باز|فرو|فرا|وا|ور)?می', Tense: Pres}]
-    - sequence: [{form: دار}, {form: [م, ی, د, یم, ید, ند]}, {gap: [0, 3]}, {regex: '^(بر|در|باز|فرو|فرا|وا|ور)?می', Tense: Pres}]
-  tests:
-    pos: ["دارم غذا می‌خورم.", "بچه‌ها دارند بازی می‌کنند.", "داری چه کار می‌کنی؟"]
-    neg: ["من غذا می‌خورم.", "او دو برادر دارد."]
-
 - id: fa.subj.modal
   level: A2
   label: Subjunctive after باید / خواستن / توانستن (باید بروم، می‌خواهم ببینم)
+  source: "Chaarchoob 1, L26-27, L29"
   description: >
     The parser marks neither mood nor tense on the present subjunctive. It is a finite
     verb with no Tense, no می‌, and not an imperative.
@@ -150,78 +298,10 @@ features:
           "باید صبر داشته باشیم."]
     neg: ["فردا به سینما می‌روم.", "شاید فردا بیاید.", "فردا باران خواهد بارید."]
 
-- id: fa.comparative
-  level: A2
-  label: Comparative -تر (بزرگ‌تر، بیشتر)
-  match:
-    token: {upos: [ADJ, ADV], regex: '\S\u200c?تر$'}
-  tests:
-    pos: ["این خانه بزرگ‌تر از آن خانه است.", "تهران از شیراز بزرگ تر است.", "باید بیشتر کار کنیم."]
-    neg: ["این خانه خیلی بزرگ است.", "این بزرگ‌ترین شهر ایران است."]
-
-- id: fa.superlative
-  level: A2
-  label: Superlative -ترین (بزرگ‌ترین)
-  match:
-    token: {upos: [ADJ, ADV], regex: '\S\u200c?ترین$'}
-  tests:
-    pos: ["این بزرگترین شهر ایران است.", "این بهترین کتابی است که خوانده‌ام."]
-    neg: ["این خانه بزرگ‌تر از آن خانه است."]
-
-- id: fa.relative.ke
-  level: A2
-  label: Relative clause with که (کتابی که خریدم)
-  match:
-    graph:
-      v: {rel: acl, head_is: {upos: [NOUN, PRON, PROPN], form: {not: [این, آن]}}}
-      k: {form: که, rel: mark, head: v}
-  tests:
-    pos: ["کتابی که خریدم جالب است.", "مردی که دیروز دیدیم معلم است."]
-    neg: ["او گفت که فردا می‌آید.", "کتاب را خریدم.", "مثل این است که خواب دیده باشیم."]
-
-- id: fa.imperative.negative
-  level: A2
-  label: Negative imperative (نخور، نروید)
-  match:
-    token: {Mood: Imp, Polarity: Neg}
-  tests:
-    pos: ["این را نخور.", "لطفاً اینجا سیگار نکشید."]
-    neg: ["این را بخور.", "او این را نمی‌خورد."]
-
-- id: fa.clitic.object
-  level: A2
-  label: Object suffix (دیدمش، کمکم کن)
-  match:
-    token: {upos: PRON, form: [م, ت, ش, مان, تان, شان, ام, ات, اش], rel: [obj, obl, "obl:arg", iobj]}
-  tests:
-    pos: ["می‌توانی کمکم کنی؟", "دیروز دیدمش."]
-    neg: ["کتابم روی میز است.", "دیروز او را دیدم."]
-
-# ---------------------------------------------------------------- B1
-- id: fa.future
-  level: B1
-  label: Future (خواهم رفت)
-  match_any:
-    - token: {upos: AUX, Tense: Fut}
-    - sequence: [{regex: '^(ن|بر|در|باز|فرو|فرا|وا)?خواه(م|ی|د|یم|ید|ند)$'}, {upos: VERB, Tense: Past}]
-  tests:
-    pos: ["فردا باران خواهد بارید.", "فردا به تهران خواهم رفت.", "ما هرگز فراموش نخواهیم کرد."]
-    neg: ["می‌خواهم فردا به تهران بروم.", "فردا به تهران می‌روم."]
-
-- id: fa.perfect.past
-  level: B1
-  label: Past perfect (رفته بودم)
-  match:
-    graph:
-      v: {upos: VERB, regex: 'ه$'}
-      aux: {lemma: بود, rel: aux, head: v, regex: '^ن?بود(م|ی|یم|ید|ند)?$'}
-  tests:
-    pos: ["وقتی رسیدم، او رفته بود.", "قبلاً این فیلم را ندیده بودم."]
-    neg: ["او به ایران رفته است.", "وقتی بچه بودم، اینجا زندگی می‌کردم."]
-
 - id: fa.progressive.past
-  level: B1
+  level: A2
   label: Past progressive (داشتم می‌رفتم)
+  source: "Chaarchoob 1, L33"
   match_any:
     - graph:
         v: {upos: VERB, regex: '^(بر|در|باز|فرو|فرا|وا|ور)?می', Tense: {not: Pres}}
@@ -232,8 +312,9 @@ features:
     neg: ["غذا می‌خوردم.", "او ماشین قرمزی داشت."]
 
 - id: fa.subj.present
-  level: B1
+  level: A2
   label: Present subjunctive (که / تا / شاید / اگر + بروم)
+  source: "Chaarchoob 1, L28-29, L31; Chaarchoob 2, L15"
   description: >
     Subjunctive outside the modal contexts of fa.subj.modal: after که, تا, شاید,
     اگر, امیدوارم, بهتر است and the like.
@@ -255,9 +336,149 @@ features:
     pos: ["شاید فردا بیاید.", "امیدوارم حالت خوب باشد.", "آمدم تا تو را ببینم.", "اگر وقت داشته باشی، به ما سر بزن."]
     neg: ["ستاره برمی‌دمید و شب می‌گذشت.", "می‌خواهم فردا به سینما بروم.", "باید بیشتر کار کنیم.", "فردا می‌آید.", "من دانشجو هستم."]
 
-- id: fa.passive
+- id: fa.infinitive.noun
+  level: A2
+  label: Infinitive as a noun (خواندن کتاب را دوست دارم)
+  source: "Chaarchoob 1, L30"
+  description: >
+    Stanza tags the long infinitive as NOUN without VerbForm. Matched by its ending,
+    excluding common nouns that end in -تن/-دن.
+  match:
+    token: {upos: NOUN, regex: '^(?!(متن|تن|بتن|بدن|گردن|تمدن|معدن|لادن|خویشتن|کرگدن|آبستن|میهن)$)\S{2,}[تد]ن$'}
+  tests:
+    pos: ["خواندن کتاب را دوست دارم.", "شنا کردن برای سلامتی خوب است.", "او در حال نوشتن نامه است."]
+    neg: ["کتاب خواندم.", "متن را خواندم.", "بدنم درد می‌کند."]
+
+- id: fa.conj.vaqti
+  level: A2
+  label: Time clause with وقتی (که)
+  source: "Chaarchoob 1, L32-33"
+  match_any:
+    - token: {form: [وقتیکه, وقتی‌که]}
+    - sequence: [{form: وقتی, has_child: {rel: [acl, "acl:relcl"]}}]
+    - sequence: [{form: وقتی, clause_start: true}, {gap: [1, 8]}, {upos: [VERB, AUX], VerbForm: {not: Inf}}]
+  tests:
+    pos: ["وقتی بچه بودم، اینجا زندگی می‌کردیم.", "وقتی رسیدم، او رفته بود.", "وقتی که زلزله آمد، خواب بودم."]
+    neg: ["وقت ندارم.", "یک وقتی برای جلسه تعیین کنیم."]
+
+- id: fa.ra
+  level: A2
+  label: Direct-object marker را
+  source: "Chaarchoob 2, L3 (taught explicitly); A2 by project decision, since را is used throughout volume 1; Mace 3/3"
+  match:
+    token: {form: را}
+  tests:
+    pos: ["کتاب را خریدم.", "او را دیدم."]
+    neg: ["کتابی خریدم."]
+
+# ---------------------------------------------------------------- B1
+- id: fa.relative.ke
   level: B1
+  label: Relative clause with که (کتابی که خریدم)
+  source: "Chaarchoob 2, L20; B1 by project decision (the lesson-position rule gives B2)"
+  match:
+    graph:
+      v: {rel: acl, head_is: {upos: [NOUN, PRON, PROPN], form: {not: [این, آن]}}}
+      k: {form: که, rel: mark, head: v}
+  tests:
+    pos: ["کتابی که خریدم جالب است.", "مردی که دیروز دیدیم معلم است."]
+    neg: ["او گفت که فردا می‌آید.", "کتاب را خریدم.", "مثل این است که خواب دیده باشیم."]
+
+- id: fa.clitic.object
+  level: B1
+  label: Object suffix (دیدمش، کمکم کن)
+  source: "Chaarchoob 2, L4"
+  match:
+    token: {upos: PRON, form: [م, ت, ش, مان, تان, شان, ام, ات, اش], rel: [obj, obl, "obl:arg", iobj]}
+  tests:
+    pos: ["می‌توانی کمکم کنی؟", "دیروز دیدمش."]
+    neg: ["کتابم روی میز است.", "دیروز او را دیدم."]
+
+- id: fa.future
+  level: B1
+  label: Future (خواهم رفت)
+  source: "Chaarchoob 2, L9"
+  match_any:
+    - token: {upos: AUX, Tense: Fut}
+    - sequence: [{regex: '^(ن|بر|در|باز|فرو|فرا|وا)?خواه(م|ی|د|یم|ید|ند)$'}, {upos: VERB, Tense: Past}]
+  tests:
+    pos: ["فردا باران خواهد بارید.", "فردا به تهران خواهم رفت.", "ما هرگز فراموش نخواهیم کرد."]
+    neg: ["می‌خواهم فردا به تهران بروم.", "فردا به تهران می‌روم."]
+
+- id: fa.perfect.past
+  level: B1
+  label: Past perfect (رفته بودم)
+  source: "Chaarchoob 2, L13"
+  match:
+    graph:
+      v: {upos: VERB, regex: 'ه$'}
+      aux: {lemma: بود, rel: aux, head: v, regex: '^ن?بود(م|ی|یم|ید|ند)?$'}
+  tests:
+    pos: ["وقتی رسیدم، او رفته بود.", "قبلاً این فیلم را ندیده بودم."]
+    neg: ["او به ایران رفته است.", "وقتی بچه بودم، اینجا زندگی می‌کردم."]
+
+- id: fa.experiencer
+  level: B1
+  label: Experiencer suffix with شدن / بودن / آمدن (گرسنه‌ام شد، سختم بود، خوشم آمد)
+  source: "Chaarchoob 2, L7"
+  match:
+    sequence:
+      - {regex: '^(گرسنه|تشنه|سخت|آسان|خوش|بد|سرد|گرم|خواب|یاد|حیف|لج|غصه|خنده|گریه|درد|خسته)‌?$'}
+      - {upos: PRON, form: [م, ت, ش, مان, تان, شان, ام, ات, اش]}
+      - {lemma: [شد, بود, است, هست, آمد, برد, گرفت, رفت]}
+  tests:
+    pos: ["گرسنه‌ام شد.", "خیلی سختم بود.", "از این فیلم خوشم آمد.", "اسمش یادم رفت."]
+    neg: ["من گرسنه هستم.", "کتابم روی میز است."]
+
+- id: fa.reflexive.xod
+  level: B1
+  label: Reflexive / emphatic خود (خودم، خودش)
+  source: "Chaarchoob 2, L7"
+  match:
+    token: {form: [خود, خویش, خویشتن]}
+  tests:
+    pos: ["خودم این کار را کردم.", "او خودش را در آینه دید."]
+    neg: ["من این کار را کردم."]
+
+- id: fa.progressive.periphrastic
+  level: B1
+  label: در حال / مشغول … بودن (in the middle of)
+  source: "Chaarchoob 2, L10"
+  match_any:
+    - sequence: [{form: در}, {form: حال}, {upos: NOUN, regex: '[تد]ن$'}]
+    - sequence: [{form: [مشغول, سرگرم]}, {gap: [0, 4]}, {lemma: [بود, است, هست]}]
+  tests:
+    pos: ["او در حال نوشتن نامه است.", "بچه‌ها مشغول بازی هستند."]
+    neg: ["او نامه می‌نویسد.", "در حال حاضر کار ندارم."]
+
+- id: fa.duration.ast_ke
+  level: B1
+  label: Duration with "… است که" (سه سال است که اینجا زندگی می‌کنم)
+  source: "Chaarchoob 2, L10"
+  match_any:
+    - sequence: [{form: [روز, سال, ماه, هفته, ساعت, دقیقه, مدت, وقت, قرن, سال‌ها, ماه‌ها, روزها]}, {form: [است, هست]}, {form: که}]
+    - sequence: [{regex: '^(سال|ماه|روز|هفته|ساعت|مدت|قرن)(‌?ها)?ست$'}, {form: که}]
+  tests:
+    pos: ["سه سال است که در تهران زندگی می‌کنم.", "چند روز است که او را ندیده‌ام."]
+    neg: ["سه سال در تهران زندگی کردم.", "امروز روز خوبی است که بیرون برویم."]
+
+- id: fa.complement.ke
+  level: B1
+  label: که introducing a complement clause; reported speech (گفت که …)
+  source: "Chaarchoob 2, L12, L20"
+  match:
+    graph:
+      v: {rel: [ccomp, csubj]}
+      k: {form: که, rel: mark, head: v}
+  tests:
+    pos: ["او گفت که فردا می‌آید.", "دوستم گفت که دیروز امتحان نداده است.", "فکر می‌کنم که حق با توست."]
+    neg: ["کتابی که خریدم جالب است.", "او گفت فردا می‌آید."]
+
+# ---------------------------------------------------------------- B2
+- id: fa.passive
+  level: B2
   label: Passive with شدن (ساخته شد)
+  source: "Chaarchoob 2, L26"
   match:
     graph:
       sh: {upos: VERB, lemma: شد}
@@ -267,8 +488,9 @@ features:
     neg: ["هوا سرد شد.", "او خسته شد.", "او نامه را نوشت."]
 
 - id: fa.conj.inke
-  level: B1
+  level: B2
   label: Clause linkers with اینکه (قبل از اینکه، بدون اینکه، برای اینکه)
+  source: "Chaarchoob 2, L19, L21-22"
   match_any:
     - sequence: [{form: [قبل, بعد, پیش, پس, بدون, برای]}, {form: از, optional: true}, {form: [اینکه, آنکه]}]
     - sequence: [{form: [قبل, بعد, پیش, پس, بدون, برای]}, {form: از, optional: true}, {form: [این, آن]}, {form: که}]
@@ -276,10 +498,10 @@ features:
     pos: ["قبل از اینکه بروی، به من زنگ بزن.", "بدون اینکه چیزی بگوید رفت.", "برای این که دیر نشود، زود رفتیم."]
     neg: ["قبل از ناهار به من زنگ بزن.", "این کتاب برای تو است."]
 
-# ---------------------------------------------------------------- B2
 - id: fa.subj.past
   level: B2
   label: Past subjunctive (رفته باشم)
+  source: "Chaarchoob 2, L15, L18"
   match:
     graph:
       v: {upos: VERB, regex: 'ه$'}
@@ -293,6 +515,7 @@ features:
 - id: fa.conditional.counterfactual
   level: B2
   label: Counterfactual (اگر می‌دانستم… / اگر رفته بودی… / کاش)
+  source: "Chaarchoob 2, L14, L23"
   match_any:
     - graph:
         v: {upos: VERB, regex: '^(بر|در|باز|فرو|فرا|وا|ور)?ن?می', VerbForm: null, Tense: {not: Pres}}
@@ -309,6 +532,7 @@ features:
 - id: fa.modal.should_have
   level: B2
   label: باید + past imperfective (باید می‌رفتم 'I should have gone')
+  source: "Chaarchoob 2, L14"
   match:
     graph:
       v: {upos: VERB, regex: '^(بر|در|باز|فرو|فرا|وا|ور)?ن?می', VerbForm: null, Tense: {not: Pres}}
@@ -320,6 +544,7 @@ features:
 - id: fa.impersonal.short_infinitive
   level: B2
   label: Impersonal modal + short infinitive (باید رفت، می‌توان گفت)
+  source: "Chaarchoob 2, L17"
   match:
     graph:
       v: {upos: VERB, Tense: Past, VerbForm: null, regex: '^(?!(بر|در|باز|فرو|فرا|وا|ور)?ن?می)\S*[تد]$'}
@@ -331,6 +556,7 @@ features:
 - id: fa.concessive
   level: B2
   label: Concessive (با اینکه، اگرچه، هرچند)
+  source: "Chaarchoob 2, L24"
   match_any:
     - token: {form: [اگرچه, گرچه, هرچند, هر‌چند, باآنکه, بااینکه]}
     - sequence: [{form: با}, {form: [اینکه, آنکه]}]
@@ -341,10 +567,131 @@ features:
     pos: ["با اینکه خسته بود، کار کرد.", "اگرچه باران می‌بارد، بیرون می‌رویم.", "با وجود این که پول نداشت، خانه خرید."]
     neg: ["با این کتاب فارسی یاد گرفتم.", "چون خسته بود، کار نکرد."]
 
+- id: fa.relative.nonrestrictive
+  level: B2
+  label: Non-restrictive relative clause (فرامرز که ماهیگیر است، …)
+  source: "Chaarchoob 2, L20"
+  match_any:
+    - sequence: [{upos: PROPN}, {form: که}]
+    - sequence: [{upos: PRON, form: [او, آنها, ایشان, شما]}, {form: که}]
+  tests:
+    pos: ["فرامرز که ماهیگیر ماهری است، دیروز نتوانست ماهی بگیرد.", "اصفهان که پایتخت بود، شهر بزرگی است."]
+    neg: ["مردی که دیروز دیدیم معلم است."]
+
+- id: fa.conj.reason_purpose_result
+  level: B2
+  label: Linkers of reason, purpose and result (به دلیل اینکه، به منظور اینکه، در نتیجه)
+  source: "Chaarchoob 2, L19"
+  match_any:
+    - sequence: [{form: به}, {form: [علت, دلیل, خاطر, منظور, سبب]}, {form: [اینکه, آنکه]}]
+    - sequence: [{form: به}, {form: [علت, دلیل, خاطر, منظور, سبب]}, {form: [این, آن]}, {form: که}]
+    - sequence: [{form: با}, {form: هدف}, {form: [اینکه, آنکه]}]
+    - sequence: [{form: به}, {form: همین}, {form: [دلیل, علت, سبب, خاطر]}]
+    - sequence: [{form: در}, {form: [نتیجه, نتیجهٔ]}]
+    - token: {form: [درنتیجه, بنابراین]}
+  tests:
+    pos: ["به دلیل اینکه هوا گرم بود، پنجره را باز کردم.", "در نتیجه همه خسته شدند.", "به همین دلیل دیر رسیدم."]
+    neg: ["به دلیل باران دیر رسیدم.", "نتیجهٔ امتحان خوب بود."]
+
+- id: fa.conj.time
+  level: B2
+  label: Time linkers (به محض اینکه، همین که، تا وقتی که)
+  source: "Chaarchoob 2, L21"
+  match_any:
+    - sequence: [{form: به}, {form: [محض, مجرد]}, {form: [اینکه, آنکه]}]
+    - sequence: [{form: به}, {form: [محض, مجرد]}, {form: [این, آن]}, {form: که}]
+    - sequence: [{form: همین}, {form: که}]
+    - token: {form: [همینکه, همین‌که]}
+    - sequence: [{form: تا}, {form: [وقتی, وقتیکه, وقتی‌که, زمانی, جایی]}, {form: که, optional: true}]
+  tests:
+    pos: ["به محض اینکه رسیدم، به تو زنگ زدم.", "همین که در را باز کردم، گربه فرار کرد.", "تا وقتی که اینجا هستی، نگران نباش."]
+    neg: ["به محض رسیدن زنگ زدم.", "همین کتاب را خریدم."]
+
+- id: fa.conj.correlative
+  level: B2
+  label: Paired conjunctions (نه تنها … بلکه، هم … هم، نه … نه، چه … چه، یا … یا)
+  source: "Chaarchoob 2, L22, L24"
+  match_any:
+    - sequence: [{form: نه}, {form: تنها}]
+    - token: {form: [نه‌تنها, نه‌فقط]}
+    - sequence: [{form: هم, clause_start: true}, {gap: [1, 6]}, {form: "،"}, {form: هم}]
+    - sequence: [{form: نه}, {gap: [1, 6]}, {form: "،", optional: true}, {form: نه}, {upos: {not: PUNCT}}]
+    - sequence: [{form: [چه, خواه], clause_start: true}, {gap: [1, 6]}, {form: "،", optional: true}, {form: [چه, خواه]}]
+    - sequence: [{form: یا, clause_start: true}, {gap: [1, 6]}, {form: یا}]
+  tests:
+    pos: ["او نه تنها باهوش است، بلکه مهربان هم هست.", "نه پول دارم، نه وقت.", "چه بخواهی، چه نخواهی، باید بروی."]
+    neg: ["او باهوش و مهربان است.", "نه، نمی‌خواهم."]
+
+- id: fa.conj.condition
+  level: B2
+  label: Condition linkers (به شرط اینکه، در صورتی که، چنانچه، مگر اینکه)
+  source: "Chaarchoob 2, L23"
+  match_any:
+    - token: {form: [درصورتیکه, درصورتی‌که, چنانچه, مگراینکه, به‌شرطی‌که, بشرطیکه]}
+    - sequence: [{form: به}, {form: [شرط, شرطی]}, {form: [اینکه, که, آنکه]}]
+    - sequence: [{form: در}, {form: صورتی}, {form: که}]
+    - sequence: [{form: [مگر, الا, الّا, مشروط]}, {form: بر, optional: true}, {form: [اینکه, آنکه]}]
+  tests:
+    pos: ["درصورتیکه وقت داشته باشی، بیا.", "به شرط اینکه زود برگردی، می‌توانی بروی.", "نمی‌آیم مگر اینکه تو هم بیایی."]
+    neg: ["اگر وقت داشته باشی، بیا."]
+
+- id: fa.conj.instead
+  level: B2
+  label: به جای اینکه / در عوض اینکه (instead of)
+  source: "Chaarchoob 2, L23"
+  match_any:
+    - sequence: [{form: به}, {form: [جای, جا]}, {form: [اینکه, آنکه]}]
+    - sequence: [{form: در}, {form: عوض}, {form: [اینکه, آنکه]}]
+  tests:
+    pos: ["به جای اینکه درس بخوانی، تلویزیون تماشا می‌کنی."]
+    neg: ["به جای او آمدم."]
+
+- id: fa.comparison.equality
+  level: B2
+  label: Equality and difference (به اندازهٔ، نسبت به)
+  source: "Chaarchoob 2, L24"
+  match_any:
+    - sequence: [{form: به}, {regex: '^اندازه(ٔ|‌ی)?$'}, {upos: [NOUN, PRON, PROPN]}]
+    - sequence: [{form: نسبت}, {form: به}]
+  tests:
+    pos: ["زهرا به اندازهٔ من کار می‌کند.", "قیمت‌ها نسبت به پارسال بیشتر شده است."]
+    neg: ["این اندازه مناسب است."]
+
+- id: fa.conj.contrast
+  level: B2
+  label: Contrast linkers (در حالی که، علی‌رغم اینکه، برخلاف اینکه)
+  source: "Chaarchoob 2, L24"
+  match_any:
+    - token: {form: [درحالیکه, درحالی‌که]}
+    - sequence: [{form: در}, {form: حالی}, {form: که}]
+    - sequence: [{regex: '^(علی‌رغم|علیرغم|برخلاف)$'}, {form: [اینکه, آنکه]}]
+    - sequence: [{form: علی}, {form: رغم}, {form: [اینکه, آنکه]}]
+  tests:
+    pos: ["درحالیکه باران می‌بارید، بیرون رفتیم.", "در حالی که خسته بود، کار کرد.", "علی‌رغم اینکه بیمار بود، آمد."]
+    neg: ["در حال حاضر کار ندارم."]
+
+- id: fa.causative
+  level: B2
+  label: Causative (دواندن، باعث شدن، دادن + subjunctive)
+  source: "Chaarchoob 2, L25"
+  description: >
+    Type 1: past stem in -اند/-انید (دواند, سوزاند); ماند, خواند, راند, ستاند and the
+    present forms تواند / داند are not causatives, nor is the perfect ending ـه‌اند. Type 2: باعث / مجبور / وادار + شدن or کردن. Type 3: دادن + subjunctive.
+  match_any:
+    - token: {upos: VERB, regex: '^(?!.*(ماند|خواند|ستاند|راند))(?!.*(تواند|داند|توانید|دانید|مانید|خوانید)$)\S*[^\s\u200cه](اند|انید)(ه|م|ی|یم|ید|ند)?$'}
+    - sequence: [{form: [باعث, مجبور, وادار]}, {gap: [0, 1]}, {lemma: [شد, کرد]}]
+    - graph:
+        v: {upos: VERB, Tense: null, VerbForm: null, Mood: {not: Imp}, Person: ["1", "2", "3"],
+            regex: '^(?!(بر|در|باز|فرو|فرا|وا|ور)?ن?می)(?!.*ه$)', head_is: {lemma: داد}}
+  tests:
+    pos: ["مربی اسب را در میدان دواند.", "سروصدا باعث شد که خوب نخوابم.", "دادم تعمیرکار ماشینم را تعمیر کند."]
+    neg: ["او در خانه ماند.", "کتاب را خواند.", "به او کتاب دادم.", "آنها کار کرده‌اند.", "او می‌تواند بیاید.", "شما می‌توانید بیایید."]
+
 # ---------------------------------------------------------------- C1
 - id: fa.perfect.remote
   level: C1
   label: Remote/evidential past perfect (رفته بوده است)
+  source: "not in Chaarchoob 1-2 (volume 3, advanced, not checked)"
   match:
     sequence: [{upos: VERB, regex: 'ه$'}, {regex: '^ن?بوده(\u200c?(ام|ای|ایم|اید|اند))?$'}]
   tests:
@@ -354,6 +701,7 @@ features:
 - id: fa.perfect.continuous
   level: C1
   label: Evidential imperfective (می‌رفته است)
+  source: "not in Chaarchoob 1-2 (volume 3, advanced, not checked)"
   match_any:
     - token: {upos: VERB, regex: '^(بر|در|باز|فرو|فرا|وا|ور)?ن?می\S*ه(\u200c?(ام|ای|ایم|اید|اند))?$'}
     - token: {upos: VERB, VerbForm: Part, regex: '^(بر|در|باز|فرو|فرا|وا|ور)?ن?می'}
@@ -364,6 +712,7 @@ features:
 - id: fa.participle.conjunctive
   level: C1
   label: Conjunctive participle (به خانه رفته، شام خورد)
+  source: "not in Chaarchoob 1-2 (volume 3, advanced, not checked)"
   description: >
     A bare past participle closing a clause, chaining it to the next. Written style.
     The auxiliary of a perfect is often dropped before و in written prose (جابه‌جا شده و
@@ -379,6 +728,7 @@ features:
 - id: fa.passive.gardidan
   level: C1
   label: Formal passive with گردیدن (ساخته گردید)
+  source: "not in Chaarchoob 1-2 (volume 3, advanced, not checked)"
   description: >
     Also covers compound verbs with گردیدن (امضا گردید, انجام گردید), the formal
     counterpart of امضا شد. Compound verbs with شدن are not detected as passive: the
@@ -397,6 +747,7 @@ features:
 - id: fa.mibayest
   level: C1
   label: می‌بایست (had to / should have, formal)
+  source: "not in Chaarchoob 1-2 (volume 3, advanced, not checked)"
   match:
     token: {regex: '^(ن)?می\u200c?بایست'}
   tests:
@@ -407,6 +758,7 @@ features:
 - id: fa.literary.be_past
   level: C2
   label: Literary ب + past (بگفت، بدید)
+  source: "not in Chaarchoob 1-2 (volume 3, advanced, not checked)"
   description: >
     Classical prefix on the simple past. Listed verbs only: many ordinary verbs begin
     with ب (بست, برد, بارید, بخشید), and some past stems equal present stem + د, so
@@ -420,6 +772,7 @@ features:
 - id: fa.literary.hami
   level: C2
   label: Literary durative همی (همی‌رفت)
+  source: "not in Chaarchoob 1-2 (volume 3, advanced, not checked)"
   match:
     token: {regex: '^همی(\u200c|$)'}
   tests:
@@ -432,6 +785,7 @@ features:
 - id: fa.dari.copula
   level: A1
   label: Dari copula استم / استی / استند
+  source: "not in Chaarchoob 1-2 (volume 3, advanced, not checked)"
   regions: [AF]
   match:
     token: {regex: '^است(م|ی|یم|ید|ند)$'}
