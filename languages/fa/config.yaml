@@ -62,6 +62,29 @@ vocab:
     یکی: یک
     اولین: اول
     گذارد: گذاشتن
+    آنان: آن
+    اینها: این
+    این‌ها: این
+    دیگری: دیگر          # also the lemma of دیگران
+    بسیاری: بسیار
+    تمامی: تمام
+    توی: تو
+    نخستین: نخست
+    آخرین: آخر
+    بیشتر: بیش
+    هزاران: هزار
+    # ezafe forms kept as lemmas
+    جلوی: جلو
+    جای: جا
+    پای: پا
+    # stems PerDT keeps for older or prefixed infinitives
+    خاست: برخاستن       # برخاست, برخیزید (PerDT drops the بر)
+    رسانید: رساندن       # برساند, رسانیده
+    گردانید: گرداندن     # with the بر prefix: برگرداندن
+  # PerDT drops verb prefixes from the lemma (برداشت -> داشت, درآورد -> آورد,
+  # برگشت -> گشت). Tried first when the surface form starts with one of these.
+  lemma_prefixes:
+    VERB: [بر, در, باز, فرا, وا]
   accent_fold_fallback: false     # folding would strip the hamza and short-vowel marks
 
 # PerDT lemmatises passive شدن (شد, شده, می‌شود) as کرد, the active verb. Restore شد.

@@ -70,7 +70,7 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 برنامه_NOUN	71	برنامه	NOUN	program; plan				bærnɑme
 بخش_NOUN	72	بخش	NOUN	section; part			pos_also=DET	bæxʃ
 وجود_NOUN	73	وجود	NOUN	existence				voʤud
-مسئله_NOUN	74	مسئله	NOUN	problem			pos_also=PROPN	mæsʔæle
+مسئله_NOUN	74	مسئله	NOUN	problem		مسأله	pos_also=PROPN	mæsʔæle
 توجه_NOUN	75	توجه	NOUN	attention				tævæʤʤoh
 امر_NOUN	76	امر	NOUN	affair; order				æmr
 اگر_SCONJ	77	اگر	SCONJ	if				æɡær
@@ -84,7 +84,7 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 مشکل_NOUN	85	مشکل	NOUN	problem			pos_also=ADJ	moʃkel
 اسلامی_ADJ	86	اسلامی	ADJ	Islamic				eslɑmi
 دانستن_VERB	87	دانستن	VERB	know				dɑnestæn
-رئیس_NOUN	88	رئیس	NOUN	head				ræʔis
+رئیس_NOUN	88	رئیس	NOUN	head		رییس		ræʔis
 بهتر_ADJ	89	بهتر	ADJ	better			pos_also=ADV	behtær
 دولت_NOUN	90	دولت	NOUN	government				dowlæt
 جمله_NOUN	91	جمله	NOUN	sentence; total				ʤomle
@@ -253,7 +253,7 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 رشد_NOUN	251	رشد	NOUN	growth				roʃd
 دنبال_NOUN	252	دنبال	NOUN	pursuit; behind (دنبال کردن 'follow'; به دنبال 'after, following')				dombɑl
 انتخاب_NOUN	253	انتخاب	NOUN	selection; choice			pos_also=ADJ	entexɑb
-گفت‌وگو_NOUN	254	گفت‌وگو	NOUN	conversation				ɡoftoɡu
+گفت‌وگو_NOUN	254	گفت‌وگو	NOUN	conversation		گفتگو		ɡoftoɡu
 موفق_ADJ	255	موفق	ADJ	successful				movæffæɣ
 روزنامه_NOUN	256	روزنامه	NOUN	newspaper				ruznɑme
 گذشتن_VERB	257	گذشتن	VERB	pass			pos_also=NOUN	ɡozæʃtæn
@@ -354,7 +354,7 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 جمع_NOUN	349	جمع	NOUN	total; addition; plural				ʤæmʔ
 پیشنهاد_NOUN	350	پیشنهاد	NOUN	proposal				piʃnehɑd
 ماده_NOUN	351	ماده	NOUN	matter, substance; article (of a law)			split=351	mɑdde
-معنا_NOUN	352	معنا	NOUN	meaning			pos_also=ADJ	mæʔnɑ
+معنا_NOUN	352	معنا	NOUN	meaning		معنی	pos_also=ADJ	mæʔnɑ
 کنار_NOUN	353	کنار	NOUN	edge; beside			pos_also=ADP	kenɑr
 رأی_NOUN	354	رأی	NOUN	vote				ræʔj
 کلی_ADJ	355	کلی	ADJ	total; general				kolli
@@ -386,7 +386,7 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 دفتر_NOUN	380	دفتر	NOUN	office				dæftær
 تو_PRON	381	تو	PRON	you (singular, informal)			split=381	to
 تو_ADP	381	تو	ADP	in, into (colloquial); inside			split=381	tu
-هیئت_NOUN	382	هیئت	NOUN	board				hejʔæt
+هیئت_NOUN	382	هیئت	NOUN	board		هیأت		hejʔæt
 زبان_NOUN	383	زبان	NOUN	language; tongue				zæbɑn
 مسابقه_NOUN	384	مسابقه	NOUN	competition				mosɑbeɣe
 حوزه_NOUN	385	حوزه	NOUN	district; domain				howze

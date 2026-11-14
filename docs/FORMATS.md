@@ -41,13 +41,16 @@ LL uses the parser's tag to choose between them.
 How a word is looked up, best first:
 
 1. the parser's lemma matches a `word`;
-2. the surface form is listed in `variants`;
+2. the surface form or the parser's lemma is listed in `variants`;
 3. the morphology lexicon gives a lemma that matches a `word`;
 4. the surface form equals a `word`.
 
 Steps 1 and 3 also try the parser's lemma rewritten by `lemma_map` and `lemma_suffix`
 (config.yaml), for parsers whose lemma convention differs from the list's headwords.
 Persian parsers give the past stem (رفت), Persian dictionaries the infinitive (رفتن).
+With `lemma_prefixes`, a surface form that starts with a listed prefix is first tried as
+prefix + lemma: PerDT lemmatises *برداشت* (picked up) as *داشت* (had), and the prefix
+restores *برداشتن*.
 
 If none of those match, LL tries the clitic-stripped form (`clitic_suffixes`), then an
 accent-folded match. Among several matches it prefers a POS-compatible entry, then the more
@@ -159,6 +162,7 @@ vocab:
   variant_separator: "|"
   lemma_suffix: {VERB: ن}                    # parser lemma + suffix = headword (Persian رفت -> رفتن)
   lemma_map: {است: بودن}                     # parser lemma -> headword
+  lemma_prefixes: {VERB: [بر, در]}           # surface prefix + parser lemma = headword (برداشت: داشت -> برداشتن)
 grammar: {file: grammar.yaml}
 morph:
   file: morph.tsv.gz

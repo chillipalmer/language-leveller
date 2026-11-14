@@ -27,6 +27,9 @@ packages. NER and the other models in the download are not used.
   - Stanza gives verbs their past stem (*رفت*). `vocab.lemma_suffix` adds ن to reach the list's infinitive (*رفتن*).
   - `vocab.lemma_map` handles the copula (*است*, *هست* → *بودن*) and *توان*.
   - It also maps lemmas PerDT keeps for inflected forms: *آنها* (also the lemma of the clitic *شان*) → *آن*, *یکی* → *یک*, *اولین* → *اول*, and the present stem *گذارد* (*بگذارد*, *می‌گذارم*, *گذارده*) → *گذاشتن*.
+  - More of the same: *آنان*, *اینها* → *آن*, *این*; *دیگری* (also the lemma of *دیگران*), *بسیاری*, *تمامی*, *توی*, *نخستین*, *آخرین*, *بیشتر*, *هزاران*; the ezafe forms *جلوی*, *جای*, *پای*; and the stems *خاست*, *رسانید*, *گردانید*.
+  - PerDT drops verb prefixes from lemmas (*برداشت* → *داشت*, *درآورد* → *آورد*, *برگشت* → *گشت*). `vocab.lemma_prefixes` restores them: a verb whose surface form starts with بر, در, باز, فرا or وا is tried as prefix + lemma first, and used if that infinitive is listed.
+  - Spelling variants (*مسأله*, *هیأت*, *رییس*, *گفتگو*, *معنی*) are in the `variants` column; LL also checks the parser's lemma against variants, so plurals such as *مسأله‌ها* match.
   - `lemma_rules` restores *شد* where PerDT lemmatises passive *شد / می‌شود* as *کرد*.
 - **Grammar patterns.**
   - PerDT marks mood only on imperatives and some auxiliaries. The present subjunctive and the past imperfective both come out with no Tense, and participles often lack `VerbForm=Part`.
@@ -57,4 +60,5 @@ Results on the dev set (1,456 sentences, Stanza `perdt_charlm` models, 14 Nov 20
 - **Compound verbs:** compound (light-verb) verbs such as *نشان دادن* and *کار کردن* are listed in `vocab.tsv` but cannot match. LL looks words up one at a time; multiword expressions are still undecided.
 - **Passive with شدن:** LL cannot tell a passive compound verb with *شدن* (*انجام شد*) from *شدن* meaning "become" (*سرد شد*), so only the participle passive (*ساخته شد*) is detected. Compound verbs with *گردیدن* are detected as the formal passive.
 - **Split words:** the parser sometimes splits *دارم* into *دار* + *م*. The present progressive pattern allows for this.
+- **Prefix check:** `lemma_prefixes` only looks at the start of the surface form. Subjunctive ب + a verb beginning with ر (*برساند*) also starts with بر; this is harmless while no listed بر- verb matches ب + ر- + stem, but check new بر- verbs added to the list.
 - **Colloquial Tehrani spellings** (*میرم*, *اومدم*, *میخوام*) are not normalised.
