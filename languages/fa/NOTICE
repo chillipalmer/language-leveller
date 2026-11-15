@@ -9,8 +9,9 @@ vocab.tsv
   each word's count in UD Persian-PerDT (all forms of the lemma), scaled to
   the source list's counts by the median ratio of 58 prepositions, adverbs and
   conjunctions found in both, then placed at the rank of the source words with
-  the nearest counts. PerDT is mostly news and literary text, so conversational
-  words (لطفاً, متأسفانه, شاید) are likely ranked too low.
+  the nearest counts. PerDT samples written Persian only (news, academic
+  papers, magazine articles, fiction), so conversational words (لطفاً,
+  متأسفانه, شاید) are likely ranked too low.
 
 grammar.yaml, config.yaml
   The project's own work. Levels follow the usual sequence of Persian-as-a-foreign-
