@@ -139,7 +139,7 @@ ADDED = """# text = متأسفانه شرایط و اطلاعات نزد همگ�
 def test_added_words_and_plurals(ll):
     rec = ll.level_sentence(parse_conllu(ADDED)[0])
     heads = {t["text"]: t["headword"] for t in rec["tokens"] if "headword" in t}
-    assert heads == {"متأسفانه": "متأسفانه", "شرایط": "شرط", "و": "و", "اطلاعات": "اطلاع",
+    assert heads == {"متأسفانه": "متأسّفانه", "شرایط": "شرط", "و": "و", "اطلاعات": "اطلاع",
                      "نزد": "نزد", "همگان": "همه", "باران": "باران", "را": "را",
                      "برانگیخت": "برانگیختن"}
 
