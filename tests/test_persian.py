@@ -164,3 +164,15 @@ def test_grammar_self_tests_with_stanza():
     full = Leveller.from_dir(FA)
     bad = [r for r in full.test_grammar() if not r["ok"]]
     assert not bad, bad
+
+
+def test_visual_tags():
+    import csv, re
+    kinds = {"object", "action", "pair", "tree", "map", "place"}
+    with open(FA / "vocab.tsv", encoding="utf-8") as f:
+        rows = list(csv.DictReader(f, delimiter="\t", quoting=csv.QUOTE_NONE))
+    vis = {r["id"]: re.search(r"visual=(\w+)", r["tags"]).group(1) for r in rows if "visual=" in r["tags"]}
+    assert set(vis.values()) <= kinds
+    assert vis["خانه_NOUN"] == "object" and vis["پدر_NOUN"] == "tree" and vis["زیر_ADP"] == "place"
+    split = {r["id"]: r for r in rows if r["word"] == "گل"}
+    assert sum("visual=" in r["tags"] for r in split.values()) == 1   # flower, not mud

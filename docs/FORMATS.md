@@ -56,7 +56,8 @@ the manner of Ørberg's *Lingua Latina*. The kind says how it is shown:
 
 Tag only when one drawing would leave no doubt. Verbs whose meaning is mental or abstract
 (*pensar*, *saber*), or whose common senses differ (*pegar*: hit or stick; *llamar*: call or
-name), stay untagged. Spanish is tagged for the top 1,750 words. `tools/visual_candidates.py`
+name), stay untagged. Spanish and Persian are tagged for the top 1,750 words, plus the
+family-tree words needed to complete the tree. `tools/visual_candidates.py`
 proposes `object` candidates from WordNet's sense classes (artifact, animal, plant, body,
 food, natural object) for review. It is a first pass only: a gloss's first WordNet sense is
 often not the one meant (*banco*: bank vs bench).
