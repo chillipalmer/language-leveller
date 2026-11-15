@@ -86,6 +86,11 @@ class Vocab:
         # lemma_suffix appends to the lemma by UPOS ({VERB: ن}).
         self.lemma_map = {norm(k): v for k, v in (config.get("lemma_map") or {}).items()}
         self.lemma_suffix = config.get("lemma_suffix") or {}
+        # some parsers drop a verb's prefix from the lemma: PerDT gives برداشت (pick up)
+        # the lemma داشت (have). lemma_prefixes: {VERB: [بر, در, ...]}; when the surface
+        # form starts with one and prefix + lemma is a headword, that headword wins.
+        self.lemma_prefixes = {k: sorted(v, key=len, reverse=True)
+                               for k, v in (config.get("lemma_prefixes") or {}).items()}
         self.morph = None   # optional MorphLexicon, attached by the Leveller
 
         self.by_lemma: dict[str, list[Entry]] = {}
@@ -200,8 +205,17 @@ class Vocab:
         cands += [(e, -1, "form") for e in self.by_lemma.get(norm(form), [])
                   if self.pos_map.get(e.pos) and self._pos_ok(e, upos)]
         if lemma:
-            for key in self._lemma_keys(lemma, upos):
+            keys = self._lemma_keys(lemma, upos)
+            for p in self.lemma_prefixes.get(upos, []):
+                if norm(form).startswith(p) and not norm(lemma).startswith(p):
+                    for key in keys:
+                        cands += [(e, -1, "lemma") for e in self.by_lemma.get(norm(p + key), [])]
+                    break
+            for key in keys:
                 cands += [(e, 0, "lemma") for e in self.by_lemma.get(norm(key), [])]
+                # the parser's lemma is a listed variant spelling (مسأله for مسئله)
+                cands += [(e, 1, "variant") for e in self.by_form.get(norm(key), [])
+                          if norm(key) != norm(e.word)]
         cands += [(e, 1, "variant") for e in self.by_form.get(norm(form), [])
                   if norm(form) != norm(e.word)]
         if self.morph is not None:

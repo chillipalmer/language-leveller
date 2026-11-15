@@ -27,6 +27,10 @@ packages. NER and the other models in the download are not used.
   - Stanza gives verbs their past stem (*رفت*). `vocab.lemma_suffix` adds ن to reach the list's infinitive (*رفتن*).
   - `vocab.lemma_map` handles the copula (*است*, *هست* → *بودن*) and *توان*.
   - It also maps lemmas PerDT keeps for inflected forms: *آنها* (also the lemma of the clitic *شان*) → *آن*, *یکی* → *یک*, *اولین* → *اول*, and the present stem *گذارد* (*بگذارد*, *می‌گذارم*, *گذارده*) → *گذاشتن*.
+  - More of the same: *آنان*, *اینها* → *آن*, *این*; *دیگری* (also the lemma of *دیگران*), *بسیاری*, *تمامی*, *توی*, *نخستین*, *آخرین*, *بیشتر*, *هزاران*; the ezafe forms *جلوی*, *جای*, *پای*; and the stems *خاست*, *رسانید*, *گردانید*.
+  - PerDT drops verb prefixes from lemmas (*برداشت* → *داشت*, *درآورد* → *آورد*, *برگشت* → *گشت*). `vocab.lemma_prefixes` restores them: a verb whose surface form starts with بر, در, باز, فرا or وا is tried as prefix + lemma first, and used if that infinitive is listed.
+  - Arabic plurals are counted under the singular, as in the source list: PerDT already does this (*افراد* → *فرد*) except for *شرایط*, *اطلاعات* and *همگان*, which `lemma_map` handles.
+  - Spelling variants (*مسأله*, *هیأت*, *رییس*, *گفتگو*, *معنی*) are in the `variants` column; LL also checks the parser's lemma against variants, so plurals such as *مسأله‌ها* match.
   - `lemma_rules` restores *شد* where PerDT lemmatises passive *شد / می‌شود* as *کرد*.
 - **Grammar patterns.**
   - PerDT marks mood only on imperatives and some auxiliaries. The present subjunctive and the past imperfective both come out with no Tense, and participles often lack `VerbForm=Part`.
@@ -58,9 +62,42 @@ Results on the dev set (1,456 sentences, Stanza `perdt_charlm` models, 14 Nov 20
 - **Simple past:** the script's own recall figure (~0.73) is understated. Gold "simple past" also counts future main verbs and short infinitives, which LL correctly does not count as simple past.
 - **Present subjunctive:** most errors are 2nd-person plural forms that could be imperative or subjunctive (*بگویید*).
 
+## Transliteration
+
+The `translit` column follows Tehran pronunciation, one Latin letter per sound, so no
+letter pair is ambiguous (*mazhab* is m-a-z-h-a-b, *saghā* is s-a-g-h-ā).
+
+| Sound | Letter | Script | Example |
+|---|---|---|---|
+| a / ā | a, ā | ـَ / ا آ | *dar*, *xāneh* |
+| e, o | e, o | ـِ ـُ | *del*, *gol* |
+| i, u | i, u (no length mark: always long) | ی و | *šir*, *dur* |
+| ey, ow | ey, ow | | *peydā*, *dowlat* |
+| sh, ch, zh | š, č, ž | ش چ ژ | *šahr*, *čāy*, *žāpon* |
+| kh | x | خ | *xub* |
+| j, y | j, y | ج ی | *jangal*, *yek* |
+| q (Tehran: same sound as ġ) | q | ق | *qavi* |
+| gh | ġ | غ | *ġazā* |
+| glottal stop | ' | ع ء ئ ؤ أ | *so'āl*, *ba'd* |
+| doubled consonant | doubled letter | ـّ | *ammā*, *baččeh* |
+
+- **Silent final ه** is written *-eh* (*xāneh*, *keh*), so the Latin spelling shows where
+  the script has ه. Before a fused ezafe: *namāyandeh-ye majles*. A pronounced h stays *h*
+  (*rāh*, *movājeh*).
+- **ق and غ** are kept apart although Tehran merges them: they are distinct in Dari and
+  Tajik and in many dialects of Iran.
+- **Compounds** joined with a zero-width non-joiner are hyphenated where the first part ends
+  in ه (*sarmāyeh-gozāri*, *mantaqeh-i*).
+- Alternative pronunciations are separated by ` / ` (*va / o*).
+- Not yet represented: Dari's majhul vowels (*šēr* 'lion' vs *šir* 'milk'), its *w* for *v*
+  and final *-a* for *-e*. These need a per-region transliteration.
+
+`tools/fa_translit_convert.py` converted the earlier IPA-style spelling (æ ɑ ʃ ʧ ʤ x ɣ j ʔ).
+
 ## Known limits
 
 - **Compound verbs:** compound (light-verb) verbs such as *نشان دادن* and *کار کردن* are listed in `vocab.tsv` but cannot match. LL looks words up one at a time; multiword expressions are still undecided.
 - **Passive with شدن:** LL cannot tell a passive compound verb with *شدن* (*انجام شد*) from *شدن* meaning "become" (*سرد شد*), so only the participle passive (*ساخته شد*) is detected. Compound verbs with *گردیدن* are detected as the formal passive.
 - **Split words:** the parser sometimes splits *دارم* into *دار* + *م*. The present progressive pattern allows for this.
+- **Prefix check:** `lemma_prefixes` only looks at the start of the surface form. Subjunctive ب + a verb beginning with ر (*برساند*) also starts with بر; this is harmless while no listed بر- verb matches ب + ر- + stem, but check new بر- verbs added to the list.
 - **Colloquial Tehrani spellings** (*میرم*, *اومدم*, *میخوام*) are not normalised.
