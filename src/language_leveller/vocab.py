@@ -264,7 +264,16 @@ class Vocab:
             return "foreign-script"
         if tok.upos in self.exclude_upos:
             # sentence-initial capitalised common words are often mis-tagged PROPN
-            if tok.upos == "PROPN" and tok.i == 0 and self._direct(tok.text, None, "X")[0]:
-                return None
+            first = next((x.i for x in sent.tokens if x.upos != "PUNCT"), 0)   # after ¡ ¿ «
+            if tok.upos == "PROPN" and tok.i == first:
+                # but not when a finite verb follows directly: then it is that verb's
+                # subject, a name (Tomás tiene…, Descartes había…), not tomar/descartar;
+                # nor when a capitalised word follows: a multi-word name (Buenos Aires)
+                nxt = sent.tokens[tok.i + 1] if tok.i + 1 < len(sent.tokens) else None
+                subject = nxt is not None and nxt.upos in ("VERB", "AUX") \
+                    and nxt.feats.get("VerbForm") == "Fin"
+                in_name = nxt is not None and nxt.text[:1].isupper()
+                if not subject and not in_name and self._direct(tok.text, None, "X")[0]:
+                    return None
             return tok.upos
         return None

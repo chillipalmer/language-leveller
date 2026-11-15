@@ -35,6 +35,32 @@ appear in any order.
 All columns are passed through to the output (`id`, `lex_feats`, `tags`), so the app can
 use them without a second lookup.
 
+`cognate=<L1>` marks a word a reader whose first language is `<L1>` can understand on
+sight (`cognate=en` on *familia*, *problema*, *teléfono*). It is relative to that first
+language, so a row can carry several (`cognate=en,fr`). LL only passes it through; whether a
+cognate counts as known is the consumer's decision. `tools/cognate_candidates.py` (Latin
+script) and `tools/cognate_candidates_translit.py` (via `translit`) propose candidates for
+review by comparing each headword with its own gloss.
+
+`visual=<kind>` marks a word a graded story or the app can show instead of explaining, in
+the manner of Ørberg's *Lingua Latina*. The kind says how it is shown:
+
+| Kind | Shown by | Examples |
+| --- | --- | --- |
+| `object` | a picture of the thing | *casa*, *perro*, *montaña* |
+| `action` | a picture of someone doing it | *comer*, *dormir*, *llorar*, *abrir* |
+| `pair` | two pictures in contrast (an adjective and its opposite) | *grande*/*pequeño*, *lleno*/*vacío* |
+| `tree` | a family-tree diagram | *padre*, *hija*, *abuelo* |
+| `map` | a labelled map | *país*, *norte*, *frontera* |
+| `place` | a small diagram of where one thing is relative to another | *en*, *debajo*, *entre*, *lejos* |
+
+Tag only when one drawing would leave no doubt. Verbs whose meaning is mental or abstract
+(*pensar*, *saber*), or whose common senses differ (*pegar*: hit or stick; *llamar*: call or
+name), stay untagged. Spanish is tagged for the top 1,750 words. `tools/visual_candidates.py`
+proposes `object` candidates from WordNet's sense classes (artifact, animal, plant, body,
+food, natural object) for review. It is a first pass only: a gloss's first WordNet sense is
+often not the one meant (*banco*: bank vs bench).
+
 The same word may appear twice with different POS (`como` conj / `como` from *comer*);
 LL uses the parser's tag to choose between them.
 
@@ -75,6 +101,7 @@ features:
       neg: ["Me pide que lo ayude."]      # must not match
     except:                        # optional patterns; matches overlapping them are dropped
       - sequence: [{form: o}, {form: sea}]
+    source: "Plan Curricular, A2"   # optional, informational: where the level comes from
     regions: [ES]                  # optional ISO 3166 codes where this is standard;
                                    # always detected, reported in output for the app to judge
     enabled: true                  # optional; false skips the feature
@@ -171,6 +198,8 @@ morph:
   mood_preference: [Ind, Sub, Imp, Cnd]      # tie-break between readings
   initial_subjectless_boost: {mood: Imp, weight: 2}
   capitalised_midsentence_is_name: true     # capitalised words after the first are never verbs
+  no_imperative_after_subject: true         # a verb right after its noun subject is not a command
+  clause_openers: [qué, dónde, porque, ...]  # after these, clause-final lo/la + noun-or-verb = clitic + verb
 cleaning:
   char_map: {ي: ی, ك: ک}                     # applied first, before parsing and grammar tests
   normalise:                                 # regex rewrites, in order

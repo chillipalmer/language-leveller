@@ -99,3 +99,74 @@ def test_items_list_for_learner_matching(ll):
     assert all(i["id"] != "._PUNCT" for i in items)
     r2 = ll.level_text("La casa y la casa.")[0]
     assert sum(1 for i in r2["items"] if i["id"] == "casa_NOUN") == 1
+
+
+def _tok(r, text):
+    return next(t for t in r["tokens"] if t["text"] == text)
+
+
+def test_sentence_initial_name_before_a_verb_is_not_a_verb(ll):
+    # "Tomás" is also tomar (2sg); followed by a finite verb it is that verb's subject
+    r = ll.level_text("Tomás tiene 70 años.")[0]
+    t = _tok(r, "Tomás")
+    assert t["upos"] == "PROPN" and t.get("headword") is None
+    # a sentence-initial verb is still a verb
+    assert _tok(ll.level_text("Mira la carta.")[0], "Mira")["upos"] == "VERB"
+
+
+def test_verb_after_its_subject_is_not_imperative(ll):
+    r = ll.level_text("Andrés mira por la ventana.")[0]
+    assert _tok(r, "mira")["feats"].startswith("Mood=Ind")
+    assert "es.imperative.affirmative" not in {f["id"] for f in r["grammar"]["features"]}
+    # a vocative (set off by a comma) still allows the command
+    r = ll.level_text("Andrés, mira por la ventana.")[0]
+    assert "es.imperative.affirmative" in {f["id"] for f in r["grammar"]["features"]}
+
+
+def test_clause_final_la_plus_verb_after_wh_word(ll):
+    r = ll.level_text("¿Puedo saber por qué la busca?")[0]
+    t = _tok(r, "busca")
+    assert t["upos"] == "VERB" and t["headword"] == "buscar"
+    # but an article + noun inside a longer clause stays a noun
+    r = ll.level_text("Explicó que la reforma del código es necesaria.")[0]
+    assert _tok(r, "reforma")["upos"] == "NOUN"
+
+
+def test_question_inversion_before_a_name(ll):
+    r = ll.level_text("¿Toca Lucas el piano?")[0]
+    t = _tok(r, "Toca")
+    assert t["upos"] == "VERB" and t["headword"] == "tocar" and "Mood=Ind" in t["feats"]
+    assert "es.imperative.affirmative" not in {f["id"] for f in r["grammar"]["features"]}
+
+
+def test_lower_case_word_is_not_a_name(ll):
+    t = _tok(ll.level_text("Julia toca Bach y Chopin.")[0], "toca")
+    assert t["upos"] == "VERB" and t["headword"] == "tocar"
+
+
+def test_sentence_initial_word_after_inverted_punctuation(ll):
+    t = _tok(ll.level_text("¡Silencio, Martín!")[0], "Silencio")
+    assert t.get("headword") == "silencio"
+
+
+def test_multi_word_place_name_is_not_counted(ll):
+    t = _tok(ll.level_text("Buenos Aires es la capital.")[0], "Buenos")
+    assert t.get("headword") is None and t.get("excluded")
+
+
+def test_coordinated_verb_and_question_subject_are_not_commands(ll):
+    for text, verb in [("Julia come pan, bebe leche y mira el mar.", "mira"),
+                       ("¿Duerme Martín en la cocina?", "Duerme"), ("¿Qué mira Toby?", "mira")]:
+        r = ll.level_text(text)[0]
+        assert "Mood=Ind" in _tok(r, verb)["feats"], text
+        assert "es.imperative.affirmative" not in {f["id"] for f in r["grammar"]["features"]}, text
+    # a real command is still one
+    assert "es.imperative.affirmative" in {f["id"] for f in ll.level_text("Come y mira.")[0]["grammar"]["features"]}
+
+
+def test_lower_case_noun_after_names_is_counted(ll):
+    t = _tok(ll.level_text("¿Come Ana pan?")[0], "pan")
+    assert t["upos"] == "NOUN" and t["headword"] == "pan"
+    # leche is also a form of the unlisted verb lechar: the listed noun wins
+    t = _tok(ll.level_text("¿Bebe Ana leche?")[0], "leche")
+    assert t["upos"] == "NOUN" and t["headword"] == "leche"
