@@ -42,12 +42,24 @@ cognate counts as known is the consumer's decision. `tools/cognate_candidates.py
 script) and `tools/cognate_candidates_translit.py` (via `translit`) propose candidates for
 review by comparing each headword with its own gloss.
 
-`visual=yes` marks a noun a single picture shows unambiguously (*casa*, *perro*, *montaña*):
-a graded story or the app can show it instead of a gloss. Kinship and other relational nouns
-(*padre*, *hermana*) are not tagged, since a picture alone does not say which relation is
-meant. `tools/visual_candidates.py` proposes candidates from WordNet's sense classes
-(artifact, animal, plant, body, food, natural object) for review. It is a first pass only:
-a gloss's first WordNet sense is often not the one meant (*banco*: bank vs bench).
+`visual=<kind>` marks a word a graded story or the app can show instead of explaining, in
+the manner of Ørberg's *Lingua Latina*. The kind says how it is shown:
+
+| Kind | Shown by | Examples |
+| --- | --- | --- |
+| `object` | a picture of the thing | *casa*, *perro*, *montaña* |
+| `action` | a picture of someone doing it | *comer*, *dormir*, *llorar*, *abrir* |
+| `pair` | two pictures in contrast (an adjective and its opposite) | *grande*/*pequeño*, *lleno*/*vacío* |
+| `tree` | a family-tree diagram | *padre*, *hija*, *abuelo* |
+| `map` | a labelled map | *país*, *norte*, *frontera* |
+| `place` | a small diagram of where one thing is relative to another | *en*, *debajo*, *entre*, *lejos* |
+
+Tag only when one drawing would leave no doubt. Verbs whose meaning is mental or abstract
+(*pensar*, *saber*), or whose common senses differ (*pegar*: hit or stick; *llamar*: call or
+name), stay untagged. Spanish is tagged for the top 1,750 words. `tools/visual_candidates.py`
+proposes `object` candidates from WordNet's sense classes (artifact, animal, plant, body,
+food, natural object) for review. It is a first pass only: a gloss's first WordNet sense is
+often not the one meant (*banco*: bank vs bench).
 
 The same word may appear twice with different POS (`como` conj / `como` from *comer*);
 LL uses the parser's tag to choose between them.

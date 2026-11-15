@@ -23,7 +23,7 @@ for r in rows:
     syn = next((wn.synsets(c, "n") for c in cands if c and wn.synsets(c, "n")), [])
     lex = syn[0].lexname() if syn else ""
     defn = syn[0].definition() if syn else ""
-    prop = "yes" if lex in YES else "review" if lex in REVIEW else "no"
+    prop = "object" if lex in YES else "review" if lex in REVIEW else "no"
     out.append({"id": r["id"], "rank": int(r["rank"]), "word": r["word"], "gloss": r["gloss"],
                 "english": h, "wordnet_class": lex.replace("noun.", ""), "wordnet_sense": defn, "proposed": prop})
 json.dump(out, open(sys.argv[2], "w"), ensure_ascii=False)
