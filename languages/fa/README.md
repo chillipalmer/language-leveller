@@ -56,6 +56,38 @@ Results on the dev set (1,456 sentences, Stanza `perdt_charlm` models, 14 Nov 20
 - **Simple past:** the script's own recall figure (~0.73) is understated. Gold "simple past" also counts future main verbs and short infinitives, which LL correctly does not count as simple past.
 - **Present subjunctive:** most errors are 2nd-person plural forms that could be imperative or subjunctive (*بگویید*).
 
+## Transliteration
+
+The `translit` column follows Tehran pronunciation, one Latin letter per sound, so no
+letter pair is ambiguous (*mazhab* is m-a-z-h-a-b, *saghā* is s-a-g-h-ā).
+
+| Sound | Letter | Script | Example |
+|---|---|---|---|
+| a / ā | a, ā | ـَ / ا آ | *dar*, *xāneh* |
+| e, o | e, o | ـِ ـُ | *del*, *gol* |
+| i, u | i, u (no length mark: always long) | ی و | *šir*, *dur* |
+| ey, ow | ey, ow | | *peydā*, *dowlat* |
+| sh, ch, zh | š, č, ž | ش چ ژ | *šahr*, *čāy*, *žāpon* |
+| kh | x | خ | *xub* |
+| j, y | j, y | ج ی | *jangal*, *yek* |
+| q (Tehran: same sound as ġ) | q | ق | *qavi* |
+| gh | ġ | غ | *ġazā* |
+| glottal stop | ' | ع ء ئ ؤ أ | *so'āl*, *ba'd* |
+| doubled consonant | doubled letter | ـّ | *ammā*, *baččeh* |
+
+- **Silent final ه** is written *-eh* (*xāneh*, *keh*), so the Latin spelling shows where
+  the script has ه. Before a fused ezafe: *namāyandeh-ye majles*. A pronounced h stays *h*
+  (*rāh*, *movājeh*).
+- **ق and غ** are kept apart although Tehran merges them: they are distinct in Dari and
+  Tajik and in many dialects of Iran.
+- **Compounds** joined with a zero-width non-joiner are hyphenated where the first part ends
+  in ه (*sarmāyeh-gozāri*, *mantaqeh-i*).
+- Alternative pronunciations are separated by ` / ` (*va / o*).
+- Not yet represented: Dari's majhul vowels (*šēr* 'lion' vs *šir* 'milk'), its *w* for *v*
+  and final *-a* for *-e*. These need a per-region transliteration.
+
+`tools/fa_translit_convert.py` converted the earlier IPA-style spelling (æ ɑ ʃ ʧ ʤ x ɣ j ʔ).
+
 ## Known limits
 
 - **Compound verbs:** compound (light-verb) verbs such as *نشان دادن* and *کار کردن* are listed in `vocab.tsv` but cannot match. LL looks words up one at a time; multiword expressions are still undecided.
