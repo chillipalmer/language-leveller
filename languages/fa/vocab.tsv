@@ -1,12 +1,12 @@
 id	rank	word	pos	gloss	feats	variants	tags	translit
 و_CCONJ	1	و	CCONJ	and			split=1	va / o
 بودن_VERB	2	بودن	VERB	be				budan
-از_ADP	3	از	ADP	from				az
-به_ADP	4	به	ADP	to				beh
+از_ADP	3	از	ADP	from			visual=place	az
+به_ADP	4	به	ADP	to			visual=place	beh
 را_ADP	4	را	ADP	[definite direct-object marker]			rank=estimated	rā
 که_SCONJ	5	که	SCONJ	which; that				keh
 این_PRON	6	این	PRON	this; it				in
-در_ADP	7	در	ADP	in				dar
+در_ADP	7	در	ADP	in			visual=place	dar
 با_ADP	8	با	ADP	with				bā
 شدن_VERB	9	شدن	VERB	become			pos_also=ADJ	šodan
 برای_ADP	10	برای	ADP	for				barāye
@@ -19,10 +19,10 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 کردن_VERB	17	کردن	VERB	do			pos_also=ADJ,NOUN	kardan
 بایستن_VERB	19	بایستن	VERB	must				bāyestan
 اول_ADJ	20	اول	ADJ	first			pos_also=NOUN	avval
-بر_ADP	21	بر	ADP	on; fruit; side			pos_also=NOUN	bar
+بر_ADP	21	بر	ADP	on; fruit; side			pos_also=NOUN; visual=place	bar
 سال_NOUN	22	سال	NOUN	year				sāl
 توانستن_VERB	23	توانستن	VERB	be able			pos_also=NOUN	tavānestan
-رسیدن_VERB	24	رسیدن	VERB	arrive			pos_also=ADJ,NOUN	residan
+رسیدن_VERB	24	رسیدن	VERB	arrive			pos_also=ADJ,NOUN; visual=action	residan
 پس_ADV	25	پس	ADV	so; then			pos_also=ADJ,NOUN,SCONJ	pas
 هر_DET	26	هر	DET	each				har
 کار_NOUN	27	کار	NOUN	work				kār
@@ -31,19 +31,19 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 روز_NOUN	30	روز	NOUN	day				ruz
 اما_CCONJ	31	اما	CCONJ	but				ammā
 ما_PRON	32	ما	PRON	we				mā
-کشور_NOUN	33	کشور	NOUN	country				kešvar
+کشور_NOUN	33	کشور	NOUN	country			visual=map	kešvar
 گرفتن_VERB	34	گرفتن	VERB	take			pos_also=ADJ,NOUN	gereftan
 پیش_ADV	35	پیش	ADV	before; forward; by			pos_also=ADJ,NOUN	piš
 هم_ADV	36	هم	ADV	both; also			pos_also=PRON,SCONJ	ham
 گفتن_VERB	37	گفتن	VERB	say				goftan
-بزرگ_ADJ	38	بزرگ	ADJ	large				bozorg
+بزرگ_ADJ	38	بزرگ	ADJ	large			visual=pair	bozorg
 دو_NUM	39	دو	NUM	two			split=39	do
-شهر_NOUN	40	شهر	NOUN	city				šahr
+شهر_NOUN	40	شهر	NOUN	city			visual=object	šahr
 یا_CCONJ	41	یا	CCONJ	or				yā
-دادن_VERB	42	دادن	VERB	give			pos_also=NOUN	dādan
+دادن_VERB	42	دادن	VERB	give			pos_also=NOUN; visual=action	dādan
 ایران_PROPN	43	ایران	PROPN	Iran				irān
 نیز_ADV	44	نیز	ADV	also			pos_also=SCONJ	niz
-میان_ADP	45	میان	ADP	between			pos_also=NOUN	miyān
+میان_ADP	45	میان	ADP	between			pos_also=NOUN; visual=place	miyān
 صورت_NOUN	46	صورت	NOUN	face				surat
 راه_NOUN	47	راه	NOUN	way; road				rāh
 داده_ADJ	50	داده	ADJ	given; datum				dādeh
@@ -57,12 +57,12 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 همه_PRON	58	همه	PRON	every			pos_also=DET	hameh
 مهم_ADJ	59	مهم	ADJ	important			pos_also=NOUN	mohem
 کم_ADJ	60	کم	ADJ	low; little			pos_also=ADV,DET,NOUN	kam
-نزدیک_ADJ	61	نزدیک	ADJ	close			pos_also=NOUN	nazdik
+نزدیک_ADJ	61	نزدیک	ADJ	close			pos_also=NOUN; visual=place	nazdik
 عنوان_NOUN	62	عنوان	NOUN	title				onvān
 مورد_NOUN	63	مورد	NOUN	case				mowred
-بین_ADP	64	بین	ADP	between			pos_also=NOUN	beyn
+بین_ADP	64	بین	ADP	between			pos_also=NOUN; visual=place	beyn
 تمام_DET	65	تمام	DET	whole; all			pos_also=ADJ	tamām
-دست_NOUN	66	دست	NOUN	hand				dast
+دست_NOUN	66	دست	NOUN	hand			visual=object	dast
 چند_DET	67	چند	DET	several, a few; how many (چند؟)			pos_also=NOUN	čand
 قرار_NOUN	68	قرار	NOUN	agreement				qarār
 همین_PRON	69	همین	PRON	the same; this very				hamin
@@ -89,42 +89,42 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 دولت_NOUN	90	دولت	NOUN	government				dowlat
 جمله_NOUN	91	جمله	NOUN	sentence; total				jomleh
 نتیجه_NOUN	92	نتیجه	NOUN	result				natijeh
-آمدن_VERB	93	آمدن	VERB	come			pos_also=ADJ	āmadan
+آمدن_VERB	93	آمدن	VERB	come			pos_also=ADJ; visual=action	āmadan
 سو_NOUN	94	سو	NOUN	side				su
 یعنی_ADV	95	یعنی	ADV	namely; meaning			pos_also=SCONJ	ya'ni
 بار_NOUN	96	بار	NOUN	load; turn; time			pos_also=ADV	bār
-منطقه_NOUN	97	منطقه	NOUN	region				mantaqeh
+منطقه_NOUN	97	منطقه	NOUN	region			visual=map	mantaqeh
 نفر_NOUN	98	نفر	NOUN	person				nafar
 یافتن_VERB	99	یافتن	VERB	find			pos_also=NOUN	yāftan
 مختلف_ADJ	100	مختلف	ADJ	different				moxtalef
-بالا_ADV	101	بالا	ADV	top; high			pos_also=ADJ,ADP,NOUN	bālā
+بالا_ADV	101	بالا	ADV	top; high			pos_also=ADJ,ADP,NOUN; visual=place	bālā
 من_PRON	102	من	PRON	I				man
 سیاسی_ADJ	103	سیاسی	ADJ	political				siyāsi
-جهان_NOUN	104	جهان	NOUN	world				jahān
+جهان_NOUN	104	جهان	NOUN	world			visual=object	jahān
 رابطه_NOUN	105	رابطه	NOUN	relation				rābeteh
 شرط_NOUN	106	شرط	NOUN	condition				šart
 آمریکا_PROPN	107	آمریکا	PROPN	America				āmrikā
-جدید_ADJ	108	جدید	ADJ	new				jadid
+جدید_ADJ	108	جدید	ADJ	new			visual=pair	jadid
 علی_PROPN	109	علی	PROPN	Ali				ali
 چه_PRON	110	چه	PRON	what			pos_also=ADV,NOUN,SCONJ,VERB	čeh
 اساس_NOUN	111	اساس	NOUN	basis				asās
-آوردن_VERB	112	آوردن	VERB	bring			pos_also=ADJ,NOUN	āvardan
+آوردن_VERB	112	آوردن	VERB	bring			pos_also=ADJ,NOUN; visual=action	āvardan
 حال_NOUN	113	حال	NOUN	condition; state				hāl
 وارد_ADJ	114	وارد	ADJ	entering, arriving (وارد شدن 'enter'); imported			pos_also=ADP,NOUN	vāred
-نشان دادن_VERB	115	نشان دادن	VERB	show				nešān dādan
+نشان دادن_VERB	115	نشان دادن	VERB	show			visual=action	nešān dādan
 وی_PRON	116	وی	PRON	he; she				vey
 زمینه_NOUN	117	زمینه	NOUN	background; field				zamineh
 بعد_ADV	118	بعد	ADV	then; after			pos_also=ADJ,NOUN,SCONJ	ba'd
 سازمان_NOUN	119	سازمان	NOUN	organization				sāzmān
 فرد_NOUN	120	فرد	NOUN	individual				fard
 تیم_NOUN	121	تیم	NOUN	team				tim
-جوان_ADJ	122	جوان	ADJ	young			pos_also=NOUN	javān
+جوان_ADJ	122	جوان	ADJ	young			pos_also=NOUN; visual=pair	javān
 ملی_ADJ	123	ملی	ADJ	national				melli
 شورا_NOUN	124	شورا	NOUN	council				šurā
 البته_ADV	125	البته	ADV	of course			pos_also=SCONJ	albatteh
 دوم_ADJ	126	دوم	ADJ	second			pos_also=NOUN	dovvom
 دلیل_NOUN	127	دلیل	NOUN	reason				dalil
-رفتن_VERB	128	رفتن	VERB	go			pos_also=ADJ,NOUN	raftan
+رفتن_VERB	128	رفتن	VERB	go			pos_also=ADJ,NOUN; visual=action	raftan
 نقش_NOUN	129	نقش	NOUN	role				naqš
 نام_NOUN	130	نام	NOUN	name			pos_also=ADJ	nām
 ولی_CCONJ	131	ولی	CCONJ	but				vali
@@ -136,7 +136,7 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 قرار گرفتن_VERB	137	قرار گرفتن	VERB	be located				qarār gereftan
 شرکت_NOUN	138	شرکت	NOUN	company				šerkat
 طرح_NOUN	139	طرح	NOUN	design				tarh
-روی_ADP	139	روی	ADP	on; on top of			rank=estimated	ruye
+روی_ADP	139	روی	ADP	on; on top of			rank=estimated; visual=place	ruye
 تهران_PROPN	140	تهران	PROPN	Tehran				tehrān
 برخی_DET	141	برخی	DET	some			pos_also=PRON	barxi
 سه_NUM	142	سه	NUM	three			pos_also=NOUN	seh
@@ -144,7 +144,7 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 حدود_ADV	144	حدود	ADV	limits; range; approximately			pos_also=DET,NOUN	hodud
 ایجاد_NOUN	145	ایجاد	NOUN	creation				ijād
 کس_NOUN	146	کس	NOUN	person				kas
-بردن_VERB	147	بردن	VERB	take			pos_also=NOUN	bordan
+بردن_VERB	147	بردن	VERB	take			pos_also=NOUN; visual=action	bordan
 شما_PRON	148	شما	PRON	you				šomā
 اقتصادی_ADJ	149	اقتصادی	ADJ	economic				eqtesādi
 هزار_NUM	150	هزار	NUM	thousand			pos_also=NOUN	hezār
@@ -178,7 +178,7 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 طرف_NOUN	177	طرف	NOUN	side				taraf
 نه_ADV	178	نه	ADV	no; not; neither… nor (نه… نه)			split=178	na
 نه_NUM	178	نه	NUM	nine			split=178	noh
-آب_NOUN	179	آب	NOUN	water			pos_also=PROPN	āb
+آب_NOUN	179	آب	NOUN	water			pos_also=PROPN; visual=object	āb
 آینده_NOUN	180	آینده	NOUN	future			pos_also=ADJ	āyandeh
 نوع_NOUN	181	نوع	NOUN	type				now'
 مقام_NOUN	182	مقام	NOUN	rank; official				maqām
@@ -193,15 +193,15 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 چنین_DET	191	چنین	DET	such			pos_also=ADV,PRON	čenin
 رساندن_VERB	192	رساندن	VERB	deliver			pos_also=ADJ,NOUN	resāndan
 نظام_NOUN	193	نظام	NOUN	system				nezām
-گذاشتن_VERB	194	گذاشتن	VERB	put; leave			pos_also=ADJ	gozāštan
+گذاشتن_VERB	194	گذاشتن	VERB	put; leave			pos_also=ADJ; visual=action	gozāštan
 شکل_NOUN	195	شکل	NOUN	shape			pos_also=ADJ	šekl
 نسبت_NOUN	196	نسبت	NOUN	relation				nesbat
-دنیا_NOUN	197	دنیا	NOUN	world				donyā
+دنیا_NOUN	197	دنیا	NOUN	world			visual=object	donyā
 خارجی_ADJ	198	خارجی	ADJ	foreign				xāreji
 همراه_ADJ	199	همراه	ADJ	together; along			pos_also=NOUN	hamrāh
-کتاب_NOUN	200	کتاب	NOUN	book				ketāb
+کتاب_NOUN	200	کتاب	NOUN	book			visual=object	ketāb
 امروز_ADV	201	امروز	ADV	today				emruz
-دیدن_VERB	202	دیدن	VERB	see			pos_also=NOUN	didan
+دیدن_VERB	202	دیدن	VERB	see			pos_also=NOUN; visual=action	didan
 جهانی_ADJ	203	جهانی	ADJ	global				jahāni
 توسعه_NOUN	204	توسعه	NOUN	expansion; development				towse'eh
 ویژه_ADJ	205	ویژه	ADJ	special			pos_also=ADV,SCONJ	vižeh
@@ -209,13 +209,13 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 مرکز_NOUN	207	مرکز	NOUN	center				markaz
 اعلام_NOUN	208	اعلام	NOUN	announcement				e'lām
 اطلاع_NOUN	209	اطلاع	NOUN	information			pos_also=ADJ	ettelā'
-داخل_ADP	210	داخل	ADP	inside			pos_also=NOUN	dāxel
+داخل_ADP	210	داخل	ADP	inside			pos_also=NOUN; visual=place	dāxel
 پرداختن_VERB	211	پرداختن	VERB	pay; engage in			pos_also=ADJ,NOUN	pardāxtan
 کاملاً_ADV	212	کاملاً	ADV	completely		کاملا		kāmelan
 گفته_NOUN	213	گفته	NOUN	saying			pos_also=ADJ	gofteh
-زن_NOUN	214	زن	NOUN	woman; wife			pos_also=ADJ	zan
+زن_NOUN	214	زن	NOUN	woman; wife			pos_also=ADJ; visual=object	zan
 گزارش_NOUN	215	گزارش	NOUN	report				gozāreš
-سر_NOUN	216	سر	NOUN	head; top; end			split=216	sar
+سر_NOUN	216	سر	NOUN	head; top; end			split=216; visual=object	sar
 دست دادن_VERB	217	دست دادن	VERB	shake hands; lose				dast dādan
 هنوز_ADV	218	هنوز	ADV	still; yet				hanuz
 جمهوری_NOUN	219	جمهوری	NOUN	republic				jomhuri
@@ -236,16 +236,16 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 کامل_ADJ	234	کامل	ADJ	complete				kāmel
 آزاد_ADJ	235	آزاد	ADJ	free				āzād
 منبع_NOUN	236	منبع	NOUN	source				manba'
-خط_NOUN	237	خط	NOUN	line			pos_also=ADJ	xatt
+خط_NOUN	237	خط	NOUN	line			pos_also=ADJ; visual=object	xatt
 قدرت_NOUN	238	قدرت	NOUN	power				qodrat
 نیاز_NOUN	239	نیاز	NOUN	need				niyāz
 مسئول_ADJ	240	مسئول	ADJ	responsible			pos_also=NOUN	mas'ul
 نماینده_NOUN	241	نماینده	NOUN	representative				namāyandeh
 ساعت_NOUN	242	ساعت	NOUN	hour; time				sā'at
-زمین_NOUN	243	زمین	NOUN	ground; earth			pos_also=PROPN	zamin
+زمین_NOUN	243	زمین	NOUN	ground; earth			pos_also=PROPN; visual=object	zamin
 ملت_NOUN	244	ملت	NOUN	nation				mellat
 میزان_NOUN	245	میزان	NOUN	rate				mizān
-تحت_ADP	246	تحت	ADP	under			pos_also=NOUN	taht
+تحت_ADP	246	تحت	ADP	under			pos_also=NOUN; visual=place	taht
 اختیار_NOUN	247	اختیار	NOUN	authority				extiyār
 نخست_ADJ	248	نخست	ADJ	first			pos_also=ADV,NOUN	noxost
 ارائه_NOUN	249	ارائه	NOUN	presentation				erā'eh
@@ -255,7 +255,7 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 انتخاب_NOUN	253	انتخاب	NOUN	selection; choice			pos_also=ADJ	entexāb
 گفت‌وگو_NOUN	254	گفت‌وگو	NOUN	conversation		گفتگو		goftogu
 موفق_ADJ	255	موفق	ADJ	successful				movaffaq
-روزنامه_NOUN	256	روزنامه	NOUN	newspaper				ruznāmeh
+روزنامه_NOUN	256	روزنامه	NOUN	newspaper			visual=object	ruznāmeh
 گذشتن_VERB	257	گذشتن	VERB	pass			pos_also=NOUN	gozaštan
 طی_ADP	258	طی	ADP	during			pos_also=NOUN	tey
 خاطر_NOUN	259	خاطر	NOUN	mind; sake				xāter
@@ -268,7 +268,7 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 طریق_NOUN	265	طریق	NOUN	way				tariq
 کاهش_NOUN	266	کاهش	NOUN	decrease				kāheš
 اخیر_ADJ	267	اخیر	ADJ	recent				axir
-خارج_NOUN	268	خارج	NOUN	outside; abroad				xārej
+خارج_NOUN	268	خارج	NOUN	outside; abroad			visual=place	xārej
 هفته_NOUN	269	هفته	NOUN	week				hafteh
 آغاز_NOUN	270	آغاز	NOUN	beginning				āġāz
 مرحله_NOUN	271	مرحله	NOUN	stage				marhaleh
@@ -283,9 +283,9 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 یافته_ADJ	279	یافته	ADJ	found; finding				yāfteh
 خواندن_VERB	280	خواندن	VERB	read			pos_also=ADJ,NOUN	xāndan
 غیر_ADJ	281	غیر	ADJ	other; non-; un-			pos_also=NOUN	ġeyr
-خانواده_NOUN	282	خانواده	NOUN	family				xānevādeh
+خانواده_NOUN	282	خانواده	NOUN	family			visual=tree	xānevādeh
 دور_NOUN	283	دور	NOUN	round; circuit; period, era; around (دور میز 'around the table')			split=283	dowr
-دور_ADJ	283	دور	ADJ	far, distant			split=283	dur
+دور_ADJ	283	دور	ADJ	far, distant			split=283; visual=place	dur
 نقطه_NOUN	284	نقطه	NOUN	point				noqteh
 بازی_NOUN	285	بازی	NOUN	game; play				bāzi
 تولید_NOUN	286	تولید	NOUN	production				towlid
@@ -298,15 +298,15 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 کمک_NOUN	293	کمک	NOUN	help				komak
 قابل_ADJ	294	قابل	ADJ	capable				qābel
 توسط_ADP	295	توسط	ADP	by				tavassot
-زیر_ADP	296	زیر	ADP	under			pos_also=ADJ,NOUN	zir
+زیر_ADP	296	زیر	ADP	under			pos_also=ADJ,NOUN; visual=place	zir
 مانند_ADP	297	مانند	ADP	like			pos_also=ADV,NOUN	mānand
 اکنون_ADV	298	اکنون	ADV	now				aknun
 اهمیت_NOUN	299	اهمیت	NOUN	importance				āhammiyyat
 اندیشه_NOUN	300	اندیشه	NOUN	thought				andišeh
-استان_NOUN	301	استان	NOUN	province				ostān
+استان_NOUN	301	استان	NOUN	province			visual=map	ostān
 دفاع_NOUN	302	دفاع	NOUN	defense				defā'
-نامه_NOUN	303	نامه	NOUN	letter				nāmeh
-انسان_NOUN	304	انسان	NOUN	human				ensān
+نامه_NOUN	303	نامه	NOUN	letter			visual=object	nāmeh
+انسان_NOUN	304	انسان	NOUN	human			visual=object	ensān
 نمودن_VERB	305	نمودن	VERB	show; do			pos_also=ADJ,NOUN	nemudan
 عمومی_ADJ	306	عمومی	ADJ	public				omumi
 جدی_ADJ	307	جدی	ADJ	serious				jeddi
@@ -314,11 +314,11 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 سایر_DET	309	سایر	DET	other			pos_also=NOUN	sāyer
 زدن_VERB	310	زدن	VERB	strike; beat			pos_also=ADJ,ADP,NOUN	zadan
 فرصت_NOUN	311	فرصت	NOUN	opportunity				forsat
-دانشگاه_NOUN	312	دانشگاه	NOUN	university				dānešgāh
+دانشگاه_NOUN	312	دانشگاه	NOUN	university			visual=object	dānešgāh
 قرار دادن_VERB	313	قرار دادن	VERB	put; place				qarār dādan
 تأکید_NOUN	314	تأکید	NOUN	emphasis				ta'kid
-نوشتن_VERB	315	نوشتن	VERB	write			pos_also=ADJ,NOUN	neveštan
-ساختن_VERB	316	ساختن	VERB	build			pos_also=NOUN	sāxtan
+نوشتن_VERB	315	نوشتن	VERB	write			pos_also=ADJ,NOUN; visual=action	neveštan
+ساختن_VERB	316	ساختن	VERB	build			pos_also=NOUN; visual=action	sāxtan
 ترتیب_NOUN	317	ترتیب	NOUN	order				tartib
 فقط_ADV	318	فقط	ADV	only				faqat
 علت_NOUN	319	علت	NOUN	reason				ellat
@@ -345,7 +345,7 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 مطرح_ADJ	340	مطرح	ADJ	talked about; much discussed				matrah
 انسانی_ADJ	341	انسانی	ADJ	human			pos_also=NOUN	ensāni
 خاص_ADJ	342	خاص	ADJ	specific			pos_also=NOUN	xāss
-مقابل_ADP	343	مقابل	ADP	opposite; against			pos_also=ADJ,NOUN	moqābel
+مقابل_ADP	343	مقابل	ADP	opposite; against			pos_also=ADJ,NOUN; visual=place	moqābel
 سفر_NOUN	344	سفر	NOUN	travel				safar
 مشخص_ADJ	345	مشخص	ADJ	specified				mošaxxas
 فرهنگ_NOUN	346	فرهنگ	NOUN	culture				farhang
@@ -355,37 +355,37 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 پیشنهاد_NOUN	350	پیشنهاد	NOUN	proposal				pišnehād
 ماده_NOUN	351	ماده	NOUN	matter, substance; article (of a law)			split=351	māddeh
 معنا_NOUN	352	معنا	NOUN	meaning		معنی	pos_also=ADJ	ma'nā
-کنار_NOUN	353	کنار	NOUN	edge; beside			pos_also=ADP	kenār
+کنار_NOUN	353	کنار	NOUN	edge; beside			pos_also=ADP; visual=place	kenār
 رأی_NOUN	354	رأی	NOUN	vote				ra'y
 کلی_ADJ	355	کلی	ADJ	total; general				kolli
 حقیقت_NOUN	356	حقیقت	NOUN	truth			pos_also=PROPN	haqiqat
 تأمین_NOUN	357	تأمین	NOUN	securing				ta'min
-خانه_NOUN	358	خانه	NOUN	house				xāneh
+خانه_NOUN	358	خانه	NOUN	house			visual=object	xāneh
 جمعیت_NOUN	359	جمعیت	NOUN	population			pos_also=ADJ	jam'iyyat
 دین_NOUN	360	دین	NOUN	religion				din
 امکان_NOUN	361	امکان	NOUN	possibility				emkān
 علم_NOUN	362	علم	NOUN	science				elm
 انتظار_NOUN	363	انتظار	NOUN	waiting; expectation				entezār
-کوتاه_ADJ	364	کوتاه	ADJ	short				kutāh
-بازار_NOUN	365	بازار	NOUN	market				bāzār
+کوتاه_ADJ	364	کوتاه	ADJ	short			visual=pair	kutāh
+بازار_NOUN	365	بازار	NOUN	market			visual=object	bāzār
 کل_NOUN	366	کل	NOUN	whole; total			pos_also=DET	kol
-میدان_NOUN	367	میدان	NOUN	plaza; square; field				meydān
+میدان_NOUN	367	میدان	NOUN	plaza; square; field			visual=object	meydān
 فرهنگی_ADJ	368	فرهنگی	ADJ	cultural; educational				farhangi
-خارج شدن_VERB	369	خارج شدن	VERB	leave				xārej šodan
+خارج شدن_VERB	369	خارج شدن	VERB	leave			visual=action	xārej šodan
 شدت_NOUN	370	شدت	NOUN	intensity			pos_also=ADV	šeddat
 حقوق_NOUN	371	حقوق	NOUN	rights; salary				hoquq
-گل_NOUN	372	گل	NOUN	flower; goal (football)			split=372	gol
+گل_NOUN	372	گل	NOUN	flower; goal (football)			split=372; visual=object	gol
 گل_NOUN2	372	گل	NOUN	mud; clay			split=372	gel
 رشته_NOUN	373	رشته	NOUN	field; noodle				rešteh
 جلسه_NOUN	374	جلسه	NOUN	meeting				jalaseh
-دکتر_NOUN	375	دکتر	NOUN	doctor				doktor
+دکتر_NOUN	375	دکتر	NOUN	doctor			visual=object	doktor
 سؤال_NOUN	376	سؤال	NOUN	question				so'āl
 فضا_NOUN	377	فضا	NOUN	space				fazā
-فیلم_NOUN	378	فیلم	NOUN	film				film
+فیلم_NOUN	378	فیلم	NOUN	film			visual=object	film
 منظور_NOUN	379	منظور	NOUN	intention; purpose				manzur
-دفتر_NOUN	380	دفتر	NOUN	office				daftar
+دفتر_NOUN	380	دفتر	NOUN	office			visual=object	daftar
 تو_PRON	381	تو	PRON	you (singular, informal)			split=381	to
-تو_ADP	381	تو	ADP	in, into (colloquial); inside			split=381	tu
+تو_ADP	381	تو	ADP	in, into (colloquial); inside			split=381; visual=place	tu
 هیئت_NOUN	382	هیئت	NOUN	board		هیأت		hey'at
 زبان_NOUN	383	زبان	NOUN	language; tongue				zabān
 مسابقه_NOUN	384	مسابقه	NOUN	competition				mosābeqeh
@@ -421,12 +421,12 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 فصل_NOUN	414	فصل	NOUN	season; chapter				fasl
 نشان_NOUN	415	نشان	NOUN	sign				nešān
 مناسب_ADJ	416	مناسب	ADJ	appropriate				monāseb
-شب_NOUN	417	شب	NOUN	night				šab
+شب_NOUN	417	شب	NOUN	night			visual=object	šab
 روند_NOUN	418	روند	NOUN	process				ravand
-مدرسه_NOUN	419	مدرسه	NOUN	school				madreseh
+مدرسه_NOUN	419	مدرسه	NOUN	school			visual=object	madreseh
 حاکم_NOUN	420	حاکم	NOUN	ruler			pos_also=ADJ	hākem
 آماده_ADJ	421	آماده	ADJ	ready				āmādeh
-پول_NOUN	422	پول	NOUN	money				pul
+پول_NOUN	422	پول	NOUN	money			visual=object	pul
 پاسخ_NOUN	423	پاسخ	NOUN	reply				pāsox
 ایشان_PRON	424	ایشان	PRON	they				išān
 میلیارد_NUM	425	میلیارد	NUM	billion			pos_also=NOUN	milyārd
@@ -436,10 +436,10 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 فشار_NOUN	429	فشار	NOUN	pressure				fešār
 دستور_NOUN	430	دستور	NOUN	order; instruction				dastur
 اصلاح_NOUN	431	اصلاح	NOUN	correction				eslāh
-کوچک_ADJ	432	کوچک	ADJ	small				kučak
+کوچک_ADJ	432	کوچک	ADJ	small			visual=pair	kučak
 افغانستان_PROPN	433	افغانستان	PROPN	Afghanistan				afġānestān
 پیدا_ADJ	434	پیدا	ADJ	visible, apparent; found (پیدا کردن 'find')			pos_also=VERB	peydā
-طولانی_ADJ	435	طولانی	ADJ	long				tulāni
+طولانی_ADJ	435	طولانی	ADJ	long			visual=pair	tulāni
 سعی_NOUN	436	سعی	NOUN	try				sa'y
 شروع_NOUN	437	شروع	NOUN	start				šoru'
 چهار_NUM	438	چهار	NUM	four			pos_also=NOUN	čahār
@@ -465,7 +465,7 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 کمی_ADV	456	کمی	ADV	a little; slightly			rank=estimated	kami
 مقاله_NOUN	457	مقاله	NOUN	article				maqāleh
 چین_PROPN	458	چین	PROPN	China				čin
-مرد_NOUN	459	مرد	NOUN	man				mard
+مرد_NOUN	459	مرد	NOUN	man			visual=object	mard
 امام_NOUN	460	امام	NOUN	imam			pos_also=PROPN	emām
 واقعی_ADJ	461	واقعی	ADJ	real				vāqe'i
 انجام شدن_VERB	462	انجام شدن	VERB	be done				anjām šodan
@@ -473,13 +473,13 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 دستگاه_NOUN	464	دستگاه	NOUN	machine; system				dastgāh
 سیستم_NOUN	465	سیستم	NOUN	system				sistem
 دینی_ADJ	466	دینی	ADJ	religious				dini
-کودک_NOUN	467	کودک	NOUN	child				kudak
+کودک_NOUN	467	کودک	NOUN	child			visual=object	kudak
 ابتدا_NOUN	468	ابتدا	NOUN	beginning; at first			pos_also=ADV	ebtedā
 خواست_NOUN	469	خواست	NOUN	wish, will				xāst
 دولتی_ADJ	470	دولتی	ADJ	governmental			pos_also=NOUN	dowlati
 رسمی_ADJ	471	رسمی	ADJ	official				rasmi
 هزینه_NOUN	472	هزینه	NOUN	cost				hazineh
-بانک_NOUN	473	بانک	NOUN	bank				bānk
+بانک_NOUN	473	بانک	NOUN	bank			visual=object	bānk
 هوا_NOUN	474	هوا	NOUN	air				havā
 فکر_NOUN	475	فکر	NOUN	thought				fekr
 شنبه_NOUN	476	شنبه	NOUN	Saturday				šambeh
@@ -490,7 +490,7 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 ده_NUM	481	ده	NUM	ten			split=481	dah
 ده_NOUN	481	ده	NOUN	village			split=481	deh
 موجب_NOUN	482	موجب	NOUN	cause; reason				mujeb
-سنگین_ADJ	483	سنگین	ADJ	heavy				sangin
+سنگین_ADJ	483	سنگین	ADJ	heavy			visual=pair	sangin
 اداره_NOUN	484	اداره	NOUN	office				edāreh
 خطر_NOUN	485	خطر	NOUN	risk				xatar
 نظامی_ADJ	486	نظامی	ADJ	military; Nezami			pos_also=NOUN,PROPN	nezāmi
@@ -535,7 +535,7 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 رهبر_NOUN	524	رهبر	NOUN	leader				rahbar
 دارا_ADJ	525	دارا	ADJ	having				dārā
 تصمیم_NOUN	526	تصمیم	NOUN	decision				tasmim
-فرزند_NOUN	527	فرزند	NOUN	child				farzand
+فرزند_NOUN	527	فرزند	NOUN	child			visual=tree	farzand
 تجربه_NOUN	528	تجربه	NOUN	experience				tajrobeh
 آسیا_PROPN	529	آسیا	PROPN	Asia			pos_also=NOUN	āsiyā
 قیمت_NOUN	530	قیمت	NOUN	price				qeymat
@@ -547,18 +547,18 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 فاصله_NOUN	536	فاصله	NOUN	distance				fāseleh
 اقتصاد_NOUN	537	اقتصاد	NOUN	economy				eqtesād
 حکومت_NOUN	538	حکومت	NOUN	government				hokumat
-نقشه_NOUN	539	نقشه	NOUN	map; plan				naqšeh
+نقشه_NOUN	539	نقشه	NOUN	map; plan			visual=object	naqšeh
 همواره_ADV	540	همواره	ADV	always				hamvāreh
-غرب_NOUN	541	غرب	NOUN	west			pos_also=PROPN	ġarb
+غرب_NOUN	541	غرب	NOUN	west			pos_also=PROPN; visual=map	ġarb
 گسترش_NOUN	542	گسترش	NOUN	spread				gostareš
 حل_NOUN	543	حل	NOUN	solution				hall
-روشن_ADJ	544	روشن	ADJ	bright; turned on				rowšan
+روشن_ADJ	544	روشن	ADJ	bright; turned on			visual=pair	rowšan
 گام_NOUN	545	گام	NOUN	step				gām
 خدا_PROPN	546	خدا	PROPN	God			pos_also=NOUN	xodā
 احساس_NOUN	547	احساس	NOUN	feeling			pos_also=ADJ	ehsās
 ساله_NOUN	548	ساله	NOUN	years-old				sāleh
 قرارداد_NOUN	549	قرارداد	NOUN	contract			pos_also=ADJ	qarārdād
-مرز_NOUN	550	مرز	NOUN	border				marz
+مرز_NOUN	550	مرز	NOUN	border			visual=map	marz
 خاک_NOUN	551	خاک	NOUN	soil; dust				xāk
 جمعه_NOUN	552	جمعه	NOUN	Friday				jom'eh
 عملیات_NOUN	553	عملیات	NOUN	campaign; operation				amaliyāt
@@ -574,7 +574,7 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 بعضی_DET	563	بعضی	DET	some			pos_also=NOUN,PRON	ba'zi
 مراسم_NOUN	564	مراسم	NOUN	ceremony				marāsem
 دریافت_NOUN	565	دریافت	NOUN	receipt; perception				daryāft
-خون_NOUN	566	خون	NOUN	blood				xun
+خون_NOUN	566	خون	NOUN	blood			visual=object	xun
 مقدمه_NOUN	567	مقدمه	NOUN	introduction			pos_also=ADJ	moqaddameh
 روسیه_PROPN	568	روسیه	PROPN	Russia				rusiyeh
 استقلال_NOUN	569	استقلال	NOUN	independence; Esteghlal			pos_also=PROPN	esteqlāl
@@ -582,7 +582,7 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 سخت_ADJ	571	سخت	ADJ	hard			pos_also=ADV	saxt
 برگزاری_NOUN	572	برگزاری	NOUN	holding				bargozāri
 دسته_NOUN	573	دسته	NOUN	bunch				dasteh
-آتش_NOUN	574	آتش	NOUN	fire				ātaš
+آتش_NOUN	574	آتش	NOUN	fire			visual=object	ātaš
 سرعت_NOUN	575	سرعت	NOUN	speed			pos_also=ADJ	sor'at
 بین‌المللی_ADJ	576	بین‌المللی	ADJ	international				beynolmelali
 مشارکت_NOUN	577	مشارکت	NOUN	participation; partnership				mošārekat
@@ -590,15 +590,15 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 فعال_ADJ	579	فعال	ADJ	active			pos_also=NOUN	fa'āl
 رقم_NOUN	580	رقم	NOUN	digit; number			pos_also=ADJ,PROPN	raqam
 نیمه_NOUN	581	نیمه	NOUN	half; middle				nimeh
-شمال_NOUN	582	شمال	NOUN	north				šomāl
+شمال_NOUN	582	شمال	NOUN	north			visual=map	šomāl
 یاد_NOUN	583	یاد	NOUN	memory				yād
 بهار_NOUN	584	بهار	NOUN	spring			pos_also=PROPN	bahār
-برداشتن_VERB	585	برداشتن	VERB	pick up; remove			pos_also=ADJ,NOUN	bardāštan
-سریع_ADJ	586	سریع	ADJ	fast			pos_also=ADV	sari'
-چهره_NOUN	587	چهره	NOUN	face				čehreh
+برداشتن_VERB	585	برداشتن	VERB	pick up; remove			pos_also=ADJ,NOUN; visual=action	bardāštan
+سریع_ADJ	586	سریع	ADJ	fast			pos_also=ADV; visual=pair	sari'
+چهره_NOUN	587	چهره	NOUN	face			visual=object	čehreh
 محصول_NOUN	588	محصول	NOUN	product				mahsul
 تاریخی_ADJ	589	تاریخی	ADJ	historical				tārixi
-چشم_NOUN	590	چشم	NOUN	eye			split=590	češm
+چشم_NOUN	590	چشم	NOUN	eye			split=590; visual=object	češm
 چشم_INTJ	590	چشم	INTJ	certainly, will do (polite agreement, colloquial)			split=590	čašm
 بند_NOUN	591	بند	NOUN	string; paragraph				band
 مخالف_ADJ	592	مخالف	ADJ	opposed			pos_also=NOUN	moxālef
@@ -607,10 +607,10 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 تقویت_NOUN	595	تقویت	NOUN	reinforcement				taqviyat
 احتمال_NOUN	596	احتمال	NOUN	probability				ehtemāl
 تعیین_NOUN	597	تعیین	NOUN	determination				ta'yin
-پلیس_NOUN	598	پلیس	NOUN	police				polis
+پلیس_NOUN	598	پلیس	NOUN	police			visual=object	polis
 فروش_NOUN	599	فروش	NOUN	sale				foruš
 رسانه_NOUN	600	رسانه	NOUN	medium				resāneh
-جنوب_NOUN	601	جنوب	NOUN	south				jonub
+جنوب_NOUN	601	جنوب	NOUN	south			visual=map	jonub
 تهیه_NOUN	602	تهیه	NOUN	preparation				tahiyyeh
 بیماری_NOUN	603	بیماری	NOUN	illness				bimāri
 گردیدن_VERB	604	گردیدن	VERB	turn; become			pos_also=ADJ	gardidan
@@ -630,17 +630,17 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 جایگاه_NOUN	615	جایگاه	NOUN	position				jāygāh
 اعتقاد_NOUN	616	اعتقاد	NOUN	belief			pos_also=ADJ	e'teqād
 شعر_NOUN	617	شعر	NOUN	poetry			pos_also=ADJ	še'r
-نو_ADJ	618	نو	ADJ	new				now
+نو_ADJ	618	نو	ADJ	new			visual=pair	now
 احترام_NOUN	619	احترام	NOUN	respect				ehterām
 متر_NOUN	620	متر	NOUN	meter				metr
 ترکیه_PROPN	621	ترکیه	PROPN	Turkey				torkiyeh
 پیروزی_NOUN	622	پیروزی	NOUN	victory; Piroozi (F.C.)			pos_also=PROPN	piruzi
 اختلاف_NOUN	623	اختلاف	NOUN	difference				extelāf
 محسوب_ADJ	624	محسوب	ADJ	considered				mahsub
-دریا_NOUN	625	دریا	NOUN	sea				daryā
+دریا_NOUN	625	دریا	NOUN	sea			visual=object	daryā
 حضرت_NOUN	626	حضرت	NOUN	holiness				hazrat
 بنا_NOUN	627	بنا	NOUN	building, structure; basis (بنا بر 'according to')			split=627	banā
-پا_NOUN	628	پا	NOUN	foot; leg				pā
+پا_NOUN	628	پا	NOUN	foot; leg			visual=object	pā
 خبرنگار_NOUN	629	خبرنگار	NOUN	reporter				xabarnegār
 غربی_ADJ	630	غربی	ADJ	western				ġarbi
 چندین_DET	631	چندین	DET	several			pos_also=NOUN	čandin
@@ -677,7 +677,7 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 هنر_NOUN	662	هنر	NOUN	art				honar
 همچنان_ADV	663	همچنان	ADV	thus; still				hamčenān
 شامل_ADJ	664	شامل	ADJ	included				šāmel
-روستا_NOUN	665	روستا	NOUN	village				rustā
+روستا_NOUN	665	روستا	NOUN	village			visual=object	rustā
 رهبری_NOUN	666	رهبری	NOUN	leadership				rahbari
 ظرفیت_NOUN	667	ظرفیت	NOUN	capacity				zarfiyat
 نظارت_NOUN	668	نظارت	NOUN	supervision			pos_also=ADJ	nezārat
@@ -697,8 +697,8 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 کدام_NOUN	682	کدام	NOUN	which				kodām
 سرزمین_NOUN	683	سرزمین	NOUN	land; country				sarzamin
 مسلمان_NOUN	684	مسلمان	NOUN	Muslim			pos_also=ADJ	mosalmān
-ساز_NOUN	685	ساز	NOUN	instrument			pos_also=ADJ	sāz
-خوردن_VERB	686	خوردن	VERB	eat			pos_also=ADJ,NOUN	xordan
+ساز_NOUN	685	ساز	NOUN	instrument			pos_also=ADJ; visual=object	sāz
+خوردن_VERB	686	خوردن	VERB	eat			pos_also=ADJ,NOUN; visual=action	xordan
 مسئولیت_NOUN	687	مسئولیت	NOUN	responsibility				mas'uliyyat
 جام_NOUN	688	جام	NOUN	cup				jām
 پذیرفتن_VERB	689	پذیرفتن	VERB	accept				paziroftan
@@ -716,9 +716,9 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 کنفرانس_NOUN	699	کنفرانس	NOUN	conference				konferāns
 نمایشگاه_NOUN	700	نمایشگاه	NOUN	exhibition				namāyešgāh
 تکرار_NOUN	701	تکرار	NOUN	repeating				tekrār
-بسته_NOUN	702	بسته	NOUN	package			pos_also=ADJ	basteh
+بسته_NOUN	702	بسته	NOUN	package			pos_also=ADJ; visual=object	basteh
 عملکرد_NOUN	703	عملکرد	NOUN	operation				amalkard
-ریشه_NOUN	704	ریشه	NOUN	root				rišeh
+ریشه_NOUN	704	ریشه	NOUN	root			visual=object	rišeh
 شناختن_VERB	705	شناختن	VERB	know; recognize			pos_also=ADJ,NOUN	šenāxtan
 سرمایه_NOUN	706	سرمایه	NOUN	capital				sarmāyeh
 گاه_ADV	707	گاه	ADV	time; sometimes			pos_also=NOUN	gāh
@@ -747,7 +747,7 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 عباس_PROPN	730	عباس	PROPN	Abbas				abbās
 عالی_ADJ	731	عالی	ADJ	high				āli
 بعدی_ADJ	732	بعدی	ADJ	next			pos_also=NOUN	ba'di
-زندان_NOUN	733	زندان	NOUN	prison				zendān
+زندان_NOUN	733	زندان	NOUN	prison			visual=object	zendān
 مشاهده_NOUN	734	مشاهده	NOUN	observation				mošāhedeh
 دادگاه_NOUN	735	دادگاه	NOUN	court				dādgāh
 معرفی کردن_VERB	736	معرفی کردن	VERB	introduce				mo'arrefi kardan
@@ -756,7 +756,7 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 ضرورت_NOUN	739	ضرورت	NOUN	necessity				zarurat
 شش_NUM	740	شش	NUM	six			split=740	šeš
 مجبور_ADJ	741	مجبور	ADJ	forced				majbur
-عکس_NOUN	742	عکس	NOUN	picture			pos_also=ADJ	aks
+عکس_NOUN	742	عکس	NOUN	picture			pos_also=ADJ; visual=object	aks
 تردید_NOUN	743	تردید	NOUN	hesitation; doubt				tardid
 خبری_ADJ	744	خبری	ADJ	news			pos_also=NOUN	xabari
 بهبود_NOUN	745	بهبود	NOUN	improvement				behbud
@@ -772,7 +772,7 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 نیم_NUM	755	نیم	NUM	half			pos_also=DET,NOUN	nim
 درخواست_NOUN	756	درخواست	NOUN	request				darxāst
 رد_NOUN	757	رد	NOUN	refusal; trail			pos_also=ADJ	radd
-منزل_NOUN	758	منزل	NOUN	house				manzel
+منزل_NOUN	758	منزل	NOUN	house			visual=object	manzel
 پرونده_NOUN	759	پرونده	NOUN	file				parvandeh
 حالا_ADV	760	حالا	ADV	now				hālā
 کنونی_ADJ	761	کنونی	ADJ	present				konuni
@@ -788,11 +788,11 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 هدایت_NOUN	771	هدایت	NOUN	guidance			pos_also=PROPN	hedāyat
 سند_NOUN	772	سند	NOUN	document			pos_also=PROPN	sanad
 صد_NUM	773	صد	NUM	hundred			pos_also=NOUN	sad
-نشستن_VERB	774	نشستن	VERB	sit			pos_also=ADJ,NOUN	nešastan
+نشستن_VERB	774	نشستن	VERB	sit			pos_also=ADJ,NOUN; visual=action	nešastan
 آنجا_ADV	775	آنجا	ADV	there			pos_also=NOUN	ānjā
 تسلیم_NOUN	776	تسلیم	NOUN	surrender				taslim
 تقریباً_ADV	777	تقریباً	ADV	approximately		تقریبا		taqriban
-وارد شدن_VERB	778	وارد شدن	VERB	enter				vāred šodan
+وارد شدن_VERB	778	وارد شدن	VERB	enter			visual=action	vāred šodan
 طراحی_NOUN	779	طراحی	NOUN	design				tarrāhi
 دانش_NOUN	780	دانش	NOUN	knowledge				dāneš
 علاوه_NOUN	781	علاوه	NOUN	addition				alāveh
@@ -802,16 +802,16 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 جمهور_NOUN	785	جمهور	NOUN	republic				jomhur
 کشیدن_VERB	786	کشیدن	VERB	pull; draw			pos_also=NOUN,SCONJ	kešidan
 باور_NOUN	787	باور	NOUN	belief				bāvar
-مسجد_NOUN	788	مسجد	NOUN	mosque				masjed
+مسجد_NOUN	788	مسجد	NOUN	mosque			visual=object	masjed
 دشمن_NOUN	789	دشمن	NOUN	enemy				došman
-پایین_ADV	790	پایین	ADV	bottom; down			pos_also=ADJ,NOUN	pāyin
+پایین_ADV	790	پایین	ADV	bottom; down			pos_also=ADJ,NOUN; visual=place	pāyin
 ناشی_ADJ	791	ناشی	ADJ	resulting				nāši
 روبرو_ADJ	792	روبرو	ADJ	opposite			pos_also=ADP,ADV,NOUN,VERB	ruberu
 دقیق_ADJ	793	دقیق	ADJ	exact			pos_also=PROPN	daqiq
 پخش_NOUN	794	پخش	NOUN	distribution; broadcasting				paxš
 محمود_PROPN	795	محمود	PROPN	Mahmoud				mahmud
-خیابان_NOUN	796	خیابان	NOUN	street; avenue				xiyābān
-ساختمان_NOUN	797	ساختمان	NOUN	building				sāxtemān
+خیابان_NOUN	796	خیابان	NOUN	street; avenue			visual=object	xiyābān
+ساختمان_NOUN	797	ساختمان	NOUN	building			visual=object	sāxtemān
 محقق_NOUN	798	محقق	NOUN	researcher, scholar			split=798	mohaqqeq
 محقق_ADJ	798	محقق	ADJ	realised, fulfilled (محقق شدن 'come true')			split=798	mohaqqaq
 ساکن_NOUN	799	ساکن	NOUN	resident			pos_also=ADJ	sāken
@@ -821,7 +821,7 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 تبدیل_NOUN	803	تبدیل	NOUN	conversion				tabdil
 امتیاز_NOUN	804	امتیاز	NOUN	point; privilege			pos_also=ADJ	emtiyāz
 لحاظ_NOUN	805	لحاظ	NOUN	perspective				lahāz
-شرق_NOUN	806	شرق	NOUN	east				šarq
+شرق_NOUN	806	شرق	NOUN	east			visual=map	šarq
 وسیله_NOUN	807	وسیله	NOUN	means; instrument				vasileh
 نسل_NOUN	808	نسل	NOUN	generation				nasl
 قسمت_NOUN	809	قسمت	NOUN	section				qesmat
@@ -829,7 +829,7 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 اعتبار_NOUN	811	اعتبار	NOUN	credit; validity				e'tebār
 گسترده_ADJ	812	گسترده	ADJ	widespread				gostardeh
 دوباره_ADV	813	دوباره	ADV	again			pos_also=ADJ	dobāreh
-جاده_NOUN	814	جاده	NOUN	road				jāddeh
+جاده_NOUN	814	جاده	NOUN	road			visual=object	jāddeh
 فارس_PROPN	815	فارس	PROPN	Fars				fārs
 سالگی_NOUN	816	سالگی	NOUN	years old				sālegi
 اشتباه_NOUN	817	اشتباه	NOUN	mistake			pos_also=ADJ,ADV	eštebāh
@@ -838,7 +838,7 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 متفاوت_ADJ	820	متفاوت	ADJ	different				motafāvet
 اینجا_ADV	821	اینجا	ADV	here			pos_also=NOUN	injā
 برخوردار بودن_VERB	822	برخوردار بودن	VERB	be in possession				barxordār budan
-کشتی_NOUN	823	کشتی	NOUN	ship, boat			split=823	kešti
+کشتی_NOUN	823	کشتی	NOUN	ship, boat			split=823; visual=object	kešti
 کشتی_NOUN2	823	کشتی	NOUN	wrestling			split=823	košti
 جنوبی_ADJ	824	جنوبی	ADJ	southern				jonubi
 بروز_NOUN	825	بروز	NOUN	appearance				boruz
@@ -867,7 +867,7 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 عالم_NOUN	848	عالم	NOUN	world; universe			split=848	ālam
 عالم_NOUN2	848	عالم	NOUN	scholar, learned person (esp. religious)			split=848	ālem
 آموزشی_ADJ	849	آموزشی	ADJ	educational				āmuzeši
-افتادن_VERB	850	افتادن	VERB	fall			pos_also=ADJ	oftādan
+افتادن_VERB	850	افتادن	VERB	fall			pos_also=ADJ; visual=action	oftādan
 برداشت_NOUN	851	برداشت	NOUN	harvest; withdrawal (of money); interpretation, understanding				bardāšt
 نویسنده_NOUN	852	نویسنده	NOUN	writer				nevisandeh
 هفت_NUM	853	هفت	NUM	seven			pos_also=NOUN	haft
@@ -876,12 +876,12 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 سوریه_PROPN	856	سوریه	PROPN	Syria				suriyeh
 دچار_ADJ	857	دچار	ADJ	afflicted with				dočār
 فردی_ADJ	858	فردی	ADJ	individual			pos_also=NOUN	fardi
-دختر_NOUN	859	دختر	NOUN	girl; daughter			pos_also=ADJ	doxtar
+دختر_NOUN	859	دختر	NOUN	girl; daughter			pos_also=ADJ; visual=object	doxtar
 نهایی_ADJ	860	نهایی	ADJ	final				nahāyi
 کمک کردن_VERB	861	کمک کردن	VERB	help				komak kardan
 احمد_PROPN	862	احمد	PROPN	Ahmad				ahmad
 ارسال_NOUN	863	ارسال	NOUN	sending				ersāl
-ابزار_NOUN	864	ابزار	NOUN	tool			pos_also=ADJ	abzār
+ابزار_NOUN	864	ابزار	NOUN	tool			pos_also=ADJ; visual=object	abzār
 هرچند_SCONJ	865	هرچند	SCONJ	however			pos_also=ADV	harčand
 بنابراین_ADV	866	بنابراین	ADV	therefore			pos_also=SCONJ	banābarin
 ژاپن_PROPN	867	ژاپن	PROPN	Japan				žāpon
@@ -892,7 +892,7 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 معدن_NOUN	872	معدن	NOUN	mine				ma'dan
 مسافر_NOUN	873	مسافر	NOUN	traveler; passenger				mosāfer
 قوه_NOUN	874	قوه	NOUN	strength; branch				qovveh
-زیبا_ADJ	875	زیبا	ADJ	beautiful				zibā
+زیبا_ADJ	875	زیبا	ADJ	beautiful			visual=pair	zibā
 مشغول_ADJ	876	مشغول	ADJ	busy				mašġul
 حاصل_NOUN	877	حاصل	NOUN	result			pos_also=ADJ	hāsel
 اتفاق_NOUN	878	اتفاق	NOUN	event				ettefāq
@@ -900,9 +900,9 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 ورزشی_ADJ	880	ورزشی	ADJ	athletic				varzeši
 باعث شدن_VERB	881	باعث شدن	VERB	cause				bāes šodan
 اجازه_NOUN	882	اجازه	NOUN	permit				ejāzeh
-پدر_NOUN	883	پدر	NOUN	father				pedar
+پدر_NOUN	883	پدر	NOUN	father			visual=tree	pedar
 بازگشت_NOUN	884	بازگشت	NOUN	return				bāzgašt
-پر_ADJ	885	پر	ADJ	full; very, a lot (پر از 'full of')			split=885	por
+پر_ADJ	885	پر	ADJ	full; very, a lot (پر از 'full of')			split=885; visual=pair	por
 مطالعه_NOUN	886	مطالعه	NOUN	study			pos_also=ADJ	motāle'eh
 ارتش_NOUN	887	ارتش	NOUN	army				arteš
 ضعف_NOUN	888	ضعف	NOUN	weakness				za'f
@@ -910,21 +910,21 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 آمادگی_NOUN	890	آمادگی	NOUN	readiness; preschool				āmādegi
 نامزد_NOUN	891	نامزد	NOUN	candidate				nāmzad
 ویژگی_NOUN	892	ویژگی	NOUN	characteristic				vižegi
-تلویزیون_NOUN	893	تلویزیون	NOUN	television				televiziyon
+تلویزیون_NOUN	893	تلویزیون	NOUN	television			visual=object	televiziyon
 شیعه_NOUN	894	شیعه	NOUN	Shiite			pos_also=ADJ	ši'eh
 خواستار_NOUN	895	خواستار	NOUN	applicant; desirous				xāstār
 مذهبی_ADJ	896	مذهبی	ADJ	religious				mazhabi
 میلادی_ADJ	897	میلادی	ADJ	A.D.				milādi
 مناسبت_NOUN	898	مناسبت	NOUN	suitability; relevance to occasion				monāsebat
 محترم_ADJ	899	محترم	ADJ	honorable				mohtaram
-کارخانه_NOUN	900	کارخانه	NOUN	factory				kārxāneh
+کارخانه_NOUN	900	کارخانه	NOUN	factory			visual=object	kārxāneh
 موافقت_NOUN	901	موافقت	NOUN	agreement				movāfeqat
 مجموع_NOUN	902	مجموع	NOUN	total				majmu'
 کشتن_VERB	903	کشتن	VERB	kill			pos_also=NOUN	koštan
 محلی_ADJ	904	محلی	ADJ	local			pos_also=NOUN	mahalli
 عادی_ADJ	905	عادی	ADJ	normal				ādi
 اتحادیه_NOUN	906	اتحادیه	NOUN	union				ettehādiyeh
-قدیمی_ADJ	907	قدیمی	ADJ	old; old-fashioned				qadimi
+قدیمی_ADJ	907	قدیمی	ADJ	old; old-fashioned			visual=pair	qadimi
 وحدت_NOUN	908	وحدت	NOUN	unity				vahdat
 بحران_NOUN	909	بحران	NOUN	crisis				bohrān
 دل_NOUN	910	دل	NOUN	heart				del
@@ -935,7 +935,7 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 مانده_ADJ	915	مانده	ADJ	stale; leftover; balance; remained				māndeh
 عدالت_NOUN	916	عدالت	NOUN	justice			pos_also=ADJ	edālat
 سرمایه‌گذاری_NOUN	917	سرمایه‌گذاری	NOUN	investment				sarmāyeh-gozāri
-صبح_NOUN	918	صبح	NOUN	morning				sobh
+صبح_NOUN	918	صبح	NOUN	morning			visual=object	sobh
 سخنرانی_NOUN	919	سخنرانی	NOUN	speech				soxanrāni
 باشگاه_NOUN	920	باشگاه	NOUN	club				bāšgāh
 کشف_NOUN	921	کشف	NOUN	discovery				kašf
@@ -947,27 +947,27 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 تهدید_NOUN	927	تهدید	NOUN	threat				tahdid
 ساده_ADJ	928	ساده	ADJ	simple				sādeh
 قادر_ADJ	929	قادر	ADJ	able				qāder
-مادر_NOUN	930	مادر	NOUN	mother				mādar
+مادر_NOUN	930	مادر	NOUN	mother			visual=tree	mādar
 فرار_NOUN	931	فرار	NOUN	escape				farār
 زنده_ADJ	932	زنده	ADJ	live				zendeh
 قتل_NOUN	933	قتل	NOUN	killing; murder				qatl
-سالم_ADJ	934	سالم	ADJ	healthy				sālem
+سالم_ADJ	934	سالم	ADJ	healthy			visual=pair	sālem
 ثبت_NOUN	935	ثبت	NOUN	registration				sabt
 شهروند_NOUN	936	شهروند	NOUN	citizen				šahrvand
 صلح_NOUN	937	صلح	NOUN	peace				solh
-طلا_NOUN	938	طلا	NOUN	gold			pos_also=ADJ	talā
+طلا_NOUN	938	طلا	NOUN	gold			pos_also=ADJ; visual=object	talā
 هوایی_ADJ	939	هوایی	ADJ	aerial				havāyi
 دیروز_ADV	940	دیروز	ADV	yesterday				diruz
 سعی کردن_VERB	941	سعی کردن	VERB	try				sa'y kardan
 عرب_NOUN	942	عرب	NOUN	Arab			pos_also=ADJ,PROPN	arab
 جاری_ADJ	943	جاری	ADJ	flowing; current; sister-in-law				jāri
 هویت_NOUN	944	هویت	NOUN	identity				hoviyyat
-بدن_NOUN	945	بدن	NOUN	body				badan
-سلاح_NOUN	946	سلاح	NOUN	weapon				selāh
+بدن_NOUN	945	بدن	NOUN	body			visual=object	badan
+سلاح_NOUN	946	سلاح	NOUN	weapon			visual=object	selāh
 دانشمند_NOUN	947	دانشمند	NOUN	scientist			pos_also=ADJ	dānešmand
 بدین_ADV	948	بدین	ADV	to this				bedin
 منفی_ADJ	949	منفی	ADJ	negative				manfi
-درون_ADP	950	درون	ADP	inside			pos_also=NOUN	darun
+درون_ADP	950	درون	ADP	inside			pos_also=NOUN; visual=place	darun
 رنگ_NOUN	951	رنگ	NOUN	color				rang
 فرانسوی_ADJ	952	فرانسوی	ADJ	French			pos_also=NOUN	farānsavi
 کیفیت_NOUN	953	کیفیت	NOUN	quality				keyfiyyat
@@ -975,7 +975,7 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 خشونت_NOUN	955	خشونت	NOUN	violence				xošunat
 مبنی_ADJ	956	مبنی	ADJ	based				mabni
 شماره_NOUN	957	شماره	NOUN	number				šomāreh
-پشت_NOUN	958	پشت	NOUN	back			pos_also=ADP	pošt
+پشت_NOUN	958	پشت	NOUN	back			pos_also=ADP; visual=place	pošt
 عملی_ADJ	959	عملی	ADJ	practical			pos_also=NOUN	amali
 مذاکرات_NOUN	960	مذاکرات	NOUN	negotiations				mozākerāt
 ورزش_NOUN	961	ورزش	NOUN	sport				varzeš
@@ -1010,7 +1010,7 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 تصمیم گرفتن_VERB	990	تصمیم گرفتن	VERB	decide				tasmim gereftan
 اولیه_ADJ	991	اولیه	ADJ	primary; original				avvaliyyeh
 فنی_ADJ	992	فنی	ADJ	technical				fanni
-خودرو_NOUN	993	خودرو	NOUN	car			pos_also=ADJ	xodrow
+خودرو_NOUN	993	خودرو	NOUN	car			pos_also=ADJ; visual=object	xodrow
 عرض_NOUN	994	عرض	NOUN	width; saying				arz
 مقدار_NOUN	995	مقدار	NOUN	amount			pos_also=ADV,DET	meqdār
 عمده_ADJ	996	عمده	ADJ	main				omdeh
@@ -1021,7 +1021,7 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 درست_ADJ	1001	درست	ADJ	right; correct			pos_also=ADV	dorost
 قطع_NOUN	1002	قطع	NOUN	cut				qat'
 مأمور_NOUN	1003	مأمور	NOUN	agent; officer				ma'mur
-ایالت_NOUN	1004	ایالت	NOUN	state				eyālat
+ایالت_NOUN	1004	ایالت	NOUN	state			visual=map	eyālat
 امنیتی_ADJ	1005	امنیتی	ADJ	security				amniyyati
 شکست_NOUN	1006	شکست	NOUN	defeat; failure; break				šekast
 تفاوت_NOUN	1007	تفاوت	NOUN	difference				tafāvot
@@ -1036,7 +1036,7 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 قبلاً_ADV	1016	قبلاً	ADV	before		قبلا		qablan
 تمرین_NOUN	1017	تمرین	NOUN	practice				tamrin
 عمر_NOUN	1018	عمر	NOUN	life, lifetime			split=1018	omr
-دارو_NOUN	1019	دارو	NOUN	drug				dāru
+دارو_NOUN	1019	دارو	NOUN	drug			visual=object	dāru
 عقیده_NOUN	1020	عقیده	NOUN	belief				aqideh
 آهن_NOUN	1021	آهن	NOUN	iron				āhan
 کیلومتر_NOUN	1022	کیلومتر	NOUN	kilometer				kilometr
@@ -1047,7 +1047,7 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 تأیید_NOUN	1027	تأیید	NOUN	confirmation				ta'yid
 ایجاد کردن_VERB	1028	ایجاد کردن	VERB	create				ijād kardan
 نیازمند_ADJ	1029	نیازمند	ADJ	needy; in need			pos_also=NOUN	niyāzmand
-انداختن_VERB	1030	انداختن	VERB	throw			pos_also=NOUN	andāxtan
+انداختن_VERB	1030	انداختن	VERB	throw			pos_also=NOUN; visual=action	andāxtan
 واشنگتن_PROPN	1031	واشنگتن	PROPN	Washington				vāšangton
 عربی_ADJ	1032	عربی	ADJ	Arabic			pos_also=NOUN	arabi
 همزمان_ADJ	1033	همزمان	ADJ	simultaneously			pos_also=ADV	hamzamān
@@ -1055,7 +1055,7 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 توانایی_NOUN	1035	توانایی	NOUN	ability				tavānāyi
 صفر_NOUN	1036	صفر	NOUN	zero				sefr
 شهری_ADJ	1037	شهری	ADJ	urban			pos_also=NOUN	šahri
-فقیر_ADJ	1038	فقیر	ADJ	poor			pos_also=NOUN	faqir
+فقیر_ADJ	1038	فقیر	ADJ	poor			pos_also=NOUN; visual=pair	faqir
 کشوری_ADJ	1039	کشوری	ADJ	state; national			pos_also=NOUN	kešvari
 راستا_NOUN	1040	راستا	NOUN	direction				rāstā
 شرقی_ADJ	1041	شرقی	ADJ	eastern				šarqi
@@ -1071,7 +1071,7 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 دوستی_NOUN	1051	دوستی	NOUN	friendship				dusti
 الله_PROPN	1052	الله	PROPN	Allah; God				allāh
 امضا_NOUN	1053	امضا	NOUN	signature				emzā'
-ماست_NOUN	1054	ماست	NOUN	yogurt				māst
+ماست_NOUN	1054	ماست	NOUN	yogurt			visual=object	māst
 سوخت_NOUN	1056	سوخت	NOUN	fuel				suxt
 تحویل_NOUN	1057	تحویل	NOUN	delivery; submission				tahvil
 رفع_NOUN	1058	رفع	NOUN	removing				raf'
@@ -1080,7 +1080,7 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 نگران_ADJ	1061	نگران	ADJ	anxious				negarān
 لندن_PROPN	1062	لندن	PROPN	London				landan
 تبلیغ_NOUN	1063	تبلیغ	NOUN	propaganda; advertising				tabliġ
-پسر_NOUN	1064	پسر	NOUN	son			pos_also=ADJ	pesar
+پسر_NOUN	1064	پسر	NOUN	son			pos_also=ADJ; visual=object	pesar
 انتشار_NOUN	1065	انتشار	NOUN	publication				entešār
 پرسش_NOUN	1066	پرسش	NOUN	question				porseš
 مقاومت_NOUN	1067	مقاومت	NOUN	resistance				moqāvemat
@@ -1090,20 +1090,20 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 قطعه_NOUN	1071	قطعه	NOUN	piece				qat'eh
 معروف_ADJ	1072	معروف	ADJ	famous			pos_also=NOUN	ma'ruf
 بهره_NOUN	1073	بهره	NOUN	portion; interest				bahreh
-شاه_NOUN	1074	شاه	NOUN	king; shah			pos_also=PROPN	šāh
+شاه_NOUN	1074	شاه	NOUN	king; shah			pos_also=PROPN; visual=object	šāh
 ضد_NOUN	1075	ضد	NOUN	against; anti-				zedd
 اصفهان_PROPN	1076	اصفهان	PROPN	Esfahan				esfahān
-هواپیما_NOUN	1077	هواپیما	NOUN	airplane				havāpeymā
+هواپیما_NOUN	1077	هواپیما	NOUN	airplane			visual=object	havāpeymā
 شخصی_ADJ	1078	شخصی	ADJ	personal			pos_also=NOUN	šaxsi
 هشت_NUM	1079	هشت	NUM	eight			pos_also=NOUN	hašt
-شکستن_VERB	1080	شکستن	VERB	break			pos_also=ADJ,NOUN	šekastan
+شکستن_VERB	1080	شکستن	VERB	break			pos_also=ADJ,NOUN; visual=action	šekastan
 تشکیل دادن_VERB	1081	تشکیل دادن	VERB	form				taškil dādan
-تلفن_NOUN	1082	تلفن	NOUN	telephone				telefon
+تلفن_NOUN	1082	تلفن	NOUN	telephone			visual=object	telefon
 کلیه_DET	1083	کلیه	DET	all, every (formal)			split=1083	kolliyyeh
 کلیه_NOUN	1083	کلیه	NOUN	kidney			split=1083	kolyeh
 فعلی_ADJ	1084	فعلی	ADJ	present				fe'li
 امیدوار_ADJ	1085	امیدوار	ADJ	hopeful				omidvār
-کارت_NOUN	1086	کارت	NOUN	card				kārt
+کارت_NOUN	1086	کارت	NOUN	card			visual=object	kārt
 جذب_NOUN	1087	جذب	NOUN	absorption				jazb
 خداوند_PROPN	1088	خداوند	PROPN	god				xodāvand
 تماس_NOUN	1089	تماس	NOUN	contact				tamās
@@ -1111,15 +1111,15 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 خطرناک_ADJ	1091	خطرناک	ADJ	dangerous				xatarnāk
 سالانه_ADJ	1092	سالانه	ADJ	annual			pos_also=ADV	sālāneh
 روزی_ADV	1093	روزی	ADV	one day, someday; daily bread			pos_also=NOUN	ruzi
-بلند_ADJ	1094	بلند	ADJ	long; high				boland
-بیمارستان_NOUN	1095	بیمارستان	NOUN	hospital				bimārestān
+بلند_ADJ	1094	بلند	ADJ	long; high			visual=pair	boland
+بیمارستان_NOUN	1095	بیمارستان	NOUN	hospital			visual=object	bimārestān
 ذخیره_NOUN	1096	ذخیره	NOUN	supply				zaxireh
 درجه_NOUN	1097	درجه	NOUN	degree				darajeh
-رادیو_NOUN	1098	رادیو	NOUN	radio				rādiyo
-سینما_NOUN	1099	سینما	NOUN	cinema				sinemā
+رادیو_NOUN	1098	رادیو	NOUN	radio			visual=object	rādiyo
+سینما_NOUN	1099	سینما	NOUN	cinema			visual=object	sinemā
 پیش بینی_NOUN	1100	پیش بینی	NOUN	prediction				pišbini
 نفتی_ADJ	1101	نفتی	ADJ	petroleum				nafti
-دروازه_NOUN	1102	دروازه	NOUN	gate; goal				darvāzeh
+دروازه_NOUN	1102	دروازه	NOUN	gate; goal			visual=object	darvāzeh
 شناسایی_NOUN	1103	شناسایی	NOUN	identification; reconnaissance				šenāsā'i
 مبنا_NOUN	1104	مبنا	NOUN	base; basis				mabnā
 چینی_ADJ	1105	چینی	ADJ	Chinese; china			pos_also=NOUN	čini
@@ -1133,20 +1133,20 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 ذهن_NOUN	1113	ذهن	NOUN	mind				zehn
 مقابله_NOUN	1114	مقابله	NOUN	confronting				moqābeleh
 انجمن_NOUN	1115	انجمن	NOUN	association				anjoman
-بچه_NOUN	1116	بچه	NOUN	child				baččeh
+بچه_NOUN	1116	بچه	NOUN	child			visual=object	baččeh
 موقع_NOUN	1117	موقع	NOUN	time				mowqe'
 حمل_NOUN	1118	حمل	NOUN	shipping				haml
 مصر_PROPN	1119	مصر	PROPN	Egypt				mesr
 قضیه_NOUN	1120	قضیه	NOUN	affair; theorem				qaziyyeh
-ضعیف_ADJ	1121	ضعیف	ADJ	weak			pos_also=NOUN	za'if
+ضعیف_ADJ	1121	ضعیف	ADJ	weak			pos_also=NOUN; visual=pair	za'if
 توجه کردن_VERB	1122	توجه کردن	VERB	pay attention				tavajjoh kardan
 زیبایی_NOUN	1123	زیبایی	NOUN	beauty			pos_also=ADJ	zibāyi
 واکنش_NOUN	1124	واکنش	NOUN	reaction				vākoneš
 لبنان_PROPN	1125	لبنان	PROPN	Lebanon				lobnān
 آزمایش_NOUN	1126	آزمایش	NOUN	test				āzmāyeš
 انفجار_NOUN	1127	انفجار	NOUN	explosion				enfejār
-صفحه_NOUN	1128	صفحه	NOUN	page; screen; record				safheh
-پزشک_NOUN	1129	پزشک	NOUN	doctor				pezešk
+صفحه_NOUN	1128	صفحه	NOUN	page; screen; record			visual=object	safheh
+پزشک_NOUN	1129	پزشک	NOUN	doctor			visual=object	pezešk
 انگلستان_PROPN	1130	انگلستان	PROPN	England				engelestān
 گفته شدن_VERB	1131	گفته شدن	VERB	be said				gofteh šodan
 سنتی_ADJ	1132	سنتی	ADJ	traditional				sonati
@@ -1156,28 +1156,28 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 مخالفت_NOUN	1136	مخالفت	NOUN	opposition				moxālefat
 اندک_ADJ	1137	اندک	ADJ	little			pos_also=ADV,DET,NOUN	andak
 روستایی_ADJ	1138	روستایی	ADJ	villager; rural			pos_also=NOUN	rustāyi
-بیمار_ADJ	1139	بیمار	ADJ	sick; patient			pos_also=NOUN	bimār
+بیمار_ADJ	1139	بیمار	ADJ	sick; patient			pos_also=NOUN; visual=pair	bimār
 فدراسیون_NOUN	1140	فدراسیون	NOUN	federation				fedrāsiyon
 نماز_NOUN	1141	نماز	NOUN	prayer				namāz
 تصریح_NOUN	1142	تصریح	NOUN	stipulation; affirmation				tasrih
 متن_NOUN	1143	متن	NOUN	text				matn
 مستقل_ADJ	1144	مستقل	ADJ	independent				mostaqell
 قاضی_NOUN	1145	قاضی	NOUN	judge				qāzi
-پایتخت_NOUN	1146	پایتخت	NOUN	capital				pāytaxt
+پایتخت_NOUN	1146	پایتخت	NOUN	capital			visual=map	pāytaxt
 کشیده_ADJ	1147	کشیده	ADJ	tall; slap				kešideh
 بازدید_NOUN	1148	بازدید	NOUN	visit				bāzdid
 چارچوب_NOUN	1149	چارچوب	NOUN	framework				čārčub
 اتهام_NOUN	1150	اتهام	NOUN	charge				ettehām
 معمول_ADJ	1151	معمول	ADJ	usual				ma'mul
-شهرستان_NOUN	1152	شهرستان	NOUN	county				šahrestān
+شهرستان_NOUN	1152	شهرستان	NOUN	county			visual=map	šahrestān
 چندان_ADV	1153	چندان	ADV	so many; so				čandān
 هرگز_ADV	1154	هرگز	ADV	never				hargez
 محدودیت_NOUN	1155	محدودیت	NOUN	restriction				mahdudiyyat
 اجلاس_NOUN	1156	اجلاس	NOUN	session				ejlās
 اکثر_DET	1157	اکثر	DET	most				aksar
 پیوند_NOUN	1158	پیوند	NOUN	link				peyvand
-بیرون_ADV	1159	بیرون	ADV	outside			pos_also=NOUN	birun
-رود_NOUN	1160	رود	NOUN	river				rud
+بیرون_ADV	1159	بیرون	ADV	outside			pos_also=NOUN; visual=place	birun
+رود_NOUN	1160	رود	NOUN	river			visual=object	rud
 تحمل_NOUN	1161	تحمل	NOUN	tolerance				tahammol
 قهرمان_NOUN	1162	قهرمان	NOUN	champion			pos_also=ADJ	qahremān
 حجم_NOUN	1163	حجم	NOUN	volume				hajm
@@ -1195,16 +1195,16 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 لحظه_NOUN	1174	لحظه	NOUN	moment			pos_also=ADJ	lahzeh
 منتشر_ADJ	1175	منتشر	ADJ	published				montašer
 جهاد_NOUN	1176	جهاد	NOUN	jihad				jahād
-گرم_ADJ	1177	گرم	ADJ	warm, hot			split=1177	garm
+گرم_ADJ	1177	گرم	ADJ	warm, hot			split=1177; visual=pair	garm
 گرم_NOUN	1177	گرم	NOUN	gram			split=1177	geram
 الگو_NOUN	1178	الگو	NOUN	pattern				olgu
-بریدن_VERB	1178	بریدن	VERB	cut			rank=estimated	boridan
+بریدن_VERB	1178	بریدن	VERB	cut			rank=estimated; visual=action	boridan
 خبرگزاری_NOUN	1179	خبرگزاری	NOUN	news agency				xabargozāri
 آسیب_NOUN	1180	آسیب	NOUN	injury; damage				āsib
 سلامت_NOUN	1181	سلامت	NOUN	health			pos_also=ADJ	salāmat
 خیر_NOUN	1182	خیر	NOUN	good, welfare; charity (کار خیر 'good deed')			split=1182	xeyr
 خیر_INTJ	1182	خیر	INTJ	no (formal)			split=1182	xeyr
-قوی_ADJ	1183	قوی	ADJ	strong				qavi
+قوی_ADJ	1183	قوی	ADJ	strong			visual=pair	qavi
 بد_ADJ	1184	بد	ADJ	bad			pos_also=ADV,NOUN	bad
 ملاقات_NOUN	1185	ملاقات	NOUN	meeting				molāqāt
 تجهیزات_NOUN	1186	تجهیزات	NOUN	equipment				tajhizāt
@@ -1221,9 +1221,9 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 بورس_NOUN	1196	بورس	NOUN	stock exchange; scholarship				burs
 ششم_ADJ	1197	ششم	ADJ	sixth				šešom
 افزایش یافتن_VERB	1198	افزایش یافتن	VERB	increase				afzāyeš yāftan
-جلو_ADV	1199	جلو	ADV	forward			pos_also=ADJ,ADP,NOUN	jelow
+جلو_ADV	1199	جلو	ADV	forward			pos_also=ADJ,ADP,NOUN; visual=place	jelow
 چهارشنبه_NOUN	1200	چهارشنبه	NOUN	Wednesday				čahāršambeh
-قلم_NOUN	1201	قلم	NOUN	pen				qalam
+قلم_NOUN	1201	قلم	NOUN	pen			visual=object	qalam
 سختی_NOUN	1202	سختی	NOUN	difficulty			pos_also=ADJ	saxti
 سیر_NOUN	1203	سیر	NOUN	course, trend (سیر صعودی 'upward trend'); travel			split=1203	seyr
 سیر_NOUN2	1203	سیر	NOUN	garlic			split=1203	sir
@@ -1247,8 +1247,8 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 شکست خوردن_VERB	1220	شکست خوردن	VERB	be defeated				šekast xordan
 مذاکره_NOUN	1221	مذاکره	NOUN	negotiation				mozākereh
 علاقه_NOUN	1222	علاقه	NOUN	interest				alāqeh
-ایستادن_VERB	1223	ایستادن	VERB	stand			pos_also=NOUN,PROPN	istādan
-موج_NOUN	1224	موج	NOUN	wave				mowj
+ایستادن_VERB	1223	ایستادن	VERB	stand			pos_also=NOUN,PROPN; visual=action	istādan
+موج_NOUN	1224	موج	NOUN	wave			visual=object	mowj
 اتخاذ_NOUN	1225	اتخاذ	NOUN	adoption				ettexāz
 برانگیختن_VERB	1225	برانگیختن	VERB	provoke; arouse			rank=estimated	barangixtan
 تقاضا_NOUN	1226	تقاضا	NOUN	demand				taqāzā
@@ -1258,7 +1258,7 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 معمولاً_ADV	1230	معمولاً	ADV	usually		معمولا		ma'mulan
 بازسازی_NOUN	1231	بازسازی	NOUN	reconstruction				bāzsāzi
 مردمی_ADJ	1232	مردمی	ADJ	popular			pos_also=NOUN	mardomi
-شنیدن_VERB	1233	شنیدن	VERB	hear			pos_also=NOUN	šenidan
+شنیدن_VERB	1233	شنیدن	VERB	hear			pos_also=NOUN; visual=action	šenidan
 رنج_NOUN	1234	رنج	NOUN	pain				ranj
 یوم_NOUN	1235	یوم	NOUN	day				yowm
 درس_NOUN	1236	درس	NOUN	lesson				dars
@@ -1275,33 +1275,33 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 نمایندگی_NOUN	1246	نمایندگی	NOUN	representation				namāyandegi
 درگیری_NOUN	1247	درگیری	NOUN	involvement; engagement				dargiri
 صحیح_ADJ	1248	صحیح	ADJ	correct				sahih
-همسر_NOUN	1249	همسر	NOUN	spouse				hamsar
+همسر_NOUN	1249	همسر	NOUN	spouse			visual=tree	hamsar
 موسیقی_NOUN	1250	موسیقی	NOUN	music				musiqi
 جدول_NOUN	1251	جدول	NOUN	table				jadval
 شناخت_NOUN	1252	شناخت	NOUN	recognition; knowledge, understanding				šenāxt
 عشق_NOUN	1253	عشق	NOUN	love				ešq
 پنجاه_NUM	1254	پنجاه	NUM	fifty			pos_also=NOUN	panjāh
-بازی کردن_VERB	1255	بازی کردن	VERB	play				bāzi kardan
+بازی کردن_VERB	1255	بازی کردن	VERB	play			visual=action	bāzi kardan
 لذا_ADV	1256	لذا	ADV	therefore			pos_also=SCONJ	lezā
 افزوده_ADJ	1257	افزوده	ADJ	added				afzudeh
 بقیه_NOUN	1258	بقیه	NOUN	rest; remainder; balance			pos_also=PRON	baqiyyeh
 یار_NOUN	1259	یار	NOUN	sweetheart; friend; partner				yār
-طبقه_NOUN	1260	طبقه	NOUN	floor; stratum				tabaqeh
+طبقه_NOUN	1260	طبقه	NOUN	floor; stratum			visual=object	tabaqeh
 ثابت_ADJ	1261	ثابت	ADJ	fixed			pos_also=NOUN	sābet
 دوشنبه_NOUN	1262	دوشنبه	NOUN	Monday			pos_also=PROPN	došambeh
-برادر_NOUN	1263	برادر	NOUN	brother				barādar
-فرودگاه_NOUN	1264	فرودگاه	NOUN	airport				forudgāh
+برادر_NOUN	1263	برادر	NOUN	brother			visual=tree	barādar
+فرودگاه_NOUN	1264	فرودگاه	NOUN	airport			visual=object	forudgāh
 اشکال_NOUN	1265	اشکال	NOUN	difficulty				eškāl
 سقوط_NOUN	1266	سقوط	NOUN	fall				soqut
 قدرتمند_ADJ	1267	قدرتمند	ADJ	powerful			pos_also=NOUN	qodratmand
-سرباز_NOUN	1268	سرباز	NOUN	soldier				sarbāz
-معلم_NOUN	1269	معلم	NOUN	teacher				mo'allem
+سرباز_NOUN	1268	سرباز	NOUN	soldier			visual=object	sarbāz
+معلم_NOUN	1269	معلم	NOUN	teacher			visual=object	mo'allem
 دستیابی_NOUN	1270	دستیابی	NOUN	access; achieving				dastyābi
 مفهوم_NOUN	1271	مفهوم	NOUN	concept				mafhum
 پایگاه_NOUN	1272	پایگاه	NOUN	base; site				pāygāh
 پرورش_NOUN	1273	پرورش	NOUN	training; education; breeding				parvareš
 درک_NOUN	1274	درک	NOUN	understanding, perception, comprehension			split=1274	dark
-غذا_NOUN	1275	غذا	NOUN	food				ġazā
+غذا_NOUN	1275	غذا	NOUN	food			visual=object	ġazā
 شروع شدن_VERB	1276	شروع شدن	VERB	begin				šoru' kardan
 تخصصی_ADJ	1277	تخصصی	ADJ	specialized				taxassosi
 صدر_NOUN	1278	صدر	NOUN	chest; top			pos_also=PROPN	sadr
@@ -1316,7 +1316,7 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 تیر_NOUN	1287	تیر	NOUN	arrow; Tir (4th month of the Iranian calendar)			pos_also=PROPN	tir
 آفریدن_VERB	1287	آفریدن	VERB	create			rank=estimated	āfaridan
 قریب_ADJ	1288	قریب	ADJ	near; relative			pos_also=PROPN	qarib
-مجله_NOUN	1289	مجله	NOUN	magazine				majalleh
+مجله_NOUN	1289	مجله	NOUN	magazine			visual=object	majalleh
 هماهنگی_NOUN	1290	هماهنگی	NOUN	harmony; coordination				hamāhangi
 پاسخ دادن_VERB	1291	پاسخ دادن	VERB	reply				pāsox dādan
 پیشین_ADJ	1292	پیشین	ADJ	previous				pišin
@@ -1333,7 +1333,7 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 کنگره_NOUN	1303	کنگره	NOUN	congress				kongereh
 پیگیری_NOUN	1304	پیگیری	NOUN	follow-through				peygiri
 دقت_NOUN	1305	دقت	NOUN	accuracy				deqqat
-پرده_NOUN	1306	پرده	NOUN	curtain				pardeh
+پرده_NOUN	1306	پرده	NOUN	curtain			visual=object	pardeh
 مثال_NOUN	1307	مثال	NOUN	example				mesāl
 رقیب_NOUN	1308	رقیب	NOUN	competitor			pos_also=ADJ	raqib
 ابراهیم_PROPN	1309	ابراهیم	PROPN	Abraham; Ebrahim				ebrāhim
@@ -1353,7 +1353,7 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 مدعی_NOUN	1323	مدعی	NOUN	plaintiff			pos_also=ADJ	modda'i
 مقطع_NOUN	1324	مقطع	NOUN	level, stage (of education); section; point in time			split=1324	maqta'
 فراوانی_NOUN	1325	فراوانی	NOUN	abundance			pos_also=ADJ	farāvāni
-سنگ_NOUN	1326	سنگ	NOUN	rock				sang
+سنگ_NOUN	1326	سنگ	NOUN	rock			visual=object	sang
 سردار_NOUN	1327	سردار	NOUN	commander; general			pos_also=PROPN	sardār
 مجازات_NOUN	1328	مجازات	NOUN	punishment				mojāzāt
 حکایت_NOUN	1329	حکایت	NOUN	story				hekāyat
@@ -1368,16 +1368,16 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 عنصر_NOUN	1338	عنصر	NOUN	element				onsor
 حاشیه_NOUN	1339	حاشیه	NOUN	margin				hašiyeh
 تعهد_NOUN	1340	تعهد	NOUN	commitment				ta'ahhod
-قلب_NOUN	1341	قلب	NOUN	heart				qalb
-آدم_NOUN	1342	آدم	NOUN	person			pos_also=PROPN	ādam
+قلب_NOUN	1341	قلب	NOUN	heart			visual=object	qalb
+آدم_NOUN	1342	آدم	NOUN	person			pos_also=PROPN; visual=object	ādam
 فرا_ADV	1343	فرا	ADV	beyond			pos_also=ADJ,ADP	farā
 قشر_NOUN	1344	قشر	NOUN	bark; stratum				qešr
 اعدام_NOUN	1345	اعدام	NOUN	execution				e'dām
-سایه_NOUN	1346	سایه	NOUN	shadow				sāyeh
+سایه_NOUN	1346	سایه	NOUN	shadow			visual=object	sāyeh
 کارمند_NOUN	1347	کارمند	NOUN	employee				kārmand
 شرکت کردن_VERB	1348	شرکت کردن	VERB	participate				šerkat kardan
 ادبیات_NOUN	1349	ادبیات	NOUN	literature				adabiyyāt
-باد_NOUN	1350	باد	NOUN	wind				bād
+باد_NOUN	1350	باد	NOUN	wind			visual=object	bād
 هجری_ADJ	1351	هجری	ADJ	A.H.				hejri
 جستجو_NOUN	1352	جستجو	NOUN	search				josteju
 جدایی_NOUN	1353	جدایی	NOUN	separation				jodāyi
@@ -1388,8 +1388,8 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 ترک کردن_VERB	1358	ترک کردن	VERB	leave; abandon				tark kardan
 مهاجر_NOUN	1359	مهاجر	NOUN	immigrant			pos_also=ADJ,PROPN	mohājer
 حیات_NOUN	1360	حیات	NOUN	life				hayāt
-بستن_VERB	1361	بستن	VERB	close			pos_also=NOUN,PROPN	bastan
-جزیره_NOUN	1362	جزیره	NOUN	island				jazireh
+بستن_VERB	1361	بستن	VERB	close			pos_also=NOUN,PROPN; visual=action	bastan
+جزیره_NOUN	1362	جزیره	NOUN	island			visual=object	jazireh
 برقرار_ADJ	1363	برقرار	ADJ	established			pos_also=NOUN	barqarār
 قطر_PROPN	1364	قطر	PROPN	Qatar			split=1364	qatar
 قطر_NOUN	1364	قطر	NOUN	diameter; diagonal; thickness			split=1364	qotr
@@ -1433,14 +1433,14 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 گرد_NOUN	1399	گرد	NOUN	dust; powder			split=1399	gard
 سری_NOUN	1400	سری	NOUN	series; set; batch (یک سری 'a number of')			split=1400	seri
 سری_ADJ	1400	سری	ADJ	secret, confidential			split=1400	serri
-عقب_ADV	1401	عقب	ADV	back			pos_also=ADJ,NOUN	aqab
+عقب_ADV	1401	عقب	ADV	back			pos_also=ADJ,NOUN; visual=place	aqab
 رونق_NOUN	1402	رونق	NOUN	boom				rownaq
-سبز_ADJ	1403	سبز	ADJ	green			pos_also=NOUN	sabz
+سبز_ADJ	1403	سبز	ADJ	green			pos_also=NOUN; visual=pair	sabz
 بشر_NOUN	1404	بشر	NOUN	human				bašar
 هنری_ADJ	1405	هنری	ADJ	artistic				honari
-سرد_ADJ	1406	سرد	ADJ	cold				sard
+سرد_ADJ	1406	سرد	ADJ	cold			visual=pair	sard
 دشوار_ADJ	1407	دشوار	ADJ	difficult				došvār
-اتاق_NOUN	1408	اتاق	NOUN	room				otāq
+اتاق_NOUN	1408	اتاق	NOUN	room			visual=object	otāq
 جبهه_NOUN	1409	جبهه	NOUN	front				jebheh
 اعزام_NOUN	1410	اعزام	NOUN	dispatch				e'zām
 انتظار داشتن_VERB	1411	انتظار داشتن	VERB	expect				entezār dāštan
@@ -1459,19 +1459,19 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 بالاخره_ADV	1424	بالاخره	ADV	finally			pos_also=SCONJ	bel'axareh
 مالیات_NOUN	1425	مالیات	NOUN	tax; taxes				māliyāt
 راهکار_NOUN	1426	راهکار	NOUN	strategy; solution			pos_also=ADJ	rāhkār
-صحبت کردن_VERB	1427	صحبت کردن	VERB	talk				sohbat kardan
+صحبت کردن_VERB	1427	صحبت کردن	VERB	talk			visual=action	sohbat kardan
 مادی_ADJ	1428	مادی	ADJ	material				māddi
 تبادل_NOUN	1429	تبادل	NOUN	exchange				tabādol
 اسپانیا_PROPN	1430	اسپانیا	PROPN	Spain				espānyā
 آفریقا_PROPN	1431	آفریقا	PROPN	Africa				āfriqā
 نفوذ_NOUN	1432	نفوذ	NOUN	influence				nofuz
 یکشنبه_NOUN	1433	یکشنبه	NOUN	Sunday				yekšambeh
-ماهی_NOUN	1434	ماهی	NOUN	fish				māhi
-ستاره_NOUN	1435	ستاره	NOUN	star			pos_also=PROPN	setāreh
+ماهی_NOUN	1434	ماهی	NOUN	fish			visual=object	māhi
+ستاره_NOUN	1435	ستاره	NOUN	star			pos_also=PROPN; visual=object	setāreh
 شعار_NOUN	1436	شعار	NOUN	slogan				še'ār
 پایدار_ADJ	1437	پایدار	ADJ	stable				pāydār
 روانی_ADJ	1438	روانی	ADJ	psychological, mental; fluency				ravāni
-بندر_NOUN	1439	بندر	NOUN	port				bandar
+بندر_NOUN	1439	بندر	NOUN	port			visual=object	bandar
 بهانه_NOUN	1440	بهانه	NOUN	excuse				bahāneh
 واسطه_NOUN	1441	واسطه	NOUN	mediator				vāseteh
 منطق_NOUN	1442	منطق	NOUN	logic				manteq
@@ -1484,7 +1484,7 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 مشهور_ADJ	1449	مشهور	ADJ	famous				mašhur
 تقدیر_NOUN	1450	تقدیر	NOUN	destiny; appreciation				taqdir
 شبیه_ADJ	1451	شبیه	ADJ	similar				šabih
-ماشین_NOUN	1452	ماشین	NOUN	machine; car				māšin
+ماشین_NOUN	1452	ماشین	NOUN	machine; car			visual=object	māšin
 مایل_ADJ	1453	مایل	ADJ	willing			pos_also=NOUN	māyel
 روحیه_NOUN	1454	روحیه	NOUN	mood; morale				ruhiyyeh
 درست بودن_VERB	1455	درست بودن	VERB	be right				dorost budan
@@ -1506,7 +1506,7 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 استقرار_NOUN	1471	استقرار	NOUN	positioning; settlement				esteqrār
 نظریه_NOUN	1472	نظریه	NOUN	theory				nazariyyeh
 هشدار_NOUN	1473	هشدار	NOUN	warning				hošdār
-سالن_NOUN	1474	سالن	NOUN	hall				sālon
+سالن_NOUN	1474	سالن	NOUN	hall			visual=object	sālon
 ثبات_NOUN	1475	ثبات	NOUN	stability, steadiness			split=1475	sobāt
 مطبوعات_NOUN	1476	مطبوعات	NOUN	press				matbuāt
 ورق_NOUN	1477	ورق	NOUN	sheet				varaq
@@ -1524,11 +1524,11 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 نشریه_NOUN	1489	نشریه	NOUN	publication				našriyyeh
 وارد کردن_VERB	1490	وارد کردن	VERB	import; enter				vāred kardan
 تأکید کردن_VERB	1491	تأکید کردن	VERB	emphasize				ta'kid kardan
-پل_NOUN	1492	پل	NOUN	bridge			pos_also=PROPN	pol
+پل_NOUN	1492	پل	NOUN	bridge			pos_also=PROPN; visual=object	pol
 ارزشمند_ADJ	1493	ارزشمند	ADJ	valuable				arzešmand
 یادگار_NOUN	1494	یادگار	NOUN	souvenir				yādegār
 معرفی شدن_VERB	1495	معرفی شدن	VERB	be introduced				mo'arrefi šodan
-درخت_NOUN	1496	درخت	NOUN	tree				deraxt
+درخت_NOUN	1496	درخت	NOUN	tree			visual=object	deraxt
 استرالیا_PROPN	1497	استرالیا	PROPN	Australia				ostrāliyā
 تمدن_NOUN	1498	تمدن	NOUN	civilization				tamaddon
 خاتمی_PROPN	1499	خاتمی	PROPN	Khatami				xātami
@@ -1541,12 +1541,12 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 استفاده شدن_VERB	1505	استفاده شدن	VERB	be used				estefādeh šodan
 کوشیدن_VERB	1506	کوشیدن	VERB	attempt				kušidan
 همانند_ADP	1507	همانند	ADP	like, similar to			pos_also=ADV,NOUN	hamānand
-لباس_NOUN	1508	لباس	NOUN	clothing				lebās
+لباس_NOUN	1508	لباس	NOUN	clothing			visual=object	lebās
 سیما_NOUN	1509	سیما	NOUN	face				simā
 مبلغ_NOUN	1510	مبلغ	NOUN	amount, sum (of money)			split=1510	mablaġ
 تکلیف_NOUN	1511	تکلیف	NOUN	task			pos_also=ADJ	taklif
 گوناگون_ADJ	1512	گوناگون	ADJ	various				gunāgun
-ریختن_VERB	1513	ریختن	VERB	pour			pos_also=ADJ,NOUN	rixtan
+ریختن_VERB	1513	ریختن	VERB	pour			pos_also=ADJ,NOUN; visual=action	rixtan
 سلام_NOUN	1514	سلام	NOUN	hello; greeting				salām
 چشمگیر_ADJ	1515	چشمگیر	ADJ	impressive				češmgir
 نابودی_NOUN	1516	نابودی	NOUN	destruction				nābudi
@@ -1571,9 +1571,9 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 اظهار داشتن_VERB	1534	اظهار داشتن	VERB	express; declare				ezhār dāštan
 جزو_NOUN	1535	جزو	NOUN	part; particle				jozv
 فهرست_NOUN	1536	فهرست	NOUN	list				fehrest
-خورشید_PROPN	1537	خورشید	PROPN	sun				xoršid
+خورشید_PROPN	1537	خورشید	PROPN	sun			visual=object	xoršid
 کمال_NOUN	1538	کمال	NOUN	perfection			pos_also=PROPN	kamāl
-سبک_NOUN	1539	سبک	NOUN	style			split=1539	sabk
+سبک_NOUN	1539	سبک	NOUN	style			split=1539; visual=pair	sabk
 سبک_ADJ	1539	سبک	ADJ	light (in weight)			split=1539	sabok
 حقیقی_ADJ	1540	حقیقی	ADJ	real			pos_also=PROPN	haqiqi
 گمان_NOUN	1541	گمان	NOUN	guess; belief				gomān
@@ -1585,14 +1585,14 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 افتتاح_NOUN	1547	افتتاح	NOUN	opening				eftetāh
 طالبان_PROPN	1548	طالبان	PROPN	Taliban				tālebān
 ناحیه_NOUN	1549	ناحیه	NOUN	area				nāhiyeh
-سقف_NOUN	1550	سقف	NOUN	ceiling; roof				saqf
-غنی_ADJ	1551	غنی	ADJ	rich				ġani
+سقف_NOUN	1550	سقف	NOUN	ceiling; roof			visual=object	saqf
+غنی_ADJ	1551	غنی	ADJ	rich			visual=pair	ġani
 قطعاً_ADV	1552	قطعاً	ADV	certainly		قطعا		qat'an
 لطفاً_ADV	1552	لطفاً	ADV	please		لطفا	rank=estimated	lotfan
 سپاه_NOUN	1553	سپاه	NOUN	army				sepāh
 هشتم_ADJ	1554	هشتم	ADJ	eighth			pos_also=NOUN	haštom
 درگیر_ADJ	1555	درگیر	ADJ	involved				dargir
-سکه_NOUN	1556	سکه	NOUN	coin				sekkeh
+سکه_NOUN	1556	سکه	NOUN	coin			visual=object	sekkeh
 جنبش_NOUN	1557	جنبش	NOUN	movement				jombeš
 سکوت_NOUN	1558	سکوت	NOUN	silence				sokut
 دریافت کردن_VERB	1559	دریافت کردن	VERB	receive				daryāft kardan
@@ -1602,7 +1602,7 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 حفظ کردن_VERB	1563	حفظ کردن	VERB	protect; memorize				hefz kardan
 رویداد_NOUN	1564	رویداد	NOUN	event				ruydād
 توقف_NOUN	1565	توقف	NOUN	stop				tavaqqof
-دیوار_NOUN	1566	دیوار	NOUN	wall				divār
+دیوار_NOUN	1566	دیوار	NOUN	wall			visual=object	divār
 پاریس_PROPN	1567	پاریس	PROPN	Paris				pāris
 تجدید_NOUN	1568	تجدید	NOUN	renewal				tajdid
 ادب_NOUN	1569	ادب	NOUN	politeness				adab
@@ -1631,9 +1631,9 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 احیا_NOUN	1592	احیا	NOUN	revival				ehyā
 شیر_NOUN	1593	شیر	NOUN	milk; lion				šir
 مفید_ADJ	1594	مفید	ADJ	useful				mofid
-سیاه_ADJ	1595	سیاه	ADJ	black				siyāh
+سیاه_ADJ	1595	سیاه	ADJ	black			visual=pair	siyāh
 پیمان_NOUN	1596	پیمان	NOUN	pact			pos_also=PROPN	peymān
-سفید_ADJ	1597	سفید	ADJ	white				sefid
+سفید_ADJ	1597	سفید	ADJ	white			visual=pair	sefid
 کوتاهی_NOUN	1598	کوتاهی	NOUN	brevity; negligence			pos_also=ADJ	kutāhi
 نبرد_NOUN	1599	نبرد	NOUN	battle, combat			split=1599	nabard
 خسارت_NOUN	1600	خسارت	NOUN	damage				xesārat
@@ -1641,7 +1641,7 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 باقی ماندن_VERB	1602	باقی ماندن	VERB	remain				bāqi māndan
 چالش_NOUN	1603	چالش	NOUN	challenge				čāleš
 مطمئن_ADJ	1604	مطمئن	ADJ	sure				motma'en
-باغ_NOUN	1605	باغ	NOUN	garden				bāġ
+باغ_NOUN	1605	باغ	NOUN	garden			visual=object	bāġ
 حسینی_PROPN	1606	حسینی	PROPN	Hosseini				hoseyni
 نماد_NOUN	1607	نماد	NOUN	symbol			pos_also=ADJ	namād
 ماجرا_NOUN	1608	ماجرا	NOUN	adventure				mājarā
@@ -1652,7 +1652,7 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 عزت_NOUN	1613	عزت	NOUN	esteem				ezzat
 یونان_PROPN	1614	یونان	PROPN	Greece				yunān
 حافظ_NOUN	1615	حافظ	NOUN	keeper; Hafez			pos_also=PROPN	hāfez
-توپ_NOUN	1616	توپ	NOUN	ball; cannon				tup
+توپ_NOUN	1616	توپ	NOUN	ball; cannon			visual=object	tup
 جبران_NOUN	1617	جبران	NOUN	compensation				jobrān
 پایانی_ADJ	1618	پایانی	ADJ	final			pos_also=NOUN	pāyāni
 جریمه_NOUN	1619	جریمه	NOUN	fine				jarimeh
@@ -1666,28 +1666,28 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 شرح_NOUN	1626	شرح	NOUN	explaining				šarh
 گرایش_NOUN	1627	گرایش	NOUN	tendency				gerāyeš
 ارشد_ADJ	1628	ارشد	ADJ	elder; senior				aršad
-سخن گفتن_VERB	1629	سخن گفتن	VERB	speak; talk				soxan goftan
+سخن گفتن_VERB	1629	سخن گفتن	VERB	speak; talk			visual=action	soxan goftan
 فراز_NOUN	1630	فراز	NOUN	top				farāz
 فاجعه_NOUN	1631	فاجعه	NOUN	disaster				fāje'eh
 متعلق_ADJ	1632	متعلق	ADJ	belonging				motta'alleq
 مسیحی_ADJ	1633	مسیحی	ADJ	Christian			pos_also=NOUN	masihi
 دوست داشتن_VERB	1634	دوست داشتن	VERB	like				dust dāštan
-گوشت_NOUN	1635	گوشت	NOUN	meat				gušt
+گوشت_NOUN	1635	گوشت	NOUN	meat			visual=object	gušt
 بله_NOUN	1636	بله	NOUN	yes				baleh
 برخوردار_ADJ	1637	برخوردار	ADJ	in possession of				barxordār
-فرش_NOUN	1638	فرش	NOUN	carpet, rug; paving, flooring			split=1638	farš
+فرش_NOUN	1638	فرش	NOUN	carpet, rug; paving, flooring			split=1638; visual=object	farš
 آشنا_ADJ	1639	آشنا	ADJ	familiar			pos_also=NOUN	āšnā
-نان_NOUN	1640	نان	NOUN	bread				nān
-ولایت_NOUN	1641	ولایت	NOUN	province				velāyat
-باران_NOUN	1642	باران	NOUN	rain				bārān
+نان_NOUN	1640	نان	NOUN	bread			visual=object	nān
+ولایت_NOUN	1641	ولایت	NOUN	province			visual=map	velāyat
+باران_NOUN	1642	باران	NOUN	rain			visual=object	bārān
 مستقر_ADJ	1643	مستقر	ADJ	established				mostaqarr
 قاتل_NOUN	1644	قاتل	NOUN	killer			pos_also=ADJ	qātel
 انتها_NOUN	1645	انتها	NOUN	end				entehā
-راننده_NOUN	1646	راننده	NOUN	driver				rānandeh
+راننده_NOUN	1646	راننده	NOUN	driver			visual=object	rānandeh
 بیانگر_ADJ	1647	بیانگر	ADJ	expressive; indicative			pos_also=NOUN	bayāngar
 خطاب_NOUN	1648	خطاب	NOUN	address				xetāb
 مصوبه_NOUN	1649	مصوبه	NOUN	legislation				mosavvabeh
-مغز_NOUN	1650	مغز	NOUN	brain				maġz
+مغز_NOUN	1650	مغز	NOUN	brain			visual=object	maġz
 فرماندهی_NOUN	1651	فرماندهی	NOUN	command				farmāndehi
 کانون_NOUN	1652	کانون	NOUN	focus; association				kānun
 آشنایی_NOUN	1653	آشنایی	NOUN	familiarity				āšnāyi
@@ -1696,7 +1696,7 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 پولی_ADJ	1656	پولی	ADJ	monetary			pos_also=NOUN	puli
 دنبال کردن_VERB	1657	دنبال کردن	VERB	look for				donbāl kardan
 پشتیبانی_NOUN	1658	پشتیبانی	NOUN	support				poštibāni
-ساحل_NOUN	1659	ساحل	NOUN	shore				sāhel
+ساحل_NOUN	1659	ساحل	NOUN	shore			visual=object	sāhel
 سیصد_NUM	1660	سیصد	NUM	three hundred			pos_also=NOUN	sisad
 مقررات_NOUN	1661	مقررات	NOUN	regulations				moqarrarāt
 بانکی_ADJ	1662	بانکی	ADJ	banking				bānki
@@ -1717,7 +1717,7 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 کره_NOUN2	1675	کره	NOUN	butter			split=1675	kareh
 احتمالاً_ADV	1676	احتمالاً	ADV	probably		احتمالا		ehtemālan
 علامت_NOUN	1677	علامت	NOUN	mark				alāmat
-کوه_NOUN	1678	کوه	NOUN	mountain				kuh
+کوه_NOUN	1678	کوه	NOUN	mountain			visual=object	kuh
 درآمدن_VERB	1679	درآمدن	VERB	emerge			pos_also=ADJ	darāmadan
 ملک_NOUN	1680	ملک	NOUN	property, real estate			split=1680	melk
 ملک_NOUN2	1680	ملک	NOUN	king			split=1680	malek
@@ -1736,7 +1736,7 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 رویکرد_NOUN	1693	رویکرد	NOUN	approach				ruykard
 فتح_NOUN	1694	فتح	NOUN	victory; conquest				fath
 جنگی_ADJ	1695	جنگی	ADJ	military			pos_also=NOUN	jangi
-قاره_NOUN	1696	قاره	NOUN	continent				qāreh
+قاره_NOUN	1696	قاره	NOUN	continent			visual=map	qāreh
 صادر_ADJ	1697	صادر	ADJ	issued; exported (صادر کردن 'issue, export')			pos_also=NOUN	sāder
 ترور_NOUN	1698	ترور	NOUN	assassination				teror
 ادبی_ADJ	1699	ادبی	ADJ	literary				adabi
@@ -1755,11 +1755,11 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 اثبات_NOUN	1712	اثبات	NOUN	proof				esbāt
 استراتژی_NOUN	1713	استراتژی	NOUN	strategy				estrāteži
 اردو_NOUN	1714	اردو	NOUN	camp			pos_also=ADJ	ordu
-گوش_NOUN	1715	گوش	NOUN	ear				guš
+گوش_NOUN	1715	گوش	NOUN	ear			visual=object	guš
 استراحت_NOUN	1716	استراحت	NOUN	rest				esterāhat
 سنگینی_NOUN	1717	سنگینی	NOUN	weight			pos_also=ADJ	sangini
 مخصوص_ADJ	1718	مخصوص	ADJ	special				maxsus
-نگاه کردن_VERB	1719	نگاه کردن	VERB	look				negāh kardan
+نگاه کردن_VERB	1719	نگاه کردن	VERB	look			visual=action	negāh kardan
 پژوهش_NOUN	1720	پژوهش	NOUN	research				pažuheš
 معین_ADJ	1721	معین	ADJ	specific, fixed, determined			split=1721	mo'ayyan
 معین_NOUN	1721	معین	NOUN	assistant, helper; Moin (surname)			split=1721	mo'in
@@ -1774,14 +1774,14 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 والیبال_NOUN	1730	والیبال	NOUN	volleyball				vālibāl
 شعبه_NOUN	1731	شعبه	NOUN	branch			pos_also=PROPN	šo'beh
 قطعی_ADJ	1732	قطعی	ADJ	definite				qat'i
-پیرامون_ADP	1733	پیرامون	ADP	perimeter			pos_also=NOUN	pirāmun
+پیرامون_ADP	1733	پیرامون	ADP	perimeter			pos_also=NOUN; visual=place	pirāmun
 نیت_NOUN	1734	نیت	NOUN	intent				niyyat
-پارک_NOUN	1735	پارک	NOUN	park				pārk
+پارک_NOUN	1735	پارک	NOUN	park			visual=object	pārk
 تابلو_NOUN	1736	تابلو	NOUN	panel; sign				tāblo
 تخلف_NOUN	1737	تخلف	NOUN	violation				taxallof
 اندیشیدن_VERB	1738	اندیشیدن	VERB	think			pos_also=NOUN	andišidan
 جنبه_NOUN	1739	جنبه	NOUN	aspect				jambeh
-خالی_ADJ	1740	خالی	ADJ	empty				xāli
+خالی_ADJ	1740	خالی	ADJ	empty			visual=pair	xāli
 برگزیده_ADJ	1741	برگزیده	ADJ	chosen, selected; elite			pos_also=NOUN	bargozideh
 پاک_ADJ	1742	پاک	ADJ	pure				pāk
 دی_NOUN	1743	دی	NOUN	Dey (10th month of the Iranian calendar)			pos_also=PROPN	dey
@@ -2341,7 +2341,7 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 حرفه‌ای_ADJ	2293	حرفه‌ای	ADJ	professional				herfeh-i
 صدد_NOUN	2294	صدد	NOUN	intention			pos_also=ADJ	sadad
 هاشمی_PROPN	2295	هاشمی	PROPN	Hashemi				hāšemi
-شوهر_NOUN	2296	شوهر	NOUN	husband				šowhar
+شوهر_NOUN	2296	شوهر	NOUN	husband			visual=tree	šowhar
 مکرر_ADJ	2297	مکرر	ADJ	repeated			pos_also=ADV	mokarrar
 گلستان_NOUN	2298	گلستان	NOUN	rose garden; Golestan			pos_also=PROPN	golestān
 آویختن_VERB	2298	آویختن	VERB	hang			rank=estimated	āvixtan
@@ -2479,7 +2479,7 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 ترکیبی_ADJ	2427	ترکیبی	ADJ	synthetic; compound; hybrid			pos_also=NOUN	tarkibi
 ژنرال_NOUN	2428	ژنرال	NOUN	general				ženerāl
 فعلاً_ADV	2429	فعلاً	ADV	at present		فعلا		fe'lan
-خواهر_NOUN	2430	خواهر	NOUN	sister				xāhar
+خواهر_NOUN	2430	خواهر	NOUN	sister			visual=tree	xāhar
 قدس_PROPN	2431	قدس	PROPN	Jerusalem				qods
 کشتار_NOUN	2432	کشتار	NOUN	killing				koštār
 درسی_ADJ	2433	درسی	ADJ	instructional			pos_also=NOUN	darsi
