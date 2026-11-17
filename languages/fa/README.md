@@ -44,6 +44,12 @@ packages. NER and the other models in the download are not used.
     - *را* (taught explicitly only in volume 2, lesson 3) is A2, because it occurs throughout volume 1.
 - **Regional:** `fa.dari.copula` (*استم*, *استی*, …) is tagged `regions: [AF]`.
 
+## Ranks
+
+- **Source.** Miller & Aghajanian-Stewart's frequency dictionary, a mixed written and spoken corpus. Its ranks are kept in `tools/fa_spoken_rerank/miller_ranks.tsv`.
+- **Reweighting.** The ranks in `vocab.tsv` are the source ranks reweighted with spoken frequency (film and TV subtitles, and `wordfreq`), with the source keeping two thirds of the weight. Everyday words the source ranked low move up (خب, مامان, خواهر); news words move down. Method and rerun: `tools/fa_spoken_rerank/README.md`.
+- **Added words.** 98 everyday words missing from the source (ممنون, قشنگ, صبحانه, مادربزرگ…) are added with estimated ranks, tagged `rank=estimated`. Colloquial-only words are tagged `register=colloquial`.
+
 ## Checking against the treebank
 
 ```bash
