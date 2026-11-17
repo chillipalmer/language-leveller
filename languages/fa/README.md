@@ -48,7 +48,8 @@ packages. NER and the other models in the download are not used.
 
 - **Source.** Miller & Aghajanian-Stewart's frequency dictionary, a mixed written and spoken corpus. Its ranks are kept in `tools/fa_spoken_rerank/miller_ranks.tsv`.
 - **Reweighting.** The ranks in `vocab.tsv` are the source ranks reweighted with spoken frequency (film and TV subtitles, and `wordfreq`), with the source keeping two thirds of the weight. Everyday words the source ranked low move up (خب, مامان, خواهر); news words move down. Method and rerun: `tools/fa_spoken_rerank/README.md`.
-- **Added words.** 98 everyday words missing from the source (ممنون, قشنگ, صبحانه, مادربزرگ…) are added with estimated ranks, tagged `rank=estimated`. Colloquial-only words are tagged `register=colloquial`.
+- **Added words.** 98 everyday words missing from the source (ممنون, قشنگ, صبحانه, مادربزرگ…), and 4,741 more that take the list to 10,000 rows (آلبوم, لینک, کله, سکسکه, استکان, رصدخانه…), with estimated ranks, tagged `rank=estimated`. Their wordfreq rank stands in for the source rank. Colloquial-only words are tagged `register=colloquial`.
+- **Levels.** The bands in `config.yaml` stop at 5,000 (C2), so ranks 5,001–10,000 level as `C2+`, as unlisted words did; the difference is that they are now recognised, with POS, gloss and transliteration.
 
 ## Checking against the treebank
 
