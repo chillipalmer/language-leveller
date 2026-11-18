@@ -98,6 +98,20 @@ vocab:
 lemma_rules:
   - {upos: [VERB, AUX], lemma: شد,
      regex: '^(ن|ب|بی|نمی\u200c?|می\u200c?)?(شد|شو)(ه|ن)?(\u200c?(م|ی|د|یم|ید|ند|ام|ای|ایم|اید|اند|است))?$'}
+  # ezafe written as ‌ی or ٔ after silent ه (قاره‌ی آسیا، خانهٔ ما): the lemma is the bare noun
+  - {upos: [NOUN, ADJ], lemma: '\1', regex: '^(.+ه)(\u200cی|\u0654)$'}
+  # bare رود is the noun 'river'; the verb is می‌رود / برود (literary رود aside)
+  - {lemma: رود, set_upos: NOUN, regex: '^رود(\u200c?ها|\u200c?های|ی)?$'}
+  # وقتی 'when' is listed as a conjunction; PerDT parses it as وقت + ی
+  - {upos: [NOUN, ADV], lemma: وقتی, set_upos: SCONJ, regex: '^وقتی$'}
+
+# A story's names (level_text(names=...)) also match with ezafe or را attached
+name_suffix_regex: '(\u200c?ی|\u200c?را)$'
+
+# می‌خورد is both 'eats' and 'was eating' (present stem خور + د = past stem خورد); the
+# parser gives these forms no Tense, and the tense of the nearest verb decides
+tense_from_context:
+  regex: '^(بر|در|ور)?ن?می\u200c?(خورد|برد|آورد|گسترد)$'
 
 grammar:
   file: grammar.yaml
@@ -109,6 +123,13 @@ cleaning:
     ى: ی
     ك: ک
     ـ: ""
+    # short-vowel marks (a story may mark ezafe as کتابِ بزرگ): the parser reads
+    # unvowelled text, and the vocabulary is unvowelled
+    "\u064E": ""
+    "\u064F": ""
+    "\u0650": ""
+    "\u0651": ""
+    "\u0652": ""
   # Spacing conventions vary: the standard joins prefixes and suffixes with a zero-width
   # non-joiner (ZWNJ, U+200C), but much text uses a space. The parser only reads the ZWNJ
   # spelling correctly ("می خوانم" becomes the noun می + a verb).

@@ -265,7 +265,8 @@ class Vocab:
         if tok.upos in self.exclude_upos:
             # sentence-initial capitalised common words are often mis-tagged PROPN
             first = next((x.i for x in sent.tokens if x.upos != "PUNCT"), 0)   # after ¡ ¿ «
-            if tok.upos == "PROPN" and tok.i == first:
+            # (only in scripts with capitals: in Persian a sentence-initial name is a name)
+            if tok.upos == "PROPN" and tok.i == first and tok.text[:1].isupper():
                 # but not when a finite verb follows directly: then it is that verb's
                 # subject, a name (Tomás tiene…, Descartes había…), not tomar/descartar;
                 # nor when a capitalised word follows: a multi-word name (Buenos Aires)

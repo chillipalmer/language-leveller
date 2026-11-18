@@ -176,3 +176,51 @@ def test_visual_tags():
     assert vis["خانه_NOUN"] == "object" and vis["پدر_NOUN"] == "tree" and vis["زیر_ADP"] == "place"
     split = {r["id"]: r for r in rows if r["word"] == "گل"}
     assert sum("visual=" in r["tags"] for r in split.values()) == 1   # flower, not mud
+
+
+# Story-checking fixes (Nov 2026), on parses copied from Stanza's PerDT output:
+# آسیا as a sentence-initial name, قاره‌ی with ezafe ‌ی, نوری read as an adjective,
+# رود read as a verb, and نمی‌خورد with no Tense after a present-tense sentence.
+STORY = """# text = آسیا قاره است.
+1\tآسیا\tآسیا\tPROPN\t_\tNumber=Sing\t2\tnsubj\t_\t_
+2\tقاره\tقاره\tNOUN\t_\tNumber=Sing\t0\troot\t_\t_
+3\tاست\tاست\tAUX\t_\tNumber=Sing|Person=3\t2\tcop\t_\t_
+4\t.\t.\tPUNCT\t_\t_\t2\tpunct\t_\t_
+
+# text = قاره‌ی آسیا بزرگ است.
+1\tقاره‌ی\tقاره‌ی\tNOUN\t_\tNumber=Sing\t3\tnsubj\t_\t_
+2\tآسیا\tآسیا\tPROPN\t_\tNumber=Sing\t1\tnmod\t_\t_
+3\tبزرگ\tبزرگ\tADJ\t_\t_\t0\troot\t_\t_
+4\tاست\tاست\tAUX\t_\tNumber=Sing|Person=3\t3\tcop\t_\t_
+5\t.\t.\tPUNCT\t_\t_\t3\tpunct\t_\t_
+
+# text = نوری کنار رود می‌رود.
+1\tنوری\tنوری\tADJ\t_\t_\t4\tnsubj\t_\t_
+2\tکنار\tکنار\tADP\t_\t_\t3\tcase\t_\t_
+3\tرود\tرفت\tVERB\t_\tNumber=Sing|Person=3|Tense=Pres\t4\tobl\t_\t_
+4\tمی‌رود\tرفت\tVERB\t_\tNumber=Sing|Person=3|Tense=Pres|Voice=Act\t0\troot\t_\t_
+5\t.\t.\tPUNCT\t_\t_\t4\tpunct\t_\t_
+
+# text = لیلا نان نمی‌خورد.
+1\tلیلا\tلیلا\tPROPN\t_\tNumber=Sing\t3\tnsubj\t_\t_
+2\tنان\tنان\tNOUN\t_\tNumber=Sing\t3\tobj\t_\t_
+3\tنمی‌خورد\tخورد\tVERB\t_\tNumber=Sing|Person=3|Polarity=Neg|Voice=Act\t0\troot\t_\t_
+4\t.\t.\tPUNCT\t_\t_\t3\tpunct\t_\t_
+"""
+
+
+def test_story_fixes(ll):
+    sents = parse_conllu(STORY)
+    ll._tense_from_context(sents, None)
+    ll.names = {"نوری"}
+    try:
+        recs = [ll.level_sentence(s) for s in sents]
+    finally:
+        ll.names = set()
+    tok = lambda n, text: next(t for t in recs[n]["tokens"] if t["text"] == text)
+    assert tok(0, "آسیا")["excluded"] == "PROPN"           # a listed name, sentence-initial
+    assert tok(1, "قاره‌ی")["id"] == "قاره_NOUN"            # ezafe ‌ی stripped
+    assert tok(2, "نوری")["excluded"] == "PROPN"           # the story's name list
+    assert tok(2, "رود")["id"] == "رود_NOUN"               # river, not رفتن
+    ids = [f["id"] for f in recs[3]["grammar"]["features"]]
+    assert "fa.pres.indicative" in ids and "fa.past.imperfective" not in ids
