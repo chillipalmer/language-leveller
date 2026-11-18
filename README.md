@@ -128,9 +128,10 @@ variants, tags, translit` (see [docs/FORMATS.md](docs/FORMATS.md)). One row per 
 glosses are the project's own wording, with senses separated by `;`.
 
 - `languages/es/vocab.tsv`: 5,000 Spanish lemmas.
-- `languages/fa/vocab.tsv`: 5,000 Persian spellings, with homographs split into separate
-  lemmas (5,148 rows). Readings judged rare were given placeholder ranks 5001–5080; their true
-  frequency is not yet known. `tags` records `split=<source rank>` for split rows and
+- `languages/fa/vocab.tsv`: 10,000 rows: the 5,000 most frequent Persian spellings in the
+  source list, with homographs split into separate lemmas, plus words added from subtitle and
+  wordfreq counts (see `languages/fa/README.md`). Readings judged rare were given placeholder
+  ranks at the end of the list; their true frequency is not yet known. `tags` records `split=<source rank>` for split rows and
   `pos_also=…` for other parts of speech a word can take.
 
 ## Parser backends

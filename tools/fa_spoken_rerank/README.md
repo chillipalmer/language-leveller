@@ -28,7 +28,8 @@ Miller's ranks as the base, and adds everyday words the list lacks.
    `score = exp((2·log r_miller + 1·log r_spoken) / 3)`
 
    and entries are re-ranked by score. Miller's rank keeps two thirds of the weight. Multiword entries (compound verbs), names and the placeholder ranks of rare homograph readings (5001+) can't be measured in a list of single forms, so for them `r_spoken = r_miller`. Homographs split from one source entry keep sharing a rank.
-5. **New words.** Not in Miller's top 5,000, so they enter with `r_miller = 5500` and are tagged `rank=estimated`. Their glosses, transliterations and tags are in `new_rows.tsv`.
+5. **New words.** Words outside Miller's list have no Miller rank. Their rank by wordfreq frequency, in the same pool, stands in for it (`r_written`); on Miller's own words the median ratio of the two ranks is 0.94–1.03 between Miller ranks 2,000 and 5,000, where nearly all added words fall (1.35 in the top 500). They are tagged `rank=estimated`. The 98 everyday words of the first pass are counted through `colloq.tsv` (`NEW:lemma:POS`); their glosses, transliterations and tags are in `new_rows.tsv`.
+6. **Extension to 10,000.** `candidates.py` lemmatizes the forms credited to no entry with a form → lemma table from UD Persian-PerDT (read at run time; not included) and sums their counts per lemma. The 12,000 best candidates were reviewed by hand: names, brands, profanity, fragments, inflected forms and misspellings were dropped; colloquial and variant spellings of a word were folded into it (`keys` in `added.tsv`), or into an existing entry through `colloq.tsv`. `extend.py` sums each kept word's counts over its keys (`added_counts.tsv`), and `rerank.py` keeps the best-scoring added words until the list holds 10,000 rows. `added.tsv` holds 4,921 reviewed words; 4,741 made the cut.
 
 `miller_ranks.tsv` keeps the source ranks, so reruns always start from Miller.
 
@@ -38,10 +39,15 @@ Miller's ranks as the base, and adds everyday words the list lacks.
 curl -o /tmp/fa_50k.txt https://raw.githubusercontent.com/hermitdave/FrequencyWords/master/content/2018/fa/fa_50k.txt
 pip install wordfreq==3.1.1
 cd tools/fa_spoken_rerank
+git clone --depth 1 https://github.com/UniversalDependencies/UD_Persian-PerDT /tmp/perdt
 python mapforms.py ../../languages/fa/vocab.tsv miller_ranks.tsv stems.tsv /tmp/fa_50k.txt colloq.tsv /tmp/out
-python rerank.py /tmp/out
-python apply.py ../../languages/fa/vocab.tsv /tmp/out/reranked.tsv new_rows.tsv
+python candidates.py ../../languages/fa/vocab.tsv miller_ranks.tsv stems.tsv /tmp/fa_50k.txt colloq.tsv /tmp/perdt /tmp/out
+python extend.py /tmp/out/candidates.tsv added.tsv /tmp/fa_50k.txt added_counts.tsv
+python rerank.py /tmp/out added_counts.tsv 10000
+python apply.py ../../languages/fa/vocab.tsv /tmp/out/reranked.tsv new_rows.tsv added.tsv
 ```
+
+`candidates.py` and `extend.py` are only needed when `added.tsv` changes; `added_counts.tsv` is kept in the repo.
 
 The output is deterministic: rerunning on the rewritten file reproduces it.
 `/tmp/out/unmatched.tsv` lists the subtitle forms credited to no entry, as the
@@ -54,11 +60,15 @@ place to extend `colloq.tsv`.
 - **Leaving:** mostly formal and news words: تصریح, صهیونیستی, اتخاذ, خاطرنشان, دستاورد, رونق.
 - **Losses worth noting:** some ordinary words also leave, because they're rare in speech too: پنجشنبه, قاره, کیلو, the written numerals هفتاد, هشتاد, سیصد.
 - **Film bias.** Subtitles are mostly translated films, so action-film words (گلوله, تعقیب, مأموریت) gain more than they should.
-- **New words.** 98 words added, ranked 1,947 (ممنون) to 4,892.
+- **New words.** 98 words added in the first pass. Ranked by wordfreq instead of the old flat `r_miller = 5500`, they now sit from 369 (ممنون) to 6,520; median 2,396.
+- **Extension to 10,000 (18 Nov 2026).** 4,741 words added. 15 enter the top 1,750 (آلبوم 756, آنان 822, لینک, وب, نخستین, کله, موزیک, فایل, کپی, آنلاین, ویدئو), 612 the top 5,000; median rank 7,477. Existing ranks barely move (median shift 0.5% in the top 1,750). Miller's placeholder homograph readings now sit at the end, 9,848–9,927.
+- **Cut-off.** Words near 10,000 have no subtitle count and wordfreq frequencies near its floor (about 1.6 × 10⁻⁶), so the order there is close to arbitrary. The 180 reviewed words below the cut (باستان‌شناسی, اپیدمی, پاورقی…) are no rarer in any meaningful sense than the last ones in.
 
 ## Limits
 
 - Compound verbs (کار کردن) and other multiword entries are not reweighted.
 - Forms spelled like an unrelated word share their count by the Miller prior, which is only an approximation (مرد "man" / "died").
 - `stems.tsv` covers the simple verbs in the list. Verbs in ‌یدن and ‌اندن not listed there take the regular stem.
-- The unmatched forms were reviewed down to about 600 occurrences. Rarer everyday words may still be missing from the list.
+- The unmatched forms were reviewed down to about 600 occurrences, and the candidate lemmas down to number 9,500 of 12,000. Rarer everyday words may still be missing.
+- `candidates.py` takes PerDT's most frequent analysis of a form; forms PerDT lacks count as their own lemma, so some added words (especially colloquial ones) undercount their inflected forms.
+- Added words have no `visual=` tags yet.

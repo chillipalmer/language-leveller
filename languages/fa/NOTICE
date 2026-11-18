@@ -1,6 +1,7 @@
 vocab.tsv
-  Frequency ranks, parts of speech, transliterations and glosses for the 5,000
-  most frequent Persian words. Glosses are the project's own wording.
+  Frequency ranks, parts of speech, transliterations and glosses for 10,000
+  Persian words: the 5,000 most frequent in the source list, and words added
+  from other frequency data (below). Glosses are the project's own wording.
   Homographs are split into separate lemmas; rare readings carry placeholder
   ranks at the end of the list until real frequencies are available.
   Since 18 Nov 2026 the ranks are the source list's ranks reweighted with
@@ -10,7 +11,13 @@ vocab.tsv
   keep two thirds of the weight and are kept in
   tools/fa_spoken_rerank/miller_ranks.tsv. 98 everyday words missing from
   the source list were added with estimated ranks, tagged rank=estimated.
-  No subtitle or wordfreq data is included here.
+  On 18 Nov 2026 the list was extended to 10,000 rows with 4,741 more words,
+  also tagged rank=estimated: lemmas found by lemmatizing the subtitle and
+  wordfreq forms with a form-to-lemma table built from UD Persian-PerDT
+  (CC BY-SA 4.0; read at run time, not included), reviewed by hand. Their
+  ranks use wordfreq frequency in place of a source rank.
+  No subtitle, wordfreq or treebank data is included here; added_counts.tsv
+  in the tool holds only per-word totals.
   Thirteen common words are not in the source frequency list: را, روی, کمی,
   شاید, نزد, لطفاً, بریدن, آفریدن, گریستن, باریدن, آویختن, برانگیختن,
   برافراشتن. Their ranks are estimates, tagged rank=estimated:
