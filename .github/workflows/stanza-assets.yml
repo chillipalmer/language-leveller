@@ -34,7 +34,7 @@ jobs:
           import stanza, yaml
           cfg = yaml.safe_load(open("languages/fa/config.yaml"))
           pk = cfg["parser_options"]["stanza"]["packages"]
-          nlp = stanza.Pipeline("fa", processors=",".join(pk), **{f"{p}_package": v for p, v in pk.items()})
+          nlp = stanza.Pipeline("fa", processors=dict(pk))
           doc = nlp("کاوه کتاب را به مینا داد.")
           print(stanza.__version__, [(w.text, w.lemma, w.upos) for w in doc.sentences[0].words])
           open("stanza_version.txt", "w").write(stanza.__version__ + "\n")
