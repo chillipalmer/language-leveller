@@ -7,6 +7,7 @@ id	rank_miller
 که_SCONJ	5
 این_PRON	6
 در_ADP	7
+در_NOUN	600
 با_ADP	8
 شدن_VERB	9
 برای_ADP	10
@@ -717,6 +718,7 @@ id	rank_miller
 نمایشگاه_NOUN	700
 تکرار_NOUN	701
 بسته_NOUN	702
+بسته_ADJ	702
 عملکرد_NOUN	703
 ریشه_NOUN	704
 شناختن_VERB	705

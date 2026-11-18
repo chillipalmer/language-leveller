@@ -80,6 +80,9 @@ class Vocab:
         self.clitic_patterns = [re.compile(p) for p in config.get("clitic_suffixes", [])]
         self.accent_fallback = config.get("accent_fold_fallback", True)
         self.exclude_patterns = [re.compile(p) for p in config.get("exclude_patterns", [])]
+        # uncased_propn_words: in a script without capitals the parser's PROPN is a guess;
+        # a PROPN token that is a listed ordinary word counts as that word
+        self.uncased_propn_words = bool(config.get("uncased_propn_words"))
         # the parser's lemma convention may differ from the list's headwords: Persian
         # parsers lemmatise verbs to the past stem (رفت) while dictionaries list the
         # infinitive (رفتن). lemma_map rewrites whole lemmas (است -> بودن);
@@ -229,6 +232,11 @@ class Vocab:
         return best, method, len({id(e) for e, _, _ in cands})
 
     def lookup(self, tok: Token) -> Lookup:
+        if tok.feats.get("Lexicalised") == "Yes":
+            # a participle the list has as an adjective (بسته 'closed', cansado) is that word
+            e, method, n = self._direct(tok.text, None, "ADJ")
+            if e and e.pos == "ADJ":
+                return Lookup(e, method, n)
         e, method, n = self._direct(tok.text, tok.lemma, tok.upos)
         if e:
             return Lookup(e, method, n)
@@ -262,6 +270,14 @@ class Vocab:
             return "excluded-pattern"
         if tok.feats.get("Foreign") == "Yes":
             return "foreign-script"
+        if (tok.upos == "PROPN" and self.uncased_propn_words and tok.feats.get("Name") != "list"
+                and not tok.text[:1].isupper() and not tok.text[:1].islower()):
+            # no capital letters to tell names from words: a "name" the list has as an
+            # ordinary word (غرب in «غربِ افغانستان», خلیج) is that word
+            e = self._direct(tok.text, tok.lemma, "NOUN")[0]
+            if e is not None and e.pos != "PROPN":
+                tok.upos = e.pos if e.pos in ("NOUN", "ADJ", "ADV") else tok.upos
+                return None
         if tok.upos in self.exclude_upos:
             # sentence-initial capitalised common words are often mis-tagged PROPN
             first = next((x.i for x in sent.tokens if x.upos != "PUNCT"), 0)   # after ¡ ¿ «

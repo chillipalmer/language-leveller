@@ -55,6 +55,9 @@ class Leveller:
         # names: words to treat as proper names whatever the parser says (a story's
         # characters and places); set per text with level_text(names=...)
         self.names: set[str] = set()
+        # participle_regex: forms the parser may leave without VerbForm=Part that are
+        # participles all the same (Persian بسته in «بسته بود»)
+        self.participle_rx = re.compile(config["participle_regex"]) if config.get("participle_regex") else None
         self.name_suffix = re.compile(config.get("name_suffix_regex") or r"$^")
         self.cleaner = Cleaner(config.get("cleaning") or {},
                                known_form=lambda w: norm(w) in vocab.by_form or bool(
@@ -310,11 +313,15 @@ class Leveller:
                     t.upos, t.feats = "X", {"Foreign": "Yes"}
         fixes = {}
         for t in sent.tokens:
-            if self.names and t.upos != "PROPN" and any(ch.isalpha() for ch in t.text):
+            if self.names and any(ch.isalpha() for ch in t.text):
                 bare = self.name_suffix.sub("", norm(t.text))
+                if (norm(t.text) in self.names or bare in self.names) and t.upos == "PROPN":
+                    t.feats["Name"] = "list"
+                    continue
                 if norm(t.text) in self.names or bare in self.names:
                     fixes[t.i] = f"{t.upos}→PROPN (name)"
                     t.upos = "PROPN"
+                    t.feats["Name"] = "list"
                     continue
             for rx, lemma, upos, set_upos in self.lemma_rules:
                 m = rx.search(t.text.lower())
@@ -336,7 +343,10 @@ class Leveller:
         for i, change in (self.corrector.correct(sent) if self.corrector else {}).items():
             fixes[i] = f"{fixes[i]}; {change}" if i in fixes else change
         for t in sent.tokens:
-            if t.feats.get("VerbForm") == "Part" and self.vocab.known_as(t.text, t.lemma, "ADJ"):
+            part = t.feats.get("VerbForm") == "Part" or (
+                self.participle_rx is not None and t.upos == "VERB" and "VerbForm" not in t.feats
+                and self.participle_rx.search(t.text))
+            if part and self.vocab.known_as(t.text, t.lemma, "ADJ"):
                 t.feats["Lexicalised"] = "Yes"
         return fixes
 
