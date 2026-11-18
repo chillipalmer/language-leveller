@@ -47,6 +47,11 @@ vocab:
     NUM: [NUM, DET]
     INTJ: [INTJ, ADV]
   exclude_upos: [PUNCT, SYM, PROPN, SPACE]
+  # no capitals in Persian: the parser's PROPN on a listed word (غربِ افغانستان) is that word
+  uncased_propn_words: true
+  # Pronoun suffixes split off by the parser (خانه‌اش، دخترشان، دیدمش) are grammar
+  # (fa.clitic.possessive, fa.clitic.object), not the words او / آنها
+  exclude_patterns: ['^\u200c?(م|ت|ش|مان|تان|شان|ام|ات|اش|یم|یت|یش|یمان|یتان|یشان|مون|تون|شون)$']
   # Stanza (PerDT) lemmatises verbs to the past stem (رفت, کرد); the list has infinitives
   # (رفتن, کردن). The copula and modals have their own lemmas.
   # PerDT also keeps some inflected forms as lemmas of their own: آنها (and the clitic
@@ -104,6 +109,9 @@ lemma_rules:
   - {lemma: رود, set_upos: NOUN, regex: '^رود(\u200c?ها|\u200c?های|ی)?$'}
   # وقتی 'when' is listed as a conjunction; PerDT parses it as وقت + ی
   - {upos: [NOUN, ADV], lemma: وقتی, set_upos: SCONJ, regex: '^وقتی$'}
+
+# A verb in ‌ه is a participle even when the parser gives no VerbForm (بسته بود)
+participle_regex: '[^\u200c]ه$'
 
 # A story's names (level_text(names=...)) also match with ezafe or را attached
 name_suffix_regex: '(\u200c?ی|\u200c?را)$'

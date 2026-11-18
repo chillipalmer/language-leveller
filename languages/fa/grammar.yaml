@@ -267,12 +267,18 @@ features:
   source: "Chaarchoob 1, L34"
   match_any:
     - token: {upos: VERB, regex: '^(?!(بر|در|باز|فرو|فرا|وا|ور)?ن?می)\S*ه\u200c?(ام|ای|ایم|اید|اند)$'}
+    # participle + است; a participle the vocab lists as an adjective (بسته 'closed',
+    # خسته 'tired') is that adjective with the copula, unless it has an object
     - graph:
-        v: {upos: VERB, regex: '^(?!(بر|در|باز|فرو|فرا|وا|ور)?ن?می)\S*ه$'}
+        v: {upos: VERB, regex: '^(?!(بر|در|باز|فرو|فرا|وا|ور)?ن?می)\S*ه$', Lexicalised: null}
+        aux: {lemma: است, rel: aux, head: v}
+    - graph:
+        v: {upos: VERB, regex: '^(?!(بر|در|باز|فرو|فرا|وا|ور)?ن?می)\S*ه$', has_child: {rel: obj}}
         aux: {lemma: است, rel: aux, head: v}
   tests:
-    pos: ["من این فیلم را دیده‌ام.", "او به ایران رفته است.", "ما هنوز غذا نخورده‌ایم.", "آنها هرگز به تهران نرفته اند."]
-    neg: ["من این فیلم را دیدم.", "وقتی رسیدم، او رفته بود."]
+    pos: ["من این فیلم را دیده‌ام.", "او به ایران رفته است.", "ما هنوز غذا نخورده‌ایم.", "آنها هرگز به تهران نرفته اند.",
+          "او در را بسته است."]
+    neg: ["من این فیلم را دیدم.", "وقتی رسیدم، او رفته بود.", "درِ زیرزمین همیشه بسته است."]
 
 - id: fa.subj.modal
   level: A2
@@ -419,13 +425,17 @@ features:
   level: B1
   label: Past perfect (رفته بودم)
   source: "Chaarchoob 2, L13"
-  match:
-    graph:
-      v: {upos: VERB, regex: 'ه$'}
-      aux: {lemma: بود, rel: aux, head: v, regex: '^ن?بود(م|ی|یم|ید|ند)?$'}
+  match_any:
+    # not a participle listed as an adjective (بسته بود 'was closed'), unless it has an object
+    - graph:
+        v: {upos: VERB, regex: 'ه$', Lexicalised: null}
+        aux: {lemma: بود, rel: aux, head: v, regex: '^ن?بود(م|ی|یم|ید|ند)?$'}
+    - graph:
+        v: {upos: VERB, regex: 'ه$', has_child: {rel: obj}}
+        aux: {lemma: بود, rel: aux, head: v, regex: '^ن?بود(م|ی|یم|ید|ند)?$'}
   tests:
-    pos: ["وقتی رسیدم، او رفته بود.", "قبلاً این فیلم را ندیده بودم."]
-    neg: ["او به ایران رفته است.", "وقتی بچه بودم، اینجا زندگی می‌کردم."]
+    pos: ["وقتی رسیدم، او رفته بود.", "قبلاً این فیلم را ندیده بودم.", "او در را بسته بود."]
+    neg: ["او به ایران رفته است.", "وقتی بچه بودم، اینجا زندگی می‌کردم.", "در زیرزمین، آن در بسته بود."]
 
 - id: fa.experiencer
   level: B1

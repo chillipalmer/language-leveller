@@ -75,13 +75,15 @@ COMMON = """# text = شاید آنها کتاب را روی میز بگذارن�
 
 
 def test_common_words_are_found(ll):
-    heads = {}
+    heads, excluded = {}, {}
     for s in parse_conllu(COMMON):
         rec = ll.level_sentence(s)
         assert "C2+" not in rec["vocab"]["level"], rec["vocab"]
         heads.update({t["text"]: t["headword"] for t in rec["tokens"] if "headword" in t})
+        excluded.update({t["text"]: t["excluded"] for t in rec["tokens"] if "excluded" in t})
     assert heads["شاید"] == "شاید"
-    assert heads["آنها"] == heads["شان"] == "آن"
+    assert heads["آنها"] == "آن"
+    assert excluded["شان"] == "excluded-pattern"      # a pronoun suffix is grammar, not a word
     assert heads["را"] == "را"
     assert heads["روی"] == "روی"
     assert heads["بگذارند"] == "گذاشتن"
