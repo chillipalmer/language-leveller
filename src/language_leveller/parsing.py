@@ -8,6 +8,8 @@ Backends:
 
 from __future__ import annotations
 
+import os
+
 from typing import Iterable, Protocol
 
 from .model import Sentence, Token
@@ -65,7 +67,11 @@ class StanzaParser:
         procs = ("tokenize", "mwt", "pos", "lemma", "depparse")
         processors = ({p: packages[p] for p in procs if p in packages} if packages
                       else ",".join(procs))
-        self.nlp = stanza.Pipeline(lang, processors=processors, verbose=False)
+        # LL_STANZA_OFFLINE=1: use the models already in STANZA_RESOURCES_DIR and don't
+        # fetch resources.json (for machines that can't reach Stanza's model host).
+        offline = os.environ.get("LL_STANZA_OFFLINE", "") not in ("", "0")
+        self.nlp = stanza.Pipeline(lang, processors=processors, verbose=False,
+                                   **({"download_method": None} if offline else {}))
 
     def parse(self, text: str) -> list[Sentence]:
         doc = self.nlp(text)
