@@ -1,0 +1,49 @@
+# Publishes the Persian Stanza models (the packages in languages/fa/config.yaml) and a
+# CPU-only torch wheel as release assets, for environments that can reach GitHub but not
+# Hugging Face or the PyTorch index. Runs on pushes to the stanza-assets branch.
+name: Stanza assets
+
+on:
+  push:
+    branches: [stanza-assets]
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    env:
+      STANZA_RESOURCES_DIR: ${{ github.workspace }}/stanza_resources
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Download CPU torch wheel and install
+        run: |
+          mkdir -p wheels
+          pip download torch --index-url https://download.pytorch.org/whl/cpu --no-deps -d wheels
+          pip install wheels/torch-*.whl
+          pip install stanza pyyaml
+      - name: Download the Persian models LL uses
+        run: |
+          python - <<'PY'
+          import stanza, yaml
+          cfg = yaml.safe_load(open("languages/fa/config.yaml"))
+          pk = cfg["parser_options"]["stanza"]["packages"]
+          nlp = stanza.Pipeline("fa", processors=",".join(pk), **{f"{p}_package": v for p, v in pk.items()})
+          doc = nlp("کاوه کتاب را به مینا داد.")
+          print(stanza.__version__, [(w.text, w.lemma, w.upos) for w in doc.sentences[0].words])
+          open("stanza_version.txt", "w").write(stanza.__version__ + "\n")
+          PY
+          tar czf stanza_fa.tgz -C "$STANZA_RESOURCES_DIR" .
+          ls -la stanza_fa.tgz wheels
+      - name: Publish release
+        run: |
+          gh release delete stanza-fa --yes --cleanup-tag || true
+          gh release create stanza-fa --target "$GITHUB_SHA" --title "Stanza Persian models (for offline use)" \
+            --notes "Stanza $(cat stanza_version.txt): the Persian packages in languages/fa/config.yaml, and a CPU-only torch wheel. Models © Stanford NLP, Apache 2.0; trained on UD Persian-PerDT (CC BY-SA 4.0)." \
+            stanza_fa.tgz wheels/*.whl stanza_version.txt
