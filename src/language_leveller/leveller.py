@@ -43,8 +43,19 @@ class Leveller:
         # lemma_rules: [{regex, lemma, upos?}] fix a parser's lemma convention by surface
         # form. Persian PerDT gives passive شد (شده, می‌شود) the lemma of the active verb,
         # کرد; the rule restores شد. Applied before morphology, vocabulary and grammar.
-        self.lemma_rules = [(re.compile(r["regex"]), r["lemma"], set(r.get("upos") or []))
-                            for r in (config.get("lemma_rules") or [])]
+        # The lemma may refer to groups in the regex (\\1); `set_upos` also changes the
+        # part of speech (bare رود is the noun 'river', not the verb).
+        self.lemma_rules = [(re.compile(r["regex"]), r["lemma"], set(r.get("upos") or []),
+                             r.get("set_upos")) for r in (config.get("lemma_rules") or [])]
+        # tense_from_context: forms whose present and past readings are spelled alike
+        # (نمی‌خورد 'doesn't eat' / 'wasn't eating'). When the parser gives no Tense, the
+        # nearest verb with a Tense in the sentence, then in the text before, decides.
+        tcfg = config.get("tense_from_context") or {}
+        self.ambiguous_tense = re.compile(tcfg["regex"]) if tcfg.get("regex") else None
+        # names: words to treat as proper names whatever the parser says (a story's
+        # characters and places); set per text with level_text(names=...)
+        self.names: set[str] = set()
+        self.name_suffix = re.compile(config.get("name_suffix_regex") or r"$^")
         self.cleaner = Cleaner(config.get("cleaning") or {},
                                known_form=lambda w: norm(w) in vocab.by_form or bool(
                                    vocab.morph and vocab.morph.get(w)))
@@ -83,10 +94,15 @@ class Leveller:
         return cls(cfg, vocab, grammar, parser, scale, morph)
 
     # ---- processing ----------------------------------------------------------
-    def level_text(self, text: str, fmt: str = "auto") -> list[dict]:
+    def level_text(self, text: str, fmt: str = "auto", names=None) -> list[dict]:
+        if names is not None:
+            self.names = {norm(n) for n in names}
         records = []
+        last_tense = None
         for seg in self.cleaner.segments(text, fmt):
             sents = self.parser.parse(seg.clean)
+            if self.ambiguous_tense is not None:
+                last_tense = self._tense_from_context(sents, last_tense)
             # each removed/rewritten item goes to the last sentence starting at or before it
             per_sent: list[list[dict]] = [[] for _ in sents]
             for item in seg.ignored if sents else []:
@@ -95,6 +111,25 @@ class Leveller:
             for sent, items in zip(sents, per_sent):
                 records.append(self.level_sentence(sent, seg, items))
         return records
+
+    def _tense_from_context(self, sents: list[Sentence], last: str | None) -> str | None:
+        """Give ambiguous verbs without Tense the tense of the nearest verb that has one:
+        in the same sentence first, then earlier in the text. Returns the last tense seen."""
+        def finite(t):
+            return t.upos in ("VERB", "AUX") and t.feats.get("Tense") in ("Pres", "Past")
+        for s in sents:
+            known = [t for t in s.tokens if finite(t)]
+            for t in s.tokens:
+                if (t.upos == "VERB" and "Tense" not in t.feats and "VerbForm" not in t.feats
+                        and self.ambiguous_tense.search(t.text)):
+                    near = min(known, key=lambda k: abs(k.i - t.i), default=None)
+                    tense = near.feats["Tense"] if near else last
+                    if tense:
+                        t.feats["Tense"] = tense
+                        t.feats["TenseFrom"] = "context"
+            if known:
+                last = known[-1].feats["Tense"]
+        return last
 
     def level_sentence(self, sent: Sentence, seg: Segment | None = None,
                        ignored: list[dict] | None = None) -> dict:
@@ -109,11 +144,15 @@ class Leveller:
             if t.i in fixes:
                 rec["morph_fix"] = fixes[t.i]
             reason = self.vocab.excluded(t, sent)
+            lk = self.vocab.lookup(t) if not reason else None
+            if lk and lk.entry and lk.entry.pos in self.vocab.exclude_upos:
+                # the word is listed as a name (آسیا_PROPN) though the parser tagged it
+                # otherwise: names are not vocabulary items
+                reason = "PROPN"
             if reason:
                 rec["excluded"] = reason
             else:
                 rankable += 1
-                lk = self.vocab.lookup(t)
                 if lk.entry:
                     e = lk.entry
                     found += 1
@@ -271,11 +310,29 @@ class Leveller:
                     t.upos, t.feats = "X", {"Foreign": "Yes"}
         fixes = {}
         for t in sent.tokens:
-            for rx, lemma, upos in self.lemma_rules:
-                if (not upos or t.upos in upos) and t.lemma != lemma and rx.search(t.text.lower()):
-                    fixes[t.i] = f"lemma {t.lemma}→{lemma}"
-                    t.lemma = lemma
-                    break
+            if self.names and t.upos != "PROPN" and any(ch.isalpha() for ch in t.text):
+                bare = self.name_suffix.sub("", norm(t.text))
+                if norm(t.text) in self.names or bare in self.names:
+                    fixes[t.i] = f"{t.upos}→PROPN (name)"
+                    t.upos = "PROPN"
+                    continue
+            for rx, lemma, upos, set_upos in self.lemma_rules:
+                m = rx.search(t.text.lower())
+                if not m or (upos and t.upos not in upos):
+                    continue
+                new_lemma = m.expand(lemma) if "\\" in lemma else lemma
+                if new_lemma == t.lemma and (not set_upos or set_upos == t.upos):
+                    continue
+                change = [f"lemma {t.lemma}→{new_lemma}"] if new_lemma != t.lemma else []
+                if set_upos and set_upos != t.upos:
+                    change.append(f"{t.upos}→{set_upos}")
+                    t.upos = set_upos
+                    if set_upos != "VERB":
+                        for k in ("Tense", "Mood", "Person", "VerbForm", "Voice", "Polarity"):
+                            t.feats.pop(k, None)
+                fixes[t.i] = "; ".join(change)
+                t.lemma = new_lemma
+                break
         for i, change in (self.corrector.correct(sent) if self.corrector else {}).items():
             fixes[i] = f"{fixes[i]}; {change}" if i in fixes else change
         for t in sent.tokens:

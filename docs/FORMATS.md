@@ -191,6 +191,12 @@ vocab:
   lemma_suffix: {VERB: ن}                    # parser lemma + suffix = headword (Persian رفت -> رفتن)
   lemma_map: {است: بودن}                     # parser lemma -> headword
   lemma_prefixes: {VERB: [بر, در]}           # surface prefix + parser lemma = headword (برداشت: داشت -> برداشتن)
+lemma_rules:                                 # fix the parser by surface form, before lookup and grammar
+  - {upos: [NOUN, ADJ], lemma: '\1', regex: '^(.+ه)(\u200cی)$'}   # lemma may use regex groups
+  - {lemma: رود, set_upos: NOUN, regex: '^رود$'}                    # set_upos also changes the POS
+tense_from_context:                          # forms spelled alike in two tenses, given no Tense:
+  regex: '^ن?می\u200c?(خورد|برد)$'          # take the nearest verb's tense (sentence, then text before)
+name_suffix_regex: '(\u200c?ی)$'             # endings stripped when matching level_text(names=[...])
 grammar: {file: grammar.yaml}
 morph:
   file: morph.tsv.gz
@@ -214,6 +220,11 @@ scoring:
   low_coverage_threshold: 0.5
   coverage_target: 0.98          # used by `leveller profile` (whole-text coverage)
 ```
+
+Names are never vocabulary items. A token tagged PROPN is excluded, and so is a word whose
+matched vocab row is a PROPN row (آسیا_PROPN), whatever the parser called it.
+`level_text(text, names=[...])` adds a text's own names (a story's characters): those words
+are treated as names wherever they occur.
 
 ## 4. Morphology lexicon
 

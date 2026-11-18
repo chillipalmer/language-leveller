@@ -90,9 +90,11 @@ features:
         VerbForm: null
         regex: '^(?!(بر|در|باز|فرو|فرا|وا|ور)?ن?می)\S*[تد](م|ی|یم|ید|ند)?$'
         no_child: {rel: aux, lemma: [خواست, بایست, توان]}
-    - token: {lemma: بود, rel: [cop, root], regex: '^ن?بود(م|ی|یم|ید|ند)?$'}
+    # بود as copula or main verb, in any clause; not the auxiliary of the past perfect
+    - token: {lemma: بود, rel: {not: aux}, regex: '^ن?بود(م|ی|یم|ید|ند)?$'}
   tests:
-    pos: ["دیروز به بازار رفتم.", "دیروز به بازار نرفتیم.", "وقتی بچه بودم، اینجا زندگی می‌کردم."]
+    pos: ["دیروز به بازار رفتم.", "دیروز به بازار نرفتیم.", "وقتی بچه بودم، اینجا زندگی می‌کردم.",
+          "صندوقی که پشت دیگ بود، قدیمی است."]
     neg: ["من هر روز کتاب می‌خوانم.", "فردا باران خواهد بارید.", "باید رفت."]
 
 - id: fa.progressive.present
@@ -171,9 +173,11 @@ features:
   match:
     graph:
       n: {upos: [NOUN, PROPN, PRON]}
-      m: {upos: [ADJ, NOUN, PROPN], rel: [amod, nmod], head: n, regex: '^(?!.*ترین$)'}
+      m: {upos: [ADJ, NOUN, PROPN, PRON], rel: [amod, nmod], head: n, regex: '^(?!.*ترین$)',
+          form: {not: [م, ت, ش, مان, تان, شان, ام, ات, اش]}}
   tests:
-    pos: ["خانهٔ بزرگ پدرم در تهران است.", "کتاب‌های خوب را خریدم.", "به گزارش خبرنگار مهر، باران آمد."]
+    pos: ["خانهٔ بزرگ پدرم در تهران است.", "کتاب‌های خوب را خریدم.", "به گزارش خبرنگار مهر، باران آمد.",
+          "خانهٔ ما کوچک است."]
     neg: ["کتابم روی میز است.", "این بزرگترین شهر است.", "او خسته است."]
 
 - id: fa.plural
@@ -376,12 +380,18 @@ features:
   level: B1
   label: Relative clause with که (کتابی که خریدم)
   source: "Chaarchoob 2, L20; B1 by project decision (the lesson-position rule gives B2)"
-  match:
-    graph:
-      v: {rel: acl, head_is: {upos: [NOUN, PRON, PROPN], form: {not: [این, آن]}}}
-      k: {form: که, rel: mark, head: v}
+  match_any:
+    - graph:
+        v: {rel: acl, head_is: {upos: [NOUN, PRON, PROPN], form: {not: [این, آن]}}}
+        k: {form: که, rel: mark, head: v}
+    # in a copular relative clause the parser can hang که on the predicate, a child of
+    # the clause head (صندوقی که پشت دیگ بود)
+    - graph:
+        v: {rel: acl, head_is: {upos: [NOUN, PRON, PROPN], form: {not: [این, آن]}}}
+        p: {head: v}
+        k: {form: که, rel: mark, head: p}
   tests:
-    pos: ["کتابی که خریدم جالب است.", "مردی که دیروز دیدیم معلم است."]
+    pos: ["کتابی که خریدم جالب است.", "مردی که دیروز دیدیم معلم است.", "صندوقی که پشت دیگ بود، قدیمی است."]
     neg: ["او گفت که فردا می‌آید.", "کتاب را خریدم.", "مثل این است که خواب دیده باشیم."]
 
 - id: fa.clitic.object

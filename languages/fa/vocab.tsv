@@ -344,7 +344,7 @@ id	rank	word	pos	gloss	feats	variants	tags	translit
 صدا_NOUN	337	صدا	NOUN	sound; voice				sedā
 کلی_ADJ	338	کلی	ADJ	total; general				kolli
 فرصت_NOUN	339	فرصت	NOUN	opportunity				forsat
-کاری_NOUN	340	کاری	NOUN	work-related, working (روز کاری 'working day'); effective			pos_also=ADJ	kāri
+کاری_ADJ	340	کاری	ADJ	work-related, working (روز کاری 'working day'); effective			pos_also=ADJ	kāri
 اختیار_NOUN	341	اختیار	NOUN	authority				extiyār
 همیشه_ADV	342	همیشه	ADV	always				hamišeh
 سفر_NOUN	343	سفر	NOUN	travel				safar
